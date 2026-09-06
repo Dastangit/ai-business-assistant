@@ -45,15 +45,15 @@ export async function POST(req) {
 
     const apiMessages = [systemPrompt, ...formattedMessages];
 
-    // Conexión centralizada a través de OmniRoute usando la variable de entorno segura
-    const response = await fetch("http://localhost:20128/v1/chat/completions", {
+    // Conexión directa y ultrarrápida desde Vercel a Groq
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.OMNIROUTE_API_KEY}`, 
+        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "auto",
+        model: "llama-3.1-8b-instant", // Modelo oficial, gratuito y en tiempo real
         messages: apiMessages,
         max_tokens: 600 
       })
