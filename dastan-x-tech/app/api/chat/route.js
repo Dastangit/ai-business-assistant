@@ -53,7 +53,7 @@ export async function POST(req) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama3-8b-8192", // Modelo oficial, gratuito y en tiempo real
+        model: "openai/gpt-oss-20b", // Modelo activo y desbloqueado en tu plan
         messages: apiMessages,
         max_tokens: 600 
       })
