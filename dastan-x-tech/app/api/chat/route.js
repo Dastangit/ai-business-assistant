@@ -53,7 +53,7 @@ export async function POST(req) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant", // Modelo oficial, gratuito y en tiempo real
+        model: "llama3-8b-8192", // Modelo oficial, gratuito y en tiempo real
         messages: apiMessages,
         max_tokens: 600 
       })
