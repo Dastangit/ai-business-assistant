@@ -36,6 +36,32 @@ export default function ChatWidget() {
     }
   };
 
+  const renderMessageWithLinks = (text) => {
+    if (!text) return "";
+    
+    // El código separa el texto cada vez que encuentra tus usuarios
+    const parts = text.split(/(@lexdats_bot|@Datspro)/g);
+    
+    return parts.map((part, index) => {
+      if (part === '@lexdats_bot') {
+        return (
+          <a key={index} href="https://t.me/lexdats_bot" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
+            {part}
+          </a>
+        );
+      }
+      if (part === '@Datspro') {
+        return (
+          <a key={index} href="https://t.me/Datspro" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
+            {part}
+          </a>
+        );
+      }
+      // Si no es un usuario, simplemente devuelve el texto normal
+      return part;
+    });
+  };
+
   return (
     <div className="chat-widget">
       {isOpen && (
@@ -46,15 +72,12 @@ export default function ChatWidget() {
           </div>
           
           <div className="chat-messages">
-            {messages.map((msg, index) => (
-              <div key={index} className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'}>
-                {msg.text}
-              </div>
-            ))}
-            {isLoading && (
-              <div className="msg-bot" style={{ opacity: 0.5 }}>Escribiendo...</div>
-            )}
-          </div>
+    {messages.map((msg, index) => (
+      <div key={index} className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'}>
+        {renderMessageWithLinks(msg.text)}
+      </div>
+    ))}
+  </div>
           
           <div className="chat-input-area">
             <input 

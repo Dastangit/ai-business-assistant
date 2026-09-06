@@ -1,6 +1,7 @@
 import ChatWidget from '../components/ChatWidget';
 
 export default function Home() {
+  // Función para convertir los nombres de usuario en botones hacia Telegram
   return (
     <>
       <div className="glow-tl"></div>
