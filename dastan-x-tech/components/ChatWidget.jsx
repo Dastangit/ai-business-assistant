@@ -71,13 +71,20 @@ export default function ChatWidget() {
             <div style={{ fontSize: '15px', fontWeight: '600' }}>DASTAN AI Assistant</div>
           </div>
           
-          <div className="chat-messages">
-    {messages.map((msg, index) => (
-      <div key={index} className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'}>
-        {renderMessageWithLinks(msg.text)}
-      </div>
-    ))}
-  </div>
+    <div className="chat-messages">
+            {messages.map((msg, index) => (
+              <div 
+                key={index} 
+                className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'}
+                style={{ whiteSpace: 'pre-wrap' }}
+              >
+                {renderMessageWithLinks(msg.text)}
+              </div>
+            ))}
+            {isLoading && (
+              <div className="msg-bot" style={{ opacity: 0.5 }}>Escribiendo...</div>
+            )}
+          </div>
           
           <div className="chat-input-area">
             <input 
