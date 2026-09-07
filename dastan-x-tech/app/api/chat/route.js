@@ -3,10 +3,11 @@ import { createClient } from '@supabase/supabase-js';
 
 export async function POST(req) {
   try {
-    // Inicializamos Supabase AQUÍ ADENTRO para evitar errores de compilación en Vercel
-    const supabaseUrl = process.env.SUPABASE_URL || 'https://placeholder.supabase.co';
-    const supabaseKey = process.env.SUPABASE_ANON_KEY || 'placeholder_key';
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    // Limpiamos espacios, comillas accidentales y forzamos el https://
+    let rawUrl = (process.env.SUPABASE_URL || 'https://placeholder.supabase.co').replace(/['"]/g, '').trim();
+    if (!rawUrl.startsWith('http')) rawUrl = `https://${rawUrl}`;
+    const supabaseKey = (process.env.SUPABASE_ANON_KEY || 'placeholder').replace(/['"]/g, '').trim();
+    const supabase = createClient(rawUrl, supabaseKey);
 
     const { messages } = await req.json();
     const mensajeUsuario = messages[messages.length - 1].text;
