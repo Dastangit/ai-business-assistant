@@ -1,7 +1,26 @@
+'use client'; // <-- ESTO ES VITAL
 import ChatWidget from '../components/ChatWidget';
 
 export default function Home() {
-  // Función para convertir los nombres de usuario en botones hacia Telegram
+  // Función para abrir el chat desde las tarjetas
+  const openChatWithContext = (mensaje) => {
+    window.dispatchEvent(new CustomEvent('abrir-chat', { detail: mensaje }));
+  };
+
+  // Estilo de los botones de marketing
+  const buttonStyle = {
+    width: '100%',
+    padding: '0.9rem',
+    marginTop: '1.5rem',
+    backgroundColor: '#1C2624',
+    color: '#F5F4EF',
+    border: '1px solid #2DD4BF',
+    borderRadius: '10px',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
+  };
+  
   return (
     <>
       <div className="glow-tl"></div>
@@ -62,7 +81,48 @@ export default function Home() {
           </div>
         </div>
       </main>
+      {/* SECCIÓN DE TARJETAS DE MARKETING */}
+      <section id="services" style={{ padding: '4rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+          
+          {/* Tarjeta 1 */}
+          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚡</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Suscripciones Premium</h3>
+              <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>Acceso seguro a Google Gemini Pro, VPNs empresariales y streaming sin interrupciones.</p>
+            </div>
+            <button onClick={() => openChatWithContext("¡Hola! Me gustaría recibir información sobre las Suscripciones Premium.")} style={buttonStyle}>
+              Consultar IA
+            </button>
+          </div>
 
+          {/* Tarjeta 2 */}
+          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🛡️</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Números Privados</h3>
+              <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>Líneas exclusivas para verificar Telegram, WhatsApp y Apple ID con total privacidad.</p>
+            </div>
+            <button onClick={() => openChatWithContext("¡Hola! Quiero saber cómo funcionan los Números Privados.")} style={buttonStyle}>
+              Consultar IA
+            </button>
+          </div>
+
+          {/* Tarjeta 3 */}
+          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🚀</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Crecimiento Pymes</h3>
+              <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>Auditorías SEO exhaustivas, diseño web y desarrollo de aplicaciones a medida.</p>
+            </div>
+            <button onClick={() => openChatWithContext("¡Hola! Necesito detalles sobre el servicio de Crecimiento para Pymes.")} style={buttonStyle}>
+              Consultar IA
+            </button>
+          </div>
+
+        </div>
+      </section>
       <ChatWidget />
     </>
   );
