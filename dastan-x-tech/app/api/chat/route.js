@@ -25,8 +25,8 @@ export async function POST(req) {
       4. ENLACES Y FORMATO: NUNCA rompas los números de teléfono o enlaces en varias líneas. Mantén siempre el número de WhatsApp junto (+16055003653).
 
       CATÁLOGO OFICIAL:
-      - Suscripciones Premium / Premium Subscriptions: Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Telegram @lexdats_bot | WhatsApp +16055003653)
-      - Números Privados / Private Numbers: Apple ID, Telegram, Instagram, WhatsApp. (Telegram @lexdats_bot | WhatsApp +16055003653)
+      - Suscripciones Premium / Premium Subscriptions: Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Telegram @lexdats_bot
+      - Números Privados / Private Numbers: Apple ID, Telegram, Instagram, WhatsApp. (Telegram @lexdats_bot
       - Crecimiento de Negocios / Business Growth: Auditoría SEO, Diseño web, Apps. (Telegram @Datspro | WhatsApp +16055003653)`
     };
 

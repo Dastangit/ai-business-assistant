@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +14,25 @@ export default function ChatWidget() {
     }
   ]);
 
+  // ---> AQUÍ ESTÁ EL NUEVO CÓDIGO <---
+  // Este bloque escucha cuando una tarjeta "grita" la orden de abrir el chat
+  useEffect(() => {
+    const handleAbrirChat = (e) => {
+      setIsOpen(true); // 1. Abre la ventana flotante
+      setInput(e.detail); // 2. Escribe el mensaje predefinido en la caja de texto
+    };
+
+    window.addEventListener('abrir-chat', handleAbrirChat);
+    return () => window.removeEventListener('abrir-chat', handleAbrirChat);
+  }, []);
+  // -----------------------------------
+
   // Función para limpiar el chat visualmente
   const handleClearChat = () => {
     setMessages([
       { 
         role: 'bot', 
-        text: '¡Hola! Soy la IA de DASTAN X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
+        text: '¡Hola! Soy la IA de X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
       }
     ]);
   };
@@ -51,11 +64,10 @@ export default function ChatWidget() {
     }
   };
 
-  // Lupa inteligente para transformar texto en enlaces interactivos (Telegram y WhatsApp)
+  // Lupa inteligente para transformar texto en enlaces interactivos
   const renderMessageWithLinks = (text) => {
     if (!text) return "";
     
-    // Reemplazamos menciones y números asegurando que sean clickeables aunque tengan espacios limítrofes
     const parts = text.split(/(@lexdats_bot|@Datspro|\+?1?\d{10,})/g);
     
     return parts.map((part, index) => {
@@ -90,7 +102,6 @@ export default function ChatWidget() {
       {isOpen && (
         <div className="chat-window">
           
-          {/* Cabecera del chat con título y botón de limpiar */}
           <div className="chat-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div className="chat-header-dot"></div>
@@ -104,7 +115,6 @@ export default function ChatWidget() {
             </button>
           </div>
           
-          {/* Contenedor de mensajes con soporte de saltos de línea */}
           <div className="chat-messages">
             {messages.map((msg, index) => (
               <div 
@@ -120,7 +130,6 @@ export default function ChatWidget() {
             )}
           </div>
           
-          {/* Área de escritura y envío */}
           <div className="chat-input-area">
             <input 
               type="text"
@@ -141,7 +150,6 @@ export default function ChatWidget() {
         </div>
       )}
       
-      {/* Botón flotante para abrir y cerrar el widget */}
       <button className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
