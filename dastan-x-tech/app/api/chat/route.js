@@ -60,15 +60,21 @@ export async function POST(req) {
     aiResponse = aiResponse.replace(/\*/g, '');
     const botReply = aiResponse.trim();
 
-    // Guardar automáticamente el lead en Supabase
-    await supabase.from('leads_chat').insert([
+    // Guardar automáticamente el lead en Supabase y rastrear errores
+    const { error: supabaseError } = await supabase.from('leads_chat').insert([
       { mensaje_usuario: mensajeUsuario, respuesta_bot: botReply }
     ]);
+
+    if (supabaseError) {
+      console.error("⚠️ Error de Supabase al guardar el mensaje:", supabaseError);
+    } else {
+      console.log("✅ Mensaje guardado exitosamente en Supabase");
+    }
 
     return NextResponse.json({ reply: botReply });
     
   } catch (error) {
-    console.error('Error en el motor de IA o Supabase:', error);
+    console.error('Error general en el motor de IA o red:', error);
     return NextResponse.json(
       { reply: 'Mis sistemas están en mantenimiento. Por favor, intenta de nuevo en unos segundos.' }, 
       { status: 500 }
