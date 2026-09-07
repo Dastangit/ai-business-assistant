@@ -14,18 +14,23 @@ export default function ChatWidget() {
     }
   ]);
 
-  // ---> AQUÍ ESTÁ EL NUEVO CÓDIGO <---
-  // Este bloque escucha cuando una tarjeta "grita" la orden de abrir el chat
+  // 1. EL ESCUCHADOR ACTUALIZADO PARA AUTO-ENVÍO
   useEffect(() => {
     const handleAbrirChat = (e) => {
-      setIsOpen(true); // 1. Abre la ventana flotante
-      setInput(e.detail); // 2. Escribe el mensaje predefinido en la caja de texto
+      setIsOpen(true); // Abre la ventana flotante
+      
+      const mensajeTarjeta = e.detail; // Capturamos el texto de la tarjeta
+      
+      // Enviamos el mensaje automáticamente
+      if (mensajeTarjeta && typeof handleSend === 'function') {
+         // Llamamos a handleSend pero pasándole el mensaje directamente
+         handleSend(mensajeTarjeta);
+      }
     };
 
     window.addEventListener('abrir-chat', handleAbrirChat);
     return () => window.removeEventListener('abrir-chat', handleAbrirChat);
-  }, []);
-  // -----------------------------------
+  }, [messages, isLoading]); // Importante añadir estas dependencias para que tenga el estado actualizado
 
   // Función para limpiar el chat visualmente
   const handleClearChat = () => {
@@ -37,15 +42,22 @@ export default function ChatWidget() {
     ]);
   };
 
-  // Función de envío de mensajes al servidor
-  const handleSend = async () => {
-    if (!input.trim()) return;
+  // 2. FUNCIÓN DE ENVÍO ADAPTADA PARA RECIBIR PARÁMETROS O TEXTO DEL INPUT
+  const handleSend = async (textoDirecto = null) => {
+    // Si recibe un texto directo (de la tarjeta) lo usa, si no, usa lo que el usuario escribió (input)
+    const textoAEnviar = typeof textoDirecto === 'string' ? textoDirecto : input;
+    
+    if (!textoAEnviar.trim() || isLoading) return; // Evita envíos vacíos o dobles
 
-    const userMessage = { role: 'user', text: input };
+    const userMessage = { role: 'user', text: textoAEnviar };
     const newMessages = [...messages, userMessage];
     
     setMessages(newMessages);
-    setInput('');
+    
+    // Solo borramos el input si el envío vino desde la caja de texto
+    if (typeof textoDirecto !== 'string') {
+        setInput('');
+    }
     setIsLoading(true);
 
     try {
