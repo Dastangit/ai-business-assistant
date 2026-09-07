@@ -54,24 +54,27 @@ export default function ChatWidget() {
   // Lupa inteligente para transformar texto en enlaces interactivos (Telegram y WhatsApp)
   const renderMessageWithLinks = (text) => {
     if (!text) return "";
-    const parts = text.split(/(@lexdats_bot|@Datspro|\+16055003653)/g);
+    
+    // Reemplazamos menciones y números asegurando que sean clickeables aunque tengan espacios limítrofes
+    const parts = text.split(/(@lexdats_bot|@Datspro|\+?1?\d{10,})/g);
     
     return parts.map((part, index) => {
-      if (part === '@lexdats_bot') {
+      const cleanPart = part.trim();
+      if (cleanPart === '@lexdats_bot') {
         return (
           <a key={index} href="https://t.me/lexdats_bot" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
             {part}
           </a>
         );
       }
-      if (part === '@Datspro') {
+      if (cleanPart === '@Datspro') {
         return (
           <a key={index} href="https://t.me/Datspro" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
             {part}
           </a>
         );
       }
-      if (part === '+16055003653') {
+      if (cleanPart.includes('16055003653') || cleanPart === '+16055003653') {
         return (
           <a key={index} href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'underline', fontWeight: 'bold' }}>
             WhatsApp (+1 605-500-3653)
