@@ -5,10 +5,26 @@ export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  
+  // 1. Estado inicial con tu saludo oficial
   const [messages, setMessages] = useState([
-    { role: 'bot', text: '¡Hola! Soy la IA de DASTAN X-TECH. ¿En qué puedo ayudarte a automatizar tu negocio hoy?' }
+    { 
+      role: 'bot', 
+      text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
+    }
   ]);
 
+  // 2. Función para limpiar el chat (solo frontend)
+  const handleClearChat = () => {
+    setMessages([
+      { 
+        role: 'bot', 
+        text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
+      }
+    ]);
+  };
+
+  // 3. Función de envío de mensajes
   const handleSend = async () => {
     if (!input.trim()) return;
 
@@ -20,22 +36,11 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     try {
-      // Esta es la ruta de Node.js que crearemos en el siguiente paso
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages })
       });
-
-      const handleClearChat = () => {
-    // Esto reinicia el chat visualmente, pero no toca la base de datos
-    setMessages([
-      { 
-        role: 'bot', 
-        text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
-      }
-    ]);
-  };
       
       const data = await response.json();
       setMessages([...newMessages, { role: 'bot', text: data.reply }]);
@@ -46,12 +51,10 @@ export default function ChatWidget() {
     }
   };
 
+  // 4. Lupa detectora de enlaces de Telegram
   const renderMessageWithLinks = (text) => {
     if (!text) return "";
-    
-    // El código separa el texto cada vez que encuentra tus usuarios
     const parts = text.split(/(@lexdats_bot|@Datspro)/g);
-    
     return parts.map((part, index) => {
       if (part === '@lexdats_bot') {
         return (
@@ -67,7 +70,6 @@ export default function ChatWidget() {
           </a>
         );
       }
-      // Si no es un usuario, simplemente devuelve el texto normal
       return part;
     });
   };
@@ -76,6 +78,8 @@ export default function ChatWidget() {
     <div className="chat-widget">
       {isOpen && (
         <div className="chat-window">
+          
+          {/* CABECERA CON EL BOTÓN DE LIMPIAR */}
           <div className="chat-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div className="chat-header-dot"></div>
@@ -98,7 +102,8 @@ export default function ChatWidget() {
             </button>
           </div>
           
-    <div className="chat-messages">
+          {/* ZONA DE MENSAJES CON SALTOS DE LÍNEA */}
+          <div className="chat-messages">
             {messages.map((msg, index) => (
               <div 
                 key={index} 
@@ -113,35 +118,24 @@ export default function ChatWidget() {
             )}
           </div>
           
+          {/* ÁREA DE ENTRADA DE TEXTO */}
           <div className="chat-input-area">
             <input 
-              type="text" 
-              className="chat-input" 
-              placeholder="Escribe tu mensaje..." 
+              type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              disabled={isLoading}
+              placeholder="Escribe tu mensaje..."
             />
-            <button className="chat-send" onClick={handleSend} disabled={isLoading}>
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-              </svg>
-            </button>
+            <button onClick={handleSend}>Enviar</button>
           </div>
+          
         </div>
       )}
       
-      <button className="chat-button" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? (
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ) : (
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 16.5a2.5 2.5 0 01-2.5 2.5H7l-4 4V6a2.5 2.5 0 012.5-2.5h14A2.5 2.5 0 0121 6v10.5z" />
-          </svg>
-        )}
+      {/* BOTÓN FLOTANTE PARA ABRIR/CERRAR EL CHAT */}
+      <button className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
+        💬
       </button>
     </div>
   );
