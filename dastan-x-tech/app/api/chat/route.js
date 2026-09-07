@@ -1,14 +1,13 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 
-// Inicializar Supabase con las variables privadas del servidor
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-);
-
 export async function POST(req) {
   try {
+    // Inicializamos Supabase AQUÍ ADENTRO para evitar errores de compilación en Vercel
+    const supabaseUrl = process.env.SUPABASE_URL || 'https://placeholder.supabase.co';
+    const supabaseKey = process.env.SUPABASE_ANON_KEY || 'placeholder_key';
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
     const { messages } = await req.json();
     const mensajeUsuario = messages[messages.length - 1].text;
 
@@ -17,8 +16,8 @@ export async function POST(req) {
       content: `Eres el asistente virtual de inteligencia artificial de DASTAN X-TECH. Tu personalidad es amable, profesional, empática y sumamente natural.
 
       REGLAS DE COMPORTAMIENTO:
-      1. SALUDO OFICIAL: Si el cliente te saluda por primera vez, tu respuesta EXACTA debe ser: "¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?"
-      2. CERO REPETICIONES: NUNCA repitas el saludo oficial dos veces en la misma charla. Si el cliente vuelve a saludar o cambia de tema, respóndele de forma natural y conversacional (ej. "¿En qué más te puedo ayudar?").
+      1. SALUDO DE VENTAS: Cuando el cliente te escriba por primera vez (ej. "Hola", "Buenas", "Info"), tu respuesta EXACTA debe ser: "¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?"
+      2. CERO REPETICIONES: NUNCA repitas el saludo de ventas dos veces en la misma charla. Si el cliente sigue preguntando, respóndele de forma natural y conversacional resolviendo sus dudas.
       3. FORMATO DE LISTAS: Cuando menciones opciones o características de un servicio, SIEMPRE utiliza listas hacia abajo (usando guiones "-" y saltos de línea) para que sea fácil de leer.
       4. Cierres de venta: Cuando el cliente muestre interés, invítalo sutilmente a contactar a los enlaces correspondientes.
 
@@ -26,8 +25,7 @@ export async function POST(req) {
       
       - Suscripciones Premium: Incluye Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Dirigir a Telegram @lexdats_bot o WhatsApp +16055003653)
       - Números Privados: Números para verificar cuentas de Apple ID, Telegram, Instagram y WhatsApp. (Dirigir a Telegram @lexdats_bot o WhatsApp +16055003653)
-      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a Telegram @Datspro o WhatsApp +16055003653)
-      `
+      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a Telegram @Datspro o WhatsApp +16055003653)`
     };
 
     const formattedMessages = messages.slice(1).map(msg => ({
@@ -58,12 +56,10 @@ export async function POST(req) {
     }
 
     let aiResponse = data.choices[0].message.content;
-    
-    // Filtro de seguridad para limpiar asteriscos
     aiResponse = aiResponse.replace(/\*/g, '');
     const botReply = aiResponse.trim();
 
-    // Guardar automáticamente el lead en Supabase de forma invisible
+    // Guardar automáticamente el lead en Supabase
     await supabase.from('leads_chat').insert([
       { mensaje_usuario: mensajeUsuario, respuesta_bot: botReply }
     ]);

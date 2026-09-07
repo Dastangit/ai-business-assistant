@@ -19,7 +19,7 @@ export default function ChatWidget() {
     setMessages([
       { 
         role: 'bot', 
-        text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
+        text: '¡Hola! Soy la IA de DASTAN X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
       }
     ]);
   };
@@ -95,16 +95,7 @@ export default function ChatWidget() {
             </div>
             <button 
               onClick={handleClearChat}
-              style={{
-                backgroundColor: '#F5F4EF',
-                color: '#1C2624',
-                border: '1px solid #1C2624',
-                borderRadius: '4px',
-                padding: '4px 8px',
-                fontSize: '12px',
-                cursor: 'pointer',
-                fontWeight: 'bold'
-              }}
+              className="chat-clear-btn"
             >
               🗑️ Limpiar
             </button>
