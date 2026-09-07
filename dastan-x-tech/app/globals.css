@@ -8,8 +8,12 @@ body {
   background: #07050A; 
   background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #07050A 80%);
   color: #FFFFFF; 
-  height: 100vh; 
-  overflow: hidden; 
+  
+  /* CAMBIOS AQUÍ */
+  min-height: 100vh; 
+  overflow-x: hidden; 
+  overflow-y: auto;
+  
   display: flex;
   flex-direction: column;
 }
