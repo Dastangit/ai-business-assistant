@@ -106,7 +106,7 @@ export default function Home() {
               </ul>
             </div>
             <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Consultar con el bot →
+              Solicitar catalogo →
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
               </ul>
             </div>
             <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Consultar con el bot →
+              Consultar con el agente de IA →
             </div>
           </div>
 
@@ -150,11 +150,11 @@ export default function Home() {
               <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
                 <li>Auditorías SEO y arquitectura web.</li>
                 <li>Desarrollo de Apps y sistemas a medida.</li>
-                <li>Atención personalizada con asesor.</li>
+                <li>Atención personalizada.</li>
               </ul>
             </div>
             <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Hablar con un asesor →
+              Obtener contacto directo →
             </div>
           </div>
 
