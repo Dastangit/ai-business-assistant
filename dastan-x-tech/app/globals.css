@@ -153,7 +153,7 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
 
 /* VENTANA DEL CHAT */
 .chat-window {
-  width: 350px; height: 500px; max-height: 80vh; margin-bottom: 15px;
+  width: 350px; height: 500px; max-height: 83vh; margin-bottom: 15px;
   background: rgba(10, 7, 18, 0.85); backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px;
   display: flex; flex-direction: column; overflow: hidden;
@@ -259,4 +259,15 @@ html, body { overflow-x: hidden; width: 100%; }
   .btn-primary, .btn-secondary { width: 100%; }
 
   .badge { font-size: 12px; padding: 8px 14px; }
+
+  .chat-window {
+    position: fixed;
+    bottom: 80px; /* Ubicado arriba del botón flotante */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92vw;
+    max-width: 390px;
+    height: 490px; /* Altura perfecta debajo del logo */
+    z-index: 1000;
+  }
 }
