@@ -10,7 +10,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState([
     { 
       role: 'bot', 
-      text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
+      text: '¡Hola! Soy la IA de DASTAN X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
     }
   ]);
 

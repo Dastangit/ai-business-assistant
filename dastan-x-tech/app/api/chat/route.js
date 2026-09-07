@@ -64,3 +64,33 @@ export async function POST(req) {
     );
   }
 }
+
+import { NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
+
+// Inicializar Supabase con las variables de entorno
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
+
+export async function POST(req) {
+  try {
+    const { messages } = await req.json();
+    const mensajeUsuario = messages[messages.length - 1].text;
+
+    // 1. Aquí haces tu llamada normal a la IA (Groq / OpenAI) para obtener la respuesta
+    // (Mantén tu código actual de fetch hacia la IA aquí y guarda el resultado en una variable ej: botReply)
+    const botReply = "Respuesta generada por tu IA..."; 
+
+    // 2. Guardar automáticamente el lead en Supabase de forma invisible
+    await supabase.from('leads_chat').insert([
+      { mensaje_usuario: mensajeUsuario, respuesta_bot: botReply }
+    ]);
+
+    return NextResponse.json({ reply: botReply });
+  } catch (error) {
+    console.error("Error:", error);
+    return NextResponse.json({ reply: "Lo siento, ocurrió un error temporal." }, { status: 500 });
+  }
+}
