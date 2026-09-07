@@ -18,7 +18,7 @@ export async function POST(req) {
       
       - Suscripciones Premium: Incluye Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Dirigir a: @lexdats_bot)
       - Números Privados: Números para verificar cuentas de Apple ID, Telegram, Instagram y WhatsApp. (Dirigir a: @lexdats_bot)
-      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a: @Datspro)
+      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a: @Datspro o WhatsApp +16055003653)
       `
     };
 

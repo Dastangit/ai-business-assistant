@@ -54,7 +54,10 @@ export default function ChatWidget() {
   // 4. Lupa detectora de enlaces de Telegram
   const renderMessageWithLinks = (text) => {
     if (!text) return "";
-    const parts = text.split(/(@lexdats_bot|@Datspro)/g);
+    
+    // Ahora la lupa busca los usuarios de Telegram Y tu número de WhatsApp
+    const parts = text.split(/(@lexdats_bot|@Datspro|\+16055003653)/g);
+    
     return parts.map((part, index) => {
       if (part === '@lexdats_bot') {
         return (
@@ -70,6 +73,14 @@ export default function ChatWidget() {
           </a>
         );
       }
+      if (part === '+16055003653') {
+        return (
+          <a key={index} href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'underline', fontWeight: 'bold' }}>
+            WhatsApp (+1 605-500-3653)
+          </a>
+        );
+      }
+      // Si no es un contacto, devuelve el texto normal
       return part;
     });
   };
@@ -118,24 +129,42 @@ export default function ChatWidget() {
             )}
           </div>
           
-          {/* ÁREA DE ENTRADA DE TEXTO */}
+          {/* ÁREA DE ENTRADA RESTAURADA CON TUS ESTILOS */}
           <div className="chat-input-area">
             <input 
               type="text"
+              className="chat-input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Escribe tu mensaje..."
             />
-            <button onClick={handleSend}>Enviar</button>
+            <button onClick={handleSend} style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0 8px' }}>
+              {/* Icono de enviar (Avión de papel) */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
           </div>
           
         </div>
       )}
       
-      {/* BOTÓN FLOTANTE PARA ABRIR/CERRAR EL CHAT */}
+      {/* BOTÓN FLOTANTE ORIGINAL RESTAURADO */}
       <button className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
-        💬
+        {isOpen ? (
+          // Icono de X para cerrar
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        ) : (
+          // Icono de Chat para abrir
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        )}
       </button>
     </div>
   );
