@@ -32,11 +32,9 @@ export default function Home() {
           <span className="nav-logo-icon">X</span> TECH
         </div>
         <div className="nav-links">
-          <span>Product</span>
           <span className="dot">·</span>
           <span>Solutions</span>
           <span className="dot">·</span>
-          <span>Pricing</span>
           <span className="dot">·</span>
           <span>Contact</span>
         </div>
@@ -83,51 +81,81 @@ export default function Home() {
         </div>
       </main>
       
-      {/* NUEVA SECCIÓN DE TARJETAS INTERACTIVAS */}
-      <section id="services" style={{ padding: '2rem 1rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
+      {/* SECCIÓN DE TARJETAS INFORMATIVAS E INTERACTIVAS */}
+      <section id="services" style={{ padding: '3rem 1rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           
-          {/* Tarjeta 1 */}
+          {/* Tarjeta 1: Suscripciones */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("¡Hola! Me gustaría recibir información sobre las Suscripciones Premium.")}
+            onClick={() => openChatWithContext("Quiero información sobre las Suscripciones Premium.")}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>⚡</span>
-              <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Suscripciones</h3>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>⚡</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Suscripciones Premium</h3>
+              </div>
+              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                Acceso seguro y de alto rendimiento a herramientas de IA como <strong>Google Gemini Pro</strong>, VPNs empresariales y cuentas de streaming. 
+              </p>
+              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                <li>Activación rápida y automatizada.</li>
+                <li>Soporte continuo e inmediato.</li>
+                <li>Gestión exclusiva vía Telegram.</li>
+              </ul>
             </div>
-            <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>
-              Acceso a Gemini Pro, VPNs empresariales y streaming sin interrupciones.
-            </p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              Consultar con el bot →
+            </div>
           </div>
 
-          {/* Tarjeta 2 */}
+          {/* Tarjeta 2: Números Privados */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("¡Hola! Quiero saber cómo funcionan los Números Privados.")}
+            onClick={() => openChatWithContext("Quiero saber cómo funcionan los Números Privados.")}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>🛡️</span>
-              <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Números Privados</h3>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🛡️</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Números Privados</h3>
+              </div>
+              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                Líneas virtuales exclusivas diseñadas para proteger tu identidad y verificar cuentas en plataformas digitales con total anonimato.
+              </p>
+              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                <li>Ideales para Apple ID, Telegram, WhatsApp e Instagram.</li>
+                <li>Control total de privacidad.</li>
+                <li>Proceso guiado por nuestro bot.</li>
+              </ul>
             </div>
-            <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>
-              Líneas exclusivas para verificar Telegram, WhatsApp y Apple ID con privacidad.
-            </p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              Consultar con el bot →
+            </div>
           </div>
 
-          {/* Tarjeta 3 */}
+          {/* Tarjeta 3: Crecimiento Pymes */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("¡Hola! Necesito detalles sobre el servicio de Crecimiento para Pymes.")}
+            onClick={() => openChatWithContext("Necesito detalles sobre el servicio de Crecimiento para Pymes.")}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-              <span style={{ fontSize: '1.5rem' }}>🚀</span>
-              <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Crecimiento Pymes</h3>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                <span style={{ fontSize: '1.5rem' }}>🚀</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Crecimiento Pymes</h3>
+              </div>
+              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                Soluciones corporativas avanzadas para escalar ingresos, optimizar la presencia digital y automatizar la captación de clientes.
+              </p>
+              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                <li>Auditorías SEO y arquitectura web.</li>
+                <li>Desarrollo de Apps y sistemas a medida.</li>
+                <li>Atención personalizada con asesor.</li>
+              </ul>
             </div>
-            <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.4', margin: 0 }}>
-              Auditorías SEO exhaustivas, diseño web y desarrollo de aplicaciones a medida.
-            </p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              Hablar con un asesor →
+            </div>
           </div>
 
         </div>

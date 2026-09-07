@@ -243,3 +243,20 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
   transform: translateY(-5px); /* Se eleva un poco */
   box-shadow: 0 10px 30px rgba(45, 212, 191, 0.15); /* Sombra suave */
 }
+
+html, body { overflow-x: hidden; width: 100%; }
+
+@media (max-width: 640px) {
+  .nav { padding: 16px 20px; }
+  .nav-links { gap: 10px; font-size: 12px; }
+
+  h1 {
+    font-size: clamp(1.5rem, 8vw, 2.625rem);
+    white-space: nowrap; /* evita que "DASTAN-X-TECH" se parta en el guión */
+  }
+
+  .btns { flex-direction: column; width: 100%; max-width: 280px; gap: 12px; }
+  .btn-primary, .btn-secondary { width: 100%; }
+
+  .badge { font-size: 12px; padding: 8px 14px; }
+}
