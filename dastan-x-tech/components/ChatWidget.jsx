@@ -97,7 +97,7 @@ export default function ChatWidget() {
               onClick={handleClearChat}
               className="chat-clear-btn"
             >
-              🗑️ Limpiar
+              Limpiar
             </button>
           </div>
           
