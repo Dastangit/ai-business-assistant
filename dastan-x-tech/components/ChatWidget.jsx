@@ -26,6 +26,16 @@ export default function ChatWidget() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages })
       });
+
+      const handleClearChat = () => {
+    // Esto reinicia el chat visualmente, pero no toca la base de datos
+    setMessages([
+      { 
+        role: 'bot', 
+        text: '¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?' 
+      }
+    ]);
+  };
       
       const data = await response.json();
       setMessages([...newMessages, { role: 'bot', text: data.reply }]);
@@ -66,9 +76,26 @@ export default function ChatWidget() {
     <div className="chat-widget">
       {isOpen && (
         <div className="chat-window">
-          <div className="chat-header">
-            <div className="chat-header-dot"></div>
-            <div style={{ fontSize: '15px', fontWeight: '600' }}>DASTAN AI Assistant</div>
+          <div className="chat-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div className="chat-header-dot"></div>
+              <div style={{ fontSize: '15px', fontWeight: '600' }}>DASTAN AI Assistant</div>
+            </div>
+            <button 
+              onClick={handleClearChat}
+              style={{
+                backgroundColor: '#F5F4EF',
+                color: '#1C2624',
+                border: '1px solid #1C2624',
+                borderRadius: '4px',
+                padding: '4px 8px',
+                fontSize: '12px',
+                cursor: 'pointer',
+                fontWeight: 'bold'
+              }}
+            >
+              🗑️ Limpiar
+            </button>
           </div>
           
     <div className="chat-messages">
