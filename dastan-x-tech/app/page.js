@@ -1,82 +1,69 @@
-'instances'
-import React from 'react';
-import ChatWidget from '@/components/ChatWidget'; // Asegúrate de ajustar la ruta si tu widget está en otra carpeta
+import ChatWidget from '../components/ChatWidget';
 
 export default function Home() {
+  // Función para convertir los nombres de usuario en botones hacia Telegram
   return (
-    <main style={{ backgroundColor: '#07050A', color: '#F5F4EF', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', overflowX: 'hidden' }}>
+    <>
+      <div className="glow-tl"></div>
+      <div className="glow-br"></div>
       
-      {/* 1. SECCIÓN HERO (PRINCIPAL) */}
-      <section style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '90vh', textAlign: 'center', padding: '2rem 1rem' }}>
-        <div style={{ width: '90px', height: '90px', borderRadius: '24px', background: 'linear-gradient(135deg, #A855F7, #2DD4BF)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: '0 0 30px rgba(168, 85, 247, 0.4)' }}>
-          <span style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#07050A' }}>X</span>
+      <nav className="nav">
+        <div className="nav-logo">
+          <span className="nav-logo-icon">X</span> TECH
         </div>
-        <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: '800', letterSpacing: '-1px', marginBottom: '1rem' }}>
-          DASTAN <span style={{ color: '#A855F7' }}>X-TECH</span>
-        </h1>
-        <p style={{ fontSize: '1.2rem', color: '#b0adc5', maxWidth: '600px', marginBottom: '2.5rem' }}>
-          Soluciones avanzadas de automatización, inteligencia artificial y servicios digitales de alto rendimiento para impulsar tu negocio al siguiente nivel.
+        <div className="nav-links">
+          <span>Product</span>
+          <span className="dot">·</span>
+          <span>Solutions</span>
+          <span className="dot">·</span>
+          <span>Pricing</span>
+          <span className="dot">·</span>
+          <span>Contact</span>
+        </div>
+      </nav>
+
+      <main className="hero">
+        <div className="orb-container">
+          <div className="orb-glow"></div>
+          <div className="orb">
+            <span className="orb-x">X</span>
+          </div>
+        </div>
+        
+        <h1>DASTAN-X-TECH</h1>
+        <p className="sub">
+          AI & Automation Services.
         </p>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'center', justifyContent: 'center' }}>
-          <a href="#services" style={{ background: '#F5F4EF', color: '#07050A', padding: '0.8rem 2rem', borderRadius: '12px', fontWeight: 'bold', textDecoration: 'none', transition: 'transform 0.2s' }}>
-            Explorar Servicios
-          </a>
-          <a href="https://t.me/Datspro" target="_blank" rel="noopener noreferrer" style={{ background: 'transparent', border: '2px solid #A855F7', color: '#F5F4EF', padding: '0.8rem 2rem', borderRadius: '12px', fontWeight: 'bold', textDecoration: 'none' }}>
-            Contacto Directo
-          </a>
-        </div>
-      </section>
-
-      {/* 2. SECCIÓN DE TARJETAS DE MARKETING (SERVICIOS) */}
-      <section id="services" style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: '700', marginBottom: '1rem' }}>Nuestros Pilares Tecnológicos</h2>
-          <p style={{ color: '#b0adc5', fontSize: '1.1rem' }}>Diseñados para garantizar seguridad, velocidad y escalabilidad total.</p>
+        
+        <div className="btns">
+          <button className="btn-primary">Get Started</button>
+          <button className="btn-secondary">Book a Demo</button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-          
-          {/* Tarjeta 1 */}
-          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', transition: 'transform 0.3s ease, border-color 0.3s ease' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>⚡</div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Suscripciones Premium</h3>
-            <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              Acceso inmediato y seguro a plataformas de alta gama y herramientas de inteligencia artificial como Google Gemini Pro, VPNs empresariales y streaming sin interrupciones.
-            </p>
-            <span style={{ color: '#2DD4BF', fontWeight: '600', fontSize: '0.9rem' }}>Soporte vía Telegram / WhatsApp</span>
+        <div className="badges">
+          <div className="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            24/7 Automation
           </div>
-
-          {/* Tarjeta 2 */}
-          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', transition: 'transform 0.3s ease, border-color 0.3s ease' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🛡️</div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Números Privados</h3>
-            <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              Líneas exclusivas y verificadas ideales para validar cuentas de Apple ID, Telegram, Instagram, WhatsApp y redes corporativas con total privacidad y control.
-            </p>
-            <span style={{ color: '#2DD4BF', fontWeight: '600', fontSize: '0.9rem' }}>Activación inmediata</span>
+          <div className="badge">
+            {/* Ícono de Globo Terráqueo para Online Services */}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Online Services
           </div>
-
-          {/* Tarjeta 3 */}
-          <div style={{ background: '#120D1C', border: '1px solid #231B35', borderRadius: '20px', padding: '2.5rem', transition: 'transform 0.3s ease, border-color 0.3s ease' }}>
-            <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>🚀</div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#E9D5FF' }}>Crecimiento de Pymes</h3>
-            <p style={{ color: '#b0adc5', lineHeight: '1.6', marginBottom: '1.5rem' }}>
-              Auditorías SEO exhaustivas, arquitectura web moderna optimizada para conversión y desarrollo de aplicaciones a medida para escalar tus ingresos.
-            </p>
-            <span style={{ color: '#2DD4BF', fontWeight: '600', fontSize: '0.9rem' }}>Consultoría personalizada</span>
+          <div className="badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            Secure & Private
           </div>
-
         </div>
-      </section>
+      </main>
 
-      {/* 3. FOOTER */}
-      <footer style={{ borderTop: '1px solid #1c152a', padding: '3rem 2rem', textAlign: 'center', color: '#7c7694' }}>
-        <p>© 2026 DASTAN X-TECH. Online Services Platform</p>
-      </footer>
-
-      {/* Widget de Asistente IA Flotante */}
       <ChatWidget />
-
-    </main>
+    </>
   );
 }
