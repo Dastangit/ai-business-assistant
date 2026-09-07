@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server';
+import { createClient } from '@supabase/supabase-js';
+
+// Inicializar Supabase con las variables privadas del servidor
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
 
 export async function POST(req) {
   try {
     const { messages } = await req.json();
+    const mensajeUsuario = messages[messages.length - 1].text;
 
     const systemPrompt = {
       role: "system",
@@ -12,13 +20,13 @@ export async function POST(req) {
       1. SALUDO OFICIAL: Si el cliente te saluda por primera vez, tu respuesta EXACTA debe ser: "¡Hola! En X-TECH nos especializamos en servicios online, Crecimiento de Negocios privados y Pymes, Suscripciones Premium, Números Privados y más. ¿Qué área te interesa explorar hoy?"
       2. CERO REPETICIONES: NUNCA repitas el saludo oficial dos veces en la misma charla. Si el cliente vuelve a saludar o cambia de tema, respóndele de forma natural y conversacional (ej. "¿En qué más te puedo ayudar?").
       3. FORMATO DE LISTAS: Cuando menciones opciones o características de un servicio, SIEMPRE utiliza listas hacia abajo (usando guiones "-" y saltos de línea) para que sea fácil de leer.
-      4. Cierres de venta: Cuando el cliente muestre interés, invítalo sutilmente a contactar a los enlaces de Telegram correspondientes.
+      4. Cierres de venta: Cuando el cliente muestre interés, invítalo sutilmente a contactar a los enlaces correspondientes.
 
       TU CATÁLOGO OFICIAL (No inventes servicios fuera de estos):
       
-      - Suscripciones Premium: Incluye Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Dirigir a: @lexdats_bot)
-      - Números Privados: Números para verificar cuentas de Apple ID, Telegram, Instagram y WhatsApp. (Dirigir a: @lexdats_bot)
-      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a: @Datspro o WhatsApp +16055003653)
+      - Suscripciones Premium: Incluye Google Gemini Pro, VPN premium, Netflix, YouTube Premium. (Dirigir a Telegram @lexdats_bot o WhatsApp +16055003653)
+      - Números Privados: Números para verificar cuentas de Apple ID, Telegram, Instagram y WhatsApp. (Dirigir a Telegram @lexdats_bot o WhatsApp +16055003653)
+      - Crecimiento de Negocios y Pymes: Incluye servicios como Auditoría SEO, Diseño de páginas web profesionales y Desarrollo de aplicaciones. (Dirigir a Telegram @Datspro o WhatsApp +16055003653)
       `
     };
 
@@ -29,7 +37,7 @@ export async function POST(req) {
 
     const apiMessages = [systemPrompt, ...formattedMessages];
 
-    // Conexión directa y ultrarrápida desde Vercel a Groq
+    // Conexión con Groq
     const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
@@ -37,7 +45,7 @@ export async function POST(req) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "openai/gpt-oss-20b", // Modelo activo y desbloqueado en tu plan
+        model: "openai/gpt-oss-20b", 
         messages: apiMessages,
         max_tokens: 600 
       })
@@ -51,46 +59,22 @@ export async function POST(req) {
 
     let aiResponse = data.choices[0].message.content;
     
-    // Filtro de seguridad
+    // Filtro de seguridad para limpiar asteriscos
     aiResponse = aiResponse.replace(/\*/g, '');
+    const botReply = aiResponse.trim();
 
-    return NextResponse.json({ reply: aiResponse.trim() });
-    
-  } catch (error) {
-    console.error('Error en el motor de IA:', error);
-    return NextResponse.json(
-      { reply: 'Mis sistemas están en mantenimiento. Por favor, intenta de nuevo en unos segundos.' }, 
-      { status: 500 }
-    );
-  }
-}
-
-import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-// Inicializar Supabase con las variables de entorno
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
-);
-
-export async function POST(req) {
-  try {
-    const { messages } = await req.json();
-    const mensajeUsuario = messages[messages.length - 1].text;
-
-    // 1. Aquí haces tu llamada normal a la IA (Groq / OpenAI) para obtener la respuesta
-    // (Mantén tu código actual de fetch hacia la IA aquí y guarda el resultado en una variable ej: botReply)
-    const botReply = "Respuesta generada por tu IA..."; 
-
-    // 2. Guardar automáticamente el lead en Supabase de forma invisible
+    // Guardar automáticamente el lead en Supabase de forma invisible
     await supabase.from('leads_chat').insert([
       { mensaje_usuario: mensajeUsuario, respuesta_bot: botReply }
     ]);
 
     return NextResponse.json({ reply: botReply });
+    
   } catch (error) {
-    console.error("Error:", error);
-    return NextResponse.json({ reply: "Lo siento, ocurrió un error temporal." }, { status: 500 });
+    console.error('Error en el motor de IA o Supabase:', error);
+    return NextResponse.json(
+      { reply: 'Mis sistemas están en mantenimiento. Por favor, intenta de nuevo en unos segundos.' }, 
+      { status: 500 }
+    );
   }
 }
