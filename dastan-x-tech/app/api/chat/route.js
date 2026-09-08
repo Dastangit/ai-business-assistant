@@ -42,12 +42,12 @@ export async function POST(req) {
 
       REGLAS ESTRICTAS DE CONTACTO (ENRUTAMIENTO):
       - Para "Suscripciones Premium" y "Números Privados": El ÚNICO método de atención, información detallada y compra es a través de nuestro bot automatizado de Telegram: @lexdats_bot. NUNCA ofrezcas el WhatsApp para estos servicios.
-      - Para "Crecimiento de Negocios / Pymes": El contacto es directo con un asesor para atención personalizada vía Telegram (@Datspro) o WhatsApp (+1 605-500-3653).
+      - Para "Crecimiento de Negocios / Pymes": El contacto es directo con un asesor para atención personalizada vía Telegram (@Datspro) o WhatsApp (+16055003653).
 
       CATÁLOGO RESUMIDO:
       - Suscripciones Premium: Acceso a Google Gemini Pro, VPN premium, Netflix, YouTube Premium y otros servicios. (Contacto exclusivo: Telegram @lexdats_bot)
       - Números Privados: Líneas virtuales exclusivas para verificar Apple ID, Telegram, Instagram, WhatsApp de forma anónima. (Contacto exclusivo: Telegram @lexdats_bot)
-      - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +1 605-500-3653)`
+      - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)`
     };
 
     const formattedMessages = messages.slice(1).map(msg => ({
