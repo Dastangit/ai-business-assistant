@@ -60,7 +60,12 @@ body {
 }
 
 /* EL ORBE Y LA X - Ajuste perfecto */
-.orb-container { position: relative; margin-bottom: 28px; }
+.orb-container { position: relative; margin-bottom: 28px; animation: orb-float 6s ease-in-out infinite; }
+
+@keyframes orb-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 .orb-glow {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 140px; height: 140px; border-radius: 50%;
@@ -109,15 +114,15 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
   box-shadow: -10px 0 20px -5px rgba(139, 92, 246, 0.5);
   cursor: pointer; transition: all 0.2s ease; 
   display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s ease;
 }
-.btn-secondary { 
-  width: 180px; height: 48px; border-radius: 9999px; background: transparent; 
-  color: rgba(255, 255, 255, 0.8); font-weight: 500; font-size: 14px; 
-  border: 1px solid rgba(255, 255, 255, 0.15); 
-  cursor: pointer; transition: all 0.2s ease; 
-  display: flex; align-items: center; justify-content: center;
+/* EL EFECTO HOVER */
+.btn-primary:hover {
+  transform: translateY(-3px); /* Eleva el botón ligeramente */
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5); /* Brillo neón púrpura a su alrededor */
+  filter: brightness(1.15); /* Lo hace un poco más brillante */
+  cursor: pointer;
 }
-.btn-secondary:hover { background: rgba(255, 255, 255, 0.05); color: #FFFFFF; }
 
 /* Etiquetas inferiores */
 .badges { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }

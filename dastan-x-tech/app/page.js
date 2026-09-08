@@ -52,9 +52,13 @@ export default function Home() {
           AI & Automation Services.
         </p>
         
-        <div className="btns">
-          <button className="btn-primary">Get Started</button>
-          <button className="btn-secondary">Book a Demo</button>
+       <div className="btns">
+          <button 
+            className="btn-primary" 
+            onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat'))}
+          >
+            Get Started
+          </button>
         </div>
 
         <div className="badges">
