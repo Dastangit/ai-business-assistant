@@ -24,6 +24,7 @@ export default function Home() {
   
   return (
     <>
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
       
@@ -32,9 +33,7 @@ export default function Home() {
           <span className="nav-logo-icon">X</span> TECH
         </div>
         <div className="nav-links">
-          <span className="dot">·</span>
           <span>Solutions</span>
-          <span className="dot">·</span>
           <span className="dot">·</span>
           <span>Contact</span>
         </div>
@@ -80,6 +79,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      </div>
       
       {/* SECCIÓN DE TARJETAS INFORMATIVAS E INTERACTIVAS */}
       <section id="services" style={{ padding: '3rem 1rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>

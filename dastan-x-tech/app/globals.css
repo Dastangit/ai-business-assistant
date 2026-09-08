@@ -267,7 +267,16 @@ html, body { overflow-x: hidden; width: 100%; }
     transform: translateX(-50%);
     width: 92vw;
     max-width: 390px;
-    height: 490px; /* Altura perfecta debajo del logo */
+    height: min(680px, 75vh);
     z-index: 1000;
   }
+}
+
+.chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 5, 10, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 40;
 }

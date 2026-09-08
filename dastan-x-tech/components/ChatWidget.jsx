@@ -110,6 +110,8 @@ export default function ChatWidget() {
   };
 
   return (
+    <>
+    {isOpen && <div className="chat-overlay" onClick={() => setIsOpen(false)}></div>}
     <div className="chat-widget">
       {isOpen && (
         <div className="chat-window">
@@ -175,5 +177,6 @@ export default function ChatWidget() {
         )}
       </button>
     </div>
+    </>
   );
 }
