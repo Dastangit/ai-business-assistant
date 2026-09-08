@@ -80,10 +80,12 @@ export default function ChatWidget() {
   const renderMessageWithLinks = (text) => {
     if (!text) return "";
     
-    const parts = text.split(/(@lexdats_bot|@Datspro|\+?1?\d{10,})/g);
+    // Expresión regular mejorada para detectar el número con o sin espacios/guiones
+    const parts = text.split(/(@lexdats_bot|@Datspro|\+1\s?605[- ]?500[- ]?3653|\+?16055003653)/g);
     
     return parts.map((part, index) => {
       const cleanPart = part.trim();
+      
       if (cleanPart === '@lexdats_bot') {
         return (
           <a key={index} href="https://t.me/lexdats_bot" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
@@ -98,13 +100,17 @@ export default function ChatWidget() {
           </a>
         );
       }
-      if (cleanPart.includes('16055003653') || cleanPart === '+16055003653') {
+      
+      // Limpiamos los espacios y guiones solo para hacer la comprobación interna
+      const justNumbers = cleanPart.replace(/[\s-]/g, '');
+      if (justNumbers === '+16055003653' || justNumbers === '16055003653') {
         return (
           <a key={index} href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'underline', fontWeight: 'bold' }}>
-            WhatsApp (+1 605-500-3653)
+            +1 605-500-3653
           </a>
         );
       }
+      
       return part;
     });
   };

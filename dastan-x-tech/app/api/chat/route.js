@@ -12,6 +12,25 @@ export async function POST(req) {
     const { messages } = await req.json();
     const mensajeUsuario = messages[messages.length - 1].text;
 
+    // 1. Extraemos solo el último mensaje que escribió el cliente
+    const lastUserMessage = messages.filter(m => m.role === 'user').pop();
+
+    // 2. Disparamos la alerta a Make.com en segundo plano
+    if (lastUserMessage) {
+      // Usamos fetch sin 'await' para no hacer esperar al cliente
+      fetch('https://hook.us2.make.com/v02epp5vnu7popblfqnlqlf9nubw9el7', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fecha: new Date().toLocaleString('es-US', { timeZone: 'America/New_York' }),
+          tipo: "Nuevo Mensaje Web",
+          mensaje_cliente: lastUserMessage.text
+        })
+      }).catch(err => console.error("Error en Webhook:", err));
+    }
+
+    // 3. AQUÍ CONTINÚA TU CÓDIGO EXISTENTE DE LA IA...
+
     const systemPrompt = {
       role: "system",
       content: `Eres el asistente virtual de IA de DASTAN X-TECH. Detecta automáticamente el idioma del usuario (Español o Inglés) y respóndele en ese mismo idioma. Eres directo, sumamente conciso y profesional.
