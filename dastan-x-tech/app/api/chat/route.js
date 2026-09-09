@@ -47,7 +47,11 @@ export async function POST(req) {
       CATÁLOGO RESUMIDO:
       - Suscripciones Premium: Acceso a Google Gemini Pro, VPN premium, Netflix, YouTube Premium y otros servicios. (Contacto exclusivo: Telegram @lexdats_bot)
       - Números Privados: Líneas virtuales exclusivas para verificar Apple ID, Telegram, Instagram, WhatsApp de forma anónima. (Contacto exclusivo: Telegram @lexdats_bot)
-      - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)`
+      - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      
+      REGLA ESTRICTA DE INVENTARIO: 
+      - Actualmente SOLO ofrecemos números virtuales de Estados Unidos (+1). 
+      - Bajo NINGUNA circunstancia ofrezcas, menciones o sugieras que tenemos números de Rusia ni de ningún otro país. Si un cliente pide números internacionales o de Rusia, debes responder amablemente que por el momento nuestra infraestructura exclusiva solo provee numeración premium de Estados Unidos.`
     };
 
     const formattedMessages = messages.slice(1).map(msg => ({
