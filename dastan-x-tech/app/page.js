@@ -20,6 +20,16 @@ export default function Home() {
   const [prospectos, setProspectos] = useState([]);
   const [cargando, setCargando] = useState(true);
 
+  // --- BLOQUEA EL SCROLL DEL FONDO MIENTRAS EL PANEL/MODAL ESTÁ ABIERTO ---
+  // (Evita que la página de atrás capture el scroll en vez del panel fijo)
+  useEffect(() => {
+    if (isAuthenticated || showAdminLogin) {
+      const previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = previousOverflow; };
+    }
+  }, [isAuthenticated, showAdminLogin]);
+
   // --- LÓGICA DE LOS 5 CLICS (TOTALMENTE CORREGIDA) ---
   useEffect(() => {
     // Si llegas a 5 clics, abre el candado y vuelve el contador a 0
@@ -79,6 +89,23 @@ export default function Home() {
       fetchProspectos();
     } catch (error) {
       console.error('Error al actualizar:', error);
+      alert('No se pudo actualizar el estado. Revisa la consola para más detalles.');
+    }
+  };
+
+  const eliminarLead = async (id, nombreAgencia) => {
+    const confirmado = window.confirm(`¿Seguro que quieres eliminar "${nombreAgencia}"? Esta acción no se puede deshacer.`);
+    if (!confirmado) return;
+    try {
+      const { error } = await supabase
+        .from('agencias_prospectos')
+        .delete()
+        .eq('id', id);
+      if (error) throw error;
+      fetchProspectos();
+    } catch (error) {
+      console.error('Error al eliminar:', error);
+      alert('No se pudo eliminar el lead. Revisa la consola para más detalles.');
     }
   };
   // Función para abrir el chat desde las tarjetas
@@ -309,7 +336,10 @@ export default function Home() {
                             </span>
                           </td>
                           <td style={{ padding: '1.2rem' }}>
-                            <button onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)} style={{ background: 'transparent', border: '1px solid #A855F7', color: '#E9D5FF', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Cambiar Estado</button>
+                            <div style={{ display: 'flex', gap: '0.6rem' }}>
+                              <button onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)} style={{ background: 'transparent', border: '1px solid #A855F7', color: '#E9D5FF', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Cambiar Estado</button>
+                              <button onClick={() => eliminarLead(lead.id, lead.nombre_agencia)} style={{ background: 'transparent', border: '1px solid #EF4444', color: '#FCA5A5', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Eliminar</button>
+                            </div>
                           </td>
                         </tr>
                       ))}
