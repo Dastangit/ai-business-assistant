@@ -24,9 +24,14 @@ export default function Home() {
   // (Evita que la página de atrás capture el scroll en vez del panel fijo)
   useEffect(() => {
     if (isAuthenticated || showAdminLogin) {
-      const previousOverflow = document.body.style.overflow;
+      const previousBodyOverflow = document.body.style.overflow;
+      const previousHtmlOverflow = document.documentElement.style.overflow;
       document.body.style.overflow = 'hidden';
-      return () => { document.body.style.overflow = previousOverflow; };
+      document.documentElement.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = previousBodyOverflow;
+        document.documentElement.style.overflow = previousHtmlOverflow;
+      };
     }
   }, [isAuthenticated, showAdminLogin]);
 
