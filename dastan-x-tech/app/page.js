@@ -20,17 +20,23 @@ export default function Home() {
   const [prospectos, setProspectos] = useState([]);
   const [cargando, setCargando] = useState(true);
 
-  // --- LÓGICA DE LOS 5 CLICS ---
+  // --- LÓGICA DE LOS 5 CLICS (TOTALMENTE CORREGIDA) ---
+  useEffect(() => {
+    // Si llegas a 5 clics, abre el candado y vuelve el contador a 0
+    if (clickCount >= 5) {
+      setShowAdminLogin(true);
+      setClickCount(0); 
+    } else if (clickCount > 0) {
+      // Te da 2 segundos exactos de margen *entre cada clic* para seguir sumando.
+      // Si te detienes, limpia la memoria y vuelve a 0 de forma segura.
+      const timer = setTimeout(() => setClickCount(0), 2000);
+      return () => clearTimeout(timer); 
+    }
+  }, [clickCount]);
+
+  // Cada vez que tocas la X, solo suma 1. Nada más.
   const handleSecretClick = () => {
-    setClickCount((prev) => {
-      const newCount = prev + 1;
-      if (newCount === 5) {
-        setShowAdminLogin(true);
-        return 0;
-      }
-      return newCount;
-    });
-    setTimeout(() => setClickCount(0), 1000); // Se reinicia si tardas más de 1 segundo
+    setClickCount((prev) => prev + 1);
   };
 
   const handleLogin = (e) => {
