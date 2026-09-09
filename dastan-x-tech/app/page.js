@@ -119,7 +119,7 @@ export default function Home() {
       </nav>
 
       <main className="hero">
-        <div className="orb-container" onClick={handleSecretClick} style={{ cursor: 'pointer' }}>
+        <div className="orb-container" onClick={handleSecretClick}>
           <div className="orb-glow"></div>
           <div className="orb">
             <span className="orb-x">X</span>
