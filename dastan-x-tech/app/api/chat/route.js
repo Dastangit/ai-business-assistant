@@ -48,6 +48,10 @@ export async function POST(req) {
       - Suscripciones Premium: Acceso a Google Gemini Pro, VPN premium, Netflix, YouTube Premium y otros servicios. (Contacto exclusivo: Telegram @lexdats_bot)
       - Números Privados: Líneas virtuales exclusivas para verificar Apple ID, Telegram, Instagram, WhatsApp de forma anónima. (Contacto exclusivo: Telegram @lexdats_bot)
       - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Ecosistema AEO / Posicionamiento en Inteligencia Artificial: Hoy la gente ya no solo busca en Google, le pregunta directo a ChatGPT, Gemini o Alexa "cuál es el mejor [negocio] cerca de mí". El AEO (Answer Engine Optimization) prepara la estructura y el contenido de tu negocio para que esas IAs te recomienden a ti primero, no a tu competencia. Es el SEO del futuro, y ya está disponible hoy. Incluido en la Auditoría ($150) y el Paquete Completo ($200). (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Diseño Web Premium ($100): Plataforma corporativa que proyecta confianza y justifica precios más altos. Incluye Auditoría SEO gratuita. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Auditoría de Negocio SEO + AEO ($150): NO es solo SEO local. Es una auditoría completa del negocio: presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (cómo capta clientes, agenda, cobra, horas perdidas a mano). Entrega un informe con nota de presencia digital, horas/dinero recuperable al mes y un plan de acción. AEO significa posicionamiento para que motores de IA como ChatGPT y Gemini recomienden el negocio. Incluye Auditoría SEO + AEO gratuito. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Paquete Completo ($200): Diseño Web + Auditoría SEO + AEO + Atención personalizada. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
       
       REGLA ESTRICTA DE INVENTARIO: 
       - Actualmente SOLO ofrecemos números virtuales de Estados Unidos (+1). 
@@ -71,7 +75,7 @@ export async function POST(req) {
       body: JSON.stringify({
         model: "openai/gpt-oss-20b", 
         messages: apiMessages,
-        max_tokens: 600 
+        max_tokens: 800
       })
     });
 

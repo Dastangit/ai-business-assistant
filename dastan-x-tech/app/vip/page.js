@@ -1,8 +1,24 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import ChatWidget from '@/components/ChatWidget'; // Tu asistente de IA
 
+// 🎟️ Código de cupón válido (cámbialo aquí cuando definas el real)
+const VALID_COUPON = 'VIP50';
+
 export default function VIPPage() {
+  const [couponCode, setCouponCode] = useState('');
+  const [couponApplied, setCouponApplied] = useState(false);
+
+  const handleCouponChange = (e) => {
+    const value = e.target.value;
+    setCouponCode(value);
+    setCouponApplied(value.trim().toUpperCase() === VALID_COUPON);
+  };
+
+  const price1 = couponApplied ? 50 : 100;
+  const price2 = couponApplied ? 100 : 150;
+  const price3 = couponApplied ? 150 : 200;
+
   // Función para abrir el chat si el cliente prefiere hablar con la IA
   const openChatWithContext = (mensaje) => {
     window.dispatchEvent(new CustomEvent('abrir-chat', { detail: mensaje }));
@@ -32,7 +48,7 @@ export default function VIPPage() {
           Dominando el Mercado <br/> <span style={{ color: '#A855F7' }}>En tu área local</span>
         </h1>
         
-        <p style={{ fontSize: '1.3rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.25rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
           El 80% de los clientes buscan en Google o a través de modelos de IA antes de contratar un servicio. Si tu negocio no tiene una presencia digital de autoridad, <strong>tu competencia se está quedando con tus clientes.</strong> Esta es nuestra propuesta exclusiva para blindar tu negocio.
         </p>
 
@@ -55,52 +71,88 @@ export default function VIPPage() {
           
           {/* Tarjeta 1: Diseño Web */}
           <div className="service-card" onClick={() => openChatWithContext("Quiero ver ejemplos de Diseño Web para mi negocio.")}>
-            <div>
+            <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🖥️</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
+                </svg>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Diseño Web Premium</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
                 Tu negocio necesita dejar de ser invisible. Creamos una plataforma corporativa que proyecta confianza, muestra tus trabajos y justifica precios más altos (High-Ticket).
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ margin: '1rem 0 0.2rem 0' }}>
+              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$100</span>}
+              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
+            </div>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Diseño Web + Auditoría SEO gratuita</p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
             </div>
           </div>
 
           {/* Tarjeta 2: SEO Local */}
           <div className="service-card" onClick={() => openChatWithContext("¿Cómo funciona el SEO Local para salir en Google Maps?")}>
-            <div>
+            <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>📍</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                </svg>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Dominio SEO Local</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
                 Interceptamos a los clientes que tienen emergencias. Posicionamos tu negocio en los primeros lugares de Google y Google Maps en tu ciudad para que el teléfono no deje de sonar.
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ margin: '1rem 0 0.2rem 0' }}>
+              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$150</span>}
+              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
+            </div>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Auditoría SEO + AEO gratuito</p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Solicitar Auditoría →
             </div>
           </div>
 
           {/* Tarjeta 3: Posicionamiento AEO */}
           <div className="service-card" onClick={() => openChatWithContext("Quiero saber sobre el Posicionamiento en Inteligencia Artificial (AEO).")}>
-            <div>
+            <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🤖</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                </svg>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Ecosistema AEO</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
                 El futuro es hoy. Preparamos la estructura de tu negocio para que motores como ChatGPT y Gemini recomienden directamente tus servicios a los usuarios potenciales.
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ margin: '1rem 0 0.2rem 0' }}>
+              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$200</span>}
+              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Paquete Completo - ${price3}</span>
+            </div>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Web + SEO + AEO + Atención personalizada</p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Posicionamiento AEO →
             </div>
           </div>
 
+        </div>
+
+        {/* CUPÓN DE DESCUENTO */}
+        <div style={{ marginTop: '3rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#E9D5FF' }}>Introducir Cupón de descuento</h3>
+          <input
+            type="text"
+            value={couponCode}
+            onChange={handleCouponChange}
+            placeholder="Código"
+            style={{ background: 'rgba(255,255,255,0.05)', border: couponApplied ? '1px solid #2DD4BF' : '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', padding: '0.5rem 1rem', color: '#F5F4EF', fontSize: '0.9rem', outline: 'none', width: '160px' }}
+          />
+          <span style={{ fontSize: '0.8rem', color: '#7c7694', fontStyle: 'italic' }}>Solo para usuarios VIP</span>
+          {couponApplied && <span style={{ fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>✓ Cupón aplicado</span>}
         </div>
       </section>
 
