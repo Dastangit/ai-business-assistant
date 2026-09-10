@@ -28,11 +28,11 @@ export default function VIPPage() {
           ACCESO PRIVADO
         </div>
 
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '900', letterSpacing: '-1px', marginBottom: '1rem', lineHeight: '1.1' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '900', letterSpacing: '-1px', marginBottom: '1rem', lineHeight: '1.1' }}>
           Dominando el Mercado <br/> <span style={{ color: '#A855F7' }}>En tu área local</span>
         </h1>
         
-        <p style={{ fontSize: '1.4rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.3rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
           El 80% de los clientes buscan en Google o a través de modelos de IA antes de contratar un servicio. Si tu negocio no tiene una presencia digital de autoridad, <strong>tu competencia se está quedando con tus clientes.</strong> Esta es nuestra propuesta exclusiva para blindar tu negocio.
         </p>
 
@@ -60,11 +60,11 @@ export default function VIPPage() {
                 <span style={{ fontSize: '1.5rem' }}>🖥️</span>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Diseño Web Premium</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
                 Tu negocio necesita dejar de ser invisible. Creamos una plataforma corporativa que proyecta confianza, muestra tus trabajos y justifica precios más altos (High-Ticket).
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
             </div>
           </div>
@@ -76,11 +76,11 @@ export default function VIPPage() {
                 <span style={{ fontSize: '1.5rem' }}>📍</span>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Dominio SEO Local</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
                 Interceptamos a los clientes que tienen emergencias. Posicionamos tu negocio en los primeros lugares de Google y Google Maps en tu ciudad para que el teléfono no deje de sonar.
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
               Solicitar Auditoría →
             </div>
           </div>
@@ -92,11 +92,11 @@ export default function VIPPage() {
                 <span style={{ fontSize: '1.5rem' }}>🤖</span>
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Ecosistema AEO</h3>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
                 El futuro es hoy. Preparamos la estructura de tu negocio para que motores como ChatGPT y Gemini recomienden directamente tus servicios a los usuarios potenciales.
               </p>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#2DD4BF', fontWeight: 'bold' }}>
               Posicionamiento AEO →
             </div>
           </div>
