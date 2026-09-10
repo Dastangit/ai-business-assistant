@@ -4,6 +4,7 @@ import ChatWidget from '@/components/ChatWidget'; // Tu asistente de IA
 
 // 🎟️ Código de cupón válido (cámbialo aquí cuando definas el real)
 const VALID_COUPON = 'VIP50';
+const PAYPAL_USER = 'Dastanpro98';
 
 export default function VIPPage() {
   const [couponCode, setCouponCode] = useState('');
@@ -87,8 +88,17 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Diseño Web + Auditoría SEO gratuita</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Contacta con nuestro agente →
+            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Contacta con nuestro agente →</span>
+              <a
+                href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
+              >
+                Pagar ahora
+              </a>
             </div>
           </div>
 
@@ -111,8 +121,17 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Auditoría SEO + AEO gratuito</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Solicitar Auditoría →
+            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Solicitar Auditoría →</span>
+              <a
+                href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
+              >
+                Pagar ahora
+              </a>
             </div>
           </div>
 
@@ -134,8 +153,17 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Paquete Completo - ${price3}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Web + SEO + AEO + Atención personalizada</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Posicionamiento AEO →
+            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Posicionamiento AEO →</span>
+              <a
+                href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
+              >
+                Pagar ahora
+              </a>
             </div>
           </div>
 
@@ -154,6 +182,11 @@ export default function VIPPage() {
           <span style={{ fontSize: '0.8rem', color: '#7c7694', fontStyle: 'italic' }}>Solo para usuarios VIP</span>
           {couponApplied && <span style={{ fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>✓ Cupón aplicado</span>}
         </div>
+
+        <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem', color: '#7c7694' }}>
+          Si necesita otro método de pago, contáctenos por{' '}
+          <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', fontWeight: 'bold' }}>WhatsApp</a>.
+        </p>
       </section>
 
       {/* FOOTER VIP */}
