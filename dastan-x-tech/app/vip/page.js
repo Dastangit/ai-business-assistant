@@ -28,11 +28,11 @@ export default function VIPPage() {
           ACCESO PRIVADO
         </div>
 
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontWeight: '900', letterSpacing: '-1px', marginBottom: '1rem', lineHeight: '1.1' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '900', letterSpacing: '-1px', marginBottom: '1rem', lineHeight: '1.1' }}>
           Dominando el Mercado <br/> <span style={{ color: '#A855F7' }}>En tu área local</span>
         </h1>
         
-        <p style={{ fontSize: '1.1rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
+        <p style={{ fontSize: '1.4rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
           El 80% de los clientes buscan en Google o a través de modelos de IA antes de contratar un servicio. Si tu negocio no tiene una presencia digital de autoridad, <strong>tu competencia se está quedando con tus clientes.</strong> Esta es nuestra propuesta exclusiva para blindar tu negocio.
         </p>
 
