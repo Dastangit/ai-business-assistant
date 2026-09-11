@@ -88,17 +88,8 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Diseño Web + Auditoría SEO gratuita</p>
-            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
-              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Contacta con nuestro agente →</span>
-              <a
-                href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
-              >
-                Pagar ahora
-              </a>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
+              Contacta con nuestro agente →
             </div>
           </div>
 
@@ -121,17 +112,8 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Auditoría SEO + AEO gratuito</p>
-            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
-              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Solicitar Auditoría →</span>
-              <a
-                href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
-              >
-                Pagar ahora
-              </a>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
+              Solicitar Auditoría →
             </div>
           </div>
 
@@ -153,17 +135,8 @@ export default function VIPPage() {
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Paquete Completo - ${price3}</span>
             </div>
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Web + SEO + AEO + Atención personalizada</p>
-            <div style={{ marginTop: '1.2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px' }}>
-              <span style={{ fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>Posicionamiento AEO →</span>
-              <a
-                href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                style={{ fontSize: '0.85rem', color: '#0070BA', fontWeight: 'bold', textDecoration: 'none', border: '1px solid #0070BA', borderRadius: '6px', padding: '4px 10px' }}
-              >
-                Pagar ahora
-              </a>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
+              Posicionamiento AEO →
             </div>
           </div>
 
@@ -183,10 +156,26 @@ export default function VIPPage() {
           {couponApplied && <span style={{ fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>✓ Cupón aplicado</span>}
         </div>
 
-        <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.85rem', color: '#7c7694' }}>
-          Si necesita otro método de pago, contáctenos por{' '}
-          <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', fontWeight: 'bold' }}>WhatsApp</a>.
-        </p>
+        {/* OBTENER SERVICIO - PAGO (función aparte del chat de las tarjetas) */}
+        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '1.1rem', marginBottom: '1.2rem', color: '#E9D5FF' }}>¿Ya sabes lo que necesitas? Obtén tu servicio</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+              Diseño Web + SEO - ${price1}
+            </a>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+              Web + SEO + AEO - ${price2}
+            </a>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+              Paquete Completo - ${price3}
+            </a>
+          </div>
+          <p style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#7c7694' }}>
+            Si necesita otro método de pago, contáctenos por{' '}
+            <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', fontWeight: 'bold' }}>WhatsApp</a>.
+          </p>
+        </div>
+
       </section>
 
       {/* FOOTER VIP */}
