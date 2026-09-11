@@ -253,7 +253,7 @@ html, body { overflow-x: hidden; width: 100%; }
 
 @media (max-width: 640px) {
   .nav { padding: 16px 20px; }
-  .nav-links { gap: 10px; font-size: 12px; }
+  .nav-links { gap: 10px; font-size: 14px; }
 
   h1 {
     font-size: clamp(1.5rem, 8vw, 2.625rem);
@@ -263,7 +263,7 @@ html, body { overflow-x: hidden; width: 100%; }
   .btns { flex-direction: column; width: 100%; max-width: 280px; gap: 12px; }
   .btn-primary, .btn-secondary { width: 100%; }
 
-  .badge { font-size: 12px; padding: 8px 14px; }
+  .badge { font-size: 14px; padding: 8px 14px; }
 
   .chat-window {
     position: fixed;
