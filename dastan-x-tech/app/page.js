@@ -22,7 +22,7 @@ export default function Home() {
 
   // --- ESTADO PARA LEER LA IA ---
   const [auditoriaActiva, setAuditoriaActiva] = useState(null);
-
+ 
   // --- BLOQUEA EL SCROLL DEL FONDO MIENTRAS EL PANEL/MODAL ESTÁ ABIERTO ---
   // (Evita que la página de atrás capture el scroll en vez del panel fijo)
   useEffect(() => {
@@ -116,6 +116,26 @@ export default function Home() {
       alert('No se pudo eliminar el lead. Revisa la consola para más detalles.');
     }
   };
+
+  // Aquí termina tu función anterior de eliminarLead...
+
+  const limpiarLeads = async () => {
+    const confirmado = window.confirm("⚠️ ADVERTENCIA: ¿Estás seguro de que quieres ELIMINAR TODOS los prospectos? Esta acción vaciará toda tu base de datos y no se puede deshacer.");
+    if (!confirmado) return;
+    try {
+      // Elimina todos los registros donde el ID no sea 0 (es decir, todos)
+      const { error } = await supabase
+        .from('agencias_prospectos')
+        .delete()
+        .neq('id', 0); 
+      if (error) throw error;
+      fetchProspectos();
+    } catch (error) {
+      console.error('Error al limpiar:', error);
+      alert('No se pudo limpiar la base de datos. Revisa la consola.');
+    }
+  };
+
   // Función para abrir el chat desde las tarjetas
   const openChatWithContext = (mensaje) => {
     window.dispatchEvent(new CustomEvent('abrir-chat', { detail: mensaje }));
@@ -310,8 +330,28 @@ export default function Home() {
                 <h1 style={{ fontSize: '2.5rem', fontWeight: '800', margin: '0 0 0.5rem 0', color: '#F5F4EF' }}>Leads <span style={{ color: '#2DD4BF' }}>B2B</span></h1>
                 <p style={{ color: '#b0adc5', margin: 0 }}>Gestión de prospectos extraídos por Apify.</p>
               </div>
-              <div style={{ background: '#120D1C', border: '1px solid #231B35', padding: '0.8rem 1.5rem', borderRadius: '12px', color: '#E9D5FF' }}>
-                <strong>Total:</strong> {prospectos.length} agencias
+              
+              {/* NUEVO CONTENEDOR DE TOTAL Y LIMPIEZA */}
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <button 
+                  onClick={limpiarLeads}
+                  style={{ 
+                    background: 'transparent', 
+                    border: '1px solid #EF4444', 
+                    color: '#FCA5A5', 
+                    padding: '0.8rem 1.5rem', 
+                    borderRadius: '12px', 
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    transition: 'all 0.2s ease'
+                  }}
+                  title="Eliminar todos los leads"
+                >
+                  Limpiar Todo
+                </button>
+                <div style={{ background: '#120D1C', border: '1px solid #231B35', padding: '0.8rem 1.5rem', borderRadius: '12px', color: '#E9D5FF' }}>
+                  <strong>Total:</strong> {prospectos.length} agencias
+                </div>
               </div>
             </div>
 
