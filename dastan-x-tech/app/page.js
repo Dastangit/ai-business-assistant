@@ -336,7 +336,28 @@ export default function Home() {
                           
                           {/* ESTAS 4 CELDAS FALTABAN EN TU CÓDIGO */}
                           <td style={{ padding: '1.2rem' }}>{lead.nombre_agencia}</td>
-                          <td style={{ padding: '1.2rem' }}>{lead.sitio_web || 'Sin registro web'}</td>
+                          {/* CELDA DEL SITIO WEB CORREGIDA */}
+  <td style={{ 
+    padding: '1.2rem', 
+    maxWidth: '180px', 
+    whiteSpace: 'nowrap', 
+    overflow: 'hidden', 
+    textOverflow: 'ellipsis' 
+  }}>
+    {lead.sitio_web ? (
+      <a 
+        href={lead.sitio_web} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        style={{ color: '#2DD4BF', textDecoration: 'none' }}
+        title={lead.sitio_web}
+      >
+        {lead.sitio_web.replace(/^https?:\/\/(www\.)?/, '')} ↗
+      </a>
+    ) : (
+      <span style={{ color: '#7c7694' }}>Sin registro web</span>
+    )}
+  </td>
                           <td style={{ padding: '1.2rem' }}>{lead.telefono || 'Sin teléfono'}</td>
                           <td style={{ padding: '1.2rem' }}>
                             <span style={{ 
