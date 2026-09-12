@@ -360,48 +360,57 @@ export default function Home() {
   </td>
                           <td style={{ padding: '1.2rem' }}>{lead.telefono || 'Sin teléfono'}</td>
                           <td style={{ padding: '1.2rem' }}>
-                            <span style={{ 
-                              background: lead.estado_calificacion === 'contactado' ? 'rgba(45, 212, 191, 0.1)' : 'rgba(168, 85, 247, 0.1)',
-                              color: lead.estado_calificacion === 'contactado' ? '#2DD4BF' : '#A855F7',
-                              padding: '0.4rem 0.8rem',
-                              borderRadius: '8px',
-                              fontSize: '0.85rem',
-                              textTransform: 'capitalize'
-                            }}>
-                              {lead.estado_calificacion ? lead.estado_calificacion.replace('_', ' ') : 'Sin auditar'}
-                            </span>
-                          </td>
+  <button 
+    onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)}
+    style={{ 
+      background: lead.estado_calificacion === 'contactado' ? 'rgba(45, 212, 191, 0.1)' : 'rgba(168, 85, 247, 0.1)',
+      color: lead.estado_calificacion === 'contactado' ? '#2DD4BF' : '#A855F7',
+      border: lead.estado_calificacion === 'contactado' ? '1px solid rgba(45, 212, 191, 0.3)' : '1px solid rgba(168, 85, 247, 0.3)',
+      padding: '0.4rem 0.8rem',
+      borderRadius: '8px',
+      fontSize: '0.85rem',
+      fontWeight: 'bold',
+      textTransform: 'capitalize',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease'
+    }}
+    title="Clic para cambiar estado"
+  >
+    {lead.estado_calificacion ? lead.estado_calificacion.replace('_', ' ') : 'sin auditar'}
+  </button>
+</td>
 
                           {/* TUS BOTONES (Ahora sí alineados en la última columna) */}
                           <td style={{ padding: '1.2rem', display: 'flex', gap: '10px' }}>
-                            <button 
-                              onClick={() => setAuditoriaActiva(lead)}
-                              style={{ 
-                                background: '#2DD4BF', 
-                                border: 'none', 
-                                color: '#07050A', 
-                                padding: '0.5rem 1rem', 
-                                borderRadius: '8px',
-                                cursor: 'pointer',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              Auditoría IA
-                            </button>
-                            <button 
-                              onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)}
-                              style={{ 
-                                background: 'transparent', 
-                                border: '1px solid #A855F7', 
-                                color: '#E9D5FF', 
-                                padding: '0.5rem 1rem', 
-                                borderRadius: '8px',
-                                cursor: 'pointer'
-                              }}
-                            >
-                              Cambiar Estado
-                            </button>
-                          </td>
+  <button 
+    onClick={() => setAuditoriaActiva(lead)}
+    style={{ 
+      background: '#2DD4BF', 
+      border: 'none', 
+      color: '#07050A', 
+      padding: '0.5rem 1rem', 
+      borderRadius: '8px',
+      cursor: 'pointer',
+      fontWeight: 'bold'
+    }}
+  >
+    Auditoría IA
+  </button>
+  <button 
+    onClick={() => eliminarLead(lead.id, lead.nombre_agencia)}
+    style={{ 
+      background: 'transparent', 
+      border: '1px solid #EF4444', 
+      color: '#FCA5A5', 
+      padding: '0.5rem 1rem', 
+      borderRadius: '8px',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease'
+    }}
+  >
+    Eliminar
+  </button>
+</td>
                         </tr>
                       ))}
                     </tbody>
