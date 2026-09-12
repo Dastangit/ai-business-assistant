@@ -20,6 +20,9 @@ export default function Home() {
   const [prospectos, setProspectos] = useState([]);
   const [cargando, setCargando] = useState(true);
 
+  // --- ESTADO PARA LEER LA IA ---
+  const [auditoriaActiva, setAuditoriaActiva] = useState(null);
+
   // --- BLOQUEA EL SCROLL DEL FONDO MIENTRAS EL PANEL/MODAL ESTÁ ABIERTO ---
   // (Evita que la página de atrás capture el scroll en vez del panel fijo)
   useEffect(() => {
@@ -330,21 +333,53 @@ export default function Home() {
                     <tbody>
                       {prospectos.map((lead) => (
                         <tr key={lead.id} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', color: '#F5F4EF' }}>
-                          <td style={{ padding: '1.2rem', fontWeight: '500' }}>{lead.nombre_agencia}</td>
+                          
+                          {/* ESTAS 4 CELDAS FALTABAN EN TU CÓDIGO */}
+                          <td style={{ padding: '1.2rem' }}>{lead.nombre_agencia}</td>
+                          <td style={{ padding: '1.2rem' }}>{lead.sitio_web || 'Sin registro web'}</td>
+                          <td style={{ padding: '1.2rem' }}>{lead.telefono || 'Sin teléfono'}</td>
                           <td style={{ padding: '1.2rem' }}>
-                            {lead.sitio_web ? <a href={lead.sitio_web} target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', textDecoration: 'none' }}>Visitar Web ↗</a> : <span style={{ color: '#7c7694' }}>Sin web</span>}
-                          </td>
-                          <td style={{ padding: '1.2rem', color: '#e6edf3' }}>{lead.telefono || '-'}</td>
-                          <td style={{ padding: '1.2rem' }}>
-                            <span style={{ background: lead.estado_calificacion === 'contactado' ? 'rgba(45, 212, 191, 0.1)' : 'rgba(255, 255, 255, 0.05)', color: lead.estado_calificacion === 'contactado' ? '#2DD4BF' : '#b0adc5', padding: '0.4rem 0.8rem', borderRadius: '99px', fontSize: '0.8rem', fontWeight: 'bold' }}>
-                              {lead.estado_calificacion ? lead.estado_calificacion.replace('_', ' ') : 'sin auditar'}
+                            <span style={{ 
+                              background: lead.estado_calificacion === 'contactado' ? 'rgba(45, 212, 191, 0.1)' : 'rgba(168, 85, 247, 0.1)',
+                              color: lead.estado_calificacion === 'contactado' ? '#2DD4BF' : '#A855F7',
+                              padding: '0.4rem 0.8rem',
+                              borderRadius: '8px',
+                              fontSize: '0.85rem',
+                              textTransform: 'capitalize'
+                            }}>
+                              {lead.estado_calificacion ? lead.estado_calificacion.replace('_', ' ') : 'Sin auditar'}
                             </span>
                           </td>
-                          <td style={{ padding: '1.2rem' }}>
-                            <div style={{ display: 'flex', gap: '0.6rem' }}>
-                              <button onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)} style={{ background: 'transparent', border: '1px solid #A855F7', color: '#E9D5FF', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Cambiar Estado</button>
-                              <button onClick={() => eliminarLead(lead.id, lead.nombre_agencia)} style={{ background: 'transparent', border: '1px solid #EF4444', color: '#FCA5A5', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Eliminar</button>
-                            </div>
+
+                          {/* TUS BOTONES (Ahora sí alineados en la última columna) */}
+                          <td style={{ padding: '1.2rem', display: 'flex', gap: '10px' }}>
+                            <button 
+                              onClick={() => setAuditoriaActiva(lead)}
+                              style={{ 
+                                background: '#2DD4BF', 
+                                border: 'none', 
+                                color: '#07050A', 
+                                padding: '0.5rem 1rem', 
+                                borderRadius: '8px',
+                                cursor: 'pointer',
+                                fontWeight: 'bold'
+                              }}
+                            >
+                              Auditoría IA
+                            </button>
+                            <button 
+                              onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)}
+                              style={{ 
+                                background: 'transparent', 
+                                border: '1px solid #A855F7', 
+                                color: '#E9D5FF', 
+                                padding: '0.5rem 1rem', 
+                                borderRadius: '8px',
+                                cursor: 'pointer'
+                              }}
+                            >
+                              Cambiar Estado
+                            </button>
                           </td>
                         </tr>
                       ))}
@@ -354,6 +389,51 @@ export default function Home() {
               )}
             </div>
           </div>
+          {/* ================= PANEL LATERAL DE AUDITORÍA ================= */}
+      {auditoriaActiva && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          width: '100%',
+          maxWidth: '450px',
+          height: '100vh',
+          backgroundColor: '#F5F4EF',
+          boxShadow: '-10px 0 30px rgba(0,0,0,0.8)',
+          zIndex: 10005,
+          display: 'flex',
+          flexDirection: 'column',
+          fontFamily: 'system-ui, sans-serif'
+        }}>
+          <div style={{ padding: '2rem', borderBottom: '2px solid #E5E5E5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <h2 style={{ color: '#1C2624', margin: 0, fontSize: '1.5rem', fontWeight: '800' }}>
+              Auditoría de IA
+            </h2>
+            <button 
+              onClick={() => setAuditoriaActiva(null)}
+              style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#1C2624' }}
+            >
+              ✕
+            </button>
+          </div>
+          
+          <div style={{ padding: '2rem', overflowY: 'auto', flex: 1 }}>
+            <h3 style={{ color: '#A855F7', marginBottom: '0.5rem', fontWeight: 'bold' }}>{auditoriaActiva.nombre_agencia}</h3>
+            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '2rem' }}>
+              {auditoriaActiva.sitio_web || 'Sin registro web'}
+            </p>
+            
+            <div style={{ 
+              color: '#1C2624', 
+              fontSize: '1rem', 
+              lineHeight: '1.7',
+              whiteSpace: 'pre-wrap'
+            }}>
+              {auditoriaActiva.auditoria_ai || 'No se registró ninguna auditoría de IA para este negocio. Es probable que haya pasado por la ruta de venta directa de diseño web.'}
+            </div>
+          </div>
+        </div>
+      )}
         </div>
       )}
       <ChatWidget />
