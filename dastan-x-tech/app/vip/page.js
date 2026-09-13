@@ -160,13 +160,13 @@ export default function VIPPage() {
         <div style={{ marginTop: '3rem', textAlign: 'center' }}>
           <h3 style={{ fontSize: '1.1rem', marginBottom: '1.2rem', color: '#E9D5FF' }}>¿Ya sabes lo que necesitas? Obtén tu servicio</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
               Diseño Web + SEO - ${price1}
             </a>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
               Web + SEO + AEO - ${price2}
             </a>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`} target="_blank" rel="noopener noreferrer" style={{ background: 'rgba(0, 112, 186, 0.08)', border: '1px solid #0070BA', color: '#0070BA', fontWeight: 'bold', fontSize: '0.9rem', padding: '10px 20px', borderRadius: '9999px', textDecoration: 'none' }}>
+            <a href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
               Paquete Completo - ${price3}
             </a>
           </div>
