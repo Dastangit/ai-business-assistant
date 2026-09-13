@@ -290,6 +290,28 @@ export default function Home() {
                 <li>Desarrollo de Apps y sistemas a medida.</li>
                 <li>Atención personalizada.</li>
               </ul>
+<a href="/servicios/diseno-web" 
+onClick={(e) => e.stopPropagation()} 
+style={{
+  display: 'block',
+  width: '100%',
+  padding: '0.8rem',
+  marginTop: '1rem',
+  backgroundColor: 'transparent',
+  color: '#2DD4BF',
+  border: '1px solid #2DD4BF',
+  borderRadius: '8px',
+  fontSize: '0.9rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  textDecoration: 'none',
+  transition: 'all 0.3s ease',
+}}
+onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
+onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
+>
+  Saber más sobre Diseño Web →
+</a>
             </div>
             <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
               Obtener contacto directo →
