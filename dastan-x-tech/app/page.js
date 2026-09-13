@@ -420,7 +420,20 @@ onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
       <span style={{ color: '#7c7694' }}>Sin registro web</span>
     )}
   </td>
-                          <td style={{ padding: '1.2rem' }}>{lead.telefono || 'Sin teléfono'}</td>
+                          <td style={{ padding: '1.2rem' }}>
+  {lead.telefono ? (
+    <a 
+      href={`https://wa.me/${lead.telefono.replace(/[^0-9]/g, '')}`} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      style={{ color: '#25D366', textDecoration: 'none', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '5px' }}
+    >
+      {lead.telefono} 💬
+    </a>
+  ) : (
+    <span style={{ color: '#7c7694' }}>Sin teléfono</span>
+  )}
+</td>
                           <td style={{ padding: '1.2rem' }}>
   <button 
     onClick={() => actualizarEstado(lead.id, lead.estado_calificacion)}
