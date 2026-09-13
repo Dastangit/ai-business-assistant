@@ -1,11 +1,5 @@
+'use client';
 import React from 'react';
-
-// 1. INYECCIÓN SEO ESPECÍFICA PARA ESTA PÁGINA
-export const metadata = {
-  title: 'Diseño Web Profesional y Arquitectura SEO | DASTAN X-TECH',
-  description: 'Desarrollo de páginas web corporativas optimizadas para posicionamiento SEO local y motores de respuesta AEO. Convierte visitas en clientes B2B.',
-  keywords: ['Diseño web profesional', 'Arquitectura SEO', 'Posicionamiento AEO', 'Desarrollo web corporativo'],
-};
 
 export default function DisenoWebPage() {
   return (
@@ -21,10 +15,10 @@ export default function DisenoWebPage() {
         </a>
       </nav>
 
-      {/* HERO ASIMÉTRICO (Rompiendo el modelo visual) */}
+      {/* HERO ASIMÉTRICO */}
       <header style={{ 
         display: 'grid', 
-        gridTemplateColumns: '1.2fr 0.8fr', // Columnas desiguales
+        gridTemplateColumns: '1.2fr 0.8fr', 
         gap: '4rem', 
         padding: '6rem 5%',
         alignItems: 'center'
@@ -50,7 +44,7 @@ export default function DisenoWebPage() {
           </button>
         </div>
 
-        {/* ELEMENTO VISUAL ABSTRACTO EN LUGAR DE UNA TARJETA */}
+        {/* ELEMENTO VISUAL ABSTRACTO */}
         <div style={{ position: 'relative', height: '100%', minHeight: '400px' }}>
           <div style={{ position: 'absolute', top: '10%', right: '10%', width: '100%', height: '100%', background: '#2DD4BF', borderRadius: '2px', zIndex: 1 }}></div>
           <div style={{ position: 'absolute', top: '0', right: '0', width: '100%', height: '100%', background: '#1C2624', borderRadius: '2px', zIndex: 2, padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -64,7 +58,7 @@ export default function DisenoWebPage() {
         </div>
       </header>
 
-      {/* SECCIÓN DE CARACTERÍSTICAS (Bloques alternados, sin cuadrícula) */}
+      {/* SECCIÓN DE CARACTERÍSTICAS */}
       <section style={{ padding: '6rem 5%', background: '#07050A', color: '#F5F4EF' }}>
         <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '5rem', color: '#F5F4EF' }}>
           Más que diseño, es <span style={{ color: '#2DD4BF' }}>infraestructura corporativa</span>
@@ -72,7 +66,6 @@ export default function DisenoWebPage() {
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
           
-          {/* Fila 1 */}
           <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
             <div style={{ fontSize: '2rem', fontWeight: '900', color: '#2DD4BF', minWidth: '80px' }}>01</div>
             <div>
@@ -81,7 +74,6 @@ export default function DisenoWebPage() {
             </div>
           </div>
 
-          {/* Fila 2 */}
           <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
             <div style={{ fontSize: '2rem', fontWeight: '900', color: '#A855F7', minWidth: '80px' }}>02</div>
             <div>
@@ -92,7 +84,6 @@ export default function DisenoWebPage() {
 
         </div>
       </section>
-
     </div>
   );
 }
