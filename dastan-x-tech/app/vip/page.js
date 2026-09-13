@@ -111,7 +111,7 @@ export default function VIPPage() {
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$150</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web +Auditoría SEO</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + VIP + Auditoría SEO</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Solicitar Auditoría →
             </div>
