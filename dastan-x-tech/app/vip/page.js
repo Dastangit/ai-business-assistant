@@ -87,7 +87,7 @@ export default function VIPPage() {
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$100</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Diseño Web + Auditoría SEO gratuita</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP 50%-off</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
             </div>
@@ -111,7 +111,7 @@ export default function VIPPage() {
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$150</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Auditoría SEO + AEO gratuito</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web +Auditoría SEO</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Solicitar Auditoría →
             </div>
@@ -134,7 +134,7 @@ export default function VIPPage() {
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$200</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Paquete Completo - ${price3}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Incluye Web + SEO + AEO + Atención personalizada</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Web + VIP + SEO + AEO + Atención personalizada</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Posicionamiento AEO →
             </div>
@@ -161,10 +161,10 @@ export default function VIPPage() {
           <h3 style={{ fontSize: '1.1rem', marginBottom: '1.2rem', color: '#E9D5FF' }}>¿Ya sabes lo que necesitas? Obtén tu servicio</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
             <a href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
-              Diseño Web + SEO - ${price1}
+              Diseño Web + VIP - ${price1}
             </a>
             <a href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
-              Web + SEO + AEO - ${price2}
+              Web + SEO + VIP - ${price2}
             </a>
             <a href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
               Paquete Completo - ${price3}
