@@ -360,9 +360,6 @@ onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
   Saber más sobre Diseño Web →
 </a>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Obtener contacto directo →
-            </div>
           </div>
 
         </div>

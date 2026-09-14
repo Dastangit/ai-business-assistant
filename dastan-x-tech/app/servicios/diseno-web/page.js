@@ -101,6 +101,33 @@ export default function DisenoWebPage() {
 
         </div>
       </section>
+
+      {/* CIERRE CON LLAMADO A LA ACCIÓN PROPIO (WhatsApp directo, distinto al chat del inicio) */}
+      <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: '900', color: '#1C2624', marginBottom: '1rem' }}>
+          ¿Listo para dominar tu mercado?
+        </h2>
+        <p style={{ fontSize: '1.1rem', color: '#333', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+          Agenda una consultoría gratuita y te mostramos exactamente qué le falta a tu presencia digital actual para empezar a captar clientes todos los días.
+        </p>
+        <a
+          href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20una%20consultor%C3%ADa%20gratuita."
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            background: '#1C2624',
+            color: '#F5F4EF',
+            padding: '1rem 2.5rem',
+            borderRadius: '4px',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            textDecoration: 'none',
+          }}
+        >
+          Solicitar Consultoría Gratuita
+        </a>
+      </section>
     </div>
   );
 }
