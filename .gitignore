@@ -15,6 +15,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+!dastan-x-tech/lib/
 lib64/
 parts/
 sdist/
