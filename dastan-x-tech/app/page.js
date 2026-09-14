@@ -22,6 +22,39 @@ export default function Home() {
 
   // --- ESTADO PARA LEER LA IA ---
   const [auditoriaActiva, setAuditoriaActiva] = useState(null);
+  const [copiado, setCopiado] = useState(false);
+
+  // Reinicia el feedback "Copiado ✓" cada vez que se abre/cierra una auditoría distinta
+  useEffect(() => {
+    setCopiado(false);
+  }, [auditoriaActiva]);
+
+  // --- COPIA EL TEXTO COMPLETO DE LA AUDITORÍA CON UN SOLO CLIC ---
+  const copiarAuditoria = async () => {
+    const texto = auditoriaActiva?.auditoria_ai || '';
+    if (!texto) return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(texto);
+      } else {
+        // Fallback para navegadores viejos o contextos no seguros (http)
+        const textarea = document.createElement('textarea');
+        textarea.value = texto;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    } catch (error) {
+      console.error('Error al copiar la auditoría:', error);
+      alert('No se pudo copiar automáticamente. Selecciona el texto manualmente.');
+    }
+  };
  
   // --- BLOQUEA EL SCROLL DEL FONDO MIENTRAS EL PANEL/MODAL ESTÁ ABIERTO ---
   // (Evita que la página de atrás capture el scroll en vez del panel fijo)
@@ -57,15 +90,26 @@ export default function Home() {
     setClickCount((prev) => prev + 1);
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (adminPassword === 'dastan2026') {
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: adminPassword }),
+      });
+      if (!res.ok) {
+        alert('Acceso denegado');
+        setAdminPassword('');
+        return;
+      }
       setIsAuthenticated(true);
       setShowAdminLogin(false);
-      fetchProspectos(); // Carga los leads al entrar
-    } else {
-      alert('Acceso denegado');
       setAdminPassword('');
+      fetchProspectos(); // Carga los leads al entrar
+    } catch (error) {
+      console.error('Error al validar acceso:', error);
+      alert('No se pudo validar el acceso. Intenta de nuevo.');
     }
   };
 
@@ -181,9 +225,12 @@ export default function Home() {
           </div>
         </div>
         
-        <h1>DASTAN-X-TECH</h1>
+        <h1>
+          DASTAN-X-TECH
+          <span className="sr-only"> — Agencia de IA y Automatización de Negocios para Pymes en Colombia y México</span>
+        </h1>
         <p className="sub">
-          AI & Automation Services.
+          Servicios de IA y Automatización de Negocios.
         </p>
         
        <div className="btns">
@@ -524,10 +571,34 @@ onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
           
           <div style={{ padding: '2rem', overflowY: 'auto', flex: 1 }}>
             <h3 style={{ color: '#A855F7', marginBottom: '0.5rem', fontWeight: 'bold' }}>{auditoriaActiva.nombre_agencia}</h3>
-            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '2rem' }}>
+            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '1.2rem' }}>
               {auditoriaActiva.sitio_web || 'Sin registro web'}
             </p>
-            
+
+            <button
+              onClick={copiarAuditoria}
+              disabled={!auditoriaActiva.auditoria_ai}
+              style={{
+                width: '100%',
+                padding: '0.9rem',
+                marginBottom: '1.5rem',
+                background: copiado ? '#1C2624' : (auditoriaActiva.auditoria_ai ? '#2DD4BF' : '#E5E5E5'),
+                color: copiado ? '#2DD4BF' : (auditoriaActiva.auditoria_ai ? '#07050A' : '#999'),
+                border: 'none',
+                borderRadius: '10px',
+                fontWeight: 'bold',
+                fontSize: '0.95rem',
+                cursor: auditoriaActiva.auditoria_ai ? 'pointer' : 'not-allowed',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                transition: 'all 0.2s ease',
+              }}
+            >
+              {copiado ? '✓ Copiado al portapapeles' : '📋 Copiar auditoría completa'}
+            </button>
+
             <div style={{ 
               color: '#1C2624', 
               fontSize: '1rem', 

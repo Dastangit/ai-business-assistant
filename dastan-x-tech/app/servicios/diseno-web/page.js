@@ -1,9 +1,26 @@
 'use client';
 import React from 'react';
 
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Diseño Web y Arquitectura SEO/AEO',
+  provider: {
+    '@type': 'Organization',
+    name: 'DASTAN X-TECH',
+    url: 'https://dastanxtech.com',
+  },
+  areaServed: ['Colombia', 'México'],
+  description: 'Desarrollo de páginas web corporativas con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO para negocios B2B.',
+};
+
 export default function DisenoWebPage() {
   return (
     <div style={{ backgroundColor: '#F5F4EF', color: '#07050A', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       
       {/* NAVEGACIÓN MINIMALISTA */}
       <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(28, 38, 36, 0.1)' }}>

@@ -99,6 +99,11 @@ body {
 
 /* Textos */
 h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
 .sub { color: rgba(255, 255, 255, 0.65); font-size: 15px; margin-bottom: 40px; font-weight: 400; }
 
 /* Botones */

@@ -9,7 +9,15 @@ export async function POST(req) {
     const supabaseKey = (process.env.SUPABASE_ANON_KEY || 'placeholder').replace(/['"]/g, '').trim();
     const supabase = createClient(rawUrl, supabaseKey);
 
-    const { messages } = await req.json();
+    const { messages, couponApplied } = await req.json();
+
+    // Precios dinámicos según cupón VIP50 (deben coincidir con app/vip/page.js)
+    const price1 = couponApplied ? 50 : 100;
+    const price2 = couponApplied ? 100 : 150;
+    const price3 = couponApplied ? 150 : 200;
+    const notaCupon = couponApplied
+      ? `\n\nAVISO IMPORTANTE: El cliente tiene el CUPÓN VIP50 ACTIVO. Todos los precios de abajo YA reflejan el descuento aplicado. Cotiza SIEMPRE con estos precios ($${price1}, $${price2}, $${price3}), nunca con los precios originales.`
+      : '';
     const mensajeUsuario = messages[messages.length - 1].text;
 
     // 1. Extraemos solo el último mensaje que escribió el cliente
@@ -49,10 +57,10 @@ export async function POST(req) {
       - Suscripciones Premium: Acceso a Google Gemini Pro, VPN premium, Netflix, YouTube Premium y otros servicios. (Contacto exclusivo: Telegram @lexdats_bot)
       - Números Privados: Líneas virtuales exclusivas para verificar Apple ID, Telegram, Instagram, WhatsApp de forma anónima. (Contacto exclusivo: Telegram @lexdats_bot)
       - Crecimiento de Negocios / Pymes: Auditoría SEO, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Ecosistema AEO / Posicionamiento en Inteligencia Artificial: Hoy la gente ya no solo busca en Google, le pregunta directo a ChatGPT, Gemini o Alexa "cuál es el mejor [negocio] cerca de mí". El AEO (Answer Engine Optimization) prepara la estructura y el contenido de tu negocio para que esas IAs te recomienden a ti primero, no a tu competencia. Es el SEO del futuro, y ya está disponible hoy. Incluido en la Auditoría ($150) y el Paquete Completo ($200). (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Diseño Web Premium ($100): Plataforma corporativa que proyecta confianza y justifica precios más altos. Incluye Auditoría SEO gratuita. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Auditoría de Negocio SEO + AEO ($150): NO es solo SEO local. Es una auditoría completa del negocio: presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (cómo capta clientes, agenda, cobra, horas perdidas a mano). Entrega un informe con nota de presencia digital, horas/dinero recuperable al mes y un plan de acción. AEO significa posicionamiento para que motores de IA como ChatGPT y Gemini recomienden el negocio. Incluye Auditoría SEO + AEO gratuito. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Paquete Completo ($200): Diseño Web + Auditoría SEO + AEO + Atención personalizada. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Ecosistema AEO / Posicionamiento en Inteligencia Artificial: Hoy la gente ya no solo busca en Google, le pregunta directo a ChatGPT, Gemini o Alexa "cuál es el mejor [negocio] cerca de mí". El AEO (Answer Engine Optimization) prepara la estructura y el contenido de tu negocio para que esas IAs te recomienden a ti primero, no a tu competencia. Es el SEO del futuro, y ya está disponible hoy. Incluido en la Auditoría ($${price2}) y el Paquete Completo ($${price3}). (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Diseño Web Premium ($${price1}): Plataforma corporativa que proyecta confianza y justifica precios más altos. Incluye Auditoría SEO gratuita. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Auditoría de Negocio SEO + AEO ($${price2}): NO es solo SEO local. Es una auditoría completa del negocio: presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (cómo capta clientes, agenda, cobra, horas perdidas a mano). Entrega un informe con nota de presencia digital, horas/dinero recuperable al mes y un plan de acción. AEO significa posicionamiento para que motores de IA como ChatGPT y Gemini recomienden el negocio. Incluye Auditoría SEO + AEO gratuito. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
+      - Paquete Completo ($${price3}): Diseño Web + Auditoría SEO + AEO + Atención personalizada. (Contacto: Telegram @Datspro | WhatsApp +16055003653)${notaCupon}
       
       REGLA ESTRICTA DE INVENTARIO: 
       - Actualmente SOLO ofrecemos números virtuales de Estados Unidos (+1). 

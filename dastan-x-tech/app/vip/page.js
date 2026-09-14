@@ -28,9 +28,6 @@ export default function VIPPage() {
   return (
     <main style={{ backgroundColor: '#07050A', color: '#F5F4EF', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', overflowX: 'hidden' }}>
       
-      {/* 🛑 ETIQUETA FANTASMA: Evita que Google indexe esta página */}
-      <meta name="robots" content="noindex, nofollow" />
-
       {/* BRILLOS DE FONDO (Reutilizados de tu diseño principal) */}
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
@@ -87,7 +84,7 @@ export default function VIPPage() {
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$100</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP 50%-off</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP-$50</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
             </div>
@@ -185,7 +182,7 @@ export default function VIPPage() {
       </footer>
 
       {/* Widget de Asistente IA Flotante */}
-      <ChatWidget />
+      <ChatWidget couponApplied={couponApplied} />
     </main>
   );
 }
