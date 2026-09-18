@@ -227,10 +227,10 @@ export default function Home() {
         
         <h1>
           DASTAN-X-TECH
-          <span className="sr-only"> — Agencia de IA y Automatización de Negocios para Pymes en Colombia y México</span>
+          <span className="sr-only"> — Consultores de IA para Negocios Privados y Pymes en Colombia y México</span>
         </h1>
         <p className="sub">
-          Servicios de IA y Automatización de Negocios.
+          Consultoría de IA y Automatización de Negocios.
         </p>
         
        <div className="btns">

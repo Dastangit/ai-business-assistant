@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import ChatWidget from '@/components/ChatWidget'; // Tu asistente de IA
 
-// 🎟️ Código de cupón válido (cámbialo aquí cuando definas el real)
-const VALID_COUPON = 'VIP50';
+// 🎟️ Código de cupón válido 
+const VALID_COUPON = 'VIP2026';
 const PAYPAL_USER = 'Dastanpro98';
 
 export default function VIPPage() {
@@ -87,7 +87,7 @@ export default function VIPPage() {
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP-$50</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
-            </div>
+            </div>076
           </div>
 
           {/* Tarjeta 2: SEO Local */}
@@ -171,6 +171,36 @@ export default function VIPPage() {
             Si necesita otro método de pago, contáctenos por{' '}
             <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', fontWeight: 'bold' }}>WhatsApp</a>.
           </p>
+        </div>
+
+        {/* MEMBRESÍA DE IMPLEMENTACIÓN (tarjeta debajo de los métodos de pago, va directo a PayPal) */}
+        <div style={{ marginTop: '3rem', maxWidth: '650px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <a
+            href={`https://paypal.me/${PAYPAL_USER}/200USD`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="service-card"
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div style={{ flex: 1 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Membresía de Implementación</h3>
+              </div>
+              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
+                Implementamos paso a paso todas las oportunidades, mejoras y vulnerabilidades detectadas en el diagnóstico y consultoría inicial para que su negocio quede completamente estructurado y listo para crecer.
+              </p>
+            </div>
+            <div style={{ margin: '1rem 0 0.2rem 0' }}>
+              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>$200 USD / mes</span>
+            </div>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>24 horas de desarrollo incluidas cada mes</p>
+            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
+              Iniciar Membresía →
+            </div>
+          </a>
         </div>
 
       </section>

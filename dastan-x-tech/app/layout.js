@@ -13,10 +13,11 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
-  title: 'DASTAN X-TECH | Agencia de IA y Servicios Digitales',
-  description: 'Soluciones corporativas para Crecimiento de Negocios y Pymes. Especialistas en Diseño Web Profesional, Auditoría SEO, Posicionamiento AEO y Chat de IA integrado 24/7.',
+  title: 'DASTAN X-TECH | Consultores de IA para Negocios y Pymes',
+  description: 'Consultoría de Inteligencia Artificial para negocios privados y pymes en Colombia y México. Auditoría SEO, posicionamiento AEO, diseño web y agentes de IA a la medida.',
   keywords: [
-    'Agencia de IA', 
+    'Consultoría de IA para negocios', 
+    'Consultores de Inteligencia Artificial', 
     'Automatización de negocios', 
     'Diseño web profesional', 
     'Auditoría SEO', 
@@ -27,8 +28,8 @@ export const metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'DASTAN X-TECH | Ecosistema Digital Corporativo',
-    description: 'Transformamos negocios y Pymes con arquitecturas web de alto impacto, SEO local y agentes de Inteligencia Artificial.',
+    title: 'DASTAN X-TECH | Consultores de IA para Negocios y Pymes',
+    description: 'Asesoría y consultoría de IA para negocios privados y pymes: arquitecturas web de alto impacto, SEO local, posicionamiento AEO y agentes de Inteligencia Artificial.',
     url: 'https://dastanxtech.com',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
@@ -38,13 +39,15 @@ export const metadata = {
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': ['ProfessionalService', 'Organization'],
   name: 'DASTAN X-TECH',
   url: 'https://dastanxtech.com',
   logo: 'https://dastanxtech.com/opengraph-image',
-  description: 'Agencia de IA y automatización de negocios. Diseño web profesional, auditoría SEO, posicionamiento AEO y chat de IA integrado 24/7 para pymes en Colombia y México.',
+  image: 'https://dastanxtech.com/opengraph-image',
+  description: 'Consultores de Inteligencia Artificial para negocios privados y pymes en Colombia y México. Ofrecemos consultoría y auditoría de IA, diseño web profesional, posicionamiento SEO y AEO, y agentes de IA a la medida.',
   areaServed: ['Colombia', 'México'],
   knowsLanguage: 'es',
+  serviceType: ['Consultoría de Inteligencia Artificial', 'Auditoría SEO', 'Posicionamiento AEO', 'Diseño Web'],
   sameAs: [],
 };
 
