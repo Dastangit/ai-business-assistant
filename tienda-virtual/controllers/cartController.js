@@ -98,6 +98,34 @@ const eliminarDelCarrito = async (req, res) => {
     }
 };
 
+// Le avisa a Make (Telegram) que hay una cotizacion nueva.
+// No debe tumbar la peticion del cliente si Make falla: solo se loguea el error.
+const notificarNuevaCotizacion = async (carrito, cliente) => {
+    if (!process.env.MAKE_WEBHOOK_URL) return;
+
+    try {
+        const subtotal = carrito.items.reduce((acc, item) => acc + item.precioFinalCliente, 0);
+        const listaProductos = carrito.items
+            .map(item => `• ${item.title} — $${item.precioFinalCliente}`)
+            .join('\n');
+
+        await fetch(process.env.MAKE_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                carritoId: carrito._id.toString(),
+                cliente: cliente.email,
+                fuente: carrito.items[0].source.toUpperCase(),
+                cantidadProductos: carrito.items.length,
+                subtotal: parseFloat(subtotal.toFixed(2)),
+                listaProductos
+            })
+        });
+    } catch (error) {
+        console.error('⚠️ No se pudo notificar a Make:', error.message);
+    }
+};
+
 // 4. CONFIRMAR COTIZACIÓN (Pasar de 'activo' a 'cotizando')
 const confirmarCotizacion = async (req, res) => {
     try {
@@ -109,6 +137,9 @@ const confirmarCotizacion = async (req, res) => {
 
         carrito.status = 'cotizando';
         await carrito.save();
+
+        // Aviso a Make -> Telegram (no bloquea la respuesta al cliente si falla)
+        notificarNuevaCotizacion(carrito, req.user);
 
         res.json({
             mensaje: '✅ ¡Cotización solicitada! El administrador calculará el envío pronto.',
