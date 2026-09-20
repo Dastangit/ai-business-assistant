@@ -87,7 +87,7 @@ export default function VIPPage() {
             <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP-$50</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Contacta con nuestro agente →
-            </div>076
+            </div>
           </div>
 
           {/* Tarjeta 2: SEO Local */}
