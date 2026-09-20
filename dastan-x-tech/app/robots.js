@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/vip'],
+        disallow: ['/vip', '/api'],
       },
     ],
     sitemap: 'https://dastanxtech.com/sitemap.xml',

@@ -202,7 +202,7 @@ export default function Home() {
   
   return (
     <>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', paddingBottom: '6rem' }}>
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
       
@@ -211,9 +211,9 @@ export default function Home() {
           <span className="nav-logo-icon">X</span> TECH
         </div>
         <div className="nav-links">
-          <span>Solutions</span>
+          <a href="#services" style={{ color: 'inherit', textDecoration: 'none' }}>Servicios</a>
           <span className="dot">·</span>
-          <span>Contact</span>
+          <a href="#about" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</a>
         </div>
       </nav>
 
@@ -266,104 +266,164 @@ export default function Home() {
       </main>
       </div>
       
+      {/* SECCIÓN QUIÉNES SOMOS */}
+      <section id="about" style={{ padding: '4rem 1rem 2rem', maxWidth: '1000px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '1.8rem', color: '#F5F4EF', marginBottom: '1rem' }}>
+          Quiénes somos
+        </h2>
+        <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.7', maxWidth: '650px', margin: '0 auto 2rem' }}>
+          Soy <strong style={{ color: '#2DD4BF' }}>Dastan</strong>, fundador de X-TECH. Al lado de Isdiel Martínez, consultor de IA y estratega digital. Ayudamos a pequeños negocios privados y Pymes a dejar de perder clientes por una presencia digital que no está a la altura de lo que ofrecen: <strong>Web</strong> renovada, auditoría con datos reales <strong>SEO</strong>, y posicionamiento <strong>AEO</strong> para ser recomendados por la Inteligencia Artificial, no solo por Google. Todo esto con un enfoque en la automatización de procesos y la eficiencia operativa.
+        </p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <a
+            href="https://wa.me/16055003653"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '0.7rem 1.4rem', borderRadius: '8px', background: 'transparent', border: '1px solid #25D366', color: '#25D366', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}
+          >
+            💬 WhatsApp: +1 605-500-3653
+          </a>
+          <a
+            href="mailto:xtech.ai.development@gmail.com"
+            style={{ padding: '0.7rem 1.4rem', borderRadius: '8px', background: 'transparent', border: '1px solid #2DD4BF', color: '#2DD4BF', fontWeight: 'bold', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          >
+            ✉️ xtech.ai.development@gmail.com
+          </a>
+        </div>
+      </section>
+
       {/* SECCIÓN DE TARJETAS INFORMATIVAS E INTERACTIVAS */}
       <section id="services" style={{ padding: '3rem 1rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
         
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           
-          {/* Tarjeta 1: Suscripciones */}
+          {/* Tarjeta 1: Cazador de Webs */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("Quiero información sobre las Suscripciones Premium.")}
+            onClick={() => openChatWithContext("Quiero información sobre Cazador de Webs (diseño web).")}
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>⚡</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Suscripciones Premium</h3>
+                <span style={{ fontSize: '1.5rem' }}>🕸️</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Cazador de Webs</h3>
               </div>
               <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Acceso seguro y de alto rendimiento a herramientas de IA como <strong>Google Gemini Pro</strong>, VPNs empresariales y cuentas de streaming. 
+                Renovamos tu web actual con tu marca real, en tiempo récord.
               </p>
               <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Activación rápida y automatizada.</li>
-                <li>Soporte continuo e inmediato.</li>
-                <li>Gestión exclusiva vía Telegram.</li>
+                <li>Diagnóstico honesto de tu web actual.</li>
+                <li>Web nueva, responsive, lista para publicar.</li>
+                <li>WhatsApp y teléfono siempre visibles.</li>
               </ul>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Solicitar catalogo →
-            </div>
+            <a href="/servicios/diseno-web"
+              onClick={(e) => e.stopPropagation()}
+              style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1.2rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
+              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
+            >
+              Saber más →
+            </a>
           </div>
 
-          {/* Tarjeta 2: Números Privados */}
+          {/* Tarjeta 2: Auditoría 360° */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("Quiero saber cómo funcionan los Números Privados.")}
+            onClick={() => openChatWithContext("Quiero información sobre la Auditoría de Negocio 360°.")}
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🛡️</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Números Privados</h3>
+                <span style={{ fontSize: '1.5rem' }}>📊</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
               </div>
               <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Líneas virtuales exclusivas diseñadas para proteger tu identidad y verificar cuentas en plataformas digitales con total anonimato.
+                Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.
               </p>
               <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Ideales para Apple ID, Telegram, WhatsApp e Instagram.</li>
-                <li>Control total de privacidad.</li>
-                <li>Proceso guiado por nuestro bot.</li>
+                <li>Presencia digital sobre 100.</li>
+                <li>Madurez tecnológica sobre 5.</li>
+                <li>Plan de acción por fases.</li>
               </ul>
             </div>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.8rem', color: '#2DD4BF', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              Consultar con el agente de IA →
-            </div>
+            <a href="/servicios/auditoria-360"
+              onClick={(e) => e.stopPropagation()}
+              style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1.2rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
+              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
+            >
+              Saber más →
+            </a>
           </div>
 
-          {/* Tarjeta 3: Crecimiento Pymes */}
+          {/* Tarjeta 3: Posicionamiento AEO */}
           <div 
             className="service-card" 
-            onClick={() => openChatWithContext("Necesito detalles sobre el servicio de Crecimiento para Pymes.")}
+            onClick={() => openChatWithContext("Quiero información sobre Posicionamiento AEO.")}
           >
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🚀</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Crecimiento de Negocios y Pymes</h3>
+                <span style={{ fontSize: '1.5rem' }}>🤖</span>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Posicionamiento AEO</h3>
               </div>
               <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Soluciones corporativas avanzadas para escalar ingresos, optimizar la presencia digital y automatizar la captación de clientes.
+                Que la Inteligencia Artificial recomiende tu negocio, no solo Google.
               </p>
               <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Auditorías SEO y arquitectura web.</li>
-                <li>Desarrollo de Apps y sistemas a medida.</li>
-                <li>Atención personalizada.</li>
+                <li>Ficha de Google y redes ordenadas.</li>
+                <li>Contenido citable por IA.</li>
+                <li>Reseñas y señales de confianza.</li>
               </ul>
-<a href="/servicios/diseno-web" 
-onClick={(e) => e.stopPropagation()} 
-style={{
-  display: 'block',
-  width: '100%',
-  padding: '0.8rem',
-  marginTop: '1rem',
-  backgroundColor: 'transparent',
-  color: '#2DD4BF',
-  border: '1px solid #2DD4BF',
-  borderRadius: '8px',
-  fontSize: '0.9rem',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  textDecoration: 'none',
-  transition: 'all 0.3s ease',
-}}
-onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
-onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
->
-  Saber más sobre Diseño Web →
-</a>
+              <a href="/servicios/posicionamiento-aeo"
+                onClick={(e) => e.stopPropagation()}
+                style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+                onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
+                onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
+              >
+                Saber más →
+              </a>
             </div>
           </div>
 
         </div>
       </section>
+
+      {/* CÓMO TRABAJAMOS */}
+      <section style={{ padding: '4rem 1rem', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '1.6rem', color: '#F5F4EF', marginBottom: '3rem' }}>
+          Un mismo objetivo: que ganes más y pierdas menos
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#2DD4BF', marginBottom: '0.5rem' }}>01</div>
+            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Auditamos tu negocio y encontramos dónde pierdes tiempo y clientes.</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#A855F7', marginBottom: '0.5rem' }}>02</div>
+            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Renovamos tu web con tu marca real, lista para generar confianza.</p>
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#2DD4BF', marginBottom: '0.5rem' }}>03</div>
+            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Te posicionamos para que también te recomiende la IA, no solo Google.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* CIERRE / CTA FINAL */}
+      <section style={{ padding: '4rem 1rem 6rem', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '1.6rem', fontWeight: '900', color: '#F5F4EF', marginBottom: '1rem' }}>
+          Hablemos de tu negocio
+        </h2>
+        <p style={{ color: '#b0adc5', maxWidth: '500px', margin: '0 auto 2rem' }}>
+          Cuéntanos qué vendes y dónde — te decimos, sin costo, en qué estás perdiendo clientes.
+        </p>
+        <button
+          onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat'))}
+          style={{ background: '#2DD4BF', color: '#07050A', padding: '1rem 2.5rem', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}
+        >
+          Empezar ahora
+        </button>
+      </section>
+
       {/* ================= MODAL DE CONTRASEÑA ================= */}
       {showAdminLogin && (
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(7, 5, 10, 0.9)', backdropFilter: 'blur(8px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

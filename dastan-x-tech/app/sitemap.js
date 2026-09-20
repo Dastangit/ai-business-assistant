@@ -9,7 +9,25 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: `${baseUrl}/servicios`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/servicios/diseno-web`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/auditoria-360`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/servicios/posicionamiento-aeo`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
