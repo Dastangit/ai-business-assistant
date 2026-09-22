@@ -179,10 +179,10 @@ export default function VIPPage() {
             href={`https://paypal.me/${PAYPAL_USER}/200USD`}
             target="_blank"
             rel="noopener noreferrer"
-            className="service-card"
+            className="service-card membership-card-row"
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <div style={{ flex: 1 }}>
+            <div className="membership-content" style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -192,13 +192,41 @@ export default function VIPPage() {
               <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
                 Implementamos paso a paso todas las oportunidades, mejoras y vulnerabilidades detectadas en el diagnóstico y consultoría inicial para que su negocio quede completamente estructurado y listo para crecer.
               </p>
+              <div style={{ margin: '1rem 0 0.2rem 0' }}>
+                <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>$200 USD / mes</span>
+              </div>
+              <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>24 horas de desarrollo incluidas cada mes</p>
+              <p style={{ color: '#9d98b8', fontSize: '0.85rem', margin: '4px 0 0 0' }}>Duración: 2 meses</p>
+              <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
+                Iniciar Membresía →
+              </div>
             </div>
-            <div style={{ margin: '1rem 0 0.2rem 0' }}>
-              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>$200 USD / mes</span>
-            </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>24 horas de desarrollo incluidas cada mes</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Iniciar Membresía →
+
+            <div className="membership-side">
+              <span className="membership-side-label">Chat IA<br/>Integrado</span>
+              <span className="robot-dance" aria-hidden="true">
+                <svg className="robot-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="47" y="2" width="6" height="10" fill="#6B7280" />
+                  <circle cx="50" cy="2" r="4" fill="#9CA3AF" />
+                  <rect x="30" y="10" width="40" height="30" rx="6" fill="#D1D5DB" />
+                  <circle cx="42" cy="25" r="4" fill="#1F2937" />
+                  <circle cx="58" cy="25" r="4" fill="#1F2937" />
+                  <rect x="25" y="45" width="50" height="45" rx="8" fill="#9CA3AF" />
+                  <circle cx="50" cy="62" r="4" fill="#6B7280" />
+                  <g className="robot-arm-left">
+                    <rect x="10" y="48" width="16" height="8" rx="4" fill="#6B7280" />
+                  </g>
+                  <g className="robot-arm-right">
+                    <rect x="74" y="48" width="16" height="8" rx="4" fill="#6B7280" />
+                  </g>
+                  <g className="robot-leg-left">
+                    <rect x="30" y="88" width="11" height="26" rx="4" fill="#6B7280" />
+                  </g>
+                  <g className="robot-leg-right">
+                    <rect x="59" y="88" width="11" height="26" rx="4" fill="#6B7280" />
+                  </g>
+                </svg>
+              </span>
             </div>
           </a>
         </div>

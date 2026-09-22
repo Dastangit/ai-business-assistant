@@ -14,6 +14,35 @@ const serviceJsonLd = {
   description: 'Desarrollo de páginas web corporativas con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO para negocios B2B.',
 };
 
+const faqData = [
+  {
+    q: '¿Cuánto tarda la entrega de la web nueva?',
+    a: 'En tiempo récord, sin comprometer la calidad. El plazo exacto depende del alcance de tu negocio y te lo confirmamos en la consultoría inicial.',
+  },
+  {
+    q: '¿Qué necesitan de mi negocio para empezar?',
+    a: 'Tu marca real: logo, colores, tipografías, textos, precios y reseñas actuales. Nunca inventamos contenido que no sea tuyo.',
+  },
+  {
+    q: '¿Qué pasa si ya tengo una web?',
+    a: 'La analizamos primero: te damos un diagnóstico honesto con problemas concretos y observables — cada uno con la razón por la que te cuesta clientes — antes de tocar nada.',
+  },
+  {
+    q: '¿La web incluye el chat con Inteligencia Artificial?',
+    a: 'Sí. Implementamos un agente de IA conversacional para capturar, perfilar y retener a los prospectos que visitan tu web las 24 horas del día.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
 export default function DisenoWebPage() {
   return (
     <div style={{ backgroundColor: '#F5F4EF', color: '#07050A', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
@@ -33,7 +62,7 @@ export default function DisenoWebPage() {
       </nav>
 
       {/* HERO ASIMÉTRICO */}
-      <header style={{ 
+      <header className="servicio-hero" style={{ 
         display: 'grid', 
         gridTemplateColumns: '1.2fr 0.8fr', 
         gap: '4rem', 
@@ -47,7 +76,7 @@ export default function DisenoWebPage() {
               Servicio Especializado
             </span>
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: '900', lineHeight: '1.1', color: '#1C2624', marginBottom: '2rem', letterSpacing: '-1px' }}>
+          <h1 className="servicio-hero-title" style={{ fontSize: '4.5rem', fontWeight: '900', lineHeight: '1.1', color: '#1C2624', marginBottom: '2rem', letterSpacing: '-1px' }}>
             Diseño Web que <span style={{ color: '#A855F7' }}>Domina</span> Google.
           </h1>
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#333', maxWidth: '600px', marginBottom: '3rem' }}>
@@ -62,7 +91,7 @@ export default function DisenoWebPage() {
         </div>
 
         {/* ELEMENTO VISUAL ABSTRACTO */}
-        <div style={{ position: 'relative', height: '100%', minHeight: '400px' }}>
+        <div className="servicio-hero-visual" style={{ position: 'relative', height: '100%', minHeight: '400px' }}>
           <div style={{ position: 'absolute', top: '10%', right: '10%', width: '100%', height: '100%', background: '#2DD4BF', borderRadius: '2px', zIndex: 1 }}></div>
           <div style={{ position: 'absolute', top: '0', right: '0', width: '100%', height: '100%', background: '#1C2624', borderRadius: '2px', zIndex: 2, padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <h3 style={{ color: '#F5F4EF', fontSize: '2rem', margin: '0 0 1rem 0' }}>El Estándar Actual</h3>
@@ -99,6 +128,26 @@ export default function DisenoWebPage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
+      {/* SECCIÓN DE PREGUNTAS FRECUENTES */}
+      <section style={{ padding: '5rem 5%', background: '#07050A', color: '#F5F4EF' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem', color: '#F5F4EF' }}>
+          Preguntas frecuentes
+        </h2>
+        <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          {faqData.map((item, i) => (
+            <div key={i} style={{ borderTop: '1px solid #1C2624', paddingTop: '1.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: '#2DD4BF' }}>{item.q}</h3>
+              <p style={{ color: '#b0adc5', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
+            </div>
+          ))}
         </div>
       </section>
 

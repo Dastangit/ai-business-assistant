@@ -1,5 +1,4 @@
 'use client'; // <-- ESTO ES VITAL
-import ChatWidget from '../components/ChatWidget';
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
@@ -213,7 +212,7 @@ export default function Home() {
         <div className="nav-links">
           <a href="#services" style={{ color: 'inherit', textDecoration: 'none' }}>Servicios</a>
           <span className="dot">·</span>
-          <a href="#about" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</a>
+          <a href="#contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</a>
         </div>
       </nav>
 
@@ -238,7 +237,7 @@ export default function Home() {
             className="btn-primary" 
             onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat'))}
           >
-            Get Started
+            Comenzar
           </button>
         </div>
 
@@ -247,20 +246,20 @@ export default function Home() {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
             </svg>
-            24/7 Automation
+            Automatización 24/7
           </div>
           <div className="badge">
             {/* Ícono de Globo Terráqueo para Online Services */}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            Online Services
+            Servicios en línea
           </div>
           <div className="badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
-            Secure & Private
+            Seguro y Privado
           </div>
         </div>
       </main>
@@ -271,25 +270,10 @@ export default function Home() {
         <h2 style={{ fontSize: '1.8rem', color: '#F5F4EF', marginBottom: '1rem' }}>
           Quiénes somos
         </h2>
-        <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.7', maxWidth: '650px', margin: '0 auto 2rem' }}>
-          Soy <strong style={{ color: '#2DD4BF' }}>Dastan</strong>, fundador de X-TECH. Al lado de Isdiel Martínez, consultor de IA y estratega digital. Ayudamos a pequeños negocios privados y Pymes a dejar de perder clientes por una presencia digital que no está a la altura de lo que ofrecen: <strong>Web</strong> renovada, auditoría con datos reales <strong>SEO</strong>, y posicionamiento <strong>AEO</strong> para ser recomendados por la Inteligencia Artificial, no solo por Google. Todo esto con un enfoque en la automatización de procesos y la eficiencia operativa.
+        <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.7', maxWidth: '650px', margin: '0 auto' }}>
+          Soy <strong style={{ color: '#2DD4BF' }}>Dastan Tamayo</strong>, fundador de X-TECH. Al lado de <strong style={{ color: '#2DD4BF' }}>Isdiel Martínez</strong>, consultor de IA y estratega digital. Ayudamos a los negocios privados y Pymes a dejar de perder clientes por una presencia digital que no está a la altura de lo que ofrecen: <strong>Web</strong> renovada, auditoría con datos reales <strong>SEO</strong>, y posicionamiento <strong>AEO</strong> para ser recomendados por la Inteligencia Artificial, no solo por Google. Todo esto con un enfoque en la automatización de procesos y la eficiencia operativa.
+          Hemos creado excelentes ofertas y servicios pensando siempre en los negocios más pequeños. 
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-          <a
-            href="https://wa.me/16055003653"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '0.7rem 1.4rem', borderRadius: '8px', background: 'transparent', border: '1px solid #25D366', color: '#25D366', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}
-          >
-            💬 WhatsApp: +1 605-500-3653
-          </a>
-          <a
-            href="mailto:xtech.ai.development@gmail.com"
-            style={{ padding: '0.7rem 1.4rem', borderRadius: '8px', background: 'transparent', border: '1px solid #2DD4BF', color: '#2DD4BF', fontWeight: 'bold', fontSize: '0.9rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-          >
-            ✉️ xtech.ai.development@gmail.com
-          </a>
-        </div>
       </section>
 
       {/* SECCIÓN DE TARJETAS INFORMATIVAS E INTERACTIVAS */}
@@ -366,7 +350,7 @@ export default function Home() {
                 <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Posicionamiento AEO</h3>
               </div>
               <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Que la Inteligencia Artificial recomiende tu negocio, no solo Google.
+                Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.
               </p>
               <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
                 <li>Ficha de Google y redes ordenadas.</li>
@@ -385,6 +369,10 @@ export default function Home() {
           </div>
 
         </div>
+
+        <p style={{ textAlign: 'center', color: '#7c7694', fontSize: '0.8rem', marginTop: '2rem', letterSpacing: '0.02em' }}>
+          También ofrecemos: Marca Personal · Análisis de YouTube · Dashboard de Facturas
+        </p>
       </section>
 
       {/* CÓMO TRABAJAMOS */}
@@ -403,13 +391,13 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#2DD4BF', marginBottom: '0.5rem' }}>03</div>
-            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Te posicionamos para que también te recomiende la IA, no solo Google.</p>
+            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Te posicionamos para que también te recomiende la IA, más allá de Google.</p>
           </div>
         </div>
       </section>
 
       {/* CIERRE / CTA FINAL */}
-      <section style={{ padding: '4rem 1rem 6rem', textAlign: 'center' }}>
+      <section style={{ padding: '4rem 1rem 3rem', textAlign: 'center' }}>
         <h2 style={{ fontSize: '1.6rem', fontWeight: '900', color: '#F5F4EF', marginBottom: '1rem' }}>
           Hablemos de tu negocio
         </h2>
@@ -423,6 +411,46 @@ export default function Home() {
           Empezar ahora
         </button>
       </section>
+
+      {/* FOOTER - MEDIOS DE CONTACTO */}
+      <footer id="contacto" style={{ padding: '2.5rem 1rem 4rem', textAlign: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px' }}>
+          <a
+            href="https://wa.me/16055003653"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="badge"
+            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
+          >
+            💬 +1 605-500-3653
+          </a>
+          <a
+            href="mailto:xtech.ai.development@gmail.com"
+            className="badge"
+            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
+          >
+            ✉️ xtech.ai.development@gmail.com
+          </a>
+          <a
+            href="https://www.instagram.com/dastan.xtech/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="badge"
+            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
+          >
+            📷 Instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dastantech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="badge"
+            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
+          >
+            💼 LinkedIn
+          </a>
+        </div>
+      </footer>
 
       {/* ================= MODAL DE CONTRASEÑA ================= */}
       {showAdminLogin && (
@@ -669,7 +697,6 @@ export default function Home() {
       )}
         </div>
       )}
-      <ChatWidget />
     </>
   );
 }
