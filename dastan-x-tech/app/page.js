@@ -212,6 +212,8 @@ export default function Home() {
         <div className="nav-links">
           <a href="#services" style={{ color: 'inherit', textDecoration: 'none' }}>Servicios</a>
           <span className="dot">·</span>
+          <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
+          <span className="dot">·</span>
           <a href="#contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</a>
         </div>
       </nav>
@@ -226,7 +228,7 @@ export default function Home() {
         
         <h1>
           DASTAN-X-TECH
-          <span className="sr-only"> — Consultores de IA para Negocios Privados y Pymes en Colombia y México</span>
+          <span className="sr-only"> — Consultores de IA para Negocios y Pymes en Colombia, México y el resto del mundo</span>
         </h1>
         <p className="sub">
           Consultoría de IA y Automatización de Negocios.

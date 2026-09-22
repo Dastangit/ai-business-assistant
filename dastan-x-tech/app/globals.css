@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+/* Los botones/inputs no heredan la tipografía del body por defecto en varios navegadores móviles: forzamos que sí lo hagan */
+button, input, textarea, select { font-family: inherit; }
 
 body { 
   font-family: 'Inter', sans-serif; 
@@ -57,7 +59,9 @@ body {
 .hero { 
   position: relative; z-index: 10; display: flex; flex-direction: column; 
   align-items: center; text-align: center; justify-content: center; 
-  flex: 1; padding: 0 20px 20px; 
+  flex: 1; padding: 0 20px 20px;
+  /* Garantiza una pantalla completa para centrar, sin depender de si el resto de la página cabe en el viewport */
+  min-height: 100vh; min-height: 100dvh;
 }
 
 /* EL ORBE Y LA X - Ajuste perfecto */
@@ -114,6 +118,7 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
   /* El gradiente se aclara más rápido hacia el centro para no comerse el texto */
   background: linear-gradient(90deg, #2A1A4A 0%, #8B7CA1 45%, #E2E4E9 100%);
   color: #000000; /* Negro puro */
+  font-family: 'Inter', sans-serif;
   font-weight: 800; /* Extra bold para que destaque */
   font-size: 16px; 
   border: 1px solid rgba(255, 255, 255, 0.1);

@@ -10,7 +10,7 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: 'Worldwide',
   description: 'Desarrollo de páginas web corporativas con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO para negocios B2B.',
 };
 

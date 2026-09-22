@@ -10,7 +10,7 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: 'Worldwide',
   description: 'Auditoría completa de negocio: presencia digital, redes, reseñas y competencia por fuera; agenda, cobros y herramientas por dentro. Informe con cifras y plan de acción.',
 };
 

@@ -10,7 +10,7 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: 'Worldwide',
   description: 'Preparamos tu negocio para que motores de IA como ChatGPT, Gemini y Perplexity lo recomienden directamente: ficha de Google ordenada, contenido estructurado y señales de confianza.',
 };
 
