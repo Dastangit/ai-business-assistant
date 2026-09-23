@@ -104,6 +104,37 @@ export default function DisenoWebPage() {
         </div>
       </header>
 
+      {/* CASO REAL: EJEMPLO DE REDISEÑO */}
+      <section style={{ padding: '5rem 5%', background: '#F5F4EF' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem', justifyContent: 'center' }}>
+            <span style={{ background: '#A855F7', width: '40px', height: '4px', display: 'block' }}></span>
+            <span style={{ fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.85rem', color: '#1C2624', textTransform: 'uppercase' }}>
+              Ejemplo Real
+            </span>
+          </div>
+          <h2 style={{ textAlign: 'center', fontSize: '2.2rem', fontWeight: '900', color: '#1C2624', marginBottom: '1rem' }}>
+            Así se ve un <span style={{ color: '#A855F7' }}>rediseño real</span>
+          </h2>
+          <p style={{ textAlign: 'center', color: '#333', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.6' }}>
+            Este es un rediseño que hicimos para un pequeño spa (mantenemos su nombre fuera por ahora). La web original no tenía WhatsApp clicable, tenía bloques de scroll vacíos y no listaba ninguno de sus servicios. Esto fue lo que cambiamos:
+          </p>
+
+          <ul style={{ color: '#1C2624', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.9', paddingLeft: '1.3rem' }}>
+            <li>Teléfono y WhatsApp clicables desde el primer segundo — antes, solo un formulario de 6 campos.</li>
+            <li>Cada servicio (masajes, tratamientos específicos, terapias con piedras calientes...) con su propio espacio, en vez de fotos sin explicar.</li>
+            <li>Scroll continuo sin pantallas vacías ni banners repetidos que parecían spam.</li>
+          </ul>
+
+          <div style={{ textAlign: 'center' }}>
+            <a href="https://rad-valkyrie-9cdd5a.netlify.app/" target="_blank" rel="noopener noreferrer"
+              style={{ display: 'inline-block', padding: '1rem 2.5rem', borderRadius: '8px', background: '#1C2624', textDecoration: 'none', color: '#F5F4EF', fontWeight: 'bold' }}>
+              Ver el rediseño en vivo ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* SECCIÓN DE CARACTERÍSTICAS */}
       <section style={{ padding: '6rem 5%', background: '#07050A', color: '#F5F4EF' }}>
         <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '5rem', color: '#F5F4EF' }}>

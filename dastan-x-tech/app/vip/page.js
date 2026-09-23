@@ -90,25 +90,24 @@ export default function VIPPage() {
             </div>
           </div>
 
-          {/* Tarjeta 2: SEO Local */}
-          <div className="service-card" onClick={() => openChatWithContext("¿Cómo funciona el SEO Local para salir en Google Maps?")}>
+          {/* Tarjeta 2: Auditoría de Negocio */}
+          <div className="service-card" onClick={() => openChatWithContext("Quiero saber cómo funciona la Auditoría de Negocio 360°.")}>
             <div style={{ flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
                 </svg>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Dominio SEO Local</h3>
+                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
               </div>
               <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
-                Interceptamos a los clientes que tienen emergencias. Posicionamos tu negocio en los primeros lugares de Google y Google Maps en tu ciudad para que el teléfono no deje de sonar.
+                Va más allá del SEO local: revisamos tu negocio completo, por fuera (web, redes, ficha de Google, reseñas, competencia) y por dentro (cómo captas clientes, agendas, cobras, horas perdidas a mano), para que sepas exactamente dónde estás perdiendo tiempo y dinero.
               </p>
             </div>
             <div style={{ margin: '1rem 0 0.2rem 0' }}>
               {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$150</span>}
               <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
             </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + VIP + Auditoría SEO</p>
+            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + VIP + Auditoría 360°</p>
             <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
               Solicitar Auditoría →
             </div>

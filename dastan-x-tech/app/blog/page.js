@@ -5,6 +5,12 @@ export const metadata = {
 
 const posts = [
   {
+    href: '/blog/5-senales-web-cuesta-clientes',
+    title: '5 señales de que tu web te está costando clientes',
+    excerpt: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
+    date: '23 de septiembre de 2026',
+  },
+  {
     href: '/blog/auditamos-nuestra-propia-web',
     title: 'Auditamos nuestra propia web con nuestro método de Auditoría 360°',
     excerpt: 'Le aplicamos nuestra propia Auditoría de Negocio 360° a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',

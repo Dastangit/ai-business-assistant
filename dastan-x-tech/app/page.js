@@ -284,27 +284,28 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           
           {/* Tarjeta 1: Cazador de Webs */}
-          <div 
-            className="service-card" 
-            onClick={() => openChatWithContext("Quiero información sobre Cazador de Webs (diseño web).")}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🕸️</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Cazador de Webs</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <div
+              className="service-card"
+              onClick={() => openChatWithContext("Quiero información sobre Cazador de Webs (diseño web).")}
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                  <span style={{ fontSize: '1.5rem' }}>🕸️</span>
+                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Cazador de Webs</h3>
+                </div>
+                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                  Renovamos tu web actual con tu marca real, en tiempo récord.
+                </p>
+                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                  <li>Diagnóstico honesto de tu web actual.</li>
+                  <li>Web nueva, responsive, lista para publicar.</li>
+                  <li>WhatsApp y teléfono siempre visibles.</li>
+                </ul>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Renovamos tu web actual con tu marca real, en tiempo récord.
-              </p>
-              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Diagnóstico honesto de tu web actual.</li>
-                <li>Web nueva, responsive, lista para publicar.</li>
-                <li>WhatsApp y teléfono siempre visibles.</li>
-              </ul>
             </div>
             <a href="/servicios/diseno-web"
-              onClick={(e) => e.stopPropagation()}
-              style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1.2rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
               onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
             >
@@ -313,27 +314,28 @@ export default function Home() {
           </div>
 
           {/* Tarjeta 2: Auditoría 360° */}
-          <div 
-            className="service-card" 
-            onClick={() => openChatWithContext("Quiero información sobre la Auditoría de Negocio 360°.")}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>📊</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <div
+              className="service-card"
+              onClick={() => openChatWithContext("Quiero información sobre la Auditoría de Negocio 360°.")}
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                  <span style={{ fontSize: '1.5rem' }}>📊</span>
+                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
+                </div>
+                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                  Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.
+                </p>
+                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                  <li>Presencia digital sobre 100.</li>
+                  <li>Madurez tecnológica sobre 5.</li>
+                  <li>Plan de acción por fases.</li>
+                </ul>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.
-              </p>
-              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Presencia digital sobre 100.</li>
-                <li>Madurez tecnológica sobre 5.</li>
-                <li>Plan de acción por fases.</li>
-              </ul>
             </div>
             <a href="/servicios/auditoria-360"
-              onClick={(e) => e.stopPropagation()}
-              style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1.2rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
               onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
               onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
             >
@@ -342,38 +344,39 @@ export default function Home() {
           </div>
 
           {/* Tarjeta 3: Posicionamiento AEO */}
-          <div 
-            className="service-card" 
-            onClick={() => openChatWithContext("Quiero información sobre Posicionamiento AEO.")}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <span style={{ fontSize: '1.5rem' }}>🤖</span>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Posicionamiento AEO</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <div
+              className="service-card"
+              onClick={() => openChatWithContext("Quiero información sobre Posicionamiento AEO.")}
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
+                  <span style={{ fontSize: '1.5rem' }}>🤖</span>
+                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Posicionamiento AEO</h3>
+                </div>
+                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
+                  Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.
+                </p>
+                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
+                  <li>Ficha de Google y redes ordenadas.</li>
+                  <li>Contenido citable por IA.</li>
+                  <li>Reseñas y señales de confianza.</li>
+                </ul>
               </div>
-              <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.
-              </p>
-              <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                <li>Ficha de Google y redes ordenadas.</li>
-                <li>Contenido citable por IA.</li>
-                <li>Reseñas y señales de confianza.</li>
-              </ul>
-              <a href="/servicios/posicionamiento-aeo"
-                onClick={(e) => e.stopPropagation()}
-                style={{ display: 'block', width: '100%', padding: '0.8rem', marginTop: '1rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
-                onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
-                onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
-              >
-                Saber más →
-              </a>
             </div>
+            <a href="/servicios/posicionamiento-aeo"
+              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
+              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
+              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
+            >
+              Saber más →
+            </a>
           </div>
 
         </div>
 
-        <p style={{ textAlign: 'center', color: '#7c7694', fontSize: '0.8rem', marginTop: '2rem', letterSpacing: '0.02em' }}>
-          También ofrecemos: Marca Personal · Análisis de YouTube · Dashboard de Facturas
+        <p style={{ textAlign: 'center', color: '#7c7694', fontSize: '0.8rem', marginTop: '2rem', letterSpacing: '0.02em', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.9' }}>
+          También ofrecemos: Análisis de YouTube · Edición de Video · Marca Personal · Análisis de Ecommerce · Kits de IA a Medida · Instagram a Web · Web de Scroll · Auditoría de Meta Ads · Dashboard de Facturas · Extensiones de Chrome · Prospección de Clientes
         </p>
       </section>
 
