@@ -12,10 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: '#07050A',
+};
+
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
   title: 'DASTAN X-TECH | Consultores de IA para Negocios y Pymes',
-  description: 'Consultoría de Inteligencia Artificial para negocios y pymes. Auditoría SEO, posicionamiento AEO, diseño web y agentes de IA a la medida, para clientes en Colombia, México y el resto del mundo.',
+  description: 'Consultoría de IA para pymes: auditoría SEO con datos reales, posicionamiento AEO y diseño web de alto impacto. Colombia, México y el mundo.',
   keywords: [
     'Consultoría de IA para negocios', 
     'Consultores de Inteligencia Artificial', 

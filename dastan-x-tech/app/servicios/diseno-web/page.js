@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -11,7 +13,7 @@ const serviceJsonLd = {
     url: 'https://dastanxtech.com',
   },
   areaServed: 'Worldwide',
-  description: 'Desarrollo de páginas web corporativas con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO para negocios B2B.',
+  description: 'Diseño de páginas web para negocios y pymes con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO.',
 };
 
 const faqData = [
@@ -45,21 +47,14 @@ const faqJsonLd = {
 
 export default function DisenoWebPage() {
   return (
-    <div style={{ backgroundColor: '#F5F4EF', color: '#07050A', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <div className="theme-light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
       
-      {/* NAVEGACIÓN MINIMALISTA */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(28, 38, 36, 0.1)' }}>
-        <div style={{ fontWeight: '900', fontSize: '1.2rem', color: '#1C2624' }}>
-          <span style={{ color: '#A855F7' }}>X</span> TECH
-        </div>
-        <a href="/" style={{ color: '#1C2624', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}>
-          ← Volver al inicio
-        </a>
-      </nav>
+      {/* CABECERA CON ENLACES (logo al inicio, servicios, blog y contacto) */}
+      <SiteHeader tone="light" />
 
       {/* HERO ASIMÉTRICO */}
       <header className="servicio-hero" style={{ 
@@ -71,64 +66,54 @@ export default function DisenoWebPage() {
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-            <span style={{ background: '#2DD4BF', width: '40px', height: '4px', display: 'block' }}></span>
-            <span style={{ fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.85rem', color: '#1C2624', textTransform: 'uppercase' }}>
-              Servicio Especializado
-            </span>
+            <span style={{ background: 'var(--action-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
+            <span className="label-mono">Servicio · Diseño web</span>
           </div>
-          <h1 className="servicio-hero-title" style={{ fontSize: '4.5rem', fontWeight: '900', lineHeight: '1.1', color: '#1C2624', marginBottom: '2rem', letterSpacing: '-1px' }}>
-            Diseño Web que <span style={{ color: '#A855F7' }}>Domina</span> Google.
+          <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
+            Diseño Web que <span className="accent-light">Domina</span> Google.
           </h1>
-          <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#333', maxWidth: '600px', marginBottom: '3rem' }}>
-            No construimos simples folletos digitales. Desarrollamos plataformas corporativas con arquitectura SEO integrada, diseñadas para liderar las búsquedas B2B y posicionar tu marca en la era de la IA.
+          <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
+            No construimos simples folletos digitales. Desarrollamos plataformas profesionales con arquitectura SEO integrada, diseñadas para liderar las búsquedas locales y posicionar tu marca en la era de la IA.
           </p>
-          <button onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Desarrollo Web B2B' }))} 
-            style={{ 
-              background: '#1C2624', color: '#F5F4EF', padding: '1rem 2.5rem', borderRadius: '4px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', border: 'none', transition: 'all 0.3s ease' 
-            }}>
-            Consultar Proyecto
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
+            Consultar proyecto
           </button>
         </div>
 
-        {/* ELEMENTO VISUAL ABSTRACTO */}
-        <div className="servicio-hero-visual" style={{ position: 'relative', height: '100%', minHeight: '400px' }}>
-          <div style={{ position: 'absolute', top: '10%', right: '10%', width: '100%', height: '100%', background: '#2DD4BF', borderRadius: '2px', zIndex: 1 }}></div>
-          <div style={{ position: 'absolute', top: '0', right: '0', width: '100%', height: '100%', background: '#1C2624', borderRadius: '2px', zIndex: 2, padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h3 style={{ color: '#F5F4EF', fontSize: '2rem', margin: '0 0 1rem 0' }}>El Estándar Actual</h3>
-            <ul style={{ color: '#b0adc5', listStyle: 'none', padding: 0, margin: 0, lineHeight: '2' }}>
-              <li>✓ Arquitectura de Alta Velocidad</li>
-              <li>✓ Indexación SEO Local</li>
-              <li>✓ Preparado para IA (AEO)</li>
-            </ul>
-          </div>
+        {/* TARJETA DEL HERO */}
+        <div className="servicio-hero-visual servicio-hero-card">
+          <h3>El Estándar Actual</h3>
+          <ul className="dot-list">
+            <li>Arquitectura de Alta Velocidad</li>
+            <li>Indexación SEO Local</li>
+            <li>Preparado para IA (AEO)</li>
+          </ul>
+          <a href="#caso-real" className="text-link" style={{ color: 'var(--action)' }}>Ver un rediseño real ↓</a>
         </div>
       </header>
 
       {/* CASO REAL: EJEMPLO DE REDISEÑO */}
-      <section style={{ padding: '5rem 5%', background: '#F5F4EF' }}>
+      <section id="caso-real" style={{ padding: '5rem 5%', scrollMarginTop: '1rem' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem', justifyContent: 'center' }}>
-            <span style={{ background: '#A855F7', width: '40px', height: '4px', display: 'block' }}></span>
-            <span style={{ fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.85rem', color: '#1C2624', textTransform: 'uppercase' }}>
-              Ejemplo Real
-            </span>
+            <span style={{ background: 'var(--brand-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
+            <span className="label-mono">Ejemplo real</span>
           </div>
-          <h2 style={{ textAlign: 'center', fontSize: '2.2rem', fontWeight: '900', color: '#1C2624', marginBottom: '1rem' }}>
-            Así se ve un <span style={{ color: '#A855F7' }}>rediseño real</span>
+          <h2 style={{ textAlign: 'center', fontSize: '2.2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
+            Así se ve un <span className="accent-light">rediseño real</span>
           </h2>
-          <p style={{ textAlign: 'center', color: '#333', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.6' }}>
+          <p style={{ textAlign: 'center', color: 'var(--ink-2)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.6' }}>
             Este es un rediseño que hicimos para un pequeño spa (mantenemos su nombre fuera por ahora). La web original no tenía WhatsApp clicable, tenía bloques de scroll vacíos y no listaba ninguno de sus servicios. Esto fue lo que cambiamos:
           </p>
 
-          <ul style={{ color: '#1C2624', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.9', paddingLeft: '1.3rem' }}>
+          <ul style={{ color: 'var(--ink)', maxWidth: '650px', margin: '0 auto 2.5rem', lineHeight: '1.9', paddingLeft: '1.3rem' }}>
             <li>Teléfono y WhatsApp clicables desde el primer segundo — antes, solo un formulario de 6 campos.</li>
             <li>Cada servicio (masajes, tratamientos específicos, terapias con piedras calientes...) con su propio espacio, en vez de fotos sin explicar.</li>
             <li>Scroll continuo sin pantallas vacías ni banners repetidos que parecían spam.</li>
           </ul>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="https://rad-valkyrie-9cdd5a.netlify.app/" target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-block', padding: '1rem 2.5rem', borderRadius: '8px', background: '#1C2624', textDecoration: 'none', color: '#F5F4EF', fontWeight: 'bold' }}>
+            <a href="https://rad-valkyrie-9cdd5a.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light">
               Ver el rediseño en vivo ↗
             </a>
           </div>
@@ -143,19 +128,19 @@ export default function DisenoWebPage() {
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
           
-          <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
-            <div style={{ fontSize: '2rem', fontWeight: '900', color: '#2DD4BF', minWidth: '80px' }}>01</div>
+          <div className="feature-row">
+            <div className="feature-number">01</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Arquitectura SEO y AEO</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6' }}>Estructuramos el código y el contenido desde cero para garantizar la invisibilidad nula. Aseguramos tu posicionamiento en Google y en los nuevos motores de respuesta por Inteligencia Artificial.</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Estructuramos el código y el contenido desde cero para que te encuentren. Aseguramos tu posicionamiento en Google y en los nuevos motores de respuesta por Inteligencia Artificial.</p>
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
-            <div style={{ fontSize: '2rem', fontWeight: '900', color: '#A855F7', minWidth: '80px' }}>02</div>
+          <div className="feature-row">
+            <div className="feature-number feature-number--brand">02</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Chat de IA Integrado</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6' }}>Tu plataforma no descansa. Implementamos un agente de IA conversacional para capturar, perfilar y retener a los prospectos que visitan tu web las 24 horas del día, los 7 días de la semana.</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Tu plataforma no descansa. Implementamos un agente de IA conversacional para capturar, perfilar y retener a los prospectos que visitan tu web las 24 horas del día, los 7 días de la semana.</p>
             </div>
           </div>
 
@@ -174,40 +159,33 @@ export default function DisenoWebPage() {
         </h2>
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {faqData.map((item, i) => (
-            <div key={i} style={{ borderTop: '1px solid #1C2624', paddingTop: '1.5rem' }}>
+            <div key={i} className="faq-item">
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: '#2DD4BF' }}>{item.q}</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CIERRE CON LLAMADO A LA ACCIÓN PROPIO (WhatsApp directo, distinto al chat del inicio) */}
+      {/* CIERRE: el mismo camino principal que el hero, con WhatsApp como alternativa */}
       <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: '900', color: '#1C2624', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
           ¿Listo para dominar tu mercado?
         </h2>
-        <p style={{ fontSize: '1.1rem', color: '#333', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+        <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
           Agenda una consultoría gratuita y te mostramos exactamente qué le falta a tu presencia digital actual para empezar a captar clientes todos los días.
         </p>
-        <a
-          href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20una%20consultor%C3%ADa%20gratuita."
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-block',
-            background: '#1C2624',
-            color: '#F5F4EF',
-            padding: '1rem 2.5rem',
-            borderRadius: '4px',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            textDecoration: 'none',
-          }}
-        >
-          Solicitar Consultoría Gratuita
-        </a>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
+            Consultar proyecto
+          </button>
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20una%20consultor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer" className="text-link">
+            o escríbenos por WhatsApp →
+          </a>
+        </div>
       </section>
+
+      <SiteFooter tone="light" />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 'use client';
 import React from 'react';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
@@ -45,21 +47,14 @@ const faqJsonLd = {
 
 export default function PosicionamientoAeoPage() {
   return (
-    <div style={{ backgroundColor: '#F5F4EF', color: '#07050A', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
+    <div className="theme-light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
-      {/* NAVEGACIÓN MINIMALISTA */}
-      <nav style={{ padding: '2rem 5%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(28, 38, 36, 0.1)' }}>
-        <div style={{ fontWeight: '900', fontSize: '1.2rem', color: '#1C2624' }}>
-          <span style={{ color: '#A855F7' }}>X</span> TECH
-        </div>
-        <a href="/" style={{ color: '#1C2624', textDecoration: 'none', fontWeight: 'bold', fontSize: '0.9rem' }}>
-          ← Volver al inicio
-        </a>
-      </nav>
+      {/* CABECERA CON ENLACES (logo al inicio, servicios, blog y contacto) */}
+      <SiteHeader tone="light" />
 
       {/* HERO ASIMÉTRICO */}
       <header className="servicio-hero" style={{
@@ -71,36 +66,28 @@ export default function PosicionamientoAeoPage() {
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-            <span style={{ background: '#2DD4BF', width: '40px', height: '4px', display: 'block' }}></span>
-            <span style={{ fontWeight: 'bold', letterSpacing: '2px', fontSize: '0.85rem', color: '#1C2624', textTransform: 'uppercase' }}>
-              Servicio Especializado
-            </span>
+            <span style={{ background: 'var(--action-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
+            <span className="label-mono">Servicio · Posicionamiento AEO</span>
           </div>
-          <h1 className="servicio-hero-title" style={{ fontSize: '4.5rem', fontWeight: '900', lineHeight: '1.1', color: '#1C2624', marginBottom: '2rem', letterSpacing: '-1px' }}>
-            Que la IA te <span style={{ color: '#A855F7' }}>recomiende</span>, no solo Google.
+          <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
+            Que la IA te <span className="accent-light">recomiende</span>, no solo Google.
           </h1>
-          <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#333', maxWidth: '600px', marginBottom: '3rem' }}>
+          <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
             Cada vez más personas le preguntan directo a un asistente de IA "¿cuál es la mejor opción cerca de mí?" y confían en la respuesta sin visitar ninguna web. Preparamos tu negocio para ser esa respuesta.
           </p>
-          <button onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}
-            style={{
-              background: '#1C2624', color: '#F5F4EF', padding: '1rem 2.5rem', borderRadius: '4px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', border: 'none', transition: 'all 0.3s ease'
-            }}>
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
             Consultar Posicionamiento AEO
           </button>
         </div>
 
-        {/* ELEMENTO VISUAL ABSTRACTO */}
-        <div className="servicio-hero-visual" style={{ position: 'relative', height: '100%', minHeight: '400px' }}>
-          <div style={{ position: 'absolute', top: '10%', right: '10%', width: '100%', height: '100%', background: '#2DD4BF', borderRadius: '2px', zIndex: 1 }}></div>
-          <div style={{ position: 'absolute', top: '0', right: '0', width: '100%', height: '100%', background: '#1C2624', borderRadius: '2px', zIndex: 2, padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h3 style={{ color: '#F5F4EF', fontSize: '2rem', margin: '0 0 1rem 0' }}>Qué hacemos</h3>
-            <ul style={{ color: '#b0adc5', listStyle: 'none', padding: 0, margin: 0, lineHeight: '2' }}>
-              <li>✓ Ficha de Google ordenada</li>
-              <li>✓ Contenido citable por IA</li>
-              <li>✓ Reseñas y señales de confianza</li>
-            </ul>
-          </div>
+        {/* TARJETA DEL HERO */}
+        <div className="servicio-hero-visual servicio-hero-card">
+          <h3>Qué hacemos</h3>
+          <ul className="dot-list">
+            <li>Ficha de Google ordenada</li>
+            <li>Contenido citable por IA</li>
+            <li>Reseñas y señales de confianza</li>
+          </ul>
         </div>
       </header>
 
@@ -112,19 +99,19 @@ export default function PosicionamientoAeoPage() {
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
 
-          <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
-            <div style={{ fontSize: '2rem', fontWeight: '900', color: '#2DD4BF', minWidth: '80px' }}>01</div>
+          <div className="feature-row">
+            <div className="feature-number">01</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Consistencia en todas partes</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6' }}>Ordenamos y verificamos tu ficha de Google y tus redes para que la información sea clara y coherente — la base que usa la IA para confiar en un negocio.</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Ordenamos y verificamos tu ficha de Google y tus redes para que la información sea clara y coherente — la base que usa la IA para confiar en un negocio.</p>
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start', borderTop: '1px solid #1C2624', paddingTop: '3rem' }}>
-            <div style={{ fontSize: '2rem', fontWeight: '900', color: '#A855F7', minWidth: '80px' }}>02</div>
+          <div className="feature-row">
+            <div className="feature-number feature-number--brand">02</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Contenido que la IA puede citar</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6' }}>Estructuramos servicios, preguntas frecuentes, horarios y precios en un formato que los motores de IA pueden leer y citar directamente al recomendarte.</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Estructuramos servicios, preguntas frecuentes, horarios y precios en un formato que los motores de IA pueden leer y citar directamente al recomendarte.</p>
             </div>
           </div>
 
@@ -143,40 +130,33 @@ export default function PosicionamientoAeoPage() {
         </h2>
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {faqData.map((item, i) => (
-            <div key={i} style={{ borderTop: '1px solid #1C2624', paddingTop: '1.5rem' }}>
+            <div key={i} className="faq-item">
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: '#2DD4BF' }}>{item.q}</h3>
-              <p style={{ color: '#b0adc5', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CIERRE CON LLAMADO A LA ACCIÓN */}
+      {/* CIERRE: el mismo camino principal que el hero, con WhatsApp como alternativa */}
       <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: '900', color: '#1C2624', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
           ¿Listo para que la IA recomiende tu negocio?
         </h2>
-        <p style={{ fontSize: '1.1rem', color: '#333', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+        <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
           Te adelantas a una tendencia que ya está en marcha, en lugar de reaccionar cuando tu competencia ya la domine.
         </p>
-        <a
-          href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20una%20consultor%C3%ADa%20gratuita."
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'inline-block',
-            background: '#1C2624',
-            color: '#F5F4EF',
-            padding: '1rem 2.5rem',
-            borderRadius: '4px',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            textDecoration: 'none',
-          }}
-        >
-          Solicitar Consultoría Gratuita
-        </a>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
+            Consultar Posicionamiento AEO
+          </button>
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20una%20consultor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer" className="text-link">
+            o escríbenos por WhatsApp →
+          </a>
+        </div>
       </section>
+
+      <SiteFooter tone="light" />
     </div>
   );
 }

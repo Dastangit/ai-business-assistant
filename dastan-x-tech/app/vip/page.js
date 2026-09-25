@@ -1,24 +1,82 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ChatWidget from '@/components/ChatWidget'; // Tu asistente de IA
+import { BrandMark } from '@/components/Brand';
 
-// 🎟️ Código de cupón válido 
-const VALID_COUPON = 'VIP2026';
+// El código del cupón ya no vive aquí: se valida en /api/vip/cupon (servidor)
 const PAYPAL_USER = 'Dastanpro98';
+
+// Tarjetas compactas: precio junto al título, una frase y lo que recibe el cliente.
+// Los paquetes 2 y 3 parten de "Todo lo de Diseño Web, más" para no repetir lo mismo en las tres.
+const PAQUETES = [
+  {
+    titulo: 'Diseño Web Premium',
+    texto: 'Una web que proyecta confianza, muestra tus trabajos y justifica precios más altos.',
+    precio: 100,
+    precioCupon: 50,
+    listaTitulo: 'Recibes',
+    incluye: [
+      'Tu web reconstruida como experiencia 3D de scroll inmersivo',
+      'Con tu branding real: logo, colores, fotos y precios',
+      'Diagnóstico de 5 problemas de tu web actual',
+      'Entrega lista para publicar (HTML + assets)',
+    ],
+  },
+  {
+    titulo: 'Auditoría de Negocio 360°',
+    texto: 'Revisamos tu negocio por fuera y por dentro para ver dónde pierdes tiempo y dinero.',
+    precio: 150,
+    precioCupon: 100,
+    listaTitulo: 'Todo lo de Diseño Web, más',
+    incluye: [
+      'Por fuera: web, redes, anuncios, reseñas y competencia',
+      'Por dentro: procesos y herramientas (36 preguntas)',
+      'Incoherencias costosas entre ambas mitades',
+      'Horas al mes recuperables y recorrido del cliente antes/después',
+    ],
+  },
+  {
+    titulo: 'Ecosistema AEO',
+    texto: 'Preparamos tu negocio para que modelos de IA como ChatGPT y Gemini recomienden tus servicios.',
+    precio: 200,
+    precioCupon: 150,
+    listaTitulo: 'Todo lo de Diseño Web, más',
+    incluye: ['SEO + posicionamiento AEO', 'Atención personalizada'],
+  },
+];
 
 export default function VIPPage() {
   const [couponCode, setCouponCode] = useState('');
   const [couponApplied, setCouponApplied] = useState(false);
+  const timerRef = useRef(null);
+  const lastRequestRef = useRef(0);
 
+  useEffect(() => () => clearTimeout(timerRef.current), []);
+
+  // Se valida contra el servidor mientras escribes (con una pequeña espera para no disparar una petición por tecla)
   const handleCouponChange = (e) => {
     const value = e.target.value;
     setCouponCode(value);
-    setCouponApplied(value.trim().toUpperCase() === VALID_COUPON);
+    setCouponApplied(false);
+    clearTimeout(timerRef.current);
+    const code = value.trim();
+    if (!code) return;
+    const requestId = ++lastRequestRef.current;
+    timerRef.current = setTimeout(async () => {
+      try {
+        const res = await fetch('/api/vip/cupon', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code }),
+        });
+        const data = await res.json();
+        if (requestId === lastRequestRef.current) setCouponApplied(Boolean(data.applied));
+      } catch (error) {
+        console.error('No se pudo validar el cupón:', error);
+        if (requestId === lastRequestRef.current) setCouponApplied(false);
+      }
+    }, 350);
   };
-
-  const price1 = couponApplied ? 50 : 100;
-  const price2 = couponApplied ? 100 : 150;
-  const price3 = couponApplied ? 150 : 200;
 
   // Función para abrir el chat si el cliente prefiere hablar con la IA
   const openChatWithContext = (mensaje) => {
@@ -26,214 +84,142 @@ export default function VIPPage() {
   };
 
   return (
-    <main style={{ backgroundColor: '#07050A', color: '#F5F4EF', minHeight: '100vh', fontFamily: 'system-ui, sans-serif', overflowX: 'hidden' }}>
-      
+    <main style={{ backgroundColor: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', position: 'relative', overflow: 'hidden' }}>
+      {/* position relative + overflow hidden: el brillo .glow-br ya no sobresale por debajo del pie ni alarga la página */}
+
       {/* BRILLOS DE FONDO (Reutilizados de tu diseño principal) */}
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
 
       {/* SECCIÓN HERO VIP */}
       <section style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', textAlign: 'center', padding: '4rem 1rem 2rem' }}>
-        <div style={{ width: '70px', height: '70px', borderRadius: '16px', background: 'linear-gradient(135deg, #A855F7, #2DD4BF)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', boxShadow: '0 0 30px rgba(168, 85, 247, 0.4)' }}>
-          <span style={{ fontSize: '2rem', fontWeight: 'bold', color: '#07050A' }}>X</span>
-        </div>
+        {/* Logo único: el mismo orbe circular del ícono de pestaña */}
+        <BrandMark className="vip-logo" title="DASTAN X-TECH" size={72} />
+        <div style={{ height: '1.5rem' }} />
         
-        <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '0.4rem 1rem', borderRadius: '99px', border: '1px solid #2DD4BF', color: '#2DD4BF', fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '1.5rem', letterSpacing: '1px' }}>
-          ACCESO PRIVADO
-        </div>
+        <span className="label-mono" style={{ color: 'var(--action)', marginBottom: '1.25rem' }}>
+          Acceso privado · DASTAN X-TECH
+        </span>
 
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '900', letterSpacing: '-1px', marginBottom: '1rem', lineHeight: '1.1' }}>
-          Dominando el Mercado <br/> <span style={{ color: '#A855F7' }}>En tu área local</span>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '700', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: '1.08' }}>
+          Dominando el Mercado <br/> <span style={{ color: 'var(--brand)' }}>En tu área local</span>
         </h1>
-        
-        <p style={{ fontSize: '1.25rem', color: '#b0adc5', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
-          El 80% de los clientes buscan en Google o a través de modelos de IA antes de contratar un servicio. Si tu negocio no tiene una presencia digital de autoridad, <strong>tu competencia se está quedando con tus clientes.</strong> Esta es nuestra propuesta exclusiva para blindar tu negocio.
+
+        <p style={{ fontSize: '1.125rem', color: 'var(--text-2)', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
+          Cada vez más clientes buscan en Google o le preguntan a una IA antes de contratar un servicio. Si tu negocio no tiene una presencia digital de autoridad, <strong style={{ color: 'var(--text)' }}>tu competencia se está quedando con tus clientes.</strong> Esta es nuestra propuesta exclusiva para blindar tu negocio.
         </p>
 
         {/* Botón CTA Principal hacia WhatsApp */}
-        <a 
-          href="https://wa.me/16055003653?text=Hola,%20recibí%20la%20invitación%20VIP%20y%20quiero%20la%20auditoría%20gratuita%20de%20mi%20negocio." 
-          target="_blank" 
+        <a
+          href="https://wa.me/16055003653?text=Hola,%20recibí%20la%20invitación%20VIP%20y%20quiero%20la%20auditoría%20gratuita%20de%20mi%20negocio."
+          target="_blank"
           rel="noopener noreferrer"
-          style={{ background: '#2DD4BF', color: '#07050A', padding: '1rem 2.5rem', borderRadius: '12px', fontWeight: '800', fontSize: '1.1rem', textDecoration: 'none', boxShadow: '0 4px 20px rgba(45, 212, 191, 0.3)', transition: 'transform 0.2s' }}
+          className="btn btn-primary"
         >
           Solicitar Consulta Gratuita
         </a>
       </section>
 
-      {/* SECCIÓN DE SERVICIOS VIP (Tarjetas interactivas) */}
+      {/* SECCIÓN DE SERVICIOS VIP */}
       <section style={{ padding: '3rem 1rem 6rem', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem', fontWeight: '800' }}>El Plan de <span style={{ color: '#E9D5FF' }}>Rescate Digital</span></h2>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-          
-          {/* Tarjeta 1: Diseño Web */}
-          <div className="service-card" onClick={() => openChatWithContext("Quiero ver ejemplos de Diseño Web para mi negocio.")}>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25" />
-                </svg>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Diseño Web Premium</h3>
-              </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
-                Tu negocio necesita dejar de ser invisible. Creamos una plataforma corporativa que proyecta confianza, muestra tus trabajos y justifica precios más altos (High-Ticket).
-              </p>
-            </div>
-            <div style={{ margin: '1rem 0 0.2rem 0' }}>
-              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$100</span>}
-              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Servicio - ${price1}</span>
-            </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + Cupón VIP-$50</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Contacta con nuestro agente →
-            </div>
-          </div>
+        <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.75rem, 4vw, 2rem)', marginBottom: '1.5rem', fontWeight: '700', letterSpacing: '-0.015em' }}>
+          El Plan de <span style={{ color: 'var(--brand)' }}>Rescate Digital</span>
+        </h2>
 
-          {/* Tarjeta 2: Auditoría de Negocio */}
-          <div className="service-card" onClick={() => openChatWithContext("Quiero saber cómo funciona la Auditoría de Negocio 360°.")}>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                </svg>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
-              </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
-                Va más allá del SEO local: revisamos tu negocio completo, por fuera (web, redes, ficha de Google, reseñas, competencia) y por dentro (cómo captas clientes, agendas, cobras, horas perdidas a mano), para que sepas exactamente dónde estás perdiendo tiempo y dinero.
-              </p>
-            </div>
-            <div style={{ margin: '1rem 0 0.2rem 0' }}>
-              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$150</span>}
-              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Auditoría - ${price2}</span>
-            </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Diseño Web + VIP + Auditoría 360°</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Solicitar Auditoría →
-            </div>
-          </div>
-
-          {/* Tarjeta 3: Posicionamiento AEO */}
-          <div className="service-card" onClick={() => openChatWithContext("Quiero saber sobre el Posicionamiento en Inteligencia Artificial (AEO).")}>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
-                </svg>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Ecosistema AEO</h3>
-              </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
-                El futuro es hoy. Preparamos la estructura de tu negocio para que motores como ChatGPT y Gemini recomienden directamente tus servicios a los usuarios potenciales.
-              </p>
-            </div>
-            <div style={{ margin: '1rem 0 0.2rem 0' }}>
-              {couponApplied && <span style={{ textDecoration: 'line-through', color: '#7c7694', fontSize: '1rem', marginRight: '8px' }}>$200</span>}
-              <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>Paquete Completo - ${price3}</span>
-            </div>
-            <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>Web + VIP + SEO + AEO + Atención personalizada</p>
-            <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-              Posicionamiento AEO →
-            </div>
-          </div>
-
-        </div>
-
-        {/* CUPÓN DE DESCUENTO */}
-        <div style={{ marginTop: '3rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0, color: '#E9D5FF' }}>Introducir Cupón de descuento</h3>
+        {/* CUPÓN DE DESCUENTO: antes de los precios, para verlos ya con descuento */}
+        <div style={{ marginBottom: '2.5rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
+          <label htmlFor="cupon-vip" style={{ fontSize: '16px', fontWeight: 600 }}>Introducir Cupón de descuento</label>
           <input
+            id="cupon-vip"
             type="text"
             value={couponCode}
             onChange={handleCouponChange}
             placeholder="Código"
-            style={{ background: 'rgba(255,255,255,0.05)', border: couponApplied ? '1px solid #2DD4BF' : '1px solid rgba(255,255,255,0.15)', borderRadius: '8px', padding: '0.5rem 1rem', color: '#F5F4EF', fontSize: '0.9rem', outline: 'none', width: '160px' }}
+            autoComplete="off"
+            style={{ background: 'rgba(255,255,255,0.05)', border: couponApplied ? '1px solid var(--action)' : '1px solid var(--border-strong)', borderRadius: '8px', padding: '0.6rem 1rem', color: 'var(--text)', fontSize: '16px', outline: 'none', width: '170px' }}
           />
-          <span style={{ fontSize: '0.8rem', color: '#7c7694', fontStyle: 'italic' }}>Solo para usuarios VIP</span>
-          {couponApplied && <span style={{ fontSize: '0.85rem', color: '#2DD4BF', fontWeight: 'bold' }}>✓ Cupón aplicado</span>}
+          <span style={{ fontSize: '14px', color: 'var(--text-2)' }}>Solo para usuarios VIP</span>
+          {couponApplied && <span style={{ fontSize: '15px', color: 'var(--action)', fontWeight: 600 }}>✓ Cupón aplicado</span>}
         </div>
 
-        {/* OBTENER SERVICIO - PAGO (función aparte del chat de las tarjetas) */}
-        <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '1.1rem', marginBottom: '1.2rem', color: '#E9D5FF' }}>¿Ya sabes lo que necesitas? Obtén tu servicio</h3>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '14px' }}>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price1}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
-              Diseño Web + VIP - ${price1}
-            </a>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price2}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
-              Web + SEO + VIP - ${price2}
-            </a>
-            <a href={`https://paypal.me/${PAYPAL_USER}/${price3}USD`} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ width: 'auto', padding: '0 24px', textDecoration: 'none' }}>
-              Paquete Completo - ${price3}
+        {/* Tarjetas compactas: sin onClick en la tarjeta; el botón paga y nada más */}
+        <div className="card-grid" style={{ gap: '16px', alignItems: 'stretch', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', maxWidth: '1040px', margin: '0 auto' }}>
+          {PAQUETES.map((p) => {
+            const precio = couponApplied ? p.precioCupon : p.precio;
+            return (
+              <div key={p.titulo} className="vip-card">
+                <div className="vip-card-head">
+                  <h3 className="vip-card-title">{p.titulo}</h3>
+                  <span className="vip-card-price">${precio}</span>
+                </div>
+                <p className="vip-card-text">{p.texto}</p>
+                <div className="vip-card-list">
+                  <span className="vip-card-list-title">{p.listaTitulo}</span>
+                  <ul>
+                    {p.incluye.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+                <a
+                  href={`https://paypal.me/${PAYPAL_USER}/${precio}USD`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary btn-sm btn-block"
+                  aria-label={`Contratar ${p.titulo} por $${precio} USD`}
+                  style={{ marginTop: '4px' }}
+                >
+                  Contratar
+                </a>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* El descuento se menciona una vez, debajo de las tarjetas */}
+        {couponApplied && (
+          <p style={{ marginTop: '1rem', textAlign: 'center', fontSize: '14px', color: 'var(--text-2)' }}>
+            Precios con descuento VIP incluido.
+          </p>
+        )}
+
+        {/* Una sola pregunta al asistente para las tres tarjetas */}
+        <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', fontSize: '15px', color: 'var(--text-2)' }}>
+          <span>¿No sabes cuál elegir?</span>
+          <button type="button" className="vip-ask" onClick={() => openChatWithContext('No sé qué paquete elegir.')}>
+            Pregúntale al asistente
+          </button>
+        </div>
+
+        <p style={{ marginTop: '1rem', fontSize: '15px', color: 'var(--text-2)', textAlign: 'center' }}>
+          Si necesita otro método de pago, contáctenos por{' '}
+          <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="text-link">WhatsApp</a>.
+        </p>
+
+        {/* MEMBRESÍA DE IMPLEMENTACIÓN: una fila, botón secundario hacia PayPal */}
+        <div className="vip-membership" style={{ marginTop: '2.5rem' }}>
+          <div className="vip-membership-info">
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', flexWrap: 'wrap' }}>
+              <h3 className="vip-card-title">Membresía de Implementación</h3>
+              <span style={{ fontSize: '13px', color: 'var(--text-2)' }}>2 meses · 24 h de desarrollo al mes</span>
+            </div>
+            <p className="vip-card-text">Aplicamos las mejoras detectadas en el diagnóstico hasta dejar tu negocio listo para crecer.</p>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
+            <span style={{ fontSize: '18px', fontWeight: 700 }}>$200<span style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-2)' }}> /mes</span></span>
+            <a
+              href={`https://paypal.me/${PAYPAL_USER}/200USD`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary btn-sm"
+            >
+              Iniciar membresía
             </a>
           </div>
-          <p style={{ marginTop: '1rem', fontSize: '0.85rem', color: '#7c7694' }}>
-            Si necesita otro método de pago, contáctenos por{' '}
-            <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#2DD4BF', fontWeight: 'bold' }}>WhatsApp</a>.
-          </p>
-        </div>
-
-        {/* MEMBRESÍA DE IMPLEMENTACIÓN (tarjeta debajo de los métodos de pago, va directo a PayPal) */}
-        <div style={{ marginTop: '3rem', maxWidth: '650px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <a
-            href={`https://paypal.me/${PAYPAL_USER}/200USD`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="service-card membership-card-row"
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            <div className="membership-content" style={{ flex: 1 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="#E9D5FF" strokeWidth="1.5" style={{ width: '24px', height: '24px', flexShrink: 0 }}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                </svg>
-                <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Membresía de Implementación</h3>
-              </div>
-              <p style={{ color: '#b0adc5', fontSize: '1.1rem', lineHeight: '1.5', margin: 0 }}>
-                Implementamos paso a paso todas las oportunidades, mejoras y vulnerabilidades detectadas en el diagnóstico y consultoría inicial para que su negocio quede completamente estructurado y listo para crecer.
-              </p>
-              <div style={{ margin: '1rem 0 0.2rem 0' }}>
-                <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#2DD4BF' }}>$200 USD / mes</span>
-              </div>
-              <p style={{ color: '#2DD4BF', fontSize: '0.90rem', margin: '4px 0 0 0' }}>24 horas de desarrollo incluidas cada mes</p>
-              <p style={{ color: '#9d98b8', fontSize: '0.85rem', margin: '4px 0 0 0' }}>Duración: 2 meses</p>
-              <div style={{ marginTop: '1.2rem', fontSize: '0.90rem', color: '#A855F7', fontWeight: 'bold' }}>
-                Iniciar Membresía →
-              </div>
-            </div>
-
-            <div className="membership-side">
-              <span className="membership-side-label">Chat IA<br/>Integrado</span>
-              <span className="robot-dance" aria-hidden="true">
-                <svg className="robot-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="47" y="2" width="6" height="10" fill="#6B7280" />
-                  <circle cx="50" cy="2" r="4" fill="#9CA3AF" />
-                  <rect x="30" y="10" width="40" height="30" rx="6" fill="#D1D5DB" />
-                  <circle cx="42" cy="25" r="4" fill="#1F2937" />
-                  <circle cx="58" cy="25" r="4" fill="#1F2937" />
-                  <rect x="25" y="45" width="50" height="45" rx="8" fill="#9CA3AF" />
-                  <circle cx="50" cy="62" r="4" fill="#6B7280" />
-                  <g className="robot-arm-left">
-                    <rect x="10" y="48" width="16" height="8" rx="4" fill="#6B7280" />
-                  </g>
-                  <g className="robot-arm-right">
-                    <rect x="74" y="48" width="16" height="8" rx="4" fill="#6B7280" />
-                  </g>
-                  <g className="robot-leg-left">
-                    <rect x="30" y="88" width="11" height="26" rx="4" fill="#6B7280" />
-                  </g>
-                  <g className="robot-leg-right">
-                    <rect x="59" y="88" width="11" height="26" rx="4" fill="#6B7280" />
-                  </g>
-                </svg>
-              </span>
-            </div>
-          </a>
         </div>
 
       </section>
 
       {/* FOOTER VIP */}
-      <footer style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '2rem', textAlign: 'center', color: '#7c7694', fontSize: '0.8rem' }}>
+      <footer style={{ borderTop: '1px solid var(--border)', padding: '2rem', textAlign: 'center', color: 'var(--text-2)', fontSize: '14px' }}>
         <p>Esta es una propuesta privada. Por favor, no comparta este enlace.</p>
         <p>© 2026 DASTAN X-TECH</p>
       </footer>

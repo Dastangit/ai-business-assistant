@@ -1,13 +1,13 @@
 export const metadata = {
   title: 'Diseño Web Profesional y Arquitectura SEO | DASTAN X-TECH',
-  description: 'Desarrollo de páginas web corporativas optimizadas para posicionamiento SEO local y motores de respuesta AEO. Convierte visitas en clientes B2B.',
-  keywords: ['Diseño web profesional', 'Arquitectura SEO', 'Posicionamiento AEO', 'Desarrollo web corporativo'],
+  description: 'Diseño de páginas web para negocios y pymes, optimizadas para SEO local y motores de respuesta AEO. Convierte visitas en clientes.',
+  keywords: ['Diseño web profesional', 'Arquitectura SEO', 'Posicionamiento AEO', 'Diseño web para pymes'],
   alternates: {
     canonical: '/servicios/diseno-web',
   },
   openGraph: {
     title: 'Diseño Web Profesional y Arquitectura SEO | DASTAN X-TECH',
-    description: 'Desarrollo de páginas web corporativas optimizadas para posicionamiento SEO local y motores de respuesta AEO.',
+    description: 'Diseño de páginas web para negocios y pymes, optimizadas para SEO local y motores de respuesta AEO.',
     url: 'https://dastanxtech.com/servicios/diseno-web',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
@@ -19,7 +19,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Diseño Web Profesional (Cazador de Webs)',
-  serviceType: 'Diseño y desarrollo web corporativo',
+  serviceType: 'Diseño y desarrollo web para pymes',
   provider: {
     '@type': 'ProfessionalService',
     name: 'DASTAN X-TECH',

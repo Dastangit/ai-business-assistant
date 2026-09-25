@@ -2,11 +2,41 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import { BrandMark } from '@/components/Brand';
+import SiteFooter from '@/components/SiteFooter';
 
 // Conexión a la base de datos para el panel de Admin
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Tarjetas de servicio del home (texto y enlaces de siempre, sin emojis)
+const servicios = [
+  {
+    href: '/servicios/diseno-web',
+    label: '01 · Diseño web',
+    title: 'Cazador de Webs',
+    text: 'Renovamos tu web actual con tu marca real, en tiempo récord.',
+    items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
+    link: 'Saber más sobre Cazador de Webs →',
+  },
+  {
+    href: '/servicios/auditoria-360',
+    label: '02 · Auditoría',
+    title: 'Auditoría de Negocio 360°',
+    text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
+    items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
+    link: 'Descubre la Auditoría de Negocio →',
+  },
+  {
+    href: '/servicios/posicionamiento-aeo',
+    label: '03 · IA y AEO',
+    title: 'Posicionamiento AEO',
+    text: 'Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.',
+    items: ['Ficha de Google y redes ordenadas.', 'Contenido citable por IA.', 'Reseñas y señales de confianza.'],
+    link: 'Conoce el Posicionamiento AEO →',
+  },
+];
 
 export default function Home() {
   // --- ESTADOS DEL PANEL SECRETO ---
@@ -179,283 +209,148 @@ export default function Home() {
     }
   };
 
-  // Función para abrir el chat desde las tarjetas
-  const openChatWithContext = (mensaje) => {
-    window.dispatchEvent(new CustomEvent('abrir-chat', { detail: mensaje }));
+  // Abre el asistente de chat (mismo evento que ya escucha ChatWidget)
+  const abrirChat = (mensaje) => {
+    window.dispatchEvent(new CustomEvent('abrir-chat', mensaje ? { detail: mensaje } : undefined));
   };
 
-  // Estilo de los botones de marketing
-  const buttonStyle = {
-    width: '100%',
-    padding: '0.6rem',
-    marginTop: '1rem',
-    backgroundColor: '#1C2624',
-    color: '#F5F4EF',
-    border: '1px solid #2DD4BF',
-    borderRadius: '8px',
-    fontSize: '0.9rem',
-    fontWeight: 'bold',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-  };
-  
   return (
     <>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%', paddingBottom: '6rem' }}>
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
-      
-      <nav className="nav">
-        <div className="nav-logo">
-          <span className="nav-logo-icon">X</span> TECH
+
+      <nav className="nav" aria-label="Principal">
+        {/* El acceso secreto al panel (5 toques seguidos) vive ahora en el logo */}
+        <div className="brand nav-brand" onClick={handleSecretClick}>
+          <BrandMark />
+          <span>DASTAN X-TECH</span>
         </div>
         <div className="nav-links">
-          <a href="#services" style={{ color: 'inherit', textDecoration: 'none' }}>Servicios</a>
-          <span className="dot">·</span>
-          <a href="/blog" style={{ color: 'inherit', textDecoration: 'none' }}>Blog</a>
-          <span className="dot">·</span>
-          <a href="#contacto" style={{ color: 'inherit', textDecoration: 'none' }}>Contacto</a>
+          <a href="#services">Servicios</a>
+          <a href="/blog">Blog</a>
+          <a href="#contacto">Contacto</a>
         </div>
       </nav>
 
+      {/* HERO: la propuesta de valor en la primera pantalla */}
       <main className="hero">
-        <div className="orb-container" onClick={handleSecretClick} style={{ cursor: 'pointer' }}>
-          <div className="orb-glow"></div>
-          <div className="orb">
-            <span className="orb-x">X</span>
-          </div>
-        </div>
-        
-        <h1>
-          DASTAN-X-TECH
-          <span className="sr-only"> — Consultores de IA para Negocios y Pymes en Colombia, México y el resto del mundo</span>
+        <span className="label-mono">Consultoría de IA y automatización para pymes</span>
+        <h1 className="hero-title">
+          Deja de perder clientes si tu negocio no está a la altura.
+          <span className="sr-only"> DASTAN X-TECH, consultores de IA para negocios y pymes en Colombia, México y el resto del mundo.</span>
         </h1>
-        <p className="sub">
-          Consultoría de IA y Automatización de Negocios.
+        <p className="hero-sub">
+          Web renovada, auditoría con datos reales y posicionamiento para que la IA también te recomiende.
         </p>
-        
-       <div className="btns">
-          <button 
-            className="btn-primary" 
-            onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat'))}
-          >
-            Comenzar
+
+        <div className="hero-actions">
+          <button type="button" className="btn btn-primary" onClick={() => abrirChat()}>
+            Diagnóstico gratis
           </button>
+          <a href="#services" className="btn btn-secondary">
+            Ver servicios
+          </a>
         </div>
 
-        <div className="badges">
-          <div className="badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <ul className="hero-points">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
             </svg>
             Automatización 24/7
-          </div>
-          <div className="badge">
-            {/* Ícono de Globo Terráqueo para Online Services */}
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             Servicios en línea
-          </div>
-          <div className="badge">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.956 11.956 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
             </svg>
-            Seguro y Privado
-          </div>
-        </div>
+            Seguro y privado
+          </li>
+        </ul>
       </main>
       </div>
-      
+
       {/* SECCIÓN QUIÉNES SOMOS */}
-      <section id="about" style={{ padding: '4rem 1rem 2rem', maxWidth: '1000px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.8rem', color: '#F5F4EF', marginBottom: '1rem' }}>
+      <section id="about" className="section" style={{ maxWidth: '760px' }}>
+        <h2 className="section-title" style={{ marginBottom: '1rem' }}>
           Quiénes somos
         </h2>
-        <p style={{ color: '#b0adc5', fontSize: '1rem', lineHeight: '1.7', maxWidth: '650px', margin: '0 auto' }}>
-          Soy <strong style={{ color: '#2DD4BF' }}>Dastan Tamayo</strong>, fundador de X-TECH. Al lado de <strong style={{ color: '#2DD4BF' }}>Isdiel Martínez</strong>, consultor de IA y estratega digital. Ayudamos a los negocios privados y Pymes a dejar de perder clientes por una presencia digital que no está a la altura de lo que ofrecen: <strong>Web</strong> renovada, auditoría con datos reales <strong>SEO</strong>, y posicionamiento <strong>AEO</strong> para ser recomendados por la Inteligencia Artificial, no solo por Google. Todo esto con un enfoque en la automatización de procesos y la eficiencia operativa.
-          Hemos creado excelentes ofertas y servicios pensando siempre en los negocios más pequeños. 
+        <p className="section-text">
+          Soy <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH. Al lado de <strong>Isdiel Martínez</strong>, consultor de IA y estratega digital. Ayudamos a los negocios privados y Pymes a dejar de perder clientes por una presencia digital que no está a la altura de lo que ofrecen: <strong>Web</strong> renovada, auditoría con datos reales <strong>SEO</strong>, y posicionamiento <strong>AEO</strong> para ser recomendados por la Inteligencia Artificial, no solo por Google. Todo esto con un enfoque en la automatización de procesos y la eficiencia operativa. Trabajamos con evidencia, no con suposiciones: cada proyecto arranca con un diagnóstico real de dónde se está perdiendo tiempo y dinero, y termina con acciones concretas, medibles y priorizadas por impacto.
+          Hemos creado excelentes ofertas y servicios pensando siempre en los negocios más pequeños, para que compitan con las herramientas que antes solo tenían las grandes empresas.
         </p>
       </section>
 
-      {/* SECCIÓN DE TARJETAS INFORMATIVAS E INTERACTIVAS */}
-      <section id="services" style={{ padding: '3rem 1rem', maxWidth: '1200px', margin: '0 auto', width: '100%' }}>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-          
-          {/* Tarjeta 1: Cazador de Webs */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-            <div
-              className="service-card"
-              onClick={() => openChatWithContext("Quiero información sobre Cazador de Webs (diseño web).")}
-            >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                  <span style={{ fontSize: '1.5rem' }}>🕸️</span>
-                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Cazador de Webs</h3>
-                </div>
-                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                  Renovamos tu web actual con tu marca real, en tiempo récord.
-                </p>
-                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                  <li>Diagnóstico honesto de tu web actual.</li>
-                  <li>Web nueva, responsive, lista para publicar.</li>
-                  <li>WhatsApp y teléfono siempre visibles.</li>
-                </ul>
-              </div>
-            </div>
-            <a href="/servicios/diseno-web"
-              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
-              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
-              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
-            >
-              Saber más →
-            </a>
-          </div>
-
-          {/* Tarjeta 2: Auditoría 360° */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-            <div
-              className="service-card"
-              onClick={() => openChatWithContext("Quiero información sobre la Auditoría de Negocio 360°.")}
-            >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                  <span style={{ fontSize: '1.5rem' }}>📊</span>
-                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Auditoría de Negocio 360°</h3>
-                </div>
-                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                  Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.
-                </p>
-                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                  <li>Presencia digital sobre 100.</li>
-                  <li>Madurez tecnológica sobre 5.</li>
-                  <li>Plan de acción por fases.</li>
-                </ul>
-              </div>
-            </div>
-            <a href="/servicios/auditoria-360"
-              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
-              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
-              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
-            >
-              Saber más →
-            </a>
-          </div>
-
-          {/* Tarjeta 3: Posicionamiento AEO */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-            <div
-              className="service-card"
-              onClick={() => openChatWithContext("Quiero información sobre Posicionamiento AEO.")}
-            >
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.8rem' }}>
-                  <span style={{ fontSize: '1.5rem' }}>🤖</span>
-                  <h3 style={{ fontSize: '1.2rem', margin: 0, color: '#E9D5FF' }}>Posicionamiento AEO</h3>
-                </div>
-                <p style={{ color: '#b0adc5', fontSize: '0.85rem', lineHeight: '1.5', margin: '0 0 1rem 0' }}>
-                  Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.
-                </p>
-                <ul style={{ color: '#9d98b8', fontSize: '0.8rem', paddingLeft: '1.2rem', margin: 0, lineHeight: '1.4' }}>
-                  <li>Ficha de Google y redes ordenadas.</li>
-                  <li>Contenido citable por IA.</li>
-                  <li>Reseñas y señales de confianza.</li>
-                </ul>
-              </div>
-            </div>
-            <a href="/servicios/posicionamiento-aeo"
-              style={{ display: 'block', width: '100%', padding: '0.8rem', backgroundColor: 'transparent', color: '#2DD4BF', border: '1px solid #2DD4BF', borderRadius: '8px', fontSize: '0.9rem', fontWeight: 'bold', textAlign: 'center', textDecoration: 'none', transition: 'all 0.3s ease' }}
-              onMouseOver={(e) => { e.target.style.backgroundColor = 'rgba(45, 212, 191, 0.1)' }}
-              onMouseOut={(e) => { e.target.style.backgroundColor = 'transparent' }}
-            >
-              Saber más →
-            </a>
-          </div>
-
+      {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página */}
+      <section id="services" className="section">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem' }}>
+          <span className="label-mono" style={{ color: 'var(--action)' }}>Servicios</span>
+          <h2 className="section-title">Tres servicios para que tu negocio no pierda ni un cliente</h2>
         </div>
 
-        <p style={{ textAlign: 'center', color: '#7c7694', fontSize: '0.8rem', marginTop: '2rem', letterSpacing: '0.02em', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.9' }}>
+        <div className="card-grid">
+          {servicios.map((s) => (
+            <a key={s.href} href={s.href} className="service-card">
+              <span className="label-mono">{s.label}</span>
+              <h3 className="card-title">{s.title}</h3>
+              <p className="card-text">{s.text}</p>
+              <ul className="dot-list card-list">
+                {s.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+              <span className="card-link">{s.link}</span>
+            </a>
+          ))}
+        </div>
+
+        <p className="section-text" style={{ textAlign: 'center', fontSize: '15px', marginTop: '2rem', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.9' }}>
           También ofrecemos: Análisis de YouTube · Edición de Video · Marca Personal · Análisis de Ecommerce · Kits de IA a Medida · Instagram a Web · Web de Scroll · Auditoría de Meta Ads · Dashboard de Facturas · Extensiones de Chrome · Prospección de Clientes
         </p>
       </section>
 
       {/* CÓMO TRABAJAMOS */}
-      <section style={{ padding: '4rem 1rem', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '1.6rem', color: '#F5F4EF', marginBottom: '3rem' }}>
+      <section className="section">
+        <h2 className="section-title" style={{ marginBottom: '2.5rem' }}>
           Un mismo objetivo: que ganes más y pierdas menos
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#2DD4BF', marginBottom: '0.5rem' }}>01</div>
-            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Auditamos tu negocio y encontramos dónde pierdes tiempo y clientes.</p>
+        <div className="steps">
+          <div>
+            <div className="step-number">01</div>
+            <p className="section-text" style={{ fontSize: '16px' }}>Auditamos tu negocio y encontramos dónde pierdes tiempo y clientes.</p>
           </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#A855F7', marginBottom: '0.5rem' }}>02</div>
-            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Renovamos tu web con tu marca real, lista para generar confianza.</p>
+          <div>
+            <div className="step-number">02</div>
+            <p className="section-text" style={{ fontSize: '16px' }}>Renovamos tu web con tu marca real, lista para generar confianza.</p>
           </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: '900', color: '#2DD4BF', marginBottom: '0.5rem' }}>03</div>
-            <p style={{ color: '#b0adc5', fontSize: '0.9rem', lineHeight: '1.5' }}>Te posicionamos para que también te recomiende la IA, más allá de Google.</p>
+          <div>
+            <div className="step-number">03</div>
+            <p className="section-text" style={{ fontSize: '16px' }}>Te posicionamos para que también te recomiende la IA, más allá de Google.</p>
           </div>
         </div>
       </section>
 
       {/* CIERRE / CTA FINAL */}
-      <section style={{ padding: '4rem 1rem 3rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: '900', color: '#F5F4EF', marginBottom: '1rem' }}>
-          Hablemos de tu negocio
-        </h2>
-        <p style={{ color: '#b0adc5', maxWidth: '500px', margin: '0 auto 2rem' }}>
-          Cuéntanos qué vendes y dónde — te decimos, sin costo, en qué estás perdiendo clientes.
-        </p>
-        <button
-          onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat'))}
-          style={{ background: '#2DD4BF', color: '#07050A', padding: '1rem 2.5rem', borderRadius: '8px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', border: 'none' }}
-        >
-          Empezar ahora
-        </button>
+      <section className="section" style={{ paddingBottom: '5rem' }}>
+        <div className="service-card" style={{ alignItems: 'flex-start', padding: '2.5rem' }}>
+          <h2 className="section-title">
+            Hablemos de tu negocio
+          </h2>
+          <p className="card-text" style={{ maxWidth: '520px' }}>
+            Cuéntanos qué vendes y dónde — te decimos, sin costo, en qué estás perdiendo clientes.
+          </p>
+          <button type="button" className="btn btn-primary" onClick={() => abrirChat()}>
+            Diagnóstico gratis
+          </button>
+        </div>
       </section>
 
       {/* FOOTER - MEDIOS DE CONTACTO */}
-      <footer id="contacto" style={{ padding: '2.5rem 1rem 4rem', textAlign: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '12px' }}>
-          <a
-            href="https://wa.me/16055003653"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge"
-            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
-          >
-            💬 +1 605-500-3653
-          </a>
-          <a
-            href="mailto:xtech.ai.development@gmail.com"
-            className="badge"
-            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
-          >
-            ✉️ xtech.ai.development@gmail.com
-          </a>
-          <a
-            href="https://www.instagram.com/dastan.xtech/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge"
-            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
-          >
-            📷 Instagram
-          </a>
-          <a
-            href="https://www.linkedin.com/in/dastantech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge"
-            style={{ border: 'none', textDecoration: 'none', cursor: 'pointer' }}
-          >
-            💼 LinkedIn
-          </a>
-        </div>
-      </footer>
+      <SiteFooter tone="dark" />
 
       {/* ================= MODAL DE CONTRASEÑA ================= */}
       {showAdminLogin && (

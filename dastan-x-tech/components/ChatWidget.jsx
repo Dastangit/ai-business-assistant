@@ -1,17 +1,18 @@
 "use client";
 import { useState, useEffect } from 'react';
 
+// Un solo nombre para el asistente en todo el chat
+const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
+const SALUDO_INICIAL = '¡Hola! Soy la IA de DASTAN X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?';
+
 export default function ChatWidget({ couponApplied = false } = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
-  // Saludo oficial inicial
+  // Saludo oficial inicial (el mismo al abrir y al limpiar)
   const [messages, setMessages] = useState([
-    { 
-      role: 'bot', 
-      text: '¡Hola! Soy la IA de DASTAN X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
-    }
+    { role: 'bot', text: SALUDO_INICIAL }
   ]);
 
   // 1. EL ESCUCHADOR ACTUALIZADO PARA AUTO-ENVÍO
@@ -35,10 +36,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
   // Función para limpiar el chat visualmente
   const handleClearChat = () => {
     setMessages([
-      { 
-        role: 'bot', 
-        text: '¡Hola! Soy la IA de X-TECH. Nos especializamos en servicios online. ¿Cómo puedo ayudarte?' 
-      }
+      { role: 'bot', text: SALUDO_INICIAL }
     ]);
   };
 
@@ -88,14 +86,14 @@ export default function ChatWidget({ couponApplied = false } = {}) {
       
       if (cleanPart === '@lexdats_bot') {
         return (
-          <a key={index} href="https://t.me/lexdats_bot" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
+          <a key={index} href="https://t.me/lexdats_bot" target="_blank" rel="noopener noreferrer">
             {part}
           </a>
         );
       }
       if (cleanPart === '@Datspro') {
         return (
-          <a key={index} href="https://t.me/Datspro" target="_blank" rel="noopener noreferrer" style={{ color: '#0088cc', textDecoration: 'underline', fontWeight: 'bold' }}>
+          <a key={index} href="https://t.me/Datspro" target="_blank" rel="noopener noreferrer">
             {part}
           </a>
         );
@@ -105,7 +103,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
       const justNumbers = cleanPart.replace(/[\s-]/g, '');
       if (justNumbers === '+16055003653' || justNumbers === '16055003653') {
         return (
-          <a key={index} href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'underline', fontWeight: 'bold' }}>
+          <a key={index} href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer">
             +1 605-500-3653
           </a>
         );
@@ -125,9 +123,10 @@ export default function ChatWidget({ couponApplied = false } = {}) {
           <div className="chat-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div className="chat-header-dot"></div>
-              <div style={{ fontSize: '15px', fontWeight: '600' }}>DASTAN AI Assistant</div>
+              <div style={{ fontSize: '15px', fontWeight: '600' }}>{NOMBRE_ASISTENTE}</div>
             </div>
             <button 
+              type="button"
               onClick={handleClearChat}
               className="chat-clear-btn"
             >
@@ -153,14 +152,15 @@ export default function ChatWidget({ couponApplied = false } = {}) {
           <div className="chat-input-area">
             <input 
               type="text"
+              aria-label="Escribe tu mensaje"
               className="chat-input"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Escribe tu mensaje..."
             />
-            <button onClick={handleSend} style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: '0 8px' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <button type="button" onClick={handleSend} className="chat-send-btn" aria-label="Enviar mensaje">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
@@ -170,7 +170,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
         </div>
       )}
       
-      <button className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)}>
+      <button type="button" className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat con el asistente'}>
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>

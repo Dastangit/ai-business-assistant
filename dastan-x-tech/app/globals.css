@@ -1,150 +1,305 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+/* =========================================
+   SISTEMA VISUAL DASTAN X-TECH
+   Un rol por color, una tipografía (Geist, cargada en layout.js),
+   un estilo de botón y las mismas piezas en páginas oscuras y claras.
+   ========================================= */
+:root {
+  /* Modo oscuro (home, VIP, secciones oscuras) */
+  --bg: #07050A;
+  --surface: #110D18;
+  --border: #231D2E;
+  --border-strong: #3A3248;
+  --text: #F5F4EF;
+  --text-2: #B7B3C7;          /* un solo gris para texto secundario */
+  --brand: #A855F7;           /* marca: logo y detalles, nunca botones */
+  --action: #2DD4BF;          /* acción: botones, enlaces, foco */
+  --action-hover: #5EEAD4;
+
+  /* Modo claro (servicios y blog) */
+  --paper: #F5F4EF;
+  --ink: #1A1722;             /* sustituye al verde #1C2624 */
+  --ink-hover: #2E2A38;
+  --ink-2: #5A5566;
+  --line-light: #E2DFE6;
+  --border-light: #CFCBD6;
+  --brand-on-light: #7C3AED;  /* violeta oscurecido para pasar contraste sobre crema */
+  --action-on-light: #0F8F7F; /* turquesa oscurecido: #2DD4BF sobre crema no se lee */
+
+  --font-sans: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --radius: 10px;
+  --radius-card: 14px;
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 /* Los botones/inputs no heredan la tipografía del body por defecto en varios navegadores móviles: forzamos que sí lo hagan */
 button, input, textarea, select { font-family: inherit; }
 
-body { 
-  font-family: 'Inter', sans-serif; 
-  /* Fondo azul/púrpura hiper-oscuro exacto de la foto original */
-  background: #07050A; 
-  background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #07050A 80%);
-  color: #FFFFFF; 
-  
-  /* CAMBIOS AQUÍ */
-  min-height: 100vh; 
-  overflow-x: hidden; 
-  overflow-y: auto;
-  
+body {
+  /* Geist en todo el sitio: antes servicios, blog y VIP usaban system-ui y en teléfonos con fuente personalizada salían en cursiva */
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* 17px de texto base */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* Fondo base sólido; el gradiente va en ::before fijo para que no se estire con el alto de la página */
+  background: var(--bg);
+  color: var(--text);
+
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+/* Gradiente ambiental fijo: antes se estiraba con el alto total de la página (mucho mayor en móvil),
+   diluyendo el violeta y viéndose más oscuro que en PC */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #07050A 80%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Foco visible para quien navega con teclado */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 2px;
+}
+.theme-light :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline-color: var(--action-on-light);
 }
 
 /* Brillos de fondo ambientales calcados */
-.glow-tl { 
-  position: absolute; top: -15%; left: -10%; width: 55vw; height: 55vw; 
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 60%); 
+.glow-tl {
+  position: absolute; top: -15%; left: -10%; width: 55vw; height: 55vw;
+  min-width: 420px; min-height: 420px; /* en móvil 55vw era muy pequeño y el blur(80px) lo apagaba casi del todo */
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 60%);
   filter: blur(80px); pointer-events: none; z-index: 0;
 }
-.glow-br { 
-  position: absolute; bottom: -20%; right: -5%; width: 60vw; height: 60vw; 
-  background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%); 
+.glow-br {
+  position: absolute; bottom: -20%; right: -5%; width: 60vw; height: 60vw;
+  min-width: 420px; min-height: 420px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
   filter: blur(80px); pointer-events: none; z-index: 0;
 }
-
-/* Barra de Navegación */
-.nav { 
-  position: relative; z-index: 10; display: flex; justify-content: space-between; 
-  align-items: center; padding: 24px 60px; max-width: 1400px; width: 100%; margin: 0 auto; 
-}
-.nav-logo { 
-  display: flex; align-items: center; gap: 8px; font-weight: 500; 
-  font-size: 14px; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.6); 
-}
-.nav-logo-icon { 
-  font-family: 'Inter', sans-serif; font-weight: 900; font-size: 20px;
-  background: linear-gradient(90deg, #BA45FF 0%, #34DCAB 100%); 
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; 
-}
-.nav-links { 
-  display: flex; gap: 24px; font-size: 13px; font-weight: 400; 
-  color: rgba(255, 255, 255, 0.5); align-items: center;
-}
-.nav-links span { cursor: pointer; transition: color 0.2s ease; }
-.nav-links a { color: inherit; text-decoration: none; }
-.nav-links span:hover, .nav-links a:hover { color: #FFFFFF; }
-.dot { font-size: 18px; opacity: 0.3; line-height: 0; padding-bottom: 4px; }
-
-/* Contenedor Principal */
-.hero { 
-  position: relative; z-index: 10; display: flex; flex-direction: column; 
-  align-items: center; text-align: center; justify-content: center; 
-  flex: 1; padding: 0 20px 20px;
-  /* Garantiza una pantalla completa para centrar, sin depender de si el resto de la página cabe en el viewport */
-  min-height: 100vh; min-height: 100dvh;
-}
-
-/* EL ORBE Y LA X - Ajuste perfecto */
-.orb-container { position: relative; margin-bottom: 28px; animation: orb-float 6s ease-in-out infinite; }
-
-@keyframes orb-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.orb-glow {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 140px; height: 140px; border-radius: 50%;
-  /* Brillo exacto: violeta focalizado arriba/izquierda, cyan abajo/derecha */
-  background: radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.65) 0%, transparent 60%),
-              radial-gradient(circle at 80% 80%, rgba(45, 212, 191, 0.55) 0%, transparent 60%);
-  filter: blur(22px); z-index: 0;
-}
-.orb { 
-  width: 130px; height: 130px; border-radius: 50%; 
-  background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%);
-  /* El borde finísimo de la imagen */
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(8px);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; z-index: 1;
-}
-.orb-x { 
-  font-family: 'Inter', sans-serif; 
-  font-size: 78px; 
-  font-weight: 900; /* Letra ultra gruesa */
-  /* Gradiente horizontal calcado de la referencia (violeta -> verde azulado) */
-  background: linear-gradient(90deg, #BA45FF 0%, #8B7FE0 50%, #34DCAB 100%);
-  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  line-height: 1;
-  /* Ensanchamos un pelín la letra para imitar el logo */
-  transform: scaleX(1.15); 
-  filter: drop-shadow(0 2px 10px rgba(168, 85, 247, 0.3));
-}
-
-/* Textos */
-h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
-.sub { color: rgba(255, 255, 255, 0.65); font-size: 15px; margin-bottom: 40px; font-weight: 400; }
 
-/* Botones */
-.btns { display: flex; gap: 16px; margin-bottom: 56px; }
-.btn-primary { 
-  width: 180px; height: 48px; border-radius: 9999px; 
-  /* El gradiente se aclara más rápido hacia el centro para no comerse el texto */
-  background: linear-gradient(90deg, #2A1A4A 0%, #8B7CA1 45%, #E2E4E9 100%);
-  color: #000000; /* Negro puro */
-  font-family: 'Inter', sans-serif;
-  font-weight: 800; /* Extra bold para que destaque */
-  font-size: 16px; 
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: -10px 0 20px -5px rgba(139, 92, 246, 0.5);
-  cursor: pointer; transition: all 0.2s ease; 
+/* =========================================
+   PIEZAS COMPARTIDAS
+   ========================================= */
+
+/* Logotipo: la X plana del ícono de pestaña + un solo nombre */
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: inherit; text-decoration: none;
+  font-size: 14px; font-weight: 600; letter-spacing: 0.04em; white-space: nowrap;
+}
+.brand-mark { width: 28px; height: 28px; flex-shrink: 0; display: block; }
+
+/* Etiquetas y números en Geist Mono */
+.label-mono {
+  font-family: var(--font-mono); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* Botones: mismo alto, radio y peso en oscuro y en claro. Sin gradientes ni sombras de color */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 24px; border-radius: var(--radius);
+  font-size: 16px; font-weight: 600; line-height: 1.25; text-align: center;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; background: transparent; color: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-primary { background: var(--action); color: var(--bg); }
+.btn-primary:hover { background: var(--action-hover); }
+.btn-secondary { color: var(--text); border-color: var(--border-strong); font-weight: 500; }
+.btn-secondary:hover { border-color: var(--action); }
+/* Versiones para fondo claro */
+.btn-ink { background: var(--ink); color: var(--paper); }
+.btn-ink:hover { background: var(--ink-hover); }
+.btn-outline-light { color: var(--ink); border-color: var(--border-light); font-weight: 500; }
+.btn-outline-light:hover { border-color: var(--ink); }
+.btn-block { width: 100%; }
+
+/* Enlace de texto con flecha */
+.text-link { color: var(--action); font-weight: 600; text-decoration: none; }
+.text-link:hover { color: var(--action-hover); text-decoration: underline; text-underline-offset: 3px; }
+.theme-light .text-link { color: var(--action-on-light); }
+
+/* Lista con puntos turquesa */
+.dot-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.dot-list li { display: flex; gap: 10px; align-items: baseline; }
+.dot-list li::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--action); flex-shrink: 0; transform: translateY(-2px);
+}
+
+/* Rejilla de tarjetas: no se corta en pantallas de 320px */
+.card-grid {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+/* Tarjetas de servicio: una sola acción por tarjeta */
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+a.service-card { cursor: pointer; }
+a.service-card:hover { border-color: var(--action); }
+.service-card .label-mono { color: var(--brand); }
+.card-title { font-size: 1.3125rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+.card-text { color: var(--text-2); font-size: 16px; line-height: 1.55; }
+.card-list { border-top: 1px solid var(--border); padding-top: 16px; font-size: 15px; }
+.card-link { color: var(--action); font-size: 15px; font-weight: 600; margin-top: auto; }
+
+/* Cabecera de las páginas interiores (servicios y blog) */
+.site-header {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px 24px;
+  padding: 20px 5%;
+  position: relative; z-index: 10;
+}
+.site-header-links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; }
+.site-header-links a { color: inherit; text-decoration: none; opacity: 0.8; }
+.site-header-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.site-header--light { color: var(--ink); border-bottom: 1px solid var(--line-light); }
+.site-header--light .site-header-links a { color: var(--ink-2); opacity: 1; }
+.site-header--light .site-header-links a:hover { color: var(--ink); }
+.site-header--dark { color: var(--text); }
+.site-header--dark .site-header-links a { color: var(--text-2); opacity: 1; }
+.site-header--dark .site-header-links a:hover { color: var(--text); }
+
+/* Pie con contacto */
+.site-footer { padding: 3rem 5% 5rem; font-size: 15px; }
+.site-footer--dark { border-top: 1px solid var(--border); color: var(--text-2); }
+.site-footer--light { border-top: 1px solid var(--line-light); color: var(--ink-2); background: var(--paper); }
+.site-footer-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px;
+}
+.site-footer-brand { display: flex; flex-direction: column; gap: 10px; max-width: 360px; }
+.site-footer--dark .site-footer-brand .brand { color: var(--text); }
+.site-footer--light .site-footer-brand .brand { color: var(--ink); }
+.site-footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.site-footer-links a { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.site-footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.site-footer--dark .site-footer-links a:hover { color: var(--text); }
+.site-footer--light .site-footer-links a:hover { color: var(--ink); }
+.site-footer-links svg { width: 18px; height: 18px; flex-shrink: 0; }
+.site-footer-legal { max-width: 1120px; margin: 2rem auto 0; font-size: 14px; }
+
+/* Firma de autor en los artículos */
+.byline { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
+.byline-avatar {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s ease;
+  background: var(--ink); color: var(--paper);
+  font-family: var(--font-mono); font-size: 14px; font-weight: 500;
 }
-/* EL EFECTO HOVER */
-.btn-primary:hover {
-  transform: translateY(-3px); /* Eleva el botón ligeramente */
-  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5); /* Brillo neón púrpura a su alrededor */
-  filter: brightness(1.15); /* Lo hace un poco más brillante */
-  cursor: pointer;
-}
+.byline-text { font-size: 14px; line-height: 1.4; color: var(--ink-2); }
+.byline-text strong { display: block; color: var(--ink); font-weight: 600; }
 
-/* Etiquetas inferiores */
-.badges { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-.badge { 
-  display: flex; align-items: center; gap: 8px; 
-  background: rgba(255, 255, 255, 0.02); 
-  border: 1px solid rgba(255, 255, 255, 0.06); 
-  padding: 10px 20px; border-radius: 9999px; 
-  font-size: 13px; color: rgba(255, 255, 255, 0.6); font-weight: 400; 
+/* =========================================
+   HOME
+   ========================================= */
+
+/* Barra de Navegación */
+.nav {
+  position: relative; z-index: 10; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px 24px;
+  padding: 24px; max-width: 1120px; width: 100%; margin: 0 auto;
 }
-.badge svg { width: 14px; height: 14px; opacity: 0.5; }
+.nav-brand { color: var(--text); }
+.nav-links {
+  display: flex; gap: 24px; font-size: 15px;
+  color: var(--text-2); align-items: center;
+}
+.nav-links a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+.nav-links a:hover { color: var(--text); }
+
+/* Hero con la propuesta de valor */
+.hero {
+  position: relative; z-index: 10; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 24px;
+  max-width: 1120px; width: 100%; margin: 0 auto;
+  padding: 72px 24px 56px;
+}
+.hero .label-mono { color: var(--text-2); }
+.hero-title {
+  font-size: clamp(2.25rem, 5.4vw, 3.5rem); font-weight: 700;
+  letter-spacing: -0.03em; line-height: 1.05; max-width: 820px;
+}
+.hero-sub { font-size: 1.125rem; line-height: 1.6; color: var(--text-2); max-width: 580px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Puntos del hero: texto con ícono pequeño, sin borde, para que no parezcan botones */
+.hero-points {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px;
+  font-size: 15px; color: var(--text-2); padding-top: 8px;
+}
+.hero-points li { display: flex; align-items: center; gap: 8px; }
+.hero-points svg { width: 16px; height: 16px; color: var(--action); flex-shrink: 0; }
+
+.section { padding: 4rem 24px; max-width: 1120px; margin: 0 auto; width: 100%; }
+.section-title { font-size: clamp(1.75rem, 3.5vw, 1.875rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+.section-text { color: var(--text-2); font-size: 17px; line-height: 1.7; }
+.section-text strong { color: var(--text); font-weight: 600; }
+
+.steps { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+.step-number { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 500; color: var(--brand); margin-bottom: 0.5rem; }
+
+/* =========================================
+   PÁGINAS DE SERVICIO Y BLOG (modo claro)
+   ========================================= */
+.theme-light { background: var(--paper); color: var(--ink); min-height: 100vh; }
+.theme-light .label-mono { color: var(--action-on-light); }
+.accent-light { color: var(--brand-on-light); }
+
+.servicio-hero-title { font-weight: 700 !important; letter-spacing: -0.025em !important; }
+
+/* Tarjeta del hero de servicios: antes eran dos rectángulos superpuestos */
+.servicio-hero-card {
+  background: var(--ink); color: var(--paper);
+  border-radius: var(--radius-card); padding: 2.5rem;
+  display: flex; flex-direction: column; justify-content: center; gap: 1rem;
+}
+.servicio-hero-card h3 { font-size: 1.5rem; font-weight: 600; }
+.servicio-hero-card .dot-list { color: var(--text-2); }
+
+/* Secciones oscuras dentro de páginas claras */
+.dark-section { background: var(--bg); color: var(--text); }
+.dark-section p { color: var(--text-2); }
+
+/* Lista numerada 01 / 02: en móvil el número va encima del texto */
+.feature-row {
+  display: flex; gap: 3rem; align-items: flex-start;
+  border-top: 1px solid var(--border); padding-top: 3rem;
+}
+.feature-number {
+  font-family: var(--font-mono); font-size: 1.5rem; font-weight: 500;
+  color: var(--action); min-width: 64px; line-height: 1.4;
+}
+.feature-number--brand { color: var(--brand); }
+.faq-item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
 
 /* =========================================
    WIDGET DE CHAT (Asistente IA) DEFINITIVO
@@ -155,52 +310,54 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
   display: flex; flex-direction: column; align-items: flex-end;
 }
 
-/* BOTÓN FLOTANTE (ORBE DEGRADADO ORIGINAL) */
+/* BOTÓN FLOTANTE (el orbe degradado vive aquí) */
 .chat-toggle-btn {
   width: 48px; height: 48px; border-radius: 50%;
   background: linear-gradient(135deg, #A855F7, #2DD4BF);
-  border: none; box-shadow: 0 4px 25px rgba(168, 85, 247, 0.35);
+  border: none; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   cursor: pointer; display: flex; align-items: center; justify-content: center;
   color: #07050A; /* El ícono se verá oscuro sobre el neón */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 .chat-toggle-btn svg { width: 24px; height: 24px; stroke: #07050A; }
-.chat-toggle-btn:hover { transform: scale(1.05); box-shadow: 0 6px 30px rgba(45, 212, 191, 0.45); }
+.chat-toggle-btn:hover { transform: scale(1.05); }
 
 /* VENTANA DEL CHAT */
 .chat-window {
   width: 350px; height: 500px; max-height: 83vh; margin-bottom: 15px;
-  background: rgba(10, 7, 18, 0.85); backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px;
+  background: rgba(10, 7, 18, 0.92); backdrop-filter: blur(25px);
+  border: 1px solid var(--border); border-radius: 16px;
   display: flex; flex-direction: column; overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  color: var(--text);
 }
 
 /* CABECERA Y BOTÓN LIMPIAR */
 .chat-header {
   padding: 16px; background: rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
 }
 .chat-header-dot {
   width: 10px; height: 10px; border-radius: 50%;
-  background: #2DD4BF; box-shadow: 0 0 12px #2DD4BF;
+  background: var(--action);
 }
 /* BOTÓN DE LIMPIAR CHAT (Solo texto) */
 .chat-clear-btn {
-  background-color: #07050A;
-  color: whitesmoke;
-  border: none;
-  border-radius: 4px;
+  background-color: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
   padding: 6px 12px;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .chat-clear-btn:hover {
-  transform: scale(0.98);
+  border-color: var(--action);
+  color: var(--text);
 }
 
 /* MENSAJES Y SCROLL */
@@ -214,119 +371,97 @@ h1 { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.0
 
 .msg-bot {
   background: rgba(255, 255, 255, 0.06); padding: 14px 18px;
-  border-radius: 16px 16px 16px 4px; font-size: 14px; line-height: 1.5;
-  color: rgba(255, 255, 255, 0.9); max-width: 85%; align-self: flex-start;
+  border-radius: 16px 16px 16px 4px; font-size: 15px; line-height: 1.5;
+  color: var(--text); max-width: 85%; align-self: flex-start;
   border: 1px solid rgba(255, 255, 255, 0.03);
 }
+.msg-bot a { color: var(--action); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+.msg-user a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 .msg-user {
-  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(45, 212, 191, 0.2));
+  background: rgba(168, 85, 247, 0.18);
   padding: 14px 18px; border-radius: 16px 16px 4px 16px;
-  font-size: 14px; line-height: 1.5; color: #FFFFFF;
+  font-size: 15px; line-height: 1.5; color: var(--text);
   max-width: 85%; align-self: flex-end;
-  border: 1px solid rgba(168, 85, 247, 0.4);
+  border: 1px solid rgba(168, 85, 247, 0.35);
 }
 
 /* ÁREA DE INPUT */
 .chat-input-area {
   padding: 16px; background: rgba(0, 0, 0, 0.3);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border);
   display: flex; gap: 12px; align-items: center;
 }
 .chat-input {
-  flex: 1; background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 99px;
-  padding: 12px 18px; color: #FFFFFF; font-size: 14px; outline: none;
+  flex: 1; min-width: 0; background: transparent;
+  border: 1px solid var(--border-strong); border-radius: 99px;
+  /* 16px: con menos, Safari en iPhone hace zoom automático al tocar el campo */
+  padding: 12px 18px; color: var(--text); font-size: 16px; outline: none;
   transition: border-color 0.2s;
 }
-.chat-input:focus { border-color: #A855F7; }
-.chat-input::placeholder { color: rgba(255, 255, 255, 0.4); }
-
-/* Estilo interactivo para las tarjetas de servicios */
-.service-card {
-  background: #120D1C;
-  border: 1px solid #231B35;
-  border-radius: 15px;
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.chat-input:focus { border-color: var(--action); }
+.chat-input::placeholder { color: var(--text-2); }
+.chat-send-btn {
+  background: transparent; border: none; cursor: pointer; padding: 8px;
+  color: var(--action); display: flex; border-radius: 8px;
 }
 
-.service-card:hover {
-  border-color: #2DD4BF; /* Brillo verde aqua en el borde */
-  transform: translateY(-5px); /* Se eleva un poco */
-  box-shadow: 0 10px 30px rgba(45, 212, 191, 0.15); /* Sombra suave */
+/* Velo detrás del chat: en escritorio no tapa la página; en móvil sí, para centrar la atención */
+.chat-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 40;
 }
 
-/* Tarjeta de Membresía: layout en fila con panel lateral "Chat IA Integrado" */
-.membership-card-row {
-  flex-direction: row !important;
-  align-items: center;
-  gap: 1.5rem;
+/* =========================================
+   VIP
+   ========================================= */
+/* Tarjetas compactas: precio junto al título, una frase y una lista corta */
+.vip-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px; display: flex; flex-direction: column; gap: 12px; min-width: 0;
+  transition: border-color 0.15s ease;
 }
-.membership-content { flex: 1; min-width: 0; }
-.membership-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  flex-shrink: 0;
-  padding: 0 0.5rem;
-  border-left: 1px solid #231B35;
-  min-width: 110px;
+.vip-card:hover { border-color: var(--border-strong); }
+.vip-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.vip-card-title { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }
+.vip-card-price { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; flex-shrink: 0; }
+.vip-card-text { font-size: 14px; line-height: 1.5; color: var(--text-2); }
+.vip-card-list {
+  display: flex; flex-direction: column; gap: 6px; flex: 1;
+  font-size: 13px; line-height: 1.5; color: #E6E3EE;
+  border-top: 1px solid var(--border); padding-top: 12px;
 }
-.membership-side-label {
-  font-size: 0.78rem;
-  color: #A855F7;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.3;
+.vip-card-list ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.vip-card-list-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-2); text-transform: uppercase; }
+.vip-card-list li { display: flex; gap: 10px; align-items: flex-start; }
+.vip-card-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--action); flex-shrink: 0; margin-top: 8px; }
+.btn-sm { min-height: 40px; padding: 8px 16px; border-radius: 8px; font-size: 14px; }
+.vip-ask {
+  background: none; border: none; cursor: pointer; padding: 0;
+  color: var(--action); font-size: 15px; font-weight: 500;
+  text-decoration: underline; text-underline-offset: 3px;
 }
-.robot-dance {
-  display: inline-block;
-  animation: robot-bounce 1s ease-in-out infinite;
-}
-.robot-svg { width: 56px; height: 72px; display: block; }
-.robot-svg g { transform-box: fill-box; }
-.robot-arm-left { transform-origin: 100% 50%; animation: arm-swing-left 0.9s ease-in-out infinite; }
-.robot-arm-right { transform-origin: 0% 50%; animation: arm-swing-right 0.9s ease-in-out infinite; }
-.robot-leg-left { transform-origin: 50% 0%; animation: leg-kick-left 0.9s ease-in-out infinite; }
-.robot-leg-right { transform-origin: 50% 0%; animation: leg-kick-right 0.9s ease-in-out infinite; }
+.vip-ask:hover { color: var(--action-hover); }
 
-@keyframes robot-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+/* Membresía en una fila, con botón secundario para no competir con los paquetes */
+.vip-membership {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px 20px; display: flex; align-items: center; justify-content: space-between;
+  gap: 16px 24px; flex-wrap: wrap;
 }
-@keyframes arm-swing-left {
-  0%, 100% { transform: rotate(-25deg); }
-  50% { transform: rotate(35deg); }
-}
-@keyframes arm-swing-right {
-  0%, 100% { transform: rotate(25deg); }
-  50% { transform: rotate(-35deg); }
-}
-@keyframes leg-kick-left {
-  0%, 100% { transform: rotate(20deg); }
-  50% { transform: rotate(-20deg); }
-}
-@keyframes leg-kick-right {
-  0%, 100% { transform: rotate(-20deg); }
-  50% { transform: rotate(20deg); }
-}
+.vip-membership-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 320px; }
 
-html, body { overflow-x: hidden; width: 100%; }
+/* clip evita el desplazamiento lateral sin convertir html y body en dos zonas con scroll propio (doble barra) */
+html, body { overflow-x: clip; width: 100%; }
 
 @media (max-width: 640px) {
   .nav { padding: 16px 20px; }
-  .nav-links { gap: 10px; font-size: 14px; }
+  .nav-links { gap: 16px; font-size: 15px; }
+  .site-header { padding: 16px 20px; }
 
-  h1 {
-    font-size: clamp(1.5rem, 8vw, 2.625rem);
-    white-space: nowrap; /* evita que "DASTAN-X-TECH" se parta en el guión */
-  }
+  .hero { padding: 40px 20px 32px; gap: 20px; }
+  .section { padding: 3rem 20px; }
 
   /* Hero asimétrico de /servicios/* - antes se cortaba en móvil por el grid de 2 columnas fijo y el h1 de 4.5rem en inline style */
   .servicio-hero {
@@ -340,10 +475,14 @@ html, body { overflow-x: hidden; width: 100%; }
   }
   .servicio-hero-visual { display: none !important; }
 
-  .btns { flex-direction: column; width: 100%; max-width: 280px; gap: 12px; }
-  .btn-primary, .btn-secondary { width: 100%; }
+  /* Lista numerada: número encima del texto para no comerse un tercio del ancho */
+  .feature-row { flex-direction: column; gap: 0.75rem; padding-top: 2rem; }
+  .feature-number { min-width: 0; }
 
-  .badge { font-size: 14px; padding: 8px 14px; }
+  .service-card { padding: 24px; }
+
+  /* Mismo lugar para el botón del chat en todas las páginas */
+  .chat-widget { bottom: 20px; right: 16px; }
 
   .chat-window {
     position: fixed;
@@ -356,15 +495,20 @@ html, body { overflow-x: hidden; width: 100%; }
     z-index: 1000;
   }
 
-  .membership-card-row { flex-direction: column !important; }
-  .membership-side { border-left: none; border-top: 1px solid #231B35; margin-top: 1rem; padding-top: 1rem; width: 100%; }
+  .chat-overlay {
+    background: rgba(7, 5, 10, 0.5);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
 }
 
-.chat-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(7, 5, 10, 0.5);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 40;
+/* Respeta a quien pide reducir el movimiento en su sistema (animaciones y transiciones) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
