@@ -406,8 +406,9 @@ a.service-card:hover { border-color: var(--action); }
 .chat-input::placeholder { color: var(--text-2); }
 .chat-send-btn {
   background: transparent; border: none; cursor: pointer; padding: 8px;
-  color: var(--action); display: flex; border-radius: 8px;
+  color: var(--text-2); display: flex; border-radius: 8px;
 }
+.chat-send-btn:hover { color: var(--text); }
 
 /* Velo detrás del chat: en escritorio no tapa la página; en móvil sí, para centrar la atención */
 .chat-overlay {

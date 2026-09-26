@@ -8,20 +8,21 @@ const GRACIAS_WEB = 'Recibido, gracias. Revisaremos tu web y te contactaremos po
 const GRACIAS_WEB_NUEVA = 'Recibido, gracias. Te contactaremos por WhatsApp lo antes posible para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
 
 // Estilos del formulario del diagnóstico (en línea para no tocar globals.css)
+// Dentro del chat todo es neutro y solo el botón principal (blanco) destaca: antes casi todo era turquesa
 const campo = {
   width: '100%', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: '10px',
-  padding: '10px 12px', color: 'var(--text)', fontSize: '16px', outline: 'none', marginBottom: '8px',
+  padding: '9px 12px', color: 'var(--text)', fontSize: '16px', outline: 'none', marginBottom: '6px',
 };
 const tarjeta = {
-  background: 'rgba(45, 212, 191, 0.07)', border: '1px solid rgba(45, 212, 191, 0.35)', borderRadius: '14px', padding: '14px',
+  background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--border-strong)', borderRadius: '14px', padding: '14px',
 };
 const opcion = (activa) => ({
   flex: 1, padding: '8px', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: 'pointer',
-  background: activa ? 'var(--action)' : 'transparent', color: activa ? '#07050A' : 'var(--text-2)',
-  border: activa ? '1px solid var(--action)' : '1px solid var(--border-strong)',
+  background: activa ? 'var(--border-strong)' : 'transparent', color: activa ? 'var(--text)' : 'var(--text-2)',
+  border: activa ? '1px solid var(--border-strong)' : '1px solid var(--border)',
 });
 const botonPrincipal = {
-  width: '100%', background: 'var(--action)', color: '#07050A', border: 'none', borderRadius: '10px',
+  width: '100%', background: 'var(--text)', color: '#07050A', border: 'none', borderRadius: '10px',
   padding: '11px', fontWeight: 700, fontSize: '15px', cursor: 'pointer',
 };
 const botonSecundario = {
@@ -56,6 +57,10 @@ export default function ChatWidget({ couponApplied = false } = {}) {
     const lista = listaRef.current;
     const form = formRef.current;
     if (!formAbierto || !lista || !form) return;
+    // Si sobra sitio, aire debajo del formulario para que pueda subir hasta arriba: si no, asoma el borde del saludo
+    form.style.marginBottom = '0px';
+    const paddingLista = parseFloat(getComputedStyle(lista).paddingBottom);
+    form.style.marginBottom = `${Math.max(0, lista.clientHeight - form.offsetHeight - 8 - paddingLista)}px`;
     lista.scrollTop += form.getBoundingClientRect().top - lista.getBoundingClientRect().top - 8;
   }, [formAbierto, tieneWeb]);
 
@@ -186,7 +191,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
             {/* DIAGNÓSTICO SEO GRATIS (solo con web) o WEB NUEVA (sin web): los datos van al panel (tabla leads_web) */}
             {!leadEnviado && (formAbierto ? (
               <form ref={formRef} onSubmit={enviarDiagnostico} style={tarjeta} noValidate>
-                <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }} role="group" aria-label="¿Tienes página web?">
+                <div style={{ display: 'flex', gap: '6px', marginBottom: '10px' }} role="group" aria-label="¿Tienes página web?">
                   <button type="button" style={opcion(tieneWeb)} aria-pressed={tieneWeb} onClick={() => { setTieneWeb(true); setErrorForm(''); }}>Tengo web</button>
                   <button type="button" style={opcion(!tieneWeb)} aria-pressed={!tieneWeb} onClick={() => { setTieneWeb(false); setErrorForm(''); }}>No tengo web</button>
                 </div>
@@ -209,7 +214,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
                 <button type="submit" style={{ ...botonPrincipal, opacity: enviando ? 0.6 : 1 }} disabled={enviando}>
                   {enviando ? 'Enviando…' : (tieneWeb ? 'Quiero mi diagnóstico SEO' : 'Quiero mi web')}
                 </button>
-                <button type="button" onClick={() => setFormAbierto(false)} style={{ background: 'none', border: 'none', color: 'var(--text-2)', fontSize: '13px', marginTop: '8px', cursor: 'pointer', width: '100%' }}>
+                <button type="button" onClick={() => setFormAbierto(false)} style={{ background: 'none', border: 'none', color: 'var(--text-2)', fontSize: '13px', marginTop: '6px', cursor: 'pointer', width: '100%' }}>
                   Prefiero preguntar primero
                 </button>
               </form>
@@ -225,6 +230,9 @@ export default function ChatWidget({ couponApplied = false } = {}) {
             ))}
           </div>
 
+          {/* Con el formulario abierto no se muestra: así cabe entero (botón incluido) y no hay dos sitios donde escribir.
+              «Prefiero preguntar primero» lo cierra y vuelve la barra */}
+          {!(formAbierto && !leadEnviado) && (
           <div className="chat-input-area">
             <input
               type="text"
@@ -242,6 +250,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
               </svg>
             </button>
           </div>
+          )}
 
         </div>
       )}
