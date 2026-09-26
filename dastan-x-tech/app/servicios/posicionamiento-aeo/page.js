@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'Desde 200 USD. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.',
+    a: 'Desde 200 USD, e incluye el Diseño web y la Auditoría Completa de Negocio. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.',
   },
   {
     q: '¿Funciona para cualquier tipo de negocio?',

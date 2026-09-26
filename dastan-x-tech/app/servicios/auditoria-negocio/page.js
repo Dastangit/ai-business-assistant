@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta la Auditoría Completa de Negocio?',
-    a: 'Desde 150 USD. Es un servicio de pago; el precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
+    a: 'Desde 150 USD, e incluye el Diseño web: renovamos tu web o te la creamos si no tienes. Es un servicio de pago; el precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
   },
 ];
 

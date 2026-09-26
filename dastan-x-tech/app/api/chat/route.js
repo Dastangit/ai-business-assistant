@@ -28,7 +28,7 @@ function construirPrompt(couponApplied, diagnostico) {
   const d = Object.hasOwn(DIAGNOSTICO, String(diagnostico)) ? DIAGNOSTICO[diagnostico] : DIAGNOSTICO.chat;
   const lineaPrecios = couponApplied
     ? `Esta persona está en su propuesta personal (/vip) con el cupón aplicado. Sus precios son: Diseño web ${p.web} USD, Auditoría Completa de Negocio ${p.auditoria} USD, Posicionamiento AEO ${p.aeo} USD. Se pagan con los botones de esa misma página.`
-    : `Precios de partida (así aparecen en la web): Auditoría Completa de Negocio desde ${p.auditoria} USD, Diseño web (Cazador de Webs) desde ${p.web} USD, Posicionamiento AEO desde ${p.aeo} USD. El precio final depende del negocio y se confirma antes de empezar. Instagram a Web no tiene precio publicado: para eso, que escriba por WhatsApp. Nunca menciones cupones ni descuentos.`;
+    : `Precios de partida (así aparecen en la web): Diseño web (Cazador de Webs) desde ${p.web} USD; Auditoría Completa de Negocio desde ${p.auditoria} USD, que incluye el Diseño web; Posicionamiento AEO desde ${p.aeo} USD, que incluye el Diseño web y la Auditoría Completa de Negocio. El precio final depende del negocio y se confirma antes de empezar. Instagram a Web no tiene precio publicado: para eso, que escriba por WhatsApp. Nunca menciones cupones ni descuentos.`;
 
   return `Eres el asistente de DASTAN X-TECH. Responde en el idioma del usuario (español o inglés). Tono cercano, claro y sin jerga técnica.
 
