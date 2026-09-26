@@ -61,10 +61,10 @@ export default function Home() {
 
       {/* HERO: a quién ayudamos y qué recibe gratis, en la primera pantalla */}
       <main className="hero">
-        <span className="label-mono">Consultoría digital e IA para clínicas estéticas, spas y salones</span>
+        <span className="label-mono">Consultoría digital e IA para negocios privados y pymes</span>
         <h1 className="hero-title">
-          Descubre, con pruebas, por qué tu clínica, spa o salón pierde clientes por internet.
-          <span className="sr-only"> DASTAN X-TECH, consultoría digital e IA para clínicas estéticas, spas y salones en Colombia, México y Estados Unidos.</span>
+          Descubre, con pruebas, por qué tu negocio pierde clientes por internet.
+          <span className="sr-only"> DASTAN X-TECH, consultoría digital e IA para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.</span>
         </h1>
         <p className="hero-sub">
           Te mandamos gratis por WhatsApp 3 fallos reales de tu web o tu Instagram. Si quieres, después los arreglamos contigo.
@@ -108,7 +108,7 @@ export default function Home() {
           Quiénes somos
         </h2>
         <p className="section-text">
-          Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor de IA y estratega digital. Trabajamos con clínicas estéticas, spas y salones que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.
+          Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor de IA y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.
         </p>
         <p className="section-text">
           Empezamos siempre por un diagnóstico con evidencias —una frase de tu web, una reseña con fecha, una captura— y terminamos con acciones concretas, ordenadas por lo que más te devuelve. Antes de pedírselo a nadie, nos lo aplicamos a nosotros mismos: <a href="/blog/auditamos-nuestra-propia-web" className="text-link">lee nuestra autoauditoría</a>.

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 // Un solo nombre para el asistente en todo el chat
 const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
-const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a clínicas estéticas, spas y salones a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico gratis aquí abajo.';
+const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico gratis aquí abajo.';
 const GRACIAS = 'Recibido. Revisamos tu web o tu Instagram y te escribimos por WhatsApp con 3 fallos reales, cada uno con su prueba. Mientras tanto, pregúntame lo que quieras.';
 
 // Estilos del formulario del diagnóstico (en línea para no tocar globals.css)

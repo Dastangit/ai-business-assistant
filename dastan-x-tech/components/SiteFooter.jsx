@@ -52,7 +52,7 @@ export default function SiteFooter({ tone = 'light' }) {
       <div className="site-footer-inner">
         <div className="site-footer-brand">
           <Brand href="/" />
-          <p>Consultoría digital e IA para clínicas estéticas, spas y salones. En remoto, para Colombia, México y Estados Unidos.</p>
+          <p>Consultoría digital e IA para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</p>
         </div>
         <ul className="site-footer-links">
           {contactLinks.map((link) => (

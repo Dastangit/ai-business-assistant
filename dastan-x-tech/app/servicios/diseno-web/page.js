@@ -60,7 +60,7 @@ export default function DisenoWebPage() {
             Tu web nueva, con tu marca y tu <span className="accent-light">WhatsApp</span> a un toque.
           </h1>
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-            Renovamos la web de tu clínica, spa o salón: tus servicios explicados, tus precios claros y tu WhatsApp siempre visible. Con la estructura que Google y los asistentes de IA necesitan para entender qué ofreces.
+            Renovamos la web de tu negocio: tus servicios explicados, tus precios claros y tu WhatsApp siempre visible. Con la estructura que Google y los asistentes de IA necesitan para entender qué ofreces.
           </p>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
             Consultar proyecto

@@ -1,12 +1,12 @@
 export const metadata = {
-  title: 'Diseño web para clínicas estéticas, spas y salones | DASTAN X-TECH',
-  description: 'Renovamos la web de tu clínica, spa o salón con tu marca real, tus servicios, tus precios y tu WhatsApp a un toque. Desde 100 USD.',
-  keywords: ['Diseño web para clínicas estéticas', 'Diseño web para spas', 'Diseño web para salones de belleza', 'Diseño web para pymes'],
+  title: 'Diseño web para negocios y pymes | DASTAN X-TECH',
+  description: 'Renovamos la web de tu negocio con tu marca real, tus servicios, tus precios y tu WhatsApp a un toque. Desde 100 USD.',
+  keywords: ['Diseño web para pymes', 'Diseño web para negocios locales', 'Diseño web profesional', 'Posicionamiento AEO'],
   alternates: {
     canonical: '/servicios/diseno-web',
   },
   openGraph: {
-    title: 'Diseño web para clínicas estéticas, spas y salones | DASTAN X-TECH',
+    title: 'Diseño web para negocios y pymes | DASTAN X-TECH',
     description: 'Diseño de páginas web para negocios y pymes, optimizadas para SEO local y motores de respuesta AEO.',
     url: 'https://dastanxtech.com/servicios/diseno-web',
     siteName: 'DASTAN X-TECH',
