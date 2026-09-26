@@ -49,7 +49,7 @@ export default function AuditoriaNegocioPage() {
       }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-            <span style={{ background: 'var(--action-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
+            <span style={{ background: 'var(--brand-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
             <span className="label-mono">Servicio · Auditoría completa</span>
           </div>
           <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
@@ -75,9 +75,9 @@ export default function AuditoriaNegocioPage() {
       </header>
 
       {/* SECCIÓN DE CARACTERÍSTICAS */}
-      <section style={{ padding: '6rem 5%', background: '#07050A', color: '#F5F4EF' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '5rem', color: '#F5F4EF' }}>
-          Evidencia real, no <span style={{ color: '#2DD4BF' }}>suposiciones</span>
+      <section style={{ padding: '6rem 5%' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '5rem', color: 'var(--ink)' }}>
+          Evidencia real, no <span className="accent-light">suposiciones</span>
         </h2>
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
@@ -86,7 +86,7 @@ export default function AuditoriaNegocioPage() {
             <div className="feature-number">01</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Por fuera y por dentro</h3>
-              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Revisamos tu web, redes, anuncios activos, ficha de Google, reseñas y competencia — todo lo que un cliente ve antes de escribirte. Después miramos cómo gestionas la agenda, el cobro y qué herramientas usas por dentro.</p>
+              <p style={{ color: 'var(--ink-2)', lineHeight: '1.6' }}>Revisamos tu web, redes, anuncios activos, ficha de Google, reseñas y competencia — todo lo que un cliente ve antes de escribirte. Después miramos cómo gestionas la agenda, el cobro y qué herramientas usas por dentro.</p>
             </div>
           </div>
 
@@ -94,7 +94,7 @@ export default function AuditoriaNegocioPage() {
             <div className="feature-number feature-number--brand">02</div>
             <div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Informe con cifras accionables</h3>
-              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Cada hallazgo respaldado por evidencia real — nada inventado — y un plan de acción por fases con una estimación de las horas y el dinero que podrías recuperar cada mes.</p>
+              <p style={{ color: 'var(--ink-2)', lineHeight: '1.6' }}>Cada hallazgo respaldado por evidencia real — nada inventado — y un plan de acción por fases con una estimación de las horas y el dinero que podrías recuperar cada mes.</p>
             </div>
           </div>
 
@@ -107,15 +107,15 @@ export default function AuditoriaNegocioPage() {
       />
 
       {/* SECCIÓN DE PREGUNTAS FRECUENTES */}
-      <section style={{ padding: '5rem 5%', background: '#07050A', color: '#F5F4EF' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem', color: '#F5F4EF' }}>
+      <section style={{ padding: '5rem 5%' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '3rem', color: 'var(--ink)' }}>
           Preguntas frecuentes
         </h2>
         <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           {faqData.map((item, i) => (
             <div key={i} className="faq-item">
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: '#2DD4BF' }}>{item.q}</h3>
-              <p style={{ color: 'var(--text-2)', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.6rem', color: 'var(--ink)' }}>{item.q}</h3>
+              <p style={{ color: 'var(--ink-2)', lineHeight: '1.6', margin: 0 }}>{item.a}</p>
             </div>
           ))}
         </div>

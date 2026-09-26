@@ -135,7 +135,8 @@ p { text-wrap: pretty; }
 /* Enlace de texto con flecha */
 .text-link { color: var(--action); font-weight: 600; text-decoration: none; }
 .text-link:hover { color: var(--action-hover); text-decoration: underline; text-underline-offset: 3px; }
-.theme-light .text-link { color: var(--action-on-light); }
+/* En modo claro, violeta: el turquesa oscurecido se leía como verde y competía con el violeta de marca */
+.theme-light .text-link, .theme-light .text-link:hover { color: var(--brand-on-light); }
 
 /* Lista con puntos turquesa */
 .dot-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
@@ -275,7 +276,8 @@ a.service-card:hover { border-color: var(--action); }
    PÁGINAS DE SERVICIO Y BLOG (modo claro)
    ========================================= */
 .theme-light { background: var(--paper); color: var(--ink); min-height: 100vh; }
-.theme-light .label-mono { color: var(--action-on-light); }
+/* Un solo acento en modo claro: el violeta de marca (etiquetas, palabras destacadas, números y enlaces) */
+.theme-light .label-mono { color: var(--brand-on-light); }
 .accent-light { color: var(--brand-on-light); }
 
 .servicio-hero-title { font-weight: 700 !important; letter-spacing: -0.025em !important; }
@@ -304,6 +306,11 @@ a.service-card:hover { border-color: var(--action); }
 }
 .feature-number--brand { color: var(--brand); }
 .faq-item { border-top: 1px solid var(--border); padding-top: 1.5rem; }
+
+/* Mismas secciones, ahora en tema claro: bordes y acentos legibles sobre papel */
+.theme-light .feature-row { border-color: var(--line-light); }
+.theme-light .feature-number { color: var(--brand-on-light); }
+.theme-light .faq-item { border-color: var(--line-light); }
 
 /* =========================================
    WIDGET DE CHAT (Asistente IA) DEFINITIVO
@@ -455,12 +462,21 @@ a.service-card:hover { border-color: var(--action); }
 .vip-ask:hover { color: var(--action-hover); }
 
 /* Membresía en una fila, con botón secundario para no competir con los paquetes */
-.vip-membership {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-  padding: 18px 20px; display: flex; align-items: center; justify-content: space-between;
-  gap: 16px 24px; flex-wrap: wrap;
+.vip-membership-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; max-width: 420px; width: 100%; text-align: center;
 }
-.vip-membership-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; flex: 1 1 320px; }
+.vip-membership-list {
+  list-style: none; text-align: left; display: flex; flex-direction: column; gap: 7px;
+  margin: 0 0 20px; padding: 0; font-size: 13.5px; line-height: 1.5; color: #E6E3EE;
+}
+.vip-membership-list li { display: flex; gap: 9px; align-items: flex-start; }
+.vip-membership-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--action); flex-shrink: 0; margin-top: 8px; }
+.vip-membership-price {
+  font-size: 30px; font-weight: 800; margin-bottom: 16px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #C9CDD6 55%, #8E93A0 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 
 /* clip evita el desplazamiento lateral sin convertir html y body en dos zonas con scroll propio (doble barra) */
 html, body { overflow-x: clip; width: 100%; }

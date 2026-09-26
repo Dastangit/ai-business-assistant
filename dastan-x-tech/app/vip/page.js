@@ -194,22 +194,29 @@ export default function VIPPage() {
           <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="text-link">WhatsApp</a>.
         </p>
 
-        {/* MEMBRESÍA DE IMPLEMENTACIÓN: una fila, botón secundario hacia PayPal */}
-        <div className="vip-membership" style={{ marginTop: '2.5rem' }}>
-          <div className="vip-membership-info">
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', flexWrap: 'wrap' }}>
-              <h3 className="vip-card-title">Membresía de Implementación</h3>
-              <span style={{ fontSize: '13px', color: 'var(--text-2)' }}>2 meses · 24 h de desarrollo al mes</span>
+        {/* MEMBRESÍA DE IMPLEMENTACIÓN: tarjeta centrada independiente (upsell), no una fila de borde a borde */}
+        <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center' }}>
+          <div className="vip-membership-card">
+            <span className="label-mono" style={{ color: 'var(--action)', display: 'block', marginBottom: '10px' }}>
+              Continuidad · 2 meses
+            </span>
+            <h3 className="vip-card-title" style={{ marginBottom: '6px' }}>Membresía de Implementación</h3>
+            <p className="vip-card-text" style={{ marginBottom: '16px' }}>
+              Aplicamos las mejoras detectadas en el diagnóstico hasta dejar tu negocio listo para crecer.
+            </p>
+            <ul className="vip-membership-list">
+              <li>24 h de desarrollo al mes</li>
+              <li>Implementación continua, sin que tú coordines cada tarea</li>
+              <li>Prioridad de respuesta sobre clientes sin membresía</li>
+            </ul>
+            <div className="vip-membership-price">
+              $200<span style={{ fontSize: '14px', fontWeight: 400, color: 'var(--text-2)' }}> /mes</span>
             </div>
-            <p className="vip-card-text">Aplicamos las mejoras detectadas en el diagnóstico hasta dejar tu negocio listo para crecer.</p>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexShrink: 0 }}>
-            <span style={{ fontSize: '18px', fontWeight: 700 }}>$200<span style={{ fontSize: '13px', fontWeight: 400, color: 'var(--text-2)' }}> /mes</span></span>
             <a
               href={`https://paypal.me/${PAYPAL_USER}/200USD`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-secondary btn-sm"
+              className="btn btn-secondary btn-block"
             >
               Iniciar membresía
             </a>
