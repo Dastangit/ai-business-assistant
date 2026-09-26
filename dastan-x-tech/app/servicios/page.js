@@ -22,7 +22,7 @@ const services = [
   {
     href: '/servicios/diseno-web',
     title: 'Cazador de Webs',
-    tagline: 'Renovamos tu web actual con tu marca real, en tiempo récord.',
+    tagline: 'Renovamos tu web actual con tu marca real, en menos de 48 horas.',
   },
   {
     href: '/servicios/auditoria-negocio',

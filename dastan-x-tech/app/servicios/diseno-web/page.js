@@ -6,7 +6,7 @@ import SiteFooter from '@/components/SiteFooter';
 const faqData = [
   {
     q: '¿Cuánto tarda la entrega de la web nueva?',
-    a: 'En tiempo récord, sin comprometer la calidad. El plazo exacto depende del alcance de tu negocio y te lo confirmamos en la consultoría inicial.',
+    a: 'En menos de 48 horas desde que nos das tu marca y tus contenidos (logo, textos, servicios y precios).',
   },
   {
     q: '¿Cuánto cuesta?',
