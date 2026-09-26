@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 // Un solo nombre para el asistente en todo el chat
 const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
 const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
+// Páginas sin botón de diagnóstico en el chat (Diseño web): el saludo apunta al botón que sí hay
+const SALUDO_SIN_DIAGNOSTICO = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o, si aún no tienes web, pídela aquí abajo.';
 const GRACIAS_WEB = 'Recibido, gracias. Revisaremos tu web y te contactaremos por WhatsApp lo antes posible con tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
 const GRACIAS_WEB_NUEVA = 'Recibido, gracias. Te contactaremos por WhatsApp lo antes posible para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
 
@@ -30,7 +32,7 @@ const botonSecundario = {
   padding: '10px', fontWeight: 600, fontSize: '14px', cursor: 'pointer',
 };
 
-export default function ChatWidget({ couponApplied = false } = {}) {
+export default function ChatWidget({ couponApplied = false, sinBotonDiagnostico = false } = {}) {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -77,7 +79,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages, couponApplied }),
+        body: JSON.stringify({ messages: newMessages, couponApplied, sinBotonDiagnostico }),
       });
       const data = await response.json();
       setMessages([...newMessages, { role: 'bot', text: data.reply }]);
@@ -86,7 +88,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
     } finally {
       setIsLoading(false);
     }
-  }, [input, isLoading, messages, couponApplied]);
+  }, [input, isLoading, messages, couponApplied, sinBotonDiagnostico]);
 
   // Otros botones de la web abren el chat: con { diagnostico: true } despliegan el formulario,
   // con un texto lo envían como primera pregunta
@@ -183,7 +185,8 @@ export default function ChatWidget({ couponApplied = false } = {}) {
           <div className="chat-messages" ref={listaRef}>
             {messages.map((msg, index) => (
               <div key={index} className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'} style={{ whiteSpace: 'pre-wrap' }}>
-                {renderMessageWithLinks(msg.text)}
+                {/* El saludo se elige según la página actual: la conversación se mantiene al cambiar de página */}
+                {renderMessageWithLinks(index === 0 && sinBotonDiagnostico ? SALUDO_SIN_DIAGNOSTICO : msg.text)}
               </div>
             ))}
             {isLoading && <div className="msg-bot" style={{ opacity: 0.5 }}>Escribiendo...</div>}
@@ -220,9 +223,11 @@ export default function ChatWidget({ couponApplied = false } = {}) {
               </form>
             ) : (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignSelf: 'stretch' }}>
-                <button type="button" onClick={() => { setTieneWeb(true); setErrorForm(''); setFormAbierto(true); }} style={botonPrincipal}>
-                  Pedir mi diagnóstico SEO gratis
-                </button>
+                {!sinBotonDiagnostico && (
+                  <button type="button" onClick={() => { setTieneWeb(true); setErrorForm(''); setFormAbierto(true); }} style={botonPrincipal}>
+                    Pedir mi diagnóstico SEO gratis
+                  </button>
+                )}
                 <button type="button" onClick={() => { setTieneWeb(false); setErrorForm(''); setFormAbierto(true); }} style={botonSecundario}>
                   No tengo web: quiero una
                 </button>

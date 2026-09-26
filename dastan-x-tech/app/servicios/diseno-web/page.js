@@ -154,7 +154,7 @@ export default function DisenoWebPage() {
         </div>
       </section>
 
-      {/* CIERRE: el mismo camino principal que el hero, con WhatsApp como alternativa */}
+      {/* CIERRE: el diagnóstico SEO gratis se pide aquí (el chat de esta página no repite el botón), con WhatsApp como alternativa */}
       <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
           ¿Quieres saber qué le falta a tu web?
@@ -163,8 +163,8 @@ export default function DisenoWebPage() {
           Pide el diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
-            Consultar proyecto
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
+            Pedir diagnóstico SEO gratis
           </button>
           <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →

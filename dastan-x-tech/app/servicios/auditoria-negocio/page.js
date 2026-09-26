@@ -58,8 +58,9 @@ export default function AuditoriaNegocioPage() {
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
             Analizamos tu negocio por fuera (web, redes, Google, reseñas, competencia) y por dentro (agenda, cobros, herramientas, horas perdidas), y cruzamos ambas mitades para encontrar las inconsistencias que más te cuestan.
           </p>
-          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
-            Pedir diagnóstico SEO gratis
+          {/* Quien llega aquí busca la auditoría (de pago): el botón principal habla de ella, no del diagnóstico gratis */}
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre la Auditoría Completa de Negocio' }))}>
+            Consultar Auditoría Completa
           </button>
         </div>
 
