@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { BrandMark } from '@/components/Brand';
 import SiteFooter from '@/components/SiteFooter';
 
-// Tarjetas de servicio del home: cada una lleva a su página y enseña su precio de partida
+// Tarjetas de servicio del home: cada una lleva a su página (los precios van en sus preguntas frecuentes)
 const servicios = [
   {
     href: '/servicios/auditoria-360',
@@ -12,7 +12,6 @@ const servicios = [
     title: 'Auditoría de Negocio 360°',
     text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
     items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
-    precio: 'Desde 150 USD',
     link: 'Descubre la Auditoría de Negocio →',
   },
   {
@@ -21,7 +20,6 @@ const servicios = [
     title: 'Cazador de Webs',
     text: 'Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.',
     items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
-    precio: 'Desde 100 USD',
     link: 'Saber más sobre Cazador de Webs →',
   },
   {
@@ -30,12 +28,11 @@ const servicios = [
     title: 'Posicionamiento AEO',
     text: 'Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.',
     items: ['Ficha de Google y redes ordenadas.', 'Contenido citable por IA.', 'Reseñas y señales de confianza.'],
-    precio: 'Desde 200 USD',
     link: 'Conoce el Posicionamiento AEO →',
   },
 ];
 
-// Abre el chat con el formulario del diagnóstico gratis desplegado
+// Abre el chat con el formulario del diagnóstico SEO gratis desplegado
 const pedirDiagnostico = () => {
   window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }));
 };
@@ -67,15 +64,15 @@ export default function Home() {
           <span className="sr-only"> DASTAN X-TECH, consultoría digital e IA para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.</span>
         </h1>
         <p className="hero-sub">
-          Te mandamos gratis por WhatsApp 3 fallos reales de tu web o tu Instagram. Si quieres, después los arreglamos contigo.
+          Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. Si quieres, después las arreglamos contigo.
         </p>
 
         <div className="hero-actions">
           <button type="button" className="btn btn-primary" onClick={pedirDiagnostico}>
-            Pide tu diagnóstico gratis
+            Pide tu diagnóstico SEO gratis
           </button>
           <a href="#services" className="btn btn-secondary">
-            Ver servicios y precios
+            Ver servicios
           </a>
         </div>
 
@@ -131,7 +128,6 @@ export default function Home() {
               <ul className="dot-list card-list">
                 {s.items.map((item) => <li key={item}>{item}</li>)}
               </ul>
-              <strong style={{ fontSize: '1.05rem' }}>{s.precio}</strong>
               <span className="card-link">{s.link}</span>
             </a>
           ))}
@@ -146,11 +142,11 @@ export default function Home() {
         <div className="steps">
           <div>
             <div className="step-number">01</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Nos dejas tu web o tu Instagram y te mandamos gratis 3 fallos reales, cada uno con su prueba.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Nos dejas tu web y te mandamos gratis su diagnóstico SEO: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en PDF. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram.</p>
           </div>
           <div>
             <div className="step-number">02</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, auditamos tu negocio por fuera y por dentro y te damos un plan ordenado.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, la Auditoría de Negocio 360° analiza tu negocio completo, por fuera y por dentro, y te da un plan ordenado. Es nuestro servicio de pago.</p>
           </div>
           <div>
             <div className="step-number">03</div>
@@ -166,10 +162,10 @@ export default function Home() {
             Hablemos de tu negocio
           </h2>
           <p className="card-text" style={{ maxWidth: '520px' }}>
-            Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos sin costo 3 fallos reales que hoy te están costando clientes.
+            Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos gratis tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF.
           </p>
           <button type="button" className="btn btn-primary" onClick={pedirDiagnostico}>
-            Pide tu diagnóstico gratis
+            Pide tu diagnóstico SEO gratis
           </button>
         </div>
       </section>

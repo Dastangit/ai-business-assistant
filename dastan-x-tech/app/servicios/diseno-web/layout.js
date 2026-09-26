@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Diseño web para negocios y pymes | DASTAN X-TECH',
-  description: 'Renovamos la web de tu negocio con tu marca real, tus servicios, tus precios y tu WhatsApp a un toque. Desde 100 USD.',
+  description: 'Renovamos la web de tu negocio con tu marca real, tus servicios, tus precios y tu WhatsApp a un toque.',
   keywords: ['Diseño web para pymes', 'Diseño web para negocios locales', 'Diseño web profesional', 'Posicionamiento AEO'],
   alternates: {
     canonical: '/servicios/diseno-web',

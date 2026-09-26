@@ -33,6 +33,14 @@ async function llamar(metodo, cuerpo) {
   return res.json();
 }
 
+// El chat guarda en "origen" la página y el interés: "/ · diagnóstico SEO" o "/ · quiere web (solo Instagram)"
+function interesDe(origen) {
+  if (!origen) return '—';
+  if (origen.includes('quiere web')) return 'Quiere web (solo Instagram)';
+  if (origen.includes('diagnóstico SEO')) return 'Diagnóstico SEO';
+  return origen;
+}
+
 // Lee las dos tablas. Devuelve null si falla la red (se conserva lo que haya en pantalla).
 async function leerDatos() {
   try {
@@ -193,7 +201,7 @@ export default function AdminPage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <div>
               <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Leads de la web <span style={{ color: c.turquesa }}>({leads.length})</span></h2>
-              <p style={{ color: c.suave, margin: '0.3rem 0 0' }}>Personas que pidieron el diagnóstico gratis desde el chat.</p>
+              <p style={{ color: c.suave, margin: '0.3rem 0 0' }}>Personas que pidieron el diagnóstico SEO gratis (o una web nueva) desde el chat.</p>
             </div>
             <a href="/api/admin/datos?tabla=leads&formato=csv" style={botonSecundario}>Descargar copia (CSV)</a>
           </div>
@@ -205,13 +213,14 @@ export default function AdminPage() {
             ) : (
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead style={{ background: 'rgba(255,255,255,0.03)', borderBottom: `1px solid ${c.borde}` }}>
-                  <tr><th style={cabecera}>Fecha</th><th style={cabecera}>Nombre</th><th style={cabecera}>Web o Instagram</th><th style={cabecera}>WhatsApp</th><th style={cabecera}>Estado</th><th style={cabecera}>Acción</th></tr>
+                  <tr><th style={cabecera}>Fecha</th><th style={cabecera}>Nombre</th><th style={cabecera}>Interés</th><th style={cabecera}>Web o Instagram</th><th style={cabecera}>WhatsApp</th><th style={cabecera}>Estado</th><th style={cabecera}>Acción</th></tr>
                 </thead>
                 <tbody>
                   {leads.map((lead) => (
                     <tr key={lead.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                       <td style={{ ...celda, whiteSpace: 'nowrap', color: c.suave }}>{new Date(lead.fecha).toLocaleString('es')}</td>
                       <td style={celda}>{lead.nombre}</td>
+                      <td style={celda}>{interesDe(lead.origen)}</td>
                       <td style={{ ...celda, maxWidth: '220px', overflowWrap: 'anywhere' }}>{lead.web || <span style={{ color: c.apagado }}>—</span>}</td>
                       <td style={celda}>
                         <a href={`https://wa.me/${lead.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: '600', textDecoration: 'none' }}>{lead.whatsapp}</a>

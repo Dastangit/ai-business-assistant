@@ -111,12 +111,12 @@ export default function VIPPage() {
 
         {/* Botón CTA Principal hacia WhatsApp */}
         <a
-          href="https://wa.me/16055003653?text=Hola,%20recibí%20la%20invitación%20VIP%20y%20quiero%20la%20auditoría%20gratuita%20de%20mi%20negocio."
+          href="https://wa.me/16055003653?text=Hola,%20recibí%20la%20invitación%20VIP%20y%20quiero%20mi%20diagnóstico%20SEO%20gratis."
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"
         >
-          Solicitar Consulta Gratuita
+          Pedir diagnóstico SEO gratis
         </a>
       </section>
 

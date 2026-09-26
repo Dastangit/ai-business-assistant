@@ -20,7 +20,7 @@ export const viewport = {
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
   title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
-  description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet: diagnóstico gratis, auditoría de negocio, diseño web y posicionamiento para que Google y la IA te recomienden.',
+  description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet: diagnóstico SEO gratis, auditoría de negocio, diseño web y posicionamiento para que Google y la IA te recomienden.',
   keywords: [
     'Consultoría de IA para negocios',
     'Auditoría de negocio',
@@ -34,7 +34,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
-    description: 'Diagnóstico gratis con 3 fallos reales de tu web o tu Instagram. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
+    description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
     url: 'https://dastanxtech.com',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
@@ -49,7 +49,7 @@ const organizationJsonLd = {
   url: 'https://dastanxtech.com',
   logo: 'https://dastanxtech.com/opengraph-image',
   image: 'https://dastanxtech.com/opengraph-image',
-  description: 'Consultoría digital e IA para negocios privados y pymes, en remoto. Diagnóstico gratis, Auditoría de Negocio 360°, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
+  description: 'Consultoría digital e IA para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría de Negocio 360°, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
   areaServed: [
     { '@type': 'Country', name: 'Colombia' },
     { '@type': 'Country', name: 'México' },

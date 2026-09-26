@@ -75,7 +75,6 @@ export default function PosicionamientoAeoPage() {
             <li>Contenido citable por IA</li>
             <li>Reseñas y señales de confianza</li>
           </ul>
-          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0 0' }}>Desde 200 USD</p>
         </div>
       </header>
 
@@ -138,7 +137,7 @@ export default function PosicionamientoAeoPage() {
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
             Consultar Posicionamiento AEO
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

@@ -75,7 +75,6 @@ export default function DisenoWebPage() {
             <li>Web nueva, rápida y adaptada al móvil</li>
             <li>Lista para Google y para la IA</li>
           </ul>
-          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0' }}>Desde 100 USD</p>
           <a href="#caso-real" className="text-link" style={{ color: 'var(--action)' }}>Ver un rediseño real ↓</a>
         </div>
       </header>
@@ -161,13 +160,13 @@ export default function DisenoWebPage() {
           ¿Quieres saber qué le falta a tu web?
         </h2>
         <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
-          Pide tu diagnóstico gratis y te mandamos por WhatsApp 3 fallos reales de tu web, cada uno con su prueba.
+          Pide el diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
             Consultar proyecto
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

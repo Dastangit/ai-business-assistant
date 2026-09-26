@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta la Auditoría de Negocio 360°?',
-    a: 'Desde 150 USD. El precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar, después del diagnóstico gratis.',
+    a: 'Desde 150 USD. Es un servicio de pago; el precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
   },
 ];
 
@@ -58,8 +58,8 @@ export default function Auditoria360Page() {
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
             Analizamos tu negocio por fuera (web, redes, Google, reseñas, competencia) y por dentro (agenda, cobros, herramientas, horas perdidas), y cruzamos ambas mitades para encontrar las inconsistencias que más te cuestan.
           </p>
-          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre la Auditoría de Negocio 360°' }))}>
-            Consultar Auditoría 360°
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
+            Pedir diagnóstico SEO gratis
           </button>
         </div>
 
@@ -71,7 +71,6 @@ export default function Auditoria360Page() {
             <li>Madurez tecnológica sobre 5</li>
             <li>Plan de acción por fases</li>
           </ul>
-          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0 0' }}>Desde 150 USD</p>
         </div>
       </header>
 
@@ -128,13 +127,13 @@ export default function Auditoria360Page() {
           ¿Quieres saber qué te está costando dinero?
         </h2>
         <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
-          Escríbenos y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. El primer paso, el diagnóstico, es gratis.
+          Escríbenos y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. ¿Aún no lo tienes claro? Empieza por el diagnóstico SEO gratis de tu web: es la parte de fuera de la auditoría.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre la Auditoría de Negocio 360°' }))}>
-            Consultar Auditoría 360°
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
+            Pedir diagnóstico SEO gratis
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20360%C2%B0%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20360%C2%B0%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20Auditor%C3%ADa%20360%C2%B0." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>
