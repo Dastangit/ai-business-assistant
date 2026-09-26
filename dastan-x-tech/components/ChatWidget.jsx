@@ -5,7 +5,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
 const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
 const GRACIAS_WEB = 'Recibido. Revisamos tu web y te mandamos por WhatsApp tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
-const GRACIAS_INSTAGRAM = 'Recibido. Te escribimos por WhatsApp para contarte cómo crear tu web a partir de tu Instagram. Mientras tanto, pregúntame lo que quieras.';
+const GRACIAS_WEB_NUEVA = 'Recibido. Te escribimos por WhatsApp para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
 
 // Estilos del formulario del diagnóstico (en línea para no tocar globals.css)
 const campo = {
@@ -23,6 +23,10 @@ const opcion = (activa) => ({
 const botonPrincipal = {
   width: '100%', background: 'var(--action)', color: '#07050A', border: 'none', borderRadius: '10px',
   padding: '11px', fontWeight: 700, fontSize: '15px', cursor: 'pointer',
+};
+const botonSecundario = {
+  width: '100%', background: 'transparent', color: 'var(--text)', border: '1px solid var(--border-strong)', borderRadius: '10px',
+  padding: '10px', fontWeight: 600, fontSize: '14px', cursor: 'pointer',
 };
 
 export default function ChatWidget({ couponApplied = false } = {}) {
@@ -75,7 +79,10 @@ export default function ChatWidget({ couponApplied = false } = {}) {
       setIsOpen(true);
       const detalle = e.detail;
       if (detalle && typeof detalle === 'object' && detalle.diagnostico) {
-        if (!leadEnviado) setFormAbierto(true);
+        if (!leadEnviado) {
+          setTieneWeb(true);
+          setFormAbierto(true);
+        }
         return;
       }
       if (typeof detalle === 'string') handleSend(detalle);
@@ -96,10 +103,9 @@ export default function ChatWidget({ couponApplied = false } = {}) {
       setErrorForm('Necesitamos tu nombre y un WhatsApp con el código de país.');
       return;
     }
-    if (!datos.web.trim()) {
-      setErrorForm(tieneWeb
-        ? 'El diagnóstico SEO revisa tu web: escribe su dirección. Si no tienes, elige «Solo tengo Instagram».'
-        : 'Escribe tu @ de Instagram para ver qué web podemos crearte.');
+    // Sin web no hay diagnóstico SEO: la web es obligatoria solo en ese caso (el Instagram es opcional)
+    if (tieneWeb && !datos.web.trim()) {
+      setErrorForm('El diagnóstico SEO revisa tu web: escribe su dirección. Si no tienes, elige «No tengo web».');
       return;
     }
     setEnviando(true);
@@ -109,14 +115,14 @@ export default function ChatWidget({ couponApplied = false } = {}) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...datos,
-          origen: `${window.location.pathname} · ${tieneWeb ? 'diagnóstico SEO' : 'quiere web (solo Instagram)'}`,
+          origen: `${window.location.pathname} · ${tieneWeb ? 'diagnóstico SEO' : 'quiere web nueva'}`,
           conversacion: messages.slice(1),
         }),
       });
       if (!res.ok) throw new Error('fallo');
       setLeadEnviado(true);
       setFormAbierto(false);
-      setMessages((prev) => [...prev, { role: 'bot', text: tieneWeb ? GRACIAS_WEB : GRACIAS_INSTAGRAM }]);
+      setMessages((prev) => [...prev, { role: 'bot', text: tieneWeb ? GRACIAS_WEB : GRACIAS_WEB_NUEVA }]);
     } catch {
       setErrorForm('No se pudo enviar. Escríbenos por WhatsApp al +1 605-500-3653.');
     } finally {
@@ -166,22 +172,22 @@ export default function ChatWidget({ couponApplied = false } = {}) {
             ))}
             {isLoading && <div className="msg-bot" style={{ opacity: 0.5 }}>Escribiendo...</div>}
 
-            {/* DIAGNÓSTICO SEO GRATIS (con web) o WEB NUEVA (solo Instagram): los datos van al panel (tabla leads_web) */}
+            {/* DIAGNÓSTICO SEO GRATIS (solo con web) o WEB NUEVA (sin web): los datos van al panel (tabla leads_web) */}
             {!leadEnviado && (formAbierto ? (
               <form onSubmit={enviarDiagnostico} style={tarjeta} noValidate>
                 <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }} role="group" aria-label="¿Tienes página web?">
                   <button type="button" style={opcion(tieneWeb)} aria-pressed={tieneWeb} onClick={() => { setTieneWeb(true); setErrorForm(''); }}>Tengo web</button>
-                  <button type="button" style={opcion(!tieneWeb)} aria-pressed={!tieneWeb} onClick={() => { setTieneWeb(false); setErrorForm(''); }}>Solo tengo Instagram</button>
+                  <button type="button" style={opcion(!tieneWeb)} aria-pressed={!tieneWeb} onClick={() => { setTieneWeb(false); setErrorForm(''); }}>No tengo web</button>
                 </div>
-                <div style={{ fontWeight: 700, marginBottom: '4px' }}>{tieneWeb ? 'Tu diagnóstico SEO gratis' : 'Tu web, a partir de tu Instagram'}</div>
+                <div style={{ fontWeight: 700, marginBottom: '4px' }}>{tieneWeb ? 'Tu diagnóstico SEO gratis' : 'Tu web nueva'}</div>
                 <div style={{ fontSize: '14px', color: 'var(--text-2)', marginBottom: '10px', lineHeight: 1.45 }}>
                   {tieneWeb
                     ? 'Tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp.'
-                    : 'El diagnóstico SEO revisa una web. Si aún no tienes, podemos crearte una, incluso a partir de tu Instagram.'}
+                    : 'Sin web no hay diagnóstico SEO. Te proponemos dos caminos: una web desde cero, pensada para tu negocio, o una web hecha a partir de tu Instagram con los datos que quieras darnos.'}
                 </div>
                 <input style={campo} aria-label="Tu nombre" placeholder="Tu nombre" autoComplete="name"
                   value={datos.nombre} onChange={(e) => setDatos({ ...datos, nombre: e.target.value })} />
-                <input style={campo} aria-label={tieneWeb ? 'Tu página web' : 'Tu @ de Instagram'} placeholder={tieneWeb ? 'Tu web (ej. minegocio.com)' : 'Tu @ de Instagram'}
+                <input style={campo} aria-label={tieneWeb ? 'Tu página web' : 'Tu @ de Instagram (si tienes)'} placeholder={tieneWeb ? 'Tu web (ej. minegocio.com)' : 'Tu @ de Instagram (si tienes)'}
                   value={datos.web} onChange={(e) => setDatos({ ...datos, web: e.target.value })} />
                 <input style={campo} aria-label="Tu WhatsApp con código de país" placeholder="WhatsApp (ej. +57 300 123 4567)" type="tel" autoComplete="tel"
                   value={datos.whatsapp} onChange={(e) => setDatos({ ...datos, whatsapp: e.target.value })} />
@@ -197,9 +203,14 @@ export default function ChatWidget({ couponApplied = false } = {}) {
                 </button>
               </form>
             ) : (
-              <button type="button" onClick={() => setFormAbierto(true)} style={{ ...botonPrincipal, alignSelf: 'stretch' }}>
-                Pedir mi diagnóstico SEO gratis
-              </button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignSelf: 'stretch' }}>
+                <button type="button" onClick={() => { setTieneWeb(true); setErrorForm(''); setFormAbierto(true); }} style={botonPrincipal}>
+                  Pedir mi diagnóstico SEO gratis
+                </button>
+                <button type="button" onClick={() => { setTieneWeb(false); setErrorForm(''); setFormAbierto(true); }} style={botonSecundario}>
+                  No tengo web: quiero una
+                </button>
+              </div>
             ))}
             <div ref={finRef} />
           </div>

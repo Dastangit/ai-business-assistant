@@ -33,10 +33,10 @@ async function llamar(metodo, cuerpo) {
   return res.json();
 }
 
-// El chat guarda en "origen" la página y el interés: "/ · diagnóstico SEO" o "/ · quiere web (solo Instagram)"
+// El chat guarda en "origen" la página y el interés: "/ · diagnóstico SEO" o "/ · quiere web nueva"
 function interesDe(origen) {
   if (!origen) return '—';
-  if (origen.includes('quiere web')) return 'Quiere web (solo Instagram)';
+  if (origen.includes('quiere web')) return 'Quiere web nueva';
   if (origen.includes('diagnóstico SEO')) return 'Diagnóstico SEO';
   return origen;
 }
@@ -201,7 +201,7 @@ export default function AdminPage() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
             <div>
               <h2 style={{ margin: 0, fontSize: '1.5rem' }}>Leads de la web <span style={{ color: c.turquesa }}>({leads.length})</span></h2>
-              <p style={{ color: c.suave, margin: '0.3rem 0 0' }}>Personas que pidieron el diagnóstico SEO gratis (o una web nueva) desde el chat.</p>
+              <p style={{ color: c.suave, margin: '0.3rem 0 0' }}>Personas que pidieron el diagnóstico SEO gratis o una web nueva desde el chat.</p>
             </div>
             <a href="/api/admin/datos?tabla=leads&formato=csv" style={botonSecundario}>Descargar copia (CSV)</a>
           </div>
