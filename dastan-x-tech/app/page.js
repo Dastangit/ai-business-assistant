@@ -4,23 +4,24 @@ import Link from 'next/link';
 import { BrandMark } from '@/components/Brand';
 import SiteFooter from '@/components/SiteFooter';
 
-// Tarjetas de servicio del home: cada una lleva a su página (los precios van en sus preguntas frecuentes)
+// Tarjetas de servicio del home, en el mismo orden que "Cómo trabajamos": web → auditoría → AEO.
+// Cada una lleva a su página (los precios van en sus preguntas frecuentes)
 const servicios = [
   {
-    href: '/servicios/auditoria-360',
-    label: '01 · Auditoría',
-    title: 'Auditoría de Negocio 360°',
-    text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
-    items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
-    link: 'Descubre la Auditoría de Negocio →',
-  },
-  {
     href: '/servicios/diseno-web',
-    label: '02 · Diseño web',
+    label: '01 · Diseño web',
     title: 'Cazador de Webs',
     text: 'Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.',
     items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
     link: 'Saber más sobre Cazador de Webs →',
+  },
+  {
+    href: '/servicios/auditoria-360',
+    label: '02 · Auditoría',
+    title: 'Auditoría de Negocio 360°',
+    text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
+    items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
+    link: 'Descubre la Auditoría de Negocio →',
   },
   {
     href: '/servicios/posicionamiento-aeo',
@@ -142,15 +143,15 @@ export default function Home() {
         <div className="steps">
           <div>
             <div className="step-number">01</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Nos dejas tu web y te mandamos gratis su diagnóstico SEO: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en PDF. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Empezamos por tu web. Te mandamos gratis su diagnóstico SEO (tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en PDF) y, si hace falta, la renovamos con tu marca real. ¿No tienes web? Te la creamos.</p>
           </div>
           <div>
             <div className="step-number">02</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, la Auditoría de Negocio 360° analiza tu negocio completo, por fuera y por dentro, y te da un plan ordenado. Es nuestro servicio de pago.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, la Auditoría de Negocio 360° analiza tu negocio completo, por fuera y por dentro, y te da un plan ordenado. A diferencia del diagnóstico gratis, no se queda en la web.</p>
           </div>
           <div>
             <div className="step-number">03</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Arreglamos lo que más te devuelve: tu web, tu ficha, tus reseñas y lo que la IA dice de ti.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Te posicionamos para que Google y la IA te recomienden: tu ficha, tus reseñas y un contenido que la IA pueda citar.</p>
           </div>
         </div>
       </section>
