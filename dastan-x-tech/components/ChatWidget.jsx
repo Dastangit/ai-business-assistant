@@ -4,8 +4,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 // Un solo nombre para el asistente en todo el chat
 const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
 const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
-const GRACIAS_WEB = 'Recibido. Revisamos tu web y te mandamos por WhatsApp tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
-const GRACIAS_WEB_NUEVA = 'Recibido. Te escribimos por WhatsApp para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
+const GRACIAS_WEB = 'Recibido, gracias. Revisaremos tu web y te contactaremos por WhatsApp lo antes posible con tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
+const GRACIAS_WEB_NUEVA = 'Recibido, gracias. Te contactaremos por WhatsApp lo antes posible para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
 
 // Estilos del formulario del diagnóstico (en línea para no tocar globals.css)
 const campo = {
