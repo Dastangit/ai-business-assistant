@@ -8,25 +8,28 @@ const PRECIOS = {
 };
 
 // Cómo trata la IA el diagnóstico en cada página (lo decide GlobalChatWidget): en las páginas de servicio el chat no tiene ese botón.
-// En AEO (el paquete completo) ni se ofrece: quien llega ahí ya va a por los tres servicios.
+// En AEO (el paquete completo) ni se describe: si la IA lo tiene en su lista de servicios, acaba nombrándolo.
+const QUE_ES_DIAGNOSTICO = 'Diagnóstico SEO gratis (solo para negocios que ya tienen web): revisamos su web y le mandamos por WhatsApp su puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga, en un PDF. Es solo la parte de fuera (la web), no la auditoría.';
+// El cliente escribe SU número en el formulario: dicho así, la IA no pega el nuestro detrás de «tu WhatsApp»
+const FORMULARIO = 'se abre un formulario donde la persona escribe su nombre, su web (obligatoria) y su propio número de WhatsApp';
 const DIAGNOSTICO = {
   chat: {
-    como: 'que pulse el botón "Pedir mi diagnóstico SEO gratis" de este chat',
+    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "Pedir mi diagnóstico SEO gratis" de este chat: ${FORMULARIO}.`,
     revisar: 'Para eso está el diagnóstico SEO gratis.',
     ofrecer: 'ofrece el diagnóstico SEO gratis para ver su caso',
     interes: 'invítala a pedir el diagnóstico SEO gratis con el botón del chat',
   },
   final: {
-    como: 'que pulse el botón "Pedir diagnóstico SEO gratis" que hay al final de esta página (en este chat no hay botón para el diagnóstico)',
+    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "Pedir diagnóstico SEO gratis" que hay al final de esta página (en este chat no hay botón para el diagnóstico): ${FORMULARIO}.`,
     revisar: 'Para eso está el diagnóstico SEO gratis.',
     ofrecer: 'ofrece el diagnóstico SEO gratis para ver su caso',
     interes: 'invítala a pedir el diagnóstico SEO gratis con el botón del final de esta página',
   },
   ninguno: {
-    como: 'que lo pida por WhatsApp al +16055003653 (en esta página no hay botón para el diagnóstico)',
+    oferta: 'Diagnóstico SEO gratis: en esta página (Posicionamiento AEO, el paquete completo) no lo nombres nunca por tu cuenta, ni siquiera de pasada. Solo si la persona pregunta expresamente por él, dile que se pide por WhatsApp al +16055003653.',
     revisar: 'Para ver su caso, que escriba por WhatsApp.',
     ofrecer: 'ofrece el WhatsApp para ver su caso',
-    interes: 'invítala a escribir por WhatsApp para contratarlo. En esta página no ofrezcas ni menciones el diagnóstico SEO gratis por tu cuenta: solo si te lo pregunta',
+    interes: 'invítala a escribir por WhatsApp al +16055003653 para contratarlo, sin nombrar el diagnóstico',
   },
 };
 
@@ -42,7 +45,7 @@ function construirPrompt(couponApplied, diagnostico) {
 A QUIÉN AYUDAMOS: negocios privados y pymes de cualquier sector (por ejemplo clínicas, spas, salones, servicios a domicilio, comercios o despachos), sobre todo en Colombia, México y Estados Unidos, aunque trabajamos con cualquier país. Trabajamos 100 % en remoto. El equipo son dos personas: Dastan Tamayo (fundador) e Isdiel Martínez (consultor de IA y estratega digital).
 
 LO QUE OFRECEMOS:
-- Diagnóstico SEO gratis (solo para negocios que ya tienen web): revisamos su web y le mandamos por WhatsApp su puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga, en un PDF. Es solo la parte de fuera (la web), no la auditoría. Para pedirlo, ${d.como} y deje su nombre, su web (obligatoria) y su WhatsApp.
+- ${d.oferta}
 - Auditoría Completa de Negocio (servicio de pago): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas, competencia) y por dentro (cómo capta clientes, agenda, cobra y qué herramientas usa, con un formulario de 36 preguntas). Entrega un informe con la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van a mano y un plan de acción. No necesitamos contraseñas ni accesos.
 - Diseño web (Cazador de Webs), servicio de pago: renovamos su web, o se la creamos desde cero si no tiene, estructurada especialmente para su negocio, con su marca real, WhatsApp y teléfono siempre visibles y sus servicios explicados. Hay un ejemplo real de un spa en la página de Diseño web.
 - Instagram a Web, parte del Diseño web: como alternativa para quien no tiene web, sacamos una web a partir de su propio Instagram con los datos que decida darnos.
@@ -52,7 +55,7 @@ ${lineaPrecios}
 
 REGLAS:
 1. Máximo 2 o 3 frases por respuesta. Si la pregunta es directa, contesta directo, sin volver a presentarte.
-2. El único canal de contacto es WhatsApp: +16055003653 (escríbelo siempre junto, sin cortarlo). No hay Telegram ni otros canales.
+2. El único canal de contacto es WhatsApp: +16055003653 (escríbelo siempre junto, sin cortarlo). No hay Telegram ni otros canales. Ese número es el nuestro: nunca lo pongas donde se habla del WhatsApp de la persona.
 3. No inventes nada: ni descuentos, ni promociones, ni plazos de entrega (el único plazo publicado es el de la web: menos de 48 horas desde que nos da su marca y sus contenidos), ni garantías de posiciones en Google, ni resultados en cifras, ni clientes o casos que no estén aquí. Si no sabes algo, dilo y ofrece el WhatsApp.
 4. No puedes visitar webs ni perfiles: nunca digas que has revisado la web o el Instagram de la persona. ${d.revisar}
 5. Si preguntan algo táctico (SEO local, Google Maps, reseñas), da una o dos ideas concretas y ${d.ofrecer}.

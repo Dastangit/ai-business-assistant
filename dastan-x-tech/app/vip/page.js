@@ -102,7 +102,7 @@ export default function VIPPage() {
         </span>
 
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '700', letterSpacing: '-0.03em', marginBottom: '1rem', lineHeight: '1.08' }}>
-          Dominando el Mercado <br/> <span style={{ color: 'var(--brand)' }}>En tu área local</span>
+          Presencia digital <br/> <span style={{ color: 'var(--brand)' }}>en tu área local</span>
         </h1>
 
         <p style={{ fontSize: '1.125rem', color: 'var(--text-2)', maxWidth: '650px', marginBottom: '2rem', lineHeight: '1.6' }}>
@@ -123,7 +123,7 @@ export default function VIPPage() {
       {/* SECCIÓN DE SERVICIOS VIP */}
       <section style={{ padding: '3rem 1rem 6rem', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.75rem, 4vw, 2rem)', marginBottom: '1.5rem', fontWeight: '700', letterSpacing: '-0.015em' }}>
-          El Plan de <span style={{ color: 'var(--brand)' }}>Rescate Digital</span>
+          Plan de <span style={{ color: 'var(--brand)' }}>implementación</span>
         </h2>
 
         {/* CUPÓN DE DESCUENTO: antes de los precios, para verlos ya con descuento */}
