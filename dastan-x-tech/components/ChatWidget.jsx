@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 // Un solo nombre para el asistente en todo el chat
 const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
 const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
-// Páginas sin botón de diagnóstico en el chat (Diseño web): el saludo apunta al botón que sí hay
+// Páginas de servicio, sin botón de diagnóstico en el chat: el saludo apunta al botón que sí hay
 const SALUDO_SIN_DIAGNOSTICO = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o, si aún no tienes web, pídela aquí abajo.';
 const GRACIAS_WEB = 'Recibido, gracias. Revisaremos tu web y te contactaremos por WhatsApp lo antes posible con tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
 const GRACIAS_WEB_NUEVA = 'Recibido, gracias. Te contactaremos por WhatsApp lo antes posible para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
@@ -32,7 +32,10 @@ const botonSecundario = {
   padding: '10px', fontWeight: 600, fontSize: '14px', cursor: 'pointer',
 };
 
-export default function ChatWidget({ couponApplied = false, sinBotonDiagnostico = false } = {}) {
+// diagnostico: dónde se pide el diagnóstico SEO gratis en la página actual.
+// 'chat' = botón en el chat; 'final' = botón al final de la página; 'whatsapp' = no hay botón.
+export default function ChatWidget({ couponApplied = false, diagnostico = 'chat' } = {}) {
+  const sinBotonDiagnostico = diagnostico !== 'chat';
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -79,7 +82,7 @@ export default function ChatWidget({ couponApplied = false, sinBotonDiagnostico 
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages, couponApplied, sinBotonDiagnostico }),
+        body: JSON.stringify({ messages: newMessages, couponApplied, diagnostico }),
       });
       const data = await response.json();
       setMessages([...newMessages, { role: 'bot', text: data.reply }]);
@@ -88,7 +91,7 @@ export default function ChatWidget({ couponApplied = false, sinBotonDiagnostico 
     } finally {
       setIsLoading(false);
     }
-  }, [input, isLoading, messages, couponApplied, sinBotonDiagnostico]);
+  }, [input, isLoading, messages, couponApplied, diagnostico]);
 
   // Otros botones de la web abren el chat: con { diagnostico: true } despliegan el formulario,
   // con un texto lo envían como primera pregunta
