@@ -7,7 +7,7 @@ import { BrandMark } from '@/components/Brand';
 const PAYPAL_USER = 'Dastanpro98';
 
 // Tarjetas compactas: precio junto al título, una frase y lo que recibe el cliente.
-// Los paquetes 2 y 3 parten de "Todo lo de Diseño Web, más" para no repetir lo mismo en las tres.
+// Cada paquete incluye el anterior: la Auditoría parte de "Todo lo de Diseño Web, más" y AEO de "Todo lo de la Auditoría Completa, más".
 const PAQUETES = [
   {
     titulo: 'Diseño Web Premium',
@@ -40,7 +40,7 @@ const PAQUETES = [
     texto: 'Preparamos tu negocio para que modelos de IA como ChatGPT y Gemini recomienden tus servicios.',
     precio: 200,
     precioCupon: 150,
-    listaTitulo: 'Todo lo de Diseño Web, más',
+    listaTitulo: 'Todo lo de la Auditoría Completa, más',
     incluye: ['SEO + posicionamiento AEO', 'Atención personalizada'],
   },
 ];

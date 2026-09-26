@@ -33,7 +33,7 @@ const botonSecundario = {
 };
 
 // diagnostico: dónde se pide el diagnóstico SEO gratis en la página actual.
-// 'chat' = botón en el chat; 'final' = botón al final de la página; 'whatsapp' = no hay botón.
+// 'chat' = botón en el chat; 'final' = botón al final de la página; 'ninguno' = no se ofrece (AEO).
 export default function ChatWidget({ couponApplied = false, diagnostico = 'chat' } = {}) {
   const sinBotonDiagnostico = diagnostico !== 'chat';
   const [isOpen, setIsOpen] = useState(false);

@@ -22,7 +22,7 @@ const faqData = [
   },
   {
     q: '¿Funciona para cualquier tipo de negocio?',
-    a: 'Funciona mejor cuando ya hay una base sólida por fuera — por eso se combina naturalmente con la Auditoría Completa de Negocio y Cazador de Webs.',
+    a: 'Sí. Funciona mejor cuando hay una base sólida por fuera, y por eso incluye el Diseño web y la Auditoría Completa de Negocio: primero dejamos esa base lista y después trabajamos para que la IA te recomiende.',
   },
 ];
 

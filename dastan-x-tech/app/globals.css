@@ -291,6 +291,16 @@ a.service-card:hover { border-color: var(--action); }
 .servicio-hero-card h3 { font-size: 1.5rem; font-weight: 600; }
 .servicio-hero-card .dot-list { color: var(--text-2); }
 
+/* Páginas de servicio: línea discreta entre secciones (todo es claro y sin ella parecía un solo bloque),
+   alineada con los márgenes de la cabecera y del hero */
+.servicio-hero ~ section { position: relative; }
+/* Títulos de sección con interlineado de título: con el del texto (1.6) se leían como frases sueltas */
+.servicio-hero ~ section h2 { line-height: 1.2; }
+.servicio-hero ~ section::before {
+  content: ''; position: absolute; top: 0; left: 5%; right: 5%;
+  height: 1px; background: var(--line-light);
+}
+
 /* Secciones oscuras dentro de páginas claras */
 .dark-section { background: var(--bg); color: var(--text); }
 .dark-section p { color: var(--text-2); }
@@ -506,6 +516,11 @@ html, body { overflow-x: clip; width: 100%; }
   .feature-number { min-width: 0; }
 
   .service-card { padding: 24px; }
+
+  /* Páginas de servicio: los títulos de sección (40 px) superaban al h1 (35 px). A 28 px, como en la portada,
+     y con menos hueco entre secciones (los márgenes de escritorio dejaban mucho blanco en pantallas pequeñas) */
+  .servicio-hero ~ section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  .servicio-hero ~ section h2 { font-size: 1.75rem !important; margin-bottom: 2rem !important; }
 
   /* Mismo lugar para el botón del chat en todas las páginas */
   .chat-widget { bottom: 20px; right: 16px; }
