@@ -22,7 +22,7 @@ const faqData = [
   },
   {
     q: '¿Funciona para cualquier tipo de negocio?',
-    a: 'Funciona mejor cuando ya hay una base sólida por fuera — por eso se combina naturalmente con Auditoría 360° y Cazador de Webs.',
+    a: 'Funciona mejor cuando ya hay una base sólida por fuera — por eso se combina naturalmente con la Auditoría Completa de Negocio y Cazador de Webs.',
   },
 ];
 

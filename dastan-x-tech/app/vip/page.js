@@ -23,7 +23,7 @@ const PAQUETES = [
     ],
   },
   {
-    titulo: 'Auditoría de Negocio 360°',
+    titulo: 'Auditoría Completa de Negocio',
     texto: 'Revisamos tu negocio por fuera y por dentro para ver dónde pierdes tiempo y dinero.',
     precio: 150,
     precioCupon: 100,

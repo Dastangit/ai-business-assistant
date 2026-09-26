@@ -6,11 +6,11 @@ import SiteFooter from '@/components/SiteFooter';
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Auditamos nuestra propia web con nuestro método de Auditoría 360°',
+  headline: 'Auditamos nuestra propia web con nuestra Auditoría Completa de Negocio',
   author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-22',
-  description: 'Le aplicamos nuestra propia Auditoría de Negocio 360° a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
+  description: 'Le aplicamos nuestra propia Auditoría Completa de Negocio a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/auditamos-nuestra-propia-web',
 };
 
@@ -30,7 +30,7 @@ export default function BlogPost() {
           Caso de estudio interno · 22 de septiembre de 2026
         </p>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 2.4rem)', fontWeight: '700', color: 'var(--ink)', lineHeight: '1.15', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-          Auditamos nuestra propia web con nuestro método de Auditoría 360°
+          Auditamos nuestra propia web con nuestra Auditoría Completa de Negocio
         </h1>
         <div className="byline">
           <div className="byline-avatar" aria-hidden="true">DT</div>
@@ -41,7 +41,7 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Vendemos una Auditoría de Negocio 360° que revisa dónde un negocio pierde tiempo y clientes, con evidencia real, no suposiciones. Nos pareció justo aplicarnos el mismo estándar antes de pedírselo a nadie más. Esto es lo que encontramos en <strong>dastanxtech.com</strong>, sin adornar nada.
+          Vendemos una Auditoría Completa de Negocio que revisa dónde un negocio pierde tiempo y clientes, con evidencia real, no suposiciones. Nos pareció justo aplicarnos el mismo estándar antes de pedírselo a nadie más. Esto es lo que encontramos en <strong>dastanxtech.com</strong>, sin adornar nada.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Lo que ya estaba bien</h2>
@@ -76,11 +76,11 @@ export default function BlogPost() {
             ¿Quieres saber qué encontraríamos en tu negocio?
           </p>
           <button
-            onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Vi el caso de estudio del blog y quiero mi Auditoría 360°' }))}
+            onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}
             type="button"
             className="btn btn-primary"
           >
-            Pedir mi Auditoría 360°
+            Pedir diagnóstico SEO gratis
           </button>
         </div>
       </article>

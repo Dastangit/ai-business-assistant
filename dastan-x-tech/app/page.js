@@ -16,9 +16,9 @@ const servicios = [
     link: 'Saber más sobre Cazador de Webs →',
   },
   {
-    href: '/servicios/auditoria-360',
+    href: '/servicios/auditoria-negocio',
     label: '02 · Auditoría',
-    title: 'Auditoría de Negocio 360°',
+    title: 'Auditoría Completa de Negocio',
     text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
     items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
     link: 'Descubre la Auditoría de Negocio →',
@@ -147,7 +147,7 @@ export default function Home() {
           </div>
           <div>
             <div className="step-number">02</div>
-            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, la Auditoría de Negocio 360° analiza tu negocio completo, por fuera y por dentro, y te da un plan ordenado. A diferencia del diagnóstico gratis, no se queda en la web.</p>
+            <p className="section-text" style={{ fontSize: '16px' }}>Si quieres verlo todo, la Auditoría Completa de Negocio analiza todo tu negocio, por fuera y por dentro, y te da un plan ordenado. A diferencia del diagnóstico gratis, no se queda en la web.</p>
           </div>
           <div>
             <div className="step-number">03</div>

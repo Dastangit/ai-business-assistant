@@ -41,7 +41,7 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Antes de proponerle una Auditoría 360° a un negocio, revisamos su web primero. Estas cinco señales son las que más se repiten. Las ilustramos con un rediseño real que hicimos para un pequeño spa (mantenemos su nombre fuera de esto por ahora, pero el resultado sí lo puedes ver).
+          Antes de proponer una Auditoría Completa de Negocio, lo primero que revisamos es la web. Estas cinco señales son las que más se repiten. Las ilustramos con un rediseño real que hicimos para un pequeño spa (mantenemos su nombre fuera de esto por ahora, pero el resultado sí lo puedes ver).
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>1. No hay un teléfono o WhatsApp clicable en ningún lado</h2>

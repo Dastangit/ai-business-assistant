@@ -49,7 +49,7 @@ const organizationJsonLd = {
   url: 'https://dastanxtech.com',
   logo: 'https://dastanxtech.com/opengraph-image',
   image: 'https://dastanxtech.com/opengraph-image',
-  description: 'Consultoría digital e IA para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría de Negocio 360°, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
+  description: 'Consultoría digital e IA para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría Completa de Negocio, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
   areaServed: [
     { '@type': 'Country', name: 'Colombia' },
     { '@type': 'Country', name: 'México' },

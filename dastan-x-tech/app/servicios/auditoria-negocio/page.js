@@ -17,7 +17,7 @@ const faqData = [
     a: 'Cada hallazgo va acompañado de una evidencia real de tu negocio — una frase de tu web, una reseña con fecha, una respuesta tuya — nunca una plantilla ni un dato inventado.',
   },
   {
-    q: '¿Cuánto cuesta la Auditoría de Negocio 360°?',
+    q: '¿Cuánto cuesta la Auditoría Completa de Negocio?',
     a: 'Desde 150 USD. Es un servicio de pago; el precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
   },
 ];
@@ -32,7 +32,7 @@ const faqJsonLd = {
   })),
 };
 
-export default function Auditoria360Page() {
+export default function AuditoriaNegocioPage() {
   return (
     <div className="theme-light">
 
@@ -50,7 +50,7 @@ export default function Auditoria360Page() {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
             <span style={{ background: 'var(--action-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
-            <span className="label-mono">Servicio · Auditoría 360°</span>
+            <span className="label-mono">Servicio · Auditoría completa</span>
           </div>
           <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
             Descubre dónde tu negocio <span className="accent-light">pierde dinero</span>.
@@ -133,7 +133,7 @@ export default function Auditoria360Page() {
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
             Pedir diagnóstico SEO gratis
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20360%C2%B0%20y%20quiero%20informaci%C3%B3n%20sobre%20la%20Auditor%C3%ADa%20360%C2%B0." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20Completa%20de%20Negocio%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

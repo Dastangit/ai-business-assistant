@@ -44,7 +44,7 @@ export default async function Image() {
         <div style={{ display: 'flex', gap: '40px', fontSize: '30px', color: '#B7B3C7' }}>
           <div style={{ display: 'flex' }}>Diseño web</div>
           <div style={{ display: 'flex', color: '#2DD4BF' }}>·</div>
-          <div style={{ display: 'flex' }}>Auditoría 360°</div>
+          <div style={{ display: 'flex' }}>Auditoría de negocio</div>
           <div style={{ display: 'flex', color: '#2DD4BF' }}>·</div>
           <div style={{ display: 'flex' }}>Posicionamiento AEO</div>
         </div>

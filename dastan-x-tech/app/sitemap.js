@@ -21,7 +21,7 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/servicios/auditoria-360`,
+      url: `${baseUrl}/servicios/auditoria-negocio`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

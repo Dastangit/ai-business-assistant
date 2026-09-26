@@ -3,14 +3,14 @@ import SiteFooter from '@/components/SiteFooter';
 
 export const metadata = {
   title: 'Nuestros Servicios | DASTAN X-TECH',
-  description: 'Cazador de Webs, Auditoría de Negocio 360° y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
+  description: 'Cazador de Webs, Auditoría Completa de Negocio y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
   keywords: ['Servicios DASTAN X-TECH', 'Diseño web profesional', 'Auditoría de negocio', 'Posicionamiento AEO'],
   alternates: {
     canonical: '/servicios',
   },
   openGraph: {
     title: 'Nuestros Servicios | DASTAN X-TECH',
-    description: 'Cazador de Webs, Auditoría de Negocio 360° y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
+    description: 'Cazador de Webs, Auditoría Completa de Negocio y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
     url: 'https://dastanxtech.com/servicios',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
@@ -25,8 +25,8 @@ const services = [
     tagline: 'Renovamos tu web actual con tu marca real, en tiempo récord.',
   },
   {
-    href: '/servicios/auditoria-360',
-    title: 'Auditoría de Negocio 360°',
+    href: '/servicios/auditoria-negocio',
+    title: 'Auditoría Completa de Negocio',
     tagline: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero.',
   },
   {

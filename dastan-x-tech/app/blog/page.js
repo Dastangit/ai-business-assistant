@@ -24,8 +24,8 @@ const posts = [
   },
   {
     href: '/blog/auditamos-nuestra-propia-web',
-    title: 'Auditamos nuestra propia web con nuestro método de Auditoría 360°',
-    excerpt: 'Le aplicamos nuestra propia Auditoría de Negocio 360° a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
+    title: 'Auditamos nuestra propia web con nuestra Auditoría Completa de Negocio',
+    excerpt: 'Le aplicamos nuestra propia Auditoría Completa de Negocio a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
     date: '22 de septiembre de 2026',
   },
 ];
