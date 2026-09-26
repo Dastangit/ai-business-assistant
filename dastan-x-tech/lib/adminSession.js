@@ -60,5 +60,10 @@ export function isValidPassword(candidate) {
   return crypto.timingSafeEqual(candidateBuffer, realBuffer);
 }
 
+/** Comprueba la cookie de sesión de una petición a una ruta de /api/admin. */
+export function isAdminRequest(request) {
+  return isValidSessionToken(request.cookies.get(COOKIE_NAME)?.value);
+}
+
 export const ADMIN_COOKIE_NAME = COOKIE_NAME;
 export const ADMIN_SESSION_TTL_MS = SESSION_TTL_MS;

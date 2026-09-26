@@ -25,7 +25,11 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: ['Colombia', 'México', 'Estados Unidos'],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: 200, priceCurrency: 'USD' },
+  },
   description: 'Optimizamos la estructura, contenido y señales de confianza de tu negocio para que motores de respuesta de IA como ChatGPT, Gemini y Perplexity lo recomienden directamente a sus usuarios.',
   url: 'https://dastanxtech.com/servicios/posicionamiento-aeo',
 };

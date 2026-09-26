@@ -3,19 +3,6 @@ import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
-const serviceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Posicionamiento AEO (Answer Engine Optimization)',
-  provider: {
-    '@type': 'Organization',
-    name: 'DASTAN X-TECH',
-    url: 'https://dastanxtech.com',
-  },
-  areaServed: 'Worldwide',
-  description: 'Preparamos tu negocio para que motores de IA como ChatGPT, Gemini y Perplexity lo recomienden directamente: ficha de Google ordenada, contenido estructurado y señales de confianza.',
-};
-
 const faqData = [
   {
     q: '¿Qué es exactamente el Posicionamiento AEO?',
@@ -28,6 +15,10 @@ const faqData = [
   {
     q: '¿Cuánto tarda en dar resultados?',
     a: 'Depende de cuánta información pública y consistente tenga tu negocio hoy — por eso empezamos ordenando tu ficha de Google y tus redes antes que nada.',
+  },
+  {
+    q: '¿Cuánto cuesta?',
+    a: 'Desde 200 USD. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.',
   },
   {
     q: '¿Funciona para cualquier tipo de negocio?',
@@ -48,10 +39,6 @@ const faqJsonLd = {
 export default function PosicionamientoAeoPage() {
   return (
     <div className="theme-light">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
 
       {/* CABECERA CON ENLACES (logo al inicio, servicios, blog y contacto) */}
       <SiteHeader tone="light" />
@@ -73,7 +60,7 @@ export default function PosicionamientoAeoPage() {
             Que la IA te <span className="accent-light">recomiende</span>, no solo Google.
           </h1>
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-            Cada vez más personas le preguntan directo a un asistente de IA "¿cuál es la mejor opción cerca de mí?" y confían en la respuesta sin visitar ninguna web. Preparamos tu negocio para ser esa respuesta.
+            Cada vez más personas le preguntan directo a un asistente de IA «¿cuál es la mejor opción cerca de mí?» y confían en la respuesta sin visitar ninguna web. Preparamos tu negocio para ser esa respuesta.
           </p>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
             Consultar Posicionamiento AEO
@@ -88,6 +75,7 @@ export default function PosicionamientoAeoPage() {
             <li>Contenido citable por IA</li>
             <li>Reseñas y señales de confianza</li>
           </ul>
+          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0 0' }}>Desde 200 USD</p>
         </div>
       </header>
 
@@ -150,7 +138,7 @@ export default function PosicionamientoAeoPage() {
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
             Consultar Posicionamiento AEO
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20una%20consultor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

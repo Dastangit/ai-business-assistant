@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "../components/GlobalChatWidget";
 
 const geistSans = Geist({
@@ -18,23 +19,22 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
-  title: 'DASTAN X-TECH | Consultores de IA para Negocios y Pymes',
-  description: 'Consultoría de IA para pymes: auditoría SEO con datos reales, posicionamiento AEO y diseño web de alto impacto. Colombia, México y el mundo.',
+  title: 'DASTAN X-TECH | Consultoría digital e IA para clínicas estéticas, spas y salones',
+  description: 'Te decimos, con pruebas, por qué tu clínica, spa o salón pierde clientes por internet: diagnóstico gratis, auditoría de negocio, diseño web y posicionamiento para que Google y la IA te recomienden.',
   keywords: [
-    'Consultoría de IA para negocios', 
-    'Consultores de Inteligencia Artificial', 
-    'Automatización de negocios', 
-    'Diseño web profesional', 
-    'Auditoría SEO', 
-    'Posicionamiento AEO', 
-    'Chat de IA integrado'
+    'Marketing digital para clínicas estéticas',
+    'Diseño web para spas',
+    'Diseño web para salones de belleza',
+    'Auditoría de negocio',
+    'Posicionamiento AEO',
+    'Consultoría de IA para negocios',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'DASTAN X-TECH | Consultores de IA para Negocios y Pymes',
-    description: 'Asesoría y consultoría de IA para negocios privados y pymes: arquitecturas web de alto impacto, SEO local, posicionamiento AEO y agentes de Inteligencia Artificial.',
+    title: 'DASTAN X-TECH | Consultoría digital e IA para clínicas estéticas, spas y salones',
+    description: 'Diagnóstico gratis con 3 fallos reales de tu web o tu Instagram. Auditoría de negocio, diseño web y posicionamiento AEO para clínicas estéticas, spas y salones.',
     url: 'https://dastanxtech.com',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
@@ -49,11 +49,21 @@ const organizationJsonLd = {
   url: 'https://dastanxtech.com',
   logo: 'https://dastanxtech.com/opengraph-image',
   image: 'https://dastanxtech.com/opengraph-image',
-  description: 'Consultores de Inteligencia Artificial para negocios y pymes, con clientes en Colombia, México y el resto del mundo. Ofrecemos consultoría y auditoría de IA, diseño web profesional, posicionamiento SEO y AEO, y agentes de IA a la medida.',
-  areaServed: 'Worldwide',
-  knowsLanguage: 'es',
-  serviceType: ['Consultoría de Inteligencia Artificial', 'Auditoría SEO', 'Posicionamiento AEO', 'Diseño Web'],
-  sameAs: [],
+  description: 'Consultoría digital e IA para clínicas estéticas, spas y salones de belleza, en remoto. Diagnóstico gratis, Auditoría de Negocio 360°, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
+  areaServed: [
+    { '@type': 'Country', name: 'Colombia' },
+    { '@type': 'Country', name: 'México' },
+    { '@type': 'Country', name: 'Estados Unidos' },
+  ],
+  knowsLanguage: ['es', 'en'],
+  serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría de IA'],
+  email: 'xtech.ai.development@gmail.com',
+  telephone: '+1-605-500-3653',
+  founder: { '@type': 'Person', name: 'Dastan Tamayo' },
+  sameAs: [
+    'https://www.instagram.com/dastan.xtech/',
+    'https://www.linkedin.com/in/dastantech',
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -68,6 +78,7 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <GlobalChatWidget />
+        <Analytics />
       </body>
     </html>
   );

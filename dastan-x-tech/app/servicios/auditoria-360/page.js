@@ -3,19 +3,6 @@ import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
-const serviceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Auditoría de Negocio 360°',
-  provider: {
-    '@type': 'Organization',
-    name: 'DASTAN X-TECH',
-    url: 'https://dastanxtech.com',
-  },
-  areaServed: 'Worldwide',
-  description: 'Auditoría completa de negocio: presencia digital, redes, reseñas y competencia por fuera; agenda, cobros y herramientas por dentro. Informe con cifras y plan de acción.',
-};
-
 const faqData = [
   {
     q: '¿Necesitan acceso a mis sistemas o cuentas para auditar mi negocio?',
@@ -31,7 +18,7 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta la Auditoría de Negocio 360°?',
-    a: 'Depende del alcance de tu negocio. Escríbenos por WhatsApp o email y te damos un número claro antes de empezar.',
+    a: 'Desde 150 USD. El precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar, después del diagnóstico gratis.',
   },
 ];
 
@@ -48,10 +35,6 @@ const faqJsonLd = {
 export default function Auditoria360Page() {
   return (
     <div className="theme-light">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
 
       {/* CABECERA CON ENLACES (logo al inicio, servicios, blog y contacto) */}
       <SiteHeader tone="light" />
@@ -88,6 +71,7 @@ export default function Auditoria360Page() {
             <li>Madurez tecnológica sobre 5</li>
             <li>Plan de acción por fases</li>
           </ul>
+          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0 0' }}>Desde 150 USD</p>
         </div>
       </header>
 
@@ -144,13 +128,13 @@ export default function Auditoria360Page() {
           ¿Quieres saber qué te está costando dinero?
         </h2>
         <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
-          Agenda una consultoría y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes.
+          Escríbenos y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. El primer paso, el diagnóstico, es gratis.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre la Auditoría de Negocio 360°' }))}>
             Consultar Auditoría 360°
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20360%C2%B0%20y%20quiero%20una%20consultor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20360%C2%B0%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

@@ -3,23 +3,14 @@ import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
-const serviceJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  serviceType: 'Diseño Web y Arquitectura SEO/AEO',
-  provider: {
-    '@type': 'Organization',
-    name: 'DASTAN X-TECH',
-    url: 'https://dastanxtech.com',
-  },
-  areaServed: 'Worldwide',
-  description: 'Diseño de páginas web para negocios y pymes con arquitectura SEO integrada, chat de IA 24/7 y posicionamiento AEO.',
-};
-
 const faqData = [
   {
     q: '¿Cuánto tarda la entrega de la web nueva?',
     a: 'En tiempo récord, sin comprometer la calidad. El plazo exacto depende del alcance de tu negocio y te lo confirmamos en la consultoría inicial.',
+  },
+  {
+    q: '¿Cuánto cuesta?',
+    a: 'Desde 100 USD. El precio final depende de cuántas páginas y servicios tenga tu web, y te lo confirmamos antes de empezar.',
   },
   {
     q: '¿Qué necesitan de mi negocio para empezar?',
@@ -31,7 +22,7 @@ const faqData = [
   },
   {
     q: '¿La web incluye el chat con Inteligencia Artificial?',
-    a: 'Sí. Implementamos un agente de IA conversacional para capturar, perfilar y retener a los prospectos que visitan tu web las 24 horas del día.',
+    a: 'Sí. Un asistente que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta, para que no se te escape nadie. Es el mismo que puedes probar en esta página.',
   },
 ];
 
@@ -48,10 +39,6 @@ const faqJsonLd = {
 export default function DisenoWebPage() {
   return (
     <div className="theme-light">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
       
       {/* CABECERA CON ENLACES (logo al inicio, servicios, blog y contacto) */}
       <SiteHeader tone="light" />
@@ -70,10 +57,10 @@ export default function DisenoWebPage() {
             <span className="label-mono">Servicio · Diseño web</span>
           </div>
           <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
-            Diseño Web que <span className="accent-light">Domina</span> Google.
+            Tu web nueva, con tu marca y tu <span className="accent-light">WhatsApp</span> a un toque.
           </h1>
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
-            No construimos simples folletos digitales. Desarrollamos plataformas profesionales con arquitectura SEO integrada, diseñadas para liderar las búsquedas locales y posicionar tu marca en la era de la IA.
+            Renovamos la web de tu clínica, spa o salón: tus servicios explicados, tus precios claros y tu WhatsApp siempre visible. Con la estructura que Google y los asistentes de IA necesitan para entender qué ofreces.
           </p>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
             Consultar proyecto
@@ -82,12 +69,13 @@ export default function DisenoWebPage() {
 
         {/* TARJETA DEL HERO */}
         <div className="servicio-hero-visual servicio-hero-card">
-          <h3>El Estándar Actual</h3>
+          <h3>Qué recibes</h3>
           <ul className="dot-list">
-            <li>Arquitectura de Alta Velocidad</li>
-            <li>Indexación SEO Local</li>
-            <li>Preparado para IA (AEO)</li>
+            <li>Diagnóstico de tu web actual</li>
+            <li>Web nueva, rápida y adaptada al móvil</li>
+            <li>Lista para Google y para la IA</li>
           </ul>
+          <p style={{ fontWeight: 700, fontSize: '1.1rem', margin: '1rem 0' }}>Desde 100 USD</p>
           <a href="#caso-real" className="text-link" style={{ color: 'var(--action)' }}>Ver un rediseño real ↓</a>
         </div>
       </header>
@@ -123,7 +111,7 @@ export default function DisenoWebPage() {
       {/* SECCIÓN DE CARACTERÍSTICAS */}
       <section style={{ padding: '6rem 5%', background: '#07050A', color: '#F5F4EF' }}>
         <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '5rem', color: '#F5F4EF' }}>
-          Más que diseño, es <span style={{ color: '#2DD4BF' }}>infraestructura corporativa</span>
+          Más que una <span style={{ color: '#2DD4BF' }}>web bonita</span>
         </h2>
 
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
@@ -131,16 +119,16 @@ export default function DisenoWebPage() {
           <div className="feature-row">
             <div className="feature-number">01</div>
             <div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Arquitectura SEO y AEO</h3>
-              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Estructuramos el código y el contenido desde cero para que te encuentren. Aseguramos tu posicionamiento en Google y en los nuevos motores de respuesta por Inteligencia Artificial.</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Preparada para Google y la IA</h3>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Estructuramos el código y el contenido para que Google y los asistentes de IA entiendan qué ofreces, dónde y a qué precio: la base para que te encuentren y te recomienden.</p>
             </div>
           </div>
 
           <div className="feature-row">
             <div className="feature-number feature-number--brand">02</div>
             <div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Chat de IA Integrado</h3>
-              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Tu plataforma no descansa. Implementamos un agente de IA conversacional para capturar, perfilar y retener a los prospectos que visitan tu web las 24 horas del día, los 7 días de la semana.</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Un asistente que no deja escapar a nadie</h3>
+              <p style={{ color: 'var(--text-2)', lineHeight: '1.6' }}>Responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp para que los contactes al día siguiente. Pruébalo en esta misma página.</p>
             </div>
           </div>
 
@@ -170,16 +158,16 @@ export default function DisenoWebPage() {
       {/* CIERRE: el mismo camino principal que el hero, con WhatsApp como alternativa */}
       <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
-          ¿Listo para dominar tu mercado?
+          ¿Quieres saber qué le falta a tu web?
         </h2>
         <p style={{ fontSize: '1.1rem', color: 'var(--ink-2)', maxWidth: '600px', margin: '0 auto 2.5rem' }}>
-          Agenda una consultoría gratuita y te mostramos exactamente qué le falta a tu presencia digital actual para empezar a captar clientes todos los días.
+          Pide tu diagnóstico gratis y te mandamos por WhatsApp 3 fallos reales de tu web, cada uno con su prueba.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Diseño Web para mi negocio' }))}>
             Consultar proyecto
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20una%20consultor%C3%ADa%20gratuita." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Dise%C3%B1o%20Web%20y%20quiero%20mi%20diagn%C3%B3stico%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

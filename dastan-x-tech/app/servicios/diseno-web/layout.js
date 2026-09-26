@@ -1,12 +1,12 @@
 export const metadata = {
-  title: 'Diseño Web Profesional y Arquitectura SEO | DASTAN X-TECH',
-  description: 'Diseño de páginas web para negocios y pymes, optimizadas para SEO local y motores de respuesta AEO. Convierte visitas en clientes.',
-  keywords: ['Diseño web profesional', 'Arquitectura SEO', 'Posicionamiento AEO', 'Diseño web para pymes'],
+  title: 'Diseño web para clínicas estéticas, spas y salones | DASTAN X-TECH',
+  description: 'Renovamos la web de tu clínica, spa o salón con tu marca real, tus servicios, tus precios y tu WhatsApp a un toque. Desde 100 USD.',
+  keywords: ['Diseño web para clínicas estéticas', 'Diseño web para spas', 'Diseño web para salones de belleza', 'Diseño web para pymes'],
   alternates: {
     canonical: '/servicios/diseno-web',
   },
   openGraph: {
-    title: 'Diseño Web Profesional y Arquitectura SEO | DASTAN X-TECH',
+    title: 'Diseño web para clínicas estéticas, spas y salones | DASTAN X-TECH',
     description: 'Diseño de páginas web para negocios y pymes, optimizadas para SEO local y motores de respuesta AEO.',
     url: 'https://dastanxtech.com/servicios/diseno-web',
     siteName: 'DASTAN X-TECH',
@@ -25,7 +25,11 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: ['Colombia', 'México', 'Estados Unidos'],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: 100, priceCurrency: 'USD' },
+  },
   description: 'Renovamos la página web de negocios y pymes con arquitectura optimizada para SEO local y motores de respuesta de IA (AEO), manteniendo la marca real del cliente.',
   url: 'https://dastanxtech.com/servicios/diseno-web',
 };

@@ -1,76 +1,81 @@
 import { NextResponse } from 'next/server';
 
+// Precios públicos ("desde"): deben coincidir con las páginas de /servicios.
+// Los precios con cupón solo se usan en /vip (propuestas personales) y deben coincidir con app/vip/page.js.
+const PRECIOS = {
+  publico: { web: 100, auditoria: 150, aeo: 200 },
+  cupon: { web: 50, auditoria: 100, aeo: 150 },
+};
+
+function construirPrompt(couponApplied) {
+  const p = couponApplied ? PRECIOS.cupon : PRECIOS.publico;
+  const lineaPrecios = couponApplied
+    ? `Esta persona está en su propuesta personal (/vip) con el cupón aplicado. Sus precios son: Diseño web ${p.web} USD, Auditoría de Negocio 360° ${p.auditoria} USD, Posicionamiento AEO ${p.aeo} USD. Se pagan con los botones de esa misma página.`
+    : `Precios de partida (así aparecen en la web): Auditoría de Negocio 360° desde ${p.auditoria} USD, Diseño web (Cazador de Webs) desde ${p.web} USD, Posicionamiento AEO desde ${p.aeo} USD. El precio final depende del negocio y se confirma después del diagnóstico. Nunca menciones cupones ni descuentos.`;
+
+  return `Eres el asistente de DASTAN X-TECH. Responde en el idioma del usuario (español o inglés). Tono cercano, claro y sin jerga técnica.
+
+A QUIÉN AYUDAMOS: clínicas estéticas, spas y salones de belleza (también otros negocios pequeños), en Colombia, México y Estados Unidos. Trabajamos 100 % en remoto. El equipo son dos personas: Dastan Tamayo (fundador) e Isdiel Martínez (consultor de IA y estratega digital).
+
+LO QUE OFRECEMOS:
+- Diagnóstico gratis: le mandamos por WhatsApp 3 fallos reales de su web o su Instagram, cada uno con su prueba. Para pedirlo, que pulse el botón "Pedir mi diagnóstico gratis" de este chat y deje su nombre, su web o Instagram y su WhatsApp.
+- Auditoría de Negocio 360°: revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas, competencia) y por dentro (cómo capta clientes, agenda, cobra y qué herramientas usa, con un formulario de 36 preguntas). Entrega un informe con la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van a mano y un plan de acción. No necesitamos contraseñas ni accesos.
+- Diseño web (Cazador de Webs): renovamos su web con su marca real, WhatsApp y teléfono siempre visibles y sus servicios explicados. Hay un ejemplo real de un spa en la página de Diseño web.
+- Posicionamiento AEO (Answer Engine Optimization): preparar el negocio para que asistentes de IA como ChatGPT o Gemini lo recomienden: ficha y redes coherentes, contenido claro y reseñas. Complementa al SEO, no lo sustituye.
+${lineaPrecios}
+
+REGLAS:
+1. Máximo 2 o 3 frases por respuesta. Si la pregunta es directa, contesta directo, sin volver a presentarte.
+2. El único canal de contacto es WhatsApp: +16055003653 (escríbelo siempre junto, sin cortarlo). No hay Telegram ni otros canales.
+3. No inventes nada: ni descuentos, ni promociones, ni plazos de entrega, ni garantías de posiciones en Google, ni resultados en cifras, ni clientes o casos que no estén aquí. Si no sabes algo, dilo y ofrece el WhatsApp.
+4. No puedes visitar webs ni perfiles: nunca digas que has revisado la web o el Instagram de la persona. Para eso está el diagnóstico gratis.
+5. Si preguntan algo táctico (SEO local, Google Maps, reseñas), da una o dos ideas concretas y ofrece el diagnóstico gratis para ver su caso.
+6. Cuando la persona muestre interés, invítala a pedir el diagnóstico gratis con el botón del chat.`;
+}
+
 export async function POST(req) {
   try {
     const { messages, couponApplied } = await req.json();
+    if (!Array.isArray(messages)) {
+      return NextResponse.json({ reply: 'No he entendido el mensaje.' }, { status: 400 });
+    }
 
-    // Precios dinámicos según cupón VIP50 (deben coincidir con app/vip/page.js)
-    const price1 = couponApplied ? 50 : 100;
-    const price2 = couponApplied ? 100 : 150;
-    const price3 = couponApplied ? 150 : 200;
-    const notaCupon = couponApplied
-      ? `\n\nAVISO IMPORTANTE: El cliente tiene el CUPÓN VIP50 ACTIVO. Todos los precios de abajo YA reflejan el descuento aplicado. Cotiza SIEMPRE con estos precios ($${price1}, $${price2}, $${price3}), nunca con los precios originales.`
-      : '';
+    // Se descarta el saludo inicial y se limita la longitud de la conversación
+    const formattedMessages = messages
+      .slice(1)
+      .slice(-16)
+      .map((msg) => ({
+        role: msg?.role === 'user' ? 'user' : 'assistant',
+        content: String(msg?.text || '').slice(0, 1500),
+      }));
 
-    const systemPrompt = {
-      role: "system",
-      content: `Eres el asistente virtual de IA de DASTAN X-TECH. Detecta automáticamente el idioma del usuario (Español o Inglés) y respóndele en ese mismo idioma. Eres directo, sumamente conciso y profesional.
-
-      REGLAS ESTRICTAS DE COMPORTAMIENTO (DE CUMPLIMIENTO OBLIGATORIO):
-      1. CERO SALUDOS REPETIDOS: Si el usuario te hace una pregunta directa (ej. "¡Hola! Quiero saber cómo funciona la Auditoría 360°"), OMITE la presentación genérica y RESPONDE DIRECTAMENTE a su duda de forma natural.
-      2. RESPUESTAS ULTRA CORTAS: Nunca des explicaciones largas, ni guías paso a paso, ni textos extensos. Da un resumen máximo de 2 o 3 líneas por respuesta. Si el cliente necesita más detalles, indícale el contacto correspondiente.
-      3. ENLACES Y FORMATO: NUNCA rompas los números de teléfono o enlaces en varias líneas. Mantén siempre el número de WhatsApp junto (+16055003653).
-      4. SEO / AEO NUNCA SUELTO: Si preguntan algo táctico como "cómo funciona el SEO local" o "cómo salgo en Google Maps", da 1-2 tácticas concretas Y SIEMPRE aclara en la misma respuesta que eso es solo una parte de la Auditoría de Negocio 360°, que también evalúa presencia digital, competencia y procesos internos del negocio. Nunca respondas solo con tácticas sueltas sin mencionar la Auditoría.
-      5. PRECIOS Y "GRATIS" PROHIBIDOS: NUNCA menciones montos en dólares, precios ni descuentos numéricos, y NUNCA uses las palabras "gratis" o "gratuito/a" para ningún servicio (ni siquiera la Auditoría 360°). Si preguntan por el precio, responde que un asesor da la cotización exacta por Telegram o WhatsApp, y que al contactarlo puede acceder a un cupón VIP.
-
-      REGLAS ESTRICTAS DE CONTACTO (ENRUTAMIENTO):
-      - Para Diseño Web, Auditoría 360°, Posicionamiento AEO o el Paquete Completo: contacto directo con un asesor vía Telegram (@Datspro) o WhatsApp (+16055003653). Menciona siempre que al contactar puede acceder a un cupón VIP, sin dar el monto.
-
-      CATÁLOGO RESUMIDO:
-      - Crecimiento de Negocios / Pymes: Auditoría de Negocio 360°, Diseño web, Apps a medida. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Ecosistema AEO / Posicionamiento en Inteligencia Artificial: Hoy la gente ya no solo busca en Google, le pregunta directo a ChatGPT, Gemini o Alexa "cuál es el mejor [negocio] cerca de mí". El AEO (Answer Engine Optimization) prepara la estructura y el contenido de tu negocio para que esas IAs te recomienden a ti primero, no a tu competencia. No reemplaza al SEO tradicional: lo complementa (sigues apareciendo en Google y además en las respuestas de la IA). Incluido en la Auditoría y en el Paquete Completo. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Diseño Web Premium: Plataforma corporativa que proyecta confianza y refuerza tu posicionamiento frente a la competencia, con arquitectura SEO integrada desde el diseño. Al solicitarlo con un asesor, el cliente accede a un cupón VIP con beneficios adicionales. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Auditoría de Negocio 360° (incluye SEO y AEO): NO es solo SEO local. Es una auditoría completa del negocio: presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (cómo capta clientes, agenda, cobra, horas perdidas a mano). Entrega un informe con nota de presencia digital, horas/dinero recuperable al mes y un plan de acción. AEO significa posicionamiento para que motores de IA como ChatGPT y Gemini recomienden el negocio. (Contacto: Telegram @Datspro | WhatsApp +16055003653)
-      - Paquete Completo: Diseño Web + SEO + Posicionamiento AEO + Beneficios VIP + Atención personalizada. (Contacto: Telegram @Datspro | WhatsApp +16055003653)`
-    };
-
-    const formattedMessages = messages.slice(1).map(msg => ({
-      role: msg.role === 'user' ? 'user' : 'assistant',
-      content: msg.text
-    }));
-
-    const apiMessages = [systemPrompt, ...formattedMessages];
+    const apiMessages = [{ role: 'system', content: construirPrompt(couponApplied === true) }, ...formattedMessages];
 
     // Conexión con Groq
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
       headers: {
-        "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
-        "Content-Type": "application/json"
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: "openai/gpt-oss-20b", 
+        model: 'openai/gpt-oss-20b',
         messages: apiMessages,
-        max_tokens: 800
-      })
+        max_tokens: 800,
+      }),
     });
 
     const data = await response.json();
-
     if (!response.ok) {
-      throw new Error(data.error?.message || "Error conectando con Groq");
+      throw new Error(data.error?.message || 'Error conectando con Groq');
     }
 
-    let aiResponse = data.choices[0].message.content;
-    aiResponse = aiResponse.replace(/\*/g, '');
-    const botReply = aiResponse.trim();
-
+    const botReply = data.choices[0].message.content.replace(/\*/g, '').trim();
     return NextResponse.json({ reply: botReply });
-    
   } catch (error) {
     console.error('Error general en el motor de IA o red:', error);
     return NextResponse.json(
-      { reply: 'Mis sistemas están en mantenimiento. Por favor, intenta de nuevo en unos segundos.' }, 
+      { reply: 'No he podido responder ahora. Escríbenos por WhatsApp al +16055003653.' },
       { status: 500 }
     );
   }

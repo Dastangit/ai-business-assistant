@@ -25,7 +25,11 @@ const serviceJsonLd = {
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com',
   },
-  areaServed: ['Colombia', 'México'],
+  areaServed: ['Colombia', 'México', 'Estados Unidos'],
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: 150, priceCurrency: 'USD' },
+  },
   description: 'Auditoría completa de presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (captación, agenda, cobro, herramientas). Entrega una nota de presencia digital, nivel de madurez tecnológica, horas y dinero recuperable al mes, y un plan de acción por fases.',
   url: 'https://dastanxtech.com/servicios/auditoria-360',
 };
