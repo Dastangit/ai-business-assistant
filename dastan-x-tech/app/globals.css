@@ -240,13 +240,17 @@ a.service-card:hover { border-color: var(--action); }
 /* Hero con la propuesta de valor */
 .hero {
   position: relative; z-index: 10; display: flex; flex-direction: column;
-  align-items: flex-start; gap: 24px;
+  align-items: flex-start; gap: clamp(16px, 3vh, 24px);
   max-width: 1120px; width: 100%; margin: 0 auto;
-  padding: 72px 24px 56px;
+  /* En pantallas bajas (portátiles) el contenido sube para que los puntos del final se vean enteros */
+  padding: clamp(24px, 6vh, 72px) 24px 56px;
+  /* Ocupa la primera pantalla entera (menos el menú): la siguiente sección no asoma cortada por abajo */
+  min-height: calc(100svh - 80px);
 }
 .hero .label-mono { color: var(--text-2); }
 .hero-title {
-  font-size: clamp(2.25rem, 5.4vw, 3.5rem); font-weight: 700;
+  /* Crece con el ancho, pero también se limita por la altura de la pantalla */
+  font-size: clamp(2.25rem, min(5.4vw, 7.5vh), 3.5rem); font-weight: 700;
   letter-spacing: -0.03em; line-height: 1.05; max-width: 820px;
 }
 .hero-sub { font-size: 1.125rem; line-height: 1.6; color: var(--text-2); max-width: 580px; }
