@@ -42,11 +42,22 @@ export default function ChatWidget({ couponApplied = false } = {}) {
   const [enviando, setEnviando] = useState(false);
   const [errorForm, setErrorForm] = useState('');
   const [leadEnviado, setLeadEnviado] = useState(false);
-  const finRef = useRef(null);
+  const listaRef = useRef(null);
+  const formRef = useRef(null);
 
+  // Mensajes nuevos: baja al final de la conversación
   useEffect(() => {
-    finRef.current?.scrollIntoView({ block: 'end' });
-  }, [messages, formAbierto, isLoading]);
+    const lista = listaRef.current;
+    if (lista) lista.scrollTop = lista.scrollHeight;
+  }, [messages, isLoading]);
+
+  // Al abrir el formulario: se muestra desde arriba, con "Tengo web / No tengo web" y el título a la vista
+  useEffect(() => {
+    const lista = listaRef.current;
+    const form = formRef.current;
+    if (!formAbierto || !lista || !form) return;
+    lista.scrollTop += form.getBoundingClientRect().top - lista.getBoundingClientRect().top - 8;
+  }, [formAbierto, tieneWeb]);
 
   const handleSend = useCallback(async (textoDirecto = null) => {
     const textoAEnviar = typeof textoDirecto === 'string' ? textoDirecto : input;
@@ -164,7 +175,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
             </button>
           </div>
 
-          <div className="chat-messages">
+          <div className="chat-messages" ref={listaRef}>
             {messages.map((msg, index) => (
               <div key={index} className={msg.role === 'bot' ? 'msg-bot' : 'msg-user'} style={{ whiteSpace: 'pre-wrap' }}>
                 {renderMessageWithLinks(msg.text)}
@@ -174,7 +185,7 @@ export default function ChatWidget({ couponApplied = false } = {}) {
 
             {/* DIAGNÓSTICO SEO GRATIS (solo con web) o WEB NUEVA (sin web): los datos van al panel (tabla leads_web) */}
             {!leadEnviado && (formAbierto ? (
-              <form onSubmit={enviarDiagnostico} style={tarjeta} noValidate>
+              <form ref={formRef} onSubmit={enviarDiagnostico} style={tarjeta} noValidate>
                 <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }} role="group" aria-label="¿Tienes página web?">
                   <button type="button" style={opcion(tieneWeb)} aria-pressed={tieneWeb} onClick={() => { setTieneWeb(true); setErrorForm(''); }}>Tengo web</button>
                   <button type="button" style={opcion(!tieneWeb)} aria-pressed={!tieneWeb} onClick={() => { setTieneWeb(false); setErrorForm(''); }}>No tengo web</button>
@@ -212,7 +223,6 @@ export default function ChatWidget({ couponApplied = false } = {}) {
                 </button>
               </div>
             ))}
-            <div ref={finRef} />
           </div>
 
           <div className="chat-input-area">
