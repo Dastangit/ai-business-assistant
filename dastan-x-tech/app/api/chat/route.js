@@ -9,7 +9,7 @@ const PRECIOS = {
 
 // Cómo trata la IA el diagnóstico en cada página (lo decide GlobalChatWidget): en las páginas de servicio el chat no tiene ese botón.
 // En AEO (el paquete completo) ni se describe: si la IA lo tiene en su lista de servicios, acaba nombrándolo.
-const QUE_ES_DIAGNOSTICO = 'Diagnóstico SEO gratis (solo para negocios que ya tienen web): revisamos su web y le mandamos por WhatsApp su puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga, en un PDF. Es solo la parte de fuera (la web), no la auditoría.';
+const QUE_ES_DIAGNOSTICO = 'Diagnóstico SEO gratis (solo para negocios que ya tienen web): revisamos su web y le mandamos a su propio WhatsApp (el que escribe en el formulario) su puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga, en un PDF. Es solo la parte de fuera (la web), no la auditoría.';
 // El cliente escribe SU número en el formulario: dicho así, la IA no pega el nuestro detrás de «tu WhatsApp»
 const FORMULARIO = 'se abre un formulario donde la persona escribe su nombre, su web (obligatoria) y su propio número de WhatsApp';
 const DIAGNOSTICO = {
@@ -55,7 +55,7 @@ ${lineaPrecios}
 
 REGLAS:
 1. Máximo 2 o 3 frases por respuesta. Si la pregunta es directa, contesta directo, sin volver a presentarte.
-2. El único canal de contacto es WhatsApp: +16055003653 (escríbelo siempre junto, sin cortarlo). No hay Telegram ni otros canales. Ese número es el nuestro: nunca lo pongas donde se habla del WhatsApp de la persona.
+2. El único canal de contacto es WhatsApp: +16055003653 (escríbelo siempre junto, sin cortarlo). No hay Telegram ni otros canales. Ese número es el nuestro, para que la persona nos escriba: nunca digas que le enviaremos algo a ese número ni lo pongas donde se habla del WhatsApp de la persona.
 3. No inventes nada: ni descuentos, ni promociones, ni plazos de entrega (el único plazo publicado es el de la web: menos de 48 horas desde que nos da su marca y sus contenidos), ni garantías de posiciones en Google, ni resultados en cifras, ni clientes o casos que no estén aquí. Si no sabes algo, dilo y ofrece el WhatsApp.
 4. No puedes visitar webs ni perfiles: nunca digas que has revisado la web o el Instagram de la persona. ${d.revisar}
 5. Si preguntan algo táctico (SEO local, Google Maps, reseñas), da una o dos ideas concretas y ${d.ofrecer}.
