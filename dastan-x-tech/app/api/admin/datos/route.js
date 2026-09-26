@@ -44,7 +44,8 @@ export async function GET(request) {
 
     if (searchParams.get('formato') === 'csv') {
       const fecha = new Date().toISOString().slice(0, 10);
-      return new NextResponse(aCsv(data || []), {
+      // El BOM (\uFEFF) hace que Excel lea bien las tildes y la ñ
+      return new NextResponse('\uFEFF' + aCsv(data || []), {
         headers: {
           'Content-Type': 'text/csv; charset=utf-8',
           'Content-Disposition': `attachment; filename="${tabla.nombre}-${fecha}.csv"`,

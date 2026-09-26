@@ -7,8 +7,9 @@ import ChatWidget from './ChatWidget';
 // este wrapper lo omite en /vip y lo monta en el resto del sitio
 // (home, /servicios y /servicios/*), donde antes no existía ningún
 // <ChatWidget /> y por eso los botones "Consultar..." no hacían nada.
+// En /admin (panel privado) tampoco se monta: taparía los datos.
 export default function GlobalChatWidget() {
   const pathname = usePathname();
-  if (pathname?.startsWith('/vip')) return null;
+  if (pathname?.startsWith('/vip') || pathname?.startsWith('/admin')) return null;
   return <ChatWidget />;
 }

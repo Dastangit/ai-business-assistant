@@ -6,13 +6,26 @@ import Link from 'next/link';
 // Panel privado. No habla con la base de datos: todo pasa por /api/admin/datos,
 // que comprueba la cookie de sesión en el servidor antes de leer o tocar nada.
 
+// Estados de un lead con su color (en RGB), en la línea de los botones de estado de prospectos
 const ESTADOS_LEAD = {
-  nuevo: 'Nuevo',
-  contactado: 'Contactado',
-  diagnostico_enviado: 'Diagnóstico enviado',
-  cliente: 'Cliente',
-  descartado: 'Descartado',
+  nuevo: { texto: 'Nuevo', rgb: '45, 212, 191' },
+  contactado: { texto: 'Contactado', rgb: '168, 85, 247' },
+  diagnostico_enviado: { texto: 'Diagnóstico enviado', rgb: '96, 165, 250' },
+  cliente: { texto: 'Cliente', rgb: '34, 197, 94' },
+  descartado: { texto: 'Descartado', rgb: '124, 118, 148' },
 };
+
+// Selector de estado con aspecto de etiqueta: fondo suave del color del estado y flecha propia
+function estiloEstado(estado) {
+  const rgb = (ESTADOS_LEAD[estado] || ESTADOS_LEAD.nuevo).rgb;
+  const flecha = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='rgb(${rgb.replace(/ /g, '')})' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")`;
+  return {
+    appearance: 'none', WebkitAppearance: 'none', cursor: 'pointer',
+    backgroundColor: `rgba(${rgb}, 0.1)`, color: `rgb(${rgb})`, border: `1px solid rgba(${rgb}, 0.35)`,
+    borderRadius: '8px', padding: '0.4rem 2rem 0.4rem 0.8rem', fontSize: '0.85rem', fontWeight: 'bold',
+    backgroundImage: flecha, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 0.7rem center',
+  };
+}
 
 const c = {
   fondo: '#07050A', panel: '#120D1C', borde: '#231B35', texto: '#F5F4EF', suave: '#b0adc5',
@@ -218,7 +231,7 @@ export default function AdminPage() {
                 <tbody>
                   {leads.map((lead) => (
                     <tr key={lead.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={{ ...celda, whiteSpace: 'nowrap', color: c.suave }}>{new Date(lead.fecha).toLocaleString('es')}</td>
+                      <td style={{ ...celda, whiteSpace: 'nowrap', color: c.suave }}>{new Date(lead.fecha).toLocaleDateString('es')}</td>
                       <td style={celda}>{lead.nombre}</td>
                       <td style={celda}>{interesDe(lead.origen)}</td>
                       <td style={{ ...celda, maxWidth: '220px', overflowWrap: 'anywhere' }}>{lead.web || <span style={{ color: c.apagado }}>—</span>}</td>
@@ -229,13 +242,13 @@ export default function AdminPage() {
                         <select
                           value={lead.estado}
                           onChange={(e) => accion('PATCH', { tabla: 'leads', id: lead.id, estado: e.target.value }, 'No se pudo actualizar el estado.')}
-                          style={{ background: c.fondo, color: c.texto, border: `1px solid ${c.borde}`, borderRadius: '8px', padding: '0.4rem' }}
+                          aria-label={`Estado de ${lead.nombre}`}
+                          style={estiloEstado(lead.estado)}
                         >
-                          {Object.entries(ESTADOS_LEAD).map(([valor, texto]) => <option key={valor} value={valor}>{texto}</option>)}
+                          {Object.entries(ESTADOS_LEAD).map(([valor, { texto }]) => <option key={valor} value={valor} style={{ backgroundColor: c.panel, color: c.texto }}>{texto}</option>)}
                         </select>
                       </td>
                       <td style={{ ...celda, display: 'flex', gap: '8px' }}>
-                        <button onClick={() => abrirPanel({ nombre_agencia: lead.nombre, sitio_web: lead.web, auditoria_ai: lead.conversacion, titulo: 'Conversación del chat' })} style={{ background: c.turquesa, border: 'none', color: c.fondo, padding: '0.5rem 0.9rem', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>Ver chat</button>
                         <button onClick={() => eliminar('leads', lead.id, lead.nombre)} style={botonPeligro}>Eliminar</button>
                       </td>
                     </tr>
