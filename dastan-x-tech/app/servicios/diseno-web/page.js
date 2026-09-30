@@ -21,8 +21,12 @@ const faqData = [
     a: 'La analizamos primero: te damos un diagnóstico honesto con problemas concretos y observables — cada uno con la razón por la que te cuesta clientes — antes de tocar nada.',
   },
   {
+    q: '¿Y si no quiero una web nueva?',
+    a: 'Si ya tienes web y solo quieres arreglar lo más urgente, está el Arreglo exprés: por 49 USD aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si en los 30 días siguientes contratas el Diseño web, te lo descontamos.',
+  },
+  {
     q: '¿La web incluye el chat con Inteligencia Artificial?',
-    a: 'Sí. Un asistente que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta, para que no se te escape nadie. Es el mismo que puedes probar en esta página.',
+    a: 'Es opcional: un asistente que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta, para que no se te escape nadie. Cuesta 15 USD al mes, o va incluido en la Membresía de Implementación si encaja con tu negocio. Es el mismo que puedes probar en esta página.',
   },
 ];
 
@@ -126,11 +130,36 @@ export default function DisenoWebPage() {
           <div className="feature-row">
             <div className="feature-number feature-number--brand">02</div>
             <div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Un asistente que no deja escapar a nadie</h3>
-              <p style={{ color: 'var(--ink-2)', lineHeight: '1.6' }}>Responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp para que los contactes al día siguiente. Pruébalo en esta misma página.</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Y si quieres, un asistente que no deja escapar a nadie</h3>
+              <p style={{ color: 'var(--ink-2)', lineHeight: '1.6' }}>Opcional: responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp para que los contactes al día siguiente. Pruébalo en esta misma página.</p>
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* DOS FORMAS DE EMPEZAR: web nueva o Arreglo exprés. Sin precios, como el resto de la página (van en las preguntas frecuentes) */}
+      <section style={{ padding: '6rem 5%' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '3rem', color: 'var(--ink)' }}>
+          Dos formas de <span className="accent-light">empezar</span>
+        </h2>
+        <div className="caminos">
+          <div className="camino">
+            <span className="label-mono">Web nueva</span>
+            <h3>Renovamos tu web o te la creamos desde cero</h3>
+            <p>Con tu marca real, tus servicios explicados y tu WhatsApp a un toque. Lista en menos de 48 horas desde que tenemos tu marca y tus contenidos.</p>
+            <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero una web nueva para mi negocio' }))}>
+              Quiero una web nueva
+            </button>
+          </div>
+          <div className="camino">
+            <span className="label-mono">Arreglo exprés</span>
+            <h3>¿Ya tienes web? Arreglamos lo urgente</h3>
+            <p>Aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si después haces la web nueva, te lo descontamos.</p>
+            <button type="button" className="btn btn-outline-light" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero el Arreglo exprés para mi web' }))}>
+              Quiero el arreglo exprés
+            </button>
+          </div>
         </div>
       </section>
 

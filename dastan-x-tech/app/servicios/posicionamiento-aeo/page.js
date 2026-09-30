@@ -18,11 +18,33 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta?',
-    a: 'Desde 200 USD, e incluye el Diseño web y la Auditoría Completa de Negocio. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.',
+    a: 'Desde 150 USD. Necesita una web en buen estado: si la tuya no lo está, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.',
   },
   {
     q: '¿Funciona para cualquier tipo de negocio?',
-    a: 'Sí. Funciona mejor cuando hay una base sólida por fuera, y por eso incluye el Diseño web y la Auditoría Completa de Negocio: primero dejamos esa base lista y después trabajamos para que la IA te recomiende.',
+    a: 'Sí, siempre que haya una base sólida por fuera: una web clara y una ficha de Google ordenada. Si todavía no la tienes, empezamos por ahí con el Diseño web o con el Pack completo.',
+  },
+];
+
+// Por qué importa el AEO: sin prometer resultados, como el resto de la web.
+// Las reservas y compras con agentes de IA no entran en el AEO: se hacen con la Membresía de Implementación
+const razonesAeo = [
+  {
+    titulo: 'Recomendación directa',
+    texto: 'Cuando un cliente potencial le pide a una IA las mejores empresas o servicios de tu sector, el AEO te prepara para ser la respuesta recomendada.',
+  },
+  {
+    titulo: 'Adaptación a agentes de IA',
+    texto: 'Ordenamos la estructura de tu web para que los asistentes entiendan con exactitud tu catálogo, tus precios y tus servicios, sin errores ni ambigüedades.',
+  },
+  {
+    titulo: 'Reservas y compras desde el chat',
+    etiqueta: 'Con la Membresía',
+    texto: 'Preparamos tu negocio para que los agentes de IA puedan gestionar reservas o compras en nombre de tus clientes, directamente desde el chat. Esto se hace aparte, con la Membresía de Implementación.',
+  },
+  {
+    titulo: 'Visibilidad a largo plazo',
+    texto: 'A medida que más búsquedas se hacen preguntándole a una IA, el AEO ayuda a que tu marca siga siendo relevante y siga captando clientes.',
   },
 ];
 
@@ -77,6 +99,47 @@ export default function PosicionamientoAeoPage() {
           </ul>
         </div>
       </header>
+
+      {/* QUÉ ES EL AEO: para quien quiere entenderlo antes de consultar, con el ejemplo real del blog al final */}
+      <section style={{ padding: '6rem 5%' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem', justifyContent: 'center' }}>
+          <span style={{ background: 'var(--brand-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
+          <span className="label-mono">Qué es el AEO</span>
+        </div>
+        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '2.5rem', color: 'var(--ink)' }}>
+          ¿Qué es el <span className="accent-light">AEO</span>?
+        </h2>
+
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', color: 'var(--ink-2)', fontSize: '1.1rem', lineHeight: '1.7' }}>
+            <p>
+              La forma en que las personas buscan información, productos y servicios ha cambiado. Las listas de enlaces de siempre están dando paso a motores de respuesta y asistentes de inteligencia artificial como ChatGPT, Gemini, Perplexity o Claude. Si tu web no está preparada para que la IA la entienda, tu negocio corre el riesgo de quedar invisible para millones de personas.
+            </p>
+            <p>
+              El AEO (Answer Engine Optimization, u optimización para motores de respuesta) es el siguiente paso después del SEO tradicional, sin sustituirlo. En lugar de optimizar tu web solo para aparecer en los buscadores y conseguir clics, ordena tu información para que los asistentes y agentes de IA la lean, la entiendan y recomienden tu marca cuando alguien les hace una pregunta directa.
+            </p>
+          </div>
+
+          <h3 style={{ fontSize: '1.5rem', color: 'var(--ink)', margin: '3rem 0 1.25rem' }}>Por qué importa para tu negocio</h3>
+          <div className="aeo-razones">
+            {razonesAeo.map((r) => (
+              <div key={r.titulo} className="aeo-razon">
+                {r.etiqueta && <span className="label-mono aeo-razon-etiqueta">{r.etiqueta}</span>}
+                <h4>{r.titulo}</h4>
+                <p>{r.texto}</p>
+              </div>
+            ))}
+          </div>
+
+          <blockquote className="aeo-cita">
+            En la web del futuro no basta con que te vean las personas: tu negocio tiene que ser comprendido y recomendado por las máquinas.
+          </blockquote>
+
+          <a href="/blog/que-es-aeo" className="text-link">
+            Mira un ejemplo real: le preguntamos a Gemini por el mejor spa de Medellín →
+          </a>
+        </div>
+      </section>
 
       {/* SECCIÓN DE CARACTERÍSTICAS */}
       <section style={{ padding: '6rem 5%' }}>
@@ -137,7 +200,7 @@ export default function PosicionamientoAeoPage() {
           <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre Posicionamiento AEO' }))}>
             Consultar Posicionamiento AEO
           </button>
-          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis." target="_blank" rel="noopener noreferrer" className="text-link">
+          <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Posicionamiento%20AEO%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="text-link">
             o escríbenos por WhatsApp →
           </a>
         </div>

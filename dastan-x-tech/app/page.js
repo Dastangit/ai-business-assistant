@@ -9,11 +9,11 @@ import SiteFooter from '@/components/SiteFooter';
 const servicios = [
   {
     href: '/servicios/diseno-web',
-    label: '01 · Diseño web',
-    title: 'Cazador de Webs',
+    label: '01 · Web',
+    title: 'Diseño web',
     text: 'Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.',
     items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
-    link: 'Saber más sobre Cazador de Webs →',
+    link: 'Saber más sobre Diseño web →',
   },
   {
     href: '/servicios/auditoria-negocio',
@@ -109,7 +109,7 @@ export default function Home() {
           Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor de IA y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.
         </p>
         <p className="section-text">
-          Empezamos siempre por un diagnóstico con evidencias —una frase de tu web, una reseña con fecha, una captura— y terminamos con acciones concretas, ordenadas por lo que más te devuelve. Antes de pedírselo a nadie, nos lo aplicamos a nosotros mismos: <a href="/blog/auditamos-nuestra-propia-web" className="text-link">lee nuestra autoauditoría</a>.
+          Empezamos siempre por un diagnóstico con evidencias —una frase de tu web, una reseña con fecha, una captura— y terminamos con acciones concretas, ordenadas por lo que más te devuelve.
         </p>
       </section>
 

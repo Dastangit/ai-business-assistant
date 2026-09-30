@@ -51,10 +51,10 @@ export default function BlogPost() {
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Lo probamos en vivo</h2>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
-          Le preguntamos a Gemini: <em>"¿Cuál es el mejor spa en Medellín?"</em>. La respuesta no fue una lista genérica — fueron 5 negocios reales, cada uno con su calificación de Google (todos entre 4.4★ y 4.9★), su horario de atención, su categoría de negocio, y 2 o 3 líneas muy específicas sobre qué los hace distintos: uno por su circuito de hidroterapia, otro por sus masajes de tejido profundo y sound healing, otro por su chocolaterapia.
+          Le preguntamos a Gemini: <em>&quot;¿Cuál es el mejor spa en Medellín?&quot;</em>. La respuesta no fue una lista genérica — fueron 5 negocios reales, cada uno con su calificación de Google (todos entre 4.4★ y 4.9★), su horario de atención, su categoría de negocio, y 2 o 3 líneas muy específicas sobre qué los hace distintos: uno por su circuito de hidroterapia, otro por sus masajes de tejido profundo y sound healing, otro por su chocolaterapia.
         </p>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
-          Ninguno de esos negocios "pagó" por aparecer ahí. La IA los citó porque su información pública ya estaba lista para ser citada.
+          Ninguno de esos negocios &quot;pagó&quot; por aparecer ahí. La IA los citó porque su información pública ya estaba lista para ser citada.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Qué tienen en común los negocios que la IA recomienda</h2>
@@ -63,11 +63,11 @@ export default function BlogPost() {
         </p>
         <ul style={{ lineHeight: '1.9', paddingLeft: '1.3rem', marginBottom: '1rem' }}>
           <li><strong>Ficha de Google completa</strong> — categoría correcta, horario actualizado, reseñas reales y una calificación alta y consistente.</li>
-          <li><strong>Contenido específico, no genérico</strong> — la IA no dijo "buen servicio y buena atención" de ninguno; dijo qué tratamiento exacto ofrece cada uno.</li>
+          <li><strong>Contenido específico, no genérico</strong> — la IA no dijo &quot;buen servicio y buena atención&quot; de ninguno; dijo qué tratamiento exacto ofrece cada uno.</li>
           <li><strong>Señales de confianza visibles</strong> — la cantidad y calidad de reseñas es lo primero que la IA usa para decidir a quién citar primero.</li>
         </ul>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
-          Es exactamente lo que trabajamos en nuestro servicio de Posicionamiento AEO: ordenar tu ficha de Google y redes, dejar contenido citable sobre lo que realmente ofreces, y reforzar las señales de confianza que la IA usa para elegir.
+          Es exactamente lo que trabajamos en nuestro <a href="/servicios/posicionamiento-aeo" className="text-link">servicio de Posicionamiento AEO</a>: ordenar tu ficha de Google y redes, dejar contenido citable sobre lo que realmente ofreces, y reforzar las señales de confianza que la IA usa para elegir.
         </p>
 
         <div style={{ background: 'var(--ink)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>

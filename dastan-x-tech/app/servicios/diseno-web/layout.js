@@ -18,7 +18,7 @@ export const metadata = {
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Diseño Web Profesional (Cazador de Webs)',
+  name: 'Diseño web',
   serviceType: 'Diseño y desarrollo web para pymes',
   provider: {
     '@type': 'ProfessionalService',

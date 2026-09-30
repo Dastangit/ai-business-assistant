@@ -6,42 +6,69 @@ import { BrandMark } from '@/components/Brand';
 // El código del cupón ya no vive aquí: se valida en /api/vip/cupon (servidor)
 const PAYPAL_USER = 'Dastanpro98';
 
-// Tarjetas compactas: precio junto al título, una frase y lo que recibe el cliente.
-// Cada paquete incluye el anterior: la Auditoría parte de "Todo lo de Diseño Web, más" y AEO de "Todo lo de la Auditoría Completa, más".
+// Tabla de precios: los tres servicios de menor a mayor precio y el pack como cuarta columna destacada.
+// Cada servicio se contrata por separado (la auditoría es la de más valor) y el pack junta los tres con descuento.
+// Los precios deben coincidir con PRECIOS de app/api/chat/route.js y con las FAQ de /servicios.
 const PAQUETES = [
   {
-    titulo: 'Diseño Web Premium',
+    titulo: 'Diseño web',
     texto: 'Una web que proyecta confianza, muestra tus trabajos y justifica precios más altos.',
     precio: 100,
     precioCupon: 50,
-    listaTitulo: 'Recibes',
     incluye: [
       'Tu web reconstruida como experiencia 3D de scroll inmersivo',
       'Con tu branding real: logo, colores, fotos y precios',
       'Diagnóstico de 5 problemas de tu web actual',
-      'Entrega lista para publicar (HTML + assets)',
+      'Entrega lista para publicar',
+    ],
+  },
+  {
+    titulo: 'Posicionamiento AEO',
+    texto: 'Preparamos tu negocio para que asistentes de IA como ChatGPT y Gemini recomienden tus servicios.',
+    precio: 150,
+    precioCupon: 100,
+    incluye: [
+      'Ficha de Google ordenada',
+      'Contenido que la IA puede citar',
+      'Reseñas y señales de confianza',
+      'Necesita una web en buen estado',
     ],
   },
   {
     titulo: 'Auditoría Completa de Negocio',
     texto: 'Revisamos tu negocio por fuera y por dentro para ver dónde pierdes tiempo y dinero.',
-    precio: 150,
-    precioCupon: 100,
-    listaTitulo: 'Todo lo de Diseño Web, más',
+    precio: 200,
+    precioCupon: 150,
     incluye: [
       'Por fuera: web, redes, anuncios, reseñas y competencia',
       'Por dentro: procesos y herramientas (36 preguntas)',
       'Incoherencias costosas entre ambas mitades',
-      'Horas al mes recuperables y recorrido del cliente antes/después',
+      'Horas al mes recuperables y plan de acción por fases',
     ],
   },
+];
+
+// Los tres servicios juntos. Sin cupón, el ahorro se calcula contra la suma de los tres (450 → 400).
+// Con cupón, el pack cuesta lo mismo que los tres con cupón (300), así que el ahorro se mide contra el pack normal
+const PACK = { precio: 400, precioCupon: 300 };
+
+// Arreglo exprés: entrada rápida para quien ya tiene web. Precio fijo, sin cupón (debe coincidir con OTROS.expres del chat)
+const ARREGLO_EXPRES = 49;
+
+// Cuotas mensuales: no se pagan con paypal.me (solo pagos únicos), se piden por WhatsApp y se facturan cada mes.
+// La Membresía es la excepción: su botón cobra el primer mes por PayPal y los siguientes se cobran cada mes
+const COMPLEMENTOS = [
   {
-    titulo: 'Ecosistema AEO',
-    texto: 'Preparamos tu negocio para que modelos de IA como ChatGPT y Gemini recomienden tus servicios.',
-    precio: 200,
-    precioCupon: 150,
-    listaTitulo: 'Todo lo de la Auditoría Completa, más',
-    incluye: ['SEO + posicionamiento AEO', 'Atención personalizada'],
+    titulo: 'Chat IA en tu web',
+    precio: '$15/mes',
+    texto: 'Responde dudas las 24 h y guarda el nombre y el WhatsApp de quien pregunta. Incluido en la Membresía si encaja con tu negocio.',
+    mensaje: 'Hola, vi la propuesta VIP y me interesa el Chat IA para mi web.',
+  },
+  {
+    titulo: 'Recepcionista IA por WhatsApp',
+    precio: '$150 + $39/mes',
+    texto: 'Atiende tu WhatsApp las 24 h, resuelve dudas y guarda los datos de cada cliente. Se instala en un número secundario del negocio.',
+    mensaje: 'Hola, vi la propuesta VIP y me interesa la Recepcionista IA por WhatsApp.',
   },
 ];
 
@@ -143,36 +170,71 @@ export default function VIPPage() {
         </div>
 
         {/* Tarjetas compactas: sin onClick en la tarjeta; el botón paga y nada más */}
-        <div className="card-grid" style={{ gap: '16px', alignItems: 'stretch', gridTemplateColumns: 'repeat(auto-fit, minmax(min(260px, 100%), 1fr))', maxWidth: '1040px', margin: '0 auto' }}>
-          {PAQUETES.map((p) => {
-            const precio = couponApplied ? p.precioCupon : p.precio;
-            return (
-              <div key={p.titulo} className="vip-card">
+        {/* TABLA DE PRECIOS: servicios de contorno y el pack como única opción destacada (botón relleno) */}
+        {(() => {
+          const precioPack = couponApplied ? PACK.precioCupon : PACK.precio;
+          const suma = PAQUETES.reduce((total, p) => total + (couponApplied ? p.precioCupon : p.precio), 0);
+          return (
+            <div className="vip-precios">
+              {PAQUETES.map((p) => {
+                const precio = couponApplied ? p.precioCupon : p.precio;
+                return (
+                  <div key={p.titulo} className="vip-card">
+                    <div className="vip-card-head">
+                      <h3 className="vip-card-title">{p.titulo}</h3>
+                      <span className="vip-card-price">${precio}</span>
+                    </div>
+                    <p className="vip-card-text">{p.texto}</p>
+                    <div className="vip-card-list">
+                      <span className="vip-card-list-title">Recibes</span>
+                      <ul>
+                        {p.incluye.map((item) => <li key={item}>{item}</li>)}
+                      </ul>
+                    </div>
+                    <a
+                      href={`https://paypal.me/${PAYPAL_USER}/${precio}USD`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-sm btn-block"
+                      aria-label={`Contratar ${p.titulo} por $${precio} USD`}
+                      style={{ marginTop: '4px' }}
+                    >
+                      Contratar
+                    </a>
+                  </div>
+                );
+              })}
+
+              {/* PACK COMPLETO: el ahorro sale de los precios, para que siempre cuadre con las tarjetas */}
+              <div className="vip-card vip-card--pack">
+                <span className="vip-badge">
+                  {couponApplied ? `Ahorras $${PACK.precio - PACK.precioCupon} con tu cupón` : `Ahorras $${suma - precioPack}`}
+                </span>
                 <div className="vip-card-head">
-                  <h3 className="vip-card-title">{p.titulo}</h3>
-                  <span className="vip-card-price">${precio}</span>
+                  <h3 className="vip-card-title">Pack completo</h3>
+                  <span className="vip-card-price">${precioPack}</span>
                 </div>
-                <p className="vip-card-text">{p.texto}</p>
+                <p className="vip-card-text">Los tres servicios juntos. ¿Ya contrataste alguno? Pagas solo la diferencia.</p>
                 <div className="vip-card-list">
-                  <span className="vip-card-list-title">{p.listaTitulo}</span>
+                  <span className="vip-card-list-title">Incluye</span>
                   <ul>
-                    {p.incluye.map((item) => <li key={item}>{item}</li>)}
+                    {PAQUETES.map((p) => <li key={p.titulo}>{p.titulo}</li>)}
                   </ul>
                 </div>
                 <a
-                  href={`https://paypal.me/${PAYPAL_USER}/${precio}USD`}
+                  href={`https://paypal.me/${PAYPAL_USER}/${precioPack}USD`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-sm btn-block"
-                  aria-label={`Contratar ${p.titulo} por $${precio} USD`}
+                  aria-label={`Contratar el Pack completo por $${precioPack} USD`}
                   style={{ marginTop: '4px' }}
                 >
-                  Contratar
+                  Contratar el pack
                 </a>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })()}
 
         {/* El descuento se menciona una vez, debajo de las tarjetas */}
         {couponApplied && (
@@ -180,6 +242,26 @@ export default function VIPPage() {
             Precios con descuento VIP incluido.
           </p>
         )}
+
+        {/* ARREGLO EXPRÉS: una tarjeta en fila bajo la tabla, para no romper las 4 columnas */}
+        <div className="vip-card vip-card--fila">
+          <div className="vip-fila-texto">
+            <div className="vip-card-head">
+              <h3 className="vip-card-title">Arreglo exprés</h3>
+              <span className="vip-card-price">${ARREGLO_EXPRES}</span>
+            </div>
+            <p className="vip-card-text">¿Ya tienes web y quieres algo rápido? Aplicamos en 48 h las 5 correcciones más urgentes de tu diagnóstico. Si contratas el Diseño web en los 30 días siguientes, te lo descontamos.</p>
+          </div>
+          <a
+            href={`https://paypal.me/${PAYPAL_USER}/${ARREGLO_EXPRES}USD`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary btn-sm"
+            aria-label={`Contratar el Arreglo exprés por $${ARREGLO_EXPRES} USD`}
+          >
+            Contratar
+          </a>
+        </div>
 
         {/* Una sola pregunta al asistente para las tres tarjetas */}
         <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', fontSize: '15px', color: 'var(--text-2)' }}>
@@ -194,32 +276,66 @@ export default function VIPPage() {
           <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="text-link">WhatsApp</a>.
         </p>
 
-        {/* MEMBRESÍA DE IMPLEMENTACIÓN: tarjeta centrada independiente (upsell), no una fila de borde a borde */}
-        <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center' }}>
-          <div className="vip-membership-card">
-            <span className="label-mono" style={{ color: 'var(--action)', display: 'block', marginBottom: '10px' }}>
-              Continuidad · 2 meses
-            </span>
-            <h3 className="vip-card-title" style={{ marginBottom: '6px' }}>Membresía de Implementación</h3>
-            <p className="vip-card-text" style={{ marginBottom: '16px' }}>
-              Aplicamos las mejoras detectadas en el diagnóstico hasta dejar tu negocio listo para crecer.
-            </p>
-            <ul className="vip-membership-list">
-              <li>24 h de desarrollo al mes</li>
-              <li>Implementación continua, sin que tú coordines cada tarea</li>
-              <li>Prioridad de respuesta sobre clientes sin membresía</li>
-            </ul>
-            <div className="vip-membership-price">
-              $200<span style={{ fontSize: '14px', fontWeight: 400, color: 'var(--text-2)' }}> /mes</span>
+        {/* SERVICIOS MENSUALES: de izquierda a derecha y de menor a mayor precio.
+            Los dos complementos, pequeños y apilados; la Membresía, más completa, a su lado */}
+        <div style={{ marginTop: '4rem' }}>
+          <span className="label-mono" style={{ color: 'var(--text-2)', display: 'block', textAlign: 'center', marginBottom: '14px' }}>
+            Servicios mensuales
+          </span>
+          <div className="vip-mensuales">
+            <div className="vip-mensuales-col">
+              {/* Complementos: se piden por WhatsApp porque se facturan cada mes */}
+              {COMPLEMENTOS.map((c) => (
+                <div key={c.titulo} className="vip-card">
+                  <div className="vip-card-head">
+                    <h3 className="vip-card-title">{c.titulo}</h3>
+                    <span className="vip-card-price" style={{ fontSize: '17px' }}>{c.precio}</span>
+                  </div>
+                  <p className="vip-card-text" style={{ flex: 1 }}>{c.texto}</p>
+                  <a
+                    href={`https://wa.me/16055003653?text=${encodeURIComponent(c.mensaje)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary btn-sm btn-block"
+                  >
+                    Pedir por WhatsApp
+                  </a>
+                </div>
+              ))}
             </div>
-            <a
-              href={`https://paypal.me/${PAYPAL_USER}/200USD`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary btn-block"
-            >
-              Iniciar membresía
-            </a>
+
+            {/* MEMBRESÍA DE IMPLEMENTACIÓN */}
+            <div className="vip-card">
+              <div className="vip-card-head">
+                <h3 className="vip-card-title">Membresía de Implementación</h3>
+                <span className="vip-card-price" style={{ fontSize: '17px' }}>$200/mes</span>
+              </div>
+              <p className="vip-card-text">Aplicamos cada mes el plan de acción de tu Auditoría Completa, sin que tengas que coordinar nada. Mínimo 2 meses.</p>
+              <div className="vip-card-list">
+                <span className="vip-card-list-title">Incluye</span>
+                <ul>
+                  <li>24 h de desarrollo al mes</li>
+                  <li>Chat IA en tu web incluido, si encaja con tu negocio</li>
+                  <li>Automatizaciones: recordatorios, seguimiento de presupuestos y reseñas</li>
+                  <li>A elegir dentro de tus horas: análisis de YouTube, de marca personal o de tienda online, y dashboard de facturas</li>
+                  <li>Prioridad de respuesta sobre clientes sin membresía</li>
+                </ul>
+              </div>
+              {/* Es la única cuota mensual con PayPal: el botón cobra solo el primer mes (paypal.me no hace pagos recurrentes) */}
+              <a
+                href={`https://paypal.me/${PAYPAL_USER}/200USD`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary btn-sm btn-block"
+                aria-label="Pagar el primer mes de la Membresía de Implementación por $200 USD"
+                style={{ marginTop: '4px' }}
+              >
+                Pagar el primer mes
+              </a>
+              <p style={{ fontSize: '13px', color: 'var(--text-2)', textAlign: 'center', margin: 0 }}>
+                Los meses siguientes te los cobramos cada mes.
+              </p>
+            </div>
           </div>
         </div>
 

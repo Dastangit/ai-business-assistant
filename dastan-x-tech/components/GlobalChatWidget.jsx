@@ -9,7 +9,7 @@ import ChatWidget from './ChatWidget';
 // <ChatWidget /> y por eso los botones "Consultar..." no hacían nada.
 // En /admin (panel privado) tampoco se monta: taparía los datos.
 // En las páginas de servicio el chat no muestra el botón del diagnóstico: quien llega ahí busca ese servicio.
-// Diseño web y Auditoría lo ofrecen con el botón del final de la página; AEO (el paquete completo) no lo ofrece.
+// Diseño web y Auditoría lo ofrecen con el botón del final de la página; AEO no lo ofrece.
 export default function GlobalChatWidget() {
   const pathname = usePathname();
   if (pathname?.startsWith('/vip') || pathname?.startsWith('/admin')) return null;

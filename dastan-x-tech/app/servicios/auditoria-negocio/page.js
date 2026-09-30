@@ -18,7 +18,7 @@ const faqData = [
   },
   {
     q: '¿Cuánto cuesta la Auditoría Completa de Negocio?',
-    a: 'Desde 150 USD, e incluye el Diseño web: renovamos tu web o te la creamos si no tienes. Es un servicio de pago; el precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
+    a: 'Desde 200 USD. Es nuestro servicio más completo y no incluye la web: si además quieres web nueva y que la IA te recomiende, el Pack completo (Auditoría + Diseño web + AEO) cuesta 400 USD. El precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.',
   },
 ];
 
@@ -122,7 +122,8 @@ export default function AuditoriaNegocioPage() {
         </div>
       </section>
 
-      {/* CIERRE: el mismo camino principal que el hero, con WhatsApp como alternativa */}
+      {/* CIERRE: la Auditoría primero, como en el hero; el diagnóstico SEO gratis, de contorno, para quien aún duda
+          (el chat de esta página manda a este botón), y WhatsApp como alternativa */}
       <section style={{ padding: '6rem 5%', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2rem', fontWeight: '700', color: 'var(--ink)', marginBottom: '1rem', letterSpacing: '-0.015em' }}>
           ¿Quieres saber qué te está costando dinero?
@@ -131,7 +132,10 @@ export default function AuditoriaNegocioPage() {
           Escríbenos y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. ¿Aún no lo tienes claro? Empieza por el diagnóstico SEO gratis de tu web: es la parte de fuera de la auditoría.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
+          <button type="button" className="btn btn-ink" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: 'Quiero información sobre la Auditoría Completa de Negocio' }))}>
+            Consultar Auditoría Completa
+          </button>
+          <button type="button" className="btn btn-outline-light" onClick={() => window.dispatchEvent(new CustomEvent('abrir-chat', { detail: { diagnostico: true } }))}>
             Pedir diagnóstico SEO gratis
           </button>
           <a href="https://wa.me/16055003653?text=Hola,%20vi%20la%20p%C3%A1gina%20de%20Auditor%C3%ADa%20Completa%20de%20Negocio%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" className="text-link">

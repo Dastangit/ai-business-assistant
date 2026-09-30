@@ -301,6 +301,60 @@ a.service-card:hover { border-color: var(--action); }
   height: 1px; background: var(--line-light);
 }
 
+/* Pack completo en /servicios: a todo el ancho bajo las tres tarjetas oscuras, claro y con borde violeta para distinguirse.
+   El botón baja debajo del texto cuando no cabe al lado */
+.pack-block {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 2.5rem;
+  border: 1.5px solid var(--brand-on-light); border-radius: var(--radius-card);
+  padding: 2rem 2.5rem;
+}
+.pack-block-text { flex: 1 1 min(420px, 100%); display: flex; flex-direction: column; gap: 0.6rem; }
+.pack-block h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); }
+.pack-block p { color: var(--ink-2); line-height: 1.6; }
+
+/* Servicios bajo pedido en /servicios: solo texto, más pequeño que el Pack, para que no compita con los tres servicios */
+.extras { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+.extras h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink); }
+.extras-list { list-style: none; padding: 0; margin: 0.25rem 0 0; display: flex; flex-direction: column; gap: 0.6rem; max-width: 820px; }
+.extras-list li { display: flex; gap: 10px; align-items: baseline; color: var(--ink-2); line-height: 1.6; }
+.extras-list li::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--brand-on-light); flex-shrink: 0; transform: translateY(-2px);
+}
+.extras-list strong { color: var(--ink); font-weight: 600; }
+.extras-note { color: var(--ink-2); font-size: 15px; line-height: 1.6; max-width: 820px; margin-bottom: 0.5rem; }
+
+/* Página de AEO: las razones en tarjetas claras con borde (2 columnas si caben, 1 en móvil) y la frase final destacada */
+.aeo-razones { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.aeo-razon {
+  border: 1px solid var(--line-light); border-radius: var(--radius-card); padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.aeo-razon h4 { font-size: 1.1rem; font-weight: 600; color: var(--ink); }
+.aeo-razon p { color: var(--ink-2); line-height: 1.6; }
+.aeo-razon-etiqueta {
+  align-self: flex-start; font-size: 11px;
+  border: 1px solid var(--brand-on-light); border-radius: 99px; padding: 2px 8px;
+}
+.aeo-cita {
+  margin: 2.5rem 0 1.5rem; padding-left: 1.25rem; border-left: 3px solid var(--brand-on-light);
+  font-size: 1.25rem; font-weight: 600; line-height: 1.45; color: var(--ink);
+}
+
+/* Diseño web: «Dos formas de empezar» (web nueva o Arreglo exprés), dos tarjetas claras con borde; una columna en móvil */
+.caminos {
+  display: grid; gap: 1.25rem; max-width: 1000px; margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+.camino {
+  border: 1px solid var(--line-light); border-radius: var(--radius-card); padding: 2rem;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem;
+}
+.camino h3 { font-size: 1.3rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.camino p { color: var(--ink-2); line-height: 1.6; flex: 1; margin-bottom: 0.5rem; }
+
 /* Secciones oscuras dentro de páginas claras */
 .dark-section { background: var(--bg); color: var(--text); }
 .dark-section p { color: var(--text-2); }
@@ -464,6 +518,33 @@ a.service-card:hover { border-color: var(--action); }
 .vip-card-list li { display: flex; gap: 10px; align-items: flex-start; }
 .vip-card-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--action); flex-shrink: 0; margin-top: 8px; }
 .btn-sm { min-height: 40px; padding: 8px 16px; border-radius: 8px; font-size: 14px; }
+
+/* Tabla de precios de /vip: de menor a mayor precio, con el pack como cuarta columna destacada.
+   1 columna en móvil, 2 en tableta y 4 en escritorio */
+.vip-precios {
+  display: grid; gap: 20px; grid-template-columns: 1fr; align-items: stretch;
+  max-width: 1200px; margin: 12px auto 0;
+}
+@media (min-width: 700px) { .vip-precios { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .vip-precios { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.vip-card--pack {
+  position: relative; border: 1.5px solid var(--brand);
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.10), var(--surface) 55%);
+}
+.vip-card--pack:hover { border-color: var(--brand); }
+/* Arreglo exprés en /vip: tarjeta en una fila bajo la tabla de precios; en pantallas estrechas el botón baja */
+.vip-card--fila {
+  max-width: 1200px; margin: 20px auto 0;
+  flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px 24px;
+}
+.vip-fila-texto { flex: 1 1 min(480px, 100%); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.vip-card--fila .btn { flex: 0 0 180px; }
+@media (max-width: 640px) { .vip-card--fila .btn { flex: 1 1 100%; } }
+.vip-badge {
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  background: var(--brand); color: #fff; font-size: 12px; font-weight: 700;
+  padding: 3px 10px; border-radius: 99px; white-space: nowrap;
+}
 .vip-ask {
   background: none; border: none; cursor: pointer; padding: 0;
   color: var(--action); font-size: 15px; font-weight: 500;
@@ -471,22 +552,15 @@ a.service-card:hover { border-color: var(--action); }
 }
 .vip-ask:hover { color: var(--action-hover); }
 
-/* Membresía en una fila, con botón secundario para no competir con los paquetes */
-.vip-membership-card {
-  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-  padding: 28px; max-width: 420px; width: 100%; text-align: center;
+/* Servicios mensuales de /vip: los dos complementos apilados a la izquierda y la Membresía a su lado.
+   En móvil, una columna en el mismo orden (de menor a mayor precio) */
+.vip-mensuales {
+  display: grid; gap: 20px; grid-template-columns: 1fr; align-items: stretch;
+  max-width: 960px; margin: 0 auto;
 }
-.vip-membership-list {
-  list-style: none; text-align: left; display: flex; flex-direction: column; gap: 7px;
-  margin: 0 0 20px; padding: 0; font-size: 13.5px; line-height: 1.5; color: #E6E3EE;
-}
-.vip-membership-list li { display: flex; gap: 9px; align-items: flex-start; }
-.vip-membership-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--action); flex-shrink: 0; margin-top: 8px; }
-.vip-membership-price {
-  font-size: 30px; font-weight: 800; margin-bottom: 16px;
-  background: linear-gradient(180deg, #FFFFFF 0%, #C9CDD6 55%, #8E93A0 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
+@media (min-width: 760px) { .vip-mensuales { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.vip-mensuales-col { display: flex; flex-direction: column; gap: 20px; }
+.vip-mensuales-col .vip-card { flex: 1; }
 
 /* clip evita el desplazamiento lateral sin convertir html y body en dos zonas con scroll propio (doble barra) */
 html, body { overflow-x: clip; width: 100%; }
@@ -516,6 +590,7 @@ html, body { overflow-x: clip; width: 100%; }
   .feature-number { min-width: 0; }
 
   .service-card { padding: 24px; }
+  .pack-block { padding: 24px; }
 
   /* Páginas de servicio: los títulos de sección (40 px) superaban al h1 (35 px). A 28 px, como en la portada,
      y con menos hueco entre secciones (los márgenes de escritorio dejaban mucho blanco en pantallas pequeñas) */
