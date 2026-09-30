@@ -1,8 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { BrandMark } from '@/components/Brand';
 import SiteFooter from '@/components/SiteFooter';
+import fotoDastan from '@/public/equipo/dastan-tamayo.jpg';
+import fotoIsdiel from '@/public/equipo/isdiel-martinez.jpg';
+
+// Equipo de «Quiénes somos»: fotos ya recortadas a 4:5 (800×1000) en public/equipo
+const equipo = [
+  { foto: fotoDastan, nombre: 'Dastan Tamayo', rol: 'Fundador de DASTAN X-TECH', alt: 'Dastan Tamayo, fundador de DASTAN X-TECH' },
+  { foto: fotoIsdiel, nombre: 'Isdiel Martínez', rol: 'Consultor de IA y estratega digital', alt: 'Isdiel Martínez, consultor de IA y estratega digital de DASTAN X-TECH' },
+];
 
 // Tarjetas de servicio del home, en el mismo orden que "Cómo trabajamos": web → auditoría → AEO.
 // Cada una lleva a su página (los precios van en sus preguntas frecuentes)
@@ -111,6 +120,18 @@ export default function Home() {
         <p className="section-text">
           Empezamos siempre por un diagnóstico con evidencias —una frase de tu web, una reseña con fecha, una captura— y terminamos con acciones concretas, ordenadas por lo que más te devuelve.
         </p>
+
+        <div className="equipo">
+          {equipo.map((p) => (
+            <figure key={p.nombre} className="equipo-ficha">
+              <Image src={p.foto} alt={p.alt} placeholder="blur" sizes="(max-width: 640px) 100vw, 360px" className="equipo-foto" />
+              <figcaption>
+                <strong>{p.nombre}</strong>
+                <span>{p.rol}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
 
       {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página */}
