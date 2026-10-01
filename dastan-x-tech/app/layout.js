@@ -32,6 +32,10 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  // Verificación del dominio en Trustpilot (perfil de reseñas). Es pública: no es una clave secreta
+  other: {
+    'trustpilot-one-time-domain-verification-id': 'b2716753-f0f4-4a03-a2f7-16cba20f6ad7',
+  },
   openGraph: {
     title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
     description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
