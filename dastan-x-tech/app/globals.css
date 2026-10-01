@@ -191,21 +191,33 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .card-text { color: var(--text-2); font-size: 16px; line-height: 1.55; }
 .card-list { border-top: 1px solid var(--border); padding-top: 16px; font-size: 15px; }
 .card-link { color: var(--action); font-size: 15px; font-weight: 600; margin-top: auto; }
+/* Precio de partida en las tarjetas de la portada */
+.card-price { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); margin-top: -6px; }
+/* Bajo las tarjetas de la portada: el Pack y el caso real a un clic */
+.services-extra { display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 1.5rem; }
 
 /* Cabecera de las páginas interiores (servicios y blog) */
 .site-header {
   display: flex; justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 12px 24px;
-  padding: 20px 5%;
-  position: relative; z-index: 10;
+  padding: 16px 5%;
+  position: sticky; top: 0; z-index: 40;
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
+.site-header-links { align-items: center; }
+.site-header-wa {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--border-light);
+}
+.site-header-wa svg { width: 16px; height: 16px; flex-shrink: 0; }
+.site-header-links a.site-header-wa:hover { text-decoration: none; border-color: var(--brand-on-light); }
 .site-header-links { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; }
 .site-header-links a { color: inherit; text-decoration: none; opacity: 0.8; }
 .site-header-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
-.site-header--light { color: var(--ink); border-bottom: 1px solid var(--line-light); }
+.site-header--light { color: var(--ink); border-bottom: 1px solid var(--line-light); background: rgba(245, 244, 239, 0.9); }
 .site-header--light .site-header-links a { color: var(--ink-2); opacity: 1; }
 .site-header--light .site-header-links a:hover { color: var(--ink); }
-.site-header--dark { color: var(--text); }
+.site-header--dark { color: var(--text); background: rgba(7, 5, 10, 0.82); }
 .site-header--dark .site-header-links a { color: var(--text-2); opacity: 1; }
 .site-header--dark .site-header-links a:hover { color: var(--text); }
 
@@ -218,6 +230,9 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px;
 }
 .site-footer-brand { display: flex; flex-direction: column; gap: 10px; max-width: 360px; }
+.site-footer-nav { display: flex; gap: 18px; }
+.site-footer-nav a { color: inherit; text-decoration: none; font-weight: 600; }
+.site-footer-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-footer--dark .site-footer-brand .brand { color: var(--text); }
 .site-footer--light .site-footer-brand .brand { color: var(--ink); }
 .site-footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -244,11 +259,20 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
    ========================================= */
 
 /* Barra de Navegación */
+/* Cabecera de la portada: fija al bajar (WhatsApp y diagnóstico siempre a mano), a todo el ancho,
+   con el contenido alineado con el resto de secciones (1120 px) */
 .nav {
-  position: relative; z-index: 10; display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 12px 24px;
-  padding: 24px; max-width: 1120px; width: 100%; margin: 0 auto;
+  position: sticky; top: 0; z-index: 40; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px 24px; width: 100%;
+  padding: 14px max(24px, calc((100% - 1072px) / 2));
+  background: rgba(7, 5, 10, 0.82); border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
 }
+.nav-wa { display: inline-flex; align-items: center; gap: 6px; }
+.nav-wa svg { width: 18px; height: 18px; flex-shrink: 0; }
+.nav-cta { min-height: 38px; }
+/* Los saltos a #secciones no quedan escondidos bajo la cabecera fija */
+html { scroll-padding-top: 84px; }
 .nav-brand { color: var(--text); }
 .nav-links {
   display: flex; gap: 24px; font-size: 15px;
@@ -264,8 +288,7 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
   max-width: 1120px; width: 100%; margin: 0 auto;
   /* En pantallas bajas (portátiles) el contenido sube para que los puntos del final se vean enteros */
   padding: clamp(32px, 8vh, 80px) 24px 56px;
-  /* Ocupa la primera pantalla entera (menos el menú): la siguiente sección no asoma cortada por abajo */
-  min-height: calc(100svh - 80px);
+  /* Antes ocupaba la pantalla entera y en escritorio dejaba ~260 px vacíos: ahora «Quiénes somos» asoma debajo */
 }
 .hero .label-mono { color: var(--text-2); }
 .hero-title {
@@ -579,7 +602,7 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 @media (max-width: 640px) { .vip-card--fila .btn { flex: 1 1 100%; } }
 .vip-badge {
   position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
-  background: var(--brand); color: #fff; font-size: 12px; font-weight: 700;
+  background: var(--brand-on-light); color: #fff; font-size: 12px; font-weight: 700;
   padding: 3px 10px; border-radius: 99px; white-space: nowrap;
 }
 .vip-ask {
@@ -599,13 +622,27 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .vip-mensuales-col { display: flex; flex-direction: column; gap: 20px; }
 .vip-mensuales-col .vip-card { flex: 1; }
 
+/* Móviles estrechos (≤ 380 px): en las cabeceras fijas solo el logo, para que quepan WhatsApp y el botón */
+@media (max-width: 380px) {
+  .nav-brand span, .site-header .brand span { display: none; }
+}
+
 /* clip evita el desplazamiento lateral sin convertir html y body en dos zonas con scroll propio (doble barra) */
 html, body { overflow-x: clip; width: 100%; }
 
 @media (max-width: 640px) {
-  .nav { padding: 16px 20px; }
-  .nav-links { gap: 16px; font-size: 15px; }
-  .site-header { padding: 16px 20px; }
+  .nav { padding: 10px 16px; flex-wrap: nowrap; }
+  .nav-links { gap: 10px; font-size: 15px; }
+  /* En móvil la cabecera fija solo lleva lo esencial: WhatsApp (icono) y el diagnóstico; Servicios y Blog siguen en el pie */
+  .nav-link-texto, .nav-wa-texto { display: none; }
+  .nav-wa { width: 38px; height: 38px; justify-content: center; border: 1px solid var(--border-strong); border-radius: 10px; color: var(--text); }
+  .nav-brand span { font-size: 13px; }
+  .site-header { padding: 10px 16px; flex-wrap: nowrap; gap: 10px; }
+  .site-header .brand { font-size: 13px; }
+  .site-header-wa { padding: 5px 10px; }
+  .site-header-blog { display: none; }
+  .site-header-links { gap: 12px; flex-wrap: nowrap; white-space: nowrap; font-size: 14px; }
+  .nav-cta { white-space: nowrap; padding: 8px 12px; font-size: 13px; }
 
   .hero { padding: 40px 20px 32px; gap: 20px; }
   .section { padding: 3rem 20px; }

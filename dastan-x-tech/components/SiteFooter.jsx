@@ -53,6 +53,11 @@ export default function SiteFooter({ tone = 'light' }) {
         <div className="site-footer-brand">
           <Brand href="/" />
           <p>Consultoría digital e IA para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</p>
+          {/* En móvil la cabecera solo lleva lo esencial: el blog se alcanza desde aquí */}
+          <nav className="site-footer-nav" aria-label="Secciones">
+            <a href="/servicios">Servicios</a>
+            <a href="/blog">Blog</a>
+          </nav>
         </div>
         <ul className="site-footer-links">
           {contactLinks.map((link) => (

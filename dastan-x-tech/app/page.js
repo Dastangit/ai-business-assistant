@@ -14,7 +14,7 @@ const equipo = [
 ];
 
 // Tarjetas de servicio del home, en el mismo orden que "Cómo trabajamos": web → auditoría → AEO.
-// Cada una lleva a su página (los precios van en sus preguntas frecuentes)
+// Cada una lleva a su página. El precio de partida se ve ya aquí (debe coincidir con PRECIOS de app/api/chat/route.js)
 const servicios = [
   {
     href: '/servicios/diseno-web',
@@ -23,6 +23,7 @@ const servicios = [
     text: 'Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.',
     items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
     link: 'Saber más sobre Diseño web →',
+    price: 'Desde 100 USD',
   },
   {
     href: '/servicios/auditoria-negocio',
@@ -31,6 +32,7 @@ const servicios = [
     text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
     items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Plan de acción por fases.'],
     link: 'Descubre la Auditoría de Negocio →',
+    price: 'Desde 200 USD',
   },
   {
     href: '/servicios/posicionamiento-aeo',
@@ -39,6 +41,7 @@ const servicios = [
     text: 'Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.',
     items: ['Ficha de Google y redes ordenadas.', 'Contenido citable por IA.', 'Reseñas y señales de confianza.'],
     link: 'Conoce el Posicionamiento AEO →',
+    price: 'Desde 150 USD',
   },
 ];
 
@@ -50,21 +53,29 @@ const pedirDiagnostico = () => {
 export default function Home() {
   return (
     <>
-      <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
-      <div className="glow-tl"></div>
-      <div className="glow-br"></div>
-
+      {/* Cabecera fija: el WhatsApp y el diagnóstico gratis, a mano en toda la página.
+          Va fuera del bloque de los brillos porque su overflow: hidden impedía que se quedara fija al bajar */}
       <nav className="nav" aria-label="Principal">
         <Link href="/" className="brand nav-brand" aria-label="DASTAN X-TECH, ir al inicio">
           <BrandMark />
           <span>DASTAN X-TECH</span>
         </Link>
         <div className="nav-links">
-          <a href="#services">Servicios</a>
-          <a href="/blog">Blog</a>
-          <a href="#contacto">Contacto</a>
+          <a href="#services" className="nav-link-texto">Servicios</a>
+          <a href="/blog" className="nav-link-texto">Blog</a>
+          <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="nav-wa" aria-label="Escríbenos por WhatsApp al +1 605-500-3653">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.8 8.8 0 0 1-4-.9L3 20l1.1-4.2A8.2 8.2 0 0 1 3 11.5 8.6 8.6 0 0 1 12 3a8.6 8.6 0 0 1 9 8.5Z" /></svg>
+            <span className="nav-wa-texto">WhatsApp</span>
+          </a>
+          <button type="button" className="btn btn-primary btn-sm nav-cta" onClick={pedirDiagnostico}>
+            Diagnóstico gratis
+          </button>
         </div>
       </nav>
+
+      <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
+      <div className="glow-tl"></div>
+      <div className="glow-br"></div>
 
       {/* HERO: a quién ayudamos y qué recibe gratis, en la primera pantalla */}
       <main className="hero">
@@ -146,6 +157,7 @@ export default function Home() {
             <a key={s.href} href={s.href} className="service-card">
               <span className="label-mono">{s.label}</span>
               <h3 className="card-title">{s.title}</h3>
+              <span className="card-price">{s.price}</span>
               <p className="card-text">{s.text}</p>
               <ul className="dot-list card-list">
                 {s.items.map((item) => <li key={item}>{item}</li>)}
@@ -153,6 +165,12 @@ export default function Home() {
               <span className="card-link">{s.link}</span>
             </a>
           ))}
+        </div>
+
+        {/* El Pack y el caso real, a un clic: antes no se veía ningún precio ni prueba desde la portada */}
+        <div className="services-extra">
+          <a href="/servicios" className="text-link">Los tres juntos: Pack completo por 400 USD →</a>
+          <a href="/servicios/diseno-web#caso-real" className="text-link">Mira un rediseño real: el de un pequeño spa →</a>
         </div>
       </section>
 
