@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-// Un solo nombre para el asistente en todo el chat
-const NOMBRE_ASISTENTE = 'Asistente de DASTAN X-TECH';
-const SALUDO_INICIAL = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
+// Un solo nombre para la asistente (Lex) en todo el chat
+const NOMBRE_ASISTENTE = 'Lex · DASTAN X-TECH';
+const SALUDO_INICIAL = 'Hola, soy Lex, la asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o pide tu diagnóstico SEO gratis aquí abajo.';
 // Páginas de servicio, sin botón de diagnóstico en el chat: el saludo apunta al botón que sí hay
-const SALUDO_SIN_DIAGNOSTICO = 'Hola, soy el asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o, si aún no tienes web, pídela aquí abajo.';
+const SALUDO_SIN_DIAGNOSTICO = 'Hola, soy Lex, la asistente de DASTAN X-TECH. Ayudamos a negocios y pymes a conseguir más clientes por internet. Pregúntame lo que quieras o, si aún no tienes web, pídela aquí abajo.';
 const GRACIAS_WEB = 'Recibido, gracias. Revisaremos tu web y te contactaremos por WhatsApp lo antes posible con tu puntuación SEO y las 5 correcciones más urgentes en PDF. Mientras tanto, pregúntame lo que quieras.';
 const GRACIAS_WEB_NUEVA = 'Recibido, gracias. Te contactaremos por WhatsApp lo antes posible para proponerte tu web: desde cero y pensada para tu negocio, o a partir de tu Instagram con los datos que quieras darnos. Mientras tanto, pregúntame lo que quieras.';
 
@@ -263,7 +263,7 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
         </div>
       )}
 
-      <button type="button" className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat con el asistente'}>
+      <button type="button" className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat con Lex, la asistente'}>
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>

@@ -108,6 +108,15 @@ export default function DisenoWebPage() {
               Ver el rediseño en vivo ↗
             </a>
           </div>
+
+          {/* Segundo ejemplo: el mismo método aplicado a nuestra propia web. No es un caso de cliente y se dice así */}
+          <div className="demo-propia">
+            <p className="demo-propia-titulo">Y así quedaría la nuestra</p>
+            <p>Le aplicamos el mismo método a dastanxtech.com: diagnóstico, branding y web nueva.</p>
+            <a href="https://fancy-river-d053.paypaldastan.workers.dev" target="_blank" rel="noopener noreferrer" className="text-link">
+              Ver la demo ↗
+            </a>
+          </div>
         </div>
       </section>
 

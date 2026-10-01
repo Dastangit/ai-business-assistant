@@ -267,7 +267,7 @@ export default function VIPPage() {
         <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', fontSize: '15px', color: 'var(--text-2)' }}>
           <span>¿No sabes cuál elegir?</span>
           <button type="button" className="vip-ask" onClick={() => openChatWithContext('No sé qué paquete elegir.')}>
-            Pregúntale al asistente
+            Pregúntale a Lex
           </button>
         </div>
 

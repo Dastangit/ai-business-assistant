@@ -74,8 +74,8 @@ export default function ServiciosPage() {
 
       <section className="card-grid" style={{ padding: '2rem 5% 1.5rem', maxWidth: '1100px', margin: '0 auto' }}>
         {services.map((s, i) => (
-          <a key={s.href} href={s.href} className="service-card" style={{ background: 'var(--ink)', borderColor: 'var(--ink)' }}>
-            <span className="label-mono" style={{ color: 'var(--brand)' }}>{String(i + 1).padStart(2, '0')}</span>
+          <a key={s.href} href={s.href} className="service-card service-card--light">
+            <span className="label-mono">{String(i + 1).padStart(2, '0')}</span>
             <h2 className="card-title">{s.title}</h2>
             <p className="card-text">{s.tagline}</p>
             <span className="card-link">Ver detalle →</span>
