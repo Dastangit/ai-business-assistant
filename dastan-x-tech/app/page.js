@@ -7,7 +7,7 @@ import SiteFooter from '@/components/SiteFooter';
 import fotoDastan from '@/public/equipo/dastan-tamayo.jpg';
 import fotoIsdiel from '@/public/equipo/isdiel-martinez.jpg';
 
-// Equipo de «Quiénes somos»: fotos ya recortadas a 4:5 (800×1000) en public/equipo
+// Equipo de «Quiénes somos»: fotos ya recortadas a 4:5 (Dastan 854×1067, Isdiel 1024×1280) en public/equipo; el CSS fija el 4:5
 const equipo = [
   { foto: fotoDastan, nombre: 'Dastan Tamayo', rol: 'Fundador de DASTAN X-TECH', alt: 'Dastan Tamayo, fundador de DASTAN X-TECH' },
   { foto: fotoIsdiel, nombre: 'Isdiel Martínez', rol: 'Consultor de IA y estratega digital', alt: 'Isdiel Martínez, consultor de IA y estratega digital de DASTAN X-TECH' },
