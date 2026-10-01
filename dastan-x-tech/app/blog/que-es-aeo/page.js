@@ -2,6 +2,7 @@
 import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { REVISIONES } from '@/lib/revisiones';
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -10,6 +11,7 @@ const articleJsonLd = {
   author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-23',
+  dateModified: REVISIONES['/blog/que-es-aeo'],
   description: 'Qué es el Answer Engine Optimization (AEO), por qué ya está pasando y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/que-es-aeo',
 };

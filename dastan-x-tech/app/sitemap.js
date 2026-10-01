@@ -1,60 +1,23 @@
+import { REVISIONES } from '@/lib/revisiones';
+
 export default function sitemap() {
   const baseUrl = 'https://dastanxtech.com';
+  const pagina = (ruta, changeFrequency, priority) => ({
+    url: `${baseUrl}${ruta}`,
+    lastModified: new Date(REVISIONES[ruta]),
+    changeFrequency,
+    priority,
+  });
 
   return [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/servicios`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/servicios/diseno-web`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/servicios/auditoria-negocio`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/servicios/posicionamiento-aeo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/auditamos-nuestra-propia-web`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/5-senales-web-cuesta-clientes`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/que-es-aeo`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
+    pagina('/', 'weekly', 1),
+    pagina('/servicios', 'monthly', 0.9),
+    pagina('/servicios/diseno-web', 'monthly', 0.8),
+    pagina('/servicios/auditoria-negocio', 'monthly', 0.8),
+    pagina('/servicios/posicionamiento-aeo', 'monthly', 0.8),
+    pagina('/blog', 'weekly', 0.6),
+    pagina('/blog/auditamos-nuestra-propia-web', 'monthly', 0.6),
+    pagina('/blog/5-senales-web-cuesta-clientes', 'monthly', 0.6),
+    pagina('/blog/que-es-aeo', 'monthly', 0.6),
   ];
 }

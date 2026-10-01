@@ -2,6 +2,7 @@
 import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { REVISIONES } from '@/lib/revisiones';
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -10,6 +11,7 @@ const articleJsonLd = {
   author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-22',
+  dateModified: REVISIONES['/blog/auditamos-nuestra-propia-web'],
   description: 'Le aplicamos nuestra propia Auditoría Completa de Negocio a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/auditamos-nuestra-propia-web',
 };

@@ -2,6 +2,7 @@
 import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { REVISIONES } from '@/lib/revisiones';
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -10,6 +11,7 @@ const articleJsonLd = {
   author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-23',
+  dateModified: REVISIONES['/blog/5-senales-web-cuesta-clientes'],
   description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/5-senales-web-cuesta-clientes',
 };
