@@ -12,4 +12,5 @@ export const REVISIONES = {
   '/blog/auditamos-nuestra-propia-web': '2026-09-25',
   '/blog/5-senales-web-cuesta-clientes': '2026-09-25',
   '/blog/que-es-aeo': '2026-09-30',
+  '/privacidad': '2026-10-01',
 };

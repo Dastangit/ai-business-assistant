@@ -242,6 +242,7 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .site-footer--light .site-footer-links a:hover { color: var(--ink); }
 .site-footer-links svg { width: 18px; height: 18px; flex-shrink: 0; }
 .site-footer-legal { max-width: 1120px; margin: 2rem auto 0; font-size: 14px; }
+.site-footer-legal a { color: inherit; text-underline-offset: 3px; }
 
 /* Firma de autor en los artículos */
 .byline { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }

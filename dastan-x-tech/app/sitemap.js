@@ -19,5 +19,6 @@ export default function sitemap() {
     pagina('/blog/auditamos-nuestra-propia-web', 'monthly', 0.6),
     pagina('/blog/5-senales-web-cuesta-clientes', 'monthly', 0.6),
     pagina('/blog/que-es-aeo', 'monthly', 0.6),
+    pagina('/privacidad', 'yearly', 0.2),
   ];
 }

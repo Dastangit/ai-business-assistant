@@ -73,7 +73,7 @@ export default function SiteFooter({ tone = 'light' }) {
           ))}
         </ul>
       </div>
-      <p className="site-footer-legal">© 2026 DASTAN X-TECH</p>
+      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href="/privacidad">Aviso legal y de privacidad</a></p>
     </footer>
   );
 }
