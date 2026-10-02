@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import { interesDe } from '@/lib/leads';
 
 // Panel privado. No habla con la base de datos: todo pasa por /api/admin/datos,
 // que comprueba la cookie de sesión en el servidor antes de leer o tocar nada.
@@ -44,14 +45,6 @@ async function llamar(metodo, cuerpo) {
   if (res.status === 401) throw new Error('sesion');
   if (!res.ok) throw new Error('fallo');
   return res.json();
-}
-
-// El chat guarda en "origen" la página y el interés: "/ · diagnóstico SEO" o "/ · quiere web nueva"
-function interesDe(origen) {
-  if (!origen) return '—';
-  if (origen.includes('quiere web')) return 'Quiere web nueva';
-  if (origen.includes('diagnóstico SEO')) return 'Diagnóstico SEO';
-  return origen;
 }
 
 // Lee las dos tablas. Devuelve null si falla la red (se conserva lo que haya en pantalla).

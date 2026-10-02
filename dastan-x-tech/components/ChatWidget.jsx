@@ -162,6 +162,8 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages, couponApplied, diagnostico, lang }),
       });
+      // Si el servidor falla, su texto de error está en español: se muestra el del idioma de la página
+      if (!response.ok) throw new Error('chat');
       const data = await response.json();
       setMessages([...newMessages, { role: 'bot', text: data.reply }]);
     } catch {

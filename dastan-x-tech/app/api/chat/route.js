@@ -43,7 +43,7 @@ const diagnosticoPara = (b) => ({
 
 // Versión en inglés de la web: Lex contesta en inglés y usa los nombres y las direcciones en inglés
 const BLOQUE_INGLES = `
-IDIOMA: la persona está en la versión en inglés de la web. Responde en inglés salvo que te escriba en español. En inglés, los servicios se llaman: Free SEO Report (el diagnóstico SEO gratis), Web Design, Digital Business Audit, AI Search Optimization (AEO), All-in-One Package (el Pack completo), 48-Hour Fix (el Arreglo exprés), AI Chat for your website, AI WhatsApp Receptionist y Monthly Implementation Plan (la Membresía). Si das un enlace a una página, usa la versión en inglés: /en/services/web-design, /en/services/digital-business-audit, /en/services/aeo, /en/services.`;
+IDIOMA: la persona está en la versión en inglés de la web. Responde en inglés salvo que te escriba en español. En inglés, los servicios se llaman: Free SEO Report (el diagnóstico SEO gratis), Web Design, Digital Business Audit, AI Search Optimization (AEO), All-in-One Package (el Pack completo), 48-Hour Fix (el Arreglo exprés), AI Chat for your website, AI WhatsApp Receptionist y Monthly Implementation Plan (la Membresía), Instagram to Website (Instagram a Web) y, bajo pedido, YouTube channel analysis, Personal brand analysis, Online store analysis e Invoice dashboard. Nunca uses en inglés los nombres en español. Si das un enlace a una página, usa la versión en inglés: /en/services/web-design, /en/services/digital-business-audit, /en/services/aeo, /en/services.`;
 
 function construirPrompt(couponApplied, diagnostico, lang) {
   const p = couponApplied ? PRECIOS.cupon : PRECIOS.publico;
