@@ -61,7 +61,7 @@ const organizationJsonLd = {
   ],
   knowsLanguage: ['es', 'en'],
   serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría de IA'],
-  email: 'xtech.ai.development@gmail.com',
+  email: 'supportdaelworld@gmail.com',
   telephone: '+1-605-500-3653',
   founder: { '@type': 'Person', name: 'Dastan Tamayo' },
   sameAs: [
