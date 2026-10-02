@@ -53,7 +53,7 @@ const pedirDiagnostico = () => {
 export default function Home() {
   return (
     <>
-      {/* Cabecera fija: el WhatsApp y el diagnóstico gratis, a mano en toda la página.
+      {/* Cabecera fija: el WhatsApp, a mano en toda la página (el diagnóstico gratis ya está en el hero y en Lex).
           Va fuera del bloque de los brillos porque su overflow: hidden impedía que se quedara fija al bajar */}
       <nav className="nav" aria-label="Principal">
         <Link href="/" className="brand nav-brand" aria-label="DASTAN X-TECH, ir al inicio">
@@ -62,14 +62,11 @@ export default function Home() {
         </Link>
         <div className="nav-links">
           <a href="#services" className="nav-link-texto">Servicios</a>
-          <a href="/blog" className="nav-link-texto">Blog</a>
+          <a href="/blog" className="nav-link-texto nav-link-blog">Blog</a>
           <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="nav-wa" aria-label="Escríbenos por WhatsApp al +1 605-500-3653">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.8 8.8 0 0 1-4-.9L3 20l1.1-4.2A8.2 8.2 0 0 1 3 11.5 8.6 8.6 0 0 1 12 3a8.6 8.6 0 0 1 9 8.5Z" /></svg>
             <span className="nav-wa-texto">WhatsApp</span>
           </a>
-          <button type="button" className="btn btn-primary btn-sm nav-cta" onClick={pedirDiagnostico}>
-            Diagnóstico gratis
-          </button>
         </div>
       </nav>
 
@@ -165,12 +162,6 @@ export default function Home() {
               <span className="card-link">{s.link}</span>
             </a>
           ))}
-        </div>
-
-        {/* El Pack y el caso real, a un clic: antes no se veía ningún precio ni prueba desde la portada */}
-        <div className="services-extra">
-          <a href="/servicios" className="text-link">Los tres juntos: Pack completo por 400 USD →</a>
-          <a href="/servicios/diseno-web#caso-real" className="text-link">Mira un rediseño real: el de un pequeño spa →</a>
         </div>
       </section>
 
