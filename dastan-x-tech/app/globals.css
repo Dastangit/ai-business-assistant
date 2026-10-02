@@ -601,9 +601,9 @@ html { scroll-padding-top: 84px; }
   background: linear-gradient(180deg, rgba(168, 85, 247, 0.10), var(--surface) 55%);
 }
 .vip-card--pack:hover { border-color: var(--brand); }
-/* Arreglo exprés en /vip: tarjeta normal y centrada bajo la tabla de precios, del ancho de una de
+/* Arreglo exprés en /vip: tarjeta normal y centrada encima de la tabla de precios, del ancho de una de
    «Servicios mensuales» (a todo el ancho se veía desproporcionada); el botón debajo, como en el resto */
-.vip-card--fila { width: 100%; max-width: 470px; margin: 20px auto 0; }
+.vip-card--fila { width: 100%; max-width: 470px; margin: 0 auto 24px; }
 .vip-fila-texto { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .vip-card--fila .btn { width: 100%; }
 .vip-badge {

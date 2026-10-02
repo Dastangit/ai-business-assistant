@@ -129,6 +129,26 @@ export default function Vip({ t, lang }) {
           {couponApplied && <span style={{ fontSize: '15px', color: 'var(--action)', fontWeight: 600 }}>{t.cupon.aplicado}</span>}
         </div>
 
+        {/* ARREGLO EXPRÉS: la entrada más barata, primero y centrada, encima de las 4 tarjetas de servicios */}
+        <div className="vip-card vip-card--fila">
+          <div className="vip-fila-texto">
+            <div className="vip-card-head">
+              <h3 className="vip-card-title">{t.expres.titulo}</h3>
+              <span className="vip-card-price">${ARREGLO_EXPRES}</span>
+            </div>
+            <p className="vip-card-text">{t.expres.texto}</p>
+          </div>
+          <a
+            href={`https://paypal.me/${PAYPAL_USER}/${ARREGLO_EXPRES}USD`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary btn-sm"
+            aria-label={rellenar(t.expres.aria, { precio: ARREGLO_EXPRES })}
+          >
+            {t.contratar}
+          </a>
+        </div>
+
         {/* Tarjetas compactas: sin onClick en la tarjeta; el botón paga y nada más */}
         {/* TABLA DE PRECIOS: servicios de contorno y el pack como única opción destacada (botón relleno) */}
         {(() => {
@@ -204,26 +224,6 @@ export default function Vip({ t, lang }) {
             {t.cupon.conDescuento}
           </p>
         )}
-
-        {/* ARREGLO EXPRÉS: una tarjeta en fila bajo la tabla, para no romper las 4 columnas */}
-        <div className="vip-card vip-card--fila">
-          <div className="vip-fila-texto">
-            <div className="vip-card-head">
-              <h3 className="vip-card-title">{t.expres.titulo}</h3>
-              <span className="vip-card-price">${ARREGLO_EXPRES}</span>
-            </div>
-            <p className="vip-card-text">{t.expres.texto}</p>
-          </div>
-          <a
-            href={`https://paypal.me/${PAYPAL_USER}/${ARREGLO_EXPRES}USD`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-secondary btn-sm"
-            aria-label={rellenar(t.expres.aria, { precio: ARREGLO_EXPRES })}
-          >
-            {t.contratar}
-          </a>
-        </div>
 
         {/* Una sola pregunta al asistente para las tres tarjetas */}
         <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', fontSize: '15px', color: 'var(--text-2)' }}>
