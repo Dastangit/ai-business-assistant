@@ -4,7 +4,7 @@ export default function robots() {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/vip', '/api', '/admin'],
+        disallow: ['/vip', '/en/vip', '/api', '/admin'],
         // Preferencias de uso para la IA (contentsignals.org): aparecer en buscadores y en las
         // respuestas de los asistentes, y también permitir el entrenamiento, que es lo que ya
         // permitía este robots.txt al no bloquear a ningún crawler de entrenamiento.

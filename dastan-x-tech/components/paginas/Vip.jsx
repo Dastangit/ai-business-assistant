@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ChatWidget from '@/components/ChatWidget'; // Tu asistente de IA
 import { BrandMark } from '@/components/Brand';
 import { rellenar } from '@/lib/rellenar';
+import SelectorIdioma from '@/components/SelectorIdioma';
 
 // Propuesta VIP (/vip y /en/vip): el diseño y los precios viven aquí; los textos en contenido/vip.<lang>.js.
 // El código del cupón ya no vive aquí: se valida en /api/vip/cupon (servidor)
@@ -73,6 +74,9 @@ export default function Vip({ t, lang }) {
       {/* BRILLOS DE FONDO (Reutilizados de tu diseño principal) */}
       <div className="glow-tl"></div>
       <div className="glow-br"></div>
+
+      {/* El VIP no tiene cabecera: el cambio de idioma va discreto, arriba a la derecha */}
+      <SelectorIdioma className="vip-idioma" />
 
       {/* SECCIÓN HERO VIP */}
       <section style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', textAlign: 'center', padding: '4rem 1rem 2rem' }}>

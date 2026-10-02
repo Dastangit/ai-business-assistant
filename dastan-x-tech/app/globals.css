@@ -217,6 +217,8 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .selector-idioma [aria-current] { font-weight: 700; }
 .selector-idioma a { opacity: 0.75; }
 .selector-idioma a:hover { opacity: 1; }
+.vip-idioma { position: absolute; top: 18px; right: 20px; z-index: 20; color: var(--text-2); }
+.vip-idioma a { color: inherit; text-decoration: none; }
 /* Aviso de idioma: barra fina encima de todo, sin tapar la cabecera fija */
 .aviso-idioma { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; padding: 8px 44px 8px 16px; position: relative; font-size: 14px; background: #1A1424; color: var(--text); border-bottom: 1px solid var(--border); }
 .aviso-idioma a { color: var(--action); font-weight: 600; text-decoration: none; }

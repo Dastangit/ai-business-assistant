@@ -3,6 +3,7 @@ import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "@/components/GlobalChatWidget";
 import AvisoIdioma from "@/components/AvisoIdioma";
+import { alternates } from "@/lib/i18n";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,7 @@ export const metadata = {
     'Posicionamiento AEO',
     'Automatización para pymes',
   ],
-  alternates: {
-    canonical: '/',
-  },
+  alternates: alternates('inicio', 'es'),
   // Verificación del dominio en Trustpilot (perfil de reseñas). Es pública: no es una clave secreta
   other: {
     'trustpilot-one-time-domain-verification-id': 'b2716753-f0f4-4a03-a2f7-16cba20f6ad7',

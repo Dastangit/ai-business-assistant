@@ -33,6 +33,17 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 - [Qué es AEO, explicado con un ejemplo real](https://dastanxtech.com/blog/que-es-aeo): qué es el Answer Engine Optimization y qué tienen en común los negocios que la IA recomienda, con una prueba real en Gemini.
 - [5 señales de que tu web te está costando clientes](https://dastanxtech.com/blog/5-senales-web-cuesta-clientes): las señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño.
 
+## English
+
+DASTAN X-TECH is also available in English. Digital and AI consulting for small businesses, fully remote, delivered in English or Spanish.
+
+- [Web Design](https://dastanxtech.com/en/services/web-design): from 100 USD.
+- [Digital Business Audit](https://dastanxtech.com/en/services/digital-business-audit): from 200 USD.
+- [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): from 150 USD.
+- [All-in-One Package](https://dastanxtech.com/en/services): all three for 400 USD.
+- [Free SEO Report](https://dastanxtech.com/en): score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp.
+- [What is AEO](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers)
+
 ## Optional
 
 - [Servicios bajo pedido](https://dastanxtech.com/servicios): se piden sueltos, con precio según cada caso, o se eligen dentro de la Membresía de Implementación.
