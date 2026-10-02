@@ -1,5 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, after } from 'next/server';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
+import { avisarLeadTelegram } from '@/lib/avisoTelegram';
 
 // Recibe los datos del formulario del chat ("Diagnóstico gratis") y los guarda en leads_web.
 // Es pública a propósito, así que valida y recorta todo lo que entra.
@@ -28,15 +29,19 @@ export async function POST(request) {
         .join('\n')
     : '';
 
+  const origen = recortar(body.origen, 120);
+
   try {
     const { error } = await getSupabaseAdmin().from('leads_web').insert({
       nombre,
       web: web || null,
       whatsapp,
-      origen: recortar(body.origen, 120) || null,
+      origen: origen || null,
       conversacion: conversacion || null,
     });
     if (error) throw error;
+    // Aviso a Telegram cuando la respuesta ya salió: el cliente no espera por él
+    after(() => avisarLeadTelegram({ nombre, web, whatsapp, origen }));
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('Error al guardar el lead:', error);
