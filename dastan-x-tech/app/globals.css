@@ -217,6 +217,10 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .selector-idioma [aria-current] { font-weight: 700; }
 .selector-idioma a { opacity: 0.75; }
 .selector-idioma a:hover { opacity: 1; }
+/* Aviso de idioma: barra fina encima de todo, sin tapar la cabecera fija */
+.aviso-idioma { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; padding: 8px 44px 8px 16px; position: relative; font-size: 14px; background: #1A1424; color: var(--text); border-bottom: 1px solid var(--border); }
+.aviso-idioma a { color: var(--action); font-weight: 600; text-decoration: none; }
+.aviso-idioma button { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-2); font-size: 16px; cursor: pointer; padding: 6px; }
 .site-header--light { color: var(--ink); border-bottom: 1px solid var(--line-light); background: rgba(245, 244, 239, 0.9); }
 .site-header--light .site-header-links a { color: var(--ink-2); opacity: 1; }
 .site-header--light .site-header-links a:hover { color: var(--ink); }

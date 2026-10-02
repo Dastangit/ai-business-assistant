@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "@/components/GlobalChatWidget";
+import AvisoIdioma from "@/components/AvisoIdioma";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,8 @@ export const metadata = {
     title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
     description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
     url: 'https://dastanxtech.com',
+    // La imagen vive en app/opengraph-image.jsx (fuera del route group, para conservar la URL /opengraph-image)
+    images: [{ url: '/opengraph-image', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría de IA, diseño web y posicionamiento para pymes' }],
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
     type: 'website',
@@ -80,6 +83,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <AvisoIdioma />
         {children}
         <GlobalChatWidget />
         <Analytics />
