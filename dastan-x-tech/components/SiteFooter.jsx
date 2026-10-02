@@ -1,4 +1,5 @@
 import Brand from './Brand';
+import { ruta } from '@/lib/i18n';
 
 const iconProps = {
   viewBox: '0 0 24 24',
@@ -45,18 +46,30 @@ const contactLinks = [
   { href: 'https://www.linkedin.com/in/dastantech', label: 'LinkedIn', icon: icons.briefcase, external: true },
 ];
 
+const TEXTOS = {
+  es: {
+    lema: 'Consultoría digital e IA para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
+    servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad',
+  },
+  en: {
+    lema: 'Digital and AI consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
+    servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice',
+  },
+};
+
 // Pie compartido con los medios de contacto (id="contacto" para el enlace de la cabecera)
-export default function SiteFooter({ tone = 'light' }) {
+export default function SiteFooter({ tone = 'light', lang = 'es' }) {
+  const t = TEXTOS[lang];
   return (
     <footer id="contacto" className={`site-footer site-footer--${tone}`}>
       <div className="site-footer-inner">
         <div className="site-footer-brand">
-          <Brand href="/" />
-          <p>Consultoría digital e IA para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</p>
+          <Brand href={ruta('inicio', lang)} lang={lang} />
+          <p>{t.lema}</p>
           {/* En móvil la cabecera solo lleva lo esencial: el blog se alcanza desde aquí */}
-          <nav className="site-footer-nav" aria-label="Secciones">
-            <a href="/servicios">Servicios</a>
-            <a href="/blog">Blog</a>
+          <nav className="site-footer-nav" aria-label={t.secciones}>
+            <a href={ruta('servicios', lang)}>{t.servicios}</a>
+            <a href={ruta('blog', lang)}>Blog</a>
           </nav>
         </div>
         <ul className="site-footer-links">
@@ -73,7 +86,7 @@ export default function SiteFooter({ tone = 'light' }) {
           ))}
         </ul>
       </div>
-      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href="/privacidad">Aviso legal y de privacidad</a></p>
+      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href={ruta('privacidad', lang)}>{t.privacidad}</a></p>
     </footer>
   );
 }

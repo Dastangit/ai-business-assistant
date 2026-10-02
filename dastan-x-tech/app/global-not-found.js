@@ -1,4 +1,5 @@
 import './globals.css';
+import Link from 'next/link';
 import { Geist } from 'next/font/google';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
@@ -18,8 +19,8 @@ export default function GlobalNotFound() {
           <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Esta página no existe</h1>
           <p lang="en" style={{ color: 'var(--text-2)', marginBottom: '2rem' }}>This page doesn&apos;t exist</p>
           <p style={{ display: 'flex', gap: '24px', justifyContent: 'center' }}>
-            <a href="/" className="text-link">Ir al inicio</a>
-            <a href="/en" lang="en" className="text-link">Go to the English site</a>
+            <Link href="/" className="text-link">Ir al inicio</Link>
+            <Link href="/en" lang="en" className="text-link">Go to the English site</Link>
           </p>
         </main>
       </body>

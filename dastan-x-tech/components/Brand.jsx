@@ -18,7 +18,7 @@ export function BrandMark({ className = 'brand-mark', title, size }) {
 export const BRAND_NAME = 'DASTAN X-TECH';
 
 // Un solo nombre en todo el sitio: DASTAN X-TECH
-export default function Brand({ href = '/', className = '' }) {
+export default function Brand({ href = '/', className = '', lang = 'es' }) {
   const content = (
     <>
       <BrandMark />
@@ -27,7 +27,7 @@ export default function Brand({ href = '/', className = '' }) {
   );
   if (!href) return <span className={`brand ${className}`}>{content}</span>;
   return (
-    <a href={href} className={`brand ${className}`} aria-label={`${BRAND_NAME}, ir al inicio`}>
+    <a href={href} className={`brand ${className}`} aria-label={lang === 'es' ? `${BRAND_NAME}, ir al inicio` : `${BRAND_NAME}, go to home page`}>
       {content}
     </a>
   );
