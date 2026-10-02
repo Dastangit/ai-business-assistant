@@ -113,22 +113,6 @@ export default function Vip({ t, lang }) {
           {t.plan}
         </h2>
 
-        {/* CUPÓN DE DESCUENTO: antes de los precios, para verlos ya con descuento */}
-        <div style={{ marginBottom: '2.5rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
-          <label htmlFor="cupon-vip" style={{ fontSize: '16px', fontWeight: 600 }}>{t.cupon.etiqueta}</label>
-          <input
-            id="cupon-vip"
-            type="text"
-            value={couponCode}
-            onChange={handleCouponChange}
-            placeholder={t.cupon.placeholder}
-            autoComplete="off"
-            style={{ background: 'rgba(255,255,255,0.05)', border: couponApplied ? '1px solid var(--action)' : '1px solid var(--border-strong)', borderRadius: '8px', padding: '0.6rem 1rem', color: 'var(--text)', fontSize: '16px', outline: 'none', width: '170px' }}
-          />
-          <span style={{ fontSize: '14px', color: 'var(--text-2)' }}>{t.cupon.nota}</span>
-          {couponApplied && <span style={{ fontSize: '15px', color: 'var(--action)', fontWeight: 600 }}>{t.cupon.aplicado}</span>}
-        </div>
-
         {/* ARREGLO EXPRÉS: la entrada más barata, primero y centrada, encima de las 4 tarjetas de servicios */}
         <div className="vip-card vip-card--fila">
           <div className="vip-fila-texto">
@@ -147,6 +131,22 @@ export default function Vip({ t, lang }) {
           >
             {t.contratar}
           </a>
+        </div>
+
+        {/* CUPÓN DE DESCUENTO: solo rebaja los 4 servicios, así que va justo encima de ellos (después del Arreglo exprés, que no tiene cupón) */}
+        <div style={{ marginBottom: '2.5rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
+          <label htmlFor="cupon-vip" style={{ fontSize: '16px', fontWeight: 600 }}>{t.cupon.etiqueta}</label>
+          <input
+            id="cupon-vip"
+            type="text"
+            value={couponCode}
+            onChange={handleCouponChange}
+            placeholder={t.cupon.placeholder}
+            autoComplete="off"
+            style={{ background: 'rgba(255,255,255,0.05)', border: couponApplied ? '1px solid var(--action)' : '1px solid var(--border-strong)', borderRadius: '8px', padding: '0.6rem 1rem', color: 'var(--text)', fontSize: '16px', outline: 'none', width: '170px' }}
+          />
+          <span style={{ fontSize: '14px', color: 'var(--text-2)' }}>{t.cupon.nota}</span>
+          {couponApplied && <span style={{ fontSize: '15px', color: 'var(--action)', fontWeight: 600 }}>{t.cupon.aplicado}</span>}
         </div>
 
         {/* Tarjetas compactas: sin onClick en la tarjeta; el botón paga y nada más */}
