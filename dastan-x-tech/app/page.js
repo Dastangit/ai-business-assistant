@@ -61,7 +61,7 @@ export default function Home() {
           <span>DASTAN X-TECH</span>
         </Link>
         <div className="nav-links">
-          <a href="#services" className="nav-link-texto">Servicios</a>
+          <a href="/servicios" className="nav-link-texto">Servicios</a>
           <a href="/blog" className="nav-link-texto nav-link-blog">Blog</a>
           <a href="https://wa.me/16055003653" target="_blank" rel="noopener noreferrer" className="nav-wa" aria-label="Escríbenos por WhatsApp al +1 605-500-3653">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.8 8.8 0 0 1-4-.9L3 20l1.1-4.2A8.2 8.2 0 0 1 3 11.5 8.6 8.6 0 0 1 12 3a8.6 8.6 0 0 1 9 8.5Z" /></svg>
