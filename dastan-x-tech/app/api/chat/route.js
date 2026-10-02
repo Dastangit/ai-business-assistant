@@ -15,15 +15,20 @@ const OTROS = { expres: 49, chat: 15, recepcionista: 150, recepcionistaMes: 39, 
 const QUE_ES_DIAGNOSTICO = 'Diagnóstico SEO gratis (solo para negocios que ya tienen web): revisamos su web y le mandamos a su propio WhatsApp (el que escribe en el formulario) su puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga, en un PDF. Es solo la parte de fuera (la web), no la auditoría.';
 // El cliente escribe SU número en el formulario: dicho así, la IA no pega el nuestro detrás de «tu WhatsApp»
 const FORMULARIO = 'se abre un formulario donde la persona escribe su nombre, su web (obligatoria) y su propio número de WhatsApp';
-const DIAGNOSTICO = {
+// Nombres de los botones del chat (deben coincidir con TEXTOS de components/ChatWidget.jsx)
+const BOTONES = {
+  es: { chat: 'Pedir mi diagnóstico SEO gratis', final: 'Pedir diagnóstico SEO gratis', sinWeb: 'No tengo web: quiero una' },
+  en: { chat: 'Get my free SEO report', final: 'Get my free SEO report', sinWeb: 'No website yet? I want one' },
+};
+const diagnosticoPara = (b) => ({
   chat: {
-    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "Pedir mi diagnóstico SEO gratis" de este chat: ${FORMULARIO}.`,
+    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "${b.chat}" de este chat: ${FORMULARIO}.`,
     revisar: 'Para eso está el diagnóstico SEO gratis.',
     ofrecer: 'ofrece el diagnóstico SEO gratis para ver su caso',
     interes: 'invítala a pedir el diagnóstico SEO gratis con el botón del chat',
   },
   final: {
-    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "Pedir diagnóstico SEO gratis" que hay al final de esta página (en este chat no hay botón para el diagnóstico): ${FORMULARIO}.`,
+    oferta: `${QUE_ES_DIAGNOSTICO} Para pedirlo, que pulse el botón "${b.final}" que hay al final de esta página (en este chat no hay botón para el diagnóstico): ${FORMULARIO}.`,
     revisar: 'Para eso está el diagnóstico SEO gratis.',
     ofrecer: 'ofrece el diagnóstico SEO gratis para ver su caso',
     interes: 'invítala a pedir el diagnóstico SEO gratis con el botón del final de esta página',
@@ -34,10 +39,16 @@ const DIAGNOSTICO = {
     ofrecer: 'ofrece el WhatsApp para ver su caso',
     interes: 'invítala a escribir por WhatsApp al +16055003653 para contratarlo, sin nombrar el diagnóstico',
   },
-};
+});
 
-function construirPrompt(couponApplied, diagnostico) {
+// Versión en inglés de la web: Lex contesta en inglés y usa los nombres y las direcciones en inglés
+const BLOQUE_INGLES = `
+IDIOMA: la persona está en la versión en inglés de la web. Responde en inglés salvo que te escriba en español. En inglés, los servicios se llaman: Free SEO Report (el diagnóstico SEO gratis), Web Design, Digital Business Audit, AI Search Optimization (AEO), All-in-One Package (el Pack completo), 48-Hour Fix (el Arreglo exprés), AI Chat for your website, AI WhatsApp Receptionist y Monthly Implementation Plan (la Membresía). Si das un enlace a una página, usa la versión en inglés: /en/services/web-design, /en/services/digital-business-audit, /en/services/aeo, /en/services.`;
+
+function construirPrompt(couponApplied, diagnostico, lang) {
   const p = couponApplied ? PRECIOS.cupon : PRECIOS.publico;
+  const b = BOTONES[lang];
+  const DIAGNOSTICO = diagnosticoPara(b);
   const d = Object.hasOwn(DIAGNOSTICO, String(diagnostico)) ? DIAGNOSTICO[diagnostico] : DIAGNOSTICO.chat;
   const cuotas = `Arreglo exprés ${OTROS.expres} USD; Chat IA para su web ${OTROS.chat} USD/mes (incluido en la Membresía si encaja); Recepcionista IA por WhatsApp ${OTROS.recepcionista} USD + ${OTROS.recepcionistaMes} USD/mes; Membresía de Implementación ${OTROS.membresia} USD/mes (mínimo 2 meses).`;
   const lineaPrecios = couponApplied
@@ -70,13 +81,13 @@ REGLAS:
 5. Si preguntan algo táctico (SEO local, Google Maps, reseñas), da una o dos ideas concretas y ${d.ofrecer}.
 6. Cuando la persona muestre interés, ${d.interes}.
 7. Lo único gratis es el diagnóstico SEO de la web. La Auditoría Completa de Negocio es de pago: nunca digas que la auditoría es gratis.
-8. Si la persona no tiene web (aunque tenga Instagram), NO le ofrezcas ni menciones el diagnóstico SEO: sin web no se puede hacer. Recomiéndale primero una web desde cero, estructurada para su negocio (Diseño web); como segunda opción, una web hecha a partir de su Instagram con los datos que quiera darnos (Instagram a Web). Para pedirlo, que pulse el botón "No tengo web: quiero una" de este chat.
-9. Da los precios solo si la persona los pregunta; no los menciones por tu cuenta.`;
+8. Si la persona no tiene web (aunque tenga Instagram), NO le ofrezcas ni menciones el diagnóstico SEO: sin web no se puede hacer. Recomiéndale primero una web desde cero, estructurada para su negocio (Diseño web); como segunda opción, una web hecha a partir de su Instagram con los datos que quiera darnos (Instagram a Web). Para pedirlo, que pulse el botón "${b.sinWeb}" de este chat.
+9. Da los precios solo si la persona los pregunta; no los menciones por tu cuenta.${lang === 'en' ? BLOQUE_INGLES : ''}`;
 }
 
 export async function POST(req) {
   try {
-    const { messages, couponApplied, diagnostico } = await req.json();
+    const { messages, couponApplied, diagnostico, lang } = await req.json();
     if (!Array.isArray(messages)) {
       return NextResponse.json({ reply: 'No he entendido el mensaje.' }, { status: 400 });
     }
@@ -90,7 +101,7 @@ export async function POST(req) {
         content: String(msg?.text || '').slice(0, 1500),
       }));
 
-    const apiMessages = [{ role: 'system', content: construirPrompt(couponApplied === true, diagnostico) }, ...formattedMessages];
+    const apiMessages = [{ role: 'system', content: construirPrompt(couponApplied === true, diagnostico, lang === 'en' ? 'en' : 'es') }, ...formattedMessages];
 
     // Conexión con Groq
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
