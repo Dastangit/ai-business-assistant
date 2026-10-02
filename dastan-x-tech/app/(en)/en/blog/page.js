@@ -1,13 +1,13 @@
 import BlogIndice from '@/components/paginas/BlogIndice';
-import t from '@/contenido/blog.es';
+import t from '@/contenido/blog.en';
 import { alternates } from '@/lib/i18n';
 
 export const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
-  alternates: alternates('blog', 'es'),
+  alternates: alternates('blog', 'en'),
 };
 
-export default function BlogIndexPage() {
-  return <BlogIndice t={t} lang="es" />;
+export default function BlogIndexPageEn() {
+  return <BlogIndice t={t} lang="en" />;
 }

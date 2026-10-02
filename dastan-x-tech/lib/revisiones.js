@@ -13,4 +13,15 @@ export const REVISIONES = {
   '/blog/5-senales-web-cuesta-clientes': '2026-09-25',
   '/blog/que-es-aeo': '2026-09-30',
   '/privacidad': '2026-10-01',
+  // Versión en inglés: fecha en que se escribió su texto
+  '/en': '2026-10-02',
+  '/en/services': '2026-10-02',
+  '/en/services/web-design': '2026-10-02',
+  '/en/services/digital-business-audit': '2026-10-02',
+  '/en/services/aeo': '2026-10-02',
+  '/en/blog': '2026-10-02',
+  '/en/blog/we-audited-our-own-website': '2026-10-02',
+  '/en/blog/5-signs-your-website-is-losing-customers': '2026-10-02',
+  '/en/blog/what-is-aeo': '2026-10-02',
+  '/en/privacy': '2026-10-02',
 };
