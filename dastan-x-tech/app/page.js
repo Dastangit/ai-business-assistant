@@ -89,9 +89,6 @@ export default function Home() {
           <button type="button" className="btn btn-primary" onClick={pedirDiagnostico}>
             Pide tu diagnóstico SEO gratis
           </button>
-          <a href="#services" className="btn btn-secondary">
-            Ver servicios
-          </a>
         </div>
 
         <ul className="hero-points">
