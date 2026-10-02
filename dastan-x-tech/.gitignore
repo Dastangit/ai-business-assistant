@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Instantánea local de las URLs en español (scripts/instantanea-rutas.mjs)
+scripts/.instantanea-es.json

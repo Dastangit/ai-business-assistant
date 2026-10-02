@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import GlobalChatWidget from "../components/GlobalChatWidget";
+import GlobalChatWidget from "@/components/GlobalChatWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
