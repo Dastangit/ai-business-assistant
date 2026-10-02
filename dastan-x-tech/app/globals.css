@@ -630,8 +630,14 @@ html { scroll-padding-top: 84px; }
 .vip-mensuales-col .vip-card { flex: 1; }
 
 /* Móviles estrechos (≤ 380 px): en las cabeceras fijas solo el logo, para que quepan WhatsApp y el botón */
-@media (max-width: 380px) {
+/* Con el selector ES | EN, el nombre junto al logo ya no cabe en móvil: queda el logo (el nombre sigue en el pie) */
+@media (max-width: 480px) {
   .nav-brand span, .site-header .brand span { display: none; }
+}
+@media (max-width: 360px) {
+  .nav .nav-links, .site-header .site-header-links { gap: 8px; }
+  /* Portada en pantallas muy estrechas: Servicios sale de la cabecera (las tarjetas están en la misma página) */
+  .nav .nav-link-texto { display: none; }
 }
 
 /* clip evita el desplazamiento lateral sin convertir html y body en dos zonas con scroll propio (doble barra) */

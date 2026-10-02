@@ -1,17 +1,17 @@
-import t from '@/contenido/diseno-web.es';
+import t from '@/contenido/diseno-web.en';
 import { alternates } from '@/lib/i18n';
 
 export const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
   keywords: t.metadata.keywords,
-  alternates: alternates('disenoWeb', 'es'),
+  alternates: alternates('disenoWeb', 'en'),
   openGraph: {
     title: t.metadata.ogTitle,
     description: t.metadata.ogDescription,
-    url: 'https://dastanxtech.com/servicios/diseno-web',
+    url: 'https://dastanxtech.com/en/services/web-design',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'en_US',
     type: 'website',
   },
 };
@@ -24,7 +24,7 @@ const serviceJsonLd = {
   provider: {
     '@type': 'ProfessionalService',
     name: 'DASTAN X-TECH',
-    url: 'https://dastanxtech.com',
+    url: 'https://dastanxtech.com/en',
   },
   areaServed: t.servicioJsonLd.areaServed,
   offers: {
@@ -32,10 +32,10 @@ const serviceJsonLd = {
     priceSpecification: { '@type': 'PriceSpecification', minPrice: 100, priceCurrency: 'USD' },
   },
   description: t.servicioJsonLd.description,
-  url: 'https://dastanxtech.com/servicios/diseno-web',
+  url: 'https://dastanxtech.com/en/services/web-design',
 };
 
-export default function DisenoWebLayout({ children }) {
+export default function WebDesignLayout({ children }) {
   return (
     <>
       <script
