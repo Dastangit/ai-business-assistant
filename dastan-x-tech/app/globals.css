@@ -603,7 +603,8 @@ html { scroll-padding-top: 84px; }
 .vip-card--pack:hover { border-color: var(--brand); }
 /* Arreglo exprés en /vip: tarjeta normal y centrada encima de la tabla de precios, del ancho de una de
    «Servicios mensuales» (a todo el ancho se veía desproporcionada); el botón debajo, como en el resto */
-.vip-card--fila { width: 100%; max-width: 470px; margin: 0 auto 24px; }
+/* Más aire debajo que encima del cupón: el cupón se lee junto a los 4 servicios, no junto al Arreglo exprés */
+.vip-card--fila { width: 100%; max-width: 470px; margin: 0 auto 56px; }
 .vip-fila-texto { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .vip-card--fila .btn { width: 100%; }
 .vip-badge {

@@ -109,7 +109,7 @@ export default function Vip({ t, lang }) {
 
       {/* SECCIÓN DE SERVICIOS VIP */}
       <section style={{ padding: '3rem 1rem 6rem', maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.75rem, 4vw, 2rem)', marginBottom: '1.5rem', fontWeight: '700', letterSpacing: '-0.015em' }}>
+        <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.75rem, 4vw, 2rem)', marginBottom: '2.5rem', fontWeight: '700', letterSpacing: '-0.015em' }}>
           {t.plan}
         </h2>
 
@@ -134,7 +134,7 @@ export default function Vip({ t, lang }) {
         </div>
 
         {/* CUPÓN DE DESCUENTO: solo rebaja los 4 servicios, así que va justo encima de ellos (después del Arreglo exprés, que no tiene cupón) */}
-        <div style={{ marginBottom: '2.5rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
+        <div style={{ marginBottom: '2rem', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '12px', textAlign: 'center' }}>
           <label htmlFor="cupon-vip" style={{ fontSize: '16px', fontWeight: 600 }}>{t.cupon.etiqueta}</label>
           <input
             id="cupon-vip"
