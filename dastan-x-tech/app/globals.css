@@ -344,14 +344,15 @@ html { scroll-padding-top: 84px; }
 
 .servicio-hero-title { font-weight: 700 !important; letter-spacing: -0.025em !important; }
 
-/* Tarjeta del hero de servicios: antes eran dos rectángulos superpuestos */
+/* Tarjeta del hero de servicios: gris claro con un toque lavanda (antes casi negra, demasiado contraste sobre crema) */
 .servicio-hero-card {
-  background: var(--ink); color: var(--paper);
+  background: #ECEAF0; color: var(--ink); border: 1px solid #DDD9E3;
   border-radius: var(--radius-card); padding: 2.5rem;
   display: flex; flex-direction: column; justify-content: center; gap: 1rem;
 }
 .servicio-hero-card h3 { font-size: 1.5rem; font-weight: 600; }
-.servicio-hero-card .dot-list { color: var(--text-2); }
+.servicio-hero-card .dot-list { color: var(--ink-2); }
+.servicio-hero-card .dot-list li::before { background: var(--brand-on-light); }
 
 /* Páginas de servicio: línea discreta entre secciones (todo es claro y sin ella parecía un solo bloque),
    alineada con los márgenes de la cabecera y del hero */

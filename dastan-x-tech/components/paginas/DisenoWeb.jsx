@@ -54,7 +54,7 @@ export default function DisenoWeb({ t, lang }) {
           <ul className="dot-list">
             {t.hero.tarjetaItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
-          <a href="#caso-real" className="text-link" style={{ color: 'var(--action)' }}>{t.hero.verCaso}</a>
+          <a href="#caso-real" className="text-link">{t.hero.verCaso}</a>
         </div>
       </header>
 
