@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogAuditorAeo',
+      title: 'Perfeccionamos nuestra web con nuestro auditor AEO',
+      excerpt: 'Pasamos dastanxtech.com por nuestro propio auditor AEO: qué mide, qué encontró, qué corregimos y cómo pasamos de 94 a 97 sobre 100.',
+      date: '3 de octubre de 2026',
+    },
+    {
       clave: 'blogAeo',
       title: 'Qué es AEO, explicado con un ejemplo real',
       excerpt: 'Qué es el Answer Engine Optimization, por qué ya está pasando y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',

@@ -113,6 +113,23 @@ export default function Aeo({ t, lang }) {
         </div>
       </section>
 
+      {/* INFORME REAL: el que genera el auditor con nuestra propia web, para que se vea qué se entrega */}
+      <section style={{ padding: '2rem 5% 4rem' }}>
+        <div className="aeo-informe">
+          <span className="label-mono">{t.informe.etiqueta}</span>
+          <h2>{t.informe.titulo}</h2>
+          <p>{t.informe.texto}</p>
+          <div className="aeo-informe-acciones">
+            <a href="/ejemplo-informe-aeo" className="btn btn-outline-light" target="_blank" rel="noopener">
+              {t.informe.boton}
+            </a>
+            <a href={ruta('blogAuditorAeo', lang)} className="text-link">
+              {t.informe.enlaceArticulo}
+            </a>
+          </div>
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

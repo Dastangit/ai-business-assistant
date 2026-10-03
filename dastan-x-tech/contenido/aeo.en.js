@@ -50,6 +50,14 @@ const t = {
       { titulo: 'Content AI can quote', texto: 'We structure services, FAQs, hours and prices in a format AI engines can read and quote directly when they recommend you.' },
     ],
   },
+  // Real report: the auditor's report on our own website (public/ejemplo-informe-aeo.html)
+  informe: {
+    etiqueta: 'Real example',
+    titulo: 'This is the report you get',
+    texto: 'We ran our own website through the AEO auditor. This is the report exactly as a client receives it: the score, the 8 questions AI asks, the before and after, and the proof for every finding (in Spanish).',
+    boton: 'See a real report',
+    enlaceArticulo: 'Read how we went from 94 to 97 →',
+  },
   faqTitulo: 'Frequently asked questions',
   faq: [
     { q: 'What exactly is AI Search Optimization (AEO)?', a: 'Answer Engine Optimization: preparing your business so AI assistants like ChatGPT, Gemini or Perplexity recommend you directly when someone asks “what’s the best option near me?”, without that person visiting any website.' },

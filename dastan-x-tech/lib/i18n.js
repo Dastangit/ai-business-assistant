@@ -12,6 +12,7 @@ export const RUTAS = {
   blogAuditamos: { es: '/blog/auditamos-nuestra-propia-web', en: '/en/blog/we-audited-our-own-website' },
   blog5Senales: { es: '/blog/5-senales-web-cuesta-clientes', en: '/en/blog/5-signs-your-website-is-losing-customers' },
   blogAeo: { es: '/blog/que-es-aeo', en: '/en/blog/what-is-aeo' },
+  blogAuditorAeo: { es: '/blog/perfeccionamos-nuestra-web-auditor-aeo', en: '/en/blog/our-website-through-our-aeo-auditor' },
   privacidad: { es: '/privacidad', en: '/en/privacy' },
   vip: { es: '/vip', en: '/en/vip' },
 };

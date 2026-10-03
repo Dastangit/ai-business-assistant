@@ -50,6 +50,14 @@ const t = {
       { titulo: 'Contenido que la IA puede citar', texto: 'Estructuramos servicios, preguntas frecuentes, horarios y precios en un formato que los motores de IA pueden leer y citar directamente al recomendarte.' },
     ],
   },
+  // Informe real: el del auditor con nuestra propia web (public/ejemplo-informe-aeo.html)
+  informe: {
+    etiqueta: 'Ejemplo real',
+    titulo: 'Así es el informe que recibes',
+    texto: 'Pasamos nuestra propia web por el auditor AEO. Este es el informe tal cual lo recibe un cliente: la nota, las 8 preguntas que se hace la IA, el antes y el después y la prueba de cada hallazgo.',
+    boton: 'Ver un informe real',
+    enlaceArticulo: 'Lee cómo pasamos de 94 a 97 →',
+  },
   faqTitulo: 'Preguntas frecuentes',
   faq: [
     { q: '¿Qué es exactamente el Posicionamiento AEO?', a: 'Answer Engine Optimization: preparar tu negocio para que asistentes de IA como ChatGPT, Gemini o Perplexity te recomienden directamente cuando alguien pregunta “¿cuál es la mejor opción cerca de mí?”, sin que la persona visite ninguna web.' },

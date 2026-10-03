@@ -30,6 +30,7 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 
 ## Blog
 
+- [Perfeccionamos nuestra web con nuestro auditor AEO](https://dastanxtech.com/blog/perfeccionamos-nuestra-web-auditor-aeo): qué mide nuestro auditor AEO, qué encontró en dastanxtech.com y cómo pasamos de 94 a 97 sobre 100, con el [informe completo](https://dastanxtech.com/ejemplo-informe-aeo).
 - [Qué es AEO, explicado con un ejemplo real](https://dastanxtech.com/blog/que-es-aeo): qué es el Answer Engine Optimization y qué tienen en común los negocios que la IA recomienda, con una prueba real en Gemini.
 - [5 señales de que tu web te está costando clientes](https://dastanxtech.com/blog/5-senales-web-cuesta-clientes): las señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño.
 
@@ -42,7 +43,7 @@ DASTAN X-TECH is also available in English. Digital and AI consulting for small 
 - [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): from 150 USD.
 - [All-in-One Package](https://dastanxtech.com/en/services): all three for 400 USD.
 - [Free SEO Report](https://dastanxtech.com/en): score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp.
-- [What is AEO](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers)
+- [We perfected our website with our AEO auditor](https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor) · [What is AEO](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers)
 
 ## Optional
 
