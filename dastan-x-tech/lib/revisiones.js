@@ -12,7 +12,7 @@ export const REVISIONES = {
   '/blog/auditamos-nuestra-propia-web': '2026-09-25',
   '/blog/5-senales-web-cuesta-clientes': '2026-09-25',
   '/blog/que-es-aeo': '2026-09-30',
-  '/privacidad': '2026-10-01',
+  '/privacidad': '2026-10-02',
   // Versión en inglés: fecha en que se escribió su texto
   '/en': '2026-10-02',
   '/en/services': '2026-10-02',

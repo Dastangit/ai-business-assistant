@@ -50,6 +50,7 @@ const t = {
           <><strong>Supabase</strong>: stores the data from the chat form.</>,
           <><strong>Groq</strong>: processes chat messages to generate the AI assistant’s replies.</>,
           <><strong>Vercel</strong>: hosts the website and measures visits without cookies.</>,
+          <><strong>Telegram</strong>: notifies us instantly when you leave your details in the chat form; the notification includes your name, your website or Instagram username and your WhatsApp number.</>,
         ] },
         { tipo: 'p', contenido: 'Their servers may be outside Mexico, for example in the United States.' },
       ],
