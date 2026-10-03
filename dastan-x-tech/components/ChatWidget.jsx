@@ -87,21 +87,23 @@ const TEXTOS = {
 };
 
 // Estilos del formulario del diagnóstico (en línea para no tocar globals.css)
-// Dentro del chat todo es neutro y solo el botón principal (blanco) destaca: antes casi todo era turquesa
+// Dentro del chat todo es neutro y solo el botón principal destaca: antes casi todo era turquesa.
+// Los colores salen de variables: la versión clara del chat (.chat-widget--claro en globals.css) las cambia
 const campo = {
   width: '100%', background: 'transparent', border: '1px solid var(--border-strong)', borderRadius: '10px',
   padding: '9px 12px', color: 'var(--text)', fontSize: '16px', outline: 'none', marginBottom: '6px',
 };
 const tarjeta = {
-  background: 'rgba(255, 255, 255, 0.03)', border: '1px solid var(--border-strong)', borderRadius: '14px', padding: '14px',
+  background: 'var(--chat-tarjeta, rgba(255, 255, 255, 0.03))', border: '1px solid var(--border-strong)', borderRadius: '14px', padding: '14px',
 };
 const opcion = (activa) => ({
   flex: 1, padding: '8px', borderRadius: '8px', fontSize: '14px', fontWeight: 600, cursor: 'pointer',
-  background: activa ? 'var(--border-strong)' : 'transparent', color: activa ? 'var(--text)' : 'var(--text-2)',
+  background: activa ? 'var(--chat-opcion-activa, var(--border-strong))' : 'transparent', color: activa ? 'var(--text)' : 'var(--text-2)',
   border: activa ? '1px solid var(--border-strong)' : '1px solid var(--border)',
 });
 const botonPrincipal = {
-  width: '100%', background: 'var(--text)', color: '#07050A', border: 'none', borderRadius: '10px',
+  width: '100%', background: 'var(--chat-primario, var(--text))', color: 'var(--chat-primario-texto, #07050A)',
+  border: '1px solid var(--chat-primario-borde, transparent)', borderRadius: '10px',
   padding: '11px', fontWeight: 700, fontSize: '15px', cursor: 'pointer',
 };
 const botonSecundario = {
@@ -111,7 +113,8 @@ const botonSecundario = {
 
 // diagnostico: dónde se pide el diagnóstico SEO gratis en la página actual.
 // 'chat' = botón en el chat; 'final' = botón al final de la página; 'ninguno' = no se ofrece (AEO).
-export default function ChatWidget({ couponApplied = false, diagnostico = 'chat', lang = 'es' } = {}) {
+// tono: 'oscuro' (portada y VIP) o 'claro' (páginas de fondo claro: servicios, blog, privacidad).
+export default function ChatWidget({ couponApplied = false, diagnostico = 'chat', lang = 'es', tono = 'oscuro' } = {}) {
   const t = TEXTOS[lang] ?? TEXTOS.es;
   const sinBotonDiagnostico = diagnostico !== 'chat';
   const [isOpen, setIsOpen] = useState(false);
@@ -250,8 +253,8 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
 
   return (
     <>
-    {isOpen && <div className="chat-overlay" onClick={() => setIsOpen(false)}></div>}
-    <div className="chat-widget">
+    {isOpen && <div className={tono === 'claro' ? 'chat-overlay chat-overlay--claro' : 'chat-overlay'} onClick={() => setIsOpen(false)}></div>}
+    <div className={tono === 'claro' ? 'chat-widget chat-widget--claro' : 'chat-widget'}>
       {isOpen && (
         <div className="chat-window">
 
@@ -294,7 +297,7 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
                 {/* Campo trampa para bots: oculto a las personas */}
                 <input tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px' }}
                   value={datos.empresa_web} onChange={(e) => setDatos({ ...datos, empresa_web: e.target.value })} />
-                {errorForm && <div role="alert" style={{ color: '#FCA5A5', fontSize: '14px', marginBottom: '8px' }}>{renderMessageWithLinks(errorForm)}</div>}
+                {errorForm && <div role="alert" style={{ color: 'var(--chat-error, #FCA5A5)', fontSize: '14px', marginBottom: '8px' }}>{renderMessageWithLinks(errorForm)}</div>}
                 <button type="submit" style={{ ...botonPrincipal, opacity: enviando ? 0.6 : 1 }} disabled={enviando}>
                   {enviando ? t.enviando : (tieneWeb ? t.quieroDiagnostico : t.quieroWeb)}
                 </button>

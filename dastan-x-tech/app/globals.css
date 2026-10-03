@@ -126,10 +126,11 @@ p { text-wrap: pretty; }
 .btn-secondary { color: var(--text); border-color: var(--border-strong); font-weight: 500; }
 .btn-secondary:hover { border-color: var(--action); }
 /* Versiones para fondo claro */
-.btn-ink { background: var(--ink); color: var(--paper); }
-.btn-ink:hover { background: var(--ink-hover); }
 .btn-outline-light { color: var(--ink); border-color: var(--border-light); font-weight: 500; }
 .btn-outline-light:hover { border-color: var(--ink); }
+/* Botón principal en fondo claro: lavanda claro (antes casi negro, demasiado contraste sobre crema) */
+.btn-suave { background: #ECE6F8; color: #2E1F55; border-color: #D5CAEE; }
+.btn-suave:hover { background: #E1D8F4; border-color: #C4B5EA; }
 .btn-block { width: 100%; }
 
 /* Enlace de texto con flecha */
@@ -177,7 +178,7 @@ a.service-card:hover { border-color: var(--action); transform: translateY(-2px);
 a.service-card:active { border-color: var(--action); transform: none; }
 
 /* Variante clara (/servicios): antes eran tarjetas casi negras sobre crema y el salto de color era brusco.
-   Mismo estilo que las tarjetas claras de las páginas de servicio; el Pack destaca por su borde violeta */
+   Mismo estilo que las tarjetas claras de las páginas de servicio */
 a.service-card.service-card--light {
   background: rgba(255, 255, 255, 0.6); border-color: var(--border-light); color: var(--ink);
   box-shadow: 0 10px 28px -18px rgba(26, 23, 34, 0.35);
@@ -362,18 +363,7 @@ html { scroll-padding-top: 84px; }
   height: 1px; background: var(--line-light);
 }
 
-/* Pack completo en /servicios: a todo el ancho bajo las tres tarjetas oscuras, claro y con borde violeta para distinguirse.
-   El botón baja debajo del texto cuando no cabe al lado */
-.pack-block {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 2.5rem;
-  border: 1.5px solid var(--brand-on-light); border-radius: var(--radius-card);
-  padding: 2rem 2.5rem;
-}
-.pack-block-text { flex: 1 1 min(420px, 100%); display: flex; flex-direction: column; gap: 0.6rem; }
-.pack-block h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2; color: var(--ink); }
-.pack-block p { color: var(--ink-2); line-height: 1.6; }
-
-/* Servicios bajo pedido en /servicios: solo texto, más pequeño que el Pack, para que no compita con los tres servicios */
+/* Servicios bajo pedido en /servicios: solo texto, para que no compita con los tres servicios */
 .extras { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
 .extras h2 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; color: var(--ink); }
 .extras-list { list-style: none; padding: 0; margin: 0.25rem 0 0; display: flex; flex-direction: column; gap: 0.6rem; max-width: 820px; }
@@ -558,6 +548,32 @@ html { scroll-padding-top: 84px; }
   z-index: 40;
 }
 
+/* CHAT EN VERSIÓN CLARA (páginas de fondo claro): mismas piezas con colores suaves en lugar de la ventana casi negra */
+.chat-widget--claro {
+  --text: var(--ink);
+  --text-2: var(--ink-2);
+  --border: var(--line-light);
+  --border-strong: var(--border-light);
+  --action: var(--brand-on-light);
+  --chat-tarjeta: #FAF9FC;
+  --chat-primario: #ECE6F8;
+  --chat-primario-texto: #2E1F55;
+  --chat-primario-borde: #D5CAEE;
+  --chat-opcion-activa: #ECE6F8;
+  --chat-error: #B42318;
+}
+.chat-widget--claro .chat-window {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 20px 45px rgba(26, 23, 34, 0.16);
+}
+.chat-widget--claro .chat-header { background: #F8F6FB; }
+.chat-widget--claro .chat-messages::-webkit-scrollbar-thumb { background: rgba(26, 23, 34, 0.15); }
+.chat-widget--claro .msg-bot { background: #F3F0F7; border-color: #E9E5EF; }
+.chat-widget--claro .msg-user { background: rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.22); }
+.chat-widget--claro .chat-input-area { background: #FAF9FC; }
+.chat-widget--claro .chat-input { background: #FFFFFF; }
+.chat-widget--claro .chat-toggle-btn { box-shadow: 0 4px 14px rgba(26, 23, 34, 0.18); }
+
 /* =========================================
    VIP
    ========================================= */
@@ -677,7 +693,6 @@ html, body { overflow-x: clip; width: 100%; }
   .feature-number { min-width: 0; }
 
   .service-card { padding: 24px; }
-  .pack-block { padding: 24px; }
 
   /* Páginas de servicio: los títulos de sección (40 px) superaban al h1 (35 px). A 28 px, como en la portada,
      y con menos hueco entre secciones (los márgenes de escritorio dejaban mucho blanco en pantallas pequeñas) */
@@ -703,6 +718,7 @@ html, body { overflow-x: clip; width: 100%; }
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
   }
+  .chat-overlay--claro { background: rgba(26, 23, 34, 0.18); }
 
 }
 

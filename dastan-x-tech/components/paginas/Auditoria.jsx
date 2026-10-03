@@ -29,7 +29,7 @@ export default function Auditoria({ t, lang }) {
         display: 'grid',
         gridTemplateColumns: '1.2fr 0.8fr',
         gap: '4rem',
-        padding: '6rem 5%',
+        padding: '3.5rem 5% 4.5rem',
         alignItems: 'center'
       }}>
         <div>
@@ -37,14 +37,14 @@ export default function Auditoria({ t, lang }) {
             <span style={{ background: 'var(--brand-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
             <span className="label-mono">{t.hero.etiqueta}</span>
           </div>
-          <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
+          <h1 className="servicio-hero-title" style={{ fontSize: 'clamp(2.5rem, 4.6vw, 3.5rem)', fontWeight: '700', lineHeight: '1.08', color: 'var(--ink)', marginBottom: '1.5rem', letterSpacing: '-0.025em' }}>
             {t.hero.titulo}
           </h1>
           <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '600px', marginBottom: '2.5rem' }}>
             {t.hero.texto}
           </p>
           {/* Quien llega aquí busca la auditoría (de pago): el botón principal habla de ella, no del diagnóstico gratis */}
-          <button type="button" className="btn btn-ink" onClick={() => abrirChat(t.hero.mensajeChat)}>
+          <button type="button" className="btn btn-suave" onClick={() => abrirChat(t.hero.mensajeChat)}>
             {t.hero.boton}
           </button>
         </div>
@@ -107,7 +107,7 @@ export default function Auditoria({ t, lang }) {
           {t.cierre.texto}
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-          <button type="button" className="btn btn-ink" onClick={() => abrirChat(t.cierre.mensajeChat)}>
+          <button type="button" className="btn btn-suave" onClick={() => abrirChat(t.cierre.mensajeChat)}>
             {t.cierre.botonAuditoria}
           </button>
           <button type="button" className="btn btn-outline-light" onClick={() => abrirChat({ diagnostico: true })}>

@@ -17,14 +17,6 @@ const t = {
     { clave: 'aeo', title: 'AI Search Optimization (AEO)', tagline: 'Get your business recommended by AI, not just Google.' },
   ],
   verDetalle: 'See details →',
-  // Price and savings must match PRECIOS in app/api/chat/route.js
-  pack: {
-    etiqueta: 'All-in-One Package',
-    titulo: 'All three services for 400 USD',
-    texto: 'Web Design, Digital Business Audit and AI Search Optimization (AEO): you save 50 USD compared to buying them separately. Already bought one? You only pay the difference.',
-    mensajeChat: "I'd like information about the All-in-One Package",
-    boton: 'Ask about the All-in-One Package',
-  },
   // Must match the chat (app/api/chat/route.js) and public/llms.txt
   extras: {
     etiqueta: 'On request',

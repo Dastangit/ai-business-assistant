@@ -48,7 +48,7 @@ const t = {
   caminos: {
     titulo: <>Dos formas de <span className="accent-light">empezar</span></>,
     items: [
-      { etiqueta: 'Web nueva', titulo: 'Renovamos tu web o te la creamos desde cero', texto: 'Con tu marca real, tus servicios explicados y tu WhatsApp a un toque. Lista en menos de 48 horas desde que tenemos tu marca y tus contenidos.', boton: 'Quiero una web nueva', mensajeChat: 'Quiero una web nueva para mi negocio', estilo: 'btn btn-ink' },
+      { etiqueta: 'Web nueva', titulo: 'Renovamos tu web o te la creamos desde cero', texto: 'Con tu marca real, tus servicios explicados y tu WhatsApp a un toque. Lista en menos de 48 horas desde que tenemos tu marca y tus contenidos.', boton: 'Quiero una web nueva', mensajeChat: 'Quiero una web nueva para mi negocio', estilo: 'btn btn-suave' },
       { etiqueta: 'Arreglo exprés', titulo: '¿Ya tienes web? Arreglamos lo urgente', texto: 'Aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si después haces la web nueva, te lo descontamos.', boton: 'Quiero el arreglo exprés', mensajeChat: 'Quiero el Arreglo exprés para mi web', estilo: 'btn btn-outline-light' },
     ],
   },

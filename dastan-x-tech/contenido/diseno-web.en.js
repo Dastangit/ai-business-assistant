@@ -48,7 +48,7 @@ const t = {
   caminos: {
     titulo: <>Two ways to <span className="accent-light">get started</span></>,
     items: [
-      { etiqueta: 'New website', titulo: 'We rebuild your website or create one from scratch', texto: 'With your real brand, your services explained and your WhatsApp one tap away. Ready in under 48 hours once we have your brand and your content.', boton: 'I want a new website', mensajeChat: 'I want a new website for my business', estilo: 'btn btn-ink' },
+      { etiqueta: 'New website', titulo: 'We rebuild your website or create one from scratch', texto: 'With your real brand, your services explained and your WhatsApp one tap away. Ready in under 48 hours once we have your brand and your content.', boton: 'I want a new website', mensajeChat: 'I want a new website for my business', estilo: 'btn btn-suave' },
       { etiqueta: '48-Hour Fix', titulo: 'Already have a website? We fix what’s urgent', texto: 'Within 48 hours we apply the 5 most urgent fixes from your SEO report. If you get the new website afterwards, we deduct it.', boton: 'I want the 48-Hour Fix', mensajeChat: 'I want the 48-Hour Fix for my website', estilo: 'btn btn-outline-light' },
     ],
   },

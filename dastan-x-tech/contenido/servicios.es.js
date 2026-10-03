@@ -17,14 +17,6 @@ const t = {
     { clave: 'aeo', title: 'Posicionamiento AEO', tagline: 'Que la Inteligencia Artificial recomiende tu negocio, no solo Google.' },
   ],
   verDetalle: 'Ver detalle →',
-  // Precio y ahorro deben coincidir con PRECIOS de app/api/chat/route.js
-  pack: {
-    etiqueta: 'Pack completo',
-    titulo: 'Los tres servicios juntos por 400 USD',
-    texto: 'Diseño web, Auditoría Completa de Negocio y Posicionamiento AEO: ahorras 50 USD frente a contratarlos por separado. ¿Ya contrataste alguno? Pagas solo la diferencia.',
-    mensajeChat: 'Quiero información sobre el Pack completo',
-    boton: 'Consultar el Pack completo',
-  },
   // Deben coincidir con el chat (app/api/chat/route.js) y public/llms.txt
   extras: {
     etiqueta: 'Bajo pedido',

@@ -30,21 +30,9 @@ export default function Servicios({ t, lang }) {
         ))}
       </section>
 
-      {/* PACK COMPLETO: los tres servicios juntos. Precio y ahorro deben coincidir con PRECIOS de app/api/chat/route.js */}
-      <section style={{ padding: '0 5% 4rem', maxWidth: '1100px', margin: '0 auto' }}>
-        <div className="pack-block">
-          <div className="pack-block-text">
-            <span className="label-mono">{t.pack.etiqueta}</span>
-            <h2>{t.pack.titulo}</h2>
-            <p>{t.pack.texto}</p>
-          </div>
-          <BotonChat mensaje={t.pack.mensajeChat}>{t.pack.boton}</BotonChat>
-        </div>
-      </section>
-
       {/* BAJO PEDIDO: extras en texto pequeño, sin tarjetas ni precios, para no quitar peso a los tres servicios.
           Se piden sueltos o se eligen dentro de la Membresía; deben coincidir con el chat (app/api/chat/route.js) y public/llms.txt */}
-      <section className="extras" style={{ padding: '0 5% 6rem', maxWidth: '1100px', margin: '0 auto' }}>
+      <section className="extras" style={{ padding: '2.5rem 5% 6rem', maxWidth: '1100px', margin: '0 auto' }}>
         <span className="label-mono">{t.extras.etiqueta}</span>
         <h2>{t.extras.titulo}</h2>
         <ul className="extras-list">
