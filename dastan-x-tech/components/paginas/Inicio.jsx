@@ -82,28 +82,6 @@ export default function Inicio({ t, lang }) {
       </main>
       </div>
 
-      {/* SECCIÓN QUIÉNES SOMOS */}
-      <section id="about" className="section" style={{ maxWidth: '760px' }}>
-        <h2 className="section-title" style={{ marginBottom: '1rem' }}>
-          {t.quienes.titulo}
-        </h2>
-        {t.quienes.parrafos.map((parrafo, i) => (
-          <p key={i} className="section-text">{parrafo}</p>
-        ))}
-
-        <div className="equipo">
-          {equipo.map((p) => (
-            <figure key={p.nombre} className="equipo-ficha">
-              <Image src={p.foto} alt={p.alt} placeholder="blur" sizes="(max-width: 640px) 100vw, 360px" className="equipo-foto" />
-              <figcaption>
-                <strong>{p.nombre}</strong>
-                <span>{p.rol}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
-
       {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página */}
       <section id="services" className="section">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem' }}>
@@ -138,6 +116,28 @@ export default function Inicio({ t, lang }) {
               <div className="step-number">{String(i + 1).padStart(2, '0')}</div>
               <p className="section-text" style={{ fontSize: '16px' }}>{paso}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECCIÓN QUIÉNES SOMOS */}
+      <section id="about" className="section" style={{ maxWidth: '760px' }}>
+        <h2 className="section-title" style={{ marginBottom: '1rem' }}>
+          {t.quienes.titulo}
+        </h2>
+        {t.quienes.parrafos.map((parrafo, i) => (
+          <p key={i} className="section-text">{parrafo}</p>
+        ))}
+
+        <div className="equipo">
+          {equipo.map((p) => (
+            <figure key={p.nombre} className="equipo-ficha">
+              <Image src={p.foto} alt={p.alt} placeholder="blur" sizes="(max-width: 640px) 100vw, 360px" className="equipo-foto" />
+              <figcaption>
+                <strong>{p.nombre}</strong>
+                <span>{p.rol}</span>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </section>

@@ -386,7 +386,7 @@ html { scroll-padding-top: 84px; }
 .aeo-razon h4 { font-size: 1.1rem; font-weight: 600; color: var(--ink); }
 .aeo-razon p { color: var(--ink-2); line-height: 1.6; }
 .aeo-razon-etiqueta {
-  align-self: flex-start; font-size: 11px;
+  align-self: flex-start; font-size: 13px;
   border: 1px solid var(--brand-on-light); border-radius: 99px; padding: 2px 8px;
 }
 .aeo-cita {
@@ -610,7 +610,7 @@ html { scroll-padding-top: 84px; }
   border-top: 1px solid var(--border); padding-top: 12px;
 }
 .vip-card-list ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.vip-card-list-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--text-2); text-transform: uppercase; }
+.vip-card-list-title { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; color: var(--text-2); text-transform: uppercase; }
 .vip-card-list li { display: flex; gap: 10px; align-items: flex-start; }
 .vip-card-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--action); flex-shrink: 0; margin-top: 8px; }
 .btn-sm { min-height: 40px; padding: 8px 16px; border-radius: 8px; font-size: 14px; }
