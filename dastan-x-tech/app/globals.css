@@ -5,9 +5,9 @@
    ========================================= */
 :root {
   /* Modo oscuro (home, VIP, secciones oscuras) */
-  --bg: #07050A;
-  --surface: #110D18;
-  --border: #231D2E;
+  --bg: #13101A;
+  --surface: #1C1826;
+  --border: #2E2839;
   --border-strong: #3A3248;
   --text: #F5F4EF;
   --text-2: #B7B3C7;          /* un solo gris para texto secundario */
@@ -58,7 +58,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #07050A 80%);
+  background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #13101A 80%);
   z-index: -1;
   pointer-events: none;
 }
