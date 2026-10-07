@@ -38,7 +38,6 @@ const t = {
         items: ['An honest review of your current website.', 'A new, responsive website, ready to publish.', 'WhatsApp and phone always visible.'],
         link: 'Learn more about Web Design →',
         price: 'From 100 USD',
-        precioNota: 'Final price confirmed before we start. Ready in under 48 hours once we have your content.',
       },
       {
         clave: 'auditoria',

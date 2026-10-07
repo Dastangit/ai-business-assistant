@@ -77,6 +77,31 @@ export default function Auditoria({ t, lang }) {
         </div>
       </section>
 
+      {/* DESPUÉS DE LA AUDITORÍA: qué automatizamos y las dos formas de contratarlo */}
+      <section style={{ padding: '6rem 5%' }}>
+        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1.25rem', color: 'var(--ink)' }}>
+          {t.automatizar.titulo}
+        </h2>
+        <p style={{ textAlign: 'center', fontSize: '1.1rem', lineHeight: '1.6', color: 'var(--ink-2)', maxWidth: '680px', margin: '0 auto 2rem' }}>
+          {t.automatizar.intro}
+        </p>
+        <ul className="dot-list" style={{ maxWidth: '680px', margin: '0 auto 3rem', lineHeight: '1.6' }}>
+          {t.automatizar.items.map((item) => <li key={item}>{item}</li>)}
+        </ul>
+        <div className="caminos">
+          {t.automatizar.caminos.map((c) => (
+            <div key={c.etiqueta} className="camino">
+              <span className="label-mono">{c.etiqueta}</span>
+              <h3>{c.titulo}</h3>
+              <p>{c.texto}</p>
+              <button type="button" className={c.estilo} onClick={() => abrirChat(c.mensajeChat)}>
+                {c.boton}
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

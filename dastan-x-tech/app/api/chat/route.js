@@ -8,7 +8,7 @@ const PRECIOS = {
   cupon: { web: 50, aeo: 100, auditoria: 150, pack: 300 },
 };
 // Sin cupón: entrada y cuotas mensuales
-const OTROS = { expres: 49, chat: 15, recepcionista: 150, recepcionistaMes: 39, membresia: 200 };
+const OTROS = { expres: 49, chat: 15, recepcionista: 150, recepcionistaMes: 39, membresia: 200, automatizacion: 100 };
 
 // Cómo trata la IA el diagnóstico en cada página (lo decide GlobalChatWidget): en las páginas de servicio el chat no tiene ese botón.
 // En AEO (el último servicio) ni se describe: si la IA lo tiene en su lista de servicios, acaba nombrándolo.
@@ -50,7 +50,7 @@ function construirPrompt(couponApplied, diagnostico, lang) {
   const b = BOTONES[lang];
   const DIAGNOSTICO = diagnosticoPara(b);
   const d = Object.hasOwn(DIAGNOSTICO, String(diagnostico)) ? DIAGNOSTICO[diagnostico] : DIAGNOSTICO.chat;
-  const cuotas = `Arreglo exprés ${OTROS.expres} USD; Chat IA para su web ${OTROS.chat} USD/mes (incluido en la Membresía si encaja); Recepcionista IA por WhatsApp ${OTROS.recepcionista} USD + ${OTROS.recepcionistaMes} USD/mes; Membresía de Implementación ${OTROS.membresia} USD/mes (mínimo 2 meses).`;
+  const cuotas = `Arreglo exprés ${OTROS.expres} USD; Chat IA para su web ${OTROS.chat} USD/mes (incluido en la Membresía si encaja); Recepcionista IA por WhatsApp ${OTROS.recepcionista} USD + ${OTROS.recepcionistaMes} USD/mes; Membresía de Implementación ${OTROS.membresia} USD/mes (mínimo 2 meses); Automatización puntual ${OTROS.automatizacion} USD, pago único.`;
   const lineaPrecios = couponApplied
     ? `Esta persona está en su propuesta personal (/vip) con el cupón aplicado. Sus precios son: Diseño web ${p.web} USD; Auditoría Completa de Negocio ${p.auditoria} USD; Posicionamiento AEO ${p.aeo} USD; Pack completo con los tres ${p.pack} USD. Se pagan con los botones de esa misma página. Otros (sin cupón): ${cuotas} El Arreglo exprés también se paga con su botón de esa página. El Chat IA y la Recepcionista IA se piden por WhatsApp; la Membresía se inicia pagando el primer mes con su botón de esa página, y los meses siguientes se cobran cada mes.`
     : `Precios de partida (así aparecen en la web): Diseño web desde ${p.web} USD (Instagram a Web va dentro de este servicio); Auditoría Completa de Negocio desde ${p.auditoria} USD, el servicio de más valor, sin la web incluida; Posicionamiento AEO desde ${p.aeo} USD; Pack completo con los tres ${p.pack} USD, que ahorra ${p.web + p.auditoria + p.aeo - p.pack} USD. Quien ya contrató alguno paga solo la diferencia hasta el pack. ${cuotas} El precio final depende del negocio y se confirma antes de empezar. Nunca menciones cupones ni descuentos.`;
@@ -69,7 +69,8 @@ LO QUE OFRECEMOS:
 - Arreglo exprés (solo para quien ya tiene web): aplicamos en 48 horas las 5 correcciones más urgentes de su diagnóstico SEO; se descuenta si después contrata el Diseño web en 30 días. Ofrécelo a quien quiere algo rápido o más económico que una web nueva.
 - Chat IA para su web (cuota mensual): una burbuja como la de esta página que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta.
 - Recepcionista IA por WhatsApp (instalación + cuota mensual): responde en su WhatsApp las 24 horas; se instala en un número secundario del negocio, no en el personal.
-- Membresía de Implementación (cuota mensual): 24 horas de trabajo al mes aplicando el plan de acción de su Auditoría Completa (la Auditoría se contrata aparte o dentro del Pack completo), con el chat IA si encaja y automatizaciones (recordatorios, seguimiento de presupuestos, reseñas). También prepara el negocio para que los agentes de IA gestionen reservas o compras desde el chat; eso no entra en el Posicionamiento AEO. Dentro de esas horas puede elegir los servicios bajo pedido.
+- Membresía de Implementación (cuota mensual): 24 horas de trabajo al mes aplicando el plan de acción de su Auditoría Completa (la Auditoría se contrata aparte o dentro del Pack completo), con el chat IA si encaja y automatizaciones (CRM para no perder clientes, recordatorios, seguimiento de presupuestos, reseñas). También prepara el negocio para que los agentes de IA gestionen reservas o compras desde el chat; eso no entra en el Posicionamiento AEO. Dentro de esas horas puede elegir los servicios bajo pedido.
+- Automatización puntual (pago único, para quien no quiere la Membresía): una sola cosa con alcance cerrado, por ejemplo instalar un CRM gratuito en la cuenta del negocio y conectarlo al formulario de su web, o un recordatorio automático de citas. Sin mantenimiento: los cambios o automatizaciones posteriores van en la Membresía. Todo se instala en las cuentas del propio negocio.
 - Servicios bajo pedido (menciónalos solo si la persona pregunta por algo relacionado; no los ofrezcas por tu cuenta): Análisis de canal de YouTube (miniaturas, títulos, ganchos y qué vídeos funcionan); Análisis de marca personal (perfil, contenido, autoridad y el camino hasta que la contratan); Análisis de tienda online (dónde se escapan las ventas hasta el pago); Dashboard de facturas (panel con ingresos, gastos, impuestos y mejores clientes a partir de sus facturas en PDF). Se piden sueltos, con precio según el caso por WhatsApp, o se eligen dentro de la Membresía.
 ${lineaPrecios}
 

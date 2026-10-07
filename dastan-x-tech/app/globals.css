@@ -194,7 +194,6 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .card-link { color: var(--action); font-size: 15px; font-weight: 600; margin-top: auto; }
 /* Precio de partida en las tarjetas de la portada */
 .card-price { font-family: var(--font-mono); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--text); margin-top: -6px; }
-.card-price-nota { color: var(--text-2); font-size: 14px; line-height: 1.45; margin-top: -8px; }
 
 /* Tabla de precios de los artículos (en móvil se desplaza dentro de su caja, no la página) */
 .tabla-scroll { overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--line-light); border-radius: var(--radius-card); background: #FAF9FC; }

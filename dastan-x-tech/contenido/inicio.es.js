@@ -38,13 +38,11 @@ const t = {
         items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
         link: 'Saber más sobre Diseño web →',
         price: 'Desde 100 USD',
-        // Responde a «barato = malo» con datos de la FAQ de Diseño web (no prometer nada que no esté ahí)
-        precioNota: 'Precio confirmado antes de empezar. Lista en menos de 48 h desde que tenemos tus contenidos.',
       },
       {
         clave: 'auditoria',
         label: '02 · Auditoría',
-        title: 'Auditoría Completa de Negocio',
+        title: 'Auditoría Completa',
         text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
         items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Análisis de procesos.', 'Plan de acción por fases.'],
         link: 'Descubre la Auditoría de Negocio →',

@@ -95,7 +95,6 @@ export default function Inicio({ t, lang }) {
               <span className="label-mono">{s.label}</span>
               <h3 className="card-title">{s.title}</h3>
               <span className="card-price">{s.price}</span>
-              {s.precioNota && <span className="card-price-nota">{s.precioNota}</span>}
               <p className="card-text">{s.text}</p>
               <ul className="dot-list card-list">
                 {s.items.map((item) => <li key={item}>{item}</li>)}

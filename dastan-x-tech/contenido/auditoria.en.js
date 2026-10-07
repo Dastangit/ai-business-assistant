@@ -21,7 +21,7 @@ const t = {
     mensajeChat: "I'd like information about the Digital Business Audit",
     boton: 'Ask about the Digital Business Audit',
     tarjetaTitulo: 'What you get',
-    tarjetaItems: ['Digital presence score out of 100', 'Technology maturity score out of 5', 'A phased action plan'],
+    tarjetaItems: ['Digital presence score out of 100', 'Technology maturity score out of 5', 'Process analysis', 'A phased action plan'],
   },
   ventajas: {
     titulo: <>Real evidence, not <span className="accent-light">guesswork</span></>,
@@ -30,12 +30,26 @@ const t = {
       { titulo: 'A report with actionable numbers', texto: 'Every finding backed by real evidence — nothing made up — and a phased action plan with an estimate of the hours and money you could recover each month.' },
     ],
   },
+  automatizar: {
+    titulo: <>And then, we <span className="accent-light">automate it</span></>,
+    intro: 'The process analysis in the audit shows you where your hours go. If you want, we take care of it afterwards: always in your own accounts, with free tools whenever possible.',
+    items: [
+      'A CRM so no customer goes unanswered: every contact from your website, logged and followed up.',
+      'Appointment reminders, quote follow-ups and review requests, running on their own.',
+      'Round-the-clock AI support, on your website and on your WhatsApp.',
+    ],
+    caminos: [
+      { etiqueta: 'One-off automation', titulo: 'One thing, done', texto: 'For example, setting up your CRM and connecting it to your website form, or an automatic appointment reminder. One-time payment, no maintenance.', boton: 'I want an automation', mensajeChat: "I'd like information about a one-off automation for my business", estilo: 'btn btn-suave' },
+      { etiqueta: 'Monthly Implementation Plan', titulo: 'Every month, whatever helps you most', texto: '24 hours of work a month applying your audit plan: we automate what saves you the most time, without you having to coordinate anything.', boton: 'I want the Implementation Plan', mensajeChat: "I'd like information about the Monthly Implementation Plan", estilo: 'btn btn-outline-light' },
+    ],
+  },
   faqTitulo: 'Frequently asked questions',
   faq: [
     { q: 'Do you need access to my systems or accounts to audit my business?', a: 'No. We audit what’s public (your website, social media, Google Business Profile, reviews, competitors) and what you tell us in a short form about how your business runs inside. We never ask to log into your software, dashboards or accounts.' },
     { q: 'What do I get at the end of the audit?', a: 'A single report with two clear numbers: your digital presence out of 100 and your technology maturity out of 5, every finding backed by real evidence, and a phased action plan with an estimate of how much time and money you could recover each month.' },
     { q: 'Is it a generic audit or tailored to my business?', a: 'Every finding comes with real evidence from your business — a sentence from your website, a dated review, one of your answers — never a template or a made-up figure.' },
     { q: 'How much does the Digital Business Audit cost?', a: 'From 200 USD. It’s our most complete service and it doesn’t include the website: if you also want a new website and to be recommended by AI, the All-in-One Package (Audit + Web Design + AEO) costs 400 USD. The final price depends on the size of your business and we confirm it before we start. The free SEO report is separate and only reviews your website.' },
+    { q: 'Can you help me apply what the audit finds?', a: 'Yes, in two ways. With a one-off automation, for a one-time 100 USD: a single thing, like setting up a free CRM and connecting it to your website form, or an automatic appointment reminder. Or with the Monthly Implementation Plan, for 200 USD a month (2-month minimum): 24 hours of work a month applying the audit plan, with the automations that suit your business best. Everything is set up in your own accounts.' },
   ],
   cierre: {
     titulo: 'Want to know what’s costing you money?',

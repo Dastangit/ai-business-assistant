@@ -26,7 +26,8 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 - [Arreglo exprés](https://dastanxtech.com/servicios/diseno-web): para quien ya tiene web, aplicamos en 48 horas las 5 correcciones más urgentes de su diagnóstico SEO. 49 USD, que se descuentan si contrata el Diseño web en los 30 días siguientes.
 - [Chat con IA para la web](https://dastanxtech.com/servicios/diseno-web): responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta. 15 USD al mes.
 - Recepcionista IA por WhatsApp: atiende el WhatsApp del negocio las 24 horas, instalada en un número secundario. 150 USD de instalación y 39 USD al mes.
-- Membresía de Implementación: 24 horas de trabajo al mes aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat con IA si encaja y automatizaciones (recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, mínimo 2 meses.
+- [Automatización puntual](https://dastanxtech.com/servicios/auditoria-negocio): una sola automatización con alcance cerrado, por ejemplo instalar un CRM gratuito en la cuenta del negocio y conectarlo al formulario de su web, o un recordatorio automático de citas. 100 USD, pago único, sin mantenimiento.
+- Membresía de Implementación: 24 horas de trabajo al mes aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat con IA si encaja y automatizaciones (CRM, recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, mínimo 2 meses.
 
 ## Blog
 
