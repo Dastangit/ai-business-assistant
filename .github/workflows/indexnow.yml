@@ -1,0 +1,18 @@
+# Cuando Vercel termina de publicar dastanxtech.com en producción, avisa por IndexNow (Bing y otros)
+# de las páginas revisadas en los últimos 2 días. Ver dastan-x-tech/lib/indexnow.js.
+name: IndexNow
+
+on: deployment_status
+
+jobs:
+  avisar:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Avisar a IndexNow
+        working-directory: dastan-x-tech
+        run: node scripts/indexnow.mjs
