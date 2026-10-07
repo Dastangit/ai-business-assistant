@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogPrecioWeb',
+      title: '¿Cuánto cuesta renovar una web en 2026?',
+      excerpt: 'Nuestros precios reales en una tabla: desde 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye y qué cambia el precio final.',
+      date: '6 de octubre de 2026',
+    },
+    {
       clave: 'blogAuditorAeo',
       title: 'Perfeccionamos nuestra web con nuestro auditor AEO',
       excerpt: 'Pasamos dastanxtech.com por nuestro propio auditor AEO: qué mide, qué encontró, qué corregimos y cómo pasamos de 94 a 97 sobre 100.',

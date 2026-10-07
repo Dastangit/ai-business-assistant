@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogPrecioWeb',
+      title: 'How much does a website redesign cost in 2026?',
+      excerpt: 'Our real prices in one table: from 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What’s included and what changes the final price.',
+      date: 'October 6, 2026',
+    },
+    {
       clave: 'blogAuditorAeo',
       title: 'We perfected our website with our AEO auditor',
       excerpt: 'We ran dastanxtech.com through our own AEO auditor: what it measures, what it found, what we fixed and how we went from 94 to 97 out of 100.',

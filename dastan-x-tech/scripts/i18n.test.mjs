@@ -8,7 +8,7 @@ test('cada clave tiene ruta en los dos idiomas y el inglés vive en /en', () => 
     assert.ok(r.es.startsWith('/'), clave);
     assert.ok(r.en === '/en' || r.en.startsWith('/en/'), clave);
   }
-  assert.equal(Object.keys(RUTAS).length, 12);
+  assert.equal(Object.keys(RUTAS).length, 13);
 });
 
 test('idiomaDeRuta', () => {

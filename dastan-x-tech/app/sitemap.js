@@ -4,7 +4,7 @@ import { RUTAS, NO_INDEXABLES } from '@/lib/i18n';
 const baseUrl = 'https://dastanxtech.com';
 const PRIORIDAD = {
   inicio: ['weekly', 1], servicios: ['monthly', 0.9], disenoWeb: ['monthly', 0.8], auditoria: ['monthly', 0.8], aeo: ['monthly', 0.8],
-  blog: ['weekly', 0.6], blogAuditamos: ['monthly', 0.6], blog5Senales: ['monthly', 0.6], blogAeo: ['monthly', 0.6], blogAuditorAeo: ['monthly', 0.6], privacidad: ['yearly', 0.2],
+  blog: ['weekly', 0.6], blogAuditamos: ['monthly', 0.6], blog5Senales: ['monthly', 0.6], blogAeo: ['monthly', 0.6], blogAuditorAeo: ['monthly', 0.6], blogPrecioWeb: ['monthly', 0.6], privacidad: ['yearly', 0.2],
 };
 const absoluta = (ruta) => `${baseUrl}${ruta === '/' ? '' : ruta}`;
 
