@@ -143,8 +143,8 @@ export default function Inicio({ t, lang }) {
       </section>
 
       {/* CIERRE / CTA FINAL */}
-      <section className="section" style={{ paddingBottom: '5rem' }}>
-        <div className="service-card" style={{ alignItems: 'flex-start', padding: '2.5rem' }}>
+      <section className="section cierre">
+        <div className="service-card cierre-card">
           <h2 className="section-title">
             {t.cierre.titulo}
           </h2>
