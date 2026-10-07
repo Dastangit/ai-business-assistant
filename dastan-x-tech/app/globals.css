@@ -768,3 +768,18 @@ html, body { overflow-x: clip; width: 100%; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Botón de WhatsApp destacado en ambas cabeceras: verde de WhatsApp con texto oscuro (contraste AA) */
+.nav .nav-links a.nav-wa, .site-header-links a.site-header-wa {
+  padding: 6px 14px; border-radius: 999px; border: 1px solid #25D366;
+  background: #25D366; color: #06280f; font-weight: 600; opacity: 1;
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+  transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.nav .nav-links a.nav-wa:hover, .site-header-links a.site-header-wa:hover {
+  background: #3ee07a; border-color: #3ee07a; color: #06280f; text-decoration: none;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45); transform: translateY(-1px);
+}
+@media (max-width: 640px) {
+  .nav .nav-links a.nav-wa, .site-header-links a.site-header-wa { padding: 5px 10px; }
+}
