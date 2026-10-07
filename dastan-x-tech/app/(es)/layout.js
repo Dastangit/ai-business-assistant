@@ -74,8 +74,10 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
+        {/* El navegador interno de Facebook/Instagram agranda el texto: marcamos <html> para compensarlo en CSS */}
+        <script dangerouslySetInnerHTML={{ __html: "if(/FBAN|FBAV|FB_IAB|Instagram/.test(navigator.userAgent))document.documentElement.classList.add('fb-iab')" }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

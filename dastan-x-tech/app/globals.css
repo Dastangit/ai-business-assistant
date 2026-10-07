@@ -324,6 +324,7 @@ html { scroll-padding-top: 84px; }
   font-size: clamp(2.25rem, min(5.4vw, 7.5vh), 3.5rem); font-weight: 700;
   letter-spacing: -0.03em; line-height: 1.05; max-width: 820px;
 }
+.fb-iab .hero-title { font-size: 1.75rem; }
 .hero-sub { font-size: 1.125rem; line-height: 1.6; color: var(--text-2); max-width: 580px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 /* Puntos del hero: texto con ícono pequeño, sin borde, para que no parezcan botones */
