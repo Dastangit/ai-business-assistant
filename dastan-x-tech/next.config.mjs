@@ -11,7 +11,14 @@ const nextConfig = {
   // El informe AEO de ejemplo es el HTML que genera el auditor, tal cual (public/ejemplo-informe-aeo.html),
   // servido en una dirección limpia. Para actualizarlo, se copia encima el informe nuevo.
   rewrites() {
-    return [{ source: '/ejemplo-informe-aeo', destination: '/ejemplo-informe-aeo.html' }];
+    // Lo mismo con las muestras para clientes (public/muestras.html) y sus dos ejemplos, hechos con
+    // un negocio ficticio: el diagnóstico SEO y la Auditoría Completa que genera el kit.
+    return [
+      { source: '/ejemplo-informe-aeo', destination: '/ejemplo-informe-aeo.html' },
+      { source: '/muestras', destination: '/muestras.html' },
+      { source: '/ejemplo-diagnostico-seo', destination: '/ejemplo-diagnostico-seo.html' },
+      { source: '/ejemplo-auditoria-completa', destination: '/ejemplo-auditoria-completa.html' },
+    ];
   },
   // La página de la auditoría cambió de dirección: los enlaces antiguos (Instagram, Google) siguen funcionando
   redirects() {

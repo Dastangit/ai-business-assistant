@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ejemplo · Diagnóstico SEO · DASTAN X-TECH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap">
+<style>
+:root {
+  --fondo: #F5F4EF;
+  --texto: #1A1722;
+  --suave: #5A5566;
+  --linea: #E2DFE6;
+  --tarjeta: #FFFFFF;
+  --violeta: #7C3AED;
+  --turquesa: #0F8F7F;
+  --critico: #C9363B;
+  --medio: #A86A08;
+  --bien: #157F52;
+  --letra: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); color: var(--texto); font: 16px/1.6 var(--letra); }
+.envoltorio { max-width: 860px; margin: 0 auto; padding-inline: 20px; padding-block: 0 48px; }
+.aviso { background: #ECE6F8; color: #2E1F55 !important; color: var(--texto); text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 600; }
+h1, h2, h3 { line-height: 1.2; text-wrap: balance; margin: 0; }
+h2 { font-size: 1.5rem; margin-block: 44px 14px; }
+h3 { font-size: 1.1rem; }
+p { margin: 0 0 12px; }
+.suave { color: var(--suave); }
+.etq { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--suave); font-weight: 600; }
+.cabecera { display: flex; align-items: center; gap: 12px; padding-block: 22px; border-bottom: 1px solid var(--linea); }
+.cabecera svg { width: 40px; height: 40px; flex: none; }
+.cabecera b { font-size: 17px; letter-spacing: .02em; }
+.portada { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; padding-block: 32px 8px; }
+.anillo { --n: 32; width: 168px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(closest-side, var(--fondo) 79%, transparent 80% 100%), conic-gradient(var(--critico) calc(var(--n) * 1%), var(--linea) 0); }
+.anillo div { text-align: center; line-height: 1; }
+.anillo span { font-size: 52px; font-weight: 800; }
+.anillo small { display: block; color: var(--suave); font-size: 13px; margin-top: 6px; }
+.portada h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-block: 6px 10px; }
+.banda-nota { display: inline-block; background: color-mix(in srgb, var(--critico) 20%, var(--fondo)); color: #B42318; font-weight: 700; font-size: 13px; padding: 3px 12px; border-radius: 20px; }
+.cifras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+.cifra { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 12px; padding: 14px 16px; }
+.cifra b { display: block; font-size: 28px; font-variant-numeric: tabular-nums; }
+.cifra.e b { color: #B42318; } .cifra.a b { color: #A86A08; } .cifra.o b { color: #157F52; }
+.funciona { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.funciona li { padding-left: 26px; position: relative; }
+.funciona li::before { content: "✓"; position: absolute; left: 0; color: var(--bien); font-weight: 700; }
+.problema { border: 1px solid var(--linea); background: var(--tarjeta); border-radius: 14px; padding: 18px 20px; display: grid; grid-template-columns: auto 1fr; gap: 6px 16px; margin-bottom: 12px; }
+.problema .num { grid-row: span 3; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; background: color-mix(in srgb, var(--critico) 22%, var(--fondo)); color: #B42318; }
+.problema .bloque { min-width: 0; }
+.problema h4 { margin: 0; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--suave); }
+.paso0 { border: 1px solid color-mix(in srgb, var(--turquesa) 55%, var(--fondo)); background: color-mix(in srgb, var(--turquesa) 9%, var(--fondo)); border-radius: 16px; padding: 20px 22px; }
+.paso0 .etq { color: var(--turquesa); }
+.boton { display: inline-block; margin-top: 10px; background: #25D366; color: #06280f; font-weight: 700; border-radius: 10px; padding: 10px 18px; font-size: 15px; }
+.nota-boton { font-size: 13px; color: var(--suave); margin-top: 6px; }
+.servicios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 14px; }
+.servicio { background: var(--tarjeta); border: 1px solid var(--linea); border-radius: 14px; padding: 16px 18px; min-width: 0; }
+.servicio .etq { color: var(--violeta); }
+.servicio ul { padding-left: 18px; margin: 8px 0 0; color: var(--suave); font-size: 15px; }
+.pack { margin-top: 14px; color: var(--suave); }
+.cierre { margin-top: 18px; font-size: 18px; font-weight: 700; }
+.categoria { border-top: 1px solid var(--linea); padding-block: 16px; }
+.cat-cab { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.cat-cab span { font-variant-numeric: tabular-nums; font-weight: 700; }
+.barra { height: 8px; background: var(--linea); border-radius: 4px; overflow: hidden; margin-block: 8px 10px; }
+.barra i { display: block; height: 100%; }
+.hallazgos { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: 15px; }
+.hallazgos li { display: grid; grid-template-columns: 92px 1fr; gap: 10px; }
+.est { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.est.ok { color: var(--bien); } .est.adv { color: var(--medio); } .est.err { color: var(--critico); }
+.pie { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--linea); color: var(--suave); font-size: 14px; }
+@media (max-width: 640px) {
+  .portada { grid-template-columns: 1fr; justify-items: start; }
+  .anillo { width: 140px; } .anillo span { font-size: 44px; }
+  .cifras, .servicios { grid-template-columns: 1fr; }
+  .hallazgos li { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body>
+<div class="aviso">Ejemplo con un negocio ficticio: la clínica y su web no existen. Así es el diagnóstico que recibe tu negocio.</div>
+<div class="envoltorio">
+
+<header class="cabecera">
+  <svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="lx" x1="140" y1="0" x2="372" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#BA45FF"/><stop offset=".5" stop-color="#8B7FE0"/><stop offset="1" stop-color="#34DCAB"/></linearGradient><radialGradient id="lbg" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#17111F"/><stop offset="1" stop-color="#0B0810"/></radialGradient></defs><circle cx="256" cy="256" r="252" fill="url(#lbg)"/><path fill="url(#lx)" d="M146 138h70l40 70 40-70h70l-75 118 75 118h-70l-40-70-40 70h-70l75-118z"/></svg>
+  <b>DASTAN X-TECH</b>
+</header>
+
+<section class="portada">
+  <div class="anillo" style="--n:32"><div><span>32</span><small>de 100</small></div></div>
+  <div>
+    <p class="etq">Diagnóstico SEO · 9 de octubre de 2026</p>
+    <h1>Clínica Dental Olmedo</h1>
+    <p class="suave">clinicaolmedo.example · Valladolid</p>
+    <span class="banda-nota">Necesita mejorar</span>
+  </div>
+</section>
+
+<div class="cifras">
+  <div class="cifra e"><b>9</b>problemas importantes</div>
+  <div class="cifra a"><b>8</b>advertencias</div>
+  <div class="cifra o"><b>9</b>puntos que ya están bien</div>
+</div>
+
+<h2>Lo que ya funciona</h2>
+<ul class="funciona">
+  <li>La web carga rápido: pesa menos de 3 KB.</li>
+  <li>Tiene candado de seguridad (HTTPS) con un certificado válido.</li>
+  <li>Un solo titular principal y los apartados bien ordenados: quiénes somos, tratamientos, equipo y contacto.</li>
+  <li>El WhatsApp está a la vista y los enlaces dicen adónde llevan.</li>
+</ul>
+
+<h2>Los 5 problemas más urgentes</h2>
+<p class="suave">De 17 puntos a mejorar, estos son los que más clientes le hacen perder en Google.</p>
+
+<article class="problema">
+  <span class="num">1</span>
+  <div class="bloque"><h3>Google no sabe qué hace la clínica ni dónde está</h3></div>
+  <div class="bloque"><h4>Qué está mal</h4><p>El título de la web es solo «Clínica Dental Olmedo»: no dice «dentista» ni «Valladolid». Y no tiene descripción, así que Google se inventa el texto que enseña debajo del enlace.</p></div>
+  <div class="bloque"><h4>Por qué importa</h4><p>Quien busca «dentista en Valladolid» no la encuentra, y quien la encuentra ve un resumen que no le convence de entrar.</p></div>
+</article>
+
+<article class="problema">
+  <span class="num">2</span>
+  <div class="bloque"><h3>Google no la reconoce como negocio local</h3></div>
+  <div class="bloque"><h4>Qué está mal</h4><p>La web no lleva los datos que Google lee para saber que es una clínica dental: dirección, horario, teléfono y tipo de negocio.</p></div>
+  <div class="bloque"><h4>Por qué importa</h4><p>Pierde fuerza en las búsquedas «cerca de mí» y en el mapa, que es donde eligen dentista la mayoría de los pacientes nuevos.</p></div>
+</article>
+
+<article class="problema">
+  <span class="num">3</span>
+  <div class="bloque"><h3>En el móvil, la web se sale de la pantalla</h3></div>
+  <div class="bloque"><h4>Qué está mal</h4><p>La tabla del horario y la lista de tratamientos son más anchas que un teléfono: hay que mover la página de lado para leerlas.</p></div>
+  <div class="bloque"><h4>Por qué importa</h4><p>Google valora la web por cómo se ve en el móvil, y casi todos los pacientes la abren desde ahí. Una web que se desborda sube peor y se abandona antes.</p></div>
+</article>
+
+<article class="problema">
+  <span class="num">4</span>
+  <div class="bloque"><h3>El candado de seguridad está a punto de fallar</h3></div>
+  <div class="bloque"><h4>Qué está mal</h4><p>El certificado de seguridad caduca en 10 días, y quien entra escribiendo la dirección sin «https» no pasa a la versión segura.</p></div>
+  <div class="bloque"><h4>Por qué importa</h4><p>Cuando caduque, el navegador avisará de «sitio no seguro» antes de enseñar la web, y la mayoría de la gente se irá. Google también lo tiene en cuenta.</p></div>
+</article>
+
+<article class="problema">
+  <span class="num">5</span>
+  <div class="bloque"><h3>Poco contenido, y el que hay está caducado</h3></div>
+  <div class="bloque"><h4>Qué está mal</h4><p>Toda la web tiene 144 palabras, sin fotos, y lo primero que se ve es una «Promoción verano 2025» que ya terminó.</p></div>
+  <div class="bloque"><h4>Por qué importa</h4><p>Con tan poco texto Google no tiene de qué posicionarla, y una oferta pasada da sensación de negocio abandonado.</p></div>
+</article>
+
+<h2>Cómo te ayudamos</h2>
+
+<div class="paso0">
+  <p class="etq">Paso 0 · Arreglo exprés</p>
+  <h3>¿Solo quieres arreglar estos 5 problemas? Los resolvemos en 48 horas.</h3>
+  <p class="suave" style="margin-top:8px">Si en los 30 días siguientes contratas el Diseño web, te lo descontamos.</p>
+  <span class="boton">Quiero el Arreglo exprés</span>
+  <p class="nota-boton">En el diagnóstico real, este botón abre WhatsApp con el mensaje ya escrito, y aquí va el precio del arreglo.</p>
+</div>
+
+<p style="margin-top:20px">El diagnóstico encontró 17 puntos a mejorar en total. El Arreglo exprés cubre los 5 más urgentes; el Diseño web los resuelve todos.</p>
+
+<div class="servicios">
+  <div class="servicio">
+    <p class="etq">01 · Diseño web</p>
+    <h3>Renovamos tu web</h3>
+    <ul>
+      <li>Titular y descripción con «dentista en Valladolid»</li>
+      <li>Diseñada primero para el móvil</li>
+      <li>Fotos reales de la clínica y del equipo</li>
+      <li>Una página por tratamiento</li>
+      <li>Horario, dirección y reserva a la vista</li>
+    </ul>
+  </div>
+  <div class="servicio">
+    <p class="etq">02 · Auditoría Completa</p>
+    <h3>Tu negocio, por fuera y por dentro</h3>
+    <ul>
+      <li>Web, ficha de Google, reseñas, redes y competencia</li>
+      <li>Agenda, cobros y herramientas por dentro</li>
+      <li>Plan de acción por fases</li>
+    </ul>
+  </div>
+  <div class="servicio">
+    <p class="etq">03 · Posicionamiento AEO</p>
+    <h3>Que la IA te recomiende</h3>
+    <ul>
+      <li>Que los asistentes de IA citen a la clínica cuando alguien pregunta por un dentista</li>
+      <li>Necesita una web en buen estado.</li>
+    </ul>
+  </div>
+</div>
+<p class="pack">¿Quieres las tres? El Pack completo las junta con descuento.</p>
+<p class="cierre">Escríbenos por WhatsApp.</p>
+
+<h2>Anexo · Las 8 categorías</h2>
+<p class="suave">Lo que se encontró en cada parte de la web. La nota final es la media de las ocho, según el peso de cada una.</p>
+
+<div class="categoria">
+  <div class="cat-cab"><h3>Título y descripción <span class="suave" style="font-weight:400">· peso 20 %</span></h3><span>30</span></div>
+  <div class="barra"><i style="width:30%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est adv">Mejorable</span>El título tiene 21 letras y no dice el servicio ni la ciudad</li>
+    <li><span class="est err">Falta</span>No hay descripción para Google</li>
+    <li><span class="est adv">Mejorable</span>No indica cuál es la dirección principal de la página</li>
+    <li><span class="est ok">Bien</span>Preparada para móvil y con el idioma (español) indicado</li>
+    <li><span class="est ok">Bien</span>No bloquea a Google</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Titulares <span class="suave" style="font-weight:400">· peso 15 %</span></h3><span>60</span></div>
+  <div class="barra"><i style="width:60%;background:var(--medio)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est ok">Bien</span>Un solo titular principal</li>
+    <li><span class="est ok">Bien</span>Apartados en orden y con nombres claros</li>
+    <li><span class="est adv">Mejorable</span>El titular principal es «Bienvenidos a Clínica Dental Olmedo»: no dice qué hace ni dónde</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Imágenes <span class="suave" style="font-weight:400">· peso 10 %</span></h3><span>20</span></div>
+  <div class="barra"><i style="width:20%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est err">Falta</span>Ninguna foto: ni de la clínica, ni del equipo, ni de resultados</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Enlaces <span class="suave" style="font-weight:400">· peso 10 %</span></h3><span>75</span></div>
+  <div class="barra"><i style="width:75%;background:var(--medio)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est ok">Bien</span>3 enlaces internos y ninguno roto</li>
+    <li><span class="est ok">Bien</span>Los textos de los enlaces dicen adónde llevan</li>
+    <li><span class="est adv">Mejorable</span>El enlace a WhatsApp no lleva la protección recomendada para enlaces externos</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Vista previa al compartir <span class="suave" style="font-weight:400">· peso 10 %</span></h3><span>0</span></div>
+  <div class="barra"><i style="width:2%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est err">Falta</span>Al compartir el enlace por WhatsApp o redes no sale ni imagen ni descripción</li>
+    <li><span class="est adv">Mejorable</span>Tampoco tiene la tarjeta para X (Twitter)</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Datos para Google <span class="suave" style="font-weight:400">· peso 10 %</span></h3><span>0</span></div>
+  <div class="barra"><i style="width:2%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est err">Falta</span>No le dice a Google que es una clínica dental, ni su dirección, horario o teléfono</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Técnico <span class="suave" style="font-weight:400">· peso 15 %</span></h3><span>35</span></div>
+  <div class="barra"><i style="width:35%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est ok">Bien</span>Carga rápido: menos de 3 KB</li>
+    <li><span class="est ok">Bien</span>Certificado de seguridad válido hoy</li>
+    <li><span class="est err">Falta</span>El certificado caduca en 10 días</li>
+    <li><span class="est err">Falta</span>La dirección sin «https» no pasa a la versión segura</li>
+    <li><span class="est err">Falta</span>En el móvil la página mide 724 píxeles de ancho y se sale de la pantalla</li>
+    <li><span class="est adv">Mejorable</span>Enseña la versión de su programa (PHP 7.4), que ya no recibe actualizaciones</li>
+    <li><span class="est adv">Mejorable</span>Sin icono en la pestaña del navegador</li>
+    <li><span class="est adv">Mejorable</span>Sin mapa del sitio ni archivo de indicaciones para Google</li>
+  </ul>
+</div>
+<div class="categoria">
+  <div class="cat-cab"><h3>Contenido <span class="suave" style="font-weight:400">· peso 10 %</span></h3><span>25</span></div>
+  <div class="barra"><i style="width:25%;background:var(--critico)"></i></div>
+  <ul class="hallazgos">
+    <li><span class="est err">Falta</span>144 palabras en toda la web; lo recomendable para una página principal son más de 300</li>
+    <li><span class="est err">Falta</span>Promoción del verano de 2025 todavía arriba</li>
+    <li><span class="est ok">Bien</span>Buena proporción de texto respecto al código (36 %)</li>
+  </ul>
+</div>
+
+<p class="suave" style="margin-top:16px;font-size:14px">Nota final: 30 × 0,20 + 60 × 0,15 + 20 × 0,10 + 75 × 0,10 + 0 × 0,10 + 0 × 0,10 + 35 × 0,15 + 25 × 0,10 = 32,25 → <b>32 de 100</b>.</p>
+
+<footer class="pie">DASTAN X-TECH · dastanxtech.com · Diagnóstico hecho solo con lo que la web enseña públicamente. No se ha accedido a ningún sistema del negocio.</footer>
+</div>
+</body>
+</html>

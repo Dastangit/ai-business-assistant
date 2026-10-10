@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Así es lo que recibe tu negocio · DASTAN X-TECH</title>
+<meta name="description" content="Dos ejemplos completos con un negocio ficticio: el diagnóstico SEO de su web y la Auditoría Completa de Negocio de DASTAN X-TECH.">
+<link rel="canonical" href="https://dastanxtech.com/muestras">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dastanxtech.com/muestras">
+<meta property="og:title" content="Así es lo que recibe tu negocio · DASTAN X-TECH">
+<meta property="og:description" content="Mira un diagnóstico SEO y una Auditoría Completa de Negocio de ejemplo, de principio a fin.">
+<meta property="og:image" content="https://dastanxtech.com/opengraph-image">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500&display=swap">
+<style>
+/* Composición: portada corta con la promesa, y dos «expedientes» (uno por servicio) con una vista previa fiel del informe real y el botón para abrir el ejemplo completo. */
+:root {
+  /* Estilo claro de dastanxtech.com: crema, tinta, violeta en los detalles y lavanda en el botón principal */
+  --fondo: #F5F4EF;
+  --superficie: #FFFFFF;
+  --texto: #1A1722;
+  --suave: #5A5566;
+  --linea: #E2DFE6;
+  --violeta: #7C3AED;
+  --turquesa: #0F8F7F;
+  --rojo: #C9363B;
+  --rojo-fondo: #FCE9EA;
+  --ambar: #A86A08;
+  --verde: #157F52;
+  --boton: #ECE6F8;
+  --boton-texto: #2E1F55;
+  --boton-borde: #D5CAEE;
+  --letra: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Consolas, monospace;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fondo); color: var(--texto); font: 16px/1.6 var(--letra); }
+.envoltorio { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 0 64px; }
+h1, h2, h3 { line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.etq { font: 500 12px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--suave); }
+.marca { display: flex; align-items: center; gap: 10px; padding-block: 22px; font-weight: 700; letter-spacing: .03em; }
+.marca svg { width: 34px; height: 34px; }
+
+.portada { padding-block: 28px 40px; display: grid; gap: 16px; max-width: 760px; }
+.portada h1 { font-size: clamp(2rem, 5.2vw, 3.4rem); font-weight: 800; letter-spacing: -.02em; }
+.portada h1 em { font-style: normal; color: var(--violeta); }
+.portada p { color: var(--suave); font-size: 1.1rem; max-width: 62ch; }
+
+.expediente { border-top: 1px solid var(--linea); padding-block: 44px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
+.expediente h2 { font-size: clamp(1.6rem, 3.4vw, 2.2rem); margin-block: 10px 12px; }
+.expediente .entrada { color: var(--suave); margin-bottom: 18px; max-width: 52ch; }
+.lista { list-style: none; padding: 0; margin: 0 0 22px; display: grid; gap: 10px; }
+.lista li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+.lista li::before { content: "✓"; color: var(--turquesa); font-weight: 700; }
+.lista b { font-weight: 600; }
+.acciones { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.boton { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; border-radius: 12px; padding: 12px 22px; min-height: 48px; background: var(--boton); color: var(--boton-texto); border: 1px solid var(--boton-borde); }
+.boton:hover { background: #E1D8F4; border-color: #C4B5EA; }
+.boton:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 3px; }
+.ficticio { font-size: 13px; color: var(--suave); }
+
+/* Vista previa: una hoja del informe, en miniatura pero fiel */
+.hoja { background: var(--superficie); border: 1px solid var(--linea); border-radius: 18px; padding: 22px; box-shadow: 0 18px 40px -28px rgba(46,31,85,.35); min-width: 0; }
+.hoja-cab { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; margin-bottom: 16px; }
+.hoja-cab b { font-size: 1.05rem; }
+.puntuacion { display: flex; gap: 18px; align-items: center; margin-bottom: 18px; flex-wrap: wrap; }
+.anillo { width: 104px; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(closest-side, var(--superficie) 78%, transparent 79% 100%), conic-gradient(var(--rojo) 32%, var(--linea) 0); flex: none; }
+.anillo span { font-size: 34px; font-weight: 800; line-height: 1; }
+.anillo small { display: block; font-size: 11px; color: var(--suave); text-align: center; }
+.mini { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 14.5px; }
+.mini li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.mini .n { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: 12px; font-weight: 800; background: var(--rojo-fondo); color: var(--rojo); }
+.cats { display: grid; gap: 7px; margin-top: 16px; }
+.cat { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr 2.2em; gap: 10px; align-items: center; font-size: 13.5px; }
+.cat i { height: 7px; border-radius: 4px; background: var(--linea); position: relative; overflow: hidden; }
+.cat i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: var(--v); background: var(--c); border-radius: 4px; }
+.cat span:last-child { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+.dos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.cifra { border: 1px solid var(--linea); border-radius: 14px; padding: 12px 14px; }
+.cifra b { display: block; font-size: 30px; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.cifra b small { font-size: 15px; color: var(--suave); font-weight: 600; }
+.cifra .banda { display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 700; padding: 1px 9px; border-radius: 10px; }
+.critico { color: var(--rojo); background: var(--rojo-fondo); }
+.flojo { color: var(--ambar); background: color-mix(in srgb, var(--ambar) 16%, var(--superficie)); }
+.fases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 16px; }
+.fase { border: 1px solid var(--linea); border-radius: 12px; padding: 10px; font-size: 13px; line-height: 1.35; }
+.fase b { display: block; font: 500 12px/1.2 var(--mono); color: var(--violeta); margin-bottom: 4px; }
+.cruce { border: 1px solid color-mix(in srgb, var(--rojo) 45%, var(--linea)); border-radius: 14px; padding: 14px; font-size: 14px; display: grid; gap: 8px; }
+.cruce .etq { color: var(--rojo); }
+.lado { display: grid; grid-template-columns: 5.8em 1fr; gap: 8px; }
+.lado span:first-child { color: var(--suave); font-size: 12.5px; padding-top: 2px; }
+.lado q { font-style: italic; quotes: "«" "»"; }
+.flujo { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 14px; font-size: 12.5px; }
+.flujo span { border: 1.5px solid var(--linea); border-radius: 8px; padding: 4px 8px; }
+.flujo .r { border-color: var(--rojo); color: var(--rojo); }
+.flujo .a { border-color: #4F8FE0; color: #6EA8F0; }
+.flujo .v { border-color: var(--verde); color: var(--verde); }
+.flujo em { font-style: normal; color: var(--suave); }
+
+.cierre { border-top: 1px solid var(--linea); padding-top: 40px; display: grid; gap: 12px; max-width: 640px; }
+.cierre h2 { font-size: 1.6rem; }
+.cierre p { color: var(--suave); }
+.whatsapp { display: inline-flex; gap: 10px; align-items: center; font: 600 1.05rem var(--mono); }
+.boton-wa { background: #25D366; color: #06280f; border-color: #1fb457; }
+.boton-wa:hover { background: #22c55e; border-color: #1fb457; }
+.copiar { font: inherit; font-size: 13px; border: 1px solid var(--linea); background: transparent; color: var(--texto); border-radius: 8px; padding: 4px 10px; cursor: pointer; }
+.copiar:focus-visible { outline: 2px solid var(--turquesa); }
+
+@media (max-width: 820px) {
+  .expediente { grid-template-columns: 1fr; gap: 26px; padding-block: 34px; }
+  .fases { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 420px) {
+  .dos { grid-template-columns: 1fr; }
+  .cat { grid-template-columns: minmax(0, 7.5em) 1fr 2em; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .boton { transition: filter .15s; }
+}
+</style>
+</head>
+<body>
+
+<div class="envoltorio">
+  <header class="marca">
+    <svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="mx" x1="140" y1="0" x2="372" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#BA45FF"/><stop offset=".5" stop-color="#8B7FE0"/><stop offset="1" stop-color="#34DCAB"/></linearGradient><radialGradient id="mbg" cx="50%" cy="38%" r="70%"><stop offset="0" stop-color="#17111F"/><stop offset="1" stop-color="#0B0810"/></radialGradient></defs><circle cx="256" cy="256" r="252" fill="url(#mbg)"/><path fill="url(#mx)" d="M146 138h70l40 70 40-70h70l-75 118 75 118h-70l-40-70-40 70h-70l75-118z"/></svg>
+    DASTAN X-TECH
+  </header>
+
+  <section class="portada">
+    <p class="etq">Muestras de entrega</p>
+    <h1>Así es lo que <em>recibe tu negocio</em></h1>
+    <p>Dos ejemplos completos hechos con una clínica dental inventada: el diagnóstico SEO de su web y la auditoría completa del negocio. Ábrelos, recórrelos y mira con tus propios ojos lo que te entregamos.</p>
+  </section>
+
+  <section class="expediente" id="seo">
+    <div>
+      <p class="etq">Diagnóstico SEO · gratis</p>
+      <h2>Cómo te ve Google, en una nota</h2>
+      <p class="entrada">Revisamos tu web como la lee Google y te damos una nota de 0 a 100, los 5 problemas que más clientes te hacen perder y por qué importan. En PDF, también en versión para el móvil.</p>
+      <ul class="lista">
+        <li><span><b>Nota de 0 a 100</b>, con lo que ya funciona bien</span></li>
+        <li><span><b>Los 5 problemas más urgentes</b>, explicados sin tecnicismos</span></li>
+        <li><span><b>8 categorías revisadas</b>: título, titulares, imágenes, enlaces, vista previa al compartir, datos para Google, técnico y contenido</span></li>
+        <li><span><b>Cómo arreglarlo</b>: los 5 problemas en 48 horas, o una web nueva</span></li>
+      </ul>
+      <div class="acciones">
+        <a class="boton" href="/ejemplo-diagnostico-seo" target="_blank" rel="noopener">Ver el diagnóstico de ejemplo</a>
+      </div>
+    </div>
+
+    <div class="hoja" aria-label="Vista previa del diagnóstico SEO de ejemplo">
+      <div class="hoja-cab"><b>Clínica Dental Olmedo</b><span class="etq">Diagnóstico SEO</span></div>
+      <div class="puntuacion">
+        <div class="anillo"><div><span>32</span><small>de 100</small></div></div>
+        <ul class="mini">
+          <li><span class="n">1</span><span>Google no sabe qué hace ni dónde está</span></li>
+          <li><span class="n">2</span><span>No la reconoce como negocio local</span></li>
+          <li><span class="n">3</span><span>En el móvil se sale de la pantalla</span></li>
+        </ul>
+      </div>
+      <div class="cats">
+        <div class="cat"><span>Título y descripción</span><i style="--v:30%;--c:var(--rojo)"></i><span>30</span></div>
+        <div class="cat"><span>Titulares</span><i style="--v:60%;--c:var(--ambar)"></i><span>60</span></div>
+        <div class="cat"><span>Enlaces</span><i style="--v:75%;--c:var(--ambar)"></i><span>75</span></div>
+        <div class="cat"><span>Técnico</span><i style="--v:35%;--c:var(--rojo)"></i><span>35</span></div>
+        <div class="cat"><span>Datos para Google</span><i style="--v:2%;--c:var(--rojo)"></i><span>0</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="expediente" id="auditoria">
+    <div>
+      <p class="etq">Auditoría Completa de Negocio</p>
+      <h2>Tu negocio, por fuera y por dentro</h2>
+      <p class="entrada">Miramos lo que ve tu cliente (web, Google, reseñas, redes, anuncios y competencia) y cómo trabajas por dentro, a partir de un cuestionario. Y lo cruzamos: dónde prometes algo que tu día a día no puede cumplir.</p>
+      <ul class="lista">
+        <li><span><b>Dos notas</b>: lo que enseñas al mundo (0-100) y cómo trabajas por dentro (1-5)</span></li>
+        <li><span><b>Tus procesos dibujados</b> paso a paso, con quién hace cada cosa y dónde se atasca</span></li>
+        <li><span><b>Horas y dinero al mes</b> que se pueden recuperar, con tus propios datos</span></li>
+        <li><span><b>Revisión de seguridad</b> de tu correo, tu web y tus cuentas</span></li>
+        <li><span><b>Un solo plan</b>, por fases, y lo que puedes hacer esta semana</span></li>
+      </ul>
+      <div class="acciones">
+        <a class="boton" href="/ejemplo-auditoria-completa" target="_blank" rel="noopener">Ver la auditoría de ejemplo</a>
+      </div>
+    </div>
+
+    <div class="hoja" aria-label="Vista previa de la auditoría completa de ejemplo">
+      <div class="hoja-cab"><b>Clínica Dental Olmedo</b><span class="etq">Auditoría Completa</span></div>
+      <div class="dos">
+        <div class="cifra"><b>28 <small>/ 100</small></b>Lo que enseña al mundo<br><span class="banda critico">Crítico</span></div>
+        <div class="cifra"><b>2,0 <small>/ 5</small></b>Cómo trabaja por dentro<br><span class="banda flojo">Herramientas sueltas</span></div>
+      </div>
+      <div class="fases">
+        <div class="fase"><b>01</b>Mapa de procesos</div>
+        <div class="fase"><b>02</b>Oportunidades de IA</div>
+        <div class="fase"><b>03</b>Ciberseguridad</div>
+        <div class="fase"><b>04</b>Hoja de ruta</div>
+      </div>
+      <div class="cruce">
+        <p class="etq">Lo que no cuadra</p>
+        <div class="lado"><span>Su anuncio</span><q>Escríbenos por WhatsApp y te respondemos al momento.</q></div>
+        <div class="lado"><span>Por dentro</span><q>Nadie: se contesta al día siguiente</q></div>
+      </div>
+      <div class="flujo" aria-label="Recorrido del paciente, resumido">
+        <span>Ve el anuncio</span><em>→</em><span class="a">Reserva online</span><em>→</em><span class="a">Recordatorio automático</span><em>→</em><span class="v">Primera visita</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <h2>¿Quieres el de tu negocio?</h2>
+    <p>El diagnóstico SEO es gratis si tienes web. Escríbenos por WhatsApp con el nombre de tu negocio y tu web.</p>
+    <p><a class="boton boton-wa" href="https://wa.me/16055003653?text=Hola%2C%20vi%20los%20ejemplos%20y%20quiero%20el%20diagn%C3%B3stico%20de%20mi%20negocio." target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+    <p class="ficticio">Los dos ejemplos son de un negocio inventado: la clínica, su web, sus reseñas y sus datos no existen.</p>
+  </section>
+</div>
+</body>
+</html>
