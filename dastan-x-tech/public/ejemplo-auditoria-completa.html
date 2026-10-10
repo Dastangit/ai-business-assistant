@@ -1657,7 +1657,7 @@
 </style>
 <style>
 :root {
-  --marca: #2E1F55;
+  --marca: #13101A;
   --acento: #A855F7;
   --tinta: #1d232b;
   --suave: #5b6573;
@@ -1698,12 +1698,13 @@ p { margin: 0 0 1em; }
 .portada { background: var(--marca); color: #fff; padding: 64px 24px 48px; }
 .portada-in { max-width: 1100px; margin: 0 auto; }
 .antetitulo { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; opacity: .8; margin-bottom: .6em; }
-.portada h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: .35em; }
+.portada h1 { font-size: clamp(1.9rem, 4.2vw, 2.75rem); margin-bottom: .35em; }
 .subtitulo { font-size: 1.15rem; opacity: .9; max-width: 760px; }
 .fases { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 32px; margin-bottom: 32px; }
 .fases li { background: rgba(255,255,255,.1); border-radius: 10px; padding: 12px 14px; display: flex; gap: 10px; align-items: center; font-size: .9rem; opacity: .75; }
 .fases li b { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid currentColor; flex: none; font-size: .85rem; }
-.fases li.activa { background: #fff; color: var(--marca); opacity: 1; font-weight: 600; }
+/* En el 360 las cuatro fases están activas: tarjetas sutiles sobre la portada, no cajas blancas que parecen botones */
+.fases li.activa { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); color: #fff; opacity: 1; font-weight: 600; }
 .fases li.activa b { background: var(--acento); border-color: var(--acento); color: #fff; }
 .portada-meta { display: flex; flex-wrap: wrap; gap: 12px 40px; margin-bottom: 0; }
 .portada-meta dt { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; opacity: .7; }
@@ -1735,7 +1736,7 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .leyenda-item { display: flex; gap: 12px; align-items: flex-start; background: var(--papel); border: 1px solid var(--linea); border-radius: 10px; padding: 10px 12px; }
 .leyenda-item svg { flex: none; }
 .leyenda-item b { display: block; font-size: .9rem; }
-.leyenda-item span { font-size: .82rem; color: var(--suave); }
+.leyenda-item span { font-size: .875rem; color: var(--suave); }
 
 /* ---------- Mapa general ---------- */
 .mapa-procesos { background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; box-shadow: var(--sombra); }
@@ -1751,10 +1752,10 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .mapa-soporte .mapa-col-cab { grid-column: 1 / -1; }
 .mapa-proc { display: flex; flex-direction: column; gap: 2px; background: var(--papel); border: 1px solid var(--linea); border-radius: 8px; padding: 8px 10px; text-decoration: none; color: var(--tinta); font-size: .88rem; line-height: 1.3; position: relative; }
 .mapa-proc:hover { border-color: var(--area); box-shadow: var(--sombra); }
-.mapa-proc .codigo { font-size: .7rem; font-weight: 700; color: var(--area); }
+.mapa-proc .codigo { font-size: .75rem; font-weight: 700; color: var(--area); }
 .mapa-sig { font-size: .75rem; color: var(--suave); }
 .mapa-marcas { position: absolute; top: 6px; right: 8px; display: flex; gap: 4px; }
-.mapa-marcas span { font-size: .7rem; font-weight: 700; border-radius: 9px; padding: 0 6px; }
+.mapa-marcas span { font-size: .75rem; font-weight: 700; border-radius: 9px; padding: 0 6px; }
 .m-dolor { background: var(--dolor-fondo); color: var(--dolor); }
 .m-supuesto { background: var(--supuesto-fondo); color: var(--supuesto); }
 .mapa-vacio { color: var(--suave); font-style: italic; font-size: .85rem; margin: 0; }
@@ -1783,7 +1784,7 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .diagrama-barra button { padding: 4px 10px; font-size: .8rem; }
 .lienzo { height: 420px; position: relative; background: #fff; }
 .lienzo.cargando::after { content: "Dibujando el diagrama…"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--suave); font-size: .9rem; }
-.pista { font-size: .78rem; color: var(--suave); margin: 0; padding: 6px 10px; border-top: 1px solid var(--linea); background: #fafbfc; }
+.pista { font-size: .85rem; color: var(--suave); margin: 0; padding: 6px 10px; border-top: 1px solid var(--linea); background: #fafbfc; }
 .parcial .pista::before { content: "Este proceso es largo: arrastra el diagrama para ver el resto o pulsa Ajustar para verlo entero. "; font-weight: 600; color: var(--tinta); }
 .impresion { display: none; }
 .diagrama:fullscreen { display: flex; flex-direction: column; border-radius: 0; }
@@ -1793,13 +1794,13 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .djs-element.djs-shape { cursor: pointer; }
 
 .senales { display: flex; flex-wrap: wrap; gap: 6px; }
-.senal { background: var(--fondo); border: 1px solid var(--linea); border-radius: 20px; padding: 3px 12px; font-size: .85rem; }
+.senal { background: var(--fondo); border: 1px solid var(--linea); border-radius: 20px; padding: 3px 12px; font-size: .875rem; }
 .senal.ojo { background: #fff4ec; border-color: #f7c9a8; }
 .senal.dolor { background: var(--dolor-fondo); border-color: #f5b5b0; color: var(--dolor); }
 .senal.supuesto { background: var(--supuesto-fondo); border-color: #f0d98a; color: var(--supuesto); }
 .senal.horas { background: #eef4ff; border-color: #c7d7fe; }
 .dependencia { margin: 10px 0 0; padding: 8px 12px; background: #fff4ec; border-radius: 8px; font-size: .9rem; }
-.operacion { margin: 8px 0 0; font-size: .82rem; color: var(--suave); }
+.operacion { margin: 8px 0 0; font-size: .875rem; color: var(--suave); }
 
 .sop-desplegable { margin-top: 20px; border-top: 1px solid var(--linea); padding-top: 12px; }
 .sop-desplegable > summary { cursor: pointer; font-weight: 700; font-size: 1.05rem; padding: 4px 0; }
@@ -1811,7 +1812,7 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .sop-tabla th { text-align: left; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); border-bottom: 2px solid var(--linea); padding: 8px; }
 .sop-tabla td { border-bottom: 1px solid var(--linea); padding: 10px 8px; vertical-align: top; }
 .sop-tabla td.num { font-weight: 700; color: var(--marca); width: 36px; text-align: center; }
-.sop-tabla td.evento-etq { font-size: .7rem; text-transform: uppercase; color: var(--suave); }
+.sop-tabla td.evento-etq { font-size: .75rem; text-transform: uppercase; color: var(--suave); }
 .sop-tabla td.tiempo { white-space: nowrap; color: var(--suave); }
 .sop-tabla ul { margin: 6px 0 0; padding-left: 1.1em; color: var(--suave); }
 .sop-tabla tr.sop-decision td, .sop-tabla tr.sop-evento td { background: #fafbfc; }
@@ -1825,13 +1826,13 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .aviso-dolor::before { content: "Lo que cuenta el equipo: "; font-weight: 700; }
 .aviso-supuesto { background: var(--supuesto-fondo); color: var(--supuesto); }
 .aviso-supuesto::before { content: "Por confirmar: "; font-weight: 700; }
-.etq { font-size: .7rem; font-weight: 700; border-radius: 4px; padding: 1px 6px; vertical-align: 2px; }
+.etq { font-size: .75rem; font-weight: 700; border-radius: 4px; padding: 1px 6px; vertical-align: 2px; }
 .etq-supuesto { background: var(--supuesto-fondo); color: var(--supuesto); }
 .chip { display: inline-block; font-size: .78rem; background: var(--fondo); border: 1px solid var(--linea); border-radius: 12px; padding: 0 8px; margin: 1px 0; white-space: nowrap; }
 .opciones { list-style: none; padding-left: 0 !important; color: var(--tinta) !important; }
 .sop-bloques { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 16px; }
 .sop-bloque h5 { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); margin: 0 0 6px; }
-.sop-bloque ul { margin: 0; padding-left: 1.1em; font-size: .9rem; }
+.sop-bloque ul { margin: 0; padding-left: 1.1em; font-size: .95rem; }
 
 #por-confirmar .hueco-bloque { background: var(--papel); border: 1px solid var(--linea); border-left: 4px solid #f0d98a; border-radius: 10px; padding: 12px 18px; margin-bottom: 12px; }
 #por-confirmar h4 { margin-top: 0; }
@@ -1880,16 +1881,16 @@ blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--acento)
 .nota-cifras { color: var(--suave); font-size: .9rem; }
 .resumen-p { font-size: 1.08rem; max-width: 820px; }
 q.cita { font-style: italic; quotes: "«" "»"; }
-.fuente { font-size: .8rem; color: var(--suave); font-style: normal; }
+.fuente { font-size: .85rem; color: var(--suave); font-style: normal; }
 .sin-datos { background: #f1f3f5; border: 1px dashed #b8c0ca; border-radius: 10px; padding: 12px 16px; margin: 10px 0; }
 .sin-datos span { display: block; color: var(--suave); font-size: .9rem; margin-top: 4px; }
 .etq-estado { display: inline-block; font-size: .78rem; font-weight: 700; border-radius: 10px; padding: 1px 9px; background: #eceff3; color: #47515e; border: 1px dashed #aab3bf; }
-.tabla { background: var(--papel); font-size: .92rem; }
+.tabla { background: var(--papel); font-size: 1rem; }
 .tabla th, .tabla td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--linea); vertical-align: top; }
 .tabla th { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--suave); background: #f3f5f8; }
 .tabla .num { text-align: right; white-space: nowrap; }
 .tabla tfoot td { background: #fafbfc; }
-.tabla td.operacion { font-size: .8rem; color: var(--suave); }
+.tabla td.operacion { font-size: .875rem; color: var(--suave); }
 .barra-nota { display: inline-block; width: 120px; height: 8px; background: #eceff3; border-radius: 4px; vertical-align: middle; margin-right: 8px; overflow: hidden; }
 .barra-nota > span { display: block; height: 100%; background: var(--suave); }
 .barra-nota > .critico { background: var(--critico); } .barra-nota > .flojo { background: var(--flojo); } .barra-nota > .aceptable { background: #c9a400; } .barra-nota > .bueno, .barra-nota > .referencia { background: var(--bueno); }
@@ -1909,7 +1910,7 @@ q.cita { font-style: italic; quotes: "«" "»"; }
 .cruce-lados { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
 .cruce-lados > div { background: #fafbfc; border-radius: 8px; padding: 10px 14px; }
 .solucion { background: var(--bueno-f); border-radius: 8px; padding: 8px 12px; }
-.etq-mitad { font-size: .72rem; font-weight: 600; color: var(--suave); border: 1px solid var(--linea); border-radius: 8px; padding: 1px 8px; vertical-align: 2px; }
+.etq-mitad { font-size: .75rem; font-weight: 600; color: var(--suave); border: 1px solid var(--linea); border-radius: 8px; padding: 1px 8px; vertical-align: 2px; }
 .senal.mejora { background: var(--azul-f); border-color: #b9d2ee; color: var(--azul); }
 .senal.bien { background: var(--bueno-f); border-color: #b5e0c8; color: var(--bueno); }
 .nivel { white-space: nowrap; }
@@ -1919,9 +1920,9 @@ q.cita { font-style: italic; quotes: "«" "»"; }
 .grupo { background: var(--papel); border: 1px solid var(--linea); border-top: 5px solid var(--suave); border-radius: var(--radio); padding: 14px 18px; }
 .grupo h4 { margin: 0 0 4px; display: flex; justify-content: space-between; }
 .grupo h4 span { background: #eceff3; border-radius: 10px; padding: 0 9px; font-size: .85rem; }
-.grupo ul { padding-left: 1.1em; margin: 8px 0 0; font-size: .9rem; }
+.grupo ul { padding-left: 1.1em; margin: 8px 0 0; font-size: .95rem; }
 .grupo li { margin-bottom: 8px; }
-.grupo .via { font-size: .8rem; color: var(--suave); }
+.grupo .via { font-size: .875rem; color: var(--suave); }
 .g-victorias { border-top-color: var(--bueno); } .g-apuestas { border-top-color: var(--azul); } .g-relleno { border-top-color: #c9a400; } .g-descartes { border-top-color: #aab3bf; }
 .perdida { background: var(--critico-f); border-radius: 10px; padding: 12px 16px; margin: 10px 0; }
 .operacion-grande { font-family: ui-monospace, Consolas, monospace; font-size: .95rem; margin: 6px 0; }
@@ -1932,18 +1933,18 @@ q.cita { font-style: italic; quotes: "«" "»"; }
 .aviso-sensibles { background: var(--flojo-f); border-radius: 10px; padding: 10px 14px; }
 .riesgos { list-style: none; padding: 0; }
 .riesgos li { background: var(--papel); border: 1px solid var(--linea); border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; }
-.riesgos li span:last-child { display: block; color: var(--suave); font-size: .9rem; margin-top: 4px; }
+.riesgos li span:last-child { display: block; color: var(--suave); font-size: .95rem; margin-top: 4px; }
 .sev { font-weight: 700; font-size: .75rem; border-radius: 8px; padding: 1px 8px; text-transform: uppercase; letter-spacing: .04em; }
 .s-critico { background: var(--critico); color: #fff; } .s-alto { background: var(--critico-f); color: var(--critico); } .s-medio { background: var(--flojo-f); color: var(--flojo); }
 .estado { font-weight: 700; font-size: .8rem; white-space: nowrap; }
 .e-cumple { color: var(--bueno); } .e-parcial { color: var(--flojo); } .e-no_cumple { color: var(--critico); } .e-sin_datos, .e-no_aplica { color: var(--suave); }
-.tabla-controles td.evid { font-size: .82rem; color: var(--suave); }
+.tabla-controles td.evid { font-size: .875rem; color: var(--suave); }
 .origen { font-size: .78rem; font-weight: 700; border-radius: 8px; padding: 1px 8px; background: #eceff3; white-space: nowrap; }
 .o-cruce { background: var(--critico); color: #fff; } .o-seguridad { background: #2b2f36; color: #fff; } .o-dentro { background: var(--azul-f); color: var(--azul); } .o-fuera { background: var(--flojo-f); color: var(--flojo); }
 .quick { background: var(--bueno-f); border-radius: var(--radio); padding: 14px 20px; margin: 12px 0 18px; }
 .quick h3 { margin-top: 0; }
 .fases-ruta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 18px; }
-.fase-ruta { background: var(--papel); border: 1px solid var(--linea); border-top: 4px solid var(--marca); border-radius: var(--radio); padding: 14px; font-size: .9rem; }
+.fase-ruta { background: var(--papel); border: 1px solid var(--linea); border-top: 4px solid var(--marca); border-radius: var(--radio); padding: 14px; font-size: .95rem; }
 .fase-ruta ol { padding-left: 1.4em; margin: 6px 0 0; }
 .recorrido { border-top: 4px solid var(--acento); }
 @media (max-width: 760px) {
@@ -2003,7 +2004,7 @@ q.cita { font-style: italic; quotes: "«" "»"; }
     <div><dt>Lo público, leído el</dt><dd>9 de octubre de 2026</dd></div>
     <div><dt>Cuestionario del</dt><dd>6 de octubre de 2026</dd></div>
     <div><dt>Preparado por</dt><dd>DASTAN X-TECH</dd></div>
-    <div><dt>Fecha</dt><dd>9 de octubre de 2026</dd></div>
+    <div><dt>Fecha</dt><dd>10 de octubre de 2026</dd></div>
   </dl>
 </div></section>
 
