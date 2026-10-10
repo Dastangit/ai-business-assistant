@@ -77,6 +77,23 @@ export default function Auditoria({ t, lang }) {
         </div>
       </section>
 
+      {/* EJEMPLO: la auditoría completa de un negocio ficticio, para que se vea qué se entrega (como el informe de AEO) */}
+      <section style={{ padding: '2rem 5% 2rem' }}>
+        <div className="aeo-informe">
+          <span className="label-mono">{t.informe.etiqueta}</span>
+          <h2>{t.informe.titulo}</h2>
+          <p>{t.informe.texto}</p>
+          <div className="aeo-informe-acciones">
+            <a href="/ejemplo-auditoria-completa" className="btn btn-outline-light" target="_blank" rel="noopener">
+              {t.informe.boton}
+            </a>
+            <a href="/ejemplo-diagnostico-seo" className="text-link" target="_blank" rel="noopener">
+              {t.informe.enlaceSeo}
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* DESPUÉS DE LA AUDITORÍA: qué automatizamos y las dos formas de contratarlo */}
       <section style={{ padding: '6rem 5%' }}>
         <h2 style={{ textAlign: 'center', fontSize: '2.5rem', marginBottom: '1.25rem', color: 'var(--ink)' }}>

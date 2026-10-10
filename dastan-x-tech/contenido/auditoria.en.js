@@ -30,6 +30,14 @@ const t = {
       { titulo: 'A report with actionable numbers', texto: 'Every finding backed by real evidence — nothing made up — and a phased action plan with an estimate of the hours and money you could recover each month.' },
     ],
   },
+  // Full example (public/ejemplo-auditoria-completa.html), made with a fictional business. The example is in Spanish.
+  informe: {
+    etiqueta: 'Example',
+    titulo: 'This is the report you get',
+    texto: 'We ran a full audit on a made-up dental clinic so you can see what we deliver: the two scores, what does not add up between what it promises and what it does, its processes mapped step by step, the security review and the phased plan. The example is in Spanish.',
+    boton: 'See an example audit',
+    enlaceSeo: 'Also see the example SEO check →',
+  },
   automatizar: {
     titulo: <>And then, we <span className="accent-light">automate it</span></>,
     intro: 'The process analysis in the audit shows you where your hours go. If you want, we take care of it afterwards: always in your own accounts, with free tools whenever possible.',

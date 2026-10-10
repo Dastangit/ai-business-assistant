@@ -30,6 +30,14 @@ const t = {
       { titulo: 'Informe con cifras accionables', texto: 'Cada hallazgo respaldado por evidencia real — nada inventado — y un plan de acción por fases con una estimación de las horas y el dinero que podrías recuperar cada mes.' },
     ],
   },
+  // Ejemplo completo (public/ejemplo-auditoria-completa.html): hecho con un negocio ficticio, por eso «Ejemplo» y no «Ejemplo real»
+  informe: {
+    etiqueta: 'Ejemplo',
+    titulo: 'Así es el informe que recibes',
+    texto: 'Hicimos una auditoría completa a una clínica dental inventada para que veas qué entregamos: las dos notas, lo que no cuadra entre lo que promete y lo que hace, sus procesos dibujados paso a paso, la revisión de seguridad y el plan por fases.',
+    boton: 'Ver una auditoría de ejemplo',
+    enlaceSeo: 'Ver también el diagnóstico SEO de ejemplo →',
+  },
   // Después de la auditoría: sin precios en el cuerpo, como el resto de la página (van en las preguntas frecuentes).
   // Deben coincidir con OTROS de app/api/chat/route.js y public/llms.txt
   automatizar: {
