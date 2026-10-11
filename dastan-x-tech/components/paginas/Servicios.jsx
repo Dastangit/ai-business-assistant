@@ -2,9 +2,13 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import BotonChat from '@/components/BotonChat';
 import { ruta } from '@/lib/i18n';
+import inicioEs from '@/contenido/inicio.es';
+import inicioEn from '@/contenido/inicio.en';
 
 // /servicios y /en/services: el diseño vive aquí y los textos en contenido/servicios.<lang>.js
 export default function Servicios({ t, lang }) {
+  // Precio y viñetas salen de las tarjetas del inicio: una sola fuente para no desincronizarlos
+  const delInicio = Object.fromEntries((lang === 'en' ? inicioEn : inicioEs).servicios.tarjetas.map((c) => [c.clave, c]));
   return (
     <div className="theme-light">
       <SiteHeader tone="light" lang={lang} />
@@ -24,7 +28,11 @@ export default function Servicios({ t, lang }) {
           <a key={s.clave} href={ruta(s.clave, lang)} className="service-card service-card--light">
             <span className="label-mono">{String(i + 1).padStart(2, '0')}</span>
             <h2 className="card-title">{s.title}</h2>
+            <span className="card-price">{delInicio[s.clave].price}</span>
             <p className="card-text">{s.tagline}</p>
+            <ul className="dot-list card-list">
+              {delInicio[s.clave].items.map((item) => <li key={item}>{item}</li>)}
+            </ul>
             <span className="card-link">{t.verDetalle}</span>
           </a>
         ))}

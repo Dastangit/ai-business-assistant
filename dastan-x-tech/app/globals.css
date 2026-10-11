@@ -186,6 +186,8 @@ a.service-card.service-card--light {
 .service-card--light .label-mono { color: var(--brand-on-light); }
 .service-card--light .card-text { color: var(--ink-2); }
 .service-card--light .card-link { color: var(--brand-on-light); }
+.service-card--light .card-price { color: var(--ink); }
+.service-card--light .card-list { border-top-color: var(--border-light); color: var(--ink); }
 a.service-card.service-card--light:hover, a.service-card.service-card--light:active { border-color: var(--brand-on-light); }
 .service-card .label-mono { color: var(--brand); }
 .card-title { font-size: 1.3125rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; }

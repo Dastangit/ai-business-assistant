@@ -44,7 +44,7 @@ const t = {
         label: '02 · Audit',
         title: 'Digital Business Audit',
         text: 'We pinpoint exactly where your business is losing time and money, with evidence, not guesswork.',
-        items: ['Digital presence score out of 100.', 'Technology maturity score out of 5.', 'Process analysis.', 'A phased action plan.'],
+        items: ['Digital presence score out of 100.', 'Tech maturity score out of 5.', 'Process analysis.', 'A phased action plan.'],
         link: 'Discover the Digital Business Audit →',
         price: 'From 200 USD',
       },

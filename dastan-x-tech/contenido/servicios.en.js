@@ -14,7 +14,7 @@ const t = {
   tarjetas: [
     { clave: 'disenoWeb', title: 'Web Design', tagline: 'We rebuild your current website with your real brand, in under 48 hours.' },
     { clave: 'auditoria', title: 'Digital Business Audit', tagline: 'We pinpoint exactly where your business is losing time and money.' },
-    { clave: 'aeo', title: 'AI Search Optimization (AEO)', tagline: 'Get your business recommended by AI, not just Google.' },
+    { clave: 'aeo', title: 'AI Search (AEO)', tagline: 'Get your business recommended by AI, not just Google.' },
   ],
   verDetalle: 'See details →',
   // Must match the chat (app/api/chat/route.js) and public/llms.txt

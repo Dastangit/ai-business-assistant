@@ -13,7 +13,7 @@ const t = {
   subtitulo: 'Cada decisión, en cada servicio, parte de la misma pregunta: ¿esto ayuda de verdad a este negocio?',
   tarjetas: [
     { clave: 'disenoWeb', title: 'Diseño web', tagline: 'Renovamos tu web actual con tu marca real, en menos de 48 horas.' },
-    { clave: 'auditoria', title: 'Auditoría Completa de Negocio', tagline: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero.' },
+    { clave: 'auditoria', title: 'Auditoría Completa', tagline: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero.' },
     { clave: 'aeo', title: 'Posicionamiento AEO', tagline: 'Que la Inteligencia Artificial recomiende tu negocio, no solo Google.' },
   ],
   verDetalle: 'Ver detalle →',
