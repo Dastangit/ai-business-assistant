@@ -42,7 +42,7 @@ const t = {
   // Deben coincidir con OTROS de app/api/chat/route.js y public/llms.txt
   automatizar: {
     titulo: <>Y después, lo <span className="accent-light">automatizamos</span></>,
-    intro: 'El análisis de procesos de la auditoría te dice dónde se te van las horas. Si quieres, después lo resolvemos nosotros: siempre en tus propias cuentas y con herramientas gratuitas siempre que se pueda.',
+    intro: 'IA con criterio, no por moda: el análisis de procesos de la auditoría te dice dónde se te van las horas, y solo automatizamos lo que te ahorra tiempo o dinero de verdad. Si quieres, lo resolvemos nosotros: siempre en tus propias cuentas y con herramientas gratuitas siempre que se pueda.',
     items: [
       'Un CRM para que ningún cliente se quede sin respuesta: cada contacto de tu web, registrado y con su seguimiento.',
       'Recordatorios de citas, seguimiento de presupuestos y petición de reseñas, funcionando solos.',
@@ -59,11 +59,11 @@ const t = {
     { q: '¿Qué recibo al final de la auditoría?', a: 'Un informe único con dos cifras claras: tu presencia digital sobre 100 y tu madurez tecnológica sobre 5, cada hallazgo respaldado por evidencia real, y un plan de acción por fases con una estimación de cuánto tiempo y dinero podrías recuperar cada mes.' },
     { q: '¿Es una auditoría genérica o hecha para mi negocio?', a: 'Cada hallazgo va acompañado de una evidencia real de tu negocio — una frase de tu web, una reseña con fecha, una respuesta tuya — nunca una plantilla ni un dato inventado.' },
     { q: '¿Cuánto cuesta la Auditoría Completa de Negocio?', a: 'Desde 200 USD. Es nuestro servicio más completo y no incluye la web: si además quieres web nueva y que la IA te recomiende, el Pack completo (Auditoría + Diseño web + AEO) cuesta 400 USD. El precio final depende del tamaño de tu negocio y te lo confirmamos antes de empezar. El diagnóstico SEO gratis es aparte y solo revisa tu web.' },
-    { q: '¿Me ayudan a aplicar lo que encuentre la auditoría?', a: 'Sí, de dos formas. Con una automatización puntual, por 100 USD en un pago único: una sola cosa, como instalar un CRM gratuito y conectarlo al formulario de tu web, o un recordatorio automático de citas. O con la Membresía de Implementación, por 200 USD al mes (mínimo 2 meses): 24 horas de trabajo al mes aplicando el plan de la auditoría, con las automatizaciones que más convengan a tu negocio. Todo se instala en tus propias cuentas.' },
+    { q: '¿Me ayudan a aplicar lo que encuentre la auditoría?', a: 'Sí, de dos formas. Con una automatización puntual, por 100 USD en un pago único: una sola cosa, como instalar un CRM gratuito y conectarlo al formulario de tu web, o un recordatorio automático de citas. O con la Membresía de Implementación, por 200 USD al mes (sin permanencia: cancelas cuando quieras): 24 horas de trabajo al mes aplicando el plan de la auditoría, con las automatizaciones que más convengan a tu negocio. Todo se instala en tus propias cuentas.' },
   ],
   cierre: {
     titulo: '¿Quieres saber qué te está costando dinero?',
-    texto: 'Escríbenos y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. ¿Aún no lo tienes claro? Empieza por el diagnóstico SEO gratis de tu web: es la parte de fuera de la auditoría.',
+    texto: 'Escríbenos: te respondemos lo antes posible y te mostramos exactamente dónde tu negocio está perdiendo tiempo y clientes. ¿Aún no lo tienes claro? Empieza por el diagnóstico SEO gratis de tu web: es la parte de fuera de la auditoría.',
     botonAuditoria: 'Consultar Auditoría Completa',
     mensajeChat: 'Quiero información sobre la Auditoría Completa de Negocio',
     botonDiagnostico: 'Pedir diagnóstico SEO gratis',

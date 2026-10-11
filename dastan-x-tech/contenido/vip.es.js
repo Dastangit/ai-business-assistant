@@ -63,13 +63,13 @@ const t = {
   pedirWhatsapp: 'Pedir por WhatsApp',
   // Se piden por WhatsApp porque se facturan cada mes
   complementos: [
-    { titulo: 'Chat IA en tu web', precio: '$15/mes', texto: 'Responde dudas las 24 h y guarda el nombre y el WhatsApp de quien pregunta. Incluido en la Membresía si encaja con tu negocio.', mensaje: 'Hola, vi la propuesta VIP y me interesa el Chat IA para mi web.' },
-    { titulo: 'Recepcionista IA por WhatsApp', precio: '$150 + $39/mes', texto: 'Atiende tu WhatsApp las 24 h, resuelve dudas y guarda los datos de cada cliente. Se instala en un número secundario del negocio.', mensaje: 'Hola, vi la propuesta VIP y me interesa la Recepcionista IA por WhatsApp.' },
+    { titulo: 'Chat IA en tu web', precio: '$15/mes', texto: 'Responde dudas las 24 h y guarda el nombre y el WhatsApp de quien pregunta. Incluido en la Membresía si encaja con tu negocio. Sin permanencia.', mensaje: 'Hola, vi la propuesta VIP y me interesa el Chat IA para mi web.' },
+    { titulo: 'Recepcionista IA por WhatsApp', precio: '$150 + $39/mes', texto: 'Atiende tu WhatsApp las 24 h, resuelve dudas y guarda los datos de cada cliente. Se instala en un número secundario del negocio. Sin permanencia.', mensaje: 'Hola, vi la propuesta VIP y me interesa la Recepcionista IA por WhatsApp.' },
   ],
   membresia: {
     titulo: 'Membresía de Implementación',
     precio: '$200/mes',
-    texto: 'Aplicamos cada mes el plan de acción de tu Auditoría Completa, sin que tengas que coordinar nada. Mínimo 2 meses.',
+    texto: 'Aplicamos cada mes el plan de acción de tu Auditoría Completa, sin que tengas que coordinar nada. Sin permanencia: cancelas cuando quieras.',
     incluye: [
       '24 h de desarrollo al mes',
       'Chat IA en tu web incluido, si encaja con tu negocio',

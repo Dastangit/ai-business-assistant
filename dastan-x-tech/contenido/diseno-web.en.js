@@ -59,11 +59,11 @@ const t = {
     { q: 'What do you need from my business to get started?', a: 'Your real brand: logo, colors, fonts, copy, prices and current reviews. We never make up content that isn’t yours.' },
     { q: 'What if I already have a website?', a: 'We analyze it first: we give you an honest review with concrete, observable problems — each with the reason it costs you customers — before touching anything.' },
     { q: 'What if I don’t want a new website?', a: 'If you already have a website and only want to fix the most urgent issues, there’s the 48-Hour Fix: for 49 USD we apply the 5 most urgent fixes from your SEO report within 48 hours. If you order Web Design within the next 30 days, we deduct it.' },
-    { q: 'Does the website include the AI chat?', a: 'It’s optional: an assistant that answers questions at any time and saves the name and WhatsApp of whoever asks, so no one slips away. It costs 15 USD a month, or it’s included in the Monthly Implementation Plan if it fits your business. It’s the same one you can try on this page.' },
+    { q: 'Does the website include the AI chat?', a: 'It’s optional: an assistant that answers questions at any time and saves the name and WhatsApp of whoever asks, so no one slips away. It costs 15 USD a month with no lock-in, or it’s included in the Monthly Implementation Plan if it fits your business. It’s the same one you can try on this page.' },
   ],
   cierre: {
     titulo: 'Want to know what your website is missing?',
-    texto: 'Get a free SEO report on your website: your score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp. No website yet? We create one for you, even from your Instagram.',
+    texto: 'Get a free SEO report on your website: your score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp. No website yet? We create one for you, even from your Instagram. We reply as soon as possible.',
     botonDiagnostico: 'Get my free SEO report',
     whatsappTexto: "Hi, I saw the Web Design page and I'd like my free SEO report.",
     whatsappEnlace: 'or message us on WhatsApp →',

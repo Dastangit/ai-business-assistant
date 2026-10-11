@@ -68,7 +68,7 @@ const t = {
   ],
   cierre: {
     titulo: 'Ready for AI to recommend your business?',
-    texto: 'Get ahead of a trend that’s already underway, instead of reacting once your competitors have mastered it.',
+    texto: 'Get ahead of a trend that’s already underway, instead of reacting once your competitors have mastered it. Message us and we’ll reply as soon as possible.',
     boton: 'Ask about AI Search Optimization',
     mensajeChat: "I'd like information about AI Search Optimization (AEO)",
     whatsappTexto: "Hi, I saw the AI Search Optimization page and I'd like more information.",

@@ -3,11 +3,11 @@
 // al cambiar el texto de una página, actualiza aquí su fecha y vale para los dos.
 // Si todas las páginas llevan la fecha del día, la señal deja de servir para saber qué cambió.
 export const REVISIONES = {
-  '/': '2026-10-06',
+  '/': '2026-10-11',
   '/servicios': '2026-10-01',
-  '/servicios/diseno-web': '2026-09-30',
-  '/servicios/auditoria-negocio': '2026-10-06',
-  '/servicios/posicionamiento-aeo': '2026-09-30',
+  '/servicios/diseno-web': '2026-10-11',
+  '/servicios/auditoria-negocio': '2026-10-11',
+  '/servicios/posicionamiento-aeo': '2026-10-11',
   '/blog': '2026-10-06',
   '/blog/auditamos-nuestra-propia-web': '2026-09-25',
   '/blog/5-senales-web-cuesta-clientes': '2026-09-25',
@@ -16,11 +16,11 @@ export const REVISIONES = {
   '/blog/cuanto-cuesta-renovar-web': '2026-10-06',
   '/privacidad': '2026-10-02',
   // Versión en inglés: fecha en que se escribió su texto
-  '/en': '2026-10-06',
+  '/en': '2026-10-11',
   '/en/services': '2026-10-02',
-  '/en/services/web-design': '2026-10-02',
-  '/en/services/digital-business-audit': '2026-10-06',
-  '/en/services/aeo': '2026-10-02',
+  '/en/services/web-design': '2026-10-11',
+  '/en/services/digital-business-audit': '2026-10-11',
+  '/en/services/aeo': '2026-10-11',
   '/en/blog': '2026-10-06',
   '/en/blog/we-audited-our-own-website': '2026-10-02',
   '/en/blog/5-signs-your-website-is-losing-customers': '2026-10-02',

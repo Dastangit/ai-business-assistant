@@ -69,7 +69,7 @@ const t = {
   },
   cierre: {
     titulo: 'Hablemos de tu negocio',
-    texto: 'Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos gratis tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF.',
+    texto: 'Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos gratis tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF. Te respondemos lo antes posible.',
     boton: 'Pide tu diagnóstico SEO gratis',
   },
 };

@@ -68,7 +68,7 @@ const t = {
   ],
   cierre: {
     titulo: '¿Listo para que la IA recomiende tu negocio?',
-    texto: 'Te adelantas a una tendencia que ya está en marcha, en lugar de reaccionar cuando tu competencia ya la domine.',
+    texto: 'Te adelantas a una tendencia que ya está en marcha, en lugar de reaccionar cuando tu competencia ya la domine. Escríbenos y te respondemos lo antes posible.',
     boton: 'Consultar Posicionamiento AEO',
     mensajeChat: 'Quiero información sobre Posicionamiento AEO',
     whatsappTexto: 'Hola, vi la página de Posicionamiento AEO y quiero más información.',

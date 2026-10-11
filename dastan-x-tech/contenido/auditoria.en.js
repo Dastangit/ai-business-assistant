@@ -40,7 +40,7 @@ const t = {
   },
   automatizar: {
     titulo: <>And then, we <span className="accent-light">automate it</span></>,
-    intro: 'The process analysis in the audit shows you where your hours go. If you want, we take care of it afterwards: always in your own accounts, with free tools whenever possible.',
+    intro: 'AI with judgment, not because it’s trendy: the process analysis in the audit shows you where your hours go, and we only automate what truly saves you time or money. If you want, we take care of it: always in your own accounts, with free tools whenever possible.',
     items: [
       'A CRM so no customer goes unanswered: every contact from your website, logged and followed up.',
       'Appointment reminders, quote follow-ups and review requests, running on their own.',
@@ -57,11 +57,11 @@ const t = {
     { q: 'What do I get at the end of the audit?', a: 'A single report with two clear numbers: your digital presence out of 100 and your technology maturity out of 5, every finding backed by real evidence, and a phased action plan with an estimate of how much time and money you could recover each month.' },
     { q: 'Is it a generic audit or tailored to my business?', a: 'Every finding comes with real evidence from your business — a sentence from your website, a dated review, one of your answers — never a template or a made-up figure.' },
     { q: 'How much does the Digital Business Audit cost?', a: 'From 200 USD. It’s our most complete service and it doesn’t include the website: if you also want a new website and to be recommended by AI, the All-in-One Package (Audit + Web Design + AEO) costs 400 USD. The final price depends on the size of your business and we confirm it before we start. The free SEO report is separate and only reviews your website.' },
-    { q: 'Can you help me apply what the audit finds?', a: 'Yes, in two ways. With a one-off automation, for a one-time 100 USD: a single thing, like setting up a free CRM and connecting it to your website form, or an automatic appointment reminder. Or with the Monthly Implementation Plan, for 200 USD a month (2-month minimum): 24 hours of work a month applying the audit plan, with the automations that suit your business best. Everything is set up in your own accounts.' },
+    { q: 'Can you help me apply what the audit finds?', a: 'Yes, in two ways. With a one-off automation, for a one-time 100 USD: a single thing, like setting up a free CRM and connecting it to your website form, or an automatic appointment reminder. Or with the Monthly Implementation Plan, for 200 USD a month (no lock-in, cancel anytime): 24 hours of work a month applying the audit plan, with the automations that suit your business best. Everything is set up in your own accounts.' },
   ],
   cierre: {
     titulo: 'Want to know what’s costing you money?',
-    texto: 'Message us and we’ll show you exactly where your business is losing time and customers. Not sure yet? Start with the free SEO report on your website: it’s the outside part of the audit.',
+    texto: 'Message us: we reply as soon as possible and show you exactly where your business is losing time and customers. Not sure yet? Start with the free SEO report on your website: it’s the outside part of the audit.',
     botonAuditoria: 'Ask about the Digital Business Audit',
     mensajeChat: "I'd like information about the Digital Business Audit",
     botonDiagnostico: 'Get my free SEO report',

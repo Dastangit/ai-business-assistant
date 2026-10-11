@@ -59,11 +59,11 @@ const t = {
     { q: '¿Qué necesitan de mi negocio para empezar?', a: 'Tu marca real: logo, colores, tipografías, textos, precios y reseñas actuales. Nunca inventamos contenido que no sea tuyo.' },
     { q: '¿Qué pasa si ya tengo una web?', a: 'La analizamos primero: te damos un diagnóstico honesto con problemas concretos y observables — cada uno con la razón por la que te cuesta clientes — antes de tocar nada.' },
     { q: '¿Y si no quiero una web nueva?', a: 'Si ya tienes web y solo quieres arreglar lo más urgente, está el Arreglo exprés: por 49 USD aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si en los 30 días siguientes contratas el Diseño web, te lo descontamos.' },
-    { q: '¿La web incluye el chat con Inteligencia Artificial?', a: 'Es opcional: un asistente que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta, para que no se te escape nadie. Cuesta 15 USD al mes, o va incluido en la Membresía de Implementación si encaja con tu negocio. Es el mismo que puedes probar en esta página.' },
+    { q: '¿La web incluye el chat con Inteligencia Artificial?', a: 'Es opcional: un asistente que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta, para que no se te escape nadie. Cuesta 15 USD al mes, sin permanencia, o va incluido en la Membresía de Implementación si encaja con tu negocio. Es el mismo que puedes probar en esta página.' },
   ],
   cierre: {
     titulo: '¿Quieres saber qué le falta a tu web?',
-    texto: 'Pide el diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram.',
+    texto: 'Pide el diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. ¿No tienes web? Te la creamos, incluso a partir de tu Instagram. Te respondemos lo antes posible.',
     botonDiagnostico: 'Pedir diagnóstico SEO gratis',
     whatsappTexto: 'Hola, vi la página de Diseño Web y quiero mi diagnóstico SEO gratis.',
     whatsappEnlace: 'o escríbenos por WhatsApp →',

@@ -69,7 +69,7 @@ const t = {
   },
   cierre: {
     titulo: "Let's talk about your business",
-    texto: 'Leave us your name, your website and your WhatsApp, and we will send you, for free, your SEO score from 0 to 100 and the 5 most urgent fixes, as a PDF.',
+    texto: 'Leave us your name, your website and your WhatsApp, and we will send you, for free, your SEO score from 0 to 100 and the 5 most urgent fixes, as a PDF. We reply as soon as possible.',
     boton: 'Get your free SEO report',
   },
 };
