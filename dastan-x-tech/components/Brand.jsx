@@ -15,7 +15,7 @@ export function BrandMark({ className = 'brand-mark', title, size }) {
   );
 }
 
-export const BRAND_NAME = 'DASTAN X-TECH';
+const BRAND_NAME = 'DASTAN X-TECH';
 
 // Un solo nombre en todo el sitio: DASTAN X-TECH
 export default function Brand({ href = '/', className = '', lang = 'es' }) {

@@ -1,6 +1,5 @@
 // Tabla única de rutas por idioma. De aquí salen el selector ES | EN, el aviso de idioma,
 // las etiquetas hreflang y el sitemap. Para añadir una página: una clave nueva con sus dos rutas.
-export const IDIOMAS = ['es', 'en'];
 
 export const RUTAS = {
   inicio: { es: '/', en: '/en' },

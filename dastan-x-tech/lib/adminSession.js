@@ -24,7 +24,7 @@ export function createSessionToken() {
 }
 
 /** Verifica el token de la cookie. Devuelve true/false. */
-export function isValidSessionToken(token) {
+function isValidSessionToken(token) {
   if (!token || typeof token !== 'string' || !token.includes('.')) return false;
 
   const [payload, signature] = token.split('.');
