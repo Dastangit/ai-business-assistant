@@ -17,6 +17,6 @@ export default function sitemap() {
       lastModified: new Date(REVISIONES[r[lang]]),
       changeFrequency: PRIORIDAD[clave][0],
       priority: PRIORIDAD[clave][1],
-      alternates: { languages: { es: absoluta(r.es), en: absoluta(r.en) } },
+      alternates: { languages: { es: absoluta(r.es), en: absoluta(r.en), 'x-default': absoluta(r.es) } },
     })));
 }

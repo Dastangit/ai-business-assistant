@@ -1,5 +1,8 @@
 // Home page copy (English). If you change something here, change the same thing in inicio.es.js.
 // Data only: no functions (passed from server to client).
+// Formatted paragraphs carry a key: they travel from server to client inside a list and React requires it
+import { Fragment } from 'react';
+
 const t = {
   nav: {
     principal: 'Main',
@@ -26,7 +29,7 @@ const t = {
   quienes: {
     titulo: 'Who we are',
     parrafos: [
-      <>We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, digital consultant and strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition.</>,
+      <Fragment key="presentacion">We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, digital consultant and strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition.</Fragment>,
     ],
     historia: {
       titulo: 'How DASTAN X-TECH started',

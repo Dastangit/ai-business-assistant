@@ -1,6 +1,7 @@
 import { alternates } from '@/lib/i18n';
+import { conImagenHeredada } from '@/lib/metadatos';
 
-export const metadata = {
+const metadata = {
   title: 'How much does a website redesign cost in 2026? | DASTAN X-TECH',
   description: 'Real prices to redesign a small business website in 2026: from 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What’s included and what changes the price.',
   keywords: ['Website redesign cost', 'How much does a website cost', 'Small business web design price', 'Website redesign price'],
@@ -14,6 +15,7 @@ export const metadata = {
     type: 'article',
   },
 };
+export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
   return children;

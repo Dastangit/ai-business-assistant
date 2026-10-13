@@ -1,7 +1,8 @@
 import { alternates } from '@/lib/i18n';
+import { conImagenHeredada } from '@/lib/metadatos';
 
 // Metadatos propios: sin este archivo el artículo heredaba el título y la descripción del home
-export const metadata = {
+const metadata = {
   title: '5 señales de que tu web te está costando clientes | DASTAN X-TECH',
   description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
   keywords: ['Web que no convierte', 'Rediseño web', 'Errores de diseño web', 'Diseño web para pymes'],
@@ -15,6 +16,7 @@ export const metadata = {
     type: 'article',
   },
 };
+export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
   return children;

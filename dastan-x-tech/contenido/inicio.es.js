@@ -1,5 +1,8 @@
 // Textos de la portada (español). Si cambias algo aquí, cambia lo mismo en inicio.en.js.
 // Solo datos: nada de funciones (se pasan de servidor a cliente).
+// Los párrafos con formato llevan key: viajan del servidor al cliente dentro de una lista y React la exige
+import { Fragment } from 'react';
+
 const t = {
   nav: {
     principal: 'Principal',
@@ -26,7 +29,7 @@ const t = {
   quienes: {
     titulo: 'Quiénes somos',
     parrafos: [
-      <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</>,
+      <Fragment key="presentacion">Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</Fragment>,
     ],
     historia: {
       titulo: 'Cómo nació DASTAN X-TECH',

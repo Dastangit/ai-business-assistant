@@ -1,6 +1,7 @@
 import { alternates } from '@/lib/i18n';
+import { conImagenHeredada } from '@/lib/metadatos';
 
-export const metadata = {
+const metadata = {
   title: '5 signs your website is losing you customers | DASTAN X-TECH',
   description: 'The 5 most common signs that make a visitor leave without booking or buying, with a real redesign that fixed all five.',
   keywords: ['Website not converting', 'Website redesign', 'Web design mistakes', 'Web design for small businesses'],
@@ -14,6 +15,7 @@ export const metadata = {
     type: 'article',
   },
 };
+export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
   return children;

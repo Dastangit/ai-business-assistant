@@ -1,7 +1,8 @@
 import t from '@/contenido/diseno-web.es';
 import { alternates } from '@/lib/i18n';
+import { conImagenHeredada } from '@/lib/metadatos';
 
-export const metadata = {
+const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
   keywords: t.metadata.keywords,
@@ -15,6 +16,7 @@ export const metadata = {
     type: 'website',
   },
 };
+export const generateMetadata = conImagenHeredada(metadata);
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',

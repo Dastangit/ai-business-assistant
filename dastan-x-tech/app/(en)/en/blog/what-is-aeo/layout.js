@@ -1,6 +1,7 @@
 import { alternates } from '@/lib/i18n';
+import { conImagenHeredada } from '@/lib/metadatos';
 
-export const metadata = {
+const metadata = {
   title: 'What is AEO, explained with a real example | DASTAN X-TECH',
   description: 'What Answer Engine Optimization (AEO) is, why it’s already happening and what the businesses AI recommends have in common, with a real example from Gemini.',
   keywords: ['What is AEO', 'Answer Engine Optimization', 'AI search optimization', 'SEO for ChatGPT and Gemini'],
@@ -14,6 +15,7 @@ export const metadata = {
     type: 'article',
   },
 };
+export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
   return children;
