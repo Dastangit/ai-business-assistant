@@ -4,13 +4,13 @@ const t = {
   metadata: {
     title: 'Digital Business Audit | DASTAN X-TECH',
     description: 'We find where your business is losing time and customers, with real evidence, not guesswork. A report with your digital presence, technology maturity and an action plan.',
-    keywords: ['Digital business audit', 'Small business audit', 'SEO audit', 'Business diagnosis', 'AI consulting'],
+    keywords: ['Digital business audit', 'Small business audit', 'SEO audit', 'Business diagnosis', 'Digital consulting'],
     ogTitle: 'Digital Business Audit | DASTAN X-TECH',
     ogDescription: 'A complete review of your digital presence and internal processes, with real evidence and a phased action plan.',
   },
   servicioJsonLd: {
     name: 'Digital Business Audit',
-    serviceType: 'Digital business audit and AI consulting',
+    serviceType: 'Digital business audit and consulting',
     description: 'A complete audit of digital presence (website, social media, Google Business Profile, reviews, competitors) and internal processes (lead generation, scheduling, payments, tools). Delivers a digital presence score, a technology maturity level, the hours and money recoverable each month, and a phased action plan.',
     areaServed: ['United States', 'Mexico', 'Colombia'],
   },
@@ -44,7 +44,7 @@ const t = {
     items: [
       'A CRM so no customer goes unanswered: every contact from your website, logged and followed up.',
       'Appointment reminders, quote follow-ups and review requests, running on their own.',
-      'Round-the-clock AI support, on your website and on your WhatsApp.',
+      'Automatic round-the-clock support, on your website and on your WhatsApp.',
     ],
     caminos: [
       { etiqueta: 'One-off automation', titulo: 'One thing, done', texto: 'For example, setting up your CRM and connecting it to your website form, or an automatic appointment reminder. One-time payment, no maintenance.', boton: 'I want an automation', mensajeChat: "I'd like information about a one-off automation for my business", estilo: 'btn btn-suave' },

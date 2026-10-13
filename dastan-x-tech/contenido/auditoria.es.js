@@ -4,13 +4,13 @@ const t = {
   metadata: {
     title: 'Auditoría Completa de Negocio | DASTAN X-TECH',
     description: 'Descubrimos dónde tu negocio pierde tiempo y clientes, con evidencia real, no suposiciones. Informe con presencia digital, madurez tecnológica y plan de acción.',
-    keywords: ['Auditoría de negocio', 'Auditoría completa de negocio', 'Auditoría SEO', 'Diagnóstico de negocio', 'Consultoría de IA'],
+    keywords: ['Auditoría de negocio', 'Auditoría completa de negocio', 'Auditoría SEO', 'Diagnóstico de negocio', 'Consultoría digital'],
     ogTitle: 'Auditoría Completa de Negocio | DASTAN X-TECH',
     ogDescription: 'Diagnóstico completo de presencia digital y procesos internos, con evidencia real y un plan de acción por fases.',
   },
   servicioJsonLd: {
     name: 'Auditoría Completa de Negocio',
-    serviceType: 'Auditoría de negocio y consultoría de IA',
+    serviceType: 'Auditoría de negocio y consultoría digital',
     description: 'Auditoría completa de presencia digital (web, redes, ficha de Google, reseñas, competencia) y procesos internos (captación, agenda, cobro, herramientas). Entrega una nota de presencia digital, nivel de madurez tecnológica, horas y dinero recuperable al mes, y un plan de acción por fases.',
     areaServed: ['Colombia', 'México', 'Estados Unidos'],
   },
@@ -46,7 +46,7 @@ const t = {
     items: [
       'Un CRM para que ningún cliente se quede sin respuesta: cada contacto de tu web, registrado y con su seguimiento.',
       'Recordatorios de citas, seguimiento de presupuestos y petición de reseñas, funcionando solos.',
-      'Atención a cualquier hora con IA, en tu web y en tu WhatsApp.',
+      'Atención automática a cualquier hora, en tu web y en tu WhatsApp.',
     ],
     caminos: [
       { etiqueta: 'Automatización puntual', titulo: 'Una sola cosa, resuelta', texto: 'Por ejemplo, instalar tu CRM y conectarlo al formulario de tu web, o un recordatorio automático de citas. Pago único y sin mantenimiento.', boton: 'Quiero una automatización', mensajeChat: 'Quiero información sobre una automatización puntual para mi negocio', estilo: 'btn btn-suave' },

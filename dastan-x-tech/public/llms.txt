@@ -1,8 +1,8 @@
 # DASTAN X-TECH
 
-> Consultoría digital e IA para negocios privados y pymes de cualquier sector: clínicas, spas, salones, servicios a domicilio, comercios y despachos. Ayudamos a que cada negocio convenza en su web y a que Google y los asistentes de IA lo entiendan y lo recomienden. Trabajamos 100 % en remoto, sobre todo en Colombia, México y Estados Unidos, en español e inglés.
+> Consultoría digital de alto nivel para negocios privados y pymes de cualquier sector: clínicas, spas, salones, servicios a domicilio, comercios y despachos. Ayudamos a que cada negocio convenza en su web y a que Google y los asistentes de IA lo entiendan y lo recomienden. Trabajamos 100 % en remoto, sobre todo en Colombia, México y Estados Unidos, en español e inglés.
 
-Equipo: Dastan Tamayo (fundador) e Isdiel Martínez (consultor de IA y estratega digital).
+Equipo: Dastan Tamayo (fundador) e Isdiel Martínez (consultor y estratega digital).
 
 Cómo trabajamos: cada hallazgo se apoya en una evidencia real del negocio (una frase de su web, una reseña con fecha, una captura) y termina en acciones concretas. Nunca pedimos contraseñas ni accesos.
 
@@ -24,21 +24,21 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 ## Complementos
 
 - [Arreglo exprés](https://dastanxtech.com/servicios/diseno-web): para quien ya tiene web, aplicamos en 48 horas las 5 correcciones más urgentes de su diagnóstico SEO. 49 USD, que se descuentan si contrata el Diseño web en los 30 días siguientes.
-- [Chat con IA para la web](https://dastanxtech.com/servicios/diseno-web): responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta. 15 USD al mes, sin permanencia.
-- Recepcionista IA por WhatsApp: atiende el WhatsApp del negocio las 24 horas, instalada en un número secundario. 150 USD de instalación y 39 USD al mes, sin permanencia.
+- [Chat automático 24 h para la web](https://dastanxtech.com/servicios/diseno-web): responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta. 15 USD al mes, sin permanencia.
+- Recepcionista virtual por WhatsApp: atiende el WhatsApp del negocio las 24 horas, instalada en un número secundario. 150 USD de instalación y 39 USD al mes, sin permanencia.
 - [Automatización puntual](https://dastanxtech.com/servicios/auditoria-negocio): una sola automatización con alcance cerrado, por ejemplo instalar un CRM gratuito en la cuenta del negocio y conectarlo al formulario de su web, o un recordatorio automático de citas. 100 USD, pago único, sin mantenimiento.
-- Membresía de Implementación: 24 horas de trabajo al mes aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat con IA si encaja y automatizaciones (CRM, recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, sin permanencia.
+- Membresía de Implementación: 24 horas de trabajo al mes aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat automático 24 h si encaja y automatizaciones (CRM, recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, sin permanencia.
 
 ## Blog
 
-- [¿Cuánto cuesta renovar una web en 2026?](https://dastanxtech.com/blog/cuanto-cuesta-renovar-web): nuestros precios en una tabla (diagnóstico SEO gratis, Arreglo exprés 49 USD, Diseño web desde 100 USD, chat con IA 15 USD al mes), qué cambia el precio final y preguntas frecuentes.
+- [¿Cuánto cuesta renovar una web en 2026?](https://dastanxtech.com/blog/cuanto-cuesta-renovar-web): nuestros precios en una tabla (diagnóstico SEO gratis, Arreglo exprés 49 USD, Diseño web desde 100 USD, chat automático 24 h 15 USD al mes), qué cambia el precio final y preguntas frecuentes.
 - [Perfeccionamos nuestra web con nuestro auditor AEO](https://dastanxtech.com/blog/perfeccionamos-nuestra-web-auditor-aeo): qué mide nuestro auditor AEO, qué encontró en dastanxtech.com y cómo pasamos de 94 a 97 sobre 100, con el [informe completo](https://dastanxtech.com/ejemplo-informe-aeo).
 - [Qué es AEO, explicado con un ejemplo real](https://dastanxtech.com/blog/que-es-aeo): qué es el Answer Engine Optimization y qué tienen en común los negocios que la IA recomienda, con una prueba real en Gemini.
 - [5 señales de que tu web te está costando clientes](https://dastanxtech.com/blog/5-senales-web-cuesta-clientes): las señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño.
 
 ## English
 
-DASTAN X-TECH is also available in English. Digital and AI consulting for small businesses, fully remote, delivered in English or Spanish.
+DASTAN X-TECH is also available in English. High-level digital consulting for small businesses, fully remote, delivered in English or Spanish.
 
 - [Web Design](https://dastanxtech.com/en/services/web-design): from 100 USD.
 - [Digital Business Audit](https://dastanxtech.com/en/services/digital-business-audit): from 200 USD.

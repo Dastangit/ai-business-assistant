@@ -87,7 +87,7 @@ export default function BlogPost() {
               <tr><td>SEO report</td><td>Free</td><td>Your score from 0 to 100 and the 5 most urgent fixes for your website, as a PDF on WhatsApp.</td></tr>
               <tr><td>48-Hour Fix</td><td>49 USD</td><td>We apply those 5 fixes within 48 hours. Deducted if you book Web Design within the next 30 days.</td></tr>
               <tr><td>Web Design</td><td>From 100 USD</td><td>Your website redesigned or built from scratch, with your real brand, mobile-friendly, WhatsApp and phone always visible, and ready for Google and AI. In under 48 hours.</td></tr>
-              <tr><td>AI chat (optional)</td><td>15 USD a month</td><td>Answers questions at any hour and saves the name and WhatsApp of whoever asks.</td></tr>
+              <tr><td>24/7 automated chat (optional)</td><td>15 USD a month</td><td>Answers questions at any hour and saves the name and WhatsApp of whoever asks.</td></tr>
             </tbody>
           </table>
         </div>

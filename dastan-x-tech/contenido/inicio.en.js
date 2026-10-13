@@ -7,23 +7,40 @@ const t = {
     servicios: 'Services',
     wa: 'Message us on WhatsApp at +1 605-500-3653',
   },
-  etiqueta: 'Digital and AI consulting for small businesses',
+  etiqueta: 'High-level digital consulting for small businesses',
   titulo: 'Find out, with evidence, why your business is losing customers online.',
-  tituloSr: ' DASTAN X-TECH, digital and AI consulting for small businesses in the United States, Mexico, Colombia and the rest of the world.',
-  subtitulo: 'A free SEO report on your website: your score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp. If you want, we fix them with you afterwards.',
+  tituloSr: ' DASTAN X-TECH, high-level digital consulting for small businesses in the United States, Mexico, Colombia and the rest of the world.',
+  subtitulo: 'An analysis of your website: your score from 0 to 100 and the 5 most urgent fixes, the first step for your online presence.',
   botonDiagnostico: 'Get your free SEO report',
   puntos: ['Every issue comes with proof', 'We never ask for your passwords', '100% remote'],
+  // Section after «How we work»: what we look at before proposing anything
+  diagnostico: {
+    titulo: 'Before touching anything, we diagnose your business',
+    items: [
+      { titulo: 'Online presence', texto: 'How a customer sees you today: website, Google, social media and reviews. Scored out of 100.' },
+      { titulo: 'Process map', texto: 'How your business works today: bookings, payments, customer service and tools.' },
+      { titulo: 'Security', texto: "Your website's weak spots, before they cause you trouble." },
+      { titulo: 'Action plan', texto: 'What to do, step by step, starting with what pays you back the most.' },
+    ],
+  },
   quienes: {
     titulo: 'Who we are',
     parrafos: [
-      <>We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, AI consultant and digital strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition.</>,
-      <>We always start with an evidence-based diagnosis —a sentence from your website, a dated review, a screenshot— and finish with concrete actions, ranked by what pays you back the most.</>,
+      <>We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, digital consultant and strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition.</>,
     ],
+    historia: {
+      titulo: 'How DASTAN X-TECH started',
+      parrafos: [
+        "DASTAN X-TECH wasn't our first idea. It started with our own business: we did good work, but you could barely see it online, and we needed more visibility to grow.",
+        'So we took a step forward. We studied how businesses earn visibility today —on Google, on social media and in AI answers— and along the way we saw that many businesses like ours were in the same spot. That is how this consultancy was born.',
+        "That's why we know how it feels when your ideas are good and still don't reach the people they should. Our job is to make the internet reflect the work you already do.",
+      ],
+    },
   },
   // Same order as the photos in components/paginas/Inicio.jsx: Dastan, Isdiel
   equipo: [
     { nombre: 'Dastan Tamayo', rol: 'Founder of DASTAN X-TECH', alt: 'Dastan Tamayo, founder of DASTAN X-TECH' },
-    { nombre: 'Isdiel Martínez', rol: 'AI consultant and digital strategist', alt: 'Isdiel Martínez, AI consultant and digital strategist at DASTAN X-TECH' },
+    { nombre: 'Isdiel Martínez', rol: 'Digital consultant and strategist', alt: 'Isdiel Martínez, digital consultant and strategist at DASTAN X-TECH' },
   ],
   // Starting prices must match PRECIOS in app/api/chat/route.js
   servicios: {

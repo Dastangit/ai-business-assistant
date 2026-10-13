@@ -7,23 +7,40 @@ const t = {
     servicios: 'Servicios',
     wa: 'Escríbenos por WhatsApp al +1 605-500-3653',
   },
-  etiqueta: 'Consultoría digital e IA para negocios privados y pymes',
+  etiqueta: 'Consultoría digital de alto nivel para negocios privados y pymes',
   titulo: 'Descubre, con pruebas, por qué tu negocio pierde clientes por internet.',
-  tituloSr: ' DASTAN X-TECH, consultoría digital e IA para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.',
-  subtitulo: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF por WhatsApp. Si quieres, después las arreglamos contigo.',
+  tituloSr: ' DASTAN X-TECH, consultoría digital de alto nivel para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.',
+  subtitulo: 'Análisis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, el primer paso para tu presencia digital.',
   botonDiagnostico: 'Pide tu diagnóstico SEO gratis',
   puntos: ['Cada fallo, con su prueba', 'Sin pedirte contraseñas', '100 % en remoto'],
+  // Sección tras «Cómo trabajamos»: qué miramos antes de proponer nada
+  diagnostico: {
+    titulo: 'Antes de tocar nada, diagnosticamos tu negocio',
+    items: [
+      { titulo: 'Presencia digital', texto: 'Cómo te ve hoy un cliente: web, Google, redes y reseñas. Nota sobre 100.' },
+      { titulo: 'Mapa de procesos', texto: 'Cómo trabaja hoy tu negocio: agenda, cobros, atención y herramientas.' },
+      { titulo: 'Seguridad', texto: 'Los puntos débiles de tu web, antes de que te cuesten un disgusto.' },
+      { titulo: 'Plan de acción', texto: 'Qué hacer, paso a paso, empezando por lo que más te devuelve.' },
+    ],
+  },
   quienes: {
     titulo: 'Quiénes somos',
     parrafos: [
-      <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor de IA y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</>,
-      <>Empezamos siempre por un diagnóstico con evidencias —una frase de tu web, una reseña con fecha, una captura— y terminamos con acciones concretas, ordenadas por lo que más te devuelve.</>,
+      <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</>,
     ],
+    historia: {
+      titulo: 'Cómo nació DASTAN X-TECH',
+      parrafos: [
+        'DASTAN X-TECH no fue nuestra primera idea. Empezó con nuestro propio negocio: hacíamos un buen trabajo, pero en internet casi no se veía, y necesitábamos más visibilidad para crecer.',
+        'Decidimos dar un paso adelante. Estudiamos cómo se gana visibilidad hoy —en Google, en las redes y en las respuestas de la IA— y por el camino vimos que muchos negocios como el nuestro estaban igual. Así nació esta consultora.',
+        'Por eso sabemos lo que se siente cuando tus ideas son buenas y aun así no llegan a quien deberían. Nuestro trabajo es que internet refleje el que ya haces tú.',
+      ],
+    },
   },
   // Mismo orden que las fotos de components/paginas/Inicio.jsx: Dastan, Isdiel
   equipo: [
     { nombre: 'Dastan Tamayo', rol: 'Fundador de DASTAN X-TECH', alt: 'Dastan Tamayo, fundador de DASTAN X-TECH' },
-    { nombre: 'Isdiel Martínez', rol: 'Consultor de IA y estratega digital', alt: 'Isdiel Martínez, consultor de IA y estratega digital de DASTAN X-TECH' },
+    { nombre: 'Isdiel Martínez', rol: 'Consultor y estratega digital', alt: 'Isdiel Martínez, consultor y estratega digital de DASTAN X-TECH' },
   ],
   // El precio de partida debe coincidir con PRECIOS de app/api/chat/route.js
   servicios: {

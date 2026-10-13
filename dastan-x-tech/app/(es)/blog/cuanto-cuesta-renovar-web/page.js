@@ -86,7 +86,7 @@ export default function BlogPost() {
               <tr><td>Diagnóstico SEO</td><td>Gratis</td><td>Tu puntuación de 0 a 100 y las 5 correcciones más urgentes de tu web, en un PDF por WhatsApp.</td></tr>
               <tr><td>Arreglo exprés</td><td>49 USD</td><td>Aplicamos esas 5 correcciones en 48 horas. Se descuenta si contratas el Diseño web en los 30 días siguientes.</td></tr>
               <tr><td>Diseño web</td><td>Desde 100 USD</td><td>Tu web renovada o creada desde cero, con tu marca real, adaptada al móvil, con el WhatsApp y el teléfono siempre visibles y lista para Google y la IA. En menos de 48 horas.</td></tr>
-              <tr><td>Chat con IA (opcional)</td><td>15 USD al mes</td><td>Responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta.</td></tr>
+              <tr><td>Chat automático 24 h (opcional)</td><td>15 USD al mes</td><td>Responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta.</td></tr>
             </tbody>
           </table>
         </div>

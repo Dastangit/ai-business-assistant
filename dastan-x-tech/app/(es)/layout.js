@@ -21,10 +21,10 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
-  title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
+  title: 'DASTAN X-TECH | Consultoría digital de alto nivel para negocios y pymes',
   description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet: diagnóstico SEO gratis, auditoría de negocio, diseño web y posicionamiento para que Google y la IA te recomienden.',
   keywords: [
-    'Consultoría de IA para negocios',
+    'Consultoría digital para negocios',
     'Auditoría de negocio',
     'Diseño web para pymes',
     'Diseño web para negocios locales',
@@ -37,11 +37,11 @@ export const metadata = {
     'trustpilot-one-time-domain-verification-id': 'b2716753-f0f4-4a03-a2f7-16cba20f6ad7',
   },
   openGraph: {
-    title: 'DASTAN X-TECH | Consultoría digital e IA para negocios y pymes',
+    title: 'DASTAN X-TECH | Consultoría digital de alto nivel para negocios y pymes',
     description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
     url: 'https://dastanxtech.com',
     // La imagen vive en app/opengraph-image.jsx (fuera del route group, para conservar la URL /opengraph-image)
-    images: [{ url: '/opengraph-image', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría de IA, diseño web y posicionamiento para pymes' }],
+    images: [{ url: '/opengraph-image', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
     type: 'website',
@@ -55,14 +55,14 @@ const organizationJsonLd = {
   url: 'https://dastanxtech.com',
   logo: 'https://dastanxtech.com/opengraph-image',
   image: 'https://dastanxtech.com/opengraph-image',
-  description: 'Consultoría digital e IA para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría Completa de Negocio, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
+  description: 'Consultoría digital de alto nivel para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría Completa de Negocio, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
   areaServed: [
     { '@type': 'Country', name: 'Colombia' },
     { '@type': 'Country', name: 'México' },
     { '@type': 'Country', name: 'Estados Unidos' },
   ],
   knowsLanguage: ['es', 'en'],
-  serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría de IA'],
+  serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría digital'],
   email: 'supportdaelworld@gmail.com',
   telephone: '+1-605-500-3653',
   founder: { '@type': 'Person', name: 'Dastan Tamayo' },

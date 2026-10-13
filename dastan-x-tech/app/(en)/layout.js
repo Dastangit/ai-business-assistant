@@ -22,11 +22,11 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
-  title: 'DASTAN X-TECH | Digital & AI Consulting for Small Businesses',
+  title: 'DASTAN X-TECH | High-Level Digital Consulting for Small Businesses',
   description: 'We show you, with evidence, why your business is losing customers online: free SEO report, digital business audit, web design and AI search optimization so Google and AI assistants recommend you.',
   alternates: alternates('inicio', 'en'),
   openGraph: {
-    title: 'DASTAN X-TECH | Digital & AI Consulting for Small Businesses',
+    title: 'DASTAN X-TECH | High-Level Digital Consulting for Small Businesses',
     description: 'Free SEO report for your website: your score from 0 to 100 and the 5 most urgent fixes. Digital business audit, web design and AI search optimization for small businesses.',
     url: 'https://dastanxtech.com/en',
     siteName: 'DASTAN X-TECH',
@@ -42,7 +42,7 @@ const organizationJsonLd = {
   url: 'https://dastanxtech.com/en',
   logo: 'https://dastanxtech.com/opengraph-image',
   image: 'https://dastanxtech.com/opengraph-image',
-  description: 'Digital and AI consulting for small businesses, fully remote. Free SEO report, Digital Business Audit, web design and AI search optimization (AEO) so Google and AI assistants recommend the business.',
+  description: 'High-level digital consulting for small businesses, fully remote. Free SEO report, Digital Business Audit, web design and AI search optimization (AEO) so Google and AI assistants recommend the business.',
   areaServed: [
     { '@type': 'Country', name: 'United States' },
     { '@type': 'Country', name: 'Mexico' },

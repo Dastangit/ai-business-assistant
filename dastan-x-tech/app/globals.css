@@ -354,9 +354,15 @@ html { scroll-padding-top: 84px; }
 .equipo-ficha figcaption { display: flex; flex-direction: column; gap: 2px; }
 .equipo-ficha strong { color: var(--text); font-size: 17px; font-weight: 600; }
 .equipo-ficha span { color: var(--text-2); font-size: 15px; }
+/* Historia breve (Quiénes somos): bloque con filete de marca a la izquierda para que se lea como un relato aparte */
+.historia { margin-top: 2rem; padding: 1.5rem 1.5rem 1.5rem 1.4rem; border-left: 3px solid var(--brand); border-radius: 0 var(--radius-card) var(--radius-card) 0; background: var(--surface); }
+.historia-titulo { color: var(--text); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
 
 .steps { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
 .step-number { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 500; color: var(--brand); margin-bottom: 0.5rem; }
+/* Sección Diagnóstico: mismo diseño que Cómo trabajamos, con un icono violeta (en lugar del número) y un nombre corto encima del texto */
+.step-icono { display: block; width: 34px; height: 34px; color: var(--brand); margin-bottom: 0.75rem; }
+.step-titulo { color: var(--text); font-size: 17px; font-weight: 600; margin-bottom: 0.35rem; }
 
 /* =========================================
    PÁGINAS DE SERVICIO Y BLOG (modo claro)

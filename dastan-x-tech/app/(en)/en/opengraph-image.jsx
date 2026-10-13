@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
  
 export const runtime = 'edge';
-export const alt = 'DASTAN X-TECH | AI consulting, web design and AI search optimization for small businesses';
+export const alt = 'DASTAN X-TECH | High-level digital consulting, web design and AI search optimization for small businesses';
 export const contentType = 'image/png';
 export const size = { width: 1200, height: 630 };
 

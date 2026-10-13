@@ -48,11 +48,11 @@ const contactLinks = [
 
 const TEXTOS = {
   es: {
-    lema: 'Consultoría digital e IA para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
+    lema: 'Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
     servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad',
   },
   en: {
-    lema: 'Digital and AI consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
+    lema: 'High-level digital consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
     servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice',
   },
 };
