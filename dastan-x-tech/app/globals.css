@@ -322,7 +322,26 @@ html { scroll-padding-top: 84px; }
   padding: clamp(32px, 8vh, 80px) 24px 56px;
   /* Antes ocupaba la pantalla entera y en escritorio dejaba ~260 px vacíos: ahora «Quiénes somos» asoma debajo */
 }
-.hero .label-mono { color: var(--text-2); }
+.hero .label-mono { color: var(--action); }
+/* Rejilla de puntos muy suave detrás del hero, a todo el ancho y apagándose hacia abajo y a los lados
+   (el contenedor de los brillos tiene overflow: hidden, así que no crea scroll horizontal) */
+.hero::before {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
+  background-image: radial-gradient(rgba(245, 244, 239, 0.13) 1px, transparent 1.5px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 25%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 65% 75% at 50% 25%, #000 30%, transparent 100%);
+}
+/* Palabras clave del titular con el degradado del logo (#BA45FF → #8B7FE0 → #34DCAB) */
+.texto-degradado {
+  background: linear-gradient(90deg, #BA45FF 0%, #8B7FE0 50%, #34DCAB 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+@media (forced-colors: active) {
+  .texto-degradado { background: none; color: CanvasText; -webkit-text-fill-color: CanvasText; }
+}
 .hero-title {
   /* Crece con el ancho, pero también se limita por la altura de la pantalla */
   font-size: clamp(2.25rem, min(5.4vw, 7.5vh), 3.5rem); font-weight: 700;

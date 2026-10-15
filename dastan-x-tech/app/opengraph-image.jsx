@@ -35,16 +35,23 @@ export default async function Image() {
           </div>
         </div>
         
-        {/* Propuesta de valor */}
-        <div style={{ display: 'flex', fontSize: '68px', color: '#F5F4EF', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-2px', maxWidth: '1000px' }}>
-          Deja de perder clientes por una web que no está a la altura.
+        {/* Etiqueta y titular: los mismos de la portada (contenido/inicio.es.js) */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+          <div style={{ display: 'flex', fontSize: '19px', color: '#B7B3C7', letterSpacing: '1.5px' }}>
+            CONSULTORÍA DIGITAL, SERVICIOS DE ALTO NIVEL Y AUTOMATIZACIONES PARA NEGOCIOS PRIVADOS Y PYMES
+          </div>
+          <div style={{ display: 'flex', fontSize: '62px', color: '#F5F4EF', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-2px', maxWidth: '1040px' }}>
+            Descubre, con pruebas, por qué tu negocio pierde clientes por internet.
+          </div>
         </div>
-        
+
         {/* Servicios */}
-        <div style={{ display: 'flex', gap: '40px', fontSize: '30px', color: '#B7B3C7' }}>
+        <div style={{ display: 'flex', gap: '20px', fontSize: '27px', color: '#B7B3C7' }}>
           <div style={{ display: 'flex' }}>Diseño web</div>
           <div style={{ display: 'flex', color: '#2DD4BF' }}>·</div>
           <div style={{ display: 'flex' }}>Auditoría de negocio</div>
+          <div style={{ display: 'flex', color: '#2DD4BF' }}>·</div>
+          <div style={{ display: 'flex' }}>Automatización</div>
           <div style={{ display: 'flex', color: '#2DD4BF' }}>·</div>
           <div style={{ display: 'flex' }}>Posicionamiento AEO</div>
         </div>

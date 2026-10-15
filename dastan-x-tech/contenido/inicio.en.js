@@ -10,8 +10,10 @@ const t = {
     servicios: 'Services',
     wa: 'Message us on WhatsApp at +1 605-500-3653',
   },
-  etiqueta: 'High-level digital consulting for small businesses',
-  titulo: 'Find out, with evidence, why your business is losing customers online.',
+  etiqueta: 'Digital consulting, high-level services and automation for small businesses',
+  // The headline is split in two: the second part gets the brand gradient
+  titulo: 'Find out, with evidence, why your business ',
+  tituloDestacado: 'is losing customers online.',
   tituloSr: ' DASTAN X-TECH, high-level digital consulting for small businesses in the United States, Mexico, Colombia and the rest of the world.',
   subtitulo: 'An analysis of your website: your score from 0 to 100 and the 5 most urgent fixes, the first step for your online presence.',
   botonDiagnostico: 'Get your free SEO report',

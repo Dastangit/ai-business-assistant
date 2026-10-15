@@ -58,6 +58,7 @@ export default function Inicio({ t, lang }) {
         <span className="label-mono">{t.etiqueta}</span>
         <h1 className="hero-title">
           {t.titulo}
+          <span className="texto-degradado">{t.tituloDestacado}</span>
           <span className="sr-only">{t.tituloSr}</span>
         </h1>
         <p className="hero-sub">{t.subtitulo}</p>
