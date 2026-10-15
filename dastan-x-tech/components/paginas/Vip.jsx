@@ -129,7 +129,7 @@ export default function Vip({ t, lang }) {
             className="btn btn-secondary btn-sm"
             aria-label={rellenar(t.expres.aria, { precio: ARREGLO_EXPRES })}
           >
-            {t.contratar}
+            {t.expres.boton}
           </a>
         </div>
 
@@ -179,7 +179,7 @@ export default function Vip({ t, lang }) {
                       aria-label={rellenar(t.ariaContratar, { titulo: p.titulo, precio })}
                       style={{ marginTop: '4px' }}
                     >
-                      {t.contratar}
+                      {p.boton}
                     </a>
                   </div>
                 );

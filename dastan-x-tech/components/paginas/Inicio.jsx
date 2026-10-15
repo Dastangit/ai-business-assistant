@@ -50,8 +50,11 @@ export default function Inicio({ t, lang }) {
       </nav>
 
       <div style={{ position: 'relative', overflow: 'hidden', width: '100%' }}>
-      <div className="glow-tl"></div>
-      <div className="glow-br"></div>
+      {/* Brillos del hero: se desvanecen hacia abajo para que el hero no parezca una tarjeta al pasar a Servicios */}
+      <div className="hero-brillos" aria-hidden="true">
+        <div className="glow-tl"></div>
+        <div className="glow-br"></div>
+      </div>
 
       {/* HERO: a quién ayudamos y qué recibe gratis, en la primera pantalla */}
       <main className="hero">
@@ -117,7 +120,7 @@ export default function Inicio({ t, lang }) {
 
       {/* CÓMO TRABAJAMOS */}
       <section className="section">
-        <h2 className="section-title" style={{ marginBottom: '2.5rem' }}>
+        <h2 className="section-title section-title--linea" style={{ marginBottom: '2.5rem' }}>
           {t.pasos.titulo}
         </h2>
         <div className="steps">
@@ -132,7 +135,7 @@ export default function Inicio({ t, lang }) {
 
       {/* DIAGNÓSTICO: qué miramos antes de proponer nada; mismo diseño que Cómo trabajamos */}
       <section className="section">
-        <h2 className="section-title" style={{ marginBottom: '2.5rem' }}>
+        <h2 className="section-title section-title--linea" style={{ marginBottom: '2.5rem' }}>
           {t.diagnostico.titulo}
         </h2>
         <div className="steps">

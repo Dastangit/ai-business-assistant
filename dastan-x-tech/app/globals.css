@@ -5,10 +5,10 @@
    ========================================= */
 :root {
   /* Modo oscuro (home, VIP, secciones oscuras) */
-  --bg: #13101A;
-  --surface: #1C1826;
-  --border: #2E2839;
-  --border-strong: #3A3248;
+  --bg: #0A090E;              /* casi negro con un punto violeta (antes #13101A) */
+  --surface: #14121A;
+  --border: #24202D;
+  --border-strong: #322C3D;
   --text: #F5F4EF;
   --text-2: #B7B3C7;          /* un solo gris para texto secundario */
   --brand: #A855F7;           /* marca: logo y detalles, nunca botones */
@@ -58,7 +58,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(circle at 50% 0%, #150F24 0%, #13101A 80%);
+  background-image: radial-gradient(circle at 50% 0%, #1A1229 0%, #0A090E 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -87,6 +87,12 @@ p { text-wrap: pretty; }
   min-width: 420px; min-height: 420px;
   background: radial-gradient(circle, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
   filter: blur(80px); pointer-events: none; z-index: 0;
+}
+
+.hero-brillos {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 100%);
 }
 
 .sr-only {
@@ -322,17 +328,7 @@ html { scroll-padding-top: 84px; }
   padding: clamp(32px, 8vh, 80px) 24px 56px;
   /* Antes ocupaba la pantalla entera y en escritorio dejaba ~260 px vacíos: ahora «Quiénes somos» asoma debajo */
 }
-.hero .label-mono { color: var(--action); }
-/* Rejilla de puntos muy suave detrás del hero, a todo el ancho y apagándose hacia abajo y a los lados
-   (el contenedor de los brillos tiene overflow: hidden, así que no crea scroll horizontal) */
-.hero::before {
-  content: ''; position: absolute; z-index: -1; pointer-events: none;
-  top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%);
-  background-image: radial-gradient(rgba(245, 244, 239, 0.13) 1px, transparent 1.5px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 25%, #000 30%, transparent 100%);
-  mask-image: radial-gradient(ellipse 65% 75% at 50% 25%, #000 30%, transparent 100%);
-}
+.hero .label-mono { color: var(--text-2); }
 /* Palabras clave del titular con el degradado del logo (#BA45FF → #8B7FE0 → #34DCAB) */
 .texto-degradado {
   background: linear-gradient(90deg, #BA45FF 0%, #8B7FE0 50%, #34DCAB 100%);
@@ -362,6 +358,8 @@ html { scroll-padding-top: 84px; }
 .section { padding: 4rem 24px; max-width: 1120px; margin: 0 auto; width: 100%; }
 .section-title { font-size: clamp(1.75rem, 3.5vw, 1.875rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
 .section-text { color: var(--text-2); font-size: 17px; line-height: 1.7; }
+/* Subrayado fino y gris bajo los títulos sin etiqueta (Cómo trabajamos, Diagnóstico): tan ancho como el texto */
+.section-title--linea { width: fit-content; padding-bottom: 14px; border-bottom: 1px solid var(--border-strong); }
 .section-text strong { color: var(--text); font-weight: 600; }
 /* Párrafos seguidos (Quiénes somos): antes iban pegados y se leían como un solo bloque */
 .section-text + .section-text { margin-top: 1.1rem; }
