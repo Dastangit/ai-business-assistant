@@ -66,8 +66,8 @@ const t = {
   pedirWhatsapp: 'Order on WhatsApp',
   // Ordered on WhatsApp because they are billed monthly
   complementos: [
-    { titulo: '24/7 automated chat on your website', precio: '$15/month', texto: 'Answers questions 24/7 and saves the name and WhatsApp of whoever asks. Included in the Monthly Implementation Plan if it fits your business. No lock-in.', mensaje: "Hi, I saw the VIP proposal and I'm interested in the AI chat for my website." },
-    { titulo: 'Virtual WhatsApp Receptionist', precio: '$150 + $39/month', texto: 'Answers your WhatsApp 24/7, handles questions and saves each customer’s details. Installed on a secondary business number. No lock-in.', mensaje: "Hi, I saw the VIP proposal and I'm interested in the AI WhatsApp Receptionist." },
+    { titulo: '24/7 automated chat on your website', precio: '$15/month', texto: 'Answers questions 24/7 and saves the name and WhatsApp of whoever asks. Included in the Monthly Implementation Plan if it fits your business. No lock-in.', mensaje: "Hi, I saw the VIP proposal and I'm interested in the 24/7 automated chat for my website." },
+    { titulo: 'Virtual WhatsApp Receptionist', precio: '$150 + $39/month', texto: 'Answers your WhatsApp 24/7, handles questions and saves each customer’s details. Installed on a secondary business number. No lock-in.', mensaje: "Hi, I saw the VIP proposal and I'm interested in the Virtual WhatsApp Receptionist." },
   ],
   membresia: {
     titulo: 'Monthly Implementation Plan',
