@@ -41,7 +41,8 @@ export const metadata = {
     description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
     url: 'https://dastanxtech.com',
     // La imagen vive en app/opengraph-image.jsx (fuera del route group, para conservar la URL /opengraph-image)
-    images: [{ url: '/opengraph-image', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
+    // ?v=: LinkedIn y WhatsApp guardan la imagen por su URL; súbelo cada vez que cambie el diseño de la imagen
+    images: [{ url: '/opengraph-image?v=2', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
     type: 'website',
