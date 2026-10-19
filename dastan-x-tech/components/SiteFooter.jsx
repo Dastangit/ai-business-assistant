@@ -41,7 +41,7 @@ const icons = {
 
 const contactLinks = [
   { href: 'https://wa.me/16055003653', label: 'WhatsApp +1 605-500-3653', icon: icons.chat, external: true },
-  { href: 'mailto:supportdaelworld@gmail.com', label: 'supportdaelworld@gmail.com', icon: icons.mail },
+  { href: 'mailto:dastanxtech.services@gmail.com', label: 'dastanxtech.services@gmail.com', icon: icons.mail },
   { href: 'https://www.instagram.com/dastan.xtech/', label: 'Instagram', icon: icons.camera, external: true },
   { href: 'https://www.linkedin.com/in/dastantech', label: 'LinkedIn', icon: icons.briefcase, external: true },
 ];

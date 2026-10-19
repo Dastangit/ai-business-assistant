@@ -42,7 +42,7 @@ export const metadata = {
     url: 'https://dastanxtech.com',
     // La imagen vive en app/opengraph-image.jsx (fuera del route group, para conservar la URL /opengraph-image)
     // ?v=: LinkedIn y WhatsApp guardan la imagen por su URL; súbelo cada vez que cambie el diseño de la imagen
-    images: [{ url: '/opengraph-image?v=2', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
+    images: [{ url: '/opengraph-image?v=3', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',
     type: 'website',
@@ -64,7 +64,7 @@ const organizationJsonLd = {
   ],
   knowsLanguage: ['es', 'en'],
   serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría digital'],
-  email: 'supportdaelworld@gmail.com',
+  email: 'dastanxtech.services@gmail.com',
   telephone: '+1-605-500-3653',
   founder: { '@type': 'Person', name: 'Dastan Tamayo' },
   sameAs: [

@@ -10,7 +10,7 @@ const t = {
     servicios: 'Services',
     wa: 'Message us on WhatsApp at +1 605-500-3653',
   },
-  etiqueta: 'Digital consulting, high-level services and automation for small businesses',
+  etiqueta: 'Digital consulting, high-level technology and automation for small businesses',
   // The headline is split in two: the second part gets the brand gradient
   titulo: 'Find out, with evidence, why your business ',
   tituloDestacado: 'is losing customers online.',

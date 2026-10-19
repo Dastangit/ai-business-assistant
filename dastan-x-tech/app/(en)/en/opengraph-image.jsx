@@ -38,7 +38,7 @@ export default async function Image() {
         {/* Etiqueta y titular: los mismos de la portada (contenido/inicio.en.js) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
           <div style={{ display: 'flex', fontSize: '22px', color: '#B7B3C7', letterSpacing: '3px' }}>
-            DIGITAL CONSULTING, HIGH-LEVEL SERVICES AND AUTOMATION FOR SMALL BUSINESSES
+            DIGITAL CONSULTING, HIGH-LEVEL TECHNOLOGY AND AUTOMATION FOR SMALL BUSINESSES
           </div>
           <div style={{ display: 'flex', fontSize: '62px', color: '#F5F4EF', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-2px', maxWidth: '1040px' }}>
             Find out, with evidence, why your business is losing customers online.

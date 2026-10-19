@@ -38,7 +38,7 @@ export default async function Image() {
         {/* Etiqueta y titular: los mismos de la portada (contenido/inicio.es.js) */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
           <div style={{ display: 'flex', fontSize: '19px', color: '#B7B3C7', letterSpacing: '1.5px' }}>
-            CONSULTORÍA DIGITAL, SERVICIOS DE ALTO NIVEL Y AUTOMATIZACIONES PARA NEGOCIOS PRIVADOS Y PYMES
+            CONSULTORÍA DIGITAL, TECNOLOGÍA DE ALTO NIVEL Y AUTOMATIZACIONES PARA NEGOCIOS PRIVADOS Y PYMES
           </div>
           <div style={{ display: 'flex', fontSize: '62px', color: '#F5F4EF', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-2px', maxWidth: '1040px' }}>
             Descubre, con pruebas, por qué tu negocio pierde clientes por internet.

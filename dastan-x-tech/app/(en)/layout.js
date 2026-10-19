@@ -50,7 +50,7 @@ const organizationJsonLd = {
   ],
   knowsLanguage: ['en', 'es'],
   serviceType: ['Digital Business Audit', 'Web Design', 'AI Search Optimization (AEO)', 'AI Consulting'],
-  email: 'supportdaelworld@gmail.com',
+  email: 'dastanxtech.services@gmail.com',
   telephone: '+1-605-500-3653',
   founder: { '@type': 'Person', name: 'Dastan Tamayo' },
   sameAs: [

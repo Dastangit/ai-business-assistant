@@ -15,7 +15,7 @@ const t = {
       bloques: [
         { tipo: 'p', contenido: <>DASTAN X-TECH es el nombre comercial de <strong>Dastan Tamayo</strong>, persona física con domicilio en Puebla, Puebla, México, responsable de esta web y del tratamiento de tus datos.</> },
         { tipo: 'ul', contenido: [
-          <>Correo: <a href="mailto:supportdaelworld@gmail.com" className="text-link">supportdaelworld@gmail.com</a></>,
+          <>Correo: <a href="mailto:dastanxtech.services@gmail.com" className="text-link">dastanxtech.services@gmail.com</a></>,
           <>WhatsApp: <a href="https://wa.me/16055003653" className="text-link">+1 605 500 3653</a></>,
         ] },
       ],
