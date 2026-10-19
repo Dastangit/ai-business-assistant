@@ -18,6 +18,19 @@ const t = {
   subtitulo: 'An analysis of your website: your score from 0 to 100 and the 5 most urgent fixes, the first step for your online presence.',
   botonDiagnostico: 'Get your free SEO report',
   puntos: ['Every issue comes with proof', 'We never ask for your passwords', '100% remote'],
+  // Card to the right of the hero: an excerpt of public/ejemplo-diagnostico-seo.html (fictional business, in Spanish) and the real case from the blog
+  muestra: {
+    aria: 'Sample of the free SEO report',
+    etiqueta: 'Sample · SEO report',
+    nota: 32,
+    deCien: 'out of 100',
+    negocio: 'Clínica Dental Olmedo',
+    aviso: 'Fictional business',
+    urgentesTitulo: 'The 5 most urgent issues',
+    urgentes: ['Google doesn’t know what the clinic does or where it is', 'Google doesn’t recognize it as a local business', 'On mobile, the page overflows the screen'],
+    enlace: 'See the full sample (in Spanish) →',
+    real: 'Real case: our own website, from 94 to 97 →',
+  },
   // Section after «How we work»: what we look at before proposing anything
   diagnostico: {
     titulo: 'Before touching anything, we diagnose your business',

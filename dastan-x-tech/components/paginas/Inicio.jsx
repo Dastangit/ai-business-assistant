@@ -58,6 +58,7 @@ export default function Inicio({ t, lang }) {
 
       {/* HERO: a quién ayudamos y qué recibe gratis, en la primera pantalla */}
       <main className="hero">
+        <div className="hero-texto">
         <span className="label-mono">{t.etiqueta}</span>
         <h1 className="hero-title">
           {t.titulo}
@@ -92,6 +93,30 @@ export default function Inicio({ t, lang }) {
             {t.puntos[2]}
           </li>
         </ul>
+        </div>
+
+        {/* MUESTRA: lo que recibe el cliente, en el hueco de la derecha (en móvil solo quedan los enlaces) */}
+        <aside className="hero-muestra" aria-label={t.muestra.aria}>
+          <span className="label-mono">{t.muestra.etiqueta}</span>
+          <div className="hero-muestra-cabecera">
+            <div className="hero-muestra-anillo" style={{ '--n': t.muestra.nota }}>
+              <strong>{t.muestra.nota}</strong>
+              <small>{t.muestra.deCien}</small>
+            </div>
+            <div>
+              <strong>{t.muestra.negocio}</strong>
+              <span>{t.muestra.aviso}</span>
+            </div>
+          </div>
+          <div className="hero-muestra-urgentes">
+            <span>{t.muestra.urgentesTitulo}</span>
+            <ol>
+              {t.muestra.urgentes.map((u) => <li key={u}>{u}</li>)}
+            </ol>
+          </div>
+          <a href="/ejemplo-diagnostico-seo.html" className="card-link">{t.muestra.enlace}</a>
+          <Link href={ruta('blogAuditorAeo', lang)} className="hero-muestra-real">{t.muestra.real}</Link>
+        </aside>
       </main>
       </div>
 

@@ -18,6 +18,19 @@ const t = {
   subtitulo: 'Análisis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, el primer paso para tu presencia digital.',
   botonDiagnostico: 'Pide tu diagnóstico SEO gratis',
   puntos: ['Cada fallo, con su prueba', 'Sin pedirte contraseñas', '100 % en remoto'],
+  // Tarjeta a la derecha del hero: un trozo de public/ejemplo-diagnostico-seo.html (negocio ficticio) y el caso real del blog
+  muestra: {
+    aria: 'Ejemplo del diagnóstico SEO gratis',
+    etiqueta: 'Ejemplo · Diagnóstico SEO',
+    nota: 32,
+    deCien: 'de 100',
+    negocio: 'Clínica Dental Olmedo',
+    aviso: 'Negocio ficticio',
+    urgentesTitulo: 'Los 5 problemas más urgentes',
+    urgentes: ['Google no sabe qué hace la clínica ni dónde está', 'Google no la reconoce como negocio local', 'En el móvil, la web se sale de la pantalla'],
+    enlace: 'Ver el ejemplo completo →',
+    real: 'Caso real: nuestra propia web, de 94 a 97 →',
+  },
   // Sección tras «Cómo trabajamos»: qué miramos antes de proponer nada
   diagnostico: {
     titulo: 'Antes de tocar nada, diagnosticamos tu negocio',

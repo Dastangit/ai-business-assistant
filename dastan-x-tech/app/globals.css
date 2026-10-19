@@ -322,13 +322,42 @@ html { scroll-padding-top: 84px; }
 /* Hero con la propuesta de valor */
 .hero {
   position: relative; z-index: 10; display: flex; flex-direction: column;
-  align-items: flex-start; gap: clamp(20px, 4.5vh, 30px);
+  align-items: flex-start; gap: 2.5rem;
   max-width: 1120px; width: 100%; margin: 0 auto;
   /* En pantallas bajas (portátiles) el contenido sube para que los puntos del final se vean enteros */
   padding: clamp(32px, 8vh, 80px) 24px 56px;
   /* Antes ocupaba la pantalla entera y en escritorio dejaba ~260 px vacíos: ahora «Quiénes somos» asoma debajo */
 }
 .hero .label-mono { color: var(--text-2); }
+.hero-texto { display: flex; flex-direction: column; align-items: flex-start; gap: clamp(20px, 4.5vh, 30px); min-width: 0; }
+/* Muestra del diagnóstico: ocupa el hueco que el titular dejaba a la derecha en escritorio */
+.hero-muestra {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card);
+  padding: 24px; display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 380px;
+}
+.hero-muestra-cabecera { display: flex; align-items: center; gap: 16px; }
+.hero-muestra-cabecera > div:last-child { display: flex; flex-direction: column; gap: 2px; }
+.hero-muestra-cabecera span { color: var(--text-2); font-size: 13px; }
+/* Anillo como el del PDF: la nota en ámbar porque 32 es una nota baja */
+.hero-muestra-anillo {
+  width: 76px; height: 76px; border-radius: 50%; flex-shrink: 0;
+  display: grid; place-content: center; text-align: center;
+  background: radial-gradient(closest-side, var(--surface) 78%, transparent 79%),
+    conic-gradient(#F59E0B calc(var(--n) * 1%), var(--border) 0);
+}
+.hero-muestra-anillo strong { font-size: 1.6rem; line-height: 1; }
+.hero-muestra-anillo small { color: var(--text-2); font-size: 11px; }
+.hero-muestra-urgentes { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.hero-muestra-urgentes > span { font-size: 13px; color: var(--text-2); }
+.hero-muestra-urgentes ol { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: 14px; line-height: 1.4; }
+.hero-muestra .card-link { margin-top: 0; }
+.hero-muestra-real { color: var(--text-2); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.hero-muestra-real:hover { color: var(--text); }
+@media (min-width: 960px) {
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: 48px; }
+  .hero-muestra { max-width: none; }
+}
+@media (forced-colors: active) { .hero-muestra-anillo { background: none; border: 2px solid CanvasText; } }
 /* Palabras clave del titular con el degradado del logo (#BA45FF → #8B7FE0 → #34DCAB) */
 .texto-degradado {
   background: linear-gradient(90deg, #BA45FF 0%, #8B7FE0 50%, #34DCAB 100%);
@@ -731,7 +760,11 @@ html, body { overflow-x: clip; width: 100%; }
   .site-header-blog { display: none; }
   .site-header-links { gap: 12px; flex-wrap: nowrap; white-space: nowrap; font-size: 14px; }
 
-  .hero { padding: 40px 20px 32px; gap: 20px; }
+  .hero { padding: 40px 20px 32px; gap: 28px; }
+  .hero-texto { gap: 20px; }
+  /* En móvil la muestra se queda en sus dos enlaces para no alargar la portada */
+  .hero-muestra { padding: 0; background: none; border: 0; gap: 10px; }
+  .hero-muestra > .label-mono, .hero-muestra-cabecera, .hero-muestra-urgentes { display: none; }
   .section { padding: 3rem 20px; }
 
   /* Hero asimétrico de /servicios/* - antes se cortaba en móvil por el grid de 2 columnas fijo y el h1 de 4.5rem en inline style */
