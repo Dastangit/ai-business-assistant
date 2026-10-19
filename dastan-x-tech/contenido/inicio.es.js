@@ -10,12 +10,12 @@ const t = {
     servicios: 'Servicios',
     wa: 'Escríbenos por WhatsApp al +1 605-500-3653',
   },
-  etiqueta: 'Consultoría digital, tecnología de alto nivel y automatizaciones para negocios privados y pymes',
+  etiqueta: 'Consultoría digital y tecnología de alto nivel',
   // El titular se parte en dos: la segunda parte va con el degradado de la marca
   titulo: 'Descubre, con pruebas, por qué tu negocio ',
   tituloDestacado: 'pierde clientes por internet.',
   tituloSr: ' DASTAN X-TECH, consultoría digital de alto nivel para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.',
-  subtitulo: 'Análisis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, el primer paso para tu presencia digital.',
+  subtitulo: 'Tu nota de 0 a 100 y las 5 correcciones más urgentes de tu web.',
   botonDiagnostico: 'Pide tu diagnóstico SEO gratis',
   puntos: ['Cada fallo, con su prueba', 'Sin pedirte contraseñas', '100 % en remoto'],
   // Tarjeta a la derecha del hero: un trozo de public/ejemplo-diagnostico-seo.html (negocio ficticio) y el caso real del blog
