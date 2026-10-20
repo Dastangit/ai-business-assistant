@@ -86,7 +86,7 @@ export default function DisenoWeb({ t, lang }) {
           <div className="demo-propia">
             <p className="demo-propia-titulo">{t.caso.demoTitulo}</p>
             <p>{t.caso.demoTexto}</p>
-            <a href="https://fancy-river-d053.paypaldastan.workers.dev" target="_blank" rel="noopener noreferrer" className="text-link">
+            <a href="https://spiffy-mousse-ff600d.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-link">
               {t.caso.demoEnlace}
             </a>
           </div>
