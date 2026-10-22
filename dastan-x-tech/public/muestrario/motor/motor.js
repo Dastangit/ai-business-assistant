@@ -63,6 +63,13 @@
         node.replaceChild(frag, child);
         if (ws.length && /^\S/.test(text) && prev && prev.nodeType === 1 && prev.tagName !== 'BR') glue(prev, ws[0]);
         if (ws.length && /\S$/.test(text) && next && next.nodeType === 1 && next.tagName !== 'BR' && !(ws.length === 1 && ws[0].parentNode.className === 'mo-nw')) glue(ws[ws.length - 1], next);
+      } else if (child.nodeType === 1 && child.classList.contains('grad')) {
+        // El texto en degradado entra entero: si se partiera en palabras con transform,
+        // Chrome no pinta el degradado (background-clip: text) hasta que acaba la animación
+        var gw = document.createElement('span'); gw.className = 'mo-w';
+        var gwi = document.createElement('span'); gwi.className = 'mo-wi';
+        gwi.style.setProperty('--i', wordIndex++);
+        node.insertBefore(gw, child); gw.appendChild(gwi); gwi.appendChild(child);
       } else if (child.nodeType === 1 && child.tagName !== 'BR') {
         splitNode(child);
       }
