@@ -113,7 +113,7 @@ export default function BlogPost() {
           It depends on what the report says. If your website already explains what you do well and only has specific issues (a poor title, a slow page, a hidden WhatsApp button), the 49 USD 48-Hour Fix is usually enough. If it doesn’t work well on mobile, doesn’t explain your services or nobody can tell how to reach you, a redesign is the better deal.
         </p>
         <p style={parrafo}>
-          Not sure which one you need? Start with the <a href={ruta('blog5Senales', 'en')} className="text-link">5 signs your website is losing you customers</a>, or see the <a href={ruta('disenoWeb', 'en')} className="text-link">Web Design service</a> with a real redesign.
+          Not sure which one you need? Start with the <a href={ruta('blog5Senales', 'en')} className="text-link">5 signs your website is losing you customers</a>, or see the <a href={ruta('disenoWeb', 'en')} className="text-link">Web Design service</a> with our own website in eight styles.
         </p>
 
         <h2 style={h2}>Frequently asked questions</h2>

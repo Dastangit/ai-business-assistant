@@ -493,13 +493,6 @@ html { scroll-padding-top: 84px; }
 .camino h3 { font-size: 1.3rem; font-weight: 600; line-height: 1.3; color: var(--ink); }
 .camino p { color: var(--ink-2); line-height: 1.6; flex: 1; margin-bottom: 0.5rem; }
 
-/* Diseño web: segundo ejemplo (demo de nuestra propia web) bajo el caso real del spa, más discreto que él */
-.demo-propia {
-  max-width: 650px; margin: 2.5rem auto 0; padding-top: 2rem; text-align: center;
-  border-top: 1px solid var(--line-light); color: var(--ink-2); line-height: 1.6;
-}
-.demo-propia-titulo { font-weight: 600; color: var(--ink); font-size: 1.1rem; margin-bottom: 0.25rem; }
-.demo-propia .text-link { display: inline-block; margin-top: 0.75rem; }
 
 /* Secciones oscuras dentro de páginas claras */
 .dark-section { background: var(--bg); color: var(--text); }

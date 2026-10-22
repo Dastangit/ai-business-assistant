@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es" data-estilo="editorial" data-mo-repetir>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DASTAN X-TECH · Consultoría digital para negocios y pymes</title>
+<meta name="description" content="Descubre, con pruebas, por qué tu negocio pierde clientes por internet. Diseño web, auditoría completa y posicionamiento AEO para negocios y pymes.">
+<link rel="stylesheet" href="../dx.css">
+<link rel="stylesheet" href="../motor/motor.css">
+<style>
+  body{background:var(--claro);color:var(--tinta)}
+  .dx-nav{text-shadow:none}.dx-nav.is-scrolled{background:rgba(250,249,252,.6);box-shadow:0 1px 0 #e4dff0}
+  .dx-links a{color:#5b5470}.dx-links a:hover{color:var(--tinta)}
+  .w{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+  .eti{color:var(--violeta-oscuro)}
+  .portada{padding-top:130px}
+  .cabecera{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ddd6ea;padding-bottom:14px;color:#5b5470}
+  h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:.98;letter-spacing:-.035em;margin:38px 0 0;max-width:1100px}
+  .abajo{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,72px);margin-top:48px;align-items:end}
+  .entrada{font-size:clamp(18px,1.5vw,21px);color:#3d3650;max-width:470px}
+  .entrada + .btn{margin-top:28px}
+  .sellos{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .sellos span{font-family:var(--f-mono);font-size:13px;font-weight:600;background:var(--lavanda);color:#4a3a7a;padding:6px 10px;border-radius:8px}
+  .cinta{border-block:1px solid #ddd6ea;margin:clamp(70px,11vh,130px) 0;padding:20px 0;font-weight:800;font-size:clamp(26px,3.4vw,46px);letter-spacing:-.02em}
+  .cinta span{padding:0 26px}.cinta b{color:var(--violeta)}
+  .titb{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 40px}
+  .indice{border-top:2px solid var(--tinta)}
+  .fila{display:grid;grid-template-columns:80px 1.2fr 1fr auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid #ddd6ea}
+  .fila .n{font-family:var(--f-mono);font-weight:600;color:var(--violeta-oscuro)}
+  .fila h3{font-weight:700;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.02em;line-height:1}
+  .fila p{color:#4a4360;font-size:16px}
+  .fila .precio{font-family:var(--f-mono);font-weight:600;color:#0f766e;white-space:nowrap}
+  .mosaico{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(70px,11vh,130px);align-items:start}
+  .mosaico figure{margin:0}
+  .m1{grid-column:1/8}.m2{grid-column:8/13;margin-top:18vh}.m3{grid-column:3/10;margin-top:-4vh}
+  figcaption{font-family:var(--f-mono);font-size:13px;font-weight:600;color:#5b5470;margin-top:12px;letter-spacing:.06em}
+  .nos{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(28px,6vw,90px);align-items:center;padding-block:clamp(90px,15vh,170px)}
+  .nos .duo figcaption{color:#4a4360}.nos .duo figcaption b{color:var(--tinta)}
+  .nos p{font-size:19px;color:#3d3650;margin-top:16px}
+  .final{background:var(--tinta);color:var(--texto);padding:clamp(90px,15vh,170px) 0;text-align:left}
+  .final h2{font-weight:800;font-size:clamp(36px,4.6vw,64px);letter-spacing:-.035em;line-height:.98;max-width:1000px}
+  .final p{color:var(--suave);max-width:600px;margin:24px 0 32px;font-size:19px}
+  @media (max-width:860px){
+    .abajo,.nos{grid-template-columns:1fr}
+    .fila{grid-template-columns:44px 1fr}.fila p,.fila .precio{grid-column:2}
+    .m1,.m2,.m3{grid-column:1/-1;margin-top:0}
+    .cabecera{flex-direction:column}
+  }
+  /* portátil: el cierre cabe entero entre la cabecera y el pie */
+  @media (min-width:821px) and (max-height:700px){.final{padding-bottom:40px}.final h2{font-size:48px}.final p{margin:14px 0 20px}}
+  /* volver-hueco: en el móvil el botón fijo "← Muestrario" no tapa lo último del pie */
+  @media (max-width:820px){body>footer{padding-bottom:max(96px,var(--hueco-pie,0px))!important}}
+</style>
+</head>
+<body>
+<header class="dx-nav" data-nav>
+  <a class="dx-marca" href="#"><img src="../assets/logo.svg" alt="">DASTAN X-TECH</a>
+  <nav class="dx-links"><a href="#servicios">Servicios</a><a href="#como">Cómo trabajamos</a><a href="#nosotros">Quiénes somos</a></nav>
+  <a class="btn btn--wa" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">WhatsApp</a>
+</header>
+<main>
+  <section class="portada w">
+    <div class="cabecera mono" data-reveal="fade"><span>DASTAN X-TECH · Consultoría digital</span><span>Colombia · México · EE. UU. · Remoto</span></div>
+    <h1 data-split>Descubre, con pruebas, por qué tu negocio <span class="grad">pierde clientes</span> por internet.</h1>
+    <div class="abajo">
+      <div>
+        <p class="entrada" data-reveal="up">Análisis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes, el primer paso para tu presencia digital.</p>
+        <a class="btn btn--turquesa" data-reveal="up" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">Pide tu diagnóstico SEO gratis</a>
+        <div class="sellos" data-stagger><span>Cada fallo, con su prueba</span><span>Sin pedirte contraseñas</span><span>100 % en remoto</span></div>
+      </div>
+      <div class="ventana" data-reveal="clip"><img src="../assets/ej-diagnostico.jpg" alt="Diagnóstico SEO de ejemplo"></div>
+    </div>
+  </section>
+  <div class="cinta mo-marquee" aria-hidden="true"><div class="mo-marquee__track">
+    <span>Diseño web <b>✦</b></span><span>Auditoría Completa <b>✦</b></span><span>Posicionamiento AEO <b>✦</b></span><span>Diagnóstico SEO gratis <b>✦</b></span>
+    <span>Diseño web <b>✦</b></span><span>Auditoría Completa <b>✦</b></span><span>Posicionamiento AEO <b>✦</b></span><span>Diagnóstico SEO gratis <b>✦</b></span>
+  </div></div>
+  <section class="w" id="servicios">
+    <span class="eti" data-reveal="fade">Servicios</span>
+    <h2 class="titb" data-split>Tres servicios para que tu negocio no pierda ni un cliente</h2>
+    <div class="indice" data-stagger><div class="fila"><span class="n">01</span><h3>Diseño web</h3><p>Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.</p><span class="precio">Desde 100 USD</span></div><div class="fila"><span class="n">02</span><h3>Auditoría Completa</h3><p>Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.</p><span class="precio">Desde 200 USD</span></div><div class="fila"><span class="n">03</span><h3>Posicionamiento AEO</h3><p>Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.</p><span class="precio">Desde 150 USD</span></div></div>
+    <div class="mosaico" id="como">
+      <figure class="m1" data-reveal="up"><div class="ventana"><img src="../assets/m-editorial.jpg" alt="Rediseño editorial de un spa"></div><figcaption>Diseño web · un spa, en estilo editorial</figcaption></figure>
+      <figure class="m2" data-reveal="up"><div class="ventana"><img src="../assets/ej-auditoria.jpg" alt="Auditoría completa de ejemplo"></div><figcaption>Auditoría Completa · ejemplo con una clínica inventada</figcaption></figure>
+      <figure class="m3" data-reveal="up"><div class="ventana"><img src="../assets/m-3d.jpg" alt="Rediseño con objeto 3D"></div><figcaption>Diseño web · el mismo spa, con piedras en 3D</figcaption></figure>
+    </div>
+  </section>
+  <section class="w nos" id="nosotros">
+    <div class="duo" data-stagger><figure><img src="../assets/dastan.jpg" alt="Dastan Tamayo, fundador de DASTAN X-TECH"><figcaption><b>Dastan Tamayo</b>Fundador de DASTAN X-TECH</figcaption></figure><figure><img src="../assets/isdiel.jpg" alt="Isdiel Martínez, consultor y estratega digital"><figcaption><b>Isdiel Martínez</b>Consultor y estratega digital</figcaption></figure></div>
+    <div><span class="eti" data-reveal="fade">Quiénes somos</span><h2 class="titb" data-split style="margin-bottom:8px">Que internet refleje el trabajo que ya haces</h2><p data-reveal="up">Somos Dastan Tamayo, fundador de DASTAN X-TECH, e Isdiel Martínez, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet.</p><p data-reveal="up">DASTAN X-TECH empezó con nuestro propio negocio: hacíamos un buen trabajo, pero en internet casi no se veía. Estudiamos cómo se gana visibilidad hoy —en Google, en las redes y en las respuestas de la IA— y así nació esta consultora. Nuestro trabajo es que internet refleje el que ya haces tú.</p></div>
+  </section>
+  <section class="final"><div class="w">
+    <span class="eti" style="color:var(--violeta-claro)" data-reveal="fade">Hablemos de tu negocio</span>
+    <h2 data-split style="margin-top:16px">Tu diagnóstico SEO, <span class="grad">gratis</span>.</h2>
+    <p data-reveal="up">Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos gratis tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF.</p>
+    <a class="btn btn--turquesa" data-reveal="up" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">Pedir mi diagnóstico por WhatsApp</a>
+  </div></section>
+</main>
+<footer class="dx-pie">
+  <div><b>DASTAN X-TECH</b>Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</div>
+  <div><b>Servicios</b><a href="#servicios">Diseño web</a><a href="#servicios">Auditoría Completa</a><a href="#servicios">Posicionamiento AEO</a></div>
+  <div><b>Contacto</b><a href="https://wa.me/16055003653">WhatsApp +1 605-500-3653</a><a href="mailto:dastanxtech.services@gmail.com">dastanxtech.services@gmail.com</a><a href="https://www.instagram.com/dastan.xtech/">Instagram</a><a href="https://www.linkedin.com/in/dastantech">LinkedIn</a></div>
+</footer>
+<a class="volver" href="../index.html">← Muestrario</a>
+<script src="../motor/motor.js"></script>
+
+</body>
+</html>

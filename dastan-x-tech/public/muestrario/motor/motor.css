@@ -1,0 +1,89 @@
+/* Motor de animaciones · Kit Estudio Web
+ * Acompaña a motor.js. Los colores y tipografías NO van aquí: van en la página,
+ * con las variables del design.md de cada web.
+ * Nunca pongas overflow en html y body a la vez: rompe las escenas fijas.
+ * Para evitar el scroll horizontal usa solo:  body { overflow-x: clip; }
+ */
+:root {
+  --mo-ease: cubic-bezier(.22, 1, .36, 1);
+  --mo-dur: 1s;
+}
+
+/* ---------- Apariciones (solo si hay JS: sin JS todo se ve) ---------- */
+.mo-js [data-reveal] {
+  opacity: 0;
+  transition: opacity var(--mo-dur) var(--mo-ease), transform calc(var(--mo-dur) * 1.1) var(--mo-ease), clip-path calc(var(--mo-dur) * 1.2) var(--mo-ease);
+  transition-delay: calc(var(--d, 0) * 1ms);
+}
+.mo-js [data-reveal="up"]    { transform: translateY(48px); }
+.mo-js [data-reveal="left"]  { transform: translateX(-60px); }
+.mo-js [data-reveal="right"] { transform: translateX(60px); }
+.mo-js [data-reveal="scale"] { transform: scale(.92); }
+.mo-js [data-reveal].is-in   { opacity: 1; transform: none; }
+/* Cortinilla: se recorta el HIJO, no la caja observada (una caja recortada del todo
+   no la detecta el navegador y no aparecería nunca). */
+.mo-js [data-reveal="clip"]  { opacity: 1; }
+.mo-js [data-reveal="clip"] > * { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s var(--mo-ease); }
+.mo-js [data-reveal="clip"].is-in > * { clip-path: inset(0 0 0 0); }
+
+/* Escalonados: cada hijo aparece cuando llega él a pantalla; los que entran juntos
+   se escalonan (--d lo pone motor.js) */
+.mo-js [data-stagger] > * {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity .9s var(--mo-ease), transform 1s var(--mo-ease);
+  transition-delay: calc(var(--d, 0) * 1ms);
+}
+.mo-js [data-stagger] > .is-in { opacity: 1; transform: none; }
+
+/* ---------- Titulares palabra a palabra ---------- */
+[data-split] .mo-nw { white-space: nowrap; }
+[data-split] .mo-w  { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+[data-split] .mo-wi { display: inline-block; }
+.mo-js [data-split] .mo-wi { transform: translateY(110%); transition: transform 1.1s var(--mo-ease); transition-delay: calc(var(--i) * 60ms); }
+.mo-js [data-split].is-in .mo-wi { transform: none; }
+
+/* ---------- Paralaje: el elemento debe poder salirse de su caja ---------- */
+.mo-parallax-box { overflow: hidden; }
+.mo-parallax-box > [data-parallax] { height: 120%; margin-top: -10%; will-change: transform; }
+
+/* ---------- Marquesina (texto que corre en bucle) ---------- */
+.mo-marquee { overflow: hidden; white-space: nowrap; }
+.mo-marquee__track { display: inline-flex; gap: 0; animation: mo-marquee var(--speed, 38s) linear infinite; }
+@keyframes mo-marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Cabecera de cristal: el contenido pasa por detrás, desenfocado ---------- */
+.mo-cristal {
+  background: color-mix(in srgb, var(--mo-cristal, #ffffff) 58%, transparent);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+          backdrop-filter: blur(18px) saturate(1.5);
+}
+
+/* ---------- Escenas fijas ---------- */
+[data-progress], [data-horizontal], [data-sequence] { position: relative; }
+/* 100dvh: sigue a la pantalla real del móvil. Con 100svh, al esconderse la barra del
+   navegador quedaba una franja negra debajo de la escena (visto en un móvil real). */
+.mo-sticky { position: sticky; top: 0; height: 100vh; height: 100dvh; overflow: hidden; }
+
+/* Pasos: cada [data-step-item] se muestra cuando es el activo */
+.mo-js [data-step-item] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--mo-ease), transform .9s var(--mo-ease); }
+.mo-js [data-step-item].is-active { opacity: 1; transform: none; }
+
+/* ---------- Galería horizontal ---------- */
+[data-horizontal] .mo-track { display: flex; height: 100%; align-items: center; will-change: transform; }
+
+/* ---------- Secuencia de fotos o vídeo con el scroll ---------- */
+[data-sequence] { height: calc(var(--frames, 4) * 150vh); }
+/* Sin will-change: transform (emborrona al hacer zoom). Fotos a pantalla completa:
+   solo horizontales y de al menos 1500 px de ancho. */
+.mo-frame { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; will-change: opacity; }
+.mo-frame:first-of-type, video.mo-frame { opacity: 1; }
+.mo-caption { opacity: 0; transform: translateY(24px); transition: opacity .6s var(--mo-ease), transform .8s var(--mo-ease); pointer-events: none; }
+.mo-caption.is-on { opacity: 1; transform: none; pointer-events: auto; }
+
+/* ---------- Reducir movimiento: todo quieto y legible ---------- */
+.mo-reduce *, .mo-reduce *::before, .mo-reduce *::after { animation: none !important; transition: none !important; }
+.mo-reduce [data-reveal], .mo-reduce [data-reveal="clip"] > *, .mo-reduce [data-stagger] > *, .mo-reduce [data-split] .mo-wi {
+  opacity: 1 !important; transform: none !important; clip-path: none !important;
+}
+/* Los pasos siguen mostrándose de uno en uno (si no, se pisarían), pero sin moverse */
+.mo-reduce [data-step-item] { transform: none !important; }

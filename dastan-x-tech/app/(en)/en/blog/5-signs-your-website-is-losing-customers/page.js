@@ -14,7 +14,7 @@ const articleJsonLd = {
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' },
   datePublished: '2026-09-23',
   dateModified: REVISIONES['/en/blog/5-signs-your-website-is-losing-customers'],
-  description: 'The 5 most common signs that make a visitor leave without booking or buying, with a real redesign that fixed all five.',
+  description: 'The 5 most common signs that make a visitor leave without booking or buying, and what they look like fixed on our own website.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers',
 };
 
@@ -48,7 +48,7 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Before we propose a Digital Business Audit, the first thing we review is the website. These five signs are the ones we see most often. We illustrate them with a real redesign we did for a small spa (we&apos;re keeping its name out of this for now, but you can see the result).
+          Before we propose a Digital Business Audit, the first thing we review is the website. These five signs are the ones we see most often. We find them again and again on local business websites, and every one of them can be fixed.
         </p>
 
         <h2 style={h2}>1. There&apos;s no clickable phone number or WhatsApp anywhere</h2>
@@ -78,15 +78,15 @@ export default function BlogPost() {
 
         <div style={{ background: 'var(--ink)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>
           <p style={{ color: '#F5F4EF', fontSize: '1.1rem', marginBottom: '1rem' }}>
-            Here&apos;s what it looks like fixed in practice — this is the real redesign of the spa mentioned above:
+            Here&apos;s what it looks like fixed in practice: our own website, rebuilt in eight styles with none of these signs (the showcase is in Spanish).
           </p>
           <a
-            href="https://rad-valkyrie-9cdd5a.netlify.app/"
+            href="/muestrario/index.html"
             target="_blank"
             rel="noopener noreferrer"
             style={{ display: 'inline-block', color: '#2DD4BF', fontWeight: 'bold', textDecoration: 'none', marginBottom: '1.5rem' }}
           >
-            See the live redesign ↗
+            See the 8 styles ↗
           </a>
           <br />
           <button

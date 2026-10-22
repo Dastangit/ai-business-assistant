@@ -4,12 +4,12 @@ import { conImagenHeredada } from '@/lib/metadatos';
 // Metadatos propios: sin este archivo el artículo heredaba el título y la descripción del home
 const metadata = {
   title: '5 señales de que tu web te está costando clientes | DASTAN X-TECH',
-  description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
+  description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas en nuestra propia web.',
   keywords: ['Web que no convierte', 'Rediseño web', 'Errores de diseño web', 'Diseño web para pymes'],
   alternates: alternates('blog5Senales', 'es'),
   openGraph: {
     title: '5 señales de que tu web te está costando clientes',
-    description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño.',
+    description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas.',
     url: 'https://dastanxtech.com/blog/5-senales-web-cuesta-clientes',
     siteName: 'DASTAN X-TECH',
     locale: 'es_US',

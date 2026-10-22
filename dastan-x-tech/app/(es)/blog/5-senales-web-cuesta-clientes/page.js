@@ -12,7 +12,7 @@ const articleJsonLd = {
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-23',
   dateModified: REVISIONES['/blog/5-senales-web-cuesta-clientes'],
-  description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
+  description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas en nuestra propia web.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/5-senales-web-cuesta-clientes',
 };
 
@@ -43,7 +43,7 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          Antes de proponer una Auditoría Completa de Negocio, lo primero que revisamos es la web. Estas cinco señales son las que más se repiten. Las ilustramos con un rediseño real que hicimos para un pequeño spa (mantenemos su nombre fuera de esto por ahora, pero el resultado sí lo puedes ver).
+          Antes de proponer una Auditoría Completa de Negocio, lo primero que revisamos es la web. Estas cinco señales son las que más se repiten. Son las que encontramos una y otra vez en webs de negocios locales, y todas tienen arreglo.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>1. No hay un teléfono o WhatsApp clicable en ningún lado</h2>
@@ -73,15 +73,15 @@ export default function BlogPost() {
 
         <div style={{ background: 'var(--ink)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>
           <p style={{ color: '#F5F4EF', fontSize: '1.1rem', marginBottom: '1rem' }}>
-            Así se ve resuelto en la práctica — este es el rediseño real del spa que mencionamos arriba:
+            Así se ve resuelto en la práctica: nuestra propia web, rehecha en ocho estilos sin ninguna de estas señales.
           </p>
           <a
-            href="https://rad-valkyrie-9cdd5a.netlify.app/"
+            href="/muestrario/index.html"
             target="_blank"
             rel="noopener noreferrer"
             style={{ display: 'inline-block', color: '#2DD4BF', fontWeight: 'bold', textDecoration: 'none', marginBottom: '1.5rem' }}
           >
-            Ver el rediseño en vivo ↗
+            Ver los 8 estilos ↗
           </a>
           <br />
           <button

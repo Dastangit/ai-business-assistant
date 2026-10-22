@@ -6,7 +6,12 @@ const nextConfig = {
   // descripción de la web (llms.txt) sin tener que leer el HTML. Las pide el escáner de agentes de Cloudflare.
   headers() {
     const enlaces = '</llms.txt>; rel="describedby"; type="text/markdown", </sitemap.xml>; rel="sitemap"; type="application/xml"';
-    return ['/', '/en'].map((source) => ({ source, headers: [{ key: 'Link', value: enlaces }] }));
+    return [
+      ...['/', '/en'].map((source) => ({ source, headers: [{ key: 'Link', value: enlaces }] })),
+      // El muestrario (public/muestrario) es nuestra propia web rehecha en ocho estilos: no debe
+      // salir en Google ni en las respuestas de la IA confundido con la web real
+      { source: '/muestrario/:ruta*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }] },
+    ];
   },
   // El informe AEO de ejemplo es el HTML que genera el auditor, tal cual (public/ejemplo-informe-aeo.html),
   // servido en una dirección limpia. Para actualizarlo, se copia encima el informe nuevo.

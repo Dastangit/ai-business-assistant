@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es" data-estilo="landing-conversion">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DASTAN X-TECH · Consultoría digital para negocios y pymes</title>
+<meta name="description" content="Descubre, con pruebas, por qué tu negocio pierde clientes por internet. Diseño web, auditoría completa y posicionamiento AEO para negocios y pymes.">
+<link rel="stylesheet" href="../dx.css">
+<link rel="stylesheet" href="../motor/motor.css">
+<style>
+  .hero{padding:clamp(120px,16vh,170px) clamp(16px,5vw,64px) clamp(60px,10vh,110px);display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;background:radial-gradient(45% 60% at 80% 40%,rgba(168,85,247,.25),transparent 70%)}
+  .chip{display:inline-flex;gap:8px;align-items:center;font-family:var(--f-mono);font-weight:600;font-size:13px;color:var(--turquesa);background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);padding:7px 12px;border-radius:999px}
+  .hero h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:20px 0}
+  .hero p{color:var(--suave);font-size:19px;max-width:520px}
+  .checks{list-style:none;display:grid;gap:10px;margin:24px 0 30px}
+  .checks li{display:flex;gap:12px;align-items:center;font-weight:500}
+  .checks li::before{content:"✓";display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(45,212,191,.15);color:var(--turquesa);font-weight:700;font-size:14px;flex:0 0 24px}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px}
+  .hero__vis{position:relative}
+  .hero__vis .telefono{position:absolute;width:30%;right:-4%;bottom:-12%}
+  .bloque{padding:clamp(70px,12vh,130px) clamp(16px,5vw,64px)}
+  .titb{font-weight:800;font-size:clamp(32px,4vw,56px);letter-spacing:-.03em;line-height:1.05;margin:12px 0 40px;max-width:860px}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+  .b{background:var(--panel);border:1px solid var(--borde);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px;overflow:hidden;text-decoration:none}
+  .b:hover{border-color:var(--violeta)}
+  .b1{grid-column:span 3;grid-row:span 2}.b2,.b3{grid-column:span 3}
+  .b .n{font-family:var(--f-mono);font-weight:600;color:var(--violeta-claro)}
+  .b h3{font-size:26px;font-weight:700}
+  .b .precio{font-family:var(--f-mono);font-weight:600;color:var(--turquesa)}
+  .b ul{list-style:none;color:var(--suave);display:grid;gap:6px;font-size:15px}
+  .b li::before{content:"→ ";color:var(--violeta-claro)}
+  .b .ventana{margin-top:auto}
+  .b .ventana img{max-height:260px;object-fit:cover;object-position:top}
+  .pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:p}
+  .paso{background:var(--panel);border:1px solid var(--borde);border-radius:20px;padding:28px}
+  .paso::before{counter-increment:p;content:counter(p);display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--degradado);color:#0a090e;font-weight:800;font-size:22px;margin-bottom:18px}
+  .paso p{color:var(--suave)}
+  .extra{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .extra div{border:1px dashed var(--borde-fuerte);border-radius:20px;padding:26px}
+  .extra b{display:block;font-size:20px;margin-bottom:8px}
+  .extra span{color:var(--suave)}
+  .banda{background:var(--degradado);color:#0a090e;border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center}
+  .banda h2{font-weight:800;font-size:clamp(32px,3.8vw,54px);letter-spacing:-.03em;line-height:1.02}
+  .banda p{font-weight:500;margin-top:10px}
+  .banda .btn{background:#0a090e;color:#fff;justify-self:end}
+  .barra-movil{display:none}
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr}
+    .hero__vis .telefono{display:none}
+    .bento{grid-template-columns:1fr}.b1,.b2,.b3{grid-column:auto;grid-row:auto}
+    .pasos,.extra,.banda{grid-template-columns:1fr}.banda .btn{justify-self:start}
+    .barra-movil{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(10,9,14,.95);border-top:1px solid var(--borde)}
+    .volver{bottom:76px}
+    .dx-pie{padding-bottom:110px}
+  }
+  /* volver-hueco: en el móvil el botón fijo "← Muestrario" no tapa lo último del pie */
+  @media (max-width:820px){body>footer{padding-bottom:max(96px,var(--hueco-pie,0px))!important}}
+
+  /* una-barra: en el móvil la cabecera se va con el scroll y la barra de abajo solo sale
+     cuando los botones de la portada ya no se ven (nunca dos barras a la vez) */
+  @media (max-width:860px){
+    .dx-nav{position:absolute!important}
+    .barra-movil{transform:translateY(110%);transition:transform .35s ease}
+    .barra-movil.ver{transform:none}
+    .volver{bottom:12px;transition:bottom .35s ease}
+    .barra-movil.ver ~ .volver{bottom:76px}
+  }
+</style>
+</head>
+<body>
+<header class="dx-nav" data-nav>
+  <a class="dx-marca" href="#"><img src="../assets/logo.svg" alt="">DASTAN X-TECH</a>
+  <nav class="dx-links"><a href="#servicios">Servicios</a><a href="#como">Cómo trabajamos</a><a href="#nosotros">Quiénes somos</a></nav>
+  <a class="btn btn--wa" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">WhatsApp</a>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <span class="chip" data-reveal="fade">● Diagnóstico SEO gratis · en PDF</span>
+      <h1 data-split>Descubre por qué tu negocio <span class="grad">pierde clientes</span> por internet.</h1>
+      <p data-reveal="up">Tu puntuación de 0 a 100 y las 5 correcciones más urgentes, explicadas sin tecnicismos.</p>
+      <ul class="checks" data-stagger><li>Cada fallo, con su prueba</li><li>Sin pedirte contraseñas</li><li>100 % en remoto</li></ul>
+      <div class="ctas" data-reveal="up"><a class="btn btn--turquesa" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">Pide tu diagnóstico SEO gratis</a><a class="btn btn--borde" href="#servicios">Ver servicios</a></div>
+    </div>
+    <div class="hero__vis" data-reveal="scale">
+      <div class="ventana"><img src="../assets/ej-diagnostico.jpg" alt="Diagnóstico SEO de ejemplo con nota de 32 sobre 100"></div>
+      <div class="telefono"><img src="../assets/movil-conversion.jpg" alt="Web rediseñada en el móvil"></div>
+    </div>
+  </section>
+  <section class="bloque" id="servicios">
+    <span class="eti">Servicios</span>
+    <h2 class="titb" data-split>Tres servicios para que tu negocio no pierda ni un cliente</h2>
+    <div class="bento" data-stagger><a class="b b1" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis."><span class="n">01 · Web</span><h3>Diseño web</h3><span class="precio">Desde 100 USD</span><ul><li>Diagnóstico honesto de tu web actual.</li><li>Web nueva, responsive, lista para publicar.</li><li>WhatsApp y teléfono siempre visibles.</li></ul><div class="ventana"><img src="../assets/m-conversion.jpg" alt="Diseño web" loading="lazy"></div></a><a class="b b2" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis."><span class="n">02 · Auditoría</span><h3>Auditoría Completa</h3><span class="precio">Desde 200 USD</span><ul><li>Presencia digital sobre 100.</li><li>Madurez tecnológica sobre 5.</li><li>Análisis de procesos.</li><li>Plan de acción por fases.</li></ul></a><a class="b b3" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis."><span class="n">03 · IA y AEO</span><h3>Posicionamiento AEO</h3><span class="precio">Desde 150 USD</span><ul><li>Ficha de Google y redes ordenadas.</li><li>Contenido citable por IA.</li><li>Reseñas y señales de confianza.</li></ul></a></div>
+  </section>
+  <section class="bloque" id="como" style="padding-top:0">
+    <span class="eti">Así de fácil</span>
+    <h2 class="titb" data-split>Empieza en tres pasos</h2>
+    <div class="pasos" data-stagger><div class="paso"><p>Empezamos por tu web. Te mandamos gratis su diagnóstico SEO (tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en PDF) y, si hace falta, la renovamos con tu marca real. ¿No tienes web? Te la creamos.</p></div><div class="paso"><p>Si quieres verlo todo, la Auditoría Completa de Negocio analiza todo tu negocio, por fuera y por dentro, y te da un plan ordenado.</p></div><div class="paso"><p>Te posicionamos para que Google y la IA te recomienden: tu ficha, tus reseñas y un contenido que la IA pueda citar.</p></div></div>
+  </section>
+  <section class="bloque" style="padding-top:0">
+    <div class="extra" data-stagger>
+      <div><b>Arreglo exprés · 49 USD</b><span>¿Ya tienes web? Aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico. Si después haces la web nueva, te lo descontamos.</span></div>
+      <div><b>Asistente 24 h · 15 USD/mes</b><span>Opcional: responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp.</span></div>
+    </div>
+  </section>
+  <section class="bloque" id="nosotros" style="padding-top:0">
+    <div class="banda" data-reveal="up">
+      <div><h2>Tu diagnóstico SEO, gratis.</h2><p>Escríbenos por WhatsApp con el nombre de tu negocio y tu web.</p></div>
+      <a class="btn" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">Escribir por WhatsApp</a>
+    </div>
+  </section>
+</main>
+<div class="barra-movil"><a class="btn btn--borde" href="#servicios">Servicios</a><a class="btn btn--wa" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">WhatsApp</a></div>
+<footer class="dx-pie">
+  <div><b>DASTAN X-TECH</b>Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</div>
+  <div><b>Servicios</b><a href="#servicios">Diseño web</a><a href="#servicios">Auditoría Completa</a><a href="#servicios">Posicionamiento AEO</a></div>
+  <div><b>Contacto</b><a href="https://wa.me/16055003653">WhatsApp +1 605-500-3653</a><a href="mailto:dastanxtech.services@gmail.com">dastanxtech.services@gmail.com</a><a href="https://www.instagram.com/dastan.xtech/">Instagram</a><a href="https://www.linkedin.com/in/dastantech">LinkedIn</a></div>
+</footer>
+<a class="volver" href="../index.html">← Muestrario</a>
+<script src="../motor/motor.js"></script>
+
+<script>
+/* una-barra: la barra fija del móvil aparece al dejar atrás los botones de la portada */
+(function(){var b=document.querySelector('.barra-movil'),c=document.querySelector('.hero .ctas');if(!b||!c)return;
+new IntersectionObserver(function(e){b.classList.toggle('ver',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(c);})();
+</script>
+</body>
+</html>

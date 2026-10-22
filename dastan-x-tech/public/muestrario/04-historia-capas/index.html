@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es" data-estilo="historia-por-capas">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DASTAN X-TECH · Consultoría digital para negocios y pymes</title>
+<meta name="description" content="Descubre, con pruebas, por qué tu negocio pierde clientes por internet. Diseño web, auditoría completa y posicionamiento AEO para negocios y pymes.">
+<link rel="stylesheet" href="../dx.css">
+<link rel="stylesheet" href="../motor/motor.css">
+<style>
+  .apertura{min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 16px 60px;background:radial-gradient(50% 50% at 50% 55%,rgba(168,85,247,.25),transparent 70%)}
+  .apertura h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1;letter-spacing:-.035em;max-width:1050px}
+  .apertura p{color:var(--suave);margin-top:22px;font-size:19px}
+  .capitulos{height:500vh}
+  .escena{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:4vw;padding:80px clamp(16px,5vw,80px) 30px}
+  .escena__vis{position:relative;height:72vh}
+  .escena__vis .ventana{position:absolute;inset:0;margin:auto;height:fit-content;transition:opacity .9s var(--mo-ease),transform 1.2s var(--mo-ease)}
+  .escena__vis .ventana[data-step-item]{transform:translateY(30px) scale(.97)}
+  .escena__vis .ventana.is-active{transform:none}
+  .escena__txt{position:relative;height:60vh}
+  .cap{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center}
+  .cap .num{font-family:var(--f-mono);font-weight:600;color:var(--turquesa);font-size:15px}
+  .cap h2{font-weight:800;font-size:clamp(34px,3.8vw,58px);line-height:1.04;letter-spacing:-.025em;margin:14px 0 18px}
+  .cap p{color:var(--suave);font-size:18px;max-width:470px}
+  .indice{position:absolute;left:0;bottom:0;width:180px;height:3px;background:var(--borde-fuerte);border-radius:2px}
+  .indice i{display:block;height:100%;width:calc(var(--p,0)*100%);background:var(--degradado);border-radius:2px}
+  .pila{padding:clamp(80px,14vh,150px) clamp(16px,5vw,80px) 0}
+  .pila__tit{font-weight:800;font-size:clamp(36px,4.6vw,64px);text-align:center;letter-spacing:-.03em;margin:12px 0 56px}
+  .pila .eti{display:block;text-align:center}
+  .carta{position:sticky;top:calc(96px + var(--k)*16px);height:min(calc(100svh - 200px),560px);margin:0 auto 6vh;max-width:1180px;border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;background:var(--panel);border:1px solid var(--borde-fuerte);box-shadow:0 -20px 60px rgba(0,0,0,.5)}
+  .carta__img{background:radial-gradient(70% 70% at 30% 30%,rgba(168,85,247,.3),transparent),#0f0c15;display:flex;align-items:center;justify-content:center;padding:28px}
+  .carta__img .ventana{width:100%}
+  .carta__txt{padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+  .carta__txt .n{font-family:var(--f-mono);font-weight:600;color:var(--violeta-claro)}
+  .carta__txt h3{font-weight:800;font-size:clamp(30px,3.2vw,48px);letter-spacing:-.02em}
+  .carta__txt .precio{font-family:var(--f-mono);font-weight:600;color:var(--turquesa)}
+  .carta__txt ul{list-style:none;color:var(--suave);display:grid;gap:6px}
+  .carta__txt li::before{content:"→ ";color:var(--violeta-claro)}
+  .final{text-align:center;padding:clamp(90px,15vh,170px) 16px;background:radial-gradient(60% 80% at 50% 100%,rgba(45,212,191,.18),transparent 70%)}
+  .final h2{font-weight:800;font-size:clamp(36px,4.6vw,64px);letter-spacing:-.035em;line-height:1;margin:16px 0}
+  .final p{color:var(--suave);max-width:620px;margin:0 auto 30px}
+  @media (max-width:860px){
+    .escena{grid-template-columns:1fr;grid-template-rows:42% 58%;padding-top:76px}
+    .escena__vis{height:100%}.escena__txt{height:100%}
+    .carta{grid-template-columns:1fr;grid-template-rows:42% 58%;height:calc(100svh - 190px)}
+    .carta__img{padding:14px}
+  }
+  /* volver-hueco: en el móvil el botón fijo "← Muestrario" no tapa lo último del pie */
+  @media (max-width:820px){body>footer{padding-bottom:max(96px,var(--hueco-pie,0px))!important}}
+</style>
+</head>
+<body>
+<header class="dx-nav" data-nav>
+  <a class="dx-marca" href="#"><img src="../assets/logo.svg" alt="">DASTAN X-TECH</a>
+  <nav class="dx-links"><a href="#servicios">Servicios</a><a href="#como">Cómo trabajamos</a><a href="#nosotros">Quiénes somos</a></nav>
+  <a class="btn btn--wa" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">WhatsApp</a>
+</header>
+<main>
+  <section class="apertura"><div>
+    <span class="eti" data-reveal="fade">DASTAN X-TECH · Consultoría digital</span>
+    <h1 data-split style="margin-top:18px">Cómo dejamos de ser <span class="grad">invisibles</span> en internet.</h1>
+    <p data-reveal="up">Y cómo lo hacemos ahora con tu negocio, en cuatro capítulos.</p>
+  </div></section>
+  <section class="capitulos" data-progress data-steps="4" id="como">
+    <div class="mo-sticky escena">
+      <div class="escena__vis"><div class="ventana is-active" data-step-item="0"><img src="../assets/web-inicio.jpg" alt="Haces un buen trabajo. Internet no lo refleja."></div><div class="ventana" data-step-item="1"><img src="../assets/ej-diagnostico.jpg" alt="Primero, las pruebas."></div><div class="ventana" data-step-item="2"><img src="../assets/m-capas.jpg" alt="Tu web nueva, con tu marca real."></div><div class="ventana" data-step-item="3"><img src="../assets/aeo-preguntas.jpg" alt="Las 8 preguntas que se hace la IA, del informe AEO real"></div></div>
+      <div class="escena__txt"><article class="cap is-active" data-step-item="0"><span class="num">I · El problema</span><h2>Haces un buen trabajo. Internet no lo refleja.</h2><p>La web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</p></article><article class="cap" data-step-item="1"><span class="num">II · El diagnóstico</span><h2>Primero, las pruebas.</h2><p>Tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en un PDF. Cada fallo, con su prueba. Gratis si tienes web.</p></article><article class="cap" data-step-item="2"><span class="num">III · La solución</span><h2>Tu web nueva, con tu marca real.</h2><p>Tus servicios explicados, tus precios claros y tu WhatsApp a un toque. Lista en menos de 48 horas desde que tenemos tu marca y tus contenidos.</p></article><article class="cap" data-step-item="3"><span class="num">IV · El resultado</span><h2>Que Google y la IA te recomienden.</h2><p>Tu ficha ordenada, tus reseñas visibles y un contenido que la IA pueda citar. Así nos pasó a nosotros: nuestra web subió de 94 a 97 sobre 100 en AEO.</p></article><div class="indice" aria-hidden="true"><i></i></div></div>
+    </div>
+  </section>
+  <section class="pila" id="servicios">
+    <span class="eti" data-reveal="fade">Servicios</span>
+    <h2 class="pila__tit" data-split>Tres servicios para que tu negocio no pierda ni un cliente</h2>
+    <article class="carta" style="--k:0"><div class="carta__img"><div class="ventana"><img src="../assets/m-conversion.jpg" alt="Diseño web" loading="lazy"></div></div><div class="carta__txt"><span class="n">01 · Web</span><h3>Diseño web</h3><span class="precio">Desde 100 USD</span><p style="color:var(--suave)">Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.</p><ul><li>Diagnóstico honesto de tu web actual.</li><li>Web nueva, responsive, lista para publicar.</li><li>WhatsApp y teléfono siempre visibles.</li></ul></div></article><article class="carta" style="--k:1"><div class="carta__img"><div class="ventana"><img src="../assets/ej-auditoria.jpg" alt="Auditoría Completa" loading="lazy"></div></div><div class="carta__txt"><span class="n">02 · Auditoría</span><h3>Auditoría Completa</h3><span class="precio">Desde 200 USD</span><p style="color:var(--suave)">Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.</p><ul><li>Presencia digital sobre 100.</li><li>Madurez tecnológica sobre 5.</li><li>Análisis de procesos.</li><li>Plan de acción por fases.</li></ul></div></article><article class="carta" style="--k:2"><div class="carta__img"><div class="ventana"><img src="../assets/aeo-informe.jpg" alt="Informe AEO real: la nota 97 de 100 y por qué la IA puede leer, entender y citar la web" loading="lazy"></div></div><div class="carta__txt"><span class="n">03 · IA y AEO</span><h3>Posicionamiento AEO</h3><span class="precio">Desde 150 USD</span><p style="color:var(--suave)">Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.</p><ul><li>Ficha de Google y redes ordenadas.</li><li>Contenido citable por IA.</li><li>Reseñas y señales de confianza.</li></ul></div></article>
+  </section>
+  <section class="final" id="nosotros">
+    <span class="eti" data-reveal="fade">Dastan Tamayo e Isdiel Martínez</span>
+    <h2 data-split>Escribe el siguiente capítulo de tu negocio</h2>
+    <p data-reveal="up">Déjanos tu nombre, tu web y tu WhatsApp, y te mandamos gratis tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes, en un PDF.</p>
+    <a class="btn btn--turquesa" data-reveal="up" href="https://wa.me/16055003653?text=Hola%2C%20quiero%20mi%20diagn%C3%B3stico%20SEO%20gratis.">Pedir mi diagnóstico por WhatsApp</a>
+  </section>
+</main>
+<footer class="dx-pie">
+  <div><b>DASTAN X-TECH</b>Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.</div>
+  <div><b>Servicios</b><a href="#servicios">Diseño web</a><a href="#servicios">Auditoría Completa</a><a href="#servicios">Posicionamiento AEO</a></div>
+  <div><b>Contacto</b><a href="https://wa.me/16055003653">WhatsApp +1 605-500-3653</a><a href="mailto:dastanxtech.services@gmail.com">dastanxtech.services@gmail.com</a><a href="https://www.instagram.com/dastan.xtech/">Instagram</a><a href="https://www.linkedin.com/in/dastantech">LinkedIn</a></div>
+</footer>
+<a class="volver" href="../index.html">← Muestrario</a>
+<script src="../motor/motor.js"></script>
+
+</body>
+</html>

@@ -112,7 +112,7 @@ export default function BlogPost() {
           Depende de lo que diga el diagnóstico. Si tu web ya explica bien lo que haces y solo tiene fallos puntuales (un título mal puesto, una página lenta, el WhatsApp escondido), el Arreglo exprés por 49 USD suele bastar. Si no se ve bien en el móvil, no explica tus servicios o nadie sabe cómo contactarte, sale más a cuenta renovarla.
         </p>
         <p style={parrafo}>
-          Si no sabes en qué caso estás, empieza por las <a href={ruta('blog5Senales', 'es')} className="text-link">5 señales de que tu web te está costando clientes</a>, o mira el <a href={ruta('disenoWeb', 'es')} className="text-link">servicio de Diseño web</a> con un rediseño real.
+          Si no sabes en qué caso estás, empieza por las <a href={ruta('blog5Senales', 'es')} className="text-link">5 señales de que tu web te está costando clientes</a>, o mira el <a href={ruta('disenoWeb', 'es')} className="text-link">servicio de Diseño web</a> con nuestra web en ocho estilos.
         </p>
 
         <h2 style={h2}>Preguntas frecuentes</h2>

@@ -29,7 +29,7 @@ const t = {
     {
       clave: 'blog5Senales',
       title: '5 señales de que tu web te está costando clientes',
-      excerpt: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño que resolvió las cinco.',
+      excerpt: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas en nuestra propia web.',
       date: '23 de septiembre de 2026',
     },
     {

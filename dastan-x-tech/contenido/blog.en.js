@@ -29,7 +29,7 @@ const t = {
     {
       clave: 'blog5Senales',
       title: '5 signs your website is losing you customers',
-      excerpt: 'The 5 most common signs that make a visitor leave without booking or buying, with a real redesign that fixed all five.',
+      excerpt: 'The 5 most common signs that make a visitor leave without booking or buying, and what they look like fixed on our own website.',
       date: 'September 23, 2026',
     },
     {

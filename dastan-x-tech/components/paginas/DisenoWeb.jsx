@@ -54,12 +54,12 @@ export default function DisenoWeb({ t, lang }) {
           <ul className="dot-list">
             {t.hero.tarjetaItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
-          <a href="#caso-real" className="text-link">{t.hero.verCaso}</a>
+          <a href="#muestrario" className="text-link">{t.hero.verCaso}</a>
         </div>
       </header>
 
-      {/* CASO REAL: EJEMPLO DE REDISEÑO */}
-      <section id="caso-real" style={{ padding: '5rem 5%', scrollMarginTop: '1rem' }}>
+      {/* MUESTRARIO: NUESTRA PROPIA WEB EN OCHO ESTILOS (public/muestrario, fuera de Google con noindex) */}
+      <section id="muestrario" style={{ padding: '5rem 5%', scrollMarginTop: '1rem' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem', justifyContent: 'center' }}>
             <span style={{ background: 'var(--brand-on-light)', width: '32px', height: '3px', display: 'block' }}></span>
@@ -77,17 +77,8 @@ export default function DisenoWeb({ t, lang }) {
           </ul>
 
           <div style={{ textAlign: 'center' }}>
-            <a href="https://rad-valkyrie-9cdd5a.netlify.app/" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light">
+            <a href="/muestrario/index.html" target="_blank" rel="noopener" className="btn btn-outline-light">
               {t.caso.boton}
-            </a>
-          </div>
-
-          {/* Segundo ejemplo: el mismo método aplicado a nuestra propia web. No es un caso de cliente y se dice así */}
-          <div className="demo-propia">
-            <p className="demo-propia-titulo">{t.caso.demoTitulo}</p>
-            <p>{t.caso.demoTexto}</p>
-            <a href="https://spiffy-mousse-ff600d.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-link">
-              {t.caso.demoEnlace}
             </a>
           </div>
         </div>

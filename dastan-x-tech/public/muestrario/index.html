@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una web, ocho estilos · DASTAN X-TECH</title>
+<meta name="description" content="Nuestra propia web, dastanxtech.com, rehecha en ocho estilos distintos. Elige el que va con tu negocio y lo convertimos en tu web.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/icon.png">
+<link rel="stylesheet" href="dx.css">
+<style>
+  .w{max-width:1240px;margin:0 auto;padding:0 16px}
+  header.w{padding-top:64px;padding-bottom:24px}
+  .marca{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.02em;margin-bottom:44px}
+  .marca img{width:36px;height:36px}
+  h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 20px;max-width:1050px}
+  .intro{color:var(--suave);max-width:780px;font-size:19px}
+  .que{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+  .que div{background:var(--panel);border:1px solid var(--borde);border-radius:16px;padding:20px}
+  .que b{display:block;font-size:17px;margin-bottom:6px}
+  .que span{color:var(--suave);font-size:15px}
+  .como{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .como span{font-family:var(--f-mono);font-size:13px;font-weight:600;color:var(--suave);border:1px solid var(--borde-fuerte);border-radius:999px;padding:7px 12px}
+  .rejilla{padding:28px 16px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;max-width:1240px;margin:0 auto}
+  .estilo{position:relative;display:flex;flex-direction:column;text-decoration:none;border-radius:18px;overflow:hidden;background:var(--panel);border:1px solid var(--borde);transition:transform .3s,border-color .3s}
+  .estilo:hover{transform:translateY(-4px);border-color:var(--borde-fuerte)}
+  .vista{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000}
+  .vista img{width:100%;height:100%;object-fit:cover;object-position:top;filter:blur(3px) saturate(.75) brightness(.5);transform:scale(1.04);transition:filter .4s,transform .8s var(--ease,cubic-bezier(.22,1,.36,1))}
+  .estilo:hover .vista img{filter:blur(0) saturate(1) brightness(.85);transform:scale(1)}
+  .vista::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(10,9,14,.92) 100%)}
+  .nombre{position:absolute;left:22px;right:22px;bottom:18px;z-index:1;display:flex;align-items:baseline;gap:12px}
+  .nombre span{font-family:var(--f-mono);font-size:14px;font-weight:600;color:var(--suave);text-shadow:0 1px 10px rgba(0,0,0,.6)}
+  .nombre h2{font-size:32px;text-shadow:0 2px 16px rgba(0,0,0,.5);font-weight:800;letter-spacing:-.02em;line-height:1.05;color:#fff}
+  .frase{padding:16px 22px 20px;color:var(--suave);font-size:15px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .frase i{font-style:normal;color:var(--texto);font-size:18px;transition:transform .3s}
+  .estilo:hover .frase i{transform:translateX(4px)}
+  .cierre{margin:24px auto 72px;max-width:1208px;border-radius:26px;padding:clamp(32px,5vw,64px);background:radial-gradient(70% 120% at 100% 100%,rgba(45,212,191,.18),transparent 60%),radial-gradient(70% 120% at 0% 0%,rgba(168,85,247,.22),transparent 60%),var(--panel);border:1px solid var(--borde-fuerte);display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+  .cierre h2{font-weight:800;font-size:clamp(32px,3.8vw,54px);line-height:1.05;letter-spacing:-.03em}
+  .cierre p{color:var(--suave);margin-top:14px;max-width:580px}
+  .cierre ul{margin-top:18px;list-style:none;display:grid;gap:8px;font-size:16px}
+  .cierre li::before{content:"✓";color:var(--turquesa);font-weight:700;margin-right:10px}
+  .cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+  .firma{color:var(--suave);font-size:15px}
+  footer.w{color:var(--suave);font-size:14px;text-align:center;padding-bottom:48px}
+  @media (max-width:900px){.que{grid-template-columns:1fr 1fr}.cierre{grid-template-columns:1fr}}
+  @media (max-width:520px){.que{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="w">
+  <div class="marca"><img src="assets/logo.svg" alt="">DASTAN X-TECH</div>
+  <p class="eti">Diseño web · Muestrario</p>
+  <h1>Una sola web, <span class="grad">ocho maneras</span> de contarla.</h1>
+  <p class="intro">Renovamos la web de tu negocio con tu marca, tus servicios y tus textos reales, en el estilo que elijas. Para que lo veas antes de decidir, aquí tienes nuestra propia web, dastanxtech.com, rehecha en ocho estilos distintos.</p>
+  <div class="que">
+    <div><b>Analizamos tu web</b><span>Tu logo, tus colores y todo tu contenido real. No inventamos nada.</span></div>
+    <div><b>Eliges el estilo</b><span>Túnel 3D, cinemático, editorial, objeto 3D y más.</span></div>
+    <div><b>Construimos tu web</b><span>Lista para el móvil, con WhatsApp a un toque y preparada para Google.</span></div>
+    <div><b>La comprobamos</b><span>Contraste, tamaños de letra, móvil y fluidez, revisados antes de entregar.</span></div>
+  </div>
+  <div class="como"><span>1 · Abre cada diseño</span><span>2 · Baja despacio: el movimiento es la clave</span><span>3 · Pruébalos también en el móvil</span></div>
+</header>
+
+<main class="rejilla">
+  <a class="estilo" href="01-tunel/index.html"><div class="vista"><img src="capturas/01-d.png" alt="Estilo Túnel 3D" loading="lazy"><div class="nombre"><span>01</span><h2>Túnel 3D</h2></div></div><p class="frase">Cada mensaje surge del fondo y lo atraviesas.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="02-cinematico/index.html"><div class="vista"><img src="capturas/02-d.png" alt="Estilo Cinemático" loading="lazy"><div class="nombre"><span>02</span><h2>Cinemático</h2></div></div><p class="frase">Escena a escena, como un tráiler.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="03-editorial/index.html"><div class="vista"><img src="capturas/03-d.png" alt="Estilo Editorial" loading="lazy"><div class="nombre"><span>03</span><h2>Editorial</h2></div></div><p class="frase">Claro, elegante, como una revista.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="04-historia-capas/index.html"><div class="vista"><img src="capturas/04-d.png" alt="Estilo Historia por capas" loading="lazy"><div class="nombre"><span>04</span><h2>Historia por capas</h2></div></div><p class="frase">El negocio contado en capítulos.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="05-galeria-horizontal/index.html"><div class="vista"><img src="capturas/05-d.png" alt="Estilo Galería horizontal" loading="lazy"><div class="nombre"><span>05</span><h2>Galería horizontal</h2></div></div><p class="frase">Los trabajos desfilan de lado.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="06-minimal-premium/index.html"><div class="vista"><img src="capturas/06-d.png" alt="Estilo Minimalista premium" loading="lazy"><div class="nombre"><span>06</span><h2>Minimalista premium</h2></div></div><p class="frase">Calma, aire y claridad.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="07-landing-conversion/index.html"><div class="vista"><img src="capturas/07-d.png" alt="Estilo Pensada para convertir" loading="lazy"><div class="nombre"><span>07</span><h2>Pensada para convertir</h2></div></div><p class="frase">Todo empuja a escribirte.<i aria-hidden="true">→</i></p></a>
+  <a class="estilo" href="08-objeto-3d/index.html"><div class="vista"><img src="capturas/08-d.png" alt="Estilo Objeto 3D" loading="lazy"><div class="nombre"><span>08</span><h2>Objeto 3D</h2></div></div><p class="frase">Tu marca en 3D real.<i aria-hidden="true">→</i></p></a>
+</main>
+
+<section class="cierre">
+  <div>
+    <p class="eti">Diseño web</p>
+    <h2>¿Cuál va con tu negocio?</h2>
+    <p>Dinos qué estilo te ha gustado y lo convertimos en tu web, con tu marca, tus servicios y tus fotos.</p>
+    <ul>
+      <li>Con tu marca y tus textos reales, sin inventar nada</li>
+      <li>WhatsApp y teléfono a un toque</li>
+      <li>Lista para el móvil y preparada para Google</li>
+      <li>Te respondemos lo antes posible</li>
+    </ul>
+  </div>
+  <div class="cta">
+    <a class="btn btn--turquesa" href="https://wa.me/16055003653?text=Hola%2C%20he%20visto%20los%208%20estilos%20de%20web%20y%20quiero%20mi%20web%20nueva.">Quiero mi web nueva · WhatsApp</a>
+    <span class="firma">Dastan Tamayo · DASTAN X-TECH<br>WhatsApp +1 605-500-3653</span>
+  </div>
+</section>
+<footer class="w">Las ocho demos son nuestra propia web: usan los textos y servicios reales de dastanxtech.com. Las capturas de trabajos son de proyectos de DASTAN X-TECH y de ejemplos con un negocio inventado. <a href="/servicios/diseno-web" style="color:inherit">Volver a Diseño web</a></footer>
+</body>
+</html>
