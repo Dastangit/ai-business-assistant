@@ -7,13 +7,17 @@
 <meta name="description" content="Nuestra propia web, dastanxtech.com, rehecha en ocho estilos distintos. Elige el que va con tu negocio y lo convertimos en tu web.">
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="/icon.png">
+<link rel="preload" href="fuentes/geist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/geist-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/geist-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/geist-mono-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="dx.css">
 <style>
   .w{max-width:1240px;margin:0 auto;padding:0 16px}
   header.w{padding-top:64px;padding-bottom:24px}
   .marca{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;letter-spacing:.02em;margin-bottom:44px}
   .marca img{width:36px;height:36px}
-  h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 20px;max-width:1050px}
+  h1{font-weight:800;font-size:clamp(32px,3.9vw,54px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 20px;max-width:1050px}
   .intro{color:var(--suave);max-width:780px;font-size:19px}
   .que{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
   .que div{background:var(--panel);border:1px solid var(--borde);border-radius:16px;padding:20px}
@@ -27,6 +31,8 @@
   .vista{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000}
   .vista img{width:100%;height:100%;object-fit:cover;object-position:top;filter:blur(3px) saturate(.75) brightness(.5);transform:scale(1.04);transition:filter .4s,transform .8s var(--ease,cubic-bezier(.22,1,.36,1))}
   .estilo:hover .vista img{filter:blur(0) saturate(1) brightness(.85);transform:scale(1)}
+  /* En el móvil no hay «hover»: las miniaturas se ven nítidas desde el principio */
+  @media (hover:none){.vista img{filter:saturate(.9) brightness(.8);transform:none}}
   .vista::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(10,9,14,.92) 100%)}
   .nombre{position:absolute;left:22px;right:22px;bottom:18px;z-index:1;display:flex;align-items:baseline;gap:12px}
   .nombre span{font-family:var(--f-mono);font-size:14px;font-weight:600;color:var(--suave);text-shadow:0 1px 10px rgba(0,0,0,.6)}
@@ -35,7 +41,7 @@
   .frase i{font-style:normal;color:var(--texto);font-size:18px;transition:transform .3s}
   .estilo:hover .frase i{transform:translateX(4px)}
   .cierre{margin:24px auto 72px;max-width:1208px;border-radius:26px;padding:clamp(32px,5vw,64px);background:radial-gradient(70% 120% at 100% 100%,rgba(45,212,191,.18),transparent 60%),radial-gradient(70% 120% at 0% 0%,rgba(168,85,247,.22),transparent 60%),var(--panel);border:1px solid var(--borde-fuerte);display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
-  .cierre h2{font-weight:800;font-size:clamp(32px,3.8vw,54px);line-height:1.05;letter-spacing:-.03em}
+  .cierre h2{font-weight:800;font-size:clamp(30px,3.4vw,46px);line-height:1.05;letter-spacing:-.03em}
   .cierre p{color:var(--suave);margin-top:14px;max-width:580px}
   .cierre ul{margin-top:18px;list-style:none;display:grid;gap:8px;font-size:16px}
   .cierre li::before{content:"✓";color:var(--turquesa);font-weight:700;margin-right:10px}

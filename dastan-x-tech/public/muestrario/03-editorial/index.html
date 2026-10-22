@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DASTAN X-TECH · Consultoría digital para negocios y pymes</title>
 <meta name="description" content="Descubre, con pruebas, por qué tu negocio pierde clientes por internet. Diseño web, auditoría completa y posicionamiento AEO para negocios y pymes.">
+<link rel="preload" href="../fuentes/geist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fuentes/geist-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fuentes/geist-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fuentes/geist-mono-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../dx.css">
 <link rel="stylesheet" href="../motor/motor.css">
 <style>
@@ -16,19 +20,19 @@
   .eti{color:var(--violeta-oscuro)}
   .portada{padding-top:130px}
   .cabecera{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #ddd6ea;padding-bottom:14px;color:#5b5470}
-  h1{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:.98;letter-spacing:-.035em;margin:38px 0 0;max-width:1100px}
+  h1{font-weight:800;font-size:clamp(32px,3.9vw,54px);line-height:.98;letter-spacing:-.035em;margin:38px 0 0;max-width:1100px}
   .abajo{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(24px,5vw,72px);margin-top:48px;align-items:end}
   .entrada{font-size:clamp(18px,1.5vw,21px);color:#3d3650;max-width:470px}
   .entrada + .btn{margin-top:28px}
   .sellos{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
   .sellos span{font-family:var(--f-mono);font-size:13px;font-weight:600;background:var(--lavanda);color:#4a3a7a;padding:6px 10px;border-radius:8px}
-  .cinta{border-block:1px solid #ddd6ea;margin:clamp(70px,11vh,130px) 0;padding:20px 0;font-weight:800;font-size:clamp(26px,3.4vw,46px);letter-spacing:-.02em}
+  .cinta{border-block:1px solid #ddd6ea;margin:clamp(70px,11vh,130px) 0;padding:20px 0;font-weight:800;font-size:clamp(26px,2.8vw,40px);letter-spacing:-.02em}
   .cinta span{padding:0 26px}.cinta b{color:var(--violeta)}
-  .titb{font-weight:800;font-size:clamp(36px,4.6vw,64px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 40px}
+  .titb{font-weight:800;font-size:clamp(28px,3.2vw,44px);line-height:1.02;letter-spacing:-.03em;margin:12px 0 40px}
   .indice{border-top:2px solid var(--tinta)}
   .fila{display:grid;grid-template-columns:80px 1.2fr 1fr auto;gap:24px;align-items:center;padding:30px 0;border-bottom:1px solid #ddd6ea}
   .fila .n{font-family:var(--f-mono);font-weight:600;color:var(--violeta-oscuro)}
-  .fila h3{font-weight:700;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.02em;line-height:1}
+  .fila h3{font-weight:700;font-size:clamp(26px,2.8vw,40px);letter-spacing:-.02em;line-height:1}
   .fila p{color:#4a4360;font-size:16px}
   .fila .precio{font-family:var(--f-mono);font-weight:600;color:#0f766e;white-space:nowrap}
   .mosaico{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,28px);margin-top:clamp(70px,11vh,130px);align-items:start}
@@ -39,7 +43,7 @@
   .nos .duo figcaption{color:#4a4360}.nos .duo figcaption b{color:var(--tinta)}
   .nos p{font-size:19px;color:#3d3650;margin-top:16px}
   .final{background:var(--tinta);color:var(--texto);padding:clamp(90px,15vh,170px) 0;text-align:left}
-  .final h2{font-weight:800;font-size:clamp(36px,4.6vw,64px);letter-spacing:-.035em;line-height:.98;max-width:1000px}
+  .final h2{font-weight:800;font-size:clamp(30px,3.4vw,46px);letter-spacing:-.035em;line-height:.98;max-width:1000px}
   .final p{color:var(--suave);max-width:600px;margin:24px 0 32px;font-size:19px}
   @media (max-width:860px){
     .abajo,.nos{grid-template-columns:1fr}

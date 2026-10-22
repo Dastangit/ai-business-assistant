@@ -9,6 +9,9 @@
   --f-texto: 'Geist', system-ui, sans-serif; --f-mono: 'Geist Mono', ui-monospace, monospace;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Títulos: interlineado propio (sin esto heredan el 1.6 del cuerpo y las líneas quedan muy separadas).
+   Cada estilo lo ajusta en su propio <style>, que va después y manda. */
+h1, h2, h3 { line-height: 1.12; }
 body { background: var(--fondo); color: var(--texto); font-family: var(--f-texto); font-weight: 400; font-size: 17px; line-height: 1.6; overflow-x: clip; -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
