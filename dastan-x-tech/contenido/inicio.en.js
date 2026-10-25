@@ -60,7 +60,7 @@ const t = {
     { nombre: 'Dastan Tamayo', rol: 'Founder of DASTAN X-TECH', alt: 'Dastan Tamayo, founder of DASTAN X-TECH' },
     { nombre: 'Isdiel Martínez', rol: 'Digital consultant and strategist', alt: 'Isdiel Martínez, digital consultant and strategist at DASTAN X-TECH' },
   ],
-  // Starting prices must match PRECIOS in app/api/chat/route.js
+  // Prices (fixed) must match PRECIOS in app/api/chat/route.js
   servicios: {
     etiqueta: 'Services',
     titulo: 'Three services so your business never loses a customer',
@@ -72,7 +72,7 @@ const t = {
         text: 'We rebuild your current website with your real brand: your services, your prices and your WhatsApp one tap away.',
         items: ['An honest review of your current website.', 'A new, responsive website, ready to publish.', 'WhatsApp and phone always visible.'],
         link: 'Learn more about Web Design →',
-        price: 'From 100 USD',
+        price: '100 USD',
       },
       {
         clave: 'auditoria',
@@ -81,7 +81,7 @@ const t = {
         text: 'We pinpoint exactly where your business is losing time and money, with evidence, not guesswork.',
         items: ['Digital presence score out of 100.', 'Tech maturity score out of 5.', 'Process analysis.', 'A phased action plan.'],
         link: 'Discover the Digital Business Audit →',
-        price: 'From 200 USD',
+        price: '200 USD',
       },
       {
         clave: 'aeo',
@@ -90,7 +90,7 @@ const t = {
         text: 'Get your business recommended by AI, not just found in Google searches.',
         items: ['Google Business Profile and social media in order.', 'Content AI can quote.', 'Reviews and trust signals.'],
         link: 'Explore AI Search Optimization →',
-        price: 'From 150 USD',
+        price: '150 USD',
       },
     ],
   },

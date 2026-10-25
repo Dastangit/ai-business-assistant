@@ -8,14 +8,14 @@ import { ruta } from '@/lib/i18n';
 // Guía de precios: cada cifra sale de la FAQ de Diseño web (contenido/diseno-web.es.js) y de PRECIOS/OTROS
 // de app/api/chat/route.js. Si cambia un precio o un plazo allí, cámbialo aquí, en la versión en inglés y en llms.txt.
 const URL_ARTICULO = 'https://dastanxtech.com/blog/cuanto-cuesta-renovar-web';
-const DESCRIPCION = 'Precios reales para renovar la web de un negocio en 2026: desde 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye y qué cambia el precio.';
+const DESCRIPCION = 'Precios reales para renovar la web de un negocio en 2026: 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye el precio y qué se cobra aparte.';
 
 const faq = [
-  { q: '¿Cuánto cuesta renovar la web de un negocio?', a: 'En DASTAN X-TECH, desde 100 USD. El precio final depende de cuántas páginas y servicios tenga tu web, y te lo confirmamos antes de empezar.' },
+  { q: '¿Cuánto cuesta renovar la web de un negocio?', a: 'En DASTAN X-TECH, 100 USD, precio cerrado. Si necesitas algo que no está incluido (por ejemplo, una tienda online), te lo decimos antes de empezar.' },
   { q: '¿Cuánto tarda la web nueva?', a: 'Menos de 48 horas desde que nos das tu marca y tus contenidos: logo, textos, servicios y precios.' },
   { q: '¿Hay una opción más barata que renovar toda la web?', a: 'Sí, el Arreglo exprés: por 49 USD aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si en los 30 días siguientes contratas el Diseño web, te lo descontamos.' },
   { q: '¿Puedo saber qué le falta a mi web antes de pagar nada?', a: 'Sí. El diagnóstico SEO es gratis: te mandamos por WhatsApp un PDF con tu puntuación de 0 a 100 y las 5 correcciones más urgentes, explicadas sin jerga.' },
-  { q: '¿Y si no tengo web?', a: 'Te la creamos desde cero con el mismo precio de partida, desde 100 USD, incluso a partir de tu Instagram.' },
+  { q: '¿Y si no tengo web?', a: 'Te la creamos desde cero por el mismo precio, 100 USD, incluso a partir de tu Instagram.' },
   { q: '¿Trabajan con negocios de cualquier país?', a: 'Sí. Trabajamos 100 % en remoto, sobre todo en Colombia, México y Estados Unidos, en español e inglés. Los precios están en dólares (USD).' },
 ];
 
@@ -70,12 +70,12 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          En DASTAN X-TECH, renovar la web de un negocio cuesta <strong>desde 100 USD</strong> y está lista en <strong>menos de 48 horas</strong> desde que tenemos tu marca y tus contenidos. Si solo quieres arreglar lo más urgente, el Arreglo exprés cuesta <strong>49 USD</strong>. Y antes de pagar nada, puedes pedir gratis el diagnóstico SEO de tu web actual.
+          En DASTAN X-TECH, renovar la web de un negocio cuesta <strong>100 USD</strong> y está lista en <strong>menos de 48 horas</strong> desde que tenemos tu marca y tus contenidos. Si solo quieres arreglar lo más urgente, el Arreglo exprés cuesta <strong>49 USD</strong>. Y antes de pagar nada, puedes pedir gratis el diagnóstico SEO de tu web actual.
         </p>
 
         <h2 style={h2}>Nuestros precios, en una tabla</h2>
         <p style={parrafo}>
-          Precios de partida en dólares, vigentes en octubre de 2026:
+          Precios en dólares, vigentes en octubre de 2026:
         </p>
         <div className="tabla-scroll">
           <table className="tabla-precios">
@@ -85,18 +85,18 @@ export default function BlogPost() {
             <tbody>
               <tr><td>Diagnóstico SEO</td><td>Gratis</td><td>Tu puntuación de 0 a 100 y las 5 correcciones más urgentes de tu web, en un PDF por WhatsApp.</td></tr>
               <tr><td>Arreglo exprés</td><td>49 USD</td><td>Aplicamos esas 5 correcciones en 48 horas. Se descuenta si contratas el Diseño web en los 30 días siguientes.</td></tr>
-              <tr><td>Diseño web</td><td>Desde 100 USD</td><td>Tu web renovada o creada desde cero, con tu marca real, adaptada al móvil, con el WhatsApp y el teléfono siempre visibles y lista para Google y la IA. En menos de 48 horas.</td></tr>
+              <tr><td>Diseño web</td><td>100 USD</td><td>Tu web renovada o creada desde cero, con tu marca real, adaptada al móvil, con el WhatsApp y el teléfono siempre visibles y lista para Google y la IA. En menos de 48 horas.</td></tr>
               <tr><td>Chat automático 24 h (opcional)</td><td>15 USD al mes</td><td>Responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2 style={h2}>Qué cambia el precio final</h2>
+        <h2 style={h2}>Un precio cerrado, sin sorpresas</h2>
         <p style={parrafo}>
-          El precio de partida cubre la web de un negocio pequeño. Lo que lo mueve es el tamaño: <strong>cuántas páginas y cuántos servicios</strong> hay que explicar. Una web de una página para un spa con cinco tratamientos no es lo mismo que la de una clínica con tres sedes y veinte especialidades.
+          Los 100 USD son el precio de la web, no un precio de partida: <strong>no sube a mitad del trabajo</strong>. Si tu negocio necesita algo que no está incluido, como una tienda online o reservas con pago, te lo decimos y te lo presupuestamos aparte antes de empezar, para que decidas tú.
         </p>
         <p style={parrafo}>
-          Por eso no cobramos sorpresas: te confirmamos el precio final antes de empezar. Y el plazo de 48 horas empieza a contar cuando tenemos tu logo, tus textos, tus servicios y tus precios, así que tenerlos a mano es la forma más rápida de tener la web.
+          El plazo de 48 horas empieza a contar cuando tenemos tu logo, tus textos, tus servicios y tus precios, así que tenerlos a mano es la forma más rápida de tener la web.
         </p>
 
         <h2 style={h2}>Qué recibes por ese precio</h2>

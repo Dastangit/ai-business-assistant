@@ -3,13 +3,14 @@ import SiteFooter from '@/components/SiteFooter';
 import { REVISIONES } from '@/lib/revisiones';
 import { ruta } from '@/lib/i18n';
 
-// Aviso legal y de privacidad (/privacidad y /en/privacy): el diseño vive aquí y el texto en contenido/privacidad.<lang>.js
+// Páginas legales: aviso de privacidad (/privacidad, /en/privacy) y condiciones de compra (/condiciones, /en/terms).
+// El diseño vive aquí y el texto en contenido/<clave>.<lang>.js
 const h2 = { fontSize: '1.4rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };
 const p = { lineHeight: '1.8', marginBottom: '1rem' };
 const lista = { lineHeight: '1.8', marginBottom: '1rem', paddingLeft: '1.25rem' };
 
-export default function Privacidad({ t, lang }) {
-  const revision = REVISIONES[ruta('privacidad', lang)];
+export default function Privacidad({ t, lang, clave = 'privacidad' }) {
+  const revision = REVISIONES[ruta(clave, lang)];
   const fecha = new Intl.DateTimeFormat(lang === 'es' ? 'es' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(revision));
   return (
     <div className="theme-light">

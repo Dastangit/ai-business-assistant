@@ -52,7 +52,7 @@ const t = {
   faqTitulo: 'Frequently asked questions',
   faq: [
     { q: 'How long does the new website take?', a: 'Under 48 hours from when you give us your brand and your content (logo, copy, services and prices).' },
-    { q: 'How much does it cost?', a: 'From 100 USD. The final price depends on how many pages and services your website has, and we confirm it before we start.' },
+    { q: 'How much does it cost?', a: '100 USD, fixed price. If you need something that isn’t included (an online store, for example), we tell you before we start.' },
     { q: 'What do you need from my business to get started?', a: 'Your real brand: logo, colors, fonts, copy, prices and current reviews. We never make up content that isn’t yours.' },
     { q: 'What if I already have a website?', a: 'We analyze it first: we give you an honest review with concrete, observable problems — each with the reason it costs you customers — before touching anything.' },
     { q: 'What if I don’t want a new website?', a: 'If you already have a website and only want to fix the most urgent issues, there’s the 48-Hour Fix: for 49 USD we apply the 5 most urgent fixes from your SEO report within 48 hours. If you order Web Design within the next 30 days, we deduct it.' },

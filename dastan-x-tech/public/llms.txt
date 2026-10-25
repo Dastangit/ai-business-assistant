@@ -8,13 +8,13 @@ Cómo trabajamos: cada hallazgo se apoya en una evidencia real del negocio (una 
 
 Contacto: WhatsApp +1 605-500-3653 (https://wa.me/16055003653) · dastanxtech.services@gmail.com
 
-Precios de partida en dólares (USD). El precio final depende de cada negocio y se confirma antes de empezar.
+Precios cerrados en dólares (USD). Lo que no esté incluido se presupuesta aparte antes de empezar.
 
 ## Servicios
 
-- [Diseño web](https://dastanxtech.com/servicios/diseno-web): renovamos la web del negocio o la creamos desde cero (también a partir de su Instagram), con su marca real, el WhatsApp y el teléfono siempre visibles y sus servicios explicados. Desde 100 USD. Entrega en menos de 48 horas desde que recibimos la marca y los contenidos.
-- [Auditoría Completa de Negocio](https://dastanxtech.com/servicios/auditoria-negocio): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas y competencia) y por dentro (captación, agenda, cobro y herramientas, con un formulario de 36 preguntas). Entrega la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van en tareas manuales y un plan de acción por fases. Desde 200 USD.
-- [Posicionamiento AEO](https://dastanxtech.com/servicios/posicionamiento-aeo): prepara el negocio para que asistentes de IA como ChatGPT, Gemini, Perplexity o Claude lo recomienden: ficha de Google y redes coherentes, contenido que la IA puede citar, reseñas y señales de confianza. Complementa al SEO, no lo sustituye, y necesita una web en buen estado. Desde 150 USD.
+- [Diseño web](https://dastanxtech.com/servicios/diseno-web): renovamos la web del negocio o la creamos desde cero (también a partir de su Instagram), con su marca real, el WhatsApp y el teléfono siempre visibles y sus servicios explicados. 100 USD. Entrega en menos de 48 horas desde que recibimos la marca y los contenidos.
+- [Auditoría Completa de Negocio](https://dastanxtech.com/servicios/auditoria-negocio): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas y competencia) y por dentro (captación, agenda, cobro y herramientas, con un cuestionario breve o una entrevista de 20-30 minutos). Entrega la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van en tareas manuales y un plan de acción por fases. 200 USD.
+- [Posicionamiento AEO](https://dastanxtech.com/servicios/posicionamiento-aeo): prepara el negocio para que asistentes de IA como ChatGPT, Gemini, Perplexity o Claude lo recomienden: ficha de Google y redes coherentes, contenido que la IA puede citar, reseñas y señales de confianza, y la revisión y mejora de la nota en Is It Agent Ready (la prueba de Cloudflare para agentes de IA). Complementa al SEO, no lo sustituye, y necesita una web en buen estado. 150 USD.
 - [Pack completo](https://dastanxtech.com/servicios): Diseño web, Auditoría Completa de Negocio y Posicionamiento AEO juntos por 400 USD. Quien ya contrató alguno paga solo la diferencia.
 
 ## Gratis
@@ -27,11 +27,11 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 - [Chat automático 24 h para la web](https://dastanxtech.com/servicios/diseno-web): responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta. 15 USD al mes, sin permanencia.
 - Recepcionista virtual por WhatsApp: atiende el WhatsApp del negocio las 24 horas, instalada en un número secundario. 150 USD de instalación y 39 USD al mes, sin permanencia.
 - [Automatización puntual](https://dastanxtech.com/servicios/auditoria-negocio): una sola automatización con alcance cerrado, por ejemplo instalar un CRM gratuito en la cuenta del negocio y conectarlo al formulario de su web, o un recordatorio automático de citas. 100 USD, pago único, sin mantenimiento.
-- Membresía de Implementación: 24 horas de trabajo al mes aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat automático 24 h si encaja y automatizaciones (CRM, recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, sin permanencia.
+- Membresía de Implementación: 6 horas de trabajo por semana aplicando el plan de acción de la Auditoría Completa del negocio (la Auditoría se contrata aparte o en el Pack completo), con el chat automático 24 h si encaja y automatizaciones (CRM, recordatorios, seguimiento de presupuestos, reseñas y reservas o compras gestionadas por agentes de IA). Dentro de esas horas se pueden elegir los servicios bajo pedido. 200 USD al mes, sin permanencia.
 
 ## Blog
 
-- [¿Cuánto cuesta renovar una web en 2026?](https://dastanxtech.com/blog/cuanto-cuesta-renovar-web): nuestros precios en una tabla (diagnóstico SEO gratis, Arreglo exprés 49 USD, Diseño web desde 100 USD, chat automático 24 h 15 USD al mes), qué cambia el precio final y preguntas frecuentes.
+- [¿Cuánto cuesta renovar una web en 2026?](https://dastanxtech.com/blog/cuanto-cuesta-renovar-web): nuestros precios en una tabla (diagnóstico SEO gratis, Arreglo exprés 49 USD, Diseño web 100 USD, chat automático 24 h 15 USD al mes), qué incluye el precio y qué se cobra aparte y preguntas frecuentes.
 - [Perfeccionamos nuestra web con nuestro auditor AEO](https://dastanxtech.com/blog/perfeccionamos-nuestra-web-auditor-aeo): qué mide nuestro auditor AEO, qué encontró en dastanxtech.com y cómo pasamos de 94 a 97 sobre 100, con el [informe completo](https://dastanxtech.com/ejemplo-informe-aeo).
 - [Qué es AEO, explicado con un ejemplo real](https://dastanxtech.com/blog/que-es-aeo): qué es el Answer Engine Optimization y qué tienen en común los negocios que la IA recomienda, con una prueba real en Gemini.
 - [5 señales de que tu web te está costando clientes](https://dastanxtech.com/blog/5-senales-web-cuesta-clientes): las señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, con un ejemplo real de rediseño.
@@ -40,9 +40,9 @@ Precios de partida en dólares (USD). El precio final depende de cada negocio y 
 
 DASTAN X-TECH is also available in English. High-level digital consulting for small businesses, fully remote, delivered in English or Spanish.
 
-- [Web Design](https://dastanxtech.com/en/services/web-design): from 100 USD.
-- [Digital Business Audit](https://dastanxtech.com/en/services/digital-business-audit): from 200 USD.
-- [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): from 150 USD.
+- [Web Design](https://dastanxtech.com/en/services/web-design): 100 USD.
+- [Digital Business Audit](https://dastanxtech.com/en/services/digital-business-audit): 200 USD.
+- [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): 150 USD.
 - [All-in-One Package](https://dastanxtech.com/en/services): all three for 400 USD.
 - [Free SEO Report](https://dastanxtech.com/en): score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp.
 - [How much does a website redesign cost in 2026?](https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost) · [We perfected our website with our AEO auditor](https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor) · [What is AEO](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers) · [We audited our own website](https://dastanxtech.com/en/blog/we-audited-our-own-website)

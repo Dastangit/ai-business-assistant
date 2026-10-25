@@ -8,14 +8,14 @@ import { ruta } from '@/lib/i18n';
 // English version of /blog/cuanto-cuesta-renovar-web. If the Spanish article changes, change this one too.
 // Every figure comes from the Web Design FAQ (contenido/diseno-web.en.js) and PRECIOS/OTROS in app/api/chat/route.js.
 const URL_ARTICULO = 'https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost';
-const DESCRIPCION = 'Real prices to redesign a small business website in 2026: from 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What’s included and what changes the price.';
+const DESCRIPCION = 'Real prices to redesign a small business website in 2026: 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What the price includes and what costs extra.';
 
 const faq = [
-  { q: 'How much does it cost to redesign a business website?', a: 'At DASTAN X-TECH, from 100 USD. The final price depends on how many pages and services your website has, and we confirm it before we start.' },
+  { q: 'How much does it cost to redesign a business website?', a: 'At DASTAN X-TECH, 100 USD, fixed price. If you need something that isn’t included (an online store, for example), we tell you before we start.' },
   { q: 'How long does the new website take?', a: 'Under 48 hours from the moment you send us your brand and your content: logo, copy, services and prices.' },
   { q: 'Is there a cheaper option than a full redesign?', a: 'Yes, the 48-Hour Fix: for 49 USD we apply the 5 most urgent fixes from your SEO report within 48 hours. If you book Web Design within the next 30 days, we deduct it.' },
   { q: 'Can I find out what my website is missing before paying anything?', a: 'Yes. The SEO report is free: we send you a PDF on WhatsApp with your score from 0 to 100 and the 5 most urgent fixes, in plain language.' },
-  { q: 'What if I don’t have a website?', a: 'We build one from scratch at the same starting price, from 100 USD, even from your Instagram.' },
+  { q: 'What if I don’t have a website?', a: 'We build one from scratch for the same price, 100 USD, even from your Instagram.' },
   { q: 'Do you work with businesses in any country?', a: 'Yes. We work fully remotely, mostly in Colombia, Mexico and the United States, in English and Spanish. Prices are in US dollars (USD).' },
 ];
 
@@ -71,12 +71,12 @@ export default function BlogPost() {
         </div>
 
         <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-          At DASTAN X-TECH, redesigning a small business website costs <strong>from 100 USD</strong> and it’s ready in <strong>under 48 hours</strong> once we have your brand and your content. If you only want the most urgent issues fixed, the 48-Hour Fix costs <strong>49 USD</strong>. And before you pay anything, you can get a free SEO report on your current website.
+          At DASTAN X-TECH, redesigning a small business website costs <strong>100 USD</strong> and it’s ready in <strong>under 48 hours</strong> once we have your brand and your content. If you only want the most urgent issues fixed, the 48-Hour Fix costs <strong>49 USD</strong>. And before you pay anything, you can get a free SEO report on your current website.
         </p>
 
         <h2 style={h2}>Our prices, in one table</h2>
         <p style={parrafo}>
-          Starting prices in US dollars, as of October 2026:
+          Prices in US dollars, as of October 2026:
         </p>
         <div className="tabla-scroll">
           <table className="tabla-precios">
@@ -86,18 +86,18 @@ export default function BlogPost() {
             <tbody>
               <tr><td>SEO report</td><td>Free</td><td>Your score from 0 to 100 and the 5 most urgent fixes for your website, as a PDF on WhatsApp.</td></tr>
               <tr><td>48-Hour Fix</td><td>49 USD</td><td>We apply those 5 fixes within 48 hours. Deducted if you book Web Design within the next 30 days.</td></tr>
-              <tr><td>Web Design</td><td>From 100 USD</td><td>Your website redesigned or built from scratch, with your real brand, mobile-friendly, WhatsApp and phone always visible, and ready for Google and AI. In under 48 hours.</td></tr>
+              <tr><td>Web Design</td><td>100 USD</td><td>Your website redesigned or built from scratch, with your real brand, mobile-friendly, WhatsApp and phone always visible, and ready for Google and AI. In under 48 hours.</td></tr>
               <tr><td>24/7 automated chat (optional)</td><td>15 USD a month</td><td>Answers questions at any hour and saves the name and WhatsApp of whoever asks.</td></tr>
             </tbody>
           </table>
         </div>
 
-        <h2 style={h2}>What changes the final price</h2>
+        <h2 style={h2}>A fixed price, no surprises</h2>
         <p style={parrafo}>
-          The starting price covers a small business website. What moves it is size: <strong>how many pages and how many services</strong> need explaining. A one-page site for a spa with five treatments isn’t the same as one for a clinic with three locations and twenty specialties.
+          The 100 USD is the price of the website, not a starting price: <strong>it doesn’t go up halfway through</strong>. If your business needs something that isn’t included, like an online store or paid bookings, we tell you and quote it separately before we start, so you decide.
         </p>
         <p style={parrafo}>
-          That’s why there are no surprises: we confirm the final price before we start. And the 48-hour clock starts once we have your logo, copy, services and prices, so having them ready is the fastest way to get your website.
+          The 48-hour clock starts once we have your logo, copy, services and prices, so having them ready is the fastest way to get your website.
         </p>
 
         <h2 style={h2}>What you get for that price</h2>

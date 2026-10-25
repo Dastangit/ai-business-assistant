@@ -48,6 +48,7 @@ const t = {
     items: [
       { titulo: 'Consistency everywhere', texto: 'We organize and verify your Google Business Profile and social media so the information is clear and consistent — the foundation AI uses to trust a business.' },
       { titulo: 'Content AI can quote', texto: 'We structure services, FAQs, hours and prices in a format AI engines can read and quote directly when they recommend you.' },
+      { titulo: 'Ready for AI agents', texto: <>We run your website through <a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer" className="text-link">Is It Agent Ready</a>, Cloudflare’s free test that scores from 0 to 100 how well AI agents can find and read your website, and we fix what lowers the score: robots.txt, sitemap, a text version for AI and rules for its bots.</> },
     ],
   },
   // Real report: the auditor's report on our own website (public/ejemplo-informe-aeo.html)
@@ -63,7 +64,7 @@ const t = {
     { q: 'What exactly is AI Search Optimization (AEO)?', a: 'Answer Engine Optimization: preparing your business so AI assistants like ChatGPT, Gemini or Perplexity recommend you directly when someone asks “what’s the best option near me?”, without that person visiting any website.' },
     { q: 'Does it replace traditional SEO?', a: 'No, it complements it. You keep showing up on Google as always, and also in the answers AI engines give.' },
     { q: 'How long does it take to see results?', a: 'It depends on how much public, consistent information your business has today — that’s why we start by putting your Google Business Profile and social media in order before anything else.' },
-    { q: 'How much does it cost?', a: 'From 150 USD. It needs a website in good shape: if yours isn’t, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD. The final price depends on how many profiles, social accounts and pages need organizing, and we confirm it before we start.' },
+    { q: 'How much does it cost?', a: '150 USD. It needs a website in good shape: if yours isn’t, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD. It’s a fixed price: if you need something that isn’t included, we tell you before we start.' },
     { q: 'Does it work for any kind of business?', a: 'Yes, as long as there’s a solid foundation on the outside: a clear website and a well-organized Google Business Profile. If you don’t have that yet, we start there with Web Design or the All-in-One Package.' },
   ],
   cierre: {

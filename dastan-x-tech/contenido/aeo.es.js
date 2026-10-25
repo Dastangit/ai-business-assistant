@@ -48,6 +48,7 @@ const t = {
     items: [
       { titulo: 'Consistencia en todas partes', texto: 'Ordenamos y verificamos tu ficha de Google y tus redes para que la información sea clara y coherente — la base que usa la IA para confiar en un negocio.' },
       { titulo: 'Contenido que la IA puede citar', texto: 'Estructuramos servicios, preguntas frecuentes, horarios y precios en un formato que los motores de IA pueden leer y citar directamente al recomendarte.' },
+      { titulo: 'Lista para los agentes de IA', texto: <>Pasamos tu web por <a href="https://isitagentready.com" target="_blank" rel="noopener noreferrer" className="text-link">Is It Agent Ready</a>, la prueba gratuita de Cloudflare que puntúa de 0 a 100 si los agentes de IA pueden encontrar y leer tu web, y corregimos lo que le baja la nota: robots.txt, sitemap, versión en texto para la IA y reglas para sus bots.</> },
     ],
   },
   // Informe real: el del auditor con nuestra propia web (public/ejemplo-informe-aeo.html)
@@ -63,7 +64,7 @@ const t = {
     { q: '¿Qué es exactamente el Posicionamiento AEO?', a: 'Answer Engine Optimization: preparar tu negocio para que asistentes de IA como ChatGPT, Gemini o Perplexity te recomienden directamente cuando alguien pregunta “¿cuál es la mejor opción cerca de mí?”, sin que la persona visite ninguna web.' },
     { q: '¿Reemplaza al SEO tradicional?', a: 'No, lo complementa. Sigues apareciendo en Google como siempre, y además en las respuestas que dan los motores de IA.' },
     { q: '¿Cuánto tarda en dar resultados?', a: 'Depende de cuánta información pública y consistente tenga tu negocio hoy — por eso empezamos ordenando tu ficha de Google y tus redes antes que nada.' },
-    { q: '¿Cuánto cuesta?', a: 'Desde 150 USD. Necesita una web en buen estado: si la tuya no lo está, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD. El precio final depende de cuántas fichas, redes y páginas haya que ordenar, y te lo confirmamos antes de empezar.' },
+    { q: '¿Cuánto cuesta?', a: '150 USD. Necesita una web en buen estado: si la tuya no lo está, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD. Es un precio cerrado: si necesitas algo que no está incluido, te lo decimos antes de empezar.' },
     { q: '¿Funciona para cualquier tipo de negocio?', a: 'Sí, siempre que haya una base sólida por fuera: una web clara y una ficha de Google ordenada. Si todavía no la tienes, empezamos por ahí con el Diseño web o con el Pack completo.' },
   ],
   cierre: {

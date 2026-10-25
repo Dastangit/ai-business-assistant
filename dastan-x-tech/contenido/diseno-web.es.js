@@ -52,7 +52,7 @@ const t = {
   faqTitulo: 'Preguntas frecuentes',
   faq: [
     { q: '¿Cuánto tarda la entrega de la web nueva?', a: 'En menos de 48 horas desde que nos das tu marca y tus contenidos (logo, textos, servicios y precios).' },
-    { q: '¿Cuánto cuesta?', a: 'Desde 100 USD. El precio final depende de cuántas páginas y servicios tenga tu web, y te lo confirmamos antes de empezar.' },
+    { q: '¿Cuánto cuesta?', a: '100 USD, precio cerrado. Si necesitas algo que no está incluido (por ejemplo, una tienda online), te lo decimos antes de empezar.' },
     { q: '¿Qué necesitan de mi negocio para empezar?', a: 'Tu marca real: logo, colores, tipografías, textos, precios y reseñas actuales. Nunca inventamos contenido que no sea tuyo.' },
     { q: '¿Qué pasa si ya tengo una web?', a: 'La analizamos primero: te damos un diagnóstico honesto con problemas concretos y observables — cada uno con la razón por la que te cuesta clientes — antes de tocar nada.' },
     { q: '¿Y si no quiero una web nueva?', a: 'Si ya tienes web y solo quieres arreglar lo más urgente, está el Arreglo exprés: por 49 USD aplicamos en 48 horas las 5 correcciones más urgentes de tu diagnóstico SEO. Si en los 30 días siguientes contratas el Diseño web, te lo descontamos.' },

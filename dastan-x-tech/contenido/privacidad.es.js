@@ -23,11 +23,13 @@ const t = {
     {
       titulo: '¿Qué datos recogemos?',
       bloques: [
-        { tipo: 'p', contenido: 'Solo los que tú nos das al usar el chat de esta web:' },
+        { tipo: 'p', contenido: 'Solo los que tú nos das al usar el chat de esta web o al contratar un servicio:' },
         { tipo: 'ul', contenido: [
           'Tu nombre, tu página web o tu usuario de Instagram y tu número de WhatsApp, cuando rellenas el formulario del chat.',
           'Los mensajes que escribes en el chat, para poder responderte y entender qué necesitas.',
+          'Si pagas un servicio por transferencia SPEI o por PayPal: el nombre del titular del pago, el importe y la fecha. El pago lo gestionan tu banco, Mercado Pago o PayPal; nunca vemos ni guardamos los datos de tu tarjeta ni las claves de tu cuenta.',
         ] },
+        { tipo: 'p', contenido: 'El cupón de las propuestas VIP se comprueba al momento y no guardamos quién lo usa.' },
         { tipo: 'p', contenido: 'No pedimos datos sensibles. Para saber cuántas personas visitan la web usamos la analítica de Vercel, que no usa cookies ni nos dice quién eres: solo da cifras agregadas de visitas.' },
       ],
     },
@@ -38,6 +40,7 @@ const t = {
           'Responder a tus preguntas en el chat.',
           'Preparar y enviarte por WhatsApp lo que nos pidas, como el diagnóstico de tu web.',
           'Contactarte sobre el servicio por el que preguntaste.',
+          'Cobrar los servicios que contratas, enviarte el comprobante y llevar el registro de cada pago.',
         ] },
         { tipo: 'p', contenido: 'No vendemos tus datos ni los usamos para publicidad de terceros.' },
       ],
@@ -51,6 +54,7 @@ const t = {
           <><strong>Groq</strong>: procesa los mensajes del chat para generar las respuestas del asistente de IA.</>,
           <><strong>Vercel</strong>: aloja la web y mide las visitas sin cookies.</>,
           <><strong>Telegram</strong>: nos avisa al momento cuando dejas tus datos en el formulario del chat; el aviso incluye tu nombre, tu web o usuario de Instagram y tu número de WhatsApp.</>,
+          <><strong>Mercado Pago y PayPal</strong>: procesan los pagos de los servicios, cada uno con su propio aviso de privacidad.</>,
         ] },
         { tipo: 'p', contenido: 'Sus servidores pueden estar fuera de México, por ejemplo en Estados Unidos.' },
       ],
@@ -58,7 +62,7 @@ const t = {
     {
       titulo: '¿Cuánto tiempo los guardamos?',
       bloques: [
-        { tipo: 'p', contenido: 'Mientras los necesitemos para atenderte o mientras dure la relación de trabajo contigo, y hasta que nos pidas que los borremos.' },
+        { tipo: 'p', contenido: 'Mientras los necesitemos para atenderte o mientras dure la relación de trabajo contigo, y hasta que nos pidas que los borremos. El registro de los pagos lo guardamos el tiempo que exija la ley fiscal.' },
       ],
     },
     {

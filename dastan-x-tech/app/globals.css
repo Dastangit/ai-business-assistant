@@ -692,11 +692,27 @@ html { scroll-padding-top: 84px; }
 }
 @media (min-width: 700px) { .vip-precios { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1100px) { .vip-precios { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* Con varias columnas, las 3 filas de cada tarjeta (cabecera con título y texto, lista y botón) comparten altura
+   con las de al lado: las líneas de «Recibes» y los botones quedan a la misma altura. El espacio que sobra queda
+   bajo el texto, no entre el título y el texto */
+@media (min-width: 700px) {
+  .vip-precios .vip-card { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 12px; }
+}
+.vip-card-cabecera { display: flex; flex-direction: column; gap: 12px; }
 .vip-card--pack {
   position: relative; border: 1.5px solid var(--brand);
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.10), var(--surface) 55%);
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.14), var(--surface) 60%);
+  box-shadow: 0 18px 60px -20px rgba(168, 85, 247, 0.55);
 }
 .vip-card--pack:hover { border-color: var(--brand); }
+/* Pack: etiqueta «Recomendado» junto al título, y el precio grande con el de antes tachado */
+.vip-chip {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--brand); border: 1px solid var(--brand); border-radius: 99px; padding: 2px 9px;
+}
+.vip-pack-precios { display: flex; align-items: baseline; gap: 10px; }
+.vip-pack-precio { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.vip-pack-antes { color: var(--text-2); font-size: 16px; }
 /* Arreglo exprés en /vip: tarjeta normal y centrada encima de la tabla de precios, del ancho de una de
    «Servicios mensuales» (a todo el ancho se veía desproporcionada); el botón debajo, como en el resto */
 /* Más aire debajo que encima del cupón: el cupón se lee junto a los 4 servicios, no junto al Arreglo exprés */

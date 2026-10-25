@@ -23,11 +23,13 @@ const t = {
     {
       titulo: 'What data do we collect?',
       bloques: [
-        { tipo: 'p', contenido: 'Only what you give us when you use the chat on this website:' },
+        { tipo: 'p', contenido: 'Only what you give us when you use the chat on this website or order a service:' },
         { tipo: 'ul', contenido: [
           'Your name, your website or Instagram username and your WhatsApp number, when you fill in the chat form.',
           'The messages you write in the chat, so we can reply and understand what you need.',
+          'If you pay for a service by SPEI bank transfer or PayPal: the name of the account holder, the amount and the date. The payment is handled by your bank, Mercado Pago or PayPal; we never see or store your card details or account credentials.',
         ] },
+        { tipo: 'p', contenido: 'The VIP proposal coupon is checked instantly and we don’t store who uses it.' },
         { tipo: 'p', contenido: 'We don’t ask for sensitive data. To know how many people visit the website we use Vercel’s analytics, which doesn’t use cookies or tell us who you are: it only provides aggregate visit figures.' },
       ],
     },
@@ -38,6 +40,7 @@ const t = {
           'Answering your questions in the chat.',
           'Preparing and sending you on WhatsApp whatever you ask for, such as the report on your website.',
           'Contacting you about the service you asked about.',
+          'Charging for the services you order, sending you the receipt and keeping a record of each payment.',
         ] },
         { tipo: 'p', contenido: 'We don’t sell your data or use it for third-party advertising.' },
       ],
@@ -51,6 +54,7 @@ const t = {
           <><strong>Groq</strong>: processes chat messages to generate the AI assistant’s replies.</>,
           <><strong>Vercel</strong>: hosts the website and measures visits without cookies.</>,
           <><strong>Telegram</strong>: notifies us instantly when you leave your details in the chat form; the notification includes your name, your website or Instagram username and your WhatsApp number.</>,
+          <><strong>Mercado Pago and PayPal</strong>: process payments for our services, each under its own privacy notice.</>,
         ] },
         { tipo: 'p', contenido: 'Their servers may be outside Mexico, for example in the United States.' },
       ],
@@ -58,7 +62,7 @@ const t = {
     {
       titulo: 'How long do we keep it?',
       bloques: [
-        { tipo: 'p', contenido: 'For as long as we need it to serve you or for as long as our working relationship lasts, and until you ask us to delete it.' },
+        { tipo: 'p', contenido: 'For as long as we need it to serve you or for as long as our working relationship lasts, and until you ask us to delete it. Payment records are kept for as long as tax law requires.' },
       ],
     },
     {

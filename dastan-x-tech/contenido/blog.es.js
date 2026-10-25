@@ -11,7 +11,7 @@ const t = {
     {
       clave: 'blogPrecioWeb',
       title: '¿Cuánto cuesta renovar una web en 2026?',
-      excerpt: 'Nuestros precios reales en una tabla: desde 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye y qué cambia el precio final.',
+      excerpt: 'Nuestros precios reales en una tabla: 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye el precio y qué se cobra aparte.',
       date: '6 de octubre de 2026',
     },
     {

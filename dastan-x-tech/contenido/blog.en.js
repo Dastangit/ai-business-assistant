@@ -11,7 +11,7 @@ const t = {
     {
       clave: 'blogPrecioWeb',
       title: 'How much does a website redesign cost in 2026?',
-      excerpt: 'Our real prices in one table: from 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What’s included and what changes the final price.',
+      excerpt: 'Our real prices in one table: 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What the price includes and what costs extra.',
       date: 'October 6, 2026',
     },
     {

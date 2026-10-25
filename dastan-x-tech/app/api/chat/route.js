@@ -1,14 +1,21 @@
 import { NextResponse } from 'next/server';
 
-// Precios públicos ("desde"): deben coincidir con las páginas de /servicios y con public/llms.txt (lo que leen las IA).
-// Los precios con cupón solo se usan en /vip (propuestas personales) y deben coincidir con app/vip/page.js.
+// Precios públicos (cerrados): deben coincidir con las páginas de /servicios y con public/llms.txt (lo que leen las IA).
+// Los precios con cupón solo se usan en /vip (propuestas personales) y deben coincidir con components/paginas/Vip.jsx.
 // Servicios separados (la auditoría es la de más valor) + pack con los tres.
 const PRECIOS = {
   publico: { web: 100, aeo: 150, auditoria: 200, pack: 400 },
-  cupon: { web: 50, aeo: 100, auditoria: 150, pack: 300 },
+  cupon: { web: 75, aeo: 125, auditoria: 175, pack: 325 },
 };
 // Sin cupón: entrada y cuotas mensuales
 const OTROS = { expres: 49, chat: 15, recepcionista: 150, recepcionistaMes: 39, membresia: 200, automatizacion: 100 };
+// México paga en pesos por SPEI (deben coincidir con MXN y MXN_CUPON de components/paginas/Vip.jsx y con el kit 360)
+const MXN = {
+  publico: { web: 1900, aeo: 2900, auditoria: 3800, pack: 7500 },
+  cupon: { web: 1425, aeo: 2425, auditoria: 3325, pack: 6225 },
+};
+const MXN_OTROS = { expres: 950, recepcionista: 2900, recepcionistaMes: 750, chat: 300, membresia: 3800, automatizacion: 1900 };
+const pesos = (n) => `$${n.toLocaleString('en-US')}`;
 
 // Cómo trata la IA el diagnóstico en cada página (lo decide GlobalChatWidget): en las páginas de servicio el chat no tiene ese botón.
 // En AEO (el último servicio) ni se describe: si la IA lo tiene en su lista de servicios, acaba nombrándolo.
@@ -50,10 +57,12 @@ function construirPrompt(couponApplied, diagnostico, lang) {
   const b = BOTONES[lang];
   const DIAGNOSTICO = diagnosticoPara(b);
   const d = Object.hasOwn(DIAGNOSTICO, String(diagnostico)) ? DIAGNOSTICO[diagnostico] : DIAGNOSTICO.chat;
-  const cuotas = `Arreglo exprés ${OTROS.expres} USD; Chat automático 24 h para su web ${OTROS.chat} USD/mes (incluido en la Membresía si encaja); Recepcionista virtual por WhatsApp ${OTROS.recepcionista} USD + ${OTROS.recepcionistaMes} USD/mes; Membresía de Implementación ${OTROS.membresia} USD/mes; Automatización puntual ${OTROS.automatizacion} USD, pago único. Ninguna cuota mensual tiene permanencia: se cancela cuando quiera.`;
+  const cuotas = `Arreglo exprés ${OTROS.expres} USD; Chat automático 24 h para su web ${OTROS.chat} USD/mes (incluido en la Membresía si encaja); Recepcionista virtual por WhatsApp ${OTROS.recepcionista} USD + ${OTROS.recepcionistaMes} USD/mes; Membresía de Implementación ${OTROS.membresia} USD/mes; Automatización puntual ${OTROS.automatizacion} USD, pago único. Ninguna cuota mensual tiene permanencia ni cargos automáticos: cada mes le mandamos el cobro por WhatsApp y, si un mes no lo paga, el servicio se pausa.`;
+  const m = couponApplied ? MXN.cupon : MXN.publico;
+  const pago = `CÓMO SE PAGA: todo se contrata por WhatsApp; ahí le mandamos los datos de pago. En México paga en pesos por transferencia SPEI: Arreglo exprés ${pesos(MXN_OTROS.expres)}; Diseño web ${pesos(m.web)}; Posicionamiento AEO ${pesos(m.aeo)}; Auditoría Completa de Negocio ${pesos(m.auditoria)}; Pack completo ${pesos(m.pack)}; Recepcionista virtual ${pesos(MXN_OTROS.recepcionista)} + ${pesos(MXN_OTROS.recepcionistaMes)}/mes; Chat automático 24 h ${pesos(MXN_OTROS.chat)}/mes; Membresía de Implementación ${pesos(MXN_OTROS.membresia)}/mes; Automatización puntual ${pesos(MXN_OTROS.automatizacion)} (todo en MXN). Fuera de México, PayPal en USD o transferencia SPEI. Nunca des datos bancarios, CLABE, titular ni correo de PayPal: se mandan por WhatsApp. Plazos, revisiones y cancelaciones están en las condiciones de compra (/condiciones; en inglés, /en/terms): si cancela antes de empezar, lo pagado queda como saldo a favor 90 días.`;
   const lineaPrecios = couponApplied
-    ? `Esta persona está en su propuesta personal (/vip) con el cupón aplicado. Sus precios son: Diseño web ${p.web} USD; Auditoría Completa de Negocio ${p.auditoria} USD; Posicionamiento AEO ${p.aeo} USD; Pack completo con los tres ${p.pack} USD. Se pagan con los botones de esa misma página. Otros (sin cupón): ${cuotas} El Arreglo exprés también se paga con su botón de esa página. El Chat automático 24 h y la Recepcionista virtual por WhatsApp se piden por WhatsApp; la Membresía se inicia pagando el primer mes con su botón de esa página, y los meses siguientes se cobran cada mes.`
-    : `Precios de partida (así aparecen en la web): Diseño web desde ${p.web} USD (Instagram a Web va dentro de este servicio); Auditoría Completa de Negocio desde ${p.auditoria} USD, el servicio de más valor, sin la web incluida; Posicionamiento AEO desde ${p.aeo} USD; Pack completo con los tres ${p.pack} USD, que ahorra ${p.web + p.auditoria + p.aeo - p.pack} USD. Quien ya contrató alguno paga solo la diferencia hasta el pack. ${cuotas} El precio final depende del negocio y se confirma antes de empezar. Nunca menciones cupones ni descuentos.`;
+    ? `Esta persona está en su propuesta personal (/vip) con el cupón aplicado. Sus precios son: Diseño web ${p.web} USD; Auditoría Completa de Negocio ${p.auditoria} USD; Posicionamiento AEO ${p.aeo} USD; Pack completo con los tres ${p.pack} USD. Cada servicio se pide con su botón de esa página, que abre WhatsApp con el servicio, el precio y el cupón ya escritos. Otros (sin cupón): ${cuotas} ${pago}`
+    : `Precios cerrados (así aparecen en la web): Diseño web ${p.web} USD (Instagram a Web va dentro de este servicio); Auditoría Completa de Negocio ${p.auditoria} USD, el servicio de más valor, sin la web incluida; Posicionamiento AEO ${p.aeo} USD; Pack completo con los tres ${p.pack} USD, que ahorra ${p.web + p.auditoria + p.aeo - p.pack} USD. Quien ya contrató alguno paga solo la diferencia hasta el pack. ${cuotas} Son precios cerrados: no digas «desde» ni que el precio depende del negocio; si alguien necesita algo que no está incluido (por ejemplo, una tienda online), se presupuesta aparte antes de empezar. Nunca menciones cupones ni descuentos. ${pago}`;
 
   return `Eres Lex, la asistente de DASTAN X-TECH. Si te preguntan cómo te llamas, di que eres Lex. Cuando hables de ti misma, hazlo en femenino (por ejemplo: «estoy encantada de ayudarte»). Responde en el idioma del usuario (español o inglés). Tono cercano, claro y sin jerga técnica.
 
@@ -61,15 +70,15 @@ A QUIÉN AYUDAMOS: negocios privados y pymes de cualquier sector (por ejemplo cl
 
 LO QUE OFRECEMOS:
 - ${d.oferta}
-- Auditoría Completa de Negocio (servicio de pago): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas, competencia) y por dentro (cómo capta clientes, agenda, cobra y qué herramientas usa, con un formulario de 36 preguntas). Entrega un informe con la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van a mano y un plan de acción. No necesitamos contraseñas ni accesos.
+- Auditoría Completa de Negocio (servicio de pago): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas, competencia) y por dentro (cómo capta clientes, agenda, cobra y qué herramientas usa, con un cuestionario breve o una entrevista de 20-30 minutos). Entrega un informe con la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van a mano y un plan de acción. No necesitamos contraseñas ni accesos.
 - Diseño web, servicio de pago: renovamos su web, o se la creamos desde cero si no tiene, estructurada especialmente para su negocio, con su marca real, WhatsApp y teléfono siempre visibles y sus servicios explicados. En la página de Diseño web hay un muestrario con nuestra propia web rehecha en ocho estilos (túnel 3D, cinemático, editorial…): no son clientes; la persona elige el estilo que le guste para su web. El chat con IA no va incluido: es un complemento aparte.
 - Instagram a Web, parte del Diseño web: como alternativa para quien no tiene web, sacamos una web a partir de su propio Instagram con los datos que decida darnos.
-- Posicionamiento AEO (Answer Engine Optimization): preparar el negocio para que asistentes de IA como ChatGPT o Gemini lo recomienden: ficha y redes coherentes, contenido claro y reseñas. Complementa al SEO, no lo sustituye. Necesita una web en buen estado; si no la tiene, empieza por el Diseño web o el Pack completo.
+- Posicionamiento AEO (Answer Engine Optimization): preparar el negocio para que asistentes de IA como ChatGPT o Gemini lo recomienden: ficha y redes coherentes, contenido claro y reseñas; además revisamos y mejoramos la nota de su web en Is It Agent Ready (isitagentready.com), la prueba gratuita de Cloudflare que mide de 0 a 100 si los agentes de IA pueden encontrar y leer la web. No prometas una nota concreta. Complementa al SEO, no lo sustituye. Necesita una web en buen estado; si no la tiene, empieza por el Diseño web o el Pack completo.
 - Los servicios se contratan por separado; el Pack completo junta Auditoría, Diseño web y AEO con descuento.
 - Arreglo exprés (solo para quien ya tiene web): aplicamos en 48 horas las 5 correcciones más urgentes de su diagnóstico SEO; se descuenta si después contrata el Diseño web en 30 días. Ofrécelo a quien quiere algo rápido o más económico que una web nueva.
 - Chat automático 24 h para su web (cuota mensual): una burbuja como la de esta página que responde dudas a cualquier hora y guarda el nombre y el WhatsApp de quien pregunta.
 - Recepcionista virtual por WhatsApp (instalación + cuota mensual): responde en su WhatsApp las 24 horas; se instala en un número secundario del negocio, no en el personal.
-- Membresía de Implementación (cuota mensual): 24 horas de trabajo al mes aplicando el plan de acción de su Auditoría Completa (la Auditoría se contrata aparte o dentro del Pack completo), con el chat automático 24 h si encaja y automatizaciones (CRM para no perder clientes, recordatorios, seguimiento de presupuestos, reseñas). También prepara el negocio para que los agentes de IA gestionen reservas o compras desde el chat; eso no entra en el Posicionamiento AEO. Dentro de esas horas puede elegir los servicios bajo pedido.
+- Membresía de Implementación (cuota mensual): 6 horas de trabajo por semana aplicando el plan de acción de su Auditoría Completa (haber hecho la Auditoría es requisito: se contrata aparte o dentro del Pack completo), con el chat automático 24 h si encaja y automatizaciones (CRM para no perder clientes, recordatorios, seguimiento de presupuestos, reseñas). También prepara el negocio para que los agentes de IA gestionen reservas o compras desde el chat; eso no entra en el Posicionamiento AEO. Dentro de esas horas puede elegir los servicios bajo pedido.
 - Automatización puntual (pago único, para quien no quiere la Membresía): una sola cosa con alcance cerrado, por ejemplo instalar un CRM gratuito en la cuenta del negocio y conectarlo al formulario de su web, o un recordatorio automático de citas. Sin mantenimiento: los cambios o automatizaciones posteriores van en la Membresía. Todo se instala en las cuentas del propio negocio.
 - Servicios bajo pedido (menciónalos solo si la persona pregunta por algo relacionado; no los ofrezcas por tu cuenta): Análisis de canal de YouTube (miniaturas, títulos, ganchos y qué vídeos funcionan); Análisis de marca personal (perfil, contenido, autoridad y el camino hasta que la contratan); Análisis de tienda online (dónde se escapan las ventas hasta el pago); Dashboard de facturas (panel con ingresos, gastos, impuestos y mejores clientes a partir de sus facturas en PDF). Se piden sueltos, con precio según el caso por WhatsApp, o se eligen dentro de la Membresía.
 ${lineaPrecios}

@@ -14,6 +14,7 @@ export const RUTAS = {
   blogAuditorAeo: { es: '/blog/perfeccionamos-nuestra-web-auditor-aeo', en: '/en/blog/our-website-through-our-aeo-auditor' },
   blogPrecioWeb: { es: '/blog/cuanto-cuesta-renovar-web', en: '/en/blog/how-much-does-a-website-redesign-cost' },
   privacidad: { es: '/privacidad', en: '/en/privacy' },
+  condiciones: { es: '/condiciones', en: '/en/terms' },
   vip: { es: '/vip', en: '/en/vip' },
 };
 

@@ -49,11 +49,11 @@ const contactLinks = [
 const TEXTOS = {
   es: {
     lema: 'Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
-    servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad',
+    servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad', condiciones: 'Condiciones de compra',
   },
   en: {
     lema: 'High-level digital consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
-    servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice',
+    servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice', condiciones: 'Terms of purchase',
   },
 };
 
@@ -86,7 +86,7 @@ export default function SiteFooter({ tone = 'light', lang = 'es' }) {
           ))}
         </ul>
       </div>
-      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href={ruta('privacidad', lang)}>{t.privacidad}</a></p>
+      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href={ruta('privacidad', lang)}>{t.privacidad}</a> · <a href={ruta('condiciones', lang)}>{t.condiciones}</a></p>
     </footer>
   );
 }

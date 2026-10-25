@@ -60,7 +60,7 @@ const t = {
     { nombre: 'Dastan Tamayo', rol: 'Fundador de DASTAN X-TECH', alt: 'Dastan Tamayo, fundador de DASTAN X-TECH' },
     { nombre: 'Isdiel Martínez', rol: 'Consultor y estratega digital', alt: 'Isdiel Martínez, consultor y estratega digital de DASTAN X-TECH' },
   ],
-  // El precio de partida debe coincidir con PRECIOS de app/api/chat/route.js
+  // Los precios (cerrados) deben coincidir con PRECIOS de app/api/chat/route.js
   servicios: {
     etiqueta: 'Servicios',
     titulo: 'Tres servicios para que tu negocio no pierda ni un cliente',
@@ -72,7 +72,7 @@ const t = {
         text: 'Renovamos tu web actual con tu marca real: tus servicios, tus precios y tu WhatsApp a un toque.',
         items: ['Diagnóstico honesto de tu web actual.', 'Web nueva, responsive, lista para publicar.', 'WhatsApp y teléfono siempre visibles.'],
         link: 'Saber más sobre Diseño web →',
-        price: 'Desde 100 USD',
+        price: '100 USD',
       },
       {
         clave: 'auditoria',
@@ -81,7 +81,7 @@ const t = {
         text: 'Sabemos exactamente dónde tu negocio pierde tiempo y dinero, con evidencia, no suposiciones.',
         items: ['Presencia digital sobre 100.', 'Madurez tecnológica sobre 5.', 'Análisis de procesos.', 'Plan de acción por fases.'],
         link: 'Descubre la Auditoría de Negocio →',
-        price: 'Desde 200 USD',
+        price: '200 USD',
       },
       {
         clave: 'aeo',
@@ -90,7 +90,7 @@ const t = {
         text: 'Que la Inteligencia Artificial recomiende tu negocio, no solo las búsquedas en Google.',
         items: ['Ficha de Google y redes ordenadas.', 'Contenido citable por IA.', 'Reseñas y señales de confianza.'],
         link: 'Conoce el Posicionamiento AEO →',
-        price: 'Desde 150 USD',
+        price: '150 USD',
       },
     ],
   },
