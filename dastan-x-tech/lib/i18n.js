@@ -51,6 +51,13 @@ export function rutaEquivalente(pathname) {
   return ruta(clave, otro) + ancla;
 }
 
+// usePathname no trae el ancla: al pulsar el enlace se le añade la de la URL actual
+// (las secciones usan el mismo id en los dos idiomas)
+export function conAncla(evento) {
+  const { hash } = window.location;
+  if (hash) evento.currentTarget.href = evento.currentTarget.href.split('#')[0] + hash;
+}
+
 // Para metadata.alternates: canonical propio + hreflang (x-default = español)
 export function alternates(clave, lang) {
   return {

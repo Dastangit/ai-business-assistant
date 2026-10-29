@@ -1,6 +1,6 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { idiomaDeRuta, rutaEquivalente } from '@/lib/i18n';
+import { idiomaDeRuta, rutaEquivalente, conAncla } from '@/lib/i18n';
 
 // ES | EN: lleva a la misma página en el otro idioma (cambia de layout raíz: recarga completa, es lo esperado)
 export default function SelectorIdioma({ className = '' }) {
@@ -11,7 +11,7 @@ export default function SelectorIdioma({ className = '' }) {
     codigo === lang ? (
       <span aria-current="true">{codigo.toUpperCase()}</span>
     ) : (
-      <a href={otra} hrefLang={codigo} lang={codigo} data-cambio-idioma>
+      <a href={otra} hrefLang={codigo} lang={codigo} data-cambio-idioma onClick={conAncla}>
         {codigo.toUpperCase()}
       </a>
     );
