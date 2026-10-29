@@ -19,6 +19,8 @@ const t = {
   // Tarjeta a la derecha del hero: un trozo de public/ejemplo-diagnostico-seo.html (negocio ficticio) y el caso real del blog
   muestra: {
     aria: 'Ejemplo del diagnóstico SEO gratis',
+    // Solo en móvil, al pie de la primera pantalla: el hueco no debe parecer el final de la página
+    bajar: 'Mira un ejemplo del diagnóstico',
     etiqueta: 'Ejemplo · Diagnóstico SEO',
     nota: 32,
     deCien: 'de 100',

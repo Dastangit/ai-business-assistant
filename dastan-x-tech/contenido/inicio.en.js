@@ -19,6 +19,7 @@ const t = {
   // Card to the right of the hero: an excerpt of public/ejemplo-diagnostico-seo.html (fictional business, in Spanish) and the real case from the blog
   muestra: {
     aria: 'Sample of the free SEO report',
+    bajar: 'See a sample report',
     etiqueta: 'Sample · SEO report',
     nota: 32,
     deCien: 'out of 100',

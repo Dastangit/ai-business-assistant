@@ -376,6 +376,8 @@ html { scroll-padding-top: 84px; }
 }
 .hero-points li { display: flex; align-items: center; gap: 8px; }
 .hero-points svg { width: 16px; height: 16px; color: var(--action); flex-shrink: 0; }
+/* Aviso para bajar a la muestra: solo en móvil, donde la muestra queda bajo la primera pantalla */
+.hero-bajar { display: none; }
 
 .section { padding: 4rem 24px; max-width: 1120px; margin: 0 auto; width: 100%; }
 .section-title { font-size: clamp(1.75rem, 3.5vw, 1.875rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
@@ -800,6 +802,11 @@ html, body { overflow-x: clip; width: 100%; }
   /* El titular llena la primera pantalla (menos la cabecera de ~56 px y el padding de 40) para que
      la muestra no asome cortada y tapada por la burbuja del chat */
   .hero-texto { gap: 20px; min-height: calc(100svh - 96px); }
+  .hero-bajar {
+    display: flex; align-items: center; gap: 6px; margin-top: auto; padding-bottom: 8px;
+    color: var(--text-2); font-size: 14px; text-decoration: none;
+  }
+  .hero-bajar svg { width: 16px; height: 16px; color: var(--action); }
   /* En móvil la muestra va entera debajo del titular: enseña lo que recibe el cliente */
   .hero-muestra { padding: 20px; }
   .section { padding: 3rem 20px; }
