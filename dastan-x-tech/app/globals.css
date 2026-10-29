@@ -379,7 +379,8 @@ html { scroll-padding-top: 84px; }
 /* Aviso para bajar a la muestra: solo en móvil, donde la muestra queda bajo la primera pantalla */
 .hero-bajar { display: none; }
 
-.section { padding: 4rem 24px; max-width: 1120px; margin: 0 auto; width: 100%; }
+/* 3rem arriba y abajo (~96 px entre secciones): con 4rem, en PC un tercio de la portada era hueco */
+.section { padding: 3rem 24px; max-width: 1120px; margin: 0 auto; width: 100%; }
 .section-title { font-size: clamp(1.75rem, 3.5vw, 1.875rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
 .section-text { color: var(--text-2); font-size: 17px; line-height: 1.7; }
 /* Subrayado fino y gris bajo los títulos sin etiqueta (Cómo trabajamos, Diagnóstico): tan ancho como el texto */

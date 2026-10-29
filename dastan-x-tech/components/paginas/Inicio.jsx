@@ -143,7 +143,7 @@ export default function Inicio({ t, lang }) {
 
       {/* CÓMO TRABAJAMOS */}
       <section className="section">
-        <h2 className="section-title section-title--linea" style={{ marginBottom: '2.5rem' }}>
+        <h2 className="section-title section-title--linea" style={{ marginBottom: '2rem' }}>
           {t.pasos.titulo}
         </h2>
         <div className="steps">
