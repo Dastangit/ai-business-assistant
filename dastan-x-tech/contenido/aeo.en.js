@@ -43,6 +43,7 @@ const t = {
     ],
     cita: 'On the web of the future, being seen by people is not enough: your business has to be understood and recommended by machines.',
     enlaceArticulo: 'See a real example: we asked Gemini for the best spa in Medellín →',
+    enlaceConsultor: 'What does an AEO consultant do? Step by step →',
   },
   ventajas: {
     titulo: <>Ready for the <span className="accent-light">age of answers</span></>,

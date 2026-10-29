@@ -91,6 +91,10 @@ export default function Aeo({ t, lang }) {
           <a href={ruta('blogAeo', lang)} className="text-link">
             {t.queEs.enlaceArticulo}
           </a>
+          {/* La guía del consultor AEO: esta página es la que más impresiones tiene, así Google la encuentra antes */}
+          <a href={ruta('blogConsultorAeo', lang)} className="text-link" style={{ display: 'block', marginTop: '0.75rem' }}>
+            {t.queEs.enlaceConsultor}
+          </a>
         </div>
       </section>
 

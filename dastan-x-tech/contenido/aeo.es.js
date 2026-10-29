@@ -43,6 +43,7 @@ const t = {
     ],
     cita: 'En la web del futuro no basta con que te vean las personas: tu negocio tiene que ser comprendido y recomendado por las máquinas.',
     enlaceArticulo: 'Mira un ejemplo real: le preguntamos a Gemini por el mejor spa de Medellín →',
+    enlaceConsultor: '¿Qué hace un consultor AEO? Te lo contamos paso a paso →',
   },
   ventajas: {
     titulo: <>Preparados para la <span className="accent-light">era de las respuestas</span></>,
