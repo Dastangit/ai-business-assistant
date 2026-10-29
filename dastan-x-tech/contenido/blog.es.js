@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogConsultorAeo',
+      title: '¿Qué hace un consultor AEO?',
+      excerpt: 'Lo que revisamos, paso a paso, para que ChatGPT, Gemini y Perplexity recomienden tu negocio, con nuestra web de ejemplo: nivel 4 en Is It Agent Ready de Cloudflare.',
+      date: '29 de octubre de 2026',
+    },
+    {
       clave: 'blogPrecioWeb',
       title: '¿Cuánto cuesta renovar una web en 2026?',
       excerpt: 'Nuestros precios reales en una tabla: 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye el precio y qué se cobra aparte.',

@@ -33,7 +33,7 @@ const t = {
       'Phone and WhatsApp one tap away from the very first second.',
       'Try them on your phone too and scroll slowly: the motion is the point.',
     ],
-    boton: 'See the 8 styles ↗',
+    boton: 'See the showcase ↗',
   },
   ventajas: {
     titulo: <>More than a <span className="accent-light">pretty website</span></>,

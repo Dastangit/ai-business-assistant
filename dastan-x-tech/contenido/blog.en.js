@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogConsultorAeo',
+      title: 'What does an AEO consultant do?',
+      excerpt: 'What we check, step by step, so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 4 on Cloudflare’s Is It Agent Ready.',
+      date: 'October 29, 2026',
+    },
+    {
       clave: 'blogPrecioWeb',
       title: 'How much does a website redesign cost in 2026?',
       excerpt: 'Our real prices in one table: 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What the price includes and what costs extra.',

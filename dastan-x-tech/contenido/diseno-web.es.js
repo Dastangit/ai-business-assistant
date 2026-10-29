@@ -33,7 +33,7 @@ const t = {
       'Teléfono y WhatsApp a un toque desde el primer segundo.',
       'Pruébalos también en el móvil y baja despacio: el movimiento es la clave.',
     ],
-    boton: 'Ver los 8 estilos ↗',
+    boton: 'Ver muestrario ↗',
   },
   ventajas: {
     titulo: <>Más que una <span className="accent-light">web bonita</span></>,
