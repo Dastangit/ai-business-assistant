@@ -354,7 +354,8 @@ html { scroll-padding-top: 84px; }
 .hero-muestra-real { color: var(--text-2); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
 .hero-muestra-real:hover { color: var(--text); }
 @media (min-width: 960px) {
-  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: 48px; }
+  /* Ocupa la pantalla menos la cabecera (~67 px): si no, en portátiles asomaba cortada la etiqueta «Servicios» */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: center; gap: 48px; min-height: calc(100svh - 67px); }
   .hero-muestra { max-width: none; }
 }
 @media (forced-colors: active) { .hero-muestra-anillo { background: none; border: 2px solid CanvasText; } }
