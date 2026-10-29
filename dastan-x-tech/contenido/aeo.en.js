@@ -2,9 +2,10 @@
 // Data only: no functions (passed from server to client).
 const t = {
   metadata: {
-    title: 'AI Search Optimization (AEO) | DASTAN X-TECH',
+    // Mirrors the Spanish «Consultor AEO» title (the query we already show up for in Search Console)
+    title: 'AEO Consultant: get your business recommended by AI | DASTAN X-TECH',
     description: 'We prepare your business so ChatGPT, Gemini and Perplexity recommend you directly, not just Google. Structure, reviews and trust signals for AI engines.',
-    keywords: ['AI search optimization', 'Answer Engine Optimization', 'AEO', 'Get recommended by ChatGPT', 'SEO for AI'],
+    keywords: ['AEO consultant', 'AI search optimization', 'Answer Engine Optimization', 'AEO', 'Get recommended by ChatGPT', 'SEO for AI'],
     ogTitle: 'AI Search Optimization (AEO) | DASTAN X-TECH',
     ogDescription: 'Get your business recommended directly by ChatGPT, Gemini and Perplexity, not just Google.',
   },
