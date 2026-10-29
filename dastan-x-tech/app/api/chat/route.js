@@ -24,8 +24,8 @@ const QUE_ES_DIAGNOSTICO = 'Diagnóstico SEO gratis (solo para negocios que ya t
 const FORMULARIO = 'se abre un formulario donde la persona escribe su nombre, su web (obligatoria) y su propio número de WhatsApp';
 // Nombres de los botones del chat (deben coincidir con TEXTOS de components/ChatWidget.jsx)
 const BOTONES = {
-  es: { chat: 'Pedir mi diagnóstico SEO gratis', final: 'Pedir diagnóstico SEO gratis', sinWeb: 'No tengo web: quiero una' },
-  en: { chat: 'Get my free SEO report', final: 'Get my free SEO report', sinWeb: 'No website yet? I want one' },
+  es: { chat: 'Diagnóstico gratis', final: 'Pedir diagnóstico SEO gratis', sinWeb: 'No tengo web: quiero una' },
+  en: { chat: 'Free report', final: 'Get my free SEO report', sinWeb: 'No website yet? I want one' },
 };
 const diagnosticoPara = (b) => ({
   chat: {
