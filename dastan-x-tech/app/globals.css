@@ -799,7 +799,7 @@ html, body { overflow-x: clip; width: 100%; }
   .chat-etiqueta { right: 56px; bottom: 7px; font-size: 13px; padding: 7px 12px; }
   /* El titular llena la primera pantalla (menos la cabecera de ~56 px y el padding de 40) para que
      la muestra no asome cortada y tapada por la burbuja del chat */
-  .hero-texto { gap: 20px; min-height: calc(100svh - 96px); justify-content: center; }
+  .hero-texto { gap: 20px; min-height: calc(100svh - 96px); }
   /* En móvil la muestra va entera debajo del titular: enseña lo que recibe el cliente */
   .hero-muestra { padding: 20px; }
   .section { padding: 3rem 20px; }
