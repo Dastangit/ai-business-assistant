@@ -13,14 +13,6 @@ import fotoIsdiel from '@/public/equipo/isdiel-martinez.jpg';
 // Equipo de «Quiénes somos»: fotos ya recortadas a 4:5 (Dastan 1003×1254, Isdiel 1024×1280) en public/equipo; el CSS fija el 4:5
 const FOTOS = [fotoDastan, fotoIsdiel];
 
-// Iconos de la sección Diagnóstico (mismo orden que t.diagnostico.items): web, procesos, escudo, ruta.
-// Van en lugar de los números para no repetir el 01-02-03 de Cómo trabajamos
-const ICONOS_DIAGNOSTICO = [
-  <><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z" /></>,
-  <><rect x="2.5" y="9.5" width="5" height="5" rx="1" /><rect x="16.5" y="4" width="5" height="5" rx="1" /><rect x="16.5" y="15" width="5" height="5" rx="1" /><path d="M7.5 12H12m0 0V6.5h4.5M12 12v5.5h4.5" /></>,
-  <><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" /><path d="m8.8 12.2 2.2 2.2 4.2-4.4" /></>,
-  <><circle cx="5" cy="18" r="1.8" /><circle cx="12" cy="13" r="1.8" /><path d="M6.6 17c1.4-1 2.8-2 3.9-3M13.6 12.2c1.6-.9 3-2.2 4.1-4.2" /><path d="M18 9V3l3.5 1.6L18 6.2" /></>,
-];
 
 // Abre el chat con el formulario del diagnóstico SEO gratis desplegado
 const pedirDiagnostico = () => {
@@ -62,7 +54,7 @@ export default function Inicio({ t, lang }) {
         <span className="label-mono">{t.etiqueta}</span>
         <h1 className="hero-title">
           {t.titulo}
-          <span className="texto-degradado">{t.tituloDestacado}</span>
+          <span className="texto-marca">{t.tituloDestacado}</span>
           <span className="sr-only">{t.tituloSr}</span>
         </h1>
         <p className="hero-sub">{t.subtitulo}</p>
@@ -95,7 +87,7 @@ export default function Inicio({ t, lang }) {
         </ul>
         </div>
 
-        {/* MUESTRA: lo que recibe el cliente, en el hueco de la derecha (en móvil solo quedan los enlaces) */}
+        {/* MUESTRA: lo que recibe el cliente, en el hueco de la derecha (en móvil, debajo del titular) */}
         <aside className="hero-muestra" aria-label={t.muestra.aria}>
           <span className="label-mono">{t.muestra.etiqueta}</span>
           <div className="hero-muestra-cabecera">
@@ -123,7 +115,7 @@ export default function Inicio({ t, lang }) {
       {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página */}
       <section id="services" className="section">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem' }}>
-          <span className="label-mono" style={{ color: 'var(--action)' }}>{t.servicios.etiqueta}</span>
+          <span className="label-mono">{t.servicios.etiqueta}</span>
           <h2 className="section-title">{t.servicios.titulo}</h2>
         </div>
 
@@ -134,9 +126,6 @@ export default function Inicio({ t, lang }) {
               <h3 className="card-title">{s.title}</h3>
               <span className="card-price">{s.price}</span>
               <p className="card-text">{s.text}</p>
-              <ul className="dot-list card-list">
-                {s.items.map((item) => <li key={item}>{item}</li>)}
-              </ul>
               <span className="card-link">{s.link}</span>
             </a>
           ))}
@@ -158,45 +147,18 @@ export default function Inicio({ t, lang }) {
         </div>
       </section>
 
-      {/* DIAGNÓSTICO: qué miramos antes de proponer nada; mismo diseño que Cómo trabajamos */}
-      <section className="section">
-        <h2 className="section-title section-title--linea" style={{ marginBottom: '2.5rem' }}>
-          {t.diagnostico.titulo}
-        </h2>
-        <div className="steps">
-          {t.diagnostico.items.map((item, i) => (
-            <div key={item.titulo}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="step-icono">
-                {ICONOS_DIAGNOSTICO[i]}
-              </svg>
-              <h3 className="step-titulo">{item.titulo}</h3>
-              <p className="section-text" style={{ fontSize: '16px' }}>{item.texto}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* SECCIÓN QUIÉNES SOMOS */}
       <section id="about" className="section" style={{ maxWidth: '760px' }}>
         <h2 className="section-title" style={{ marginBottom: '1rem' }}>
           {t.quienes.titulo}
         </h2>
-        {t.quienes.parrafos.map((parrafo, i) => (
-          <p key={i} className="section-text">{parrafo}</p>
-        ))}
+        <p className="section-text">{t.quienes.texto}</p>
+        <Link href={ruta('historia', lang)} className="card-link" style={{ display: 'inline-block', marginTop: '0.25rem' }}>{t.quienes.enlace}</Link>
 
-        {/* Historia breve: por qué existe la consultora (nació de nuestro propio problema de visibilidad) */}
-        <div className="historia">
-          <h3 className="historia-titulo">{t.quienes.historia.titulo}</h3>
-          {t.quienes.historia.parrafos.map((parrafo, i) => (
-            <p key={i} className="section-text">{parrafo}</p>
-          ))}
-        </div>
-
-        <div className="equipo">
+        <div className="equipo equipo--par">
           {equipo.map((p) => (
             <figure key={p.nombre} className="equipo-ficha">
-              <Image src={p.foto} alt={p.alt} placeholder="blur" sizes="(max-width: 640px) 100vw, 360px" className="equipo-foto" />
+              <Image src={p.foto} alt={p.alt} placeholder="blur" sizes="(max-width: 640px) 50vw, 360px" className="equipo-foto" />
               <figcaption>
                 <strong>{p.nombre}</strong>
                 <span>{p.rol}</span>

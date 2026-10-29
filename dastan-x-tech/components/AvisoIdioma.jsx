@@ -12,13 +12,14 @@ const TEXTOS = {
 // Si el navegador está en el otro idioma, una barra fina lo ofrece. Nunca redirige.
 // En /vip no sale: a la propuesta se llega con un enlace ya en el idioma del cliente.
 // Tampoco en páginas sin pareja en el otro idioma (/admin, 404).
+// Ni en la portada: ahí el selector ES | EN de la cabecera basta y el aviso empujaba el hero hacia abajo.
 export default function AvisoIdioma() {
   const pathname = usePathname() || '/';
   const [destino, setDestino] = useState(null);
 
   useEffect(() => {
     const clave = claveDeRuta(pathname);
-    if (!clave || clave === 'vip') return;
+    if (!clave || clave === 'vip' || clave === 'inicio') return;
     let cerrado = false;
     try { cerrado = localStorage.getItem(CLAVE) === '1'; } catch { /* almacenamiento bloqueado: se vuelve a mostrar */ }
     if (cerrado) return;

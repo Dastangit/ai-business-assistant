@@ -50,8 +50,13 @@ DASTAN X-TECH is also available in English. High-level digital consulting for sm
 ## Optional
 
 - [Servicios bajo pedido](https://dastanxtech.com/servicios): se piden sueltos, con precio según cada caso, o se eligen dentro de la Membresía de Implementación.
+  - Automatizaciones con n8n y Make: las tareas repetidas (avisos, registros, seguimientos) se hacen solas.
+  - Chatbots y agentes de IA: asistentes para la web o el equipo que responden y ejecutan tareas con la información del negocio.
+  - CRM y prospección: contactos ordenados en un CRM y búsqueda de clientes nuevos.
+  - Auditoría de Meta Ads: revisión de los anuncios activos de Facebook e Instagram y de las páginas a las que llevan, con correcciones de texto, oferta y seguimiento.
+  - Edición de video: vídeos para redes sociales, con subtítulos y animaciones, listos para publicar.
   - Análisis de canal de YouTube: miniaturas, títulos, ganchos y los vídeos que mejor funcionan; dónde se va la gente y qué grabar después.
-  - Análisis de marca personal: perfil, contenido, autoridad y el camino hasta la contratación, con un plan para los próximos 30 días.
+  - Análisis de marca personal: en cuatro fases (si te encuentran, te entienden, te creen y te contratan), dónde se escapa la gente y un plan para los próximos 30 días.
   - Análisis de tienda online: el recorrido de un comprador hasta el pago, por dónde se escapan las ventas y cuánto cuesta cada fuga.
   - Dashboard de facturas: a partir de las facturas en PDF, un panel con ingresos, gastos, impuestos, balance y mejores clientes.
 - [Instagram](https://www.instagram.com/dastan.xtech/)

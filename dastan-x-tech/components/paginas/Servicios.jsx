@@ -43,13 +43,18 @@ export default function Servicios({ t, lang }) {
       <section className="extras" style={{ padding: '2.5rem 5% 6rem', maxWidth: '1100px', margin: '0 auto' }}>
         <span className="label-mono">{t.extras.etiqueta}</span>
         <h2>{t.extras.titulo}</h2>
-        <ul className="extras-list">
-          {t.extras.items.map((e) => (
-            <li key={e.title}><span><strong>{e.title}:</strong> {e.text}</span></li>
-          ))}
-        </ul>
+        {t.extras.grupos.map((g) => (
+          <div key={g.titulo} className="extras-grupo">
+            <h3>{g.titulo}</h3>
+            <ul className="extras-list">
+              {g.items.map((e) => (
+                <li key={e.title}><span><strong>{e.title}:</strong> {e.text}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
         <p className="extras-note">{t.extras.nota}</p>
-        <BotonChat mensaje={t.extras.mensajeChat} className="btn btn-outline-light">{t.extras.boton}</BotonChat>
+        <BotonChat mensaje={t.extras.mensajeChat} respuesta={t.extras.respuestaChat} className="btn btn-outline-light">{t.extras.boton}</BotonChat>
       </section>
 
       <SiteFooter tone="light" lang={lang} />

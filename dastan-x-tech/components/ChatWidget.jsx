@@ -41,6 +41,7 @@ const TEXTOS = {
     mensajeAria: 'Escribe tu mensaje',
     enviarAria: 'Enviar mensaje',
     abrir: 'Abrir chat con Lex, la asistente',
+    etiqueta: '¿Dudas? Pregúntale a Lex',
     cerrar: 'Cerrar chat',
     origenDiagnostico: 'diagnóstico SEO',
     origenWebNueva: 'quiere web nueva',
@@ -80,6 +81,7 @@ const TEXTOS = {
     mensajeAria: 'Type your message',
     enviarAria: 'Send message',
     abrir: 'Open chat with Lex, the assistant',
+    etiqueta: 'Questions? Ask Lex',
     cerrar: 'Close chat',
     origenDiagnostico: 'diagnóstico SEO',
     origenWebNueva: 'quiere web nueva',
@@ -177,7 +179,7 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
   }, [input, isLoading, messages, couponApplied, diagnostico, lang, t.sinConexion]);
 
   // Otros botones de la web abren el chat: con { diagnostico: true } despliegan el formulario,
-  // con un texto lo envían como primera pregunta
+  // con un texto lo envían como primera pregunta y con { pregunta, respuesta } muestran una respuesta fija, sin pasar por la IA
   useEffect(() => {
     const handleAbrirChat = (e) => {
       setIsOpen(true);
@@ -189,12 +191,31 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
         }
         return;
       }
+      if (detalle && typeof detalle === 'object' && detalle.respuesta) {
+        setMessages((prev) => [...prev, { role: 'user', text: detalle.pregunta }, { role: 'bot', text: detalle.respuesta }]);
+        return;
+      }
       if (typeof detalle === 'string') handleSend(detalle);
     };
 
     window.addEventListener('abrir-chat', handleAbrirChat);
     return () => window.removeEventListener('abrir-chat', handleAbrirChat);
   }, [handleSend, leadEnviado]);
+
+  // Etiqueta junto a la burbuja: sale a los 3 s, se va sola a los 8 s y solo una vez por visita (si el navegador bloquea
+  // sessionStorage, simplemente vuelve a salir)
+  const [etiqueta, setEtiqueta] = useState(false);
+  useEffect(() => {
+    let vista = false;
+    try { vista = sessionStorage.getItem('chat-etiqueta-vista') === '1'; } catch { /* sin almacenamiento */ }
+    if (vista) return;
+    const mostrar = setTimeout(() => {
+      setEtiqueta(true);
+      try { sessionStorage.setItem('chat-etiqueta-vista', '1'); } catch { /* sin almacenamiento */ }
+    }, 3000);
+    const ocultar = setTimeout(() => setEtiqueta(false), 11000);
+    return () => { clearTimeout(mostrar); clearTimeout(ocultar); };
+  }, []);
 
   const handleClearChat = () => {
     setMessages([{ role: 'bot', text: t.saludo }]);
@@ -344,15 +365,21 @@ export default function ChatWidget({ couponApplied = false, diagnostico = 'chat'
         </div>
       )}
 
-      <button type="button" className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? t.cerrar : t.abrir}>
+      {etiqueta && !isOpen && (
+        <button type="button" className="chat-etiqueta" onClick={() => { setEtiqueta(false); setIsOpen(true); }}>{t.etiqueta}</button>
+      )}
+      <button type="button" className={isOpen ? 'chat-toggle-btn' : 'chat-toggle-btn chat-toggle-btn--llamada'} onClick={() => { setEtiqueta(false); setIsOpen(!isOpen); }} aria-label={isOpen ? t.cerrar : t.abrir}>
         {isOpen ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         ) : (
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          // Burbuja de chat con un destello: dice «asistente con IA» sin texto
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M12 3.5H5a2 2 0 0 0-2 2V21l4-4h12a2 2 0 0 0 2-2v-3" />
+            <path d="M18 2.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z" fill="currentColor" stroke="none" />
+            <path d="M7.5 9.5h6M7.5 13h4" />
           </svg>
         )}
       </button>

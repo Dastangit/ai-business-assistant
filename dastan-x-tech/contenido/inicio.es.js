@@ -1,7 +1,5 @@
 // Textos de la portada (español). Si cambias algo aquí, cambia lo mismo en inicio.en.js.
 // Solo datos: nada de funciones (se pasan de servidor a cliente).
-// Los párrafos con formato llevan key: viajan del servidor al cliente dentro de una lista y React la exige
-import { Fragment } from 'react';
 
 const t = {
   nav: {
@@ -11,7 +9,7 @@ const t = {
     wa: 'Escríbenos por WhatsApp al +1 605-500-3653',
   },
   etiqueta: 'Consultoría digital y tecnología de alto nivel',
-  // El titular se parte en dos: la segunda parte va con el degradado de la marca
+  // El titular se parte en dos: la segunda parte va en el violeta de la marca
   titulo: 'Descubre, con pruebas, por qué tu negocio ',
   tituloDestacado: 'pierde clientes por internet.',
   tituloSr: ' DASTAN X-TECH, consultoría digital de alto nivel para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.',
@@ -31,39 +29,22 @@ const t = {
     enlace: 'Ver el ejemplo completo →',
     real: 'Caso real: nuestra propia web, de 94 a 97 →',
   },
-  // Sección tras «Cómo trabajamos»: qué miramos antes de proponer nada
-  diagnostico: {
-    titulo: 'Antes de tocar nada, diagnosticamos tu negocio',
-    items: [
-      { titulo: 'Presencia digital', texto: 'Cómo te ve hoy un cliente: web, Google, redes y reseñas. Nota sobre 100.' },
-      { titulo: 'Mapa de procesos', texto: 'Cómo trabaja hoy tu negocio: agenda, cobros, atención y herramientas.' },
-      { titulo: 'Seguridad', texto: 'Los puntos débiles de tu web, antes de que te cuesten un disgusto.' },
-      { titulo: 'Plan de acción', texto: 'Qué hacer, paso a paso, empezando por lo que más te devuelve.' },
-    ],
-  },
   quienes: {
     titulo: 'Quiénes somos',
-    parrafos: [
-      <Fragment key="presentacion">Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</Fragment>,
-    ],
-    historia: {
-      titulo: 'Cómo nació DASTAN X-TECH',
-      parrafos: [
-        'DASTAN X-TECH no fue nuestra primera idea. Empezó con nuestro propio negocio: hacíamos un buen trabajo, pero en internet casi no se veía, y necesitábamos más visibilidad para crecer.',
-        'Decidimos dar un paso adelante. Estudiamos cómo se gana visibilidad hoy —en Google, en las redes y en las respuestas de la IA— y por el camino vimos que muchos negocios como el nuestro estaban igual. Así nació esta consultora.',
-        'Por eso sabemos lo que se siente cuando tus ideas son buenas y aun así no llegan a quien deberían. Nuestro trabajo es que internet refleje el que ya haces tú.',
-      ],
-    },
+    texto: <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</>,
+    enlace: 'Nuestra historia →',
   },
   // Mismo orden que las fotos de components/paginas/Inicio.jsx: Dastan, Isdiel
   equipo: [
     { nombre: 'Dastan Tamayo', rol: 'Fundador de DASTAN X-TECH', alt: 'Dastan Tamayo, fundador de DASTAN X-TECH' },
     { nombre: 'Isdiel Martínez', rol: 'Consultor y estratega digital', alt: 'Isdiel Martínez, consultor y estratega digital de DASTAN X-TECH' },
   ],
-  // Los precios (cerrados) deben coincidir con PRECIOS de app/api/chat/route.js
+  // Los precios (cerrados) deben coincidir con PRECIOS de app/api/chat/route.js.
+  // items no sale en la portada (tarjetas sin viñetas): lo usa la página /servicios
   servicios: {
     etiqueta: 'Servicios',
-    titulo: 'Tres servicios para que tu negocio no pierda ni un cliente',
+    // No repite el titular del hero (que ya habla de perder clientes); /servicios conserva su frase
+    titulo: 'Tres servicios pensados para el crecimiento de tu negocio',
     tarjetas: [
       {
         clave: 'disenoWeb',
@@ -99,7 +80,7 @@ const t = {
     items: [
       'Empezamos por tu web. Te mandamos gratis su diagnóstico SEO (tu puntuación de 0 a 100 y las 5 correcciones más urgentes, en PDF) y, si hace falta, la renovamos con tu marca real. ¿No tienes web? Te la creamos.',
       'Si quieres verlo todo, la Auditoría Completa de Negocio analiza todo tu negocio, por fuera y por dentro, y te da un plan ordenado. A diferencia del diagnóstico gratis, no se queda en la web.',
-      'Te posicionamos para que Google y la IA te recomienden: tu ficha, tus reseñas y un contenido que la IA pueda citar.',
+      'Te posicionamos para que Google y la IA te recomienden: tu ficha, tus reseñas y un contenido que la IA pueda citar, comprobado con Is It Agent Ready, la herramienta de Cloudflare.',
     ],
   },
   cierre: {
