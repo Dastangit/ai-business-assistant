@@ -526,22 +526,23 @@ html { scroll-padding-top: 84px; }
   display: flex; flex-direction: column; align-items: flex-end;
 }
 
-/* BOTÓN FLOTANTE: de contorno (fondo de tarjeta, icono y borde en color de acción). Relleno competía con
-   el botón principal del diagnóstico. Al cargar, un anillo late 3 veces y se para */
+/* BOTÓN FLOTANTE: de contorno en violeta de marca (fondo de tarjeta, icono y borde). Relleno y turquesa
+   competía con el botón principal del diagnóstico. Al cargar, un anillo late 3 veces y se para */
 .chat-toggle-btn {
+  --chat-boton: var(--brand);
   position: relative;
   width: 52px; height: 52px; border-radius: 50%;
   background: var(--surface);
-  border: 1px solid var(--action); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--chat-boton); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   cursor: pointer; display: flex; align-items: center; justify-content: center;
-  color: var(--action);
+  color: var(--chat-boton);
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .chat-toggle-btn:hover { background: #1C1826; }
 .chat-toggle-btn svg { width: 24px; height: 24px; stroke: currentColor; }
 .chat-toggle-btn--llamada::after {
   content: ''; position: absolute; inset: 0; border-radius: 50%;
-  border: 2px solid var(--action); pointer-events: none;
+  border: 2px solid var(--chat-boton); pointer-events: none;
   animation: chat-latido 2s ease-out 1.5s 3 both;
 }
 @keyframes chat-latido {
@@ -675,7 +676,7 @@ html { scroll-padding-top: 84px; }
 .chat-widget--claro .msg-user { background: rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.22); }
 .chat-widget--claro .chat-input-area { background: #FAF9FC; }
 .chat-widget--claro .chat-input { background: #FFFFFF; }
-.chat-widget--claro .chat-toggle-btn { background: #FFFFFF; box-shadow: 0 4px 14px rgba(26, 23, 34, 0.18); }
+.chat-widget--claro .chat-toggle-btn { --chat-boton: var(--brand-on-light); background: #FFFFFF; box-shadow: 0 4px 14px rgba(26, 23, 34, 0.18); }
 .chat-widget--claro .chat-toggle-btn:hover { background: var(--chat-primario); }
 .chat-widget--claro .chat-etiqueta { background: #FFFFFF; box-shadow: 0 4px 14px rgba(26, 23, 34, 0.15); }
 
