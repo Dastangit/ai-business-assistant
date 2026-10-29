@@ -119,7 +119,7 @@ export default function Inicio({ t, lang }) {
       </main>
       </div>
 
-      {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página. Sin precio: se ve en cada página de servicio */}
+      {/* SERVICIOS: cada tarjeta lleva a su página; con lo que incluye, sin precio (se ve en cada página de servicio) */}
       <section id="services" className="section">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem' }}>
           <span className="label-mono">{t.servicios.etiqueta}</span>
@@ -132,6 +132,9 @@ export default function Inicio({ t, lang }) {
               <span className="label-mono">{s.label}</span>
               <h3 className="card-title">{s.title}</h3>
               <p className="card-text">{s.text}</p>
+              <ul className="dot-list card-list">
+                {s.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
               <span className="card-link">{s.link}</span>
             </a>
           ))}
