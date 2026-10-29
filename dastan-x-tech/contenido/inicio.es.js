@@ -42,7 +42,7 @@ const t = {
     { nombre: 'Isdiel Martínez', rol: 'Consultor y estratega digital', alt: 'Isdiel Martínez, consultor y estratega digital de DASTAN X-TECH' },
   ],
   // Los precios (cerrados) deben coincidir con PRECIOS de app/api/chat/route.js.
-  // items no sale en la portada (tarjetas sin viñetas): lo usa la página /servicios
+  // items y price no salen en la portada (tarjetas sin viñetas ni precio): los usa la página /servicios
   servicios: {
     etiqueta: 'Servicios',
     // No repite el titular del hero (que ya habla de perder clientes); /servicios conserva su frase

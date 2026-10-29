@@ -119,7 +119,7 @@ export default function Inicio({ t, lang }) {
       </main>
       </div>
 
-      {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página */}
+      {/* SERVICIOS: cada tarjeta hace una sola cosa, llevar a su página. Sin precio: se ve en cada página de servicio */}
       <section id="services" className="section">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '2rem' }}>
           <span className="label-mono">{t.servicios.etiqueta}</span>
@@ -131,7 +131,6 @@ export default function Inicio({ t, lang }) {
             <a key={s.clave} href={ruta(s.clave, lang)} className="service-card">
               <span className="label-mono">{s.label}</span>
               <h3 className="card-title">{s.title}</h3>
-              <span className="card-price">{s.price}</span>
               <p className="card-text">{s.text}</p>
               <span className="card-link">{s.link}</span>
             </a>
