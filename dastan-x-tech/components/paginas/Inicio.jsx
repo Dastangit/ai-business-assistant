@@ -85,16 +85,17 @@ export default function Inicio({ t, lang }) {
             {t.puntos[2]}
           </li>
         </ul>
-        <a href="#ejemplo" className="hero-bajar">
+        {/* Solo un aviso visual, no un enlace: la muestra está justo debajo */}
+        <p className="hero-bajar" aria-hidden="true">
           {t.muestra.bajar}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
-        </a>
+        </p>
         </div>
 
         {/* MUESTRA: lo que recibe el cliente, en el hueco de la derecha (en móvil, debajo del titular) */}
-        <aside id="ejemplo" className="hero-muestra" aria-label={t.muestra.aria}>
+        <aside className="hero-muestra" aria-label={t.muestra.aria}>
           <span className="label-mono">{t.muestra.etiqueta}</span>
           <div className="hero-muestra-cabecera">
             <div className="hero-muestra-anillo" style={{ '--n': t.muestra.nota }}>
