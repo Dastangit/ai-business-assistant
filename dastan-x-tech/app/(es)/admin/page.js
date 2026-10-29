@@ -33,6 +33,18 @@ const c = {
   apagado: '#7c7694', turquesa: '#2DD4BF', morado: '#A855F7', rojo: '#EF4444', rojoSuave: '#FCA5A5',
 };
 
+// Qué tan seguro es que un teléfono de prospecto tenga WhatsApp (lo calcula el escenario de Make)
+const TIPOS_TELEFONO = {
+  movil: { texto: 'Móvil', rgb: '37, 211, 102' },
+  sin_confirmar: { texto: 'Por confirmar', rgb: '176, 173, 197' },
+  fijo: { texto: 'Fijo', rgb: '252, 165, 165' },
+};
+
+// Solo el dominio (sin https, www ni ruta), para que la columna de la web no se alargue
+function dominioDe(url) {
+  return url.replace(/^https?:\/\/(www\.)?/, '').split(/[/?#]/)[0];
+}
+
 const celda = { padding: '1rem 1.2rem', verticalAlign: 'top' };
 const cabecera = { padding: '1rem 1.2rem', color: '#9d98b8', fontWeight: '600', textAlign: 'left' };
 
@@ -72,8 +84,6 @@ export default function AdminPage() {
   const [prospectos, setProspectos] = useState([]);
   const [leads, setLeads] = useState([]);
   const [cargando, setCargando] = useState(true);
-  const [auditoriaActiva, setAuditoriaActiva] = useState(null);
-  const [copiado, setCopiado] = useState(false);
 
   const aplicar = useCallback((resultado) => {
     if (resultado) {
@@ -96,11 +106,6 @@ export default function AdminPage() {
       activo = false;
     };
   }, [aplicar]);
-
-  const abrirPanel = (registro) => {
-    setCopiado(false);
-    setAuditoriaActiva(registro);
-  };
 
   const entrar = async (e) => {
     e.preventDefault();
@@ -150,18 +155,6 @@ export default function AdminPage() {
   const vaciarProspectos = () => {
     if (!window.confirm('¿ELIMINAR TODOS los prospectos? Descarga antes la copia (botón "Descargar copia"). Esta acción no se puede deshacer.')) return;
     accion('DELETE', { tabla: 'prospectos', todos: true }, 'No se pudo vaciar la tabla.');
-  };
-
-  const copiarAuditoria = async () => {
-    const texto = auditoriaActiva?.auditoria_ai || '';
-    if (!texto) return;
-    try {
-      await navigator.clipboard.writeText(texto);
-      setCopiado(true);
-      setTimeout(() => setCopiado(false), 2000);
-    } catch {
-      alert('No se pudo copiar automáticamente. Selecciona el texto manualmente.');
-    }
   };
 
   if (autenticado === null) {
@@ -268,25 +261,40 @@ export default function AdminPage() {
             {cargando ? (
               <div style={{ padding: '2rem', textAlign: 'center', color: c.suave }}>Cargando…</div>
             ) : (
-              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <table style={{ width: '100%', minWidth: '820px', borderCollapse: 'collapse' }}>
                 <thead style={{ background: 'rgba(255,255,255,0.03)', borderBottom: `1px solid ${c.borde}` }}>
-                  <tr><th style={cabecera}>Negocio</th><th style={cabecera}>Sitio web</th><th style={cabecera}>Teléfono</th><th style={cabecera}>Estado</th><th style={cabecera}>Acción</th></tr>
+                  <tr><th style={cabecera}>Negocio</th><th style={cabecera}>Sitio web</th><th style={cabecera}>Contacto</th><th style={cabecera}>Estado</th><th style={cabecera}>Acción</th></tr>
                 </thead>
                 <tbody>
-                  {prospectos.map((lead) => (
+                  {prospectos.map((lead) => {
+                    const tipo = TIPOS_TELEFONO[lead.tipo_telefono];
+                    const origen = [lead.categoria, lead.ciudad].filter(Boolean).join(' · ');
+                    return (
                     <tr key={lead.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                      <td style={celda}>{lead.nombre_agencia}</td>
-                      <td style={{ ...celda, maxWidth: '180px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <td style={{ ...celda, minWidth: '180px', maxWidth: '260px' }}>
+                        <div style={{ fontWeight: '600' }}>{lead.nombre_agencia}</div>
+                        {origen && <div style={{ color: c.suave, fontSize: '0.85rem', marginTop: '0.25rem' }}>{origen}</div>}
+                      </td>
+                      <td style={{ ...celda, minWidth: '150px', maxWidth: '220px', overflowWrap: 'anywhere' }}>
                         {lead.sitio_web ? (
                           <a href={lead.sitio_web} target="_blank" rel="noopener noreferrer" style={{ color: c.turquesa, textDecoration: 'none' }} title={lead.sitio_web}>
-                            {lead.sitio_web.replace(/^https?:\/\/(www\.)?/, '')} ↗
+                            {dominioDe(lead.sitio_web)} ↗
                           </a>
                         ) : <span style={{ color: c.apagado }}>Sin registro web</span>}
                       </td>
-                      <td style={celda}>
-                        {lead.telefono ? (
-                          <a href={`https://wa.me/${lead.telefono.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: '600' }}>{lead.telefono}</a>
-                        ) : <span style={{ color: c.apagado }}>Sin teléfono</span>}
+                      <td style={{ ...celda, minWidth: '200px', maxWidth: '260px' }}>
+                        {lead.telefono && (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <a href={`https://wa.me/${lead.telefono.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', textDecoration: 'none', fontWeight: '600', whiteSpace: 'nowrap' }}>{lead.telefono}</a>
+                            {tipo && (
+                              <span style={{ background: `rgba(${tipo.rgb}, 0.1)`, color: `rgb(${tipo.rgb})`, border: `1px solid rgba(${tipo.rgb}, 0.35)`, borderRadius: '6px', padding: '0.1rem 0.45rem', fontSize: '0.75rem', fontWeight: 'bold', whiteSpace: 'nowrap' }}>{tipo.texto}</span>
+                            )}
+                          </div>
+                        )}
+                        {lead.email && (
+                          <a href={`mailto:${lead.email}`} style={{ display: 'block', color: c.turquesa, textDecoration: 'none', fontSize: '0.9rem', marginTop: lead.telefono ? '0.4rem' : 0, overflowWrap: 'anywhere' }}>{lead.email}</a>
+                        )}
+                        {!lead.telefono && !lead.email && <span style={{ color: c.apagado }}>Sin contacto</span>}
                       </td>
                       <td style={celda}>
                         <button
@@ -296,48 +304,24 @@ export default function AdminPage() {
                             background: lead.estado_calificacion === 'contactado' ? 'rgba(45,212,191,0.1)' : 'rgba(168,85,247,0.1)',
                             color: lead.estado_calificacion === 'contactado' ? c.turquesa : c.morado,
                             border: `1px solid ${lead.estado_calificacion === 'contactado' ? 'rgba(45,212,191,0.3)' : 'rgba(168,85,247,0.3)'}`,
-                            padding: '0.4rem 0.8rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: 'bold', cursor: 'pointer', textTransform: 'capitalize',
+                            padding: '0.4rem 0.8rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: 'bold', cursor: 'pointer', textTransform: 'capitalize', whiteSpace: 'nowrap',
                           }}
                         >
                           {lead.estado_calificacion ? lead.estado_calificacion.replace('_', ' ') : 'sin auditar'}
                         </button>
                       </td>
-                      <td style={{ ...celda, display: 'flex', gap: '8px' }}>
-                        <button onClick={() => abrirPanel({ ...lead, titulo: 'Auditoría de IA' })} style={{ background: c.turquesa, border: 'none', color: c.fondo, padding: '0.5rem 0.9rem', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>Auditoría IA</button>
-                        <button onClick={() => eliminar('prospectos', lead.id, lead.nombre_agencia)} style={botonPeligro}>Eliminar</button>
+                      <td style={celda}>
+                        <button onClick={() => eliminar('prospectos', lead.id, lead.nombre_agencia)} style={{ ...botonPeligro, whiteSpace: 'nowrap' }}>Eliminar</button>
                       </td>
                     </tr>
-                  ))}
+                    );
+                  })}
                 </tbody>
               </table>
             )}
           </div>
         </section>
       </div>
-
-      {/* ================= PANEL LATERAL: AUDITORÍA O CONVERSACIÓN ================= */}
-      {auditoriaActiva && (
-        <div style={{ position: 'fixed', top: 0, right: 0, width: '100%', maxWidth: '450px', height: '100vh', backgroundColor: '#F5F4EF', boxShadow: '-10px 0 30px rgba(0,0,0,0.8)', zIndex: 10, display: 'flex', flexDirection: 'column' }}>
-          <div style={{ padding: '1.5rem 2rem', borderBottom: '2px solid #E5E5E5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <h2 style={{ color: '#1C2624', margin: 0, fontSize: '1.4rem', fontWeight: '800' }}>{auditoriaActiva.titulo}</h2>
-            <button onClick={() => setAuditoriaActiva(null)} aria-label="Cerrar" style={{ background: 'none', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#1C2624' }}>✕</button>
-          </div>
-          <div style={{ padding: '2rem', overflowY: 'auto', flex: 1 }}>
-            <h3 style={{ color: c.morado, marginBottom: '0.5rem' }}>{auditoriaActiva.nombre_agencia}</h3>
-            <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '1.2rem' }}>{auditoriaActiva.sitio_web || 'Sin registro web'}</p>
-            <button
-              onClick={copiarAuditoria}
-              disabled={!auditoriaActiva.auditoria_ai}
-              style={{ width: '100%', padding: '0.9rem', marginBottom: '1.5rem', background: copiado ? '#1C2624' : (auditoriaActiva.auditoria_ai ? c.turquesa : '#E5E5E5'), color: copiado ? c.turquesa : (auditoriaActiva.auditoria_ai ? c.fondo : '#999'), border: 'none', borderRadius: '10px', fontWeight: 'bold', cursor: auditoriaActiva.auditoria_ai ? 'pointer' : 'not-allowed' }}
-            >
-              {copiado ? 'Copiado' : 'Copiar texto completo'}
-            </button>
-            <div style={{ color: '#1C2624', fontSize: '1rem', lineHeight: '1.7', whiteSpace: 'pre-wrap' }}>
-              {auditoriaActiva.auditoria_ai || 'No hay texto guardado para este registro.'}
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
