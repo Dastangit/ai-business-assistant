@@ -98,7 +98,7 @@ export default function BlogPost() {
 
         <h2 style={h2}>How much it costs</h2>
         <p style={parrafo}>
-          Our <a href={ruta('aeo', 'en')} className="text-link">AI Search Optimization (AEO)</a> costs <strong>150 USD</strong>, a fixed price. It needs a website in good shape: if yours isn’t, or you don’t have one, the first step is <a href={ruta('disenoWeb', 'en')} className="text-link">Web Design</a>, for <strong>100 USD</strong>. And if you want everything together, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD.
+          If you want to <a href={ruta('aeo', 'en')} className="text-link">hire an AEO consultant</a>, our AI Search Optimization (AEO) costs <strong>150 USD</strong>, a fixed price. It needs a website in good shape: if yours isn’t, or you don’t have one, the first step is <a href={ruta('disenoWeb', 'en')} className="text-link">Web Design</a>, for <strong>100 USD</strong>. And if you want everything together, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD.
         </p>
 
         <div style={{ background: '#FAF9FC', border: '1px solid var(--line-light)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>

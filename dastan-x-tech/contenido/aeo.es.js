@@ -18,7 +18,7 @@ const t = {
   hero: {
     etiqueta: 'Servicio · Posicionamiento AEO',
     titulo: <>Que la IA te <span className="accent-light">recomiende</span>, no solo Google.</>,
-    texto: 'Cada vez más personas le preguntan directo a un asistente de IA «¿cuál es la mejor opción cerca de mí?» y confían en la respuesta sin visitar ninguna web. Preparamos tu negocio para ser esa respuesta.',
+    texto: 'Cada vez más personas le preguntan directo a un asistente de IA «¿cuál es la mejor opción cerca de mí?» y confían en la respuesta sin visitar ninguna web. Como consultor AEO, preparamos tu negocio para ser esa respuesta.',
     mensajeChat: 'Quiero información sobre Posicionamiento AEO',
     boton: 'Consultar Posicionamiento AEO',
     tarjetaTitulo: 'Qué hacemos',
@@ -64,6 +64,7 @@ const t = {
   faqTitulo: 'Preguntas frecuentes',
   faq: [
     { q: '¿Qué es exactamente el Posicionamiento AEO?', a: 'Answer Engine Optimization: preparar tu negocio para que asistentes de IA como ChatGPT, Gemini o Perplexity te recomienden directamente cuando alguien pregunta “¿cuál es la mejor opción cerca de mí?”, sin que la persona visite ninguna web.' },
+    { q: '¿Por qué contratar un consultor AEO?', a: 'Porque la IA solo recomienda negocios cuya información es clara y coherente en todas partes, y saber qué revisa cada asistente lleva tiempo. Un consultor AEO hace ese trabajo por ti: ordena tu ficha de Google y tus redes, prepara tu web para que la IA la lea y te dice qué falta, sin prometerte resultados que nadie puede garantizar.' },
     { q: '¿Reemplaza al SEO tradicional?', a: 'No, lo complementa. Sigues apareciendo en Google como siempre, y además en las respuestas que dan los motores de IA.' },
     { q: '¿Cuánto tarda en dar resultados?', a: 'Depende de cuánta información pública y consistente tenga tu negocio hoy — por eso empezamos ordenando tu ficha de Google y tus redes antes que nada.' },
     { q: '¿Cuánto cuesta?', a: '150 USD. Necesita una web en buen estado: si la tuya no lo está, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD. Es un precio cerrado: si necesitas algo que no está incluido, te lo decimos antes de empezar.' },

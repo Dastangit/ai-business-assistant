@@ -18,7 +18,7 @@ const t = {
   hero: {
     etiqueta: 'Service · AI Search Optimization',
     titulo: <>Get <span className="accent-light">recommended</span> by AI, not just Google.</>,
-    texto: 'More and more people ask an AI assistant directly “what’s the best option near me?” and trust the answer without visiting any website. We prepare your business to be that answer.',
+    texto: 'More and more people ask an AI assistant directly “what’s the best option near me?” and trust the answer without visiting any website. As AEO consultants, we prepare your business to be that answer.',
     mensajeChat: "I'd like information about AI Search Optimization (AEO)",
     boton: 'Ask about AI Search Optimization',
     tarjetaTitulo: 'What we do',
@@ -64,6 +64,7 @@ const t = {
   faqTitulo: 'Frequently asked questions',
   faq: [
     { q: 'What exactly is AI Search Optimization (AEO)?', a: 'Answer Engine Optimization: preparing your business so AI assistants like ChatGPT, Gemini or Perplexity recommend you directly when someone asks “what’s the best option near me?”, without that person visiting any website.' },
+    { q: 'Why hire an AEO consultant?', a: 'Because AI only recommends businesses whose information is clear and consistent everywhere, and learning what each assistant checks takes time. An AEO consultant does that work for you: puts your Google Business Profile and social media in order, prepares your website so AI can read it and tells you what’s missing, without promising results nobody can guarantee.' },
     { q: 'Does it replace traditional SEO?', a: 'No, it complements it. You keep showing up on Google as always, and also in the answers AI engines give.' },
     { q: 'How long does it take to see results?', a: 'It depends on how much public, consistent information your business has today — that’s why we start by putting your Google Business Profile and social media in order before anything else.' },
     { q: 'How much does it cost?', a: '150 USD. It needs a website in good shape: if yours isn’t, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD. It’s a fixed price: if you need something that isn’t included, we tell you before we start.' },

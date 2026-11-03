@@ -98,7 +98,7 @@ export default function BlogPost() {
 
         <h2 style={h2}>Cuánto cuesta</h2>
         <p style={parrafo}>
-          Nuestro <a href={ruta('aeo', 'es')} className="text-link">Posicionamiento AEO</a> cuesta <strong>150 USD</strong>, precio cerrado. Necesita una web en buen estado: si la tuya no lo está o no tienes, el primer paso es el <a href={ruta('disenoWeb', 'es')} className="text-link">Diseño web</a>, por <strong>100 USD</strong>. Y si quieres todo junto, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD.
+          Si quieres <a href={ruta('aeo', 'es')} className="text-link">contratar un consultor AEO</a>, nuestro Posicionamiento AEO cuesta <strong>150 USD</strong>, precio cerrado. Necesita una web en buen estado: si la tuya no lo está o no tienes, el primer paso es el <a href={ruta('disenoWeb', 'es')} className="text-link">Diseño web</a>, por <strong>100 USD</strong>. Y si quieres todo junto, el Pack completo (Diseño web + Auditoría Completa + AEO) cuesta 400 USD.
         </p>
 
         <div style={{ background: '#FAF9FC', border: '1px solid var(--line-light)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>
