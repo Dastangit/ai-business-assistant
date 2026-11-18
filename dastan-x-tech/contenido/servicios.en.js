@@ -2,10 +2,10 @@
 // Data only: no functions (passed from server to client).
 const t = {
   metadata: {
-    title: 'Our Services | DASTAN X-TECH',
+    title: 'Our Services: Web Design, Audit and AEO | DASTAN X-TECH',
     description: 'Web Design, Digital Business Audit and AI Search Optimization (AEO): three services so your business never loses a customer.',
     keywords: ['DASTAN X-TECH services', 'Professional web design', 'Digital business audit', 'AI search optimization'],
-    ogTitle: 'Our Services | DASTAN X-TECH',
+    ogTitle: 'Our Services: Web Design, Audit and AEO | DASTAN X-TECH',
     ogDescription: 'Web Design, Digital Business Audit and AI Search Optimization (AEO): three services so your business never loses a customer.',
   },
   etiqueta: 'Services',

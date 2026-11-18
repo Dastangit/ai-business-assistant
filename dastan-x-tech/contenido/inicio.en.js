@@ -12,7 +12,6 @@ const t = {
   // The headline is split in two: the second part gets the brand violet
   titulo: 'Find out, with evidence, why your business ',
   tituloDestacado: 'is losing customers online.',
-  tituloSr: ' DASTAN X-TECH, high-level digital consulting for small businesses in the United States, Mexico, Colombia and the rest of the world.',
   subtitulo: 'Your score from 0 to 100 and the 5 most urgent fixes for your website.',
   botonDiagnostico: 'Get your free SEO report',
   puntos: ['Every issue comes with proof', 'We never ask for your passwords', '100% remote'],
@@ -32,7 +31,7 @@ const t = {
   },
   quienes: {
     titulo: 'Who we are',
-    texto: <>We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, digital consultant and strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition.</>,
+    texto: <>We are <strong>Dastan Tamayo</strong>, founder of DASTAN X-TECH, and <strong>Isdiel Martínez</strong>, digital consultant and strategist. We work with small businesses in any industry —clinics, spas, salons, home services, shops, professional firms— that do great work but don&apos;t show it online: the website doesn&apos;t convince, the WhatsApp number is hard to find or answered late, and when someone asks an AI, it recommends the competition. We work 100% remotely with businesses in the United States, Mexico, Colombia, Spain and the rest of the world.</>,
     enlace: 'Our story →',
   },
   // Same order as the photos in components/paginas/Inicio.jsx: Dastan, Isdiel

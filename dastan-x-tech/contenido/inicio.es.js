@@ -12,7 +12,6 @@ const t = {
   // El titular se parte en dos: la segunda parte va en el violeta de la marca
   titulo: 'Descubre, con pruebas, por qué tu negocio ',
   tituloDestacado: 'pierde clientes por internet.',
-  tituloSr: ' DASTAN X-TECH, consultoría digital de alto nivel para negocios privados y pymes en Colombia, México, Estados Unidos y el resto del mundo.',
   subtitulo: 'Tu nota de 0 a 100 y las 5 correcciones más urgentes de tu web.',
   botonDiagnostico: 'Pide tu diagnóstico SEO gratis',
   puntos: ['Cada fallo, con su prueba', 'Sin pedirte contraseñas', '100 % en remoto'],
@@ -33,7 +32,7 @@ const t = {
   },
   quienes: {
     titulo: 'Quiénes somos',
-    texto: <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia.</>,
+    texto: <>Somos <strong>Dastan Tamayo</strong>, fundador de DASTAN X-TECH, e <strong>Isdiel Martínez</strong>, consultor y estratega digital. Trabajamos con negocios privados y pymes de cualquier sector —clínicas, spas, salones, servicios a domicilio, comercios, despachos— que hacen un buen trabajo pero no lo reflejan en internet: la web no convence, el WhatsApp no se ve o se contesta tarde, y cuando alguien le pregunta a una IA, recomienda a la competencia. Trabajamos 100 % en remoto con negocios de México, Colombia, Estados Unidos, España y el resto del mundo.</>,
     enlace: 'Nuestra historia →',
   },
   // Mismo orden que las fotos de components/paginas/Inicio.jsx: Dastan, Isdiel

@@ -21,8 +21,8 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
-  title: 'DASTAN X-TECH | Consultoría digital de alto nivel para negocios y pymes',
-  description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet: diagnóstico SEO gratis, auditoría de negocio, diseño web y posicionamiento para que Google y la IA te recomienden.',
+  title: 'DASTAN X-TECH | Consultoría digital para negocios y pymes',
+  description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet. Diagnóstico SEO gratis, diseño web y posicionamiento para Google y la IA.',
   keywords: [
     'Consultoría digital para negocios',
     'Auditoría de negocio',
@@ -37,7 +37,7 @@ export const metadata = {
     'trustpilot-one-time-domain-verification-id': 'b2716753-f0f4-4a03-a2f7-16cba20f6ad7',
   },
   openGraph: {
-    title: 'DASTAN X-TECH | Consultoría digital de alto nivel para negocios y pymes',
+    title: 'DASTAN X-TECH | Consultoría digital para negocios y pymes',
     description: 'Diagnóstico SEO gratis de tu web: tu puntuación de 0 a 100 y las 5 correcciones más urgentes. Auditoría de negocio, diseño web y posicionamiento AEO para negocios privados y pymes.',
     url: 'https://dastanxtech.com',
     // La imagen vive en app/opengraph-image.jsx (fuera del route group, para conservar la URL /opengraph-image)
@@ -54,13 +54,15 @@ const organizationJsonLd = {
   '@type': ['ProfessionalService', 'Organization'],
   name: 'DASTAN X-TECH',
   url: 'https://dastanxtech.com',
-  logo: 'https://dastanxtech.com/opengraph-image',
+  '@id': 'https://dastanxtech.com/#organization',
+  logo: 'https://dastanxtech.com/icon.png',
   image: 'https://dastanxtech.com/opengraph-image',
   description: 'Consultoría digital de alto nivel para negocios privados y pymes, en remoto. Diagnóstico SEO gratis, Auditoría Completa de Negocio, diseño web y posicionamiento AEO para que Google y los asistentes de IA recomienden el negocio.',
   areaServed: [
     { '@type': 'Country', name: 'Colombia' },
     { '@type': 'Country', name: 'México' },
     { '@type': 'Country', name: 'Estados Unidos' },
+    { '@type': 'Country', name: 'España' },
   ],
   knowsLanguage: ['es', 'en'],
   serviceType: ['Auditoría de negocio', 'Diseño web', 'Posicionamiento AEO', 'Consultoría digital'],
@@ -73,6 +75,16 @@ const organizationJsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://dastanxtech.com/#website',
+  name: 'DASTAN X-TECH',
+  url: 'https://dastanxtech.com',
+  inLanguage: 'es',
+  publisher: { '@id': 'https://dastanxtech.com/#organization' },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
@@ -82,6 +94,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body>

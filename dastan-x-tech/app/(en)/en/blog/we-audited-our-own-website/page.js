@@ -11,8 +11,8 @@ const articleJsonLd = {
   '@type': 'BlogPosting',
   inLanguage: 'en',
   headline: 'We audited our own website with our Digital Business Audit',
-  author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Founder', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' } },
-  publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' },
+  author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Founder', worksFor: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' } },
+  publisher: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' },
   datePublished: '2026-09-22',
   dateModified: REVISIONES['/en/blog/we-audited-our-own-website'],
   description: 'We applied our own Digital Business Audit to dastanxtech.com. Here’s what we found, what we’ve already fixed and what’s still pending.',
@@ -70,7 +70,7 @@ export default function BlogPost() {
 
         <h2 style={h2}>What we&apos;ve already fixed</h2>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
-          We added FAQs and <code>FAQPage</code> schema to the three service pages, added site-wide <code>Organization</code> structured data, translated the stray English text, and created a company page on LinkedIn as a first external signal.
+          We added FAQs and <code>FAQPage</code> schema to the three service pages, added site-wide <code>Organization</code> structured data, translated the stray English text, and linked the founder&apos;s LinkedIn profile in the structured data as a first external signal.
         </p>
 
         <h2 style={h2}>What&apos;s still pending</h2>
