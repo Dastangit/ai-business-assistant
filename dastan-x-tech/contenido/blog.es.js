@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogDiagnosticoSeo',
+      title: 'De 77 a 91: pasamos nuestra web por nuestro diagnóstico SEO',
+      excerpt: 'Tres pasadas de nuestro diagnóstico SEO por dastanxtech.com: qué encontró cada vez, qué corregimos y cómo subimos de 77 a 91 sobre 100.',
+      date: '18 de noviembre de 2026',
+    },
+    {
       clave: 'blogChatgpt',
       title: 'Cómo hacer que tu negocio aparezca en ChatGPT',
       excerpt: 'Los 7 pasos para que ChatGPT, Gemini y Perplexity recomienden tu negocio: cómo comprobar si ya te nombran, qué revisar en tu web y qué no funciona.',

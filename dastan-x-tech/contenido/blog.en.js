@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogDiagnosticoSeo',
+      title: 'From 77 to 91: we ran our website through our SEO report',
+      excerpt: 'Three passes of our SEO report on dastanxtech.com: what it found each time, what we fixed and how we went from 77 to 91 out of 100.',
+      date: 'November 18, 2026',
+    },
+    {
       clave: 'blogChatgpt',
       title: 'How to get your business to show up in ChatGPT',
       excerpt: 'The 7 steps to get ChatGPT, Gemini and Perplexity to recommend your business: how to check whether they already mention you, what to fix and what doesn’t work.',

@@ -31,6 +31,7 @@ Precios cerrados en dólares (USD). Lo que no esté incluido se presupuesta apar
 
 ## Blog
 
+- [De 77 a 91: pasamos nuestra web por nuestro diagnóstico SEO](https://dastanxtech.com/blog/nuestra-web-diagnostico-seo): tres pasadas de nuestro diagnóstico SEO gratis por dastanxtech.com (77 el 24-sep, 88 y 91 el 18-nov), qué encontró cada vez, qué corregimos y el resultado en PageSpeed Insights (98-100 en móvil, 100 en ordenador).
 - [Cómo hacer que tu negocio aparezca en ChatGPT](https://dastanxtech.com/blog/como-aparecer-en-chatgpt): los 7 pasos para que ChatGPT, Gemini y Perplexity recomienden un negocio (robots de IA, contenido legible sin JavaScript, Google y Bing, respuestas concretas, datos coherentes, reseñas y datos estructurados), lo que no funciona y preguntas frecuentes.
 - [¿Qué hace un consultor AEO?](https://dastanxtech.com/blog/que-hace-un-consultor-aeo): lo que revisa un consultor AEO paso a paso para que la IA recomiende un negocio, con dastanxtech.com de ejemplo (nivel 4 en Is It Agent Ready de Cloudflare).
 - [¿Cuánto cuesta renovar una web en 2026?](https://dastanxtech.com/blog/cuanto-cuesta-renovar-web): nuestros precios en una tabla (diagnóstico SEO gratis, Arreglo exprés 49 USD, Diseño web 100 USD, chat automático 24 h 15 USD al mes), qué incluye el precio y qué se cobra aparte y preguntas frecuentes.
@@ -47,7 +48,7 @@ DASTAN X-TECH is also available in English. High-level digital consulting for sm
 - [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): 150 USD.
 - [All-in-One Package](https://dastanxtech.com/en/services): all three for 400 USD.
 - [Free SEO Report](https://dastanxtech.com/en): score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp.
-- [How to get your business to show up in ChatGPT](https://dastanxtech.com/en/blog/how-to-show-up-in-chatgpt) · [What does an AEO consultant do?](https://dastanxtech.com/en/blog/what-does-an-aeo-consultant-do) · [How much does a website redesign cost in 2026?](https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost) · [We perfected our website with our AEO auditor](https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor) · [What is AEO (and GEO)](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers) · [We audited our own website](https://dastanxtech.com/en/blog/we-audited-our-own-website)
+- [From 77 to 91: we ran our website through our SEO report](https://dastanxtech.com/en/blog/our-website-seo-report) · [How to get your business to show up in ChatGPT](https://dastanxtech.com/en/blog/how-to-show-up-in-chatgpt) · [What does an AEO consultant do?](https://dastanxtech.com/en/blog/what-does-an-aeo-consultant-do) · [How much does a website redesign cost in 2026?](https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost) · [We perfected our website with our AEO auditor](https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor) · [What is AEO (and GEO)](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers) · [We audited our own website](https://dastanxtech.com/en/blog/we-audited-our-own-website)
 
 ## Optional
 

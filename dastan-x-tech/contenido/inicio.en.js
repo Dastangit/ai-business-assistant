@@ -27,7 +27,7 @@ const t = {
     urgentesTitulo: 'The 5 most urgent issues',
     urgentes: ['Google doesn’t know what the clinic does or where it is', 'Google doesn’t recognize it as a local business', 'On mobile, the page overflows the screen'],
     enlace: 'See the full sample (in Spanish) →',
-    real: 'Real case: our own website, from 94 to 97 →',
+    real: 'Real case: our own website, from 77 to 91 →',
   },
   quienes: {
     titulo: 'Who we are',

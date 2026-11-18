@@ -113,7 +113,7 @@ export default function Inicio({ t, lang }) {
             </ol>
           </div>
           <a href="/ejemplo-diagnostico-seo.html" className="card-link">{t.muestra.enlace}</a>
-          <Link href={ruta('blogAuditorAeo', lang)} className="hero-muestra-real">{t.muestra.real}</Link>
+          <Link href={ruta('blogDiagnosticoSeo', lang)} className="hero-muestra-real">{t.muestra.real}</Link>
         </aside>
       </main>
       </div>
