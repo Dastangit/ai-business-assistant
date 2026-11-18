@@ -64,6 +64,7 @@ const organizationJsonLd = {
   sameAs: [
     'https://www.instagram.com/dastan.xtech/',
     'https://www.linkedin.com/in/dastantech',
+    'https://www.youtube.com/@Dastanxtech',
     'https://www.trustpilot.com/review/dastanxtech.com',
   ],
   contactPoint: {
