@@ -34,6 +34,7 @@ export default function BlogPost() {
 
       {/* CABECERA CON ENLACES */}
       <SiteHeader tone="light" lang="en" />
+      <main id="contenido">
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '4rem 5% 2rem' }}>
         <p className="label-mono" style={{ marginBottom: '1rem' }}>
@@ -120,6 +121,7 @@ export default function BlogPost() {
         </div>
       </article>
 
+      </main>
       <SiteFooter tone="light" lang="en" />
     </div>
   );

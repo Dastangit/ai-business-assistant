@@ -12,6 +12,7 @@ export default function Servicios({ t, lang }) {
   return (
     <div className="theme-light">
       <SiteHeader tone="light" lang={lang} />
+      <main id="contenido">
 
       <header style={{ padding: '6rem 5% 3rem', textAlign: 'center' }}>
         <span className="label-mono">{t.etiqueta}</span>
@@ -57,6 +58,7 @@ export default function Servicios({ t, lang }) {
         <BotonChat mensaje={t.extras.mensajeChat} respuesta={t.extras.respuestaChat} className="btn btn-outline-light">{t.extras.boton}</BotonChat>
       </section>
 
+      </main>
       <SiteFooter tone="light" lang={lang} />
     </div>
   );

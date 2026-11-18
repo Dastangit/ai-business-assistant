@@ -15,6 +15,7 @@ export default function Privacidad({ t, lang, clave = 'privacidad' }) {
   return (
     <div className="theme-light">
       <SiteHeader tone="light" lang={lang} />
+      <main id="contenido">
 
       <article style={{ maxWidth: '720px', margin: '0 auto', padding: '4rem 5% 2rem' }}>
         <p className="label-mono" style={{ marginBottom: '1rem' }}>
@@ -43,6 +44,7 @@ export default function Privacidad({ t, lang, clave = 'privacidad' }) {
         ))}
       </article>
 
+      </main>
       <SiteFooter tone="light" lang={lang} />
     </div>
   );
