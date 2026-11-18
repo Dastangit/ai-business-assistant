@@ -28,7 +28,7 @@ const t = {
     urgentesTitulo: 'Los 5 problemas más urgentes',
     urgentes: ['Google no sabe qué hace la clínica ni dónde está', 'Google no la reconoce como negocio local', 'En el móvil, la web se sale de la pantalla'],
     enlace: 'Ver el ejemplo completo →',
-    real: 'Caso real: nuestra propia web, de 94 a 97 →',
+    real: 'Caso real: nuestra propia web, de 77 a 91 →',
   },
   quienes: {
     titulo: 'Quiénes somos',

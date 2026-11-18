@@ -38,7 +38,7 @@ const t = {
   ventajas: {
     titulo: <>Más que una <span className="accent-light">web bonita</span></>,
     items: [
-      { titulo: 'Preparada para Google y la IA', texto: 'Estructuramos el código y el contenido para que Google y los asistentes de IA entiendan qué ofreces, dónde y a qué precio: la base para que te encuentren y te recomienden.' },
+      { titulo: 'Preparada para Google y la IA', texto: <>Estructuramos el código y el contenido para que Google y los asistentes de IA entiendan qué ofreces, dónde y a qué precio: la base para que te encuentren y te recomienden. Lo aplicamos primero a nuestra web: <a href="/blog/nuestra-web-diagnostico-seo" className="text-link">de 77 a 91 en nuestro diagnóstico SEO</a>.</> },
       { titulo: 'Y si quieres, un asistente que no deja escapar a nadie', texto: 'Opcional: responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp para que los contactes al día siguiente. Pruébalo en esta misma página.' },
     ],
   },
