@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogChatgpt',
+      title: 'How to get your business to show up in ChatGPT',
+      excerpt: 'The 7 steps to get ChatGPT, Gemini and Perplexity to recommend your business: how to check whether they already mention you, what to fix and what doesn’t work.',
+      date: 'November 18, 2026',
+    },
+    {
       clave: 'blogConsultorAeo',
       title: 'What does an AEO consultant do?',
       excerpt: 'What we check, step by step, so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 4 on Cloudflare’s Is It Agent Ready.',
@@ -28,8 +34,8 @@ const t = {
     },
     {
       clave: 'blogAeo',
-      title: 'What is AEO, explained with a real example',
-      excerpt: 'What Answer Engine Optimization is, why it’s already happening and what the businesses AI recommends have in common, with a real example from Gemini.',
+      title: 'What is AEO (and GEO)? AEO vs SEO, with a real example',
+      excerpt: 'What Answer Engine Optimization is, how it differs from GEO and SEO, why it’s already happening and what the businesses AI recommends have in common, with a real example from Gemini.',
       date: 'September 23, 2026',
     },
     {

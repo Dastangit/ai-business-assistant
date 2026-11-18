@@ -2,12 +2,12 @@ import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
 
 const metadata = {
-  title: 'What is AEO, explained with a real example | DASTAN X-TECH',
-  description: 'What Answer Engine Optimization (AEO) is, why it’s already happening and what the businesses AI recommends have in common, with a real example from Gemini.',
-  keywords: ['What is AEO', 'Answer Engine Optimization', 'AI search optimization', 'SEO for ChatGPT and Gemini'],
+  title: 'What is AEO (and GEO)? AEO vs SEO, with a real example | DASTAN X-TECH',
+  description: 'What Answer Engine Optimization (AEO) is, how it differs from GEO and SEO, why it’s already happening and what the businesses AI recommends have in common, with a real example from Gemini.',
+  keywords: ['What is AEO', 'AEO vs SEO', 'AEO vs GEO', 'SEO for AI', 'Answer Engine Optimization', 'SEO for ChatGPT and Gemini'],
   alternates: alternates('blogAeo', 'en'),
   openGraph: {
-    title: 'What is AEO, explained with a real example',
+    title: 'What is AEO (and GEO)? AEO vs SEO, with a real example',
     description: 'What Answer Engine Optimization is, why it’s already happening and what the businesses AI recommends have in common.',
     url: 'https://dastanxtech.com/en/blog/what-is-aeo',
     siteName: 'DASTAN X-TECH',

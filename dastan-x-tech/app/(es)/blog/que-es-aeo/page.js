@@ -3,16 +3,17 @@ import React from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { REVISIONES } from '@/lib/revisiones';
+import { ruta } from '@/lib/i18n';
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Qué es AEO, explicado con un ejemplo real',
+  headline: 'Qué es AEO (y GEO): el SEO para IA, con un ejemplo real',
   author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
   publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-23',
   dateModified: REVISIONES['/blog/que-es-aeo'],
-  description: 'Qué es el Answer Engine Optimization (AEO), por qué ya está pasando y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
+  description: 'Qué es el Answer Engine Optimization (AEO), en qué se diferencia del GEO y del SEO, por qué ya está pasando y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/que-es-aeo',
 };
 
@@ -32,13 +33,13 @@ export default function BlogPost() {
           Guía práctica · 23 de septiembre de 2026
         </p>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 2.4rem)', fontWeight: '700', color: 'var(--ink)', lineHeight: '1.15', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
-          Qué es AEO, explicado con un ejemplo real
+          Qué es AEO (y GEO): el SEO para IA, con un ejemplo real
         </h1>
         <div className="byline">
           <div className="byline-avatar" aria-hidden="true">DT</div>
           <p className="byline-text">
             <strong>Dastan Tamayo</strong>
-            Fundador de DASTAN X-TECH · 4 min de lectura
+            Fundador de DASTAN X-TECH · 5 min de lectura
           </p>
         </div>
 
@@ -49,6 +50,19 @@ export default function BlogPost() {
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>AEO no reemplaza al SEO, lo complementa</h2>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
           El SEO tradicional busca que Google te muestre en una lista de diez resultados azules para que el usuario elija. El AEO busca algo distinto: que la IA lea, entienda y cite tu negocio como LA respuesta, sin que el usuario tenga que comparar nada. Son juegos relacionados, pero con reglas distintas.
+        </p>
+
+        <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>AEO, GEO o «SEO para IA»: ¿cómo se llama?</h2>
+        <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
+          Si buscas cómo se llama el SEO para la inteligencia artificial, vas a encontrar varios nombres:
+        </p>
+        <ul style={{ lineHeight: '1.9', paddingLeft: '1.3rem', marginBottom: '1rem' }}>
+          <li><strong>AEO (Answer Engine Optimization):</strong> el más antiguo. Nació con los fragmentos destacados de Google y los asistentes de voz, y hoy se usa para ChatGPT, Gemini o Perplexity.</li>
+          <li><strong>GEO (Generative Engine Optimization):</strong> lo popularizó un estudio académico de 2023 con ese mismo nombre, centrado en los buscadores que redactan la respuesta con IA.</li>
+          <li><strong>«SEO para IA», «SEO para ChatGPT» o LLMO:</strong> formas informales de decir lo mismo.</li>
+        </ul>
+        <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
+          En la práctica, todos describen el mismo trabajo: que los asistentes de IA encuentren tu negocio, lo entiendan y lo recomienden. Nosotros lo llamamos AEO. Si quieres pasar a la acción, lo explicamos paso a paso en <a href={ruta('blogChatgpt', 'es')} className="text-link">cómo hacer que tu negocio aparezca en ChatGPT</a>.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Lo probamos en vivo</h2>
