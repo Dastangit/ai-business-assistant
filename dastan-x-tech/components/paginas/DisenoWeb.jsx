@@ -23,6 +23,7 @@ export default function DisenoWeb({ t, lang }) {
 
       {/* CABECERA CON ENLACES (logo al inicio, servicios, blog, idioma y WhatsApp) */}
       <SiteHeader tone="light" lang={lang} />
+      <main id="contenido">
 
       {/* HERO ASIMÉTRICO */}
       <header className="servicio-hero" style={{
@@ -161,6 +162,7 @@ export default function DisenoWeb({ t, lang }) {
         </div>
       </section>
 
+      </main>
       <SiteFooter tone="light" lang={lang} />
     </div>
   );

@@ -7,6 +7,7 @@ export default function BlogIndice({ t, lang }) {
   return (
     <div className="theme-light">
       <SiteHeader tone="light" lang={lang} />
+      <main id="contenido">
 
       <header style={{ padding: '5rem 5% 2rem', textAlign: 'center' }}>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 2.6rem)', fontWeight: '700', color: 'var(--ink)', letterSpacing: '-0.025em' }}>{t.titulo}</h1>
@@ -29,6 +30,7 @@ export default function BlogIndice({ t, lang }) {
         ))}
       </section>
 
+      </main>
       <SiteFooter tone="light" lang={lang} />
     </div>
   );
