@@ -2,7 +2,7 @@
 // Solo datos: nada de funciones.
 const t = {
   metadata: {
-    title: 'Blog | DASTAN X-TECH',
+    title: 'Blog de SEO, AEO y diseño web para pymes | DASTAN X-TECH',
     description: 'Artículos sobre SEO, AEO, diseño web y auditoría de negocio para pequeños negocios y pymes.',
   },
   titulo: 'Blog',

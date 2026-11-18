@@ -8,8 +8,8 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: 'Auditamos nuestra propia web con nuestra Auditoría Completa de Negocio',
-  author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
-  publisher: { '@type': 'Organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
+  author: { '@type': 'Person', name: 'Dastan Tamayo', jobTitle: 'Fundador', worksFor: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' } },
+  publisher: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-22',
   dateModified: REVISIONES['/blog/auditamos-nuestra-propia-web'],
   description: 'Le aplicamos nuestra propia Auditoría Completa de Negocio a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
@@ -65,7 +65,7 @@ export default function BlogPost() {
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Lo que ya corregimos</h2>
         <p style={{ lineHeight: '1.8', marginBottom: '1rem' }}>
-          Agregamos FAQ y schema <code>FAQPage</code> en las tres páginas de servicio, sumamos datos estructurados <code>Organization</code> a nivel de todo el sitio, tradujimos los textos en inglés que quedaban sueltos, y creamos una página de empresa en LinkedIn como primera señal externa.
+          Agregamos FAQ y schema <code>FAQPage</code> en las tres páginas de servicio, sumamos datos estructurados <code>Organization</code> a nivel de todo el sitio, tradujimos los textos en inglés que quedaban sueltos, y enlazamos el perfil de LinkedIn del fundador en los datos estructurados como primera señal externa.
         </p>
 
         <h2 style={{ fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' }}>Lo que sigue pendiente</h2>

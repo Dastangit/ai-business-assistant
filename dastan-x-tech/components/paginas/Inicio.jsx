@@ -55,7 +55,6 @@ export default function Inicio({ t, lang }) {
         <h1 className="hero-title">
           {t.titulo}
           <span className="texto-marca">{t.tituloDestacado}</span>
-          <span className="sr-only">{t.tituloSr}</span>
         </h1>
         <p className="hero-sub">{t.subtitulo}</p>
 
