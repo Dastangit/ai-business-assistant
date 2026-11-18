@@ -13,7 +13,7 @@ const articleJsonLd = {
   publisher: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-09-23',
   dateModified: REVISIONES['/blog/que-es-aeo'],
-  description: 'Qué es el Answer Engine Optimization (AEO), en qué se diferencia del GEO y del SEO, por qué ya está pasando y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
+  description: 'Qué es el AEO, en qué se diferencia del GEO y del SEO y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/que-es-aeo',
 };
 

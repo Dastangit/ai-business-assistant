@@ -2,10 +2,10 @@
 // Solo datos: nada de funciones (se pasan de servidor a cliente).
 const t = {
   metadata: {
-    title: 'Nuestros Servicios | DASTAN X-TECH',
+    title: 'Servicios: diseño web, auditoría y AEO para pymes | DASTAN X-TECH',
     description: 'Diseño web, Auditoría Completa de Negocio y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
     keywords: ['Servicios DASTAN X-TECH', 'Diseño web profesional', 'Auditoría de negocio', 'Posicionamiento AEO'],
-    ogTitle: 'Nuestros Servicios | DASTAN X-TECH',
+    ogTitle: 'Servicios: diseño web, auditoría y AEO para pymes | DASTAN X-TECH',
     ogDescription: 'Diseño web, Auditoría Completa de Negocio y Posicionamiento AEO: tres servicios para que tu negocio no pierda ni un cliente.',
   },
   etiqueta: 'Servicios',

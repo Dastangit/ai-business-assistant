@@ -37,6 +37,12 @@ const icons = {
       <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18" />
     </svg>
   ),
+  play: (
+    <svg {...iconProps}>
+      <rect x="2.5" y="5" width="19" height="14" rx="4" />
+      <path d="m10 9.5 5 2.5-5 2.5Z" />
+    </svg>
+  ),
 };
 
 const contactLinks = [
@@ -44,6 +50,7 @@ const contactLinks = [
   { href: 'mailto:dastanxtech.services@gmail.com', label: 'dastanxtech.services@gmail.com', icon: icons.mail },
   { href: 'https://www.instagram.com/dastan.xtech/', label: 'Instagram', icon: icons.camera, external: true },
   { href: 'https://www.linkedin.com/in/dastantech', label: 'LinkedIn', icon: icons.briefcase, external: true },
+  { href: 'https://www.youtube.com/@Dastanxtech', label: 'YouTube', icon: icons.play, external: true },
 ];
 
 const TEXTOS = {

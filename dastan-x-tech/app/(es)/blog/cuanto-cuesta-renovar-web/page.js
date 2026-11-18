@@ -8,7 +8,7 @@ import { ruta } from '@/lib/i18n';
 // Guía de precios: cada cifra sale de la FAQ de Diseño web (contenido/diseno-web.es.js) y de PRECIOS/OTROS
 // de app/api/chat/route.js. Si cambia un precio o un plazo allí, cámbialo aquí, en la versión en inglés y en llms.txt.
 const URL_ARTICULO = 'https://dastanxtech.com/blog/cuanto-cuesta-renovar-web';
-const DESCRIPCION = 'Precios reales para renovar la web de un negocio en 2026: 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye el precio y qué se cobra aparte.';
+const DESCRIPCION = 'Precios reales para renovar la web de un negocio en 2026: 100 USD y lista en menos de 48 horas, o 49 USD por lo urgente. Qué incluye y qué se cobra aparte.';
 
 const faq = [
   { q: '¿Cuánto cuesta renovar la web de un negocio?', a: 'En DASTAN X-TECH, 100 USD, precio cerrado. Si necesitas algo que no está incluido (por ejemplo, una tienda online), te lo decimos antes de empezar.' },

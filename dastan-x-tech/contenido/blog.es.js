@@ -3,9 +3,9 @@
 const t = {
   metadata: {
     title: 'Blog de SEO, AEO y diseño web para pymes | DASTAN X-TECH',
-    description: 'Artículos sobre SEO, AEO, diseño web y auditoría de negocio para pequeños negocios y pymes.',
+    description: 'Guías y casos reales sobre SEO, AEO y diseño web para pequeños negocios: cómo aparecer en Google y en ChatGPT y dejar de perder clientes.',
   },
-  titulo: 'Blog',
+  titulo: 'Blog de SEO, AEO y diseño web para pymes',
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {

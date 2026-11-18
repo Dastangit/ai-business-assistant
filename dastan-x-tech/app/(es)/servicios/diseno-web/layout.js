@@ -1,3 +1,4 @@
+import MigasJsonLd from '@/components/MigasJsonLd';
 import t from '@/contenido/diseno-web.es';
 import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
@@ -5,7 +6,6 @@ import { conImagenHeredada } from '@/lib/metadatos';
 const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
-  keywords: t.metadata.keywords,
   alternates: alternates('disenoWeb', 'es'),
   openGraph: {
     title: t.metadata.ogTitle,
@@ -45,6 +45,7 @@ export default function DisenoWebLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      <MigasJsonLd lang="es" seccion="servicios" ruta={metadata.alternates.canonical} titulo={serviceJsonLd.name} />
       {children}
     </>
   );

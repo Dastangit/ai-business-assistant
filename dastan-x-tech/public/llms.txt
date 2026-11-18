@@ -63,3 +63,4 @@ DASTAN X-TECH is also available in English. High-level digital consulting for sm
   - Dashboard de facturas: a partir de las facturas en PDF, un panel con ingresos, gastos, impuestos, balance y mejores clientes.
 - [Instagram](https://www.instagram.com/dastan.xtech/)
 - [LinkedIn](https://www.linkedin.com/in/dastantech)
+- [YouTube](https://www.youtube.com/@Dastanxtech)

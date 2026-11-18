@@ -9,7 +9,7 @@ export default function BlogIndice({ t, lang }) {
       <SiteHeader tone="light" lang={lang} />
 
       <header style={{ padding: '5rem 5% 2rem', textAlign: 'center' }}>
-        <h1 style={{ fontSize: '2.6rem', fontWeight: '700', color: 'var(--ink)', letterSpacing: '-0.025em' }}>{t.titulo}</h1>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 2.6rem)', fontWeight: '700', color: 'var(--ink)', letterSpacing: '-0.025em' }}>{t.titulo}</h1>
         <p style={{ color: 'var(--ink-2)', maxWidth: '550px', margin: '1rem auto 0' }}>
           {t.subtitulo}
         </p>

@@ -3,7 +3,7 @@
 // Solo datos: nada de funciones.
 const t = {
   metadata: {
-    title: 'Nuestra historia | DASTAN X-TECH',
+    title: 'Nuestra historia: quién está detrás de DASTAN X-TECH',
     description: 'Cómo nació DASTAN X-TECH: de nuestro propio problema de visibilidad en internet a una consultora para negocios que hacen un buen trabajo y no se ven.',
   },
   etiqueta: 'Nuestra historia',

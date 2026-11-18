@@ -8,7 +8,7 @@ import { ruta } from '@/lib/i18n';
 // English version of /blog/cuanto-cuesta-renovar-web. If the Spanish article changes, change this one too.
 // Every figure comes from the Web Design FAQ (contenido/diseno-web.en.js) and PRECIOS/OTROS in app/api/chat/route.js.
 const URL_ARTICULO = 'https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost';
-const DESCRIPCION = 'Real prices to redesign a small business website in 2026: 100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What the price includes and what costs extra.';
+const DESCRIPCION = 'Real prices to redesign a small business website in 2026: 100 USD, ready in under 48 hours, or 49 USD for urgent fixes. What’s included and what’s extra.';
 
 const faq = [
   { q: 'How much does it cost to redesign a business website?', a: 'At DASTAN X-TECH, 100 USD, fixed price. If you need something that isn’t included (an online store, for example), we tell you before we start.' },
