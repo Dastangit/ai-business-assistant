@@ -17,7 +17,7 @@ const articleJsonLd = {
   publisher: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com' },
   datePublished: '2026-10-29',
   dateModified: REVISIONES['/blog/que-hace-un-consultor-aeo'],
-  description: 'Qué revisa un consultor AEO para que ChatGPT, Gemini y Perplexity recomienden tu negocio, con nuestra web de ejemplo: nivel 4 en Is It Agent Ready de Cloudflare.',
+  description: 'Qué revisa un consultor AEO para que ChatGPT, Gemini y Perplexity recomienden tu negocio, con nuestra web de ejemplo: nivel 4 en Is It Agent Ready.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/que-hace-un-consultor-aeo',
 };
 

@@ -3,7 +3,7 @@
 const t = {
   metadata: {
     title: 'Digital Business Audit | DASTAN X-TECH',
-    description: 'We find where your business is losing time and customers, with real evidence, not guesswork. A report with your digital presence, technology maturity and an action plan.',
+    description: 'We find where your business loses time and customers, with real evidence. A report on your digital presence, tech maturity and a phased action plan.',
     keywords: ['Digital business audit', 'Small business audit', 'SEO audit', 'Business diagnosis', 'Digital consulting'],
     ogTitle: 'Digital Business Audit | DASTAN X-TECH',
     ogDescription: 'A complete review of your digital presence and internal processes, with real evidence and a phased action plan.',

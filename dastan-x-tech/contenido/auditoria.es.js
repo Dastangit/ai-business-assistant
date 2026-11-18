@@ -3,7 +3,7 @@
 const t = {
   metadata: {
     title: 'Auditoría Completa de Negocio | DASTAN X-TECH',
-    description: 'Descubrimos dónde tu negocio pierde tiempo y clientes, con evidencia real, no suposiciones. Informe con presencia digital, madurez tecnológica y plan de acción.',
+    description: 'Descubrimos dónde tu negocio pierde tiempo y clientes, con evidencia real. Informe con presencia digital, madurez tecnológica y plan de acción.',
     keywords: ['Auditoría de negocio', 'Auditoría completa de negocio', 'Auditoría SEO', 'Diagnóstico de negocio', 'Consultoría digital'],
     ogTitle: 'Auditoría Completa de Negocio | DASTAN X-TECH',
     ogDescription: 'Diagnóstico completo de presencia digital y procesos internos, con evidencia real y un plan de acción por fases.',

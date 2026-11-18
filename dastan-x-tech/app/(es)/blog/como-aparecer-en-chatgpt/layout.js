@@ -1,3 +1,4 @@
+import MigasJsonLd from '@/components/MigasJsonLd';
 import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
 
@@ -6,7 +7,6 @@ import { conImagenHeredada } from '@/lib/metadatos';
 const metadata = {
   title: 'Cómo hacer que tu negocio aparezca en ChatGPT | DASTAN X-TECH',
   description: 'Los 7 pasos para que ChatGPT, Gemini y Perplexity recomienden tu negocio: cómo comprobar si ya te nombran, qué revisar en tu web y qué no funciona.',
-  keywords: ['Cómo aparecer en ChatGPT', 'Cómo aparecer en búsquedas de ChatGPT', 'SEO para ChatGPT', 'SEO para IA', 'Que ChatGPT recomiende mi negocio'],
   alternates: alternates('blogChatgpt', 'es'),
   openGraph: {
     title: 'Cómo hacer que tu negocio aparezca en ChatGPT',
@@ -20,5 +20,10 @@ const metadata = {
 export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
-  return children;
+  return (
+    <>
+      <MigasJsonLd lang="es" seccion="blog" ruta={metadata.alternates.canonical} titulo={metadata.title} />
+      {children}
+    </>
+  );
 }

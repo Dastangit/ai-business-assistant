@@ -4,7 +4,7 @@ const t = {
   metadata: {
     // «consultor aeo» es la búsqueda por la que ya salimos en Search Console (oct. 2026): va al principio del título
     title: 'Consultor AEO: que la IA recomiende tu negocio | DASTAN X-TECH',
-    description: 'Preparamos tu negocio para que ChatGPT, Gemini y Perplexity te recomienden directamente, no solo Google. Estructura, reseñas y señales de confianza para motores de IA.',
+    description: 'Preparamos tu negocio para que ChatGPT, Gemini y Perplexity te recomienden, no solo Google: estructura, reseñas y señales de confianza para la IA.',
     keywords: ['Consultor AEO', 'Posicionamiento AEO', 'Answer Engine Optimization', 'SEO para IA', 'ChatGPT recomienda mi negocio', 'Posicionamiento en inteligencia artificial'],
     ogTitle: 'Posicionamiento AEO | DASTAN X-TECH',
     ogDescription: 'Que ChatGPT, Gemini y Perplexity recomienden tu negocio directamente, no solo Google.',

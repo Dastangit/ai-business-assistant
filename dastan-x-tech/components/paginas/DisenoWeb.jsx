@@ -50,7 +50,8 @@ export default function DisenoWeb({ t, lang }) {
 
         {/* TARJETA DEL HERO */}
         <div className="servicio-hero-visual servicio-hero-card">
-          <h3>{t.hero.tarjetaTitulo}</h3>
+          {/* p y no h3: va antes del primer h2 y rompería la jerarquía de encabezados */}
+          <p className="servicio-hero-card-titulo">{t.hero.tarjetaTitulo}</p>
           <ul className="dot-list">
             {t.hero.tarjetaItems.map((item) => <li key={item}>{item}</li>)}
           </ul>

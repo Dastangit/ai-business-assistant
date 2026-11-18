@@ -3,9 +3,9 @@
 const t = {
   metadata: {
     title: 'SEO, AEO and Web Design Blog | DASTAN X-TECH',
-    description: 'Articles on SEO, AEO, web design and business audits for small businesses.',
+    description: 'Guides and real case studies on SEO, AEO and web design for small businesses: how to show up on Google and ChatGPT and stop losing customers.',
   },
-  titulo: 'Blog',
+  titulo: 'SEO, AEO and Web Design Blog for Small Businesses',
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {

@@ -6,7 +6,6 @@ import { conImagenHeredada } from '@/lib/metadatos';
 const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
-  keywords: t.metadata.keywords,
   alternates: alternates('servicios', 'es'),
   openGraph: {
     title: t.metadata.ogTitle,

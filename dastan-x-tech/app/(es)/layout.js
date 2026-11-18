@@ -23,14 +23,6 @@ export const metadata = {
   metadataBase: new URL('https://dastanxtech.com'),
   title: 'DASTAN X-TECH | Consultoría digital para negocios y pymes',
   description: 'Te decimos, con pruebas, por qué tu negocio pierde clientes por internet. Diagnóstico SEO gratis, diseño web y posicionamiento para Google y la IA.',
-  keywords: [
-    'Consultoría digital para negocios',
-    'Auditoría de negocio',
-    'Diseño web para pymes',
-    'Diseño web para negocios locales',
-    'Posicionamiento AEO',
-    'Automatización para pymes',
-  ],
   alternates: alternates('inicio', 'es'),
   // Verificación del dominio en Trustpilot (perfil de reseñas). Es pública: no es una clave secreta
   other: {
@@ -72,7 +64,15 @@ const organizationJsonLd = {
   sameAs: [
     'https://www.instagram.com/dastan.xtech/',
     'https://www.linkedin.com/in/dastantech',
+    'https://www.trustpilot.com/review/dastanxtech.com',
   ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    telephone: '+1-605-500-3653',
+    email: 'dastanxtech.services@gmail.com',
+    availableLanguage: ['es', 'en'],
+  },
 };
 
 const websiteJsonLd = {

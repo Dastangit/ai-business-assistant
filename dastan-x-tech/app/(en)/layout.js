@@ -58,7 +58,15 @@ const organizationJsonLd = {
   sameAs: [
     'https://www.instagram.com/dastan.xtech/',
     'https://www.linkedin.com/in/dastantech',
+    'https://www.trustpilot.com/review/dastanxtech.com',
   ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    telephone: '+1-605-500-3653',
+    email: 'dastanxtech.services@gmail.com',
+    availableLanguage: ['es', 'en'],
+  },
 };
 
 const websiteJsonLd = {

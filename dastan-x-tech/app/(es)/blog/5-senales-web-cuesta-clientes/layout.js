@@ -1,3 +1,4 @@
+import MigasJsonLd from '@/components/MigasJsonLd';
 import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
 
@@ -5,7 +6,6 @@ import { conImagenHeredada } from '@/lib/metadatos';
 const metadata = {
   title: '5 señales de que tu web te está costando clientes | DASTAN X-TECH',
   description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas en nuestra propia web.',
-  keywords: ['Web que no convierte', 'Rediseño web', 'Errores de diseño web', 'Diseño web para pymes'],
   alternates: alternates('blog5Senales', 'es'),
   openGraph: {
     title: '5 señales de que tu web te está costando clientes',
@@ -19,5 +19,10 @@ const metadata = {
 export const generateMetadata = conImagenHeredada(metadata);
 
 export default function BlogPostLayout({ children }) {
-  return children;
+  return (
+    <>
+      <MigasJsonLd lang="es" seccion="blog" ruta={metadata.alternates.canonical} titulo={metadata.title} />
+      {children}
+    </>
+  );
 }
