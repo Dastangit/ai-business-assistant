@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "consultar-dastan-x-tech",
+      "type": "skill-md",
+      "description": "Answer questions about DASTAN X-TECH (services, fixed prices in USD, how to hire, contact) and read any page of dastanxtech.com as Markdown. Use when a user asks about this consultancy, wants a website, a business audit or AEO (SEO for AI assistants), or asks how to contact it.",
+      "url": "https://dastanxtech.com/.well-known/agent-skills/consultar-dastan-x-tech/SKILL.md",
+      "digest": "sha256:d15295ef7a01ccc7557820ba122ff4cdbe6b7ff101408062e6d68e1a1d40193a"
+    }
+  ]
+}

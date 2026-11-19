@@ -1,0 +1,46 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "DASTAN X-TECH public agent API",
+    "version": "1.0.0",
+    "description": "Read-only endpoints for AI agents. No authentication. The MCP server is described by its MCP Server Card at /.well-known/mcp/server-card.json.",
+    "contact": { "name": "DASTAN X-TECH", "url": "https://dastanxtech.com", "email": "dastanxtech.services@gmail.com" }
+  },
+  "servers": [{ "url": "https://dastanxtech.com" }],
+  "security": [],
+  "paths": {
+    "/llms.txt": {
+      "get": {
+        "summary": "Site summary for LLMs: services, prices (USD), blog and contact",
+        "operationId": "getLlmsTxt",
+        "responses": { "200": { "description": "Markdown summary", "content": { "text/plain": { "schema": { "type": "string" } } } } }
+      }
+    },
+    "/{path}": {
+      "get": {
+        "summary": "Any public page as Markdown (Markdown on demand)",
+        "description": "Send `Accept: text/markdown` to receive the page as Markdown instead of HTML.",
+        "operationId": "getPageMarkdown",
+        "parameters": [
+          { "name": "path", "in": "path", "required": true, "schema": { "type": "string" }, "example": "servicios/posicionamiento-aeo" },
+          { "name": "Accept", "in": "header", "required": true, "schema": { "type": "string", "const": "text/markdown" } }
+        ],
+        "responses": {
+          "200": { "description": "Page in Markdown", "content": { "text/markdown": { "schema": { "type": "string" } } } },
+          "404": { "description": "Page not found" }
+        }
+      }
+    },
+    "/mcp": {
+      "post": {
+        "summary": "MCP server (Streamable HTTP, JSON-RPC 2.0, stateless, no SSE)",
+        "operationId": "mcp",
+        "requestBody": { "required": true, "content": { "application/json": { "schema": { "type": "object" } } } },
+        "responses": {
+          "200": { "description": "JSON-RPC response", "content": { "application/json": { "schema": { "type": "object" } } } },
+          "202": { "description": "Notification accepted" }
+        }
+      }
+    }
+  }
+}

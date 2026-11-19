@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "dastan-x-tech",
+    "title": "DASTAN X-TECH",
+    "version": "1.0.0"
+  },
+  "description": "Read-only MCP server of DASTAN X-TECH, a remote digital consultancy for small businesses: services, fixed prices in USD, contact details and every page of dastanxtech.com as Markdown.",
+  "websiteUrl": "https://dastanxtech.com",
+  "documentationUrl": "https://dastanxtech.com/.well-known/agent-skills/consultar-dastan-x-tech/SKILL.md",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://dastanxtech.com/mcp"
+  },
+  "capabilities": {
+    "tools": { "listChanged": false },
+    "resources": { "listChanged": false }
+  },
+  "authentication": {
+    "required": false
+  },
+  "tools": [
+    { "name": "get_business_info", "description": "Services, prices (USD), blog and contact in Markdown (llms.txt)." },
+    { "name": "get_contact", "description": "WhatsApp, email and how to request the free SEO report, as JSON." },
+    { "name": "read_page", "description": "Any public page of dastanxtech.com as Markdown, by path." }
+  ],
+  "resources": [
+    { "uri": "https://dastanxtech.com/llms.txt", "name": "llms.txt", "mimeType": "text/markdown" }
+  ]
+}
