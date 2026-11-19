@@ -50,6 +50,15 @@ DASTAN X-TECH is also available in English. High-level digital consulting for sm
 - [Free SEO Report](https://dastanxtech.com/en): score from 0 to 100 and the 5 most urgent fixes, as a PDF on WhatsApp.
 - [From 77 to 91: we ran our website through our SEO report](https://dastanxtech.com/en/blog/our-website-seo-report) · [How to get your business to show up in ChatGPT](https://dastanxtech.com/en/blog/how-to-show-up-in-chatgpt) · [What does an AEO consultant do?](https://dastanxtech.com/en/blog/what-does-an-aeo-consultant-do) · [How much does a website redesign cost in 2026?](https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost) · [We perfected our website with our AEO auditor](https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor) · [What is AEO (and GEO)](https://dastanxtech.com/en/blog/what-is-aeo) · [5 signs your website is losing you customers](https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers) · [We audited our own website](https://dastanxtech.com/en/blog/we-audited-our-own-website)
 
+## Para agentes de IA
+
+Acceso público y de solo lectura, sin registro ni credenciales ([auth.md](https://dastanxtech.com/auth.md)).
+
+- [Servidor MCP](https://dastanxtech.com/.well-known/mcp/server-card.json): `https://dastanxtech.com/mcp` (Streamable HTTP). Herramientas: `get_business_info`, `get_contact` y `read_page`.
+- [Agent skill](https://dastanxtech.com/.well-known/agent-skills/consultar-dastan-x-tech/SKILL.md): cómo responder sobre nuestros servicios, precios y contacto.
+- [Catálogo de APIs](https://dastanxtech.com/.well-known/api-catalog) (RFC 9727) y [OpenAPI](https://dastanxtech.com/openapi.json).
+- Cualquier página en Markdown pidiéndola con la cabecera `Accept: text/markdown`.
+
 ## Optional
 
 - [Servicios bajo pedido](https://dastanxtech.com/servicios): se piden sueltos, con precio según cada caso, o se eligen dentro de la Membresía de Implementación.

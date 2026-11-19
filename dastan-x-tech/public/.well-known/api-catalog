@@ -1,0 +1,27 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://dastanxtech.com/mcp",
+      "service-desc": [
+        { "href": "https://dastanxtech.com/.well-known/mcp/server-card.json", "type": "application/json" },
+        { "href": "https://dastanxtech.com/openapi.json", "type": "application/openapi+json" }
+      ],
+      "service-doc": [
+        { "href": "https://dastanxtech.com/.well-known/agent-skills/consultar-dastan-x-tech/SKILL.md", "type": "text/markdown" }
+      ],
+      "status": [
+        { "href": "https://dastanxtech.com/api/mcp/estado", "type": "application/json" }
+      ]
+    },
+    {
+      "anchor": "https://dastanxtech.com/",
+      "service-desc": [
+        { "href": "https://dastanxtech.com/openapi.json", "type": "application/openapi+json" }
+      ],
+      "service-doc": [
+        { "href": "https://dastanxtech.com/llms.txt", "type": "text/markdown" },
+        { "href": "https://dastanxtech.com/auth.md", "type": "text/markdown" }
+      ]
+    }
+  ]
+}
