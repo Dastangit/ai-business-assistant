@@ -147,7 +147,7 @@ export default function BlogPost() {
 
         <h2 style={h2}>Our own case</h2>
         <p style={paragraph}>
-          We applied these steps to dastanxtech.com before doing it for any client: today it&apos;s at level 4 on Is It Agent Ready, Cloudflare&apos;s free test for AI agents, and at 97 out of 100 in our AEO auditor. We explain it in detail in <a href={ruta('blogConsultorAeo', 'en')} className="text-link">what an AEO consultant does</a>. And if you want the concept from the start, it&apos;s in <a href={ruta('blogAeo', 'en')} className="text-link">what is AEO</a>.
+          We applied these steps to dastanxtech.com before doing it for any client: today it&apos;s at level 5 (the highest) on Is It Agent Ready, Cloudflare&apos;s free test for AI agents, and at 97 out of 100 in our AEO auditor. We explain it in detail in <a href={ruta('blogConsultorAeo', 'en')} className="text-link">what an AEO consultant does</a>. And if you want the concept from the start, it&apos;s in <a href={ruta('blogAeo', 'en')} className="text-link">what is AEO</a>.
         </p>
 
         <h2 style={h2}>Frequently asked questions</h2>

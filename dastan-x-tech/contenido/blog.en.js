@@ -23,7 +23,7 @@ const t = {
     {
       clave: 'blogConsultorAeo',
       title: 'What does an AEO consultant do?',
-      excerpt: 'What we check, step by step, so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 4 on Cloudflare’s Is It Agent Ready.',
+      excerpt: 'What we check, step by step, so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 5 on Cloudflare’s Is It Agent Ready.',
       date: 'October 29, 2026',
     },
     {

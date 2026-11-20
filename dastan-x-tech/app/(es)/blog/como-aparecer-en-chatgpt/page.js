@@ -147,7 +147,7 @@ export default function BlogPost() {
 
         <h2 style={h2}>Nuestro caso</h2>
         <p style={parrafo}>
-          Aplicamos estos pasos a dastanxtech.com antes de hacerlo con ningún cliente: hoy está en el nivel 4 de Is It Agent Ready, la prueba gratuita de Cloudflare para agentes de IA, y en 97 sobre 100 en nuestro auditor AEO. Lo contamos con detalle en <a href={ruta('blogConsultorAeo', 'es')} className="text-link">qué hace un consultor AEO</a>. Y si quieres el concepto desde el principio, está en <a href={ruta('blogAeo', 'es')} className="text-link">qué es AEO</a>.
+          Aplicamos estos pasos a dastanxtech.com antes de hacerlo con ningún cliente: hoy está en el nivel 5 (el más alto) de Is It Agent Ready, la prueba gratuita de Cloudflare para agentes de IA, y en 97 sobre 100 en nuestro auditor AEO. Lo contamos con detalle en <a href={ruta('blogConsultorAeo', 'es')} className="text-link">qué hace un consultor AEO</a>. Y si quieres el concepto desde el principio, está en <a href={ruta('blogAeo', 'es')} className="text-link">qué es AEO</a>.
         </p>
 
         <h2 style={h2}>Preguntas frecuentes</h2>
