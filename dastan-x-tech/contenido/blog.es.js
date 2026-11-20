@@ -23,7 +23,7 @@ const t = {
     {
       clave: 'blogConsultorAeo',
       title: '¿Qué hace un consultor AEO?',
-      excerpt: 'Lo que revisamos, paso a paso, para que ChatGPT, Gemini y Perplexity recomienden tu negocio, con nuestra web de ejemplo: nivel 4 en Is It Agent Ready de Cloudflare.',
+      excerpt: 'Lo que revisamos, paso a paso, para que ChatGPT, Gemini y Perplexity recomienden tu negocio, con nuestra web de ejemplo: nivel 5 en Is It Agent Ready de Cloudflare.',
       date: '29 de octubre de 2026',
     },
     {

@@ -6,8 +6,10 @@ import { REVISIONES } from '@/lib/revisiones';
 import { ruta } from '@/lib/i18n';
 
 // English version of /blog/que-hace-un-consultor-aeo. If the Spanish article changes, change this one too.
-// Is It Agent Ready result from isitagentready.com/dastanxtech.com on October 29, 2026:
-// level 4 «Agent-Integrated», Content 100, Bot Access Control 100, Discoverability 3/4, APIs/MCP 0/8.
+// Is It Agent Ready result from isitagentready.com/dastanxtech.com on November 19, 2026:
+// level 5 «Agent-Native», 60 points: Content 100, Bot Access Control 100, Discoverability 3/4,
+// APIs/Auth/MCP/Skills 3/8 (API catalog, MCP Server Card and Agent Skills; not auth.md or OAuth).
+// On October 29 it was level 4 «Agent-Integrated», 40 points, with APIs/MCP at 0/8.
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -17,7 +19,7 @@ const articleJsonLd = {
   publisher: { '@type': 'Organization', '@id': 'https://dastanxtech.com/#organization', name: 'DASTAN X-TECH', url: 'https://dastanxtech.com/en' },
   datePublished: '2026-10-29',
   dateModified: REVISIONES['/en/blog/what-does-an-aeo-consultant-do'],
-  description: 'What an AEO consultant checks so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 4 on Cloudflare’s Is It Agent Ready.',
+  description: 'What an AEO consultant checks so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 5 on Cloudflare’s Is It Agent Ready.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/what-does-an-aeo-consultant-do',
 };
 
@@ -76,15 +78,16 @@ export default function BlogPost() {
           Before doing it for any client, we did it for our own website. On our AEO auditor, which answers the 8 questions AI asks before recommending a business, we went from 94 to 97 out of 100; the story is in <a href={ruta('blogAuditorAeo', 'en')} className="text-link">we perfected our website with our AEO auditor</a>.
         </p>
         <p style={parrafo}>
-          On Is It Agent Ready, the website is now at <strong>level 4, “Agent-Integrated”</strong>:
+          On Is It Agent Ready, the website is now at <strong>level 5, “Agent-Native”</strong>, the highest, with 60 points (on October 29 it was level 4, with 40):
         </p>
         <ul style={lista}>
           <li><strong>Content: 100.</strong> Any page can be requested in Markdown, the text format AI agents prefer.</li>
           <li><strong>Bot Access Control: 100.</strong> The robots.txt has rules for AI bots and says how they may use the content (Content-Signal).</li>
           <li><strong>Discoverability: 3 of 4.</strong> robots.txt, sitemap and headers that tell agents where the website’s description lives.</li>
+          <li><strong>APIs, MCP and skills: 3 of 8.</strong> A public, read-only MCP server with our services, prices and pages; its discovery card; a “skill” that tells agents how to answer questions about us; and an API catalog.</li>
         </ul>
         <p style={parrafo}>
-          The APIs and MCP servers category is still at 0. It’s meant for websites that offer a service an agent can connect to —booking, buying, looking up data—, and ours doesn’t need one yet. We’d rather say so than publish something empty just to raise the score.
+          What’s missing we left out on purpose: agent registration with OAuth and auth.md is for websites where an agent logs into a private account —booking, buying, seeing a customer’s data—, and ours only offers public information. We’d rather say so than build a registration nobody needs just to raise the score.
         </p>
         <p style={parrafo}>
           <a href="https://isitagentready.com/dastanxtech.com" target="_blank" rel="noopener noreferrer" className="text-link">See the dastanxtech.com result on Is It Agent Ready →</a>
