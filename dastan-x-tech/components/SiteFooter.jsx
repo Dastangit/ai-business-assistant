@@ -57,10 +57,12 @@ const TEXTOS = {
   es: {
     lema: 'Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
     servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad', condiciones: 'Condiciones de compra',
+    perfil: 'Perfil en TechBehemoths',
   },
   en: {
     lema: 'High-level digital consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
     servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice', condiciones: 'Terms of purchase',
+    perfil: 'TechBehemoths profile',
   },
 };
 
@@ -93,7 +95,9 @@ export default function SiteFooter({ tone = 'light', lang = 'es' }) {
           ))}
         </ul>
       </div>
-      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href={ruta('privacidad', lang)}>{t.privacidad}</a> · <a href={ruta('condiciones', lang)}>{t.condiciones}</a></p>
+      <p className="site-footer-legal">© 2026 DASTAN X-TECH · <a href={ruta('privacidad', lang)}>{t.privacidad}</a> · <a href={ruta('condiciones', lang)}>{t.condiciones}</a>
+        {/* Enlace de verificación de TechBehemoths: debe ser follow (sin nofollow) */}
+        {' · '}<a href="https://techbehemoths.com/company/dastan-x-tech" target="_blank" rel="noopener" data-techbehemoths-verification>{t.perfil}</a></p>
     </footer>
   );
 }
