@@ -24,7 +24,7 @@ const serviceJsonLd = {
   name: t.servicioJsonLd.name,
   serviceType: t.servicioJsonLd.serviceType,
   provider: {
-    '@type': 'ProfessionalService',
+    '@type': 'Organization',
     '@id': 'https://dastanxtech.com/#organization',
     name: 'DASTAN X-TECH',
     url: 'https://dastanxtech.com/en',
