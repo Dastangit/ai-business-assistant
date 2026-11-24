@@ -15,6 +15,7 @@ export const RUTAS = {
   blogPrecioWeb: { es: '/blog/cuanto-cuesta-renovar-web', en: '/en/blog/how-much-does-a-website-redesign-cost' },
   blogConsultorAeo: { es: '/blog/que-hace-un-consultor-aeo', en: '/en/blog/what-does-an-aeo-consultant-do' },
   blogDiagnosticoSeo: { es: '/blog/nuestra-web-diagnostico-seo', en: '/en/blog/our-website-seo-report' },
+  blogResultadosIa: { es: '/blog/como-aparecer-en-resultados-de-ia', en: '/en/blog/how-to-appear-in-ai-search-results' },
   blogChatgpt: { es: '/blog/como-aparecer-en-chatgpt', en: '/en/blog/how-to-show-up-in-chatgpt' },
   historia: { es: '/nuestra-historia', en: '/en/our-story' },
   privacidad: { es: '/privacidad', en: '/en/privacy' },

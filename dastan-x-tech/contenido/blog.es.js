@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogResultadosIa',
+      title: 'Cómo aparecer en los resultados de búsqueda con IA',
+      excerpt: 'De dónde sacan sus respuestas Google AI Overviews, ChatGPT, Perplexity, Copilot y Gemini, y cómo comprobar si tu negocio sale en cada uno.',
+      date: '24 de noviembre de 2026',
+    },
+    {
       clave: 'blogDiagnosticoSeo',
       title: 'De 77 a 91: pasamos nuestra web por nuestro diagnóstico SEO',
       excerpt: 'Tres pasadas de nuestro diagnóstico SEO por dastanxtech.com: qué encontró cada vez, qué corregimos y cómo subimos de 77 a 91 sobre 100.',
