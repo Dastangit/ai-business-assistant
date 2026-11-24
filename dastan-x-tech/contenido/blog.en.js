@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogResultadosIa',
+      title: 'How to appear in AI search results',
+      excerpt: 'Where Google AI Overviews, ChatGPT, Perplexity, Copilot and Gemini get their answers, and how to check whether your business appears in each one.',
+      date: 'November 24, 2026',
+    },
+    {
       clave: 'blogDiagnosticoSeo',
       title: 'From 77 to 91: we ran our website through our SEO report',
       excerpt: 'Three passes of our SEO report on dastanxtech.com: what it found each time, what we fixed and how we went from 77 to 91 out of 100.',
