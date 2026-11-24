@@ -6,11 +6,11 @@ import { BrandMark } from '@/components/Brand';
 import SiteFooter from '@/components/SiteFooter';
 import SelectorIdioma from '@/components/SelectorIdioma';
 import { ruta } from '@/lib/i18n';
-import fotoDastan from '@/public/equipo/dastan-tamayo.jpg';
-import fotoIsdiel from '@/public/equipo/isdiel-martinez.jpg';
+import fotoDastan from '@/public/equipo/dastan-tamayo-dastanxtech.webp';
+import fotoIsdiel from '@/public/equipo/isdiel-martinez-dastanxtech.webp';
 
 // Portada, compartida por los dos idiomas: el diseño vive aquí y los textos en contenido/inicio.<lang>.js.
-// Equipo de «Quiénes somos»: fotos ya recortadas a 4:5 (Dastan 1003×1254, Isdiel 1024×1280) en public/equipo; el CSS fija el 4:5
+// Equipo de «Quiénes somos»: retratos de estudio cuadrados (900×900) en public/equipo; el CSS los recorta a 4:5 por los lados
 const FOTOS = [fotoDastan, fotoIsdiel];
 
 
