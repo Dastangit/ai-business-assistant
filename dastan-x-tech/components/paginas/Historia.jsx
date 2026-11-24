@@ -3,8 +3,8 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { ruta } from '@/lib/i18n';
-import fotoDastan from '@/public/equipo/dastan-tamayo.jpg';
-import fotoIsdiel from '@/public/equipo/isdiel-martinez.jpg';
+import fotoDastan from '@/public/equipo/dastan-tamayo-dastanxtech.webp';
+import fotoIsdiel from '@/public/equipo/isdiel-martinez-dastanxtech.webp';
 
 // Nuestra historia (/nuestra-historia, /en/our-story): el diseño vive aquí y el texto en contenido/historia.<lang>.js.
 // Mismo formato de lectura que las páginas legales; las fotos y los nombres salen de la portada (t.equipo de inicio)
