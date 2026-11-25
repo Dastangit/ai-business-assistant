@@ -22,7 +22,7 @@ export const CONTACTO = {
   idiomas: ['es', 'en'],
   modalidad: '100 % remoto (Colombia, México, Estados Unidos y resto del mundo)',
   diagnostico_seo_gratis:
-    'Para negocios con web: se pide desde el chat de https://dastanxtech.com y llega en PDF por WhatsApp.',
+    'Para negocios con web: se explica en https://dastanxtech.com/auditoria-web-gratis, se pide desde el chat de la web y llega en PDF por WhatsApp.',
 };
 
 const HERRAMIENTAS = [

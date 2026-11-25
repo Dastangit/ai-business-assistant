@@ -56,12 +56,12 @@ const contactLinks = [
 const TEXTOS = {
   es: {
     lema: 'Consultoría digital de alto nivel para negocios privados y pymes. En remoto, para Colombia, México, Estados Unidos y el resto del mundo.',
-    servicios: 'Servicios', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad', condiciones: 'Condiciones de compra',
+    servicios: 'Servicios', auditoriaGratis: 'Auditoría web gratis', secciones: 'Secciones', privacidad: 'Aviso legal y de privacidad', condiciones: 'Condiciones de compra',
     perfil: 'Perfil en TechBehemoths',
   },
   en: {
     lema: 'High-level digital consulting for small businesses. Fully remote, serving the United States, Mexico, Colombia and the rest of the world.',
-    servicios: 'Services', secciones: 'Sections', privacidad: 'Legal and privacy notice', condiciones: 'Terms of purchase',
+    servicios: 'Services', auditoriaGratis: 'Free website audit', secciones: 'Sections', privacidad: 'Legal and privacy notice', condiciones: 'Terms of purchase',
     perfil: 'TechBehemoths profile',
   },
 };
@@ -78,6 +78,7 @@ export default function SiteFooter({ tone = 'light', lang = 'es' }) {
           {/* En móvil la cabecera solo lleva lo esencial: el blog se alcanza desde aquí */}
           <nav className="site-footer-nav" aria-label={t.secciones}>
             <a href={ruta('servicios', lang)}>{t.servicios}</a>
+            <a href={ruta('auditoriaGratis', lang)}>{t.auditoriaGratis}</a>
             <a href={ruta('blog', lang)}>Blog</a>
           </nav>
         </div>
