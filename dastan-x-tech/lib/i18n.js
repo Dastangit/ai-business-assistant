@@ -7,6 +7,7 @@ export const RUTAS = {
   disenoWeb: { es: '/servicios/diseno-web', en: '/en/services/web-design' },
   auditoria: { es: '/servicios/auditoria-negocio', en: '/en/services/digital-business-audit' },
   aeo: { es: '/servicios/posicionamiento-aeo', en: '/en/services/aeo' },
+  auditoriaGratis: { es: '/auditoria-web-gratis', en: '/en/free-website-audit' },
   blog: { es: '/blog', en: '/en/blog' },
   blogAuditamos: { es: '/blog/auditamos-nuestra-propia-web', en: '/en/blog/we-audited-our-own-website' },
   blog5Senales: { es: '/blog/5-senales-web-cuesta-clientes', en: '/en/blog/5-signs-your-website-is-losing-customers' },
