@@ -17,6 +17,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/blog/perfeccionamos-nuestra-web-auditor-aeo'],
   description: 'Pasamos dastanxtech.com por nuestro propio auditor AEO: qué mide, qué encontró, qué corregimos y cómo pasamos de 94 a 97 sobre 100.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/perfeccionamos-nuestra-web-auditor-aeo',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };

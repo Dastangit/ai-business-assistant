@@ -30,6 +30,7 @@ const jsonLd = [
     dateModified: REVISIONES['/blog/cuanto-cuesta-renovar-web'],
     description: DESCRIPCION,
     mainEntityOfPage: URL_ARTICULO,
+    image: 'https://dastanxtech.com/opengraph-image',
   },
   {
     '@context': 'https://schema.org',

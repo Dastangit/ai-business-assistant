@@ -18,6 +18,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/en/blog/our-website-through-our-aeo-auditor'],
   description: 'We ran dastanxtech.com through our own AEO auditor: what it measures, what it found, what we fixed and how we went from 94 to 97 out of 100.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/our-website-through-our-aeo-auditor',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };

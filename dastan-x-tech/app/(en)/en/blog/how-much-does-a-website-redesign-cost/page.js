@@ -31,6 +31,7 @@ const jsonLd = [
     dateModified: REVISIONES['/en/blog/how-much-does-a-website-redesign-cost'],
     description: DESCRIPCION,
     mainEntityOfPage: URL_ARTICULO,
+    image: 'https://dastanxtech.com/opengraph-image',
   },
   {
     '@context': 'https://schema.org',

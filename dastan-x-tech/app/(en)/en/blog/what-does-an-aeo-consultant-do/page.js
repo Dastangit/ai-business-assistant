@@ -21,6 +21,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/en/blog/what-does-an-aeo-consultant-do'],
   description: 'What an AEO consultant checks so ChatGPT, Gemini and Perplexity recommend your business, using our own website: level 5 on Cloudflare’s Is It Agent Ready.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/what-does-an-aeo-consultant-do',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };
