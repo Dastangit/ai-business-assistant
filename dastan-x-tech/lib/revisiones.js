@@ -7,7 +7,7 @@ export const REVISIONES = {
   '/servicios': '2026-10-28',
   '/servicios/diseno-web': '2026-11-18',
   '/servicios/auditoria-negocio': '2026-10-25',
-  '/servicios/posicionamiento-aeo': '2026-11-18',
+  '/servicios/posicionamiento-aeo': '2026-11-26',
   '/auditoria-web-gratis': '2026-11-25',
   '/blog': '2026-11-24',
   '/blog/auditamos-nuestra-propia-web': '2026-09-25',
