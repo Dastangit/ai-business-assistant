@@ -8,7 +8,7 @@ const t = {
     servicios: 'Servicios',
     wa: 'Escríbenos por WhatsApp al +1 605-500-3653',
   },
-  etiqueta: 'Consultoría digital y tecnología de alto nivel',
+  etiqueta: 'Consultoría digital, IA y automatizaciones',
   // El titular se parte en dos: la segunda parte va en el violeta de la marca
   titulo: 'Descubre, con pruebas, por qué tu negocio ',
   tituloDestacado: 'pierde clientes por internet.',
