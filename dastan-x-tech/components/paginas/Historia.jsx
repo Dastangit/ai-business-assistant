@@ -9,6 +9,7 @@ import fotoIsdiel from '@/public/equipo/isdiel-martinez-dastanxtech.webp';
 // Nuestra historia (/nuestra-historia, /en/our-story): el diseño vive aquí y el texto en contenido/historia.<lang>.js.
 // Mismo formato de lectura que las páginas legales; las fotos y los nombres salen de la portada (t.equipo de inicio)
 const p = { lineHeight: '1.8', marginBottom: '1rem', fontSize: '1.1rem' };
+const h2 = { fontSize: '1.4rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', margin: '2.2rem 0 0.8rem' };
 
 export default function Historia({ t, equipo, lang }) {
   const fotos = [fotoDastan, fotoIsdiel];
@@ -22,7 +23,12 @@ export default function Historia({ t, equipo, lang }) {
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 2.4rem)', fontWeight: '700', color: 'var(--ink)', lineHeight: '1.15', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
           {t.titulo}
         </h1>
-        {t.parrafos.map((parrafo, i) => <p key={i} style={p}>{parrafo}</p>)}
+        {t.secciones.map((seccion, i) => (
+          <section key={i}>
+            {seccion.titulo && <h2 style={h2}>{seccion.titulo}</h2>}
+            {seccion.parrafos.map((parrafo, j) => <p key={j} style={p}>{parrafo}</p>)}
+          </section>
+        ))}
 
         <div className="equipo equipo--par">
           {equipo.map((persona, i) => (
@@ -37,6 +43,10 @@ export default function Historia({ t, equipo, lang }) {
         </div>
 
         <p style={{ marginTop: '2.5rem' }}>
+          <Link href={ruta('auditoriaGratis', lang)} className="btn btn-suave">{t.cta.texto}</Link>
+        </p>
+
+        <p style={{ marginTop: '2rem' }}>
           <Link href={ruta('inicio', lang)} className="text-link">{t.volver}</Link>
         </p>
       </article>

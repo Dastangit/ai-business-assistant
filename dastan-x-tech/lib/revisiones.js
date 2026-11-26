@@ -19,7 +19,7 @@ export const REVISIONES = {
   '/blog/como-aparecer-en-chatgpt': '2026-11-19',
   '/blog/como-aparecer-en-resultados-de-ia': '2026-11-24',
   '/blog/nuestra-web-diagnostico-seo': '2026-11-18',
-  '/nuestra-historia': '2026-10-28',
+  '/nuestra-historia': '2026-11-25',
   '/privacidad': '2026-10-25',
   '/condiciones': '2026-10-25',
   // Versión en inglés: fecha en que se escribió su texto
@@ -39,7 +39,7 @@ export const REVISIONES = {
   '/en/blog/how-to-show-up-in-chatgpt': '2026-11-19',
   '/en/blog/how-to-appear-in-ai-search-results': '2026-11-24',
   '/en/blog/our-website-seo-report': '2026-11-18',
-  '/en/our-story': '2026-10-28',
+  '/en/our-story': '2026-11-25',
   '/en/privacy': '2026-10-25',
   '/en/terms': '2026-10-25',
 };
