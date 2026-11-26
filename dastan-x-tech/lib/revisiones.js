@@ -3,7 +3,7 @@
 // al cambiar el texto de una página, actualiza aquí su fecha y vale para los dos.
 // Si todas las páginas llevan la fecha del día, la señal deja de servir para saber qué cambió.
 export const REVISIONES = {
-  '/': '2026-11-18',
+  '/': '2026-11-25',
   '/servicios': '2026-10-28',
   '/servicios/diseno-web': '2026-11-18',
   '/servicios/auditoria-negocio': '2026-10-25',
@@ -23,7 +23,7 @@ export const REVISIONES = {
   '/privacidad': '2026-10-25',
   '/condiciones': '2026-10-25',
   // Versión en inglés: fecha en que se escribió su texto
-  '/en': '2026-11-18',
+  '/en': '2026-11-25',
   '/en/services': '2026-10-28',
   '/en/services/web-design': '2026-11-18',
   '/en/services/digital-business-audit': '2026-10-25',

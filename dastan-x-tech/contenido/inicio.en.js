@@ -8,7 +8,7 @@ const t = {
     servicios: 'Services',
     wa: 'Message us on WhatsApp at +1 605-500-3653',
   },
-  etiqueta: 'Digital consulting and high-level technology',
+  etiqueta: 'Digital consulting, AI and automation',
   // The headline is split in two: the second part gets the brand violet
   titulo: 'Find out, with evidence, why your business ',
   tituloDestacado: 'is losing customers online.',
