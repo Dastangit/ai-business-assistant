@@ -18,6 +18,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/en/blog/our-website-seo-report'],
   description: 'We ran dastanxtech.com through our SEO report three times: what it found, what we fixed and how we went from 77 to 91 out of 100.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/our-website-seo-report',
+  image: 'https://dastanxtech.com/opengraph-image',
   inLanguage: 'en',
 };
 

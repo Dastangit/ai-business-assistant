@@ -40,6 +40,7 @@ const jsonLd = [
     dateModified: REVISIONES['/blog/como-aparecer-en-chatgpt'],
     description: DESCRIPCION,
     mainEntityOfPage: 'https://dastanxtech.com/blog/como-aparecer-en-chatgpt',
+    image: 'https://dastanxtech.com/opengraph-image',
   },
   {
     '@context': 'https://schema.org',

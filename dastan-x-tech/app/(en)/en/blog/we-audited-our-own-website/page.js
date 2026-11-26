@@ -17,6 +17,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/en/blog/we-audited-our-own-website'],
   description: 'We applied our own Digital Business Audit to dastanxtech.com. Here’s what we found, what we’ve already fixed and what’s still pending.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/we-audited-our-own-website',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };

@@ -14,6 +14,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/blog/5-senales-web-cuesta-clientes'],
   description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas en nuestra propia web.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/5-senales-web-cuesta-clientes',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 export default function BlogPost() {

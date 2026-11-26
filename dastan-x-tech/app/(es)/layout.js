@@ -43,7 +43,7 @@ export const metadata = {
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': ['ProfessionalService', 'Organization'],
+  '@type': 'Organization',
   name: 'DASTAN X-TECH',
   url: 'https://dastanxtech.com',
   '@id': 'https://dastanxtech.com/#organization',

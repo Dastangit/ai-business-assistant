@@ -16,6 +16,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/en/blog/5-signs-your-website-is-losing-customers'],
   description: 'The 5 most common signs that make a visitor leave without booking or buying, and what they look like fixed on our own website.',
   mainEntityOfPage: 'https://dastanxtech.com/en/blog/5-signs-your-website-is-losing-customers',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };

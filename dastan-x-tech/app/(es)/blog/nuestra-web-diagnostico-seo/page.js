@@ -18,6 +18,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/blog/nuestra-web-diagnostico-seo'],
   description: 'Pasamos dastanxtech.com tres veces por nuestro diagnóstico SEO: qué encontró, qué corregimos y cómo subimos de 77 a 91 sobre 100.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/nuestra-web-diagnostico-seo',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 const h2 = { fontSize: '1.5rem', fontWeight: '600', color: 'var(--ink)', letterSpacing: '-0.01em', marginTop: '2.5rem', marginBottom: '1rem' };

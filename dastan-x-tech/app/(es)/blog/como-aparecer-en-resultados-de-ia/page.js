@@ -39,6 +39,7 @@ const jsonLd = [
     dateModified: REVISIONES['/blog/como-aparecer-en-resultados-de-ia'],
     description: DESCRIPCION,
     mainEntityOfPage: 'https://dastanxtech.com/blog/como-aparecer-en-resultados-de-ia',
+    image: 'https://dastanxtech.com/opengraph-image',
   },
   {
     '@context': 'https://schema.org',

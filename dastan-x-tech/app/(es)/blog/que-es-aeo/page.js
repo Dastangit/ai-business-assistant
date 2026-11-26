@@ -15,6 +15,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/blog/que-es-aeo'],
   description: 'Qué es el AEO, en qué se diferencia del GEO y del SEO y qué tienen en común los negocios que la IA recomienda, con un ejemplo real de Gemini.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/que-es-aeo',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 export default function BlogPost() {

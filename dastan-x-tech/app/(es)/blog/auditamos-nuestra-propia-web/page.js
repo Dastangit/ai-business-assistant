@@ -14,6 +14,7 @@ const articleJsonLd = {
   dateModified: REVISIONES['/blog/auditamos-nuestra-propia-web'],
   description: 'Le aplicamos nuestra propia Auditoría Completa de Negocio a dastanxtech.com. Esto fue lo que encontramos, lo que ya corregimos y lo que sigue pendiente.',
   mainEntityOfPage: 'https://dastanxtech.com/blog/auditamos-nuestra-propia-web',
+  image: 'https://dastanxtech.com/opengraph-image',
 };
 
 export default function BlogPost() {

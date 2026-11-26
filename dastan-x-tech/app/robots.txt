@@ -1,0 +1,12 @@
+User-Agent: *
+Allow: /
+Disallow: /vip
+Disallow: /en/vip
+Disallow: /api
+Disallow: /admin
+
+# Preferencias de uso para la IA (contentsignals.org): search=yes, ai-input=yes, ai-train=yes
+# Va como comentario porque «Content-Signal» no es una directiva estándar y los auditores
+# (Semrush) marcaban el robots.txt como inválido. Sin bloqueos, todo está permitido igual.
+
+Sitemap: https://dastanxtech.com/sitemap.xml
