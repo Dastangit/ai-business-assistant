@@ -2,23 +2,24 @@
 // Solo datos: nada de funciones (se pasan de servidor a cliente).
 const t = {
   metadata: {
-    // «consultor aeo» es la búsqueda por la que ya salimos en Search Console (oct. 2026): va al principio del título
-    title: 'Consultor AEO: que la IA recomiende tu negocio | DASTAN X-TECH',
-    description: 'Preparamos tu negocio para que ChatGPT, Gemini y Perplexity te recomienden, no solo Google: estructura, reseñas y señales de confianza para la IA.',
-    keywords: ['Consultor AEO', 'Posicionamiento AEO', 'Answer Engine Optimization', 'SEO para IA', 'ChatGPT recomienda mi negocio', 'Posicionamiento en inteligencia artificial'],
-    ogTitle: 'Posicionamiento AEO | DASTAN X-TECH',
+    // Mapa de palabras clave (26-nov-2026): «seo para ia» (ES 480) y «seo para chatgpt» (ES 320) van delante;
+    // en España se dice GEO, no AEO. «consultor aeo» sigue en el título porque ya salimos por ella en Search Console.
+    title: 'SEO para IA y ChatGPT: consultor GEO y AEO | DASTAN X-TECH',
+    description: 'SEO para IA (GEO o AEO): preparamos tu negocio para que ChatGPT, Gemini y Perplexity lo recomienden. Ficha de Google, reseñas y web que la IA puede leer.',
+    keywords: ['SEO para IA', 'SEO para ChatGPT', 'GEO', 'Posicionamiento en IA', 'Consultor AEO', 'Posicionamiento AEO', 'Generative Engine Optimization', 'Answer Engine Optimization'],
+    ogTitle: 'SEO para IA y ChatGPT (GEO / AEO) | DASTAN X-TECH',
     ogDescription: 'Que ChatGPT, Gemini y Perplexity recomienden tu negocio directamente, no solo Google.',
   },
   servicioJsonLd: {
     name: 'Posicionamiento AEO',
-    serviceType: 'Answer Engine Optimization (posicionamiento para motores de IA)',
+    serviceType: 'SEO para IA: GEO y AEO (posicionamiento en motores de IA)',
     description: 'Optimizamos la estructura, contenido y señales de confianza de tu negocio para que motores de respuesta de IA como ChatGPT, Gemini y Perplexity lo recomienden directamente a sus usuarios.',
-    areaServed: ['Colombia', 'México', 'Estados Unidos'],
+    areaServed: ['España', 'Colombia', 'México', 'Estados Unidos'],
   },
   hero: {
-    etiqueta: 'Servicio · Posicionamiento AEO',
-    titulo: <>Que la IA te <span className="accent-light">recomiende</span>, no solo Google.</>,
-    texto: 'Cada vez más personas le preguntan directo a un asistente de IA «¿cuál es la mejor opción cerca de mí?» y confían en la respuesta sin visitar ninguna web. Como consultor AEO, preparamos tu negocio para ser esa respuesta.',
+    etiqueta: 'Servicio · SEO para IA (GEO / AEO)',
+    titulo: <>SEO para IA: que ChatGPT te <span className="accent-light">recomiende</span>, no solo Google.</>,
+    texto: 'Cada vez más personas le preguntan directo a un asistente de IA «¿cuál es la mejor opción cerca de mí?» y confían en la respuesta sin visitar ninguna web. Como consultores de SEO para IA, preparamos tu negocio para ser esa respuesta.',
     mensajeChat: 'Quiero información sobre Posicionamiento AEO',
     boton: 'Consultar Posicionamiento AEO',
     tarjetaTitulo: 'Qué hacemos',
@@ -26,11 +27,12 @@ const t = {
   },
   // Qué es el AEO: para quien quiere entenderlo antes de consultar, con el ejemplo real del blog al final
   queEs: {
-    etiqueta: 'Qué es el AEO',
-    titulo: <>¿Qué es el <span className="accent-light">AEO</span>?</>,
+    etiqueta: 'Qué es el SEO para IA',
+    titulo: <>¿Qué es el <span className="accent-light">SEO para IA</span>?</>,
     parrafos: [
       'La forma en que las personas buscan información, productos y servicios ha cambiado. Las listas de enlaces de siempre están dando paso a motores de respuesta y asistentes de inteligencia artificial como ChatGPT, Gemini, Perplexity o Claude. Si tu web no está preparada para que la IA la entienda, tu negocio corre el riesgo de quedar invisible para millones de personas.',
-      'El AEO (Answer Engine Optimization, u optimización para motores de respuesta) es el siguiente paso después del SEO tradicional, sin sustituirlo. En lugar de optimizar tu web solo para aparecer en los buscadores y conseguir clics, ordena tu información para que los asistentes y agentes de IA la lean, la entiendan y recomienden tu marca cuando alguien les hace una pregunta directa.',
+      'El SEO para IA es el siguiente paso después del SEO tradicional, sin sustituirlo. En España se le suele llamar GEO (Generative Engine Optimization, optimización para motores generativos) y en Latinoamérica y Estados Unidos, AEO (Answer Engine Optimization, optimización para motores de respuesta): es el mismo trabajo. En lugar de optimizar tu web solo para aparecer en los buscadores y conseguir clics, ordena tu información para que los asistentes y agentes de IA la lean, la entiendan y recomienden tu marca cuando alguien les hace una pregunta directa.',
+      'El SEO para ChatGPT es la parte más buscada: que, cuando alguien le pide a ChatGPT una recomendación de tu sector, tu negocio salga en la respuesta. ChatGPT no tiene un ranking que se pueda comprar; arma sus respuestas con lo que encuentra en internet sobre ti (tu web, tu ficha de Google, tus reseñas y lo que dicen otros sitios). Lo mismo vale para Gemini, Perplexity, Copilot y Claude, así que el trabajo sirve para todos.',
     ],
     razonesTitulo: 'Por qué importa para tu negocio',
     // Sin prometer resultados, como el resto de la web.
@@ -71,7 +73,9 @@ const t = {
     // Precios de mercado vistos en las respuestas de ChatGPT el 18-nov-2026 (desde 199 hasta 5.000 USD al mes). Sin nombrar a nadie
     { q: '¿Por qué un solo pago y no una cuota mensual?', a: 'Muchas consultoras AEO cobran una cuota mensual: en noviembre de 2026 vimos precios publicados desde unos 200 hasta 5.000 USD al mes. Nosotros dejamos el trabajo de base hecho por un precio cerrado: ficha de Google y redes coherentes, contenido que la IA puede citar y la web lista para sus robots. Si después quieres que sigamos trabajando contigo cada semana, existe la Membresía de Implementación, sin permanencia.' },
     { q: '¿Puedo reclamar mi negocio dentro de ChatGPT?', a: 'Desde noviembre de 2026, OpenAI deja reclamar negocios en ChatGPT con su Business Hub, todavía en beta. Por ahora los negocios locales solo pueden reclamar fichas que ya existen en Estados Unidos, y los negocios en línea pueden pedir que se añadan. Al revisar tu caso te decimos si el tuyo puede hacerlo y cómo.' },
-    { q: '¿Es lo mismo que el GEO o el «SEO para IA»?', a: 'Sí. AEO (Answer Engine Optimization), GEO (Generative Engine Optimization) y «SEO para IA» son nombres distintos para el mismo trabajo: que los asistentes de IA encuentren tu negocio, lo entiendan y lo recomienden.' },
+    { q: '¿Es lo mismo el SEO para IA, el GEO y el AEO?', a: 'Sí. «SEO para IA», GEO (Generative Engine Optimization) y AEO (Answer Engine Optimization) son nombres distintos para el mismo trabajo: que los asistentes de IA encuentren tu negocio, lo entiendan y lo recomienden. En España se usa más GEO; en Latinoamérica y Estados Unidos, AEO.' },
+    { q: '¿Qué es el SEO para ChatGPT?', a: 'Es preparar tu negocio para que ChatGPT lo nombre cuando alguien le pide una recomendación de tu sector. No se paga para salir: ChatGPT responde con la información pública que encuentra sobre ti, así que se trabaja esa información para que sea clara, coherente y fácil de citar.' },
+    { q: '¿Trabajan con negocios de España?', a: 'Sí. El trabajo se hace en remoto, así que da igual dónde esté tu negocio: España, México, Colombia o Estados Unidos. El precio es el mismo; desde fuera de México se paga en USD por PayPal o transferencia.' },
     { q: '¿Funciona para cualquier tipo de negocio?', a: 'Sí, siempre que haya una base sólida por fuera: una web clara y una ficha de Google ordenada. Si todavía no la tienes, empezamos por ahí con el Diseño web o con el Pack completo.' },
   ],
   cierre: {
