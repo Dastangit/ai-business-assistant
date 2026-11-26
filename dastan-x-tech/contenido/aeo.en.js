@@ -2,23 +2,24 @@
 // Data only: no functions (passed from server to client).
 const t = {
   metadata: {
-    // Mirrors the Spanish «Consultor AEO» title (the query we already show up for in Search Console)
-    title: 'AEO Consultant: get your business recommended by AI | DASTAN X-TECH',
-    description: 'We prepare your business so ChatGPT, Gemini and Perplexity recommend you directly, not just Google. Structure, reviews and trust signals for AI engines.',
-    keywords: ['AEO consultant', 'AI search optimization', 'Answer Engine Optimization', 'AEO', 'Get recommended by ChatGPT', 'SEO for AI'],
-    ogTitle: 'AI Search Optimization (AEO) | DASTAN X-TECH',
+    // Keyword map (26-nov-2026): «generative engine optimization agency» (US 1,900, CPC 26 USD) and
+    // «answer engine optimization services» (US 1,000) lead; «aeo consultant» (KD 6) stays in the copy.
+    title: 'Generative Engine Optimization Agency (GEO & AEO) | DASTAN X-TECH',
+    description: 'Generative engine optimization and answer engine optimization services: we prepare your business so ChatGPT, Gemini and Perplexity recommend it. Fixed price.',
+    keywords: ['Generative engine optimization agency', 'GEO agency', 'Answer engine optimization services', 'AEO consultant', 'AI search optimization', 'SEO for AI', 'Get recommended by ChatGPT'],
+    ogTitle: 'Generative Engine Optimization Agency (GEO & AEO) | DASTAN X-TECH',
     ogDescription: 'Get your business recommended directly by ChatGPT, Gemini and Perplexity, not just Google.',
   },
   servicioJsonLd: {
     name: 'AI Search Optimization (AEO)',
-    serviceType: 'Answer Engine Optimization (optimization for AI answer engines)',
+    serviceType: 'Generative Engine Optimization and Answer Engine Optimization (GEO & AEO)',
     description: 'We optimize your business’s structure, content and trust signals so AI answer engines like ChatGPT, Gemini and Perplexity recommend it directly to their users.',
-    areaServed: ['United States', 'Mexico', 'Colombia'],
+    areaServed: ['United States', 'Spain', 'Mexico', 'Colombia'],
   },
   hero: {
-    etiqueta: 'Service · AI Search Optimization',
-    titulo: <>Get <span className="accent-light">recommended</span> by AI, not just Google.</>,
-    texto: 'More and more people ask an AI assistant directly “what’s the best option near me?” and trust the answer without visiting any website. As AEO consultants, we prepare your business to be that answer.',
+    etiqueta: 'Service · Generative Engine Optimization (GEO & AEO)',
+    titulo: <>Generative engine optimization: get <span className="accent-light">recommended</span> by AI, not just Google.</>,
+    texto: 'More and more people ask an AI assistant directly “what’s the best option near me?” and trust the answer without visiting any website. As a generative engine optimization agency and AEO consultants, we prepare your business to be that answer.',
     mensajeChat: "I'd like information about AI Search Optimization (AEO)",
     boton: 'Ask about AI Search Optimization',
     tarjetaTitulo: 'What we do',
@@ -26,11 +27,11 @@ const t = {
   },
   // What AEO is: for people who want to understand it before asking, with the real example from the blog at the end
   queEs: {
-    etiqueta: 'What AEO is',
-    titulo: <>What is <span className="accent-light">AEO</span>?</>,
+    etiqueta: 'What GEO and AEO are',
+    titulo: <>What is <span className="accent-light">GEO</span> and AEO?</>,
     parrafos: [
       'The way people search for information, products and services has changed. The familiar lists of links are giving way to answer engines and AI assistants like ChatGPT, Gemini, Perplexity or Claude. If your website isn’t ready for AI to understand it, your business risks becoming invisible to millions of people.',
-      'AEO (Answer Engine Optimization) is the next step after traditional SEO, without replacing it. Instead of optimizing your website only to show up in search engines and get clicks, it organizes your information so AI assistants and agents can read it, understand it and recommend your brand when someone asks them a direct question.',
+      'GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization) are two names for the same work, and the next step after traditional SEO, without replacing it. Instead of optimizing your website only to show up in search engines and get clicks, it organizes your information so AI assistants and agents can read it, understand it and recommend your brand when someone asks them a direct question.',
     ],
     razonesTitulo: 'Why it matters for your business',
     // No promised results, like the rest of the site.
@@ -70,7 +71,8 @@ const t = {
     { q: 'How much does it cost?', a: '150 USD, one payment and no monthly fee. It needs a website in good shape: if yours isn’t, the All-in-One Package (Web Design + Digital Business Audit + AEO) costs 400 USD. It’s a fixed price: if you need something that isn’t included, we tell you before we start.' },
     { q: 'Why a one-time payment instead of a monthly fee?', a: 'Many AEO consultancies charge a monthly fee: in November 2026 we saw published prices from about 200 to 5,000 USD a month. We get the groundwork done for a fixed price: a consistent Google Business Profile and social media, content AI can quote and a website ready for its crawlers. If you then want us to keep working with you every week, there’s the Implementation Membership, with no lock-in.' },
     { q: 'Can I claim my business inside ChatGPT?', a: 'Since November 2026, OpenAI lets businesses claim their listing in ChatGPT through its Business Hub, still in beta. For now, local businesses can only claim listings that already exist in the United States, and online businesses can ask to be added. When we review your case, we tell you whether yours can do it and how.' },
-    { q: 'Is it the same as GEO or “SEO for AI”?', a: 'Yes. AEO (Answer Engine Optimization), GEO (Generative Engine Optimization) and “SEO for AI” are different names for the same work: getting AI assistants to find your business, understand it and recommend it.' },
+    { q: 'Is GEO the same as AEO or “SEO for AI”?', a: 'Yes. GEO (Generative Engine Optimization), AEO (Answer Engine Optimization) and “SEO for AI” are different names for the same work: getting AI assistants to find your business, understand it and recommend it.' },
+    { q: 'What does a generative engine optimization agency do?', a: 'It makes sure the information AI assistants find about your business is clear, consistent and easy to quote: your website, your Google Business Profile, your reviews and what other sites say about you. We do that groundwork for a fixed price and check that AI crawlers can read your site, instead of charging a monthly retainer.' },
     { q: 'Does it work for any kind of business?', a: 'Yes, as long as there’s a solid foundation on the outside: a clear website and a well-organized Google Business Profile. If you don’t have that yet, we start there with Web Design or the All-in-One Package.' },
   ],
   cierre: {
