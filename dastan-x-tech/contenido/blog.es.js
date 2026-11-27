@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Notas honestas sobre SEO, AEO, diseño web y auditoría de negocio.',
   posts: [
     {
+      clave: 'blogGoogleMaps',
+      title: 'Cómo aparecer en Google Maps: guía para negocios locales',
+      excerpt: 'Los 6 pasos para que tu negocio aparezca en Google Maps, gratis: crear y verificar tu ficha de Google, qué datos completar, cómo conseguir reseñas y qué evitar.',
+      date: '26 de noviembre de 2026',
+    },
+    {
       clave: 'blogResultadosIa',
       title: 'Cómo aparecer en los resultados de búsqueda con IA',
       excerpt: 'De dónde sacan sus respuestas Google AI Overviews, ChatGPT, Perplexity, Copilot y Gemini, y cómo comprobar si tu negocio sale en cada uno.',
