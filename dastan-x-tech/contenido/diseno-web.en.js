@@ -2,22 +2,23 @@
 // Data only: no functions (passed from server to client).
 const t = {
   metadata: {
-    title: 'Web Design for Small Businesses | DASTAN X-TECH',
-    description: 'We rebuild your business website with your real brand, your services, your prices and your WhatsApp one tap away.',
-    keywords: ['Web design for small businesses', 'Web design for local businesses', 'Professional web design', 'AI search optimization'],
-    ogTitle: 'Web Design for Small Businesses | DASTAN X-TECH',
+    // Keyword map (26-nov-2026): «small business website design services» (US 1,600, KD 22, CPC 12 USD) leads.
+    title: 'Small Business Website Design Services | DASTAN X-TECH',
+    description: 'Small business website design services at a fixed price: your real brand, services, prices and WhatsApp one tap away, ready for Google and AI.',
+    keywords: ['Small business website design services', 'Small business website design', 'Web design for small businesses', 'Web design for local businesses', 'Professional web design', 'AI search optimization'],
+    ogTitle: 'Small Business Website Design Services | DASTAN X-TECH',
     ogDescription: 'Website design for small businesses, optimized for local SEO and AI answer engines (AEO).',
   },
   servicioJsonLd: {
-    name: 'Web Design',
-    serviceType: 'Web design and development for small businesses',
+    name: 'Small Business Website Design',
+    serviceType: 'Website design services for small businesses',
     description: 'We rebuild small business websites with an architecture optimized for local SEO and AI answer engines (AEO), keeping the client’s real brand.',
     areaServed: ['United States', 'Mexico', 'Colombia'],
   },
   hero: {
-    etiqueta: 'Service · Web Design',
-    titulo: <>Your new website, with your brand and your <span className="accent-light">WhatsApp</span> one tap away.</>,
-    texto: 'We rebuild your business website: your services explained, your prices clear and your WhatsApp always visible. With the structure Google and AI assistants need to understand what you offer.',
+    etiqueta: 'Service · Small Business Website Design',
+    titulo: <>Small business website design, with your brand and your <span className="accent-light">WhatsApp</span> one tap away.</>,
+    texto: 'Our small business website design services rebuild your website: your services explained, your prices clear and your WhatsApp always visible. With the structure Google and AI assistants need to understand what you offer.',
     mensajeChat: "I'd like information about Web Design for my business",
     boton: 'Discuss your project',
     tarjetaTitulo: 'What you get',
@@ -51,11 +52,13 @@ const t = {
   },
   faqTitulo: 'Frequently asked questions',
   faq: [
+    { q: 'What do your small business website design services include?', a: 'A review of your current website, a new fast and mobile-friendly website with your real brand, your services and prices explained, your phone and WhatsApp one tap away, and the code structure Google and AI assistants need to understand your business. Fixed price, ready in under 48 hours once we have your content.' },
     { q: 'How long does the new website take?', a: 'Under 48 hours from when you give us your brand and your content (logo, copy, services and prices).' },
     { q: 'How much does it cost?', a: '100 USD, fixed price. If you need something that isn’t included (an online store, for example), we tell you before we start.' },
     { q: 'What do you need from my business to get started?', a: 'Your real brand: logo, colors, fonts, copy, prices and current reviews. We never make up content that isn’t yours.' },
     { q: 'What if I already have a website?', a: 'We analyze it first: we give you an honest review with concrete, observable problems — each with the reason it costs you customers — before touching anything.' },
     { q: 'What if I don’t want a new website?', a: 'If you already have a website and only want to fix the most urgent issues, there’s the 48-Hour Fix: for 49 USD we apply the 5 most urgent fixes from your SEO report within 48 hours. If you order Web Design within the next 30 days, we deduct it.' },
+    { q: 'Can my website be in English?', a: 'Yes. We work remotely with small businesses in the United States and Latin America, and your website can be in English, Spanish or both.' },
     { q: 'Does the website include the 24/7 automated chat?', a: 'It’s optional: an assistant that answers questions at any time and saves the name and WhatsApp of whoever asks, so no one slips away. It costs 15 USD a month with no lock-in, or it’s included in the Monthly Implementation Plan if it fits your business. It’s the same one you can try on this page.' },
   ],
   cierre: {
