@@ -9,6 +9,12 @@ const t = {
   subtitulo: 'Honest notes on SEO, AEO, web design and business audits.',
   posts: [
     {
+      clave: 'blogGoogleMaps',
+      title: 'How to show up on Google Maps: a guide for local businesses',
+      excerpt: 'The 6 steps to get your business on Google Maps for free: create and verify your Google Business Profile, what to fill in, how to get reviews and what to avoid.',
+      date: 'November 26, 2026',
+    },
+    {
       clave: 'blogResultadosIa',
       title: 'How to appear in AI search results',
       excerpt: 'Where Google AI Overviews, ChatGPT, Perplexity, Copilot and Gemini get their answers, and how to check whether your business appears in each one.',
