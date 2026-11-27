@@ -27,9 +27,7 @@ export const REVISIONES = {
   // Versión en inglés: fecha en que se escribió su texto
   '/en': '2026-11-25',
   '/en/services': '2026-10-28',
-  '/en/services/web-design': '2026-11-26',
-  '/en/services/web-design/dentists': '2026-11-26',
-  '/en/services/web-design/therapists': '2026-11-26',
+  '/en/services/web-design': '2026-11-18',
   '/en/services/digital-business-audit': '2026-10-25',
   '/en/services/aeo': '2026-11-26',
   '/en/free-website-audit': '2026-11-25',
@@ -46,4 +44,6 @@ export const REVISIONES = {
   '/en/our-story': '2026-11-25',
   '/en/privacy': '2026-10-25',
   '/en/terms': '2026-10-25',
+  '/en/services/web-design/dentists': '2026-11-26',
+  '/en/services/web-design/therapists': '2026-11-26',
 };
