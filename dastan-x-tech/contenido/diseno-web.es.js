@@ -40,6 +40,7 @@ const t = {
     items: [
       { titulo: 'Preparada para Google y la IA', texto: <>Estructuramos el código y el contenido para que Google y los asistentes de IA entiendan qué ofreces, dónde y a qué precio: la base para que te encuentren y te recomienden. Lo aplicamos primero a nuestra web: <a href="/blog/nuestra-web-diagnostico-seo" className="text-link">de 77 a 91 en nuestro diagnóstico SEO</a>.</> },
       { titulo: 'Y si quieres, un asistente que no deja escapar a nadie', texto: 'Opcional: responde las dudas de tus clientes a cualquier hora y guarda su nombre y su WhatsApp para que los contactes al día siguiente. Pruébalo en esta misma página.' },
+      { titulo: 'Pensada para tu sector', texto: <>Cada sector necesita cosas distintas en su web. Lo explicamos en detalle para <a href="/servicios/diseno-web/clinicas-dentales" className="text-link">clínicas dentales</a> y para <a href="/servicios/diseno-web/psicologos" className="text-link">psicólogos y terapeutas</a>.</> },
     ],
   },
   caminos: {

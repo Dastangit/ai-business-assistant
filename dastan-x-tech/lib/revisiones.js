@@ -5,7 +5,9 @@
 export const REVISIONES = {
   '/': '2026-11-25',
   '/servicios': '2026-10-28',
-  '/servicios/diseno-web': '2026-11-18',
+  '/servicios/diseno-web': '2026-11-26',
+  '/servicios/diseno-web/clinicas-dentales': '2026-11-26',
+  '/servicios/diseno-web/psicologos': '2026-11-26',
   '/servicios/auditoria-negocio': '2026-10-25',
   '/servicios/posicionamiento-aeo': '2026-11-26',
   '/auditoria-web-gratis': '2026-11-25',
@@ -42,4 +44,6 @@ export const REVISIONES = {
   '/en/our-story': '2026-11-25',
   '/en/privacy': '2026-10-25',
   '/en/terms': '2026-10-25',
+  '/en/services/web-design/dentists': '2026-11-26',
+  '/en/services/web-design/therapists': '2026-11-26',
 };
