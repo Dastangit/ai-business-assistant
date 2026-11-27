@@ -5,7 +5,9 @@
 export const REVISIONES = {
   '/': '2026-11-25',
   '/servicios': '2026-10-28',
-  '/servicios/diseno-web': '2026-11-18',
+  '/servicios/diseno-web': '2026-11-26',
+  '/servicios/diseno-web/clinicas-dentales': '2026-11-26',
+  '/servicios/diseno-web/psicologos': '2026-11-26',
   '/servicios/auditoria-negocio': '2026-10-25',
   '/servicios/posicionamiento-aeo': '2026-11-26',
   '/auditoria-web-gratis': '2026-11-25',
@@ -25,7 +27,9 @@ export const REVISIONES = {
   // Versión en inglés: fecha en que se escribió su texto
   '/en': '2026-11-25',
   '/en/services': '2026-10-28',
-  '/en/services/web-design': '2026-11-18',
+  '/en/services/web-design': '2026-11-26',
+  '/en/services/web-design/dentists': '2026-11-26',
+  '/en/services/web-design/therapists': '2026-11-26',
   '/en/services/digital-business-audit': '2026-10-25',
   '/en/services/aeo': '2026-11-26',
   '/en/free-website-audit': '2026-11-25',

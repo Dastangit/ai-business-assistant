@@ -1,18 +1,18 @@
 import MigasJsonLd from '@/components/MigasJsonLd';
-import t from '@/contenido/diseno-web.en';
+import t from '@/contenido/diseno-web-terapeutas.es';
 import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
 
 const metadata = {
   title: t.metadata.title,
   description: t.metadata.description,
-  alternates: alternates('disenoWeb', 'en'),
+  alternates: alternates('disenoWebTerapeutas', 'es'),
   openGraph: {
     title: t.metadata.ogTitle,
     description: t.metadata.ogDescription,
-    url: 'https://dastanxtech.com/en/services/web-design',
+    url: 'https://dastanxtech.com/servicios/diseno-web/psicologos',
     siteName: 'DASTAN X-TECH',
-    locale: 'en_US',
+    locale: 'es_US',
     type: 'website',
   },
 };
@@ -27,7 +27,7 @@ const serviceJsonLd = {
     '@type': 'Organization',
     '@id': 'https://dastanxtech.com/#organization',
     name: 'DASTAN X-TECH',
-    url: 'https://dastanxtech.com/en',
+    url: 'https://dastanxtech.com',
   },
   areaServed: t.servicioJsonLd.areaServed,
   offers: {
@@ -35,17 +35,17 @@ const serviceJsonLd = {
     priceSpecification: { '@type': 'PriceSpecification', minPrice: 100, priceCurrency: 'USD' },
   },
   description: t.servicioJsonLd.description,
-  url: 'https://dastanxtech.com/en/services/web-design',
+  url: 'https://dastanxtech.com/servicios/diseno-web/psicologos',
 };
 
-export default function WebDesignLayout({ children }) {
+export default function DisenoWebPsicologosLayout({ children }) {
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <MigasJsonLd lang="en" seccion="servicios" ruta={metadata.alternates.canonical} titulo={serviceJsonLd.name} />
+      <MigasJsonLd lang="es" seccion="servicios" ruta={metadata.alternates.canonical} titulo={serviceJsonLd.name} />
       {children}
     </>
   );

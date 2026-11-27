@@ -5,6 +5,8 @@ export const RUTAS = {
   inicio: { es: '/', en: '/en' },
   servicios: { es: '/servicios', en: '/en/services' },
   disenoWeb: { es: '/servicios/diseno-web', en: '/en/services/web-design' },
+  disenoWebDentistas: { es: '/servicios/diseno-web/clinicas-dentales', en: '/en/services/web-design/dentists' },
+  disenoWebTerapeutas: { es: '/servicios/diseno-web/psicologos', en: '/en/services/web-design/therapists' },
   auditoria: { es: '/servicios/auditoria-negocio', en: '/en/services/digital-business-audit' },
   aeo: { es: '/servicios/posicionamiento-aeo', en: '/en/services/aeo' },
   auditoriaGratis: { es: '/auditoria-web-gratis', en: '/en/free-website-audit' },

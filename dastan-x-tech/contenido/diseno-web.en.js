@@ -40,6 +40,7 @@ const t = {
     items: [
       { titulo: 'Ready for Google and AI', texto: <>We structure the code and content so Google and AI assistants understand what you offer, where and at what price: the foundation for being found and recommended. We did it to our own website first: <a href="/en/blog/our-website-seo-report" className="text-link">from 77 to 91 on our SEO report</a>.</> },
       { titulo: 'And if you want, an assistant that never lets anyone slip away', texto: 'Optional: it answers your customers’ questions at any time and saves their name and WhatsApp so you can contact them the next day. Try it right here on this page.' },
+      { titulo: 'Built around your sector', texto: <>Every sector needs different things from its website. We explain it in detail for <a href="/en/services/web-design/dentists" className="text-link">dentists and dental clinics</a> and for <a href="/en/services/web-design/therapists" className="text-link">therapists and counselors</a>.</> },
     ],
   },
   caminos: {

@@ -8,7 +8,7 @@ test('cada clave tiene ruta en los dos idiomas y el inglés vive en /en', () => 
     assert.ok(r.es.startsWith('/'), clave);
     assert.ok(r.en === '/en' || r.en.startsWith('/en/'), clave);
   }
-  assert.equal(Object.keys(RUTAS).length, 20);
+  assert.equal(Object.keys(RUTAS).length, 22);
 });
 
 test('idiomaDeRuta', () => {
@@ -24,6 +24,7 @@ test('claveDeRuta normaliza barra final, query y ancla', () => {
   assert.equal(claveDeRuta('/en/services/web-design/'), 'disenoWeb');
   assert.equal(claveDeRuta('/servicios/diseno-web#caso-real'), 'disenoWeb');
   assert.equal(claveDeRuta('/?utm_source=x'), 'inicio');
+  assert.equal(claveDeRuta('/en/services/web-design/dentists'), 'disenoWebDentistas');
   assert.equal(claveDeRuta('/admin'), null);
 });
 
