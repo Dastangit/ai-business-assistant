@@ -47,12 +47,18 @@ const nextConfig = {
       { source: '/ejemplo-auditoria-completa', destination: '/ejemplo-auditoria-completa.html' },
     ];
   },
-  // La página de la auditoría cambió de dirección: los enlaces antiguos (Instagram, Google) siguen funcionando
+  // Páginas que cambiaron de dirección: los enlaces antiguos (Instagram, Google) siguen funcionando
   redirects() {
     return [
       {
         source: '/servicios/auditoria-360',
         destination: '/servicios/auditoria-negocio',
+        permanent: true,
+      },
+      // La guía de precios pasó de «renovar una web» a «cuánto cuesta una página web» (27-nov-2026)
+      {
+        source: '/blog/cuanto-cuesta-renovar-web',
+        destination: '/blog/cuanto-cuesta-una-pagina-web',
         permanent: true,
       },
     ];
