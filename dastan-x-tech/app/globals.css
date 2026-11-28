@@ -1097,9 +1097,22 @@ html, body { overflow-x: clip; width: 100%; }
   .ed-fila-enlace { grid-template-columns: 34px minmax(0, 1fr); }
   .ed-fila-ir { display: none; }
   .ed-ficha { justify-self: stretch; max-width: none; }
-  /* La línea de cabecera se partía en tres renglones con los puntos al principio: en el móvil sobra */
-  .ed-cabecera { display: none; }
-  .ed-apertura { padding-top: 40px; }
+  /* Primera pantalla del móvil llena: arriba la cabecera (solo su primera parte; con los países se partía en
+     tres renglones), titular y entradilla más grandes y los tres puntos en columna. El texto ocupa la pantalla
+     menos la cabecera fija (55 px), el relleno (16 px) y la línea de cabecera (--ed-cab) */
+  .ed-apertura { padding-top: 16px; --ed-cab: 42px; }
+  .ed-cabecera { font-size: min(11.5px, 3vw); white-space: nowrap; margin-bottom: 0; height: var(--ed-cab); align-items: flex-end; padding-bottom: 12px; }
+  .ed-cabecera span + span { display: none; }
+  .ed-apertura-texto {
+    justify-content: space-evenly; padding-block: 8px 4px;
+    min-height: calc(100vh - 55px - 16px - var(--ed-cab)); min-height: calc(100svh - 55px - 16px - var(--ed-cab));
+  }
+  .ed-h1 { font-size: clamp(40px, 12vw, 54px); line-height: 1.04; }
+  .ed-entradilla { font-size: 1.25rem; margin-top: 0; }
+  .ed-acciones { margin-top: 0; }
+  .ed-acciones .btn { width: 100%; }
+  .ed-acciones .ed-enlace { margin-inline: auto; }
+  .ed-puntos { flex-direction: column; gap: 10px; margin-top: 0; font-size: 13.5px; }
   .ed-seccion { padding-block: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
