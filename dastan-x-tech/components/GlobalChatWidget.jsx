@@ -10,7 +10,8 @@ import { claveDeRuta, idiomaDeRuta } from '@/lib/i18n';
 // En /admin (panel privado) tampoco se monta: taparía los datos.
 // En las páginas de servicio el chat no muestra el botón del diagnóstico: quien llega ahí busca ese servicio.
 // Diseño web y Auditoría lo ofrecen con el botón del final de la página; AEO no lo ofrece.
-// Fuera de la portada (oscura) las páginas son claras: ahí el chat va en su versión clara.
+// Todas las páginas donde se monta son claras (la portada también, desde el rediseño editorial):
+// el chat va en su versión clara, con el mismo violeta que la página (#7C3AED). El VIP monta el suyo, oscuro.
 export default function GlobalChatWidget() {
   const pathname = usePathname() || '/';
   const clave = claveDeRuta(pathname);
@@ -18,6 +19,5 @@ export default function GlobalChatWidget() {
   let diagnostico = 'chat';
   if (clave === 'aeo') diagnostico = 'ninguno';
   else if (clave === 'disenoWeb' || clave === 'auditoria') diagnostico = 'final';
-  const tono = clave === 'inicio' ? 'oscuro' : 'claro';
-  return <ChatWidget diagnostico={diagnostico} lang={idiomaDeRuta(pathname)} tono={tono} />;
+  return <ChatWidget diagnostico={diagnostico} lang={idiomaDeRuta(pathname)} tono="claro" />;
 }

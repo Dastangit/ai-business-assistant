@@ -115,7 +115,7 @@ const botonSecundario = {
 
 // diagnostico: dónde se pide el diagnóstico SEO gratis en la página actual.
 // 'chat' = botón en el chat; 'final' = botón al final de la página; 'ninguno' = no se ofrece (AEO).
-// tono: 'oscuro' (portada y VIP) o 'claro' (páginas de fondo claro: servicios, blog, privacidad).
+// tono: 'oscuro' (VIP) o 'claro' (páginas de fondo claro: portada, servicios, blog, privacidad).
 export default function ChatWidget({ couponApplied = false, diagnostico = 'chat', lang = 'es', tono = 'oscuro' } = {}) {
   const t = TEXTOS[lang] ?? TEXTOS.es;
   const sinBotonDiagnostico = diagnostico !== 'chat';
