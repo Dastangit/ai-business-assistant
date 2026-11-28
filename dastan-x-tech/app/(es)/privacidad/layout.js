@@ -12,7 +12,7 @@ const metadata = {
     description: t.metadata.description,
     url: 'https://dastanxtech.com/privacidad',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'website',
   },
 };

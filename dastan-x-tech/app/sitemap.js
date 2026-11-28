@@ -10,7 +10,7 @@ const absoluta = (ruta) => `${baseUrl}${ruta === '/' ? '' : ruta}`;
 
 // Cada página aparece en los dos idiomas, y cada entrada declara su pareja (hreflang en el sitemap)
 export default function sitemap() {
-  return Object.entries(RUTAS)
+  const paginas = Object.entries(RUTAS)
     .filter(([clave]) => !NO_INDEXABLES.includes(clave))
     .flatMap(([clave, r]) => ['es', 'en'].map((lang) => ({
       url: absoluta(r[lang]),
@@ -19,4 +19,10 @@ export default function sitemap() {
       priority: PRIORIDAD[clave][1],
       alternates: { languages: { es: absoluta(r.es), en: absoluta(r.en), 'x-default': absoluta(r.es) } },
     })));
+  // Páginas sueltas, solo en español y sin pareja en inglés (sin hreflang):
+  // el informe AEO real de nuestra web (public/ejemplo-informe-aeo.html)
+  return [
+    ...paginas,
+    { url: `${baseUrl}/ejemplo-informe-aeo`, lastModified: new Date(REVISIONES['/ejemplo-informe-aeo']), changeFrequency: 'yearly', priority: 0.4 },
+  ];
 }

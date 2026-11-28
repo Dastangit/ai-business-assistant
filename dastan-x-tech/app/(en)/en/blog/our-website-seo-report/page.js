@@ -109,7 +109,7 @@ export default function BlogPost() {
           Want to see what the report looks like inside? Here is an example with a fictional business (in Spanish):
         </p>
         <p style={parrafo}>
-          <a href="/ejemplo-diagnostico-seo.html" className="text-link" target="_blank" rel="noopener">See an example SEO report →</a>
+          <a href="/ejemplo-diagnostico-seo" className="text-link" target="_blank" rel="noopener">See an example SEO report →</a>
         </p>
 
         <div style={{ background: '#FAF9FC', border: '1px solid var(--line-light)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>

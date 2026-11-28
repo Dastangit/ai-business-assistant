@@ -12,7 +12,7 @@ import { ruta } from '@/lib/i18n';
 // una web» en /blog/cuanto-cuesta-renovar-web, que redirige aquí (next.config.mjs).
 // Las cifras de mercado son de las guías enlazadas (consultadas el 27-nov-2026): son orientativas, no nuestras.
 const URL_ARTICULO = 'https://dastanxtech.com/blog/cuanto-cuesta-una-pagina-web';
-const DESCRIPCION = 'Cuánto cuesta crear o hacer una página web en 2026, en México (pesos) y en España (euros): lo que cobra el mercado, qué cambia el precio y nuestra tarifa cerrada de 100 USD.';
+const DESCRIPCION = 'Cuánto cuesta hacer una página web en 2026 en México (pesos) y España (euros): lo que cobra el mercado, qué cambia el precio y nuestra tarifa de 100 USD.';
 
 const faq = [
   { q: '¿Cuánto cuesta una página web para un negocio pequeño?', a: 'Depende de quién la haga y de lo que necesite. En DASTAN X-TECH cuesta 100 USD (1,900 MXN en México), precio cerrado, y está lista en menos de 48 horas. Si necesitas algo que no está incluido, como una tienda online, te lo decimos antes de empezar.' },

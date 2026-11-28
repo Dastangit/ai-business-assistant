@@ -25,6 +25,8 @@ export const REVISIONES = {
   '/nuestra-historia': '2026-11-25',
   '/privacidad': '2026-10-25',
   '/condiciones': '2026-10-25',
+  // Informe AEO real (public/ejemplo-informe-aeo.html): fecha en que se generó
+  '/ejemplo-informe-aeo': '2026-10-03',
   // Versión en inglés: fecha en que se escribió su texto
   '/en': '2026-11-25',
   '/en/services': '2026-10-28',
@@ -37,7 +39,7 @@ export const REVISIONES = {
   '/en/blog/5-signs-your-website-is-losing-customers': '2026-10-22',
   '/en/blog/what-is-aeo': '2026-11-18',
   '/en/blog/our-website-through-our-aeo-auditor': '2026-10-03',
-  '/en/blog/how-much-does-a-website-redesign-cost': '2026-10-25',
+  '/en/blog/how-much-does-a-website-cost': '2026-11-28',
   '/en/blog/what-does-an-aeo-consultant-do': '2026-11-19',
   '/en/blog/how-to-show-up-in-chatgpt': '2026-11-19',
   '/en/blog/how-to-appear-in-ai-search-results': '2026-11-24',

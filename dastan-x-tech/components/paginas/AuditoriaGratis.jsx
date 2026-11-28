@@ -57,7 +57,7 @@ export default function AuditoriaGratis({ t, lang }) {
           <ul className="dot-list">
             {t.hero.tarjetaItems.map((item) => <li key={item}>{item}</li>)}
           </ul>
-          <a href="/ejemplo-diagnostico-seo.html" target="_blank" rel="noopener" className="text-link">{t.hero.verEjemplo}</a>
+          <a href="/ejemplo-diagnostico-seo" target="_blank" rel="noopener" className="text-link">{t.hero.verEjemplo}</a>
         </div>
       </header>
 

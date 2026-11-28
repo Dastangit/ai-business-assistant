@@ -4,7 +4,7 @@
 // Palabra clave: «auditoría web gratis» (Semrush, nov-2026: ES 320, MX 40, CO 20 al mes; CPC 1,27 USD).
 const t = {
   metadata: {
-    title: 'Auditoría web gratis: tu puntuación SEO de 0 a 100 | DASTAN X-TECH',
+    title: 'Auditoría web gratis: tu nota SEO de 0 a 100 | DASTAN X-TECH',
     description: 'Auditoría web gratis para negocios: revisamos tu web como la ve Google y te enviamos un PDF con tu puntuación SEO de 0 a 100 y las 5 correcciones más urgentes.',
     keywords: ['Auditoría web gratis', 'Auditoría SEO gratis', 'Diagnóstico SEO gratis', 'Análisis web gratis'],
     ogTitle: 'Auditoría web gratis | DASTAN X-TECH',

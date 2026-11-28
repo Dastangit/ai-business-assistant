@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "@/components/GlobalChatWidget";
+import MedirContactos from "@/components/MedirContactos";
 import AvisoIdioma from "@/components/AvisoIdioma";
 import { alternates } from "@/lib/i18n";
 
@@ -36,7 +37,7 @@ export const metadata = {
     // ?v=: LinkedIn y WhatsApp guardan la imagen por su URL; súbelo cada vez que cambie el diseño de la imagen
     images: [{ url: '/opengraph-image?v=3', type: 'image/png', width: 1200, height: 630, alt: 'DASTAN X-TECH | Consultoría digital de alto nivel, diseño web y posicionamiento para pymes' }],
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'website',
   },
 };
@@ -112,6 +113,7 @@ export default function RootLayout({ children }) {
         {children}
         <GlobalChatWidget />
         <Analytics />
+        <MedirContactos />
       </body>
     </html>
   );

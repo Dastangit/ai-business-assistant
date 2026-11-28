@@ -17,7 +17,7 @@ const metadata = {
     description: 'Tu propuesta privada de DASTAN X-TECH: diseño web, posicionamiento en la IA y auditoría de negocio.',
     url: 'https://dastanxtech.com/vip',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'website',
   },
 };

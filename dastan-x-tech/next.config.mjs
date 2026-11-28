@@ -15,7 +15,16 @@ const nextConfig = {
       '</openapi.json>; rel="service-desc"; type="application/openapi+json"',
     ].join(', ');
     const markdown = [{ key: 'Content-Type', value: 'text/markdown; charset=utf-8' }];
+    // Cabeceras de seguridad básicas para todo el sitio (SEO-006). La CSP queda pendiente:
+    // primero hay que probarla en modo Report-Only para no romper el chat ni Vercel Analytics.
+    const seguridad = [
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=()' },
+    ];
     return [
+      { source: '/:ruta*', headers: seguridad },
       ...['/', '/en'].map((source) => ({ source, headers: [{ key: 'Link', value: enlaces }] })),
       // RFC 9727: el catálogo de APIs se sirve como linkset JSON (el archivo no tiene extensión)
       {
@@ -31,6 +40,14 @@ const nextConfig = {
       // El muestrario (public/muestrario) es nuestra propia web rehecha en ocho estilos: no debe
       // salir en Google ni en las respuestas de la IA confundido con la web real
       { source: '/muestrario/:ruta*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }] },
+      // Las muestras para clientes usan un negocio ficticio: fuera de Google, como sus dos ejemplos
+      ...['/muestras', '/muestras.html'].map((source) => ({ source, headers: [{ key: 'X-Robots-Tag', value: 'noindex, follow' }] })),
+      // El informe AEO real sí se indexa (está en el sitemap). El HTML lo genera el auditor y se
+      // reemplaza entero al actualizarlo, así que el canonical va en cabecera y no en el archivo
+      ...['/ejemplo-informe-aeo', '/ejemplo-informe-aeo.html'].map((source) => ({
+        source,
+        headers: [{ key: 'Link', value: '<https://dastanxtech.com/ejemplo-informe-aeo>; rel="canonical"' }],
+      })),
     ];
   },
   // El informe AEO de ejemplo es el HTML que genera el auditor, tal cual (public/ejemplo-informe-aeo.html),
@@ -59,6 +76,12 @@ const nextConfig = {
       {
         source: '/blog/cuanto-cuesta-renovar-web',
         destination: '/blog/cuanto-cuesta-una-pagina-web',
+        permanent: true,
+      },
+      // Y la versión en inglés, de «website redesign cost» a «website cost» (28-nov-2026)
+      {
+        source: '/en/blog/how-much-does-a-website-redesign-cost',
+        destination: '/en/blog/how-much-does-a-website-cost',
         permanent: true,
       },
     ];

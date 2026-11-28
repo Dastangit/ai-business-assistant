@@ -3,13 +3,13 @@ import { alternates } from '@/lib/i18n';
 import { conImagenHeredada } from '@/lib/metadatos';
 
 const metadata = {
-  title: 'How much does a website redesign cost in 2026? | DASTAN X-TECH',
-  description: 'Real prices to redesign a small business website in 2026: 100 USD, ready in under 48 hours, or 49 USD for urgent fixes. What’s included and what’s extra.',
+  title: 'How much does a website cost in 2026? | DASTAN X-TECH',
+  description: 'How much a small business website costs in the US in 2026: DIY builders, freelancers and agencies, what changes the price, and our fixed 100 USD rate.',
   alternates: alternates('blogPrecioWeb', 'en'),
   openGraph: {
-    title: 'How much does a website redesign cost in 2026?',
-    description: '100 USD and ready in under 48 hours, or 49 USD to fix the most urgent issues. What the price includes and what costs extra.',
-    url: 'https://dastanxtech.com/en/blog/how-much-does-a-website-redesign-cost',
+    title: 'How much does a website cost in 2026?',
+    description: 'US market prices for freelancers, agencies and DIY builders, what changes the price, and our fixed rate: 100 USD, ready in under 48 hours.',
+    url: 'https://dastanxtech.com/en/blog/how-much-does-a-website-cost',
     siteName: 'DASTAN X-TECH',
     locale: 'en_US',
     type: 'article',

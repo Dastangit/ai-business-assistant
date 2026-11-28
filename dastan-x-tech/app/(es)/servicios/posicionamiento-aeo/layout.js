@@ -12,7 +12,7 @@ const metadata = {
     description: t.metadata.ogDescription,
     url: 'https://dastanxtech.com/servicios/posicionamiento-aeo',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'website',
   },
 };

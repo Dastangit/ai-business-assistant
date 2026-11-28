@@ -40,6 +40,15 @@ export async function POST(request) {
       conversacion: conversacion || null,
     });
     if (error) throw error;
+    // Conversión (SEO-001): un lead válido, con la página de donde vino («/ruta · interés · EN»)
+    const pagina = origen.split(' · ')[0];
+    if (pagina.startsWith('/')) {
+      after(async () => {
+        const { error: errorEvento } = await getSupabaseAdmin().from('eventos_web')
+          .insert({ tipo: 'generate_lead', pagina, idioma: origen.endsWith(' · EN') ? 'en' : 'es' });
+        if (errorEvento) console.error('Error al guardar el evento del lead:', errorEvento);
+      });
+    }
     // Aviso a Telegram cuando la respuesta ya salió: el cliente no espera por él
     after(() => avisarLeadTelegram({ nombre, web, whatsapp, origen }));
     return NextResponse.json({ ok: true });
