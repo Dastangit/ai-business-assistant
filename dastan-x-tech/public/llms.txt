@@ -13,7 +13,7 @@ Precios cerrados en dólares (USD). Lo que no esté incluido se presupuesta apar
 ## Servicios
 
 - [Diseño web](https://dastanxtech.com/servicios/diseno-web): renovamos la web del negocio o la creamos desde cero (también a partir de su Instagram), con su marca real, el WhatsApp y el teléfono siempre visibles y sus servicios explicados. 100 USD. Entrega en menos de 48 horas desde que recibimos la marca y los contenidos.
-  - Por sectores: [Diseño web para clínicas dentales](https://dastanxtech.com/servicios/diseno-web/clinicas-dentales) y [Diseño web para psicólogos y terapeutas](https://dastanxtech.com/servicios/diseno-web/psicologos). Mismo precio.
+  - Por sectores: [Diseño web para clínicas dentales](https://dastanxtech.com/servicios/diseno-web/clinicas-dentales), [Diseño web para psicólogos y terapeutas](https://dastanxtech.com/servicios/diseno-web/psicologos) y [Diseño web para abogados](https://dastanxtech.com/servicios/diseno-web/abogados). Mismo precio.
 - [Auditoría Completa de Negocio](https://dastanxtech.com/servicios/auditoria-negocio): revisa el negocio por fuera (web, redes, anuncios, ficha de Google, reseñas y competencia) y por dentro (captación, agenda, cobro y herramientas, con un cuestionario breve o una entrevista de 20-30 minutos). Entrega la presencia digital sobre 100, la madurez tecnológica sobre 5, las horas al mes que se van en tareas manuales y un plan de acción por fases. 200 USD.
 - [Posicionamiento AEO](https://dastanxtech.com/servicios/posicionamiento-aeo): prepara el negocio para que asistentes de IA como ChatGPT, Gemini, Perplexity o Claude lo recomienden: ficha de Google y redes coherentes, contenido que la IA puede citar, reseñas y señales de confianza, y la revisión y mejora de la nota en Is It Agent Ready (la prueba de Cloudflare para agentes de IA). También se le llama GEO o «SEO para IA». Complementa al SEO, no lo sustituye, y necesita una web en buen estado. 150 USD en un solo pago, sin cuota mensual.
 - [Pack completo](https://dastanxtech.com/servicios): Diseño web, Auditoría Completa de Negocio y Posicionamiento AEO juntos por 400 USD. Quien ya contrató alguno paga solo la diferencia.
@@ -47,7 +47,7 @@ Precios cerrados en dólares (USD). Lo que no esté incluido se presupuesta apar
 DASTAN X-TECH is also available in English. High-level digital consulting for small businesses, fully remote, delivered in English or Spanish.
 
 - [Web Design](https://dastanxtech.com/en/services/web-design): 100 USD.
-  - By sector: [Web design for dentists](https://dastanxtech.com/en/services/web-design/dentists) and [Web design for therapists](https://dastanxtech.com/en/services/web-design/therapists). Same price.
+  - By sector: [Web design for dentists](https://dastanxtech.com/en/services/web-design/dentists), [Web design for therapists](https://dastanxtech.com/en/services/web-design/therapists) and [Web design for lawyers](https://dastanxtech.com/en/services/web-design/lawyers). Same price.
 - [Digital Business Audit](https://dastanxtech.com/en/services/digital-business-audit): 200 USD.
 - [AI Search Optimization (AEO)](https://dastanxtech.com/en/services/aeo): 150 USD.
 - [All-in-One Package](https://dastanxtech.com/en/services): all three for 400 USD.
