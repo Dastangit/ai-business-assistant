@@ -3,7 +3,7 @@
 const t = {
   metadata: {
     title: 'Free website audit: your SEO score from 0 to 100 | DASTAN X-TECH',
-    description: 'Free website audit for small businesses: we review your site the way Google sees it and send you a PDF with your SEO score from 0 to 100 and the 5 most urgent fixes.',
+    description: 'Free website audit for small businesses: we review your site as Google sees it and send you a PDF with your SEO score (0-100) and the 5 most urgent fixes.',
     keywords: ['Free website audit', 'Website audit free', 'Free SEO audit', 'Free SEO report'],
     ogTitle: 'Free website audit | DASTAN X-TECH',
     ogDescription: 'Your SEO score from 0 to 100 and the 5 most urgent fixes for your website, in plain language, as a PDF on WhatsApp.',

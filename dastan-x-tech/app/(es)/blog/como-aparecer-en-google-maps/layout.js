@@ -12,7 +12,7 @@ const metadata = {
     description: 'Los 6 pasos para que tu negocio aparezca en Google Maps, gratis.',
     url: 'https://dastanxtech.com/blog/como-aparecer-en-google-maps',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'article',
   },
 };

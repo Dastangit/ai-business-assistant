@@ -6,7 +6,7 @@ import { REVISIONES } from '@/lib/revisiones';
 import { ruta } from '@/lib/i18n';
 
 // Versión en inglés: /en/blog/how-to-appear-in-ai-search-results. Si cambias este artículo, cambia también ese.
-const DESCRIPCION = 'De dónde sacan sus respuestas Google AI Overviews, ChatGPT, Perplexity, Copilot y Gemini, cómo comprobar si tu negocio sale en cada uno y qué ajustar. SEO para IA (GEO).';
+const DESCRIPCION = 'De dónde sacan sus respuestas AI Overviews, ChatGPT, Perplexity, Copilot y Gemini, cómo ver si tu negocio sale en cada uno y qué ajustar. SEO para IA.';
 
 const FAQ = [
   {

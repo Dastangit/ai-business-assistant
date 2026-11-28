@@ -5,7 +5,7 @@
 const t = {
   metadata: {
     title: 'Nuestra historia: quién está detrás de DASTAN X-TECH',
-    description: 'Cómo nació DASTAN X-TECH: empezamos desde abajo, con nuestro propio problema de visibilidad, y por eso hoy tenemos servicios desde 49 USD para negocios pequeños.',
+    description: 'Cómo nació DASTAN X-TECH: empezamos con nuestro propio problema de visibilidad, y por eso hoy ofrecemos servicios desde 49 USD a negocios pequeños.',
   },
   etiqueta: 'Nuestra historia',
   titulo: 'Cómo nació DASTAN X-TECH',

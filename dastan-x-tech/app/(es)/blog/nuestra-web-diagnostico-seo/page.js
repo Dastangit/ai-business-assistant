@@ -109,7 +109,7 @@ export default function BlogPost() {
           ¿Quieres ver cómo es el informe por dentro? Este es un ejemplo con un negocio ficticio:
         </p>
         <p style={parrafo}>
-          <a href="/ejemplo-diagnostico-seo.html" className="text-link" target="_blank" rel="noopener">Ver un ejemplo del diagnóstico SEO →</a>
+          <a href="/ejemplo-diagnostico-seo" className="text-link" target="_blank" rel="noopener">Ver un ejemplo del diagnóstico SEO →</a>
         </p>
 
         <div style={{ background: '#FAF9FC', border: '1px solid var(--line-light)', borderRadius: 'var(--radius-card)', padding: '2rem', marginTop: '3rem', textAlign: 'center' }}>

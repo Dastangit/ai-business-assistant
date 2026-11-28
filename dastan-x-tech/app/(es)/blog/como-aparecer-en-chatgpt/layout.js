@@ -13,7 +13,7 @@ const metadata = {
     description: 'Los 7 pasos para que ChatGPT, Gemini y Perplexity recomienden tu negocio.',
     url: 'https://dastanxtech.com/blog/como-aparecer-en-chatgpt',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'article',
   },
 };

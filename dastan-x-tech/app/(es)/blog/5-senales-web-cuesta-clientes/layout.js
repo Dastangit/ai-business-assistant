@@ -12,7 +12,7 @@ const metadata = {
     description: 'Las 5 señales más comunes que hacen que un visitante se vaya sin reservar ni comprar, y cómo se ven resueltas.',
     url: 'https://dastanxtech.com/blog/5-senales-web-cuesta-clientes',
     siteName: 'DASTAN X-TECH',
-    locale: 'es_US',
+    locale: 'es_MX',
     type: 'article',
   },
 };

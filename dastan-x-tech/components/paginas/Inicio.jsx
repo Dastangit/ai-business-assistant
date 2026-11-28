@@ -112,7 +112,7 @@ export default function Inicio({ t, lang }) {
               {t.muestra.urgentes.map((u) => <li key={u}>{u}</li>)}
             </ol>
           </div>
-          <a href="/ejemplo-diagnostico-seo.html" className="card-link">{t.muestra.enlace}</a>
+          <a href="/ejemplo-diagnostico-seo" className="card-link">{t.muestra.enlace}</a>
           <Link href={ruta('blogDiagnosticoSeo', lang)} className="hero-muestra-real">{t.muestra.real}</Link>
         </aside>
       </main>
