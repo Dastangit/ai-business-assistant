@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "@/components/GlobalChatWidget";
 import MedirContactos from "@/components/MedirContactos";
 import AvisoIdioma from "@/components/AvisoIdioma";
+import RestaurarScroll from "@/components/RestaurarScroll";
 import { alternates } from "@/lib/i18n";
 
 const geistSans = Geist({
@@ -110,6 +111,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <AvisoIdioma />
+        <RestaurarScroll />
         {children}
         <GlobalChatWidget />
         <Analytics />

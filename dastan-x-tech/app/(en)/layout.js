@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import GlobalChatWidget from "@/components/GlobalChatWidget";
 import MedirContactos from "@/components/MedirContactos";
 import AvisoIdioma from "@/components/AvisoIdioma";
+import RestaurarScroll from "@/components/RestaurarScroll";
 import { alternates } from "@/lib/i18n";
 
 // Layout raíz de la versión en inglés (/en/…): <html lang="en">. El español tiene el suyo en app/(es)/layout.js
@@ -103,6 +104,7 @@ export default function RootLayoutEn({ children }) {
       </head>
       <body>
         <AvisoIdioma />
+        <RestaurarScroll />
         {children}
         <GlobalChatWidget />
         <Analytics />

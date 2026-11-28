@@ -62,10 +62,29 @@ export function rutaEquivalente(pathname) {
 }
 
 // usePathname no trae el ancla: al pulsar el enlace se le añade la de la URL actual
-// (las secciones usan el mismo id en los dos idiomas)
+// (las secciones usan el mismo id en los dos idiomas). Además guarda por dónde iba la lectura,
+// para que components/RestaurarScroll.jsx deje la otra versión en el mismo sitio y no al principio
 export function conAncla(evento) {
   const { hash } = window.location;
   if (hash) evento.currentTarget.href = evento.currentTarget.href.split('#')[0] + hash;
+  guardarScroll(new URL(evento.currentTarget.href, window.location.href).pathname);
+}
+
+// Los dos idiomas tienen la misma estructura: el punto de lectura es el último bloque que ya pasó
+// bajo la cabecera, más lo que se ha bajado dentro de él. Si no cuadra, se usa la proporción de la página
+export const CLAVE_SCROLL = 'scroll-cambio-idioma';
+export const ANCLAS_SCROLL = 'main :is(section, article, h1, h2, h3)';
+function guardarScroll(destino) {
+  try {
+    const bloques = [...document.querySelectorAll(ANCLAS_SCROLL)];
+    let i = -1;
+    bloques.forEach((b, n) => { if (b.getBoundingClientRect().top <= 90) i = n; });
+    const dentro = i >= 0 ? 90 - bloques[i].getBoundingClientRect().top : 0;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    sessionStorage.setItem(CLAVE_SCROLL, JSON.stringify({
+      destino, i, dentro, total: bloques.length, proporcion: max > 0 ? window.scrollY / max : 0, hora: Date.now(),
+    }));
+  } catch { /* sin almacenamiento: la otra versión se abre arriba, como antes */ }
 }
 
 // Para metadata.alternates: canonical propio + hreflang (x-default = español)

@@ -2,6 +2,8 @@
 const nextConfig = {
   // Dos layouts raíz (español e inglés): el 404 de URLs inexistentes lo da app/global-not-found.js
   experimental: { globalNotFound: true },
+  // 90 para retratos y capturas con texto (con el 75 por defecto se veían peor que el original)
+  images: { qualities: [75, 90] },
   // Cabeceras Link (RFC 8288) en las portadas: les dicen a los agentes de IA dónde está la
   // descripción de la web (llms.txt) sin tener que leer el HTML. Las pide el escáner de agentes de Cloudflare.
   headers() {
