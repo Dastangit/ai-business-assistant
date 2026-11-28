@@ -944,6 +944,14 @@ html, body { overflow-x: clip; width: 100%; }
 .ed-cabecera span + span::before { content: '·'; margin-inline: 12px; color: var(--border-light); }
 .ed-apertura-rejilla { display: grid; gap: clamp(40px, 6vw, 80px); align-items: center; }
 @media (min-width: 960px) { .ed-apertura-rejilla { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); } }
+/* En una columna la ficha iba debajo y asomaba a medias al pie de la primera pantalla: el texto ocupa
+   la pantalla entera (menos la cabecera fija de 55 px y el relleno superior) y la ficha entra completa al bajar */
+@media (max-width: 959px) {
+  .ed-apertura-texto {
+    display: flex; flex-direction: column; justify-content: center;
+    min-height: calc(100vh - 55px - 40px); min-height: calc(100svh - 55px - 40px);
+  }
+}
 .ed-entradilla { font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.5; color: var(--ink-2); max-width: 34ch; margin-top: 22px; }
 .ed-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 32px; }
 .ed .btn-primary { color: #062420; }
