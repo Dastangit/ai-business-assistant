@@ -252,7 +252,12 @@ a.service-card.service-card--light:hover, a.service-card.service-card--light:act
 .aviso-idioma { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 14px; padding: 8px 44px 8px 16px; position: relative; font-size: 14px; background: #1A1424; color: var(--text); border-bottom: 1px solid var(--border); }
 .aviso-idioma a { color: var(--action); font-weight: 600; text-decoration: none; }
 .aviso-idioma button { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-2); font-size: 16px; cursor: pointer; padding: 6px; }
-.site-header--light { color: var(--ink); border-bottom: 1px solid var(--line-light); background: rgba(245, 244, 239, 0.9); }
+/* Cristal grisáceo: deja ver, difuminado, el contenido que pasa por detrás */
+.site-header--light {
+  color: var(--ink); border-bottom: 1px solid rgba(26, 23, 34, 0.08); background: rgba(228, 226, 222, 0.55);
+  -webkit-backdrop-filter: saturate(1.4) blur(16px); backdrop-filter: saturate(1.4) blur(16px);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .site-header--light { background: rgba(232, 231, 227, 0.96); } }
 .site-header--light .site-header-links a { color: var(--ink-2); opacity: 1; }
 .site-header--light .site-header-links a:hover { color: var(--ink); }
 .site-header--dark { color: var(--text); background: rgba(7, 5, 10, 0.82); }
@@ -891,4 +896,246 @@ html, body { overflow-x: clip; width: 100%; }
 .nav .nav-links a.nav-wa:hover { background: rgba(37, 211, 102, 0.1); color: var(--text); box-shadow: none; }
 @media (max-width: 640px) {
   .nav .nav-links a.nav-wa, .site-header-links a.site-header-wa { padding: 5px 10px; }
+}
+
+/* =========================================
+   PORTADA EDITORIAL (components/paginas/Inicio.jsx)
+   Base clara como servicios y blog; dos franjas oscuras (pruebas y cierre + pie).
+   Los h2 y la cinta van enteros en la cursiva serif (un solo estilo por frase; h2 ≤ 38 px).
+   El h1, los nombres de servicio y los títulos de los pasos van en la sans, con peso medio y tinta suavizada
+   (#2A2633): el h1 de antes, en 800 y #1A1722, pesaba demasiado.
+   ========================================= */
+/* La cabecera compartida se alinea con el contenido (1200 px centrados) */
+.ed .site-header, .ed .site-footer { padding-inline: max(clamp(16px, 5vw, 64px), calc((100% - 1200px) / 2 + clamp(16px, 5vw, 64px))); }
+.ed-w { width: 100%; max-width: 1200px; margin: 0 auto; padding-inline: clamp(16px, 5vw, 64px); }
+.ed-seccion { padding-block: clamp(72px, 11vh, 128px); }
+.ed-apertura + .ed-seccion { padding-top: clamp(32px, 5vh, 64px); }
+.ed .label-mono { color: var(--brand-on-light); }
+.ed-h2, .ed-cinta-grupo a {
+  font-family: var(--font-serif), Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400;
+}
+.ed-h1 {
+  font-size: clamp(34px, 4.3vw, 52px); line-height: 1.08; font-weight: 600;
+  letter-spacing: -0.03em; color: #2A2633; max-width: 17ch;
+}
+.ed-h2 {
+  font-size: clamp(27px, 3.1vw, 38px); line-height: 1.08;
+  letter-spacing: -0.01em; color: var(--ink); margin-top: 10px; max-width: 24ch;
+}
+/* La parte marcada del titular solo cambia de color (misma letra y estilo) */
+.ed-marca { color: var(--brand-on-light); }
+.ed-oscuro .ed-marca { color: #C4A1FF; }
+.ed-palabra-r:last-child { padding-right: 0.04em; } /* la itálica no se corta por la derecha */
+.ed-titulo-bloque { margin-bottom: clamp(32px, 5vh, 56px); }
+.ed-texto { color: var(--ink-2); font-size: 1.0625rem; line-height: 1.65; max-width: 62ch; margin-block: 16px 20px; }
+.ed-enlace { color: var(--brand-on-light); font-weight: 600; font-size: 15px; text-decoration: none; }
+.ed-enlace:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ed-enlace--suave { color: var(--ink-2); font-weight: 500; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+.ed-enlace--suave:hover { color: var(--ink); }
+.ed-num { color: var(--brand-on-light); font-size: 13px; }
+
+/* Apertura */
+.ed-apertura { padding-block: clamp(28px, 5vh, 56px) clamp(64px, 10vh, 112px); }
+.ed-cabecera {
+  display: flex; flex-wrap: wrap; gap: 6px 0; padding-bottom: 14px; margin-bottom: clamp(36px, 7vh, 72px);
+  border-bottom: 1px solid var(--line-light); font-size: 13px;
+}
+.ed .ed-cabecera { color: var(--ink-2); }
+.ed-cabecera span + span::before { content: '·'; margin-inline: 12px; color: var(--border-light); }
+.ed-apertura-rejilla { display: grid; gap: clamp(40px, 6vw, 80px); align-items: center; }
+@media (min-width: 960px) { .ed-apertura-rejilla { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); } }
+.ed-entradilla { font-size: clamp(1.125rem, 1.5vw, 1.3125rem); line-height: 1.5; color: var(--ink-2); max-width: 34ch; margin-top: 22px; }
+.ed-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 32px; }
+.ed .btn-primary { color: #062420; }
+.ed-puntos { display: flex; flex-wrap: wrap; gap: 8px 22px; list-style: none; margin-top: 28px; font-size: 13px; }
+.ed .ed-puntos { color: var(--ink-2); }
+.ed-puntos li::before { content: '✓'; color: var(--action-on-light); margin-right: 8px; font-weight: 700; }
+
+/* Ficha del diagnóstico de ejemplo */
+.ed-ficha {
+  background: #FFFFFF; border: 1px solid var(--line-light); border-radius: var(--radius-card);
+  padding: clamp(22px, 2.4vw, 30px); display: flex; flex-direction: column; gap: 16px;
+  box-shadow: 0 1px 2px rgba(26, 23, 34, 0.04), 0 18px 40px -24px rgba(26, 23, 34, 0.25);
+  max-width: 440px; width: 100%; justify-self: end;
+}
+.ed-ficha-cabecera { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.ed-ficha-aviso { font-size: 13px; color: var(--ink-2); }
+.ed-ficha-nota { display: flex; align-items: center; gap: 16px; }
+.ed-ficha-negocio { font-size: 18px; font-weight: 650; color: var(--ink); line-height: 1.25; }
+/* Anillo como el del PDF: ámbar oscurecido (32 es una nota baja) para que se lea sobre blanco */
+.ed-anillo {
+  width: 78px; height: 78px; border-radius: 50%; flex-shrink: 0;
+  display: grid; place-content: center; text-align: center;
+  background: radial-gradient(closest-side, #FFFFFF 78%, transparent 79%),
+    conic-gradient(#D97706 calc(var(--n) * 1%), var(--line-light) 0);
+}
+.ed-anillo strong { font-size: 1.6rem; line-height: 1; color: var(--ink); }
+.ed-anillo small { color: var(--ink-2); font-size: 13px; }
+@media (forced-colors: active) { .ed-anillo { background: none; border: 2px solid CanvasText; } }
+.ed-ficha-sub { font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--line-light); padding-top: 14px; }
+.ed-ficha-lista { padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.45; color: var(--ink); margin-top: -6px; }
+
+/* Índice de servicios */
+.ed-grupo { margin: 40px 0 6px; font-size: 13px; }
+.ed .ed-grupo { color: var(--ink-2); }
+.ed-indice { list-style: none; border-bottom: 1px solid var(--line-light); margin-bottom: 28px; }
+.ed-fila { position: relative; border-top: 1px solid var(--line-light); }
+.ed-fila-enlace {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 4px 20px; align-items: baseline;
+  padding: 24px 0; width: 100%; text-align: left; color: inherit; text-decoration: none;
+  background: none; border: 0; font: inherit; cursor: pointer;
+}
+.ed-fila-cuerpo { display: flex; flex-direction: column; gap: 6px; }
+.ed-fila-nombre { font-size: clamp(19px, 1.7vw, 22px); font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; color: #2A2633; }
+.ed-fila-texto { color: var(--ink-2); font-size: 16px; line-height: 1.55; max-width: 56ch; }
+.ed-fila-ir { color: var(--brand-on-light); font-size: 20px; transition: transform 0.2s ease; }
+.ed-fila-ir--chat { font-size: 14px; font-weight: 600; font-family: var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; }
+.ed-fila-enlace:hover .ed-fila-nombre { color: var(--brand-on-light); }
+.ed-fila-enlace:hover .ed-fila-ir { transform: translateX(4px); }
+.ed-fila-captura { display: none; }
+/* Escritorio con ratón: la captura del servicio aparece a la derecha (nunca encima del texto, que ocupa ≤ 56ch)
+   y las demás filas se apagan */
+@media (hover: hover) and (min-width: 1100px) {
+  .ed-fila-captura {
+    display: block; position: absolute; right: 64px; top: 50%; width: 380px; height: auto;
+    border-radius: 12px; border: 1px solid var(--line-light); pointer-events: none;
+    box-shadow: 0 24px 48px -24px rgba(26, 23, 34, 0.35);
+    opacity: 0; visibility: hidden; transform: translateY(-46%) scale(0.98);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    z-index: 2;
+  }
+  .ed-fila:hover .ed-fila-captura { opacity: 1; visibility: visible; transform: translateY(-50%) scale(1); }
+  .ed-indice:has(.ed-fila:hover) .ed-fila:not(:hover) { opacity: 0.35; }
+  .ed-fila { transition: opacity 0.25s ease; }
+  .ed-fila-texto { max-width: 48ch; }
+}
+
+/* Franjas oscuras */
+.ed-oscuro { background: var(--bg); color: var(--text); }
+.ed .ed-oscuro .label-mono { color: #C4A1FF; }
+.ed-oscuro .ed-h2 { color: var(--text); }
+.ed-oscuro .ed-texto { color: var(--text-2); }
+.ed .ed-oscuro :where(a, button):focus-visible { outline-color: var(--action); }
+.ed-cifras { display: grid; gap: 16px; }
+@media (min-width: 760px) { .ed-cifras { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ed-cifra {
+  display: flex; flex-direction: column; gap: 12px; padding: clamp(20px, 2.2vw, 28px);
+  border: 1px solid var(--border-strong); border-radius: var(--radius-card);
+  color: inherit; text-decoration: none; transition: border-color 0.2s ease;
+}
+.ed-cifra:hover { border-color: var(--action); }
+.ed-cifra-num { font-size: clamp(28px, 2.9vw, 36px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--text); }
+.ed-cifra-num span[aria-hidden] { color: var(--action); font-weight: 500; }
+.ed-cifra-texto { color: var(--text-2); font-size: 15px; line-height: 1.55; }
+.ed-enlace--oscuro { color: var(--action); margin-top: auto; }
+
+/* Método */
+.ed-pasos { list-style: none; display: grid; gap: 32px; }
+@media (min-width: 860px) { .ed-pasos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; } }
+.ed-pasos li { border-top: 2px solid var(--ink); padding-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+.ed-paso-titulo { font-size: 19px; font-weight: 600; letter-spacing: -0.015em; color: #2A2633; line-height: 1.3; }
+.ed-pasos p { color: var(--ink-2); font-size: 16px; line-height: 1.6; }
+
+/* Quiénes somos */
+.ed-nosotros { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .ed-nosotros { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 72px; } }
+.ed-equipo { display: grid; grid-template-columns: repeat(2, minmax(0, 240px)); gap: 16px; justify-content: start; }
+.ed-equipo figure { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+/* Marco 4:5 con el mismo encuadre para los dos: en el original, la cabeza de Dastan sale más pequeña y más baja
+   que la de Isdiel (cuyo pelo toca el borde). Se amplía la de Dastan desde arriba hasta igualarlas.
+   El fondo del marco es el gris del estudio, y un velo crema por abajo funde las fotos con la página */
+.ed-retrato-marco { position: relative; overflow: hidden; aspect-ratio: 4 / 5; border-radius: var(--radius-card); background: #2b2d31; }
+.ed-retrato { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+.ed-retrato-marco--0 .ed-retrato { transform: scale(1.16); transform-origin: 50% 0; }
+.ed-retrato-marco::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(26, 23, 34, 0.08);
+}
+.ed-equipo strong { display: block; color: var(--ink); font-size: 16px; font-weight: 600; }
+.ed-equipo span { color: var(--ink-2); font-size: 14px; }
+
+/* Preguntas frecuentes */
+.ed-faq { border-bottom: 1px solid var(--line-light); max-width: 860px; }
+.ed-faq details { border-top: 1px solid var(--line-light); }
+.ed-faq summary {
+  list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative;
+  font-size: clamp(17px, 1.6vw, 19px); font-weight: 600; color: var(--ink); line-height: 1.35;
+}
+.ed-faq summary::-webkit-details-marker { display: none; }
+.ed-faq summary::after {
+  content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  font-size: 24px; font-weight: 400; color: var(--brand-on-light); transition: transform 0.2s ease;
+}
+.ed-faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.ed-faq details p { color: var(--ink-2); line-height: 1.65; max-width: 68ch; padding-bottom: 12px; }
+.ed-faq details .ed-enlace { display: inline-block; padding-bottom: 22px; }
+
+/* Cierre y pie en continuidad */
+.ed-cierre { padding-block: clamp(64px, 9vh, 112px) clamp(40px, 6vh, 72px); }
+.ed-cierre .btn { margin-top: 8px; }
+/* En pantallas anchas, titular a la izquierda y botón a la derecha: el cierre y el pie caben juntos en un portátil */
+@media (min-width: 900px) {
+  .ed-cierre .ed-w { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 48px; align-items: end; }
+  .ed-cierre .ed-w > :not(.btn) { grid-column: 1; }
+  .ed-cierre .btn { grid-column: 2; grid-row: 1 / span 3; align-self: center; margin: 0; }
+  .ed-cierre .ed-texto { margin-bottom: 0; }
+}
+.ed-pie { background: var(--bg); }
+.ed .site-footer-inner { max-width: none; }
+.ed-pie .site-footer { border-top-color: var(--border); }
+@media (max-width: 640px) {
+  .ed-fila-enlace { grid-template-columns: 34px minmax(0, 1fr); }
+  .ed-fila-ir { display: none; }
+  .ed-ficha { justify-self: stretch; max-width: none; }
+  /* La línea de cabecera se partía en tres renglones con los puntos al principio: en el móvil sobra */
+  .ed-cabecera { display: none; }
+  .ed-apertura { padding-top: 40px; }
+  .ed-seccion { padding-block: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ed-fila, .ed-fila-captura, .ed-fila-ir, .ed-faq summary::after { transition: none; }
+}
+
+
+/* Cinta de servicios: banda oscura inclinada que cruza la página */
+.ed-cinta { overflow: hidden; padding-block: 28px; margin-block: -24px; }
+.ed-cinta-banda {
+  width: 104%; margin-left: -2%; transform: rotate(-1.6deg);
+  background: var(--ink); color: var(--paper); padding-block: 16px;
+  box-shadow: 0 14px 30px -18px rgba(26, 23, 34, 0.5);
+}
+.ed-cinta-pista { display: flex; width: max-content; animation: ed-cinta 48s linear infinite; }
+.ed-cinta-grupo { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
+.ed-cinta-grupo li { display: flex; align-items: center; white-space: nowrap; }
+.ed-cinta-grupo li::after { content: '✦'; color: #C4A1FF; font-size: 14px; margin-inline: 28px; }
+.ed-cinta-grupo a { color: inherit; text-decoration: none; font-size: clamp(21px, 2.2vw, 27px); letter-spacing: -0.005em; }
+.ed-cinta-grupo a:hover { color: #C4A1FF; }
+.ed-cinta-grupo a:focus-visible { outline: 2px solid var(--action); outline-offset: 4px; border-radius: 4px; }
+.ed-cinta:hover .ed-cinta-pista, .ed-cinta:focus-within .ed-cinta-pista { animation-play-state: paused; }
+@keyframes ed-cinta { to { transform: translateX(-50%); } }
+
+/* Entrada editorial. Titular palabra a palabra y el resto de la apertura detrás.
+   Arrancan en opacidad 0.01 y no 0: así el navegador ya las pinta y no retrasa el LCP de PageSpeed */
+@media (prefers-reduced-motion: no-preference) {
+  .ed-palabra { display: inline-block; animation: ed-palabra 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc(var(--i) * 45ms); }
+  .ed-entra { animation: ed-sube 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: var(--d, 0s); }
+  /* Debajo de la apertura, toda la página entra igual que el titular (sube y se enfoca) la primera vez que se ve.
+     .ed-anim la pone un script antes de pintar y .is-visto el observador de components/paginas/Inicio.jsx.
+     Los títulos h2 entran palabra a palabra; los grupos en fila (cifras, pasos, fotos) uno detrás de otro (--r) */
+  /* Relleno «backwards» y no «both»: al acabar, el elemento vuelve a sus estilos (el apagado de filas al pasar el ratón sigue) */
+  .ed-anim .ed-revela:not(.ed-h2):not(.is-visto) { opacity: 0.01; transform: translateY(24px); filter: blur(6px); }
+  .ed-anim .ed-revela.is-visto:not(.ed-h2) {
+    animation: ed-revela 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; animation-delay: calc(var(--r, 0) * 110ms);
+  }
+  .ed-palabra-r { display: inline-block; }
+  .ed-anim .ed-h2:not(.is-visto) .ed-palabra-r { opacity: 0.01; transform: translateY(0.45em); filter: blur(6px); }
+  .ed-anim .ed-h2.is-visto .ed-palabra-r { animation: ed-palabra 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both; animation-delay: calc(var(--i) * 45ms); }
+}
+@keyframes ed-palabra { from { opacity: 0.01; transform: translateY(0.45em); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes ed-revela { from { opacity: 0.01; transform: translateY(24px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes ed-sube { from { opacity: 0.01; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .ed-cinta-pista { animation: none; width: auto; }
+  .ed-cinta-banda { overflow-x: auto; }
+  .ed-cinta-grupo[aria-hidden] { display: none; }
 }

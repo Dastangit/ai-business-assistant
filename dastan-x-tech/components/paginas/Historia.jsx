@@ -33,7 +33,7 @@ export default function Historia({ t, equipo, lang }) {
         <div className="equipo equipo--par">
           {equipo.map((persona, i) => (
             <figure key={persona.nombre} className="equipo-ficha">
-              <Image src={fotos[i]} alt={persona.alt} placeholder="blur" sizes="(max-width: 640px) 50vw, 340px" className="equipo-foto" />
+              <Image src={fotos[i]} alt={persona.alt} placeholder="blur" sizes="(max-width: 640px) 65vw, 360px" quality={90} className="equipo-foto" />
               <figcaption>
                 <strong>{persona.nombre}</strong>
                 <span>{persona.rol}</span>
