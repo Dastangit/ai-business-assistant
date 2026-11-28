@@ -15,9 +15,25 @@ const nextConfig = {
       '</openapi.json>; rel="service-desc"; type="application/openapi+json"',
     ].join(', ');
     const markdown = [{ key: 'Content-Type', value: 'text/markdown; charset=utf-8' }];
-    // Cabeceras de seguridad básicas para todo el sitio (SEO-006). La CSP queda pendiente:
-    // primero hay que probarla en modo Report-Only para no romper el chat ni Vercel Analytics.
+    // Cabeceras de seguridad básicas para todo el sitio (SEO-006).
+    // La CSP va de momento en modo Report-Only: no bloquea nada y manda los avisos a /api/csp-report
+    // (logs de Vercel). Cuando pasen unos días sin avisos legítimos, cambiar la llave a
+    // Content-Security-Policy. 'unsafe-inline' en scripts hace falta sin nonces (guía de CSP de Next).
+    const csp = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' https://fonts.gstatic.com data:",
+      "img-src 'self' data: blob: https:",
+      "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'self'",
+      'report-uri /api/csp-report',
+    ].join('; ');
     const seguridad = [
+      { key: 'Content-Security-Policy-Report-Only', value: csp },
       { key: 'X-Content-Type-Options', value: 'nosniff' },
       { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
       { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
