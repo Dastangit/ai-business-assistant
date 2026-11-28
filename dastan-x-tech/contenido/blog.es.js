@@ -40,8 +40,8 @@ const t = {
     },
     {
       clave: 'blogPrecioWeb',
-      title: '¿Cuánto cuesta renovar una web en 2026?',
-      excerpt: 'Nuestros precios reales en una tabla: 100 USD y lista en menos de 48 horas, o 49 USD por arreglar lo más urgente. Qué incluye el precio y qué se cobra aparte.',
+      title: '¿Cuánto cuesta una página web en 2026?',
+      excerpt: 'Lo que cobra el mercado en México y en España, qué cambia el precio y nuestra tarifa cerrada: 100 USD (1,900 MXN) y lista en menos de 48 horas.',
       date: '6 de octubre de 2026',
     },
     {
